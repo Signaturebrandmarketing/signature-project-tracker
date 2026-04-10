@@ -232,6 +232,171 @@
   }
   .cost-bar-label { font-size: 0.5rem; color: var(--muted); }
 
+  /* ECOSYSTEM MAP */
+  .eco-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .eco-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .eco-toggle-left { display: flex; align-items: center; gap: 0.5rem; }
+  .eco-toggle-left::before { content: ''; width: 3px; height: 14px; background: var(--accent); border-radius: 2px; }
+  .eco-toggle h2 { font-size: 0.85rem; font-weight: 600; }
+  .eco-arrow { font-size: 0.7rem; color: var(--muted); transition: transform 0.3s; }
+  .eco-arrow.open { transform: rotate(180deg); }
+  .eco-body { display: none; margin-top: 1.25rem; }
+  .eco-body.open { display: block; }
+
+  /* Umbrella */
+  .eco-umbrella {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .eco-umbrella-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+  }
+  .eco-umbrella-tagline {
+    font-size: 0.68rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .eco-connector-v {
+    width: 2px;
+    height: 20px;
+    background: var(--border);
+    margin: 0 auto;
+  }
+
+  /* Value Ladder */
+  .eco-ladder {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 1.5rem;
+  }
+  .eco-ladder-step {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+  }
+  .eco-ladder-bar {
+    width: 4px;
+    flex-shrink: 0;
+    border-radius: 0;
+  }
+  .eco-ladder-step:first-child .eco-ladder-bar { border-radius: 4px 4px 0 0; }
+  .eco-ladder-step:last-child .eco-ladder-bar { border-radius: 0 0 4px 4px; }
+  .eco-ladder-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.55rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    gap: 0.5rem;
+  }
+  .eco-ladder-step:last-child .eco-ladder-content { border-bottom: none; }
+  .eco-ladder-name { font-size: 0.74rem; font-weight: 500; flex: 1; }
+  .eco-ladder-price { font-size: 0.72rem; font-weight: 700; flex-shrink: 0; }
+  .eco-ladder-arrow {
+    text-align: center;
+    font-size: 0.6rem;
+    color: var(--muted);
+    padding: 0.2rem 0;
+    letter-spacing: 0.1em;
+  }
+
+  /* Flow */
+  .eco-flow-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .eco-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 1.5rem;
+  }
+  .eco-flow-node {
+    padding: 0.4rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.68rem;
+    font-weight: 500;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .eco-flow-arrow {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .efn-ads { background: rgba(248,113,113,0.1); border-color: rgba(248,113,113,0.25); color: var(--red); }
+  .efn-land { background: rgba(251,191,36,0.1); border-color: rgba(251,191,36,0.25); color: var(--yellow); }
+  .efn-ghl { background: rgba(251,146,60,0.1); border-color: rgba(251,146,60,0.25); color: var(--orange); }
+  .efn-book { background: rgba(52,211,153,0.1); border-color: rgba(52,211,153,0.25); color: var(--green); }
+  .efn-event { background: rgba(167,139,250,0.1); border-color: rgba(167,139,250,0.25); color: var(--accent); }
+  .efn-upsell { background: rgba(96,165,250,0.1); border-color: rgba(96,165,250,0.25); color: var(--blue); }
+  .efn-nurture { background: rgba(167,139,250,0.08); border-color: rgba(167,139,250,0.2); color: var(--accent); }
+
+  /* Tech Stack */
+  .eco-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .eco-stack-item {
+    padding: 0.6rem 0.7rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+  }
+  .eco-stack-name { font-size: 0.72rem; font-weight: 600; margin-bottom: 0.15rem; }
+  .eco-stack-role { font-size: 0.6rem; color: var(--muted); line-height: 1.3; }
+  .eco-stack-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 0.3rem; vertical-align: middle; }
+
+  /* Markets */
+  .eco-markets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .eco-market {
+    padding: 0.25rem 0.55rem;
+    border-radius: 6px;
+    font-size: 0.62rem;
+    font-weight: 500;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .eco-market.strong { border-color: var(--green); color: var(--green); background: rgba(52,211,153,0.06); }
+  .eco-market.home { border-color: var(--accent); color: var(--accent); background: rgba(167,139,250,0.06); }
+
+  .eco-sub-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin: 1.25rem 0 0.6rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
   /* PRIORITY LIST */
   .priority-section {
     background: var(--card);
@@ -412,6 +577,10 @@
     .cost-header { flex-direction: column; gap: 0.75rem; }
     .cost-total { text-align: left; }
     .cost-svc-note { max-width: 140px; }
+    .eco-stack { grid-template-columns: repeat(2, 1fr); }
+    .eco-flow-node { font-size: 0.62rem; padding: 0.35rem 0.55rem; }
+    .eco-flow { gap: 0.25rem; }
+    .eco-flow-arrow { font-size: 0.65rem; }
   }
   @media (max-width: 480px) {
     body { padding: 1rem; }
@@ -428,6 +597,7 @@
 
   <div id="hero-score"></div>
   <div id="cost-tracker"></div>
+  <div id="ecosystem-map"></div>
   <div id="priority-section"></div>
   <div class="stats-bar" id="stats-bar"></div>
   <div class="filter-bar" id="filter-bar"></div>
@@ -584,6 +754,163 @@ function renderPriorities(data) {
     </div>`;
 }
 
+function renderEcosystem() {
+  document.getElementById('ecosystem-map').innerHTML = `
+    <div class="eco-section">
+      <div class="eco-toggle" onclick="document.querySelector('.eco-body').classList.toggle('open');document.querySelector('.eco-arrow').classList.toggle('open');">
+        <div class="eco-toggle-left"><h2>Ecosystem & Offer Workflow</h2></div>
+        <div class="eco-arrow">\u25BC</div>
+      </div>
+      <div class="eco-body">
+
+        <div class="eco-umbrella">
+          <div class="eco-umbrella-name">Signature Branding & Marketing</div>
+          <div class="eco-umbrella-tagline">Builds the Brand. Powers the Growth. Automates the Success.</div>
+        </div>
+        <div class="eco-connector-v"></div>
+
+        <div class="eco-flow-title">Client Acquisition Flow</div>
+        <div class="eco-flow">
+          <div class="eco-flow-node efn-ads">Meta Ads</div>
+          <div class="eco-flow-arrow">\u2192</div>
+          <div class="eco-flow-node efn-land">Landing Page</div>
+          <div class="eco-flow-arrow">\u2192</div>
+          <div class="eco-flow-node efn-ghl">GHL Inbox Bot</div>
+          <div class="eco-flow-arrow">\u2192</div>
+          <div class="eco-flow-node efn-book">Books Session</div>
+          <div class="eco-flow-arrow">\u2192</div>
+          <div class="eco-flow-node efn-event">Headshot Event</div>
+          <div class="eco-flow-arrow">\u2192</div>
+          <div class="eco-flow-node efn-upsell">AI Upsell</div>
+          <div class="eco-flow-arrow">\u2192</div>
+          <div class="eco-flow-node efn-nurture">Nurture \u2192 GP</div>
+        </div>
+
+        <div class="eco-flow-title">Value Ladder (Revenue Engine)</div>
+        <div class="eco-ladder">
+          <div class="eco-ladder-step">
+            <div class="eco-ladder-bar" style="background:var(--green)"></div>
+            <div class="eco-ladder-content">
+              <div class="eco-ladder-name">Signature Headshot Event</div>
+              <div class="eco-ladder-price" style="color:var(--green)">$75</div>
+            </div>
+          </div>
+          <div class="eco-ladder-step">
+            <div class="eco-ladder-bar" style="background:var(--green)"></div>
+            <div class="eco-ladder-content">
+              <div class="eco-ladder-name">AI Branding Starter (10 images, 1 style)</div>
+              <div class="eco-ladder-price" style="color:var(--green)">$37</div>
+            </div>
+          </div>
+          <div class="eco-ladder-step">
+            <div class="eco-ladder-bar" style="background:var(--blue)"></div>
+            <div class="eco-ladder-content">
+              <div class="eco-ladder-name">AI Branding Full (20 images, 3 styles)</div>
+              <div class="eco-ladder-price" style="color:var(--blue)">$97</div>
+            </div>
+          </div>
+          <div class="eco-ladder-step">
+            <div class="eco-ladder-bar" style="background:var(--accent)"></div>
+            <div class="eco-ladder-content">
+              <div class="eco-ladder-name">Authority Accelerator Sprint (48hr)</div>
+              <div class="eco-ladder-price" style="color:var(--accent)">$297</div>
+            </div>
+          </div>
+          <div class="eco-ladder-step">
+            <div class="eco-ladder-bar" style="background:var(--yellow)"></div>
+            <div class="eco-ladder-content">
+              <div class="eco-ladder-name">Signature Growth Partner (monthly)</div>
+              <div class="eco-ladder-price" style="color:var(--yellow)">$500/mo</div>
+            </div>
+          </div>
+          <div class="eco-ladder-step">
+            <div class="eco-ladder-bar" style="background:var(--orange)"></div>
+            <div class="eco-ladder-content">
+              <div class="eco-ladder-name">SEO, Content, Paid Ads Retainer</div>
+              <div class="eco-ladder-price" style="color:var(--orange)">$3.5-7.5k/mo</div>
+            </div>
+          </div>
+          <div class="eco-ladder-step">
+            <div class="eco-ladder-bar" style="background:var(--red)"></div>
+            <div class="eco-ladder-content">
+              <div class="eco-ladder-name">SignatureFunnels.ai (Platform)</div>
+              <div class="eco-ladder-price" style="color:var(--red)">$1,997 + $97/mo</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="eco-flow-title">Ecosystem Flywheel</div>
+        <div class="eco-flow">
+          <div class="eco-flow-node efn-event">Headshot Client</div>
+          <div class="eco-flow-arrow">\u2192</div>
+          <div class="eco-flow-node efn-upsell">AI Upgrade (50%)</div>
+          <div class="eco-flow-arrow">\u2192</div>
+          <div class="eco-flow-node efn-nurture">Email Nurture</div>
+          <div class="eco-flow-arrow">\u2192</div>
+          <div class="eco-flow-node efn-book">Sprint / GP</div>
+          <div class="eco-flow-arrow">\u2192</div>
+          <div class="eco-flow-node efn-ghl">Rewards Referral</div>
+          <div class="eco-flow-arrow">\u21BB</div>
+        </div>
+
+        <div class="eco-sub-title">Tech Stack</div>
+        <div class="eco-stack">
+          <div class="eco-stack-item">
+            <div class="eco-stack-name"><span class="eco-stack-dot" style="background:var(--accent)"></span>Lovable</div>
+            <div class="eco-stack-role">Frontend: React + Vite + Tailwind + Shadcn</div>
+          </div>
+          <div class="eco-stack-item">
+            <div class="eco-stack-name"><span class="eco-stack-dot" style="background:var(--green)"></span>Supabase</div>
+            <div class="eco-stack-role">Backend: Edge Functions, DB, Auth, Storage</div>
+          </div>
+          <div class="eco-stack-item">
+            <div class="eco-stack-name"><span class="eco-stack-dot" style="background:var(--orange)"></span>GoHighLevel</div>
+            <div class="eco-stack-role">CRM: Inbox bot, pipelines, sequences</div>
+          </div>
+          <div class="eco-stack-item">
+            <div class="eco-stack-name"><span class="eco-stack-dot" style="background:var(--blue)"></span>Square</div>
+            <div class="eco-stack-role">Payments: Headshots, AI, GP monthly</div>
+          </div>
+          <div class="eco-stack-item">
+            <div class="eco-stack-name"><span class="eco-stack-dot" style="background:var(--yellow)"></span>Stripe</div>
+            <div class="eco-stack-role">Platform payments (new, $0 rev)</div>
+          </div>
+          <div class="eco-stack-item">
+            <div class="eco-stack-name"><span class="eco-stack-dot" style="background:var(--red)"></span>Meta Ads</div>
+            <div class="eco-stack-role">Paid acquisition: FB + IG campaigns</div>
+          </div>
+          <div class="eco-stack-item">
+            <div class="eco-stack-name"><span class="eco-stack-dot" style="background:var(--accent)"></span>Claude (Anthropic)</div>
+            <div class="eco-stack-role">AI Ops: Automation, content, code</div>
+          </div>
+          <div class="eco-stack-item">
+            <div class="eco-stack-name"><span class="eco-stack-dot" style="background:var(--muted)"></span>Nano Banana</div>
+            <div class="eco-stack-role">AI image generation for branding</div>
+          </div>
+        </div>
+
+        <div class="eco-sub-title">Active Markets</div>
+        <div class="eco-markets">
+          <div class="eco-market home">Winter Haven, FL (HQ)</div>
+          <div class="eco-market strong">Atlanta, GA (Strongest)</div>
+          <div class="eco-market">Orlando, FL</div>
+          <div class="eco-market">Tampa, FL</div>
+          <div class="eco-market">Fort Lauderdale, FL</div>
+          <div class="eco-market">Palm Beach, FL</div>
+        </div>
+
+        <div class="eco-sub-title">Revenue Snapshot</div>
+        <div class="eco-flow" style="gap:0.5rem">
+          <div class="eco-flow-node efn-book" style="flex:1;text-align:center">100-200 sessions/mo</div>
+          <div class="eco-flow-node efn-upsell" style="flex:1;text-align:center">50% AI add-on rate</div>
+          <div class="eco-flow-node efn-nurture" style="flex:1;text-align:center">6 GP clients @ $500/mo</div>
+          <div class="eco-flow-node efn-event" style="flex:1;text-align:center">3,000+ total clients</div>
+        </div>
+
+      </div>
+    </div>`;
+}
+
 function renderCosts(data) {
   const c = data.costs;
   if (!c) { document.getElementById('cost-tracker').innerHTML = ''; return; }
@@ -673,6 +1000,7 @@ function render(data){
 
   renderHero(data);
   renderCosts(data);
+  renderEcosystem();
   renderPriorities(data);
 
   const total=P.length,act=P.filter(p=>p.status==='active').length,bld=P.filter(p=>p.status==='in-progress'||p.health==='building').length;
