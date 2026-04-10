@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-10T12:00:00Z",
+  "lastUpdated": "2026-04-10T15:30:00Z",
   "updatedBy": "Claude",
   "projects": [
     {
@@ -113,6 +113,41 @@
       "lastActivity": "2026-04-05"
     },
     {
+      "id": "ai-branding-image-library",
+      "name": "AI Branding Image Library Expansion",
+      "status": "in-progress",
+      "health": "building",
+      "description": "Expand AI image generation styles, templates, and library — safely scale output quality and variety",
+      "modules": [
+        { "name": "Current Style Audit", "status": "in-progress", "note": "Review existing 3 styles" },
+        { "name": "New Style Development", "status": "planned", "note": "Add diverse professional styles" },
+        { "name": "Template Library Growth", "status": "planned", "note": "Industry-specific templates" },
+        { "name": "Quality Safeguards", "status": "planned", "note": "Consistency checks, brand alignment" },
+        { "name": "Batch Generation Pipeline", "status": "planned", "note": "Scale output safely" }
+      ],
+      "lastActivity": "2026-04-10"
+    },
+    {
+      "id": "seo-strategy",
+      "name": "SEO Strategy & Implementation",
+      "status": "in-progress",
+      "health": "needs-attention",
+      "description": "Organic search strategy for signatureheadshotevent.com + signaturebranding.app — reduce dependency on paid ads",
+      "modules": [
+        { "name": "Keyword Research", "status": "in-progress", "note": "Headshot + branding terms by city" },
+        { "name": "On-Page SEO", "status": "planned", "note": "Meta tags, schema, headers" },
+        { "name": "Location Pages", "status": "planned", "note": "City-specific landing pages" },
+        { "name": "Content Strategy", "status": "planned", "note": "Blog, guides, case studies" },
+        { "name": "Technical SEO", "status": "planned", "note": "Core Web Vitals, sitemap, speed" },
+        { "name": "Local SEO / GMB", "status": "planned", "note": "Google Business profiles per market" },
+        { "name": "Backlink Strategy", "status": "planned", "note": "Local partnerships, directories" }
+      ],
+      "lastActivity": "2026-04-10",
+      "issues": [
+        { "severity": "warning", "text": "Known weakness — $3-5k/mo ad spend with no organic offset" }
+      ]
+    },
+    {
       "id": "future-state",
       "name": "Future State (Design Phase)",
       "status": "planned",
@@ -128,6 +163,8 @@
     }
   ],
   "timeline": [
+    { "date": "2026-04-10", "project": "ai-branding-image-library", "event": "AI Branding Image Library project added to tracker", "type": "launch" },
+    { "date": "2026-04-10", "project": "seo-strategy", "event": "SEO Strategy project added — targeting organic growth across all markets", "type": "launch" },
     { "date": "2026-04-10", "project": "project-tracker", "event": "Project Tracker dashboard created", "type": "launch" },
     { "date": "2026-04-08", "project": "rewards-ecosystem", "event": "Rewards architecture finalized — 7-function ecosystem plan approved", "type": "milestone" },
     { "date": "2026-04-07", "project": "rewards-ecosystem", "event": "Decided: all tables in main Supabase, shared auth with 3,000+ clients", "type": "decision" },
