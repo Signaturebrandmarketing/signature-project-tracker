@@ -1,12 +1,14 @@
 {
-  "lastUpdated": "2026-04-10T15:30:00Z",
+  "lastUpdated": "2026-04-10T16:00:00Z",
   "updatedBy": "Claude",
+  "target": 95,
   "projects": [
     {
       "id": "signature-branding-app",
       "name": "Signature Branding App (signaturebranding.app)",
       "status": "active",
       "health": "healthy",
+      "weight": 3,
       "description": "AI-powered branding platform — main Lovable app",
       "modules": [
         { "name": "Creative Studio", "status": "complete", "note": "Fixed 4/5 — layouts render, V2 default" },
@@ -25,6 +27,7 @@
       "name": "Orchestration Layer (Automation Engine)",
       "status": "active",
       "health": "healthy",
+      "weight": 3,
       "description": "Three automation layers connecting the system",
       "modules": [
         { "name": "Square Revenue Sync", "status": "complete", "note": "130 payments, $15,443 synced, runs every 15 min" },
@@ -38,6 +41,7 @@
       "name": "Daily Ops Report Agent",
       "status": "active",
       "health": "healthy",
+      "weight": 1,
       "description": "Edge function + launchd job — daily business health report at 8 AM",
       "modules": [
         { "name": "Edge Function", "status": "complete", "note": "16 data points queried" },
@@ -54,6 +58,7 @@
       "name": "Signature Rewards & Ecosystem Platform",
       "status": "in-progress",
       "health": "building",
+      "weight": 2,
       "description": "Referral rewards, marketplace, ambassadors, partners — 7-function ecosystem hub",
       "modules": [
         { "name": "Referral/Rewards Engine", "status": "in-progress", "note": "Priority #1 — dollar-denominated credits" },
@@ -71,6 +76,7 @@
       "name": "GHL Conversational AI (Booking Bot)",
       "status": "active",
       "health": "needs-attention",
+      "weight": 3,
       "description": "GoHighLevel inbox bot — auto-books headshot sessions from inbound leads",
       "modules": [
         { "name": "Inbox Bot", "status": "complete", "note": "Working but underperforming" },
@@ -87,6 +93,7 @@
       "name": "GHL CRM Integration",
       "status": "blocked",
       "health": "blocked",
+      "weight": 2,
       "description": "Connect GoHighLevel CRM to platform — webhooks, pipelines, contact sync",
       "modules": [
         { "name": "API Key Setup", "status": "blocked", "note": "Needs GHL API key from Ken" },
@@ -103,6 +110,7 @@
       "name": "Revenue & Ad Optimization",
       "status": "in-progress",
       "health": "needs-attention",
+      "weight": 3,
       "description": "Optimize $3-5k/mo ad spend, connect Stripe revenue, improve ROI",
       "modules": [
         { "name": "Square Integration", "status": "complete", "note": "Synced, 130 payments tracked" },
@@ -117,6 +125,7 @@
       "name": "AI Branding Image Library Expansion",
       "status": "in-progress",
       "health": "building",
+      "weight": 2,
       "description": "Expand AI image generation styles, templates, and library — safely scale output quality and variety",
       "modules": [
         { "name": "Current Style Audit", "status": "in-progress", "note": "Review existing 3 styles" },
@@ -132,6 +141,7 @@
       "name": "SEO Strategy & Implementation",
       "status": "in-progress",
       "health": "needs-attention",
+      "weight": 3,
       "description": "Organic search strategy for signatureheadshotevent.com + signaturebranding.app — reduce dependency on paid ads",
       "modules": [
         { "name": "Keyword Research", "status": "in-progress", "note": "Headshot + branding terms by city" },
@@ -152,6 +162,7 @@
       "name": "Future State (Design Phase)",
       "status": "planned",
       "health": "planned",
+      "weight": 0,
       "description": "Client Vault, Video Generation, Multi-Agent System",
       "modules": [
         { "name": "Client Vault", "status": "planned", "note": "Design phase" },
