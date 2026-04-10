@@ -1,7 +1,103 @@
 {
-  "lastUpdated": "2026-04-10T16:00:00Z",
+  "lastUpdated": "2026-04-10T17:00:00Z",
   "updatedBy": "Claude",
   "target": 95,
+  "costs": {
+    "monthlyBudget": 500,
+    "alertThreshold": 80,
+    "currentMonth": "2026-04",
+    "services": [
+      {
+        "id": "claude-api",
+        "name": "Claude Code (Anthropic)",
+        "icon": "brain",
+        "monthToDate": 87.40,
+        "lastMonth": 62.15,
+        "dailyAvg": 8.74,
+        "trend": "up",
+        "note": "Opus 4.6 — heavy usage this month (dashboard, orchestration layer, rewards architecture)",
+        "category": "ai"
+      },
+      {
+        "id": "supabase",
+        "name": "Supabase (Production)",
+        "icon": "database",
+        "monthToDate": 25.00,
+        "lastMonth": 25.00,
+        "dailyAvg": 0.83,
+        "trend": "stable",
+        "note": "Pro plan — edge functions, pg_cron, storage, 19 users",
+        "category": "infrastructure"
+      },
+      {
+        "id": "image-gen",
+        "name": "AI Image Generation",
+        "icon": "image",
+        "monthToDate": 14.20,
+        "lastMonth": 31.50,
+        "dailyAvg": 1.42,
+        "trend": "down",
+        "note": "Nano Banana — headshot AI styles + branding images",
+        "category": "ai"
+      },
+      {
+        "id": "ghl",
+        "name": "GoHighLevel CRM",
+        "icon": "message",
+        "monthToDate": 97.00,
+        "lastMonth": 97.00,
+        "dailyAvg": 3.23,
+        "trend": "stable",
+        "note": "Monthly plan — inbox bot, sequences, pipeline",
+        "category": "platform"
+      },
+      {
+        "id": "square",
+        "name": "Square (Processing Fees)",
+        "icon": "dollar",
+        "monthToDate": 42.80,
+        "lastMonth": 118.50,
+        "dailyAvg": 4.28,
+        "trend": "down",
+        "note": "2.6% + $0.10 per transaction — headshots + AI upgrades",
+        "category": "payments"
+      },
+      {
+        "id": "lovable",
+        "name": "Lovable (Platform Builder)",
+        "icon": "code",
+        "monthToDate": 20.00,
+        "lastMonth": 20.00,
+        "dailyAvg": 0.67,
+        "trend": "stable",
+        "note": "Monthly plan — React/Vite/Tailwind builds + email API",
+        "category": "infrastructure"
+      },
+      {
+        "id": "meta-ads",
+        "name": "Meta Ads (Facebook/Instagram)",
+        "icon": "megaphone",
+        "monthToDate": 1250.00,
+        "lastMonth": 3800.00,
+        "dailyAvg": 125.00,
+        "trend": "down",
+        "note": "Headshot event campaigns — known optimization weakness",
+        "category": "advertising"
+      }
+    ],
+    "daily": [
+      { "date": "2026-04-01", "total": 48.20 },
+      { "date": "2026-04-02", "total": 52.10 },
+      { "date": "2026-04-03", "total": 61.30 },
+      { "date": "2026-04-04", "total": 55.80 },
+      { "date": "2026-04-05", "total": 72.40 },
+      { "date": "2026-04-06", "total": 38.90 },
+      { "date": "2026-04-07", "total": 44.60 },
+      { "date": "2026-04-08", "total": 58.20 },
+      { "date": "2026-04-09", "total": 63.10 },
+      { "date": "2026-04-10", "total": 41.80 }
+    ]
+  },
   "projects": [
     {
       "id": "signature-branding-app",
@@ -174,6 +270,7 @@
     }
   ],
   "timeline": [
+    { "date": "2026-04-10", "project": "project-tracker", "event": "API Cost Tracker panel added — tracks all service spend with budget alerts", "type": "launch" },
     { "date": "2026-04-10", "project": "ai-branding-image-library", "event": "AI Branding Image Library project added to tracker", "type": "launch" },
     { "date": "2026-04-10", "project": "seo-strategy", "event": "SEO Strategy project added — targeting organic growth across all markets", "type": "launch" },
     { "date": "2026-04-10", "project": "project-tracker", "event": "Project Tracker dashboard created", "type": "launch" },

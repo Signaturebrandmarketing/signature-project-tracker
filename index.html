@@ -115,6 +115,123 @@
   }
   .target-label { font-size: 0.65rem; color: var(--muted); white-space: nowrap; }
 
+  /* COST TRACKER */
+  .cost-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .cost-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .cost-header-left { display: flex; align-items: center; gap: 0.5rem; }
+  .cost-header-left::before { content: ''; width: 3px; height: 14px; background: var(--green); border-radius: 2px; }
+  .cost-header h2 { font-size: 0.85rem; font-weight: 600; }
+  .cost-total {
+    text-align: right;
+  }
+  .cost-total .amount { font-size: 1.5rem; font-weight: 800; line-height: 1; }
+  .cost-total .sub { font-size: 0.62rem; color: var(--muted); margin-top: 0.15rem; }
+  .cost-budget-bar {
+    margin-bottom: 1.25rem;
+  }
+  .cost-budget-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    color: var(--muted);
+    margin-bottom: 0.35rem;
+  }
+  .cost-budget-track {
+    height: 8px;
+    background: var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  .cost-budget-fill {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.8s ease;
+  }
+  .cost-budget-alert {
+    font-size: 0.68rem;
+    margin-top: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    display: none;
+  }
+  .cost-budget-alert.show { display: block; }
+  .cost-services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+  }
+  .cost-service {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.02);
+    transition: background 0.2s;
+  }
+  .cost-service:hover { background: rgba(255,255,255,0.04); }
+  .cost-svc-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+  .svc-ai { background: rgba(167,139,250,0.15); color: var(--accent); }
+  .svc-infrastructure { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .svc-platform { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .svc-payments { background: rgba(52,211,153,0.15); color: var(--green); }
+  .svc-advertising { background: rgba(248,113,113,0.15); color: var(--red); }
+  .cost-svc-info { flex: 1; min-width: 0; }
+  .cost-svc-name { font-size: 0.74rem; font-weight: 500; }
+  .cost-svc-note { font-size: 0.6rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cost-svc-amount { text-align: right; flex-shrink: 0; }
+  .cost-svc-mtd { font-size: 0.8rem; font-weight: 700; }
+  .cost-svc-trend { font-size: 0.58rem; }
+  .trend-up { color: var(--red); }
+  .trend-down { color: var(--green); }
+  .trend-stable { color: var(--muted); }
+  .cost-chart {
+    margin-top: 0.75rem;
+  }
+  .cost-chart-title { font-size: 0.7rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .cost-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 50px;
+  }
+  .cost-bar-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .cost-bar {
+    width: 100%;
+    border-radius: 3px 3px 0 0;
+    transition: height 0.5s ease;
+    min-height: 2px;
+  }
+  .cost-bar-label { font-size: 0.5rem; color: var(--muted); }
+
   /* PRIORITY LIST */
   .priority-section {
     background: var(--card);
@@ -291,6 +408,10 @@
     .score-number .value { font-size: 1.8rem; }
     .score-breakdown { justify-items: center; }
     .priority-item { font-size: 0.72rem; }
+    .cost-panel { padding: 1.1rem; }
+    .cost-header { flex-direction: column; gap: 0.75rem; }
+    .cost-total { text-align: left; }
+    .cost-svc-note { max-width: 140px; }
   }
   @media (max-width: 480px) {
     body { padding: 1rem; }
@@ -306,6 +427,7 @@
   </div>
 
   <div id="hero-score"></div>
+  <div id="cost-tracker"></div>
   <div id="priority-section"></div>
   <div class="stats-bar" id="stats-bar"></div>
   <div class="filter-bar" id="filter-bar"></div>
@@ -462,6 +584,71 @@ function renderPriorities(data) {
     </div>`;
 }
 
+function renderCosts(data) {
+  const c = data.costs;
+  if (!c) { document.getElementById('cost-tracker').innerHTML = ''; return; }
+  const total = c.services.reduce((s, v) => s + v.monthToDate, 0);
+  const lastTotal = c.services.reduce((s, v) => s + v.lastMonth, 0);
+  const budget = c.monthlyBudget || 500;
+  const pctUsed = Math.min(100, Math.round((total / budget) * 100));
+  const budgetColor = pctUsed >= 90 ? 'var(--red)' : pctUsed >= (c.alertThreshold || 80) ? 'var(--yellow)' : 'var(--green)';
+  const overBudget = total > budget;
+  const alertPct = c.alertThreshold || 80;
+  const showAlert = pctUsed >= alertPct;
+
+  const iconMap = {brain:'\u{1F9E0}',database:'\u{1F5C4}',image:'\u{1F5BC}',message:'\u{1F4AC}',dollar:'\u{1F4B3}',code:'\u{1F4BB}',megaphone:'\u{1F4E3}'};
+  const trendArrow = {up:'\u2191 Up',down:'\u2193 Down',stable:'\u2192 Stable'};
+  const trendClass = {up:'trend-up',down:'trend-down',stable:'trend-stable'};
+
+  const sorted = [...c.services].sort((a, b) => b.monthToDate - a.monthToDate);
+  const daily = c.daily || [];
+  const maxDaily = Math.max(...daily.map(d => d.total), 1);
+
+  document.getElementById('cost-tracker').innerHTML = `
+    <div class="cost-panel">
+      <div class="cost-header">
+        <div class="cost-header-left"><h2>API & Service Costs</h2></div>
+        <div class="cost-total">
+          <div class="amount" style="color:${budgetColor}">$${total.toFixed(2)}</div>
+          <div class="sub">${c.currentMonth} MTD &middot; Budget $${budget}</div>
+        </div>
+      </div>
+      <div class="cost-budget-bar">
+        <div class="cost-budget-labels">
+          <span>$0</span>
+          <span>${pctUsed}% of $${budget} budget</span>
+          <span>$${budget}</span>
+        </div>
+        <div class="cost-budget-track">
+          <div class="cost-budget-fill" style="width:${pctUsed}%;background:${budgetColor}"></div>
+        </div>
+        ${showAlert ? '<div class="cost-budget-alert show" style="background:rgba('+(overBudget?'248,113,113':'251,191,36')+',0.1);color:'+(overBudget?'var(--red)':'var(--yellow)')+'">'+(overBudget?'Over budget by $'+(total-budget).toFixed(2)+' \u2014 review spend':'Approaching budget limit \u2014 '+pctUsed+'% used with '+(30-new Date().getDate())+' days remaining')+'</div>' : ''}
+      </div>
+      <div class="cost-services">
+        ${sorted.map(s => {
+          const change = s.lastMonth > 0 ? Math.round(((s.monthToDate - s.lastMonth) / s.lastMonth) * 100) : 0;
+          return '<div class="cost-service">'+
+            '<div class="cost-svc-icon svc-'+s.category+'">'+(iconMap[s.icon]||'\u{1F4A1}')+'</div>'+
+            '<div class="cost-svc-info"><div class="cost-svc-name">'+s.name+'</div><div class="cost-svc-note">'+s.note+'</div></div>'+
+            '<div class="cost-svc-amount"><div class="cost-svc-mtd">$'+s.monthToDate.toFixed(2)+'</div>'+
+            '<div class="cost-svc-trend '+trendClass[s.trend]+'">'+(trendArrow[s.trend]||'')+
+            (change!==0?' '+(change>0?'+':'')+change+'%':'')+'</div></div></div>';
+        }).join('')}
+      </div>
+      <div class="cost-chart">
+        <div class="cost-chart-title">Daily Spend (${c.currentMonth})</div>
+        <div class="cost-bars">
+          ${daily.map(d => {
+            const h = Math.max(2, Math.round((d.total / maxDaily) * 46));
+            const day = new Date(d.date+'T00:00:00').getDate();
+            const barColor = d.total > (budget/30)*1.5 ? 'var(--yellow)' : 'var(--accent)';
+            return '<div class="cost-bar-col"><div class="cost-bar" style="height:'+h+'px;background:'+barColor+'"></div><div class="cost-bar-label">'+day+'</div></div>';
+          }).join('')}
+        </div>
+      </div>
+    </div>`;
+}
+
 function renderFilters(){
   document.getElementById('filter-bar').innerHTML=filterDefs.map(f=>
     '<button class="filter-btn'+(currentFilter===f.key?' active':'')+'" data-filter="'+f.key+'">'+f.label+'</button>'
@@ -485,6 +672,7 @@ function render(data){
   const P=data.projects;
 
   renderHero(data);
+  renderCosts(data);
   renderPriorities(data);
 
   const total=P.length,act=P.filter(p=>p.status==='active').length,bld=P.filter(p=>p.status==='in-progress'||p.health==='building').length;
