@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-16T12:00:00Z",
+  "lastUpdated": "2026-04-16T14:00:00Z",
   "updatedBy": "Claude",
   "target": 95,
   "costs": {
@@ -107,8 +107,8 @@
       "weight": 3,
       "description": "AI-powered branding platform — main Lovable app",
       "modules": [
-        { "name": "Creative Studio", "status": "in-progress", "note": "Effects panel added (shadow/glow/outline), gradients, new shapes — Canva-level upgrades in progress" },
-        { "name": "Templates System", "status": "in-progress", "note": "70+ variants exist — variant previewer + industry packs next" },
+        { "name": "Creative Studio", "status": "complete", "note": "Effects panel, gradients, 3 new shapes, text rotation, stock photos — Canva-level" },
+        { "name": "Templates System", "status": "complete", "note": "70+ variants with visual previewer — expand to see all styles before selecting" },
         { "name": "AI Image Generation", "status": "complete", "note": "Working" },
         { "name": "Growth Partner Dashboard", "status": "complete", "note": "6 enrollments, auto-managed" },
         { "name": "Authority Sprint", "status": "complete", "note": "Working" },
@@ -296,6 +296,8 @@
   ],
   "timeline": [
     { "date": "2026-04-16", "project": "signature-branding-app", "event": "Creative Studio upgraded — effects panel (shadow/glow/outline), gradient editor, 3 new shapes (star/arrow/diamond), text rotation + letter spacing", "type": "milestone" },
+    { "date": "2026-04-16", "project": "signature-branding-app", "event": "Stock photo panel (Unsplash integration) added to Creative Studio Add Elements", "type": "launch" },
+    { "date": "2026-04-16", "project": "signature-branding-app", "event": "Template variant previewer built — expand any template to see all styles before selecting", "type": "launch" },
     { "date": "2026-04-16", "project": "signature-branding-app", "event": "Canvas type system extended with ElementEffects, GradientFill, advanced text properties", "type": "launch" },
     { "date": "2026-04-12", "project": "campaign-system", "event": "Campaign engine first run — 48 clients auto-enrolled in reactivation-winback", "type": "milestone" },
     { "date": "2026-04-12", "project": "campaign-system", "event": "Campaign engine edge function deployed and tested — segments, enrollments, email delivery, conversion detection", "type": "launch" },
