@@ -277,6 +277,52 @@
     font-weight: 600;
   }
 
+  .ci-topics {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--border);
+  }
+  .ci-topics-list {
+    list-style: none;
+    counter-reset: topic;
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
+  .ci-topics-list li {
+    counter-increment: topic;
+    font-size: 0.8rem;
+    color: var(--charcoal);
+    padding: 0.35rem 0 0.35rem 2.1rem;
+    position: relative;
+    line-height: 1.4;
+    border-bottom: 1px dotted var(--cream-alt);
+  }
+  .ci-topics-list li:last-child { border-bottom: none; }
+  .ci-topics-list li::before {
+    content: counter(topic);
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--terracotta-soft);
+    color: var(--terracotta);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+  .ci-topics-note {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    background: var(--cream);
+    border-radius: 4px;
+  }
   .ci-subtasks { list-style: none; }
   .ci-subtask {
     display: grid;
@@ -558,7 +604,36 @@ const contentCols = [
           "Use bullet-point scripts on an iPad just below the camera. Never read word-for-word — talk like you're explaining to a friend at your kitchen table.",
           "Batch 3–5 lessons per day. Keep the same outfit, hair, and setup within each batch."
         ],
-        subs: ["Pick 3 filming days on the calendar","Test your lighting + mic setup","Order lav mic + tripod","Film Module 1 as a pilot","Review pilot before batching the rest"]
+        subs: ["Pick 3 filming days on the calendar","Test your lighting + mic setup","Order lav mic + tripod","Film Module 1 as a pilot","Review pilot before batching the rest"],
+        topics: [
+          "Welcome + How to Use This Course",
+          "Why Diet Culture Fails (and Why You Haven't)",
+          "Your Food Story: The Invisible Script",
+          "What Purposeful Eating Actually Means",
+          "Your Starting Point Assessment",
+          "Shift 1: From Rules to Awareness",
+          "Shift 2: From Restriction to Permission",
+          "Shift 3: From Shame to Curiosity",
+          "Integration: Journaling the Shifts",
+          "The Hunger–Fullness Scale (Without the Diet Vibes)",
+          "The Satisfaction Factor",
+          "Emotional Eating Is Not the Enemy",
+          "Building Your Personal Eating Rhythm",
+          "What Your Kids Are Really Learning from You",
+          "Ending Picky Eating Without Power Struggles",
+          "Talking About Bodies & Food With Kids",
+          "Family Meals Without the Stress",
+          "Partner & Extended Family: Navigating Pushback",
+          "Meal Planning That Actually Fits Your Week",
+          "The Peaceful Pantry",
+          "Grocery Shopping Without the Overwhelm",
+          "Cooking: Good Enough > Perfect",
+          "When Life Gets Messy (Travel, Holidays, Sick Weeks)",
+          "What to Do When You Slip (Because You Will)",
+          "Measuring Progress Without a Scale",
+          "Building Your Purposeful Plate Plan",
+          "Your Next 90 Days + Graduation"
+        ]
       },
       {
         id: "v-reset",
@@ -572,7 +647,16 @@ const contentCols = [
           "Film all 7 in one 4-hour block — same outfit, same energy.",
           "End each lesson with a 10-second pause before cutting — gives editor clean ins/outs."
         ],
-        subs: ["Schedule the 4-hour block","Film all 7 in order","Upload to Kajabi + set daily drip"]
+        subs: ["Schedule the 4-hour block","Film all 7 in order","Upload to Kajabi + set daily drip"],
+        topics: [
+          "Day 1 — The Pause: 3 breaths before every meal",
+          "Day 2 — The Hunger Ask: the 1–10 scale as awareness",
+          "Day 3 — The Permission Experiment: one 'forbidden' food, allowed",
+          "Day 4 — The Satisfaction Scan: halfway-through-meal check-in",
+          "Day 5 — The Shame Reframe: what was happening 30 min before?",
+          "Day 6 — The Family Ripple: what you model vs. what you say",
+          "Day 7 — The Peaceful Plate Promise: your one-page commitment"
+        ]
       },
       {
         id: "v-vsl",
@@ -586,7 +670,10 @@ const contentCols = [
           "Will autoplay muted on the sales page — make sure captions are clean and on-brand.",
           "Rehearse 5 times. Film 3 takes. Pick the best one."
         ],
-        subs: ["Write VSL outline","Rehearse 5 times","Film 3 takes","Add captions + upload"]
+        subs: ["Write VSL outline","Rehearse 5 times","Film 3 takes","Add captions + upload"],
+        topics: [
+          "\"The 3 Shifts That End Food Stress for Good\" — the single VSL topic"
+        ]
       },
       {
         id: "v-reels",
@@ -600,7 +687,33 @@ const contentCols = [
           "Add on-screen text that repeats your key point — 85% of viewers watch without sound.",
           "Finish with one CTA: 'Save this,' 'Tag a friend,' or 'Link in bio.'"
         ],
-        subs: ["Follow 5 mindful-eating creators for Reels ideas","Batch record 8 Reels (month's worth)","Caption + schedule in Later or Metricool"]
+        subs: ["Follow 5 mindful-eating creators for Reels ideas","Batch record 8 Reels (month's worth)","Caption + schedule in Later or Metricool"],
+        topics: [
+          "\"Say this, not that\" — 3 diet-culture language swaps",
+          "The 3-breath pause (real-time demo, 15 sec)",
+          "\"All foods fit\" — what I mean and what I don't",
+          "The hunger scale in 30 seconds",
+          "3 things I wish every mom knew about kids & food",
+          "\"What's actually on my plate today\" — unposed day-in-the-life",
+          "Why Monday is the worst day to start",
+          "What to say when Grandma comments on your plate",
+          "My Sunday reset in 45 minutes (fast-cut)",
+          "The \"clean your plate\" myth",
+          "Satisfaction > fullness (visualized)",
+          "Emotional eating isn't the enemy — 30-sec reframe",
+          "Birthday party + cake strategy",
+          "Pantry staples I'd save in a fire",
+          "3 sentences to stop saying at the table",
+          "The 4 words that changed my food relationship: awareness, not rules",
+          "Why I stopped weighing myself",
+          "One meal I used to feel guilty about",
+          "What \"balanced\" actually means (25-sec reframe)",
+          "Kitchen reset on a low-energy day",
+          "My answer to \"should I be tracking?\"",
+          "The body wisdom you were born with (slow, reflective)",
+          "Family meals: growing up vs. now (split-screen)",
+          "\"Peace is not a reward for reaching the goal\""
+        ]
       },
       {
         id: "v-qa",
@@ -614,7 +727,21 @@ const contentCols = [
           "Don't perform. Pause. Think. Answer like you're on the phone with one person.",
           "Keep a 'parking lot' for questions you can't fully answer — address in next month's call."
         ],
-        subs: ["Create monthly Q&A form in community","Pick a recurring time (e.g. 2nd Tuesday 1 PM ET)","Add to calendar + community announcement"]
+        subs: ["Create monthly Q&A form in community","Pick a recurring time (e.g. 2nd Tuesday 1 PM ET)","Add to calendar + community announcement"],
+        topics: [
+          "Jan — New year, no new diet",
+          "Feb — Love & food (partners, dinner dynamics)",
+          "Mar — Gentle spring reset (no cleanse)",
+          "Apr — Kids & bodies: what to say at every age",
+          "May — Mother's Day & mom guilt",
+          "Jun — Summer & swimsuit anxiety",
+          "Jul — Family gatherings survival kit",
+          "Aug — Back-to-school lunches + mornings",
+          "Sep — Fall rhythm reset",
+          "Oct — Halloween + candy peace",
+          "Nov — Thanksgiving without the food drama",
+          "Dec — Holidays, travel, grace"
+        ]
       }
     ]
   },
@@ -635,7 +762,58 @@ const contentCols = [
           "One subject, one CTA. Never more than two links.",
           "Save your first 20 emails as a swipe file — they'll become book chapters and blog posts later."
         ],
-        subs: ["Pick your weekly send day + time","Set up email template in Kajabi","Write first 4 emails before going live"]
+        subs: ["Pick your weekly send day + time","Set up email template in Kajabi","Write first 4 emails before going live"],
+        topics: [
+          "Welcome — one thing to try today",
+          "I tried every diet. Then I stopped.",
+          "The sentence that changed everything: 'Food is information, not character.'",
+          "What your body is actually telling you",
+          "The most counterintuitive thing I'll teach you: permission",
+          "What happened when I gave myself permission for a week",
+          "Maria's Tuesday morning — a client story",
+          "You are not behind",
+          "What my kids see me do at the table",
+          "The 3-minute morning ritual that changes the whole day",
+          "Why diets work at first, and fail always",
+          "One question that will shift one meal this week",
+          "What your kids are learning when you're not teaching",
+          "The division of responsibility in plain English",
+          "Picky eating: the calm approach",
+          "'I'm fat' — when your child says it",
+          "Partners who don't get it yet",
+          "Grandparents, aunts, and food comments",
+          "Birthday parties without the stress",
+          "The sugar conversation I wish every mom heard",
+          "Reading labels vs. reading bodies",
+          "Family dinners that don't feel like performance",
+          "School lunches without the performance",
+          "The hunger scale, without the diet vibes",
+          "Why satisfaction matters more than fullness",
+          "Your body's wisdom was never broken",
+          "Emotional eating isn't the enemy",
+          "The H.A.L.T. check — reimagined",
+          "Rest is a form of nourishment",
+          "Swimsuits, mirrors, and peace",
+          "The non-scale wins nobody talks about",
+          "Moving your body without making it punishment",
+          "Sleep is the missing nutrient",
+          "The body you had at 25 is not the body you're supposed to have at 45",
+          "One thing I stopped tracking",
+          "Fall rituals — morning light and warm mugs",
+          "Halloween and the candy conversation",
+          "Thanksgiving without the food drama",
+          "Leftovers, guilt, and grace",
+          "The holidays are not a test",
+          "When the relative comments on your plate",
+          "Gifting without diet-culture gifting",
+          "A mid-December permission slip",
+          "New Year's is a marketing campaign",
+          "What I don't plan to change next year",
+          "The slow shifts that compound",
+          "A letter to yourself at year's end",
+          "A soft welcome into the new year"
+        ],
+        note: "52 weeks of topics · a full year before you need to brainstorm again"
       },
       {
         id: "w-ig",
@@ -649,7 +827,40 @@ const contentCols = [
           "Rotate CTAs: 'save this' / 'tag a friend' / 'DM me the word PEACE' / 'link in bio'.",
           "Don't stack hashtags in the caption — put them in the first comment."
         ],
-        subs: ["Review the 30-post batch doc","Rewrite 10 at a time in your voice","Schedule in Later or Metricool"]
+        subs: ["Review the 30-post batch doc","Rewrite 10 at a time in your voice","Schedule in Later or Metricool"],
+        topics: [
+          "The sentence I say to myself when shame shows up",
+          "What I used to mean by 'I was good today' — and what I mean now",
+          "Why 'starting over' is a diet-culture trap",
+          "The thought I had at 2am that changed everything",
+          "A reframe for the woman in the mirror",
+          "What permission actually costs you (nothing)",
+          "Why I don't believe in willpower anymore",
+          "The peaceful version of you is closer than you think",
+          "Why 'clean eating' isn't as clean as they told you",
+          "Protein, carbs, fat — without the moral weight",
+          "What your afternoon crash is actually about",
+          "Fiber is not a diet — it's a friend",
+          "Breakfast is not a trap (and not a requirement)",
+          "What 'balanced' means in real life",
+          "The phrase I banned at my family table",
+          "What I say at school pickup when food comes up",
+          "Teen daughters and the weight conversation",
+          "When your kid says 'I don't like my body'",
+          "Birthday cake, no bargaining",
+          "What dinner looked like in my childhood vs. now",
+          "A peaceful morning in 60 seconds",
+          "The one kitchen ritual I never skip",
+          "Why I romanticize my ordinary plate",
+          "A Sunday that isn't a Sunday-scaries",
+          "Slow coffee as a radical act",
+          "Rest is a form of nourishment",
+          "Touch, sleep, friendship — the wellness nobody sells you",
+          "The 5 non-scale wins I'm tracking this month",
+          "What my doctor doesn't ask me",
+          "Being over 40 is not a before-picture"
+        ],
+        note: "30 more topics for month 2 — first 30 are in the IG batch doc"
       },
       {
         id: "w-ebooks",
@@ -663,7 +874,13 @@ const contentCols = [
           "Pull material from your Instagram captions and emails — you're probably already writing 40% of each ebook without realizing it.",
           "Design in Canva Pro using the same template across all 3 for visual consistency."
         ],
-        subs: ["Record voice memos for Book 1","Transcribe + arrange into chapters","Developmental editor pass","Canva layout + export PDF"]
+        subs: ["Record voice memos for Book 1","Transcribe + arrange into chapters","Developmental editor pass","Canva layout + export PDF"],
+        topics: [
+          "Ebook 1 — The Mindful Family Kitchen (55 pp)",
+          "Ebook 2 — Eating Through Emotions (50 pp)",
+          "Ebook 3 — Raising Intuitive Eaters (55 pp)"
+        ],
+        note: "Full chapter-level outlines in 03-ebooks/ebook-outlines.md"
       },
       {
         id: "w-stories",
@@ -677,7 +894,17 @@ const contentCols = [
           "Offer a small thank-you: $20 off any future purchase or free ebook download.",
           "Store in a Google Doc organized by product. You'll reach for these for years."
         ],
-        subs: ["Create testimonial request DM template","DM first 10 Reset graduates","Build testimonials Google Doc"]
+        subs: ["Create testimonial request DM template","DM first 10 Reset graduates","Build testimonials Google Doc"],
+        topics: [
+          "\"What's one small thing that's different now?\"",
+          "\"What's a moment you noticed the old pattern — and didn't follow it?\"",
+          "\"Put this week on a scale from stress-to-peace. Where are you?\"",
+          "\"What's one thing your kids have seen you do differently?\"",
+          "\"Is there a meal you eat now that you used to avoid?\"",
+          "\"Has anyone in your family noticed the shift?\"",
+          "\"What would you tell someone who's where you were 90 days ago?\""
+        ],
+        note: "DM prompts that generate testimonial-ready responses"
       },
       {
         id: "w-blog",
@@ -691,7 +918,34 @@ const contentCols = [
           "Use H2 subheadings every 300 words. Add one real photo (yours, not stock) every 500 words.",
           "Repurpose each blog post into 5 IG posts + 1 email. You write once, publish four times."
         ],
-        subs: ["Pick first 8 keywords","Write blog calendar for Q1","Draft post #1","Install Squarespace SEO meta + alt text"]
+        subs: ["Pick first 8 keywords","Write blog calendar for Q1","Draft post #1","Install Squarespace SEO meta + alt text"],
+        topics: [
+          "Mindful eating for moms — what it is, what it isn't",
+          "How to stop the diet-binge cycle for good",
+          "What to say when your kid says 'I'm fat' — scripts by age",
+          "Picky eating: why pressure backfires and what works instead",
+          "The division of responsibility in family meals, explained",
+          "How to be a non-diet mom in a diet-culture world",
+          "Mindful eating vs. intuitive eating — the real difference",
+          "9 phrases diet culture taught us (and what to say instead)",
+          "Family meal ideas that aren't performative",
+          "The 3 shifts that end food stress for women over 40",
+          "Why emotional eating isn't a willpower problem",
+          "Why Monday is the worst day to start a new way of eating",
+          "What a peaceful relationship with food looks like",
+          "How to grocery shop without the overwhelm — 20-min protocol",
+          "Raising kids who don't hate their bodies",
+          "What 'all foods fit' actually means (and what it doesn't)",
+          "Why I stopped weighing myself — and what changed",
+          "The honest truth about satisfaction vs. fullness",
+          "Holiday eating: a non-diet survival guide",
+          "School lunches without the food police mindset",
+          "What to do when a family member comments on your plate",
+          "Why Sunday meal prep is burning out moms",
+          "The 7 things I wish I'd known before 40",
+          "How to talk about food in front of your kids"
+        ],
+        note: "24 topics · one per 2 weeks for a full year of SEO content"
       }
     ]
   },
@@ -981,6 +1235,7 @@ function renderContent() {
             <h4>Recommendations</h4>
             <ul class="ci-recs">${recsHtml}</ul>
             ${subsHtml ? `<h4 style="margin-top:0.5rem;">First steps</h4><ul class="ci-subtasks">${subsHtml}</ul>` : ''}
+            ${it.topics ? `<div class="ci-topics"><h4>Topic ideas (${it.topics.length})</h4><ul class="ci-topics-list">${it.topics.map(t => `<li>${t}</li>`).join('')}</ul>${it.note ? `<div class="ci-topics-note">${it.note}</div>` : ''}</div>` : ''}
           </div>
         </div>
       </div>`;
