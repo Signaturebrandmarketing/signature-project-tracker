@@ -236,22 +236,22 @@
       "id": "seo-strategy",
       "name": "SEO Strategy & Implementation",
       "status": "in-progress",
-      "health": "needs-attention",
+      "health": "building",
       "weight": 3,
       "description": "Organic search strategy for signatureheadshotevent.com + signaturebranding.app — reduce dependency on paid ads",
       "modules": [
-        { "name": "Keyword Research", "status": "in-progress", "note": "Headshot + branding terms by city" },
-        { "name": "On-Page SEO", "status": "planned", "note": "Meta tags, schema, headers" },
-        { "name": "Location Pages", "status": "planned", "note": "City-specific landing pages" },
-        { "name": "Content Strategy", "status": "planned", "note": "Blog, guides, case studies" },
-        { "name": "Technical SEO", "status": "planned", "note": "Core Web Vitals, sitemap, speed" },
-        { "name": "Local SEO / GMB", "status": "planned", "note": "Google Business profiles per market" },
+        { "name": "Keyword Research", "status": "complete", "note": "Done for beauty — hairstylist/salon/esthetician/nail tech clusters" },
+        { "name": "On-Page SEO", "status": "complete", "note": "Meta tags, OG, Twitter Card, keywords, canonicals upgraded sitewide" },
+        { "name": "Technical SEO", "status": "complete", "note": "Preconnect hints, noscript fallback, theme color, robots.txt hardened" },
+        { "name": "Schema Markup", "status": "complete", "note": "Service, LocalBusiness, VideoObject, FAQPage, Breadcrumbs, AggregateRating" },
+        { "name": "PPC Landing Pages", "status": "complete", "note": "4 beauty sub-variants: salon-owners, hairstylists, estheticians, nail-techs" },
+        { "name": "Sitemap Rebuild", "status": "complete", "note": "21 industries + image/video extensions + beauty priority 1.0" },
+        { "name": "Location Pages", "status": "complete", "note": "8 locations (Winter Haven, Atlanta, Tampa, Orlando, etc.)" },
+        { "name": "Content Strategy", "status": "in-progress", "note": "Blog, guides, case studies — next phase" },
+        { "name": "Local SEO / GMB", "status": "planned", "note": "Google Business profiles per market — need manual setup" },
         { "name": "Backlink Strategy", "status": "planned", "note": "Local partnerships, directories" }
       ],
-      "lastActivity": "2026-04-10",
-      "issues": [
-        { "severity": "warning", "text": "Known weakness — $3-5k/mo ad spend with no organic offset" }
-      ]
+      "lastActivity": "2026-04-16"
     },
     {
       "id": "campaign-system",
@@ -296,6 +296,8 @@
   ],
   "timeline": [
     { "date": "2026-04-16", "project": "signature-branding-app", "event": "Creative Studio upgraded — effects panel (shadow/glow/outline), gradient editor, 3 new shapes (star/arrow/diamond), text rotation + letter spacing", "type": "milestone" },
+    { "date": "2026-04-16", "project": "seo-strategy", "event": "SEO overhaul shipped — beauty page upgraded for paid ads: 12 FAQs, @graph schema, 4 PPC sub-variants (salon-owners/hairstylists/estheticians/nail-techs)", "type": "milestone" },
+    { "date": "2026-04-16", "project": "seo-strategy", "event": "Sitewide technical SEO — index.html preconnects, noscript fallback, Organization schema, sitemap rebuild with 21 industries + image/video extensions", "type": "launch" },
     { "date": "2026-04-16", "project": "signature-branding-app", "event": "Template library expanded to 51 — IG Feed, IG Story, Facebook, LinkedIn, YouTube variants across 7 industries", "type": "milestone" },
     { "date": "2026-04-16", "project": "signature-branding-app", "event": "17 industry templates seeded — Real Estate, Coach, Restaurant, Fitness, Speaker, Beauty, Photographer (IG + LinkedIn)", "type": "launch" },
     { "date": "2026-04-16", "project": "signature-branding-app", "event": "3 AI agents built — Brand Designer, Template Factory, Content Scheduler — all as Supabase edge functions", "type": "milestone" },
