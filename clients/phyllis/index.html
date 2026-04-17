@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purposefully Eating — Brand Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F1E6;
+    --cream-alt: #EDE3D2;
+    --cream-card: #FDF9F0;
+    --sage: #8A9A5B;
+    --sage-light: #AFBD88;
+    --sage-soft: #E3E8D3;
+    --terracotta: #C87F5A;
+    --terracotta-soft: #F2DCCE;
+    --walnut: #6B4E32;
+    --walnut-soft: #C3B097;
+    --charcoal: #2B2A28;
+    --muted: #6F6B63;
+    --gold: #D4AF37;
+    --border: #D9CEB8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+    line-height: 1.55;
+  }
+  .container { max-width: 1280px; margin: 0 auto; }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .header h1 em { color: var(--terracotta); font-style: italic; }
+  .header .sub {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 0.4rem;
+    font-style: italic;
+  }
+  .header .meta {
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .header .meta strong { color: var(--sage); font-weight: 600; }
+
+  /* SECTION */
+  .section { margin-bottom: 3rem; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .section-head .hint {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* REVENUE HERO */
+  .revenue-hero {
+    background: var(--cream-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .revenue-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.75rem;
+    font-weight: 700;
+    color: var(--sage);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .revenue-label {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 0.35rem;
+    margin-bottom: 1.25rem;
+  }
+  .revenue-split {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .revenue-split-item .v {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--walnut);
+  }
+  .revenue-split-item .l {
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 0.2rem;
+  }
+  .calculator {
+    background: var(--cream);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .calculator h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .slider-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+  .slider-row label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    min-width: 90px;
+  }
+  .slider-row input[type=range] {
+    flex: 1;
+    accent-color: var(--sage);
+  }
+  .slider-row output {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--charcoal);
+    min-width: 60px;
+    text-align: right;
+    font-size: 1rem;
+  }
+  .calc-result {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .calc-result .label { color: var(--muted); font-size: 0.85rem; }
+  .calc-result .value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--terracotta);
+  }
+
+  /* PRODUCTS */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+    gap: 1rem;
+  }
+  .product {
+    background: var(--cream-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.35rem;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .product:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(107, 78, 50, 0.08);
+  }
+  .product-tier {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 0.85rem;
+  }
+  .tier-lead { background: var(--sage-soft); color: var(--sage); }
+  .tier-trip { background: var(--terracotta-soft); color: var(--terracotta); }
+  .tier-flag { background: var(--gold); color: var(--charcoal); }
+  .tier-back { background: var(--cream-alt); color: var(--walnut); }
+  .tier-pod { background: var(--walnut-soft); color: var(--walnut); }
+  .tier-high { background: var(--charcoal); color: var(--cream); }
+
+  .product h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+  }
+  .product .desc {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    min-height: 38px;
+  }
+  .product .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--border);
+  }
+  .product .price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--terracotta);
+  }
+  .product .format {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .product .status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+  .status-ready { background: var(--sage); color: white; }
+  .status-draft { background: var(--terracotta-soft); color: var(--terracotta); }
+  .status-plan { background: var(--cream-alt); color: var(--muted); }
+
+  /* CONTENT */
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+  .content-col {
+    background: var(--cream-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .content-col h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  .content-col .col-sub {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  .content-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .content-item:last-child { border-bottom: none; }
+  .content-item .icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    font-size: 0.95rem;
+    background: var(--sage-soft);
+    color: var(--sage);
+  }
+  .content-item.ter .icon { background: var(--terracotta-soft); color: var(--terracotta); }
+  .content-item.wal .icon { background: var(--walnut-soft); color: var(--walnut); }
+  .content-item .title {
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .content-item .detail {
+    font-size: 0.73rem;
+    color: var(--muted);
+    margin-top: 0.1rem;
+  }
+  .content-item .cadence {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    background: var(--cream-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem;
+  }
+  .tl-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1.25rem;
+    padding: 1rem 0;
+    border-bottom: 1px dashed var(--border);
+    align-items: start;
+  }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-phase {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--terracotta);
+  }
+  .tl-phase .weeks {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 0.15rem;
+    display: block;
+    font-weight: 500;
+  }
+  .tl-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  .tl-content p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .tl-tasks { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tl-task {
+    font-size: 0.72rem;
+    padding: 3px 9px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--charcoal);
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+    font-style: italic;
+  }
+  .palette-strip {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin: 1rem 0 0.5rem;
+  }
+  .palette-swatch {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  @media (max-width: 780px) {
+    .revenue-hero { grid-template-columns: 1fr; }
+    .header { flex-direction: column; gap: 1rem; }
+    .header .meta { text-align: left; }
+    .tl-row { grid-template-columns: 1fr; }
+    .revenue-amount { font-size: 3rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <h1>Purposefully Eating <em>— Brand Dashboard</em></h1>
+      <div class="sub">Mindful eating, without guilt or restriction.</div>
+    </div>
+    <div class="meta">
+      Client <strong>Phyllis Inman</strong><br>
+      Inman Institute LLC<br>
+      <span style="opacity:0.7">Prepared by Signature Branding</span>
+    </div>
+  </div>
+
+  <!-- REVENUE HERO -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Estimated Revenue Potential</h2>
+      <div class="hint">Conservative projections — first 6 months of funnel</div>
+    </div>
+
+    <div class="revenue-hero">
+      <div>
+        <div class="revenue-amount">$14,450</div>
+        <div class="revenue-label">per 1,000 email subscribers · 6-month window</div>
+
+        <div class="revenue-split">
+          <div class="revenue-split-item">
+            <div class="v">$216</div>
+            <div class="l">per 100 subs · Reset ($27)</div>
+          </div>
+          <div class="revenue-split-item">
+            <div class="v">$591</div>
+            <div class="l">per 100 subs · Flagship</div>
+          </div>
+          <div class="revenue-split-item">
+            <div class="v">$638</div>
+            <div class="l">per 100 subs · Back catalog</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calculator">
+        <h3>Revenue Calculator</h3>
+        <div class="slider-row">
+          <label>Subscribers</label>
+          <input type="range" id="subs" min="100" max="10000" step="100" value="1000">
+          <output id="subs-out">1,000</output>
+        </div>
+        <div class="slider-row">
+          <label>Conv. mult.</label>
+          <input type="range" id="mult" min="0.5" max="2" step="0.1" value="1">
+          <output id="mult-out">1.0×</output>
+        </div>
+        <div class="calc-result">
+          <div class="label">Projected 6-month revenue</div>
+          <div class="value" id="projected">$14,450</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Product Stack</h2>
+      <div class="hint">12 products across 6 tiers — click any card to drill into the source doc</div>
+    </div>
+    <div class="products" id="products"></div>
+  </div>
+
+  <!-- CONTENT CONTRIBUTIONS -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Phyllis's Content Contributions</h2>
+      <div class="hint">What she personally needs to produce to activate the stack</div>
+    </div>
+    <div class="content-grid">
+
+      <div class="content-col">
+        <h3>Video</h3>
+        <div class="col-sub">Talking-head, filmed at home with natural light</div>
+
+        <div class="content-item">
+          <div class="icon">▶</div>
+          <div><div class="title">Flagship course lessons</div><div class="detail">27 lessons · ~15 min each</div></div>
+          <div class="cadence">Batch x 3 days</div>
+        </div>
+        <div class="content-item ter">
+          <div class="icon">▶</div>
+          <div><div class="title">7-Day Reset lessons</div><div class="detail">7 lessons · ~10 min each</div></div>
+          <div class="cadence">Batch x 1 day</div>
+        </div>
+        <div class="content-item ter">
+          <div class="icon">▶</div>
+          <div><div class="title">Sales page VSL</div><div class="detail">5–7 min video for flagship landing page</div></div>
+          <div class="cadence">One take</div>
+        </div>
+        <div class="content-item wal">
+          <div class="icon">▶</div>
+          <div><div class="title">Instagram Reels</div><div class="detail">15–30s, 2 per week</div></div>
+          <div class="cadence">Weekly batch</div>
+        </div>
+        <div class="content-item wal">
+          <div class="icon">▶</div>
+          <div><div class="title">Monthly Q&amp;A lives</div><div class="detail">Family Edition · Zoom, recorded</div></div>
+          <div class="cadence">1× / month</div>
+        </div>
+      </div>
+
+      <div class="content-col">
+        <h3>Written</h3>
+        <div class="col-sub">Her voice — captured on paper</div>
+
+        <div class="content-item">
+          <div class="icon">✎</div>
+          <div><div class="title">Weekly email letter</div><div class="detail">One personal note · 300–500 words</div></div>
+          <div class="cadence">1× / week</div>
+        </div>
+        <div class="content-item">
+          <div class="icon">✎</div>
+          <div><div class="title">Instagram captions</div><div class="detail">~30 per month across pillars</div></div>
+          <div class="cadence">2× / month batch</div>
+        </div>
+        <div class="content-item ter">
+          <div class="icon">✎</div>
+          <div><div class="title">Ebook drafts</div><div class="detail">3 backend ebooks · 45–55 pg each</div></div>
+          <div class="cadence">1 per month</div>
+        </div>
+        <div class="content-item ter">
+          <div class="icon">✎</div>
+          <div><div class="title">Student stories</div><div class="detail">Collect &amp; curate testimonials</div></div>
+          <div class="cadence">Ongoing</div>
+        </div>
+        <div class="content-item wal">
+          <div class="icon">✎</div>
+          <div><div class="title">Blog / SEO posts</div><div class="detail">Long-form articles for phyllisinman.com</div></div>
+          <div class="cadence">2× / month</div>
+        </div>
+      </div>
+
+      <div class="content-col">
+        <h3>Audio</h3>
+        <div class="col-sub">Calm, slow-paced, her voice at its most soothing</div>
+
+        <div class="content-item">
+          <div class="icon">♪</div>
+          <div><div class="title">Guided meditations</div><div class="detail">8 tracks · 10–15 min each</div></div>
+          <div class="cadence">Batch x 1 day</div>
+        </div>
+        <div class="content-item ter">
+          <div class="icon">♪</div>
+          <div><div class="title">Module audio exports</div><div class="detail">MP3 versions of flagship course</div></div>
+          <div class="cadence">Auto from video</div>
+        </div>
+        <div class="content-item wal">
+          <div class="icon">♪</div>
+          <div><div class="title">Podcast (optional)</div><div class="detail">25 min weekly conversation</div></div>
+          <div class="cadence">1× / week</div>
+        </div>
+      </div>
+
+      <div class="content-col">
+        <h3>Visual / Photo</h3>
+        <div class="col-sub">Paired with a photographer quarterly</div>
+
+        <div class="content-item">
+          <div class="icon">◉</div>
+          <div><div class="title">Brand portrait library</div><div class="detail">Natural light, home, no food</div></div>
+          <div class="cadence">Quarterly</div>
+        </div>
+        <div class="content-item">
+          <div class="icon">◉</div>
+          <div><div class="title">Lifestyle flat-lays</div><div class="detail">Journal, tea, linen, plant</div></div>
+          <div class="cadence">Quarterly</div>
+        </div>
+        <div class="content-item ter">
+          <div class="icon">◉</div>
+          <div><div class="title">Product-in-use shots</div><div class="detail">For POD launches</div></div>
+          <div class="cadence">Per product drop</div>
+        </div>
+        <div class="content-item wal">
+          <div class="icon">◉</div>
+          <div><div class="title">B-roll clips</div><div class="detail">Hands, kettles, morning light</div></div>
+          <div class="cadence">Each shoot day</div>
+        </div>
+      </div>
+
+      <div class="content-col">
+        <h3>Community &amp; 1:1</h3>
+        <div class="col-sub">Real-time presence · human touch</div>
+
+        <div class="content-item">
+          <div class="icon">♡</div>
+          <div><div class="title">Community replies</div><div class="detail">Private student group moderation</div></div>
+          <div class="cadence">15 min / day</div>
+        </div>
+        <div class="content-item ter">
+          <div class="icon">♡</div>
+          <div><div class="title">1:1 coaching sessions</div><div class="detail">$1,497 package · 6 sessions</div></div>
+          <div class="cadence">As booked</div>
+        </div>
+        <div class="content-item wal">
+          <div class="icon">♡</div>
+          <div><div class="title">B2B discovery calls</div><div class="detail">School partnerships · curriculum</div></div>
+          <div class="cadence">2× / month</div>
+        </div>
+        <div class="content-item wal">
+          <div class="icon">♡</div>
+          <div><div class="title">Instagram DMs</div><div class="detail">Personal replies to warm followers</div></div>
+          <div class="cadence">20 min / day</div>
+        </div>
+      </div>
+
+      <div class="content-col">
+        <h3>Strategic (once · high leverage)</h3>
+        <div class="col-sub">Build-once, compound forever</div>
+
+        <div class="content-item">
+          <div class="icon">★</div>
+          <div><div class="title">Signature talk / keynote</div><div class="detail">45-min talk she can give anywhere</div></div>
+          <div class="cadence">One-time</div>
+        </div>
+        <div class="content-item ter">
+          <div class="icon">★</div>
+          <div><div class="title">Webinar / live training</div><div class="detail">"The 3 Shifts" — sales event</div></div>
+          <div class="cadence">1× / quarter</div>
+        </div>
+        <div class="content-item wal">
+          <div class="icon">★</div>
+          <div><div class="title">Press / media kit</div><div class="detail">Bio, photos, talking points, pitches</div></div>
+          <div class="cadence">One-time</div>
+        </div>
+        <div class="content-item wal">
+          <div class="icon">★</div>
+          <div><div class="title">Podcast guesting</div><div class="detail">8–12 guest appearances / year</div></div>
+          <div class="cadence">Monthly</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section">
+    <div class="section-head">
+      <h2>90-Day Launch Roadmap</h2>
+      <div class="hint">From foundation → flagship open cart</div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-phase">Phase 1<span class="weeks">Weeks 1–2</span></div>
+        <div class="tl-content">
+          <h4>Foundation</h4>
+          <p>Finalize lead magnet, set up email capture, build Kajabi site, soft announce "coming soon."</p>
+          <div class="tl-tasks">
+            <span class="tl-task">Design lead magnet PDF</span>
+            <span class="tl-task">Kajabi account + landing page</span>
+            <span class="tl-task">Email list opt-in on website</span>
+            <span class="tl-task">IG bio + link-in-bio</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-phase">Phase 2<span class="weeks">Weeks 3–6</span></div>
+        <div class="tl-content">
+          <h4>Audience Build</h4>
+          <p>3 IG posts/week, weekly email nurture, soft-launch $27 Reset, begin collecting testimonials.</p>
+          <div class="tl-tasks">
+            <span class="tl-task">30-post IG batch live</span>
+            <span class="tl-task">Reset course filmed + live</span>
+            <span class="tl-task">First 50 Reset buyers</span>
+            <span class="tl-task">5 testimonials captured</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-phase">Phase 3<span class="weeks">Weeks 7–10</span></div>
+        <div class="tl-content">
+          <h4>Flagship Pre-Launch</h4>
+          <p>Film all 27 flagship lessons, run pre-launch webinar, open cart for 14 days at founding pricing.</p>
+          <div class="tl-tasks">
+            <span class="tl-task">Course production done</span>
+            <span class="tl-task">Webinar: "The 3 Shifts"</span>
+            <span class="tl-task">14-email launch sequence live</span>
+            <span class="tl-task">Founding 100 enrolled</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-phase">Phase 4<span class="weeks">Weeks 11–13</span></div>
+        <div class="tl-content">
+          <h4>Expansion</h4>
+          <p>First backend ebook, POD journal + planner launch, B2B outreach to 10 schools / wellness orgs.</p>
+          <div class="tl-tasks">
+            <span class="tl-task">Ebook #1 published</span>
+            <span class="tl-task">Journal + planner live</span>
+            <span class="tl-task">10 B2B outreach sent</span>
+            <span class="tl-task">First upsell email to buyers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>Brand kit · phyllisinman.com · updated 2026-04-17</div>
+    <div class="palette-strip">
+      <div class="palette-swatch" style="background:#E8DCC8" title="#E8DCC8 Cream"></div>
+      <div class="palette-swatch" style="background:#8A9A5B" title="#8A9A5B Sage"></div>
+      <div class="palette-swatch" style="background:#C87F5A" title="#C87F5A Terracotta"></div>
+      <div class="palette-swatch" style="background:#6B4E32" title="#6B4E32 Walnut"></div>
+      <div class="palette-swatch" style="background:#2B2A28" title="#2B2A28 Charcoal"></div>
+      <div class="palette-swatch" style="background:#D4AF37" title="#D4AF37 Gold accent"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* ---------- PRODUCT DATA ---------- */
+const products = [
+  {tier:"Lead Magnet",  tierClass:"tier-lead", name:"The Peaceful Plate",            desc:"20-page starter guide — email capture.",        price:"Free",   format:"PDF ebook",      status:"ready"},
+  {tier:"Tripwire",     tierClass:"tier-trip", name:"7-Day Mindful Eating Reset",    desc:"Seven daily video lessons + pocket workbook.",   price:"$27",    format:"Video course",   status:"draft"},
+  {tier:"Flagship",     tierClass:"tier-flag", name:"Purposefully Eating (Core)",    desc:"6-module mindset-first method — the anchor.",    price:"$297",   format:"Video course",   status:"draft"},
+  {tier:"Flagship+",    tierClass:"tier-flag", name:"Purposefully Eating Family",    desc:"Core + Family Toolkit + live Q&A + community.", price:"$497",   format:"Course + community", status:"draft"},
+  {tier:"Backend",      tierClass:"tier-back", name:"The Mindful Family Kitchen",    desc:"55-pg ebook · meals, rhythm, pantry system.",    price:"$37",    format:"Ebook",          status:"plan"},
+  {tier:"Backend",      tierClass:"tier-back", name:"Eating Through Emotions",       desc:"50-pg ebook · 5-tool emotional eating kit.",     price:"$37",    format:"Ebook",          status:"plan"},
+  {tier:"Backend",      tierClass:"tier-back", name:"Raising Intuitive Eaters",      desc:"55-pg ebook · scripts + family protocols.",      price:"$37",    format:"Ebook",          status:"plan"},
+  {tier:"POD",          tierClass:"tier-pod",  name:"The Purposeful Plate Journal",  desc:"90-day hardcover reflection journal.",           price:"$24",    format:"Print-on-demand",status:"plan"},
+  {tier:"POD",          tierClass:"tier-pod",  name:"Mindful Meal Planner",          desc:"Undated weekly planner — no calorie math.",      price:"$22",    format:"Print-on-demand",status:"plan"},
+  {tier:"POD",          tierClass:"tier-pod",  name:"Mealtime Moments Cards",        desc:"52 family dinner conversation starters.",        price:"$18",    format:"Card deck",      status:"plan"},
+  {tier:"POD",          tierClass:"tier-pod",  name:"Apparel + Home",                desc:"Tees, sweatshirts, mugs, totes, linens.",        price:"$18–48", format:"Print-on-demand",status:"plan"},
+  {tier:"Printables",   tierClass:"tier-pod",  name:"Peaceful Plate Printable Pack", desc:"10 brand-aligned printables — zero fulfillment.",price:"$14",    format:"Digital download",status:"plan"},
+  {tier:"High-Ticket",  tierClass:"tier-high", name:"1:1 Family Coaching",           desc:"3 months · 6 sessions · deep integration.",      price:"$1,497", format:"Coaching",       status:"plan"},
+  {tier:"B2B",          tierClass:"tier-high", name:"School & Partnership Curriculum",desc:"Licensed program + instructor training.",       price:"$5K–25K",format:"Enterprise",    status:"plan"},
+];
+
+const statusLabels = { ready:"✓ Ready", draft:"In progress", plan:"Planned" };
+
+const productsEl = document.getElementById('products');
+productsEl.innerHTML = products.map(p => `
+  <div class="product">
+    <div class="status status-${p.status}">${statusLabels[p.status]}</div>
+    <span class="product-tier ${p.tierClass}">${p.tier}</span>
+    <h3>${p.name}</h3>
+    <div class="desc">${p.desc}</div>
+    <div class="meta">
+      <div class="price">${p.price}</div>
+      <div class="format">${p.format}</div>
+    </div>
+  </div>
+`).join('');
+
+/* ---------- REVENUE CALCULATOR ---------- */
+// Base: per 100 subs = ~$1,445 in 6 months (from strategy doc)
+// Breakdown per 100 subs:
+//   Reset tripwire   8% × $27    = $216
+//   Flagship         3% × $197   = $591   (using founding price)
+//   Family Edition   1% × $397   = $397
+//   Ebook bundle     5% × $37    = $185    (average)
+//   POD merch        2% × $28    = $56     (average)
+// Total = $1,445 per 100
+
+const subs = document.getElementById('subs');
+const subsOut = document.getElementById('subs-out');
+const mult = document.getElementById('mult');
+const multOut = document.getElementById('mult-out');
+const projected = document.getElementById('projected');
+
+function fmt(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+
+function recalc(){
+  const s = +subs.value;
+  const m = +mult.value;
+  subsOut.textContent = s.toLocaleString('en-US');
+  multOut.textContent = m.toFixed(1) + '×';
+  const base = (s/100) * 1445 * m;
+  projected.textContent = fmt(base);
+}
+subs.addEventListener('input', recalc);
+mult.addEventListener('input', recalc);
+recalc();
+</script>
+</body>
+</html>
