@@ -1,7 +1,209 @@
 {
-  "lastUpdated": "2026-04-16T16:00:00Z",
+  "lastUpdated": "2026-04-17T12:00:00Z",
   "updatedBy": "Claude",
   "target": 95,
+  "actionItems": [
+    {
+      "id": "api-ghl",
+      "title": "Provide GoHighLevel API key",
+      "category": "api-keys",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Unblocks the entire CRM Integration project. Go to GHL > Settings > Business Profile > API Keys. This is the #1 bottleneck on your tracker.",
+      "estimatedTime": "5 min",
+      "impact": "Unblocks CRM Integration (+7 health points)"
+    },
+    {
+      "id": "api-anthropic",
+      "title": "Provide Anthropic API key",
+      "category": "api-keys",
+      "priority": "high",
+      "status": "pending",
+      "description": "For automated Claude cost tracking. Get from console.anthropic.com > Settings > API Keys. Key starts with sk-ant-",
+      "estimatedTime": "5 min",
+      "impact": "Enables real-time API cost tracking"
+    },
+    {
+      "id": "api-meta",
+      "title": "Provide Meta Ads access token",
+      "category": "api-keys",
+      "priority": "high",
+      "status": "pending",
+      "description": "For automated ad spend tracking. business.facebook.com > Business Settings > System Users > Generate Token with ads_read permission. Also need Ad Account ID (act_...)",
+      "estimatedTime": "10 min",
+      "impact": "Enables live ad spend tracking in dashboard"
+    },
+    {
+      "id": "env-unsplash",
+      "title": "Add VITE_UNSPLASH_ACCESS_KEY to Lovable env",
+      "category": "deploy",
+      "priority": "medium",
+      "status": "pending",
+      "description": "Enables stock photo panel in Creative Studio. Free key at unsplash.com/developers. Add to Lovable project env variables.",
+      "estimatedTime": "5 min",
+      "impact": "Unlocks stock photo search in Creative Studio"
+    },
+    {
+      "id": "lovable-pull-brand-forge",
+      "title": "Pull latest from GitHub in Lovable (signature-brand-forge)",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "Sync the SEO overhaul + blog + effects panel + stock photos + AI designer changes. In Lovable: click GitHub icon > Pull from GitHub.",
+      "estimatedTime": "2 min",
+      "impact": "Puts all recent code changes live on production"
+    },
+    {
+      "id": "lovable-seo-headshot-event",
+      "title": "Run SEO overhaul prompt on signatureheadshotevent.com Lovable project",
+      "category": "deploy",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Claude will draft the full Lovable prompt with meta tags, schema markup for all 8 markets, Event schema, LocalBusiness for each location, FAQ expansion, and Core Web Vitals improvements. THIS IS THE BOOKING SITE — biggest direct revenue impact.",
+      "estimatedTime": "10 min to run + rebuild",
+      "impact": "Massive — this is where every ad dollar lands"
+    },
+    {
+      "id": "squarespace-seo-headshots-branding",
+      "title": "Execute Squarespace SEO plan for Headshots-Branding.com",
+      "category": "seo",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Claude will draft a complete Squarespace-specific SEO plan: page titles, meta descriptions, code injection for schema markup, SEO settings per page, alt text, blog setup. Execute step-by-step in Squarespace admin.",
+      "estimatedTime": "2-3 hours",
+      "impact": "SEO parity with main sites — rank this domain too"
+    },
+    {
+      "id": "seo-gsc-submit-sitemap",
+      "title": "Submit sitemap to Google Search Console",
+      "category": "seo",
+      "priority": "high",
+      "status": "pending",
+      "description": "URL: https://signaturebranding.app/sitemap.xml. Go to search.google.com/search-console > add property > Sitemaps > submit. Also submit signatureheadshotevent.com sitemap once updated.",
+      "estimatedTime": "10 min",
+      "impact": "Gets new pages indexed within days instead of weeks"
+    },
+    {
+      "id": "seo-gmb-winter-haven",
+      "title": "Set up Winter Haven GMB from kit",
+      "category": "seo",
+      "priority": "high",
+      "status": "pending",
+      "description": "Use ~/Desktop/signature-ops/seo-kit/gmb-content-kit.md — Winter Haven section. Copy-paste description, services, Q&A seeds, Google Posts. HQ market — do this one flawlessly first.",
+      "estimatedTime": "30 min",
+      "impact": "Local pack rankings in Polk County"
+    },
+    {
+      "id": "seo-gmb-atlanta",
+      "title": "Set up Atlanta GMB from kit",
+      "category": "seo",
+      "priority": "high",
+      "status": "pending",
+      "description": "Use gmb-content-kit.md — Atlanta section. Your strongest revenue market — second priority after Winter Haven.",
+      "estimatedTime": "30 min",
+      "impact": "Dominates local pack in strongest market"
+    },
+    {
+      "id": "seo-gmb-orlando",
+      "title": "Set up Orlando GMB from kit",
+      "category": "seo",
+      "priority": "high",
+      "status": "pending",
+      "description": "Use gmb-content-kit.md — Orlando section. Biggest volume opportunity in Central FL.",
+      "estimatedTime": "30 min",
+      "impact": "Local visibility across Orlando metro"
+    },
+    {
+      "id": "seo-gmb-remaining-5",
+      "title": "Set up remaining 5 GMB profiles",
+      "category": "seo",
+      "priority": "medium",
+      "status": "pending",
+      "description": "Lake Wales, Lakeland, Tampa, Fort Lauderdale, Palm Beach. Use gmb-content-kit.md for each. Can spread over 2 weeks.",
+      "estimatedTime": "2.5 hours total (~30 min each)",
+      "impact": "Full local coverage across FL markets"
+    },
+    {
+      "id": "seo-bing-apple",
+      "title": "Submit to Bing Places + Apple Business Connect",
+      "category": "seo",
+      "priority": "high",
+      "status": "pending",
+      "description": "Easy wins. Bing = bingplaces.com. Apple = businessconnect.apple.com. Use NAP details from backlink-strategy.md.",
+      "estimatedTime": "30 min",
+      "impact": "~15% of desktop search traffic + Apple Maps"
+    },
+    {
+      "id": "seo-yelp-8-markets",
+      "title": "Complete Yelp listings for all 8 markets",
+      "category": "seo",
+      "priority": "medium",
+      "status": "pending",
+      "description": "biz.yelp.com — claim/create for each market. Upload 10+ photos per listing.",
+      "estimatedTime": "1 hour",
+      "impact": "Yelp still drives significant local traffic"
+    },
+    {
+      "id": "seo-chambers",
+      "title": "Join 3 priority chambers of commerce",
+      "category": "seo",
+      "priority": "medium",
+      "status": "pending",
+      "description": "Winter Haven Chamber, Metro Atlanta Chamber, Orlando Regional Chamber. Backlinks + local credibility + networking.",
+      "estimatedTime": "1-2 hours (each has enrollment process)",
+      "impact": "Authority backlinks + partnership pipeline"
+    },
+    {
+      "id": "seo-partner-outreach-5",
+      "title": "Send 5 partnership outreach emails",
+      "category": "seo",
+      "priority": "medium",
+      "status": "pending",
+      "description": "Use templates in backlink-strategy.md. Target wedding vendors + real estate brokerages + salons in Winter Haven or Atlanta.",
+      "estimatedTime": "1 hour",
+      "impact": "15-25 backlinks over 30 days"
+    },
+    {
+      "id": "seo-directory-submissions-tier1",
+      "title": "Submit to top 20 directories (Tier 1)",
+      "category": "seo",
+      "priority": "medium",
+      "status": "pending",
+      "description": "See backlink-strategy.md Tier 1 list. Target: Foursquare, Brownbook, Cylex, Manta, Hotfrog, Yellowpages, BBB, MapQuest, plus beauty-specific (Booksy, Fresha, Vagaro, StyleSeat).",
+      "estimatedTime": "2 hours",
+      "impact": "25-40 citations for NAP consistency"
+    },
+    {
+      "id": "ads-point-campaigns",
+      "title": "Point Meta + Google ads to new PPC sub-variants",
+      "category": "ads",
+      "priority": "high",
+      "status": "pending",
+      "description": "Update ad sets: salon owners ads → /industries/beauty/salon-owners | hairstylists → /industries/beauty/hairstylists | estheticians → /industries/beauty/estheticians | nail techs → /industries/beauty/nail-techs. Expected Quality Score boost: +2 to +4.",
+      "estimatedTime": "30 min",
+      "impact": "Lower CPC, higher conversion from existing ad spend"
+    },
+    {
+      "id": "ghl-script-optimization",
+      "title": "Optimize GHL Booking Bot scripts",
+      "category": "optimization",
+      "priority": "medium",
+      "status": "pending",
+      "description": "Currently underperforming. Review current booking conversation flows, add better objection handling, improve follow-up sequence timing. Can prompt Claude next session.",
+      "estimatedTime": "2-3 hours",
+      "impact": "Direct booking rate improvement (front-line closer)"
+    },
+    {
+      "id": "stripe-revenue-flow",
+      "title": "Decide: push more revenue through Stripe or keep Square primary",
+      "category": "optimization",
+      "priority": "low",
+      "status": "pending",
+      "description": "Stripe shows $0 because it's platform-only. Not urgent unless you want to unify revenue reporting. Square works fine for now.",
+      "estimatedTime": "Decision + optional migration plan",
+      "impact": "Clean revenue reporting (optional)"
+    }
+  ],
   "costs": {
     "monthlyBudget": 500,
     "alertThreshold": 80,

@@ -397,6 +397,190 @@
     letter-spacing: 0.06em;
   }
 
+  /* ACTION ITEMS PANEL */
+  .action-panel {
+    background: var(--card);
+    border: 2px solid var(--orange);
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 0 4px rgba(251,146,60,0.08);
+  }
+  .action-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .action-header-left { display: flex; align-items: center; gap: 0.5rem; }
+  .action-header-left::before { content: ''; width: 3px; height: 14px; background: var(--orange); border-radius: 2px; }
+  .action-header h2 { font-size: 0.9rem; font-weight: 700; }
+  .action-badge {
+    background: var(--orange);
+    color: #0a0a0f;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    margin-left: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .action-arrow { font-size: 0.7rem; color: var(--muted); transition: transform 0.3s; }
+  .action-arrow.open { transform: rotate(180deg); }
+  .action-body { display: none; }
+  .action-body.open { display: block; }
+
+  .action-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .action-filter-btn {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-family: inherit;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .action-filter-btn:hover { border-color: var(--orange); color: var(--text); }
+  .action-filter-btn.active { background: var(--orange); color: #0a0a0f; border-color: var(--orange); font-weight: 700; }
+
+  .action-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .action-item {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem 0.85rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+    transition: all 0.2s;
+  }
+  .action-item:hover { border-color: var(--orange); background: rgba(251,146,60,0.04); }
+  .action-item.done { opacity: 0.5; }
+  .action-item.done .action-title { text-decoration: line-through; }
+
+  .action-checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--muted);
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
+  .action-checkbox:hover { border-color: var(--green); }
+  .action-item.done .action-checkbox {
+    background: var(--green);
+    border-color: var(--green);
+  }
+  .action-item.done .action-checkbox::after {
+    content: '\2713';
+    color: #0a0a0f;
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+
+  .action-priority-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-top: 9px;
+    flex-shrink: 0;
+  }
+  .ap-critical { background: var(--red); }
+  .ap-high { background: var(--yellow); }
+  .ap-medium { background: var(--blue); }
+  .ap-low { background: var(--muted); }
+
+  .action-content { flex: 1; min-width: 0; }
+  .action-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 0.2rem;
+  }
+  .action-desc {
+    font-size: 0.68rem;
+    color: var(--muted);
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+  }
+  .action-meta {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    font-size: 0.6rem;
+    color: var(--muted);
+  }
+  .action-meta-item { display: flex; align-items: center; gap: 0.25rem; }
+  .action-impact {
+    font-size: 0.6rem;
+    color: var(--green);
+    font-weight: 600;
+  }
+  .action-category-tag {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    font-size: 0.55rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .act-api-keys { background: rgba(248,113,113,0.15); color: var(--red); }
+  .act-deploy { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .act-seo { background: rgba(52,211,153,0.15); color: var(--green); }
+  .act-ads { background: rgba(251,146,60,0.15); color: var(--orange); }
+  .act-optimization { background: rgba(167,139,250,0.15); color: var(--accent); }
+
+  .action-empty {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--muted);
+    font-size: 0.75rem;
+  }
+  .action-progress {
+    margin-top: 0.85rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+  .action-progress-bar {
+    flex: 1;
+    height: 4px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 0.75rem;
+  }
+  .action-progress-fill {
+    height: 100%;
+    background: var(--orange);
+    border-radius: 4px;
+    transition: width 0.5s;
+  }
+
   /* PRIORITY LIST */
   .priority-section {
     background: var(--card);
@@ -596,6 +780,7 @@
   </div>
 
   <div id="hero-score"></div>
+  <div id="action-items-panel"></div>
   <div id="cost-tracker"></div>
   <div id="ecosystem-map"></div>
   <div id="priority-section"></div>
@@ -728,6 +913,114 @@ function renderHero(data) {
         </div>
       </div>
     </div>`;
+}
+
+// ── Action Items Panel ─────────────────────
+
+let actionFilter = 'all';
+let actionsOpen = true;
+
+function getActionDoneKey() {
+  return 'signature_tracker_actions_done_v1';
+}
+function loadActionsDone() {
+  try { return JSON.parse(localStorage.getItem(getActionDoneKey()) || '{}'); }
+  catch { return {}; }
+}
+function saveActionsDone(done) {
+  try { localStorage.setItem(getActionDoneKey(), JSON.stringify(done)); } catch {}
+}
+function toggleActionDone(id) {
+  const done = loadActionsDone();
+  done[id] = !done[id];
+  saveActionsDone(done);
+  renderActionItems(window._d);
+}
+
+function renderActionItems(data) {
+  const items = data.actionItems || [];
+  const done = loadActionsDone();
+  const total = items.length;
+  const completedCount = items.filter(i => done[i.id]).length;
+  const pendingCount = total - completedCount;
+  const pct = total > 0 ? Math.round((completedCount / total) * 100) : 0;
+
+  const categories = ['all', ...Array.from(new Set(items.map(i => i.category)))];
+  const catLabels = {
+    'all': 'All',
+    'api-keys': 'API Keys',
+    'deploy': 'Deploy',
+    'seo': 'SEO',
+    'ads': 'Ads',
+    'optimization': 'Optimization',
+  };
+
+  // Sort: critical > high > medium > low, pending before done
+  const priorityOrder = { 'critical': 0, 'high': 1, 'medium': 2, 'low': 3 };
+  const sorted = [...items].sort((a, b) => {
+    const aDone = !!done[a.id];
+    const bDone = !!done[b.id];
+    if (aDone !== bDone) return aDone ? 1 : -1;
+    return (priorityOrder[a.priority] || 99) - (priorityOrder[b.priority] || 99);
+  });
+
+  const filtered = actionFilter === 'all' ? sorted : sorted.filter(i => i.category === actionFilter);
+
+  document.getElementById('action-items-panel').innerHTML = `
+    <div class="action-panel">
+      <div class="action-header" onclick="toggleActionsOpen()">
+        <div class="action-header-left">
+          <h2>Action Items</h2>
+          <span class="action-badge">${pendingCount} pending</span>
+        </div>
+        <div class="action-arrow ${actionsOpen ? 'open' : ''}">\u25BC</div>
+      </div>
+      <div class="action-body ${actionsOpen ? 'open' : ''}">
+        <div class="action-filters">
+          ${categories.map(c => `
+            <button class="action-filter-btn ${actionFilter === c ? 'active' : ''}" onclick="setActionFilter('${c}')">
+              ${catLabels[c] || c} ${c === 'all' ? `(${total})` : `(${items.filter(i => i.category === c).length})`}
+            </button>
+          `).join('')}
+        </div>
+        <div class="action-list">
+          ${filtered.length === 0 ? `<div class="action-empty">All clear \u2014 no pending items in this category</div>` : filtered.map(item => {
+            const isDone = !!done[item.id];
+            return `
+              <div class="action-item ${isDone ? 'done' : ''}">
+                <div class="action-checkbox" onclick="toggleActionDone('${item.id}')"></div>
+                <div class="action-priority-dot ap-${item.priority}"></div>
+                <div class="action-content">
+                  <div class="action-title">${item.title}</div>
+                  <div class="action-desc">${item.description}</div>
+                  <div class="action-meta">
+                    <span class="action-category-tag act-${item.category}">${catLabels[item.category] || item.category}</span>
+                    <span class="action-meta-item">\u23F1 ${item.estimatedTime}</span>
+                    <span class="action-impact">\u2191 ${item.impact}</span>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+        <div class="action-progress">
+          <span>${completedCount}/${total} complete</span>
+          <div class="action-progress-bar"><div class="action-progress-fill" style="width:${pct}%"></div></div>
+          <span>${pct}%</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function setActionFilter(cat) {
+  actionFilter = cat;
+  renderActionItems(window._d);
+}
+
+function toggleActionsOpen() {
+  actionsOpen = !actionsOpen;
+  renderActionItems(window._d);
 }
 
 function renderPriorities(data) {
@@ -1163,6 +1456,7 @@ function render(data){
   const P=data.projects;
 
   renderHero(data);
+  renderActionItems(data);
   renderCosts(data);
   renderEcosystem();
   renderPriorities(data);
