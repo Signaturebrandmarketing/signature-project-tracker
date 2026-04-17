@@ -51,19 +51,8 @@
     line-height: 1.1;
   }
   .header h1 em { color: var(--terracotta); font-style: italic; }
-  .header .sub {
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin-top: 0.4rem;
-    font-style: italic;
-  }
-  .header .meta {
-    text-align: right;
-    font-size: 0.8rem;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
+  .header .sub { color: var(--muted); font-size: 0.95rem; margin-top: 0.4rem; font-style: italic; }
+  .header .meta { text-align: right; font-size: 0.8rem; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
   .header .meta strong { color: var(--sage); font-weight: 600; }
 
   /* SECTION */
@@ -82,11 +71,7 @@
     font-weight: 600;
     letter-spacing: -0.01em;
   }
-  .section-head .hint {
-    font-size: 0.8rem;
-    color: var(--muted);
-    font-style: italic;
-  }
+  .section-head .hint { font-size: 0.8rem; color: var(--muted); font-style: italic; }
 
   /* REVENUE HERO */
   .revenue-hero {
@@ -107,12 +92,7 @@
     letter-spacing: -0.02em;
     line-height: 1;
   }
-  .revenue-label {
-    color: var(--muted);
-    font-size: 0.9rem;
-    margin-top: 0.35rem;
-    margin-bottom: 1.25rem;
-  }
+  .revenue-label { color: var(--muted); font-size: 0.9rem; margin-top: 0.35rem; margin-bottom: 1.25rem; }
   .revenue-split {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -121,71 +101,20 @@
     padding-top: 1.5rem;
     border-top: 1px solid var(--border);
   }
-  .revenue-split-item .v {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--walnut);
-  }
-  .revenue-split-item .l {
-    font-size: 0.72rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-top: 0.2rem;
-  }
-  .calculator {
-    background: var(--cream);
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-  }
-  .calculator h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
+  .revenue-split-item .v { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: var(--walnut); }
+  .revenue-split-item .l { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.2rem; }
+  .calculator { background: var(--cream); padding: 1.5rem; border-radius: 10px; border: 1px solid var(--border); }
+  .calculator h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 1rem; }
   .slider-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-  .slider-row label {
-    font-size: 0.85rem;
-    color: var(--muted);
-    min-width: 90px;
-  }
-  .slider-row input[type=range] {
-    flex: 1;
-    accent-color: var(--sage);
-  }
-  .slider-row output {
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    color: var(--charcoal);
-    min-width: 60px;
-    text-align: right;
-    font-size: 1rem;
-  }
-  .calc-result {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px dashed var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
+  .slider-row label { font-size: 0.85rem; color: var(--muted); min-width: 90px; }
+  .slider-row input[type=range] { flex: 1; accent-color: var(--sage); }
+  .slider-row output { font-family: 'Playfair Display', serif; font-weight: 600; color: var(--charcoal); min-width: 60px; text-align: right; font-size: 1rem; }
+  .calc-result { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--border); display: flex; justify-content: space-between; align-items: baseline; }
   .calc-result .label { color: var(--muted); font-size: 0.85rem; }
-  .calc-result .value {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--terracotta);
-  }
+  .calc-result .value { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--terracotta); }
 
   /* PRODUCTS */
-  .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-    gap: 1rem;
-  }
+  .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(285px, 1fr)); gap: 1rem; }
   .product {
     background: var(--cream-card);
     border: 1px solid var(--border);
@@ -194,10 +123,7 @@
     position: relative;
     transition: transform 0.2s, box-shadow 0.2s;
   }
-  .product:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(107, 78, 50, 0.08);
-  }
+  .product:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(107, 78, 50, 0.08); }
   .product-tier {
     display: inline-block;
     font-size: 0.65rem;
@@ -214,37 +140,11 @@
   .tier-back { background: var(--cream-alt); color: var(--walnut); }
   .tier-pod { background: var(--walnut-soft); color: var(--walnut); }
   .tier-high { background: var(--charcoal); color: var(--cream); }
-
-  .product h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-    letter-spacing: -0.01em;
-  }
-  .product .desc {
-    color: var(--muted);
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-    min-height: 38px;
-  }
-  .product .meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding-top: 0.75rem;
-    border-top: 1px dashed var(--border);
-  }
-  .product .price {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--terracotta);
-  }
-  .product .format {
-    font-size: 0.75rem;
-    color: var(--muted);
-  }
+  .product h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; letter-spacing: -0.01em; }
+  .product .desc { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; min-height: 38px; }
+  .product .meta { display: flex; justify-content: space-between; align-items: baseline; padding-top: 0.75rem; border-top: 1px dashed var(--border); }
+  .product .price { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--terracotta); }
+  .product .format { font-size: 0.75rem; color: var(--muted); }
   .product .status {
     position: absolute;
     top: 1rem;
@@ -260,142 +160,179 @@
   .status-draft { background: var(--terracotta-soft); color: var(--terracotta); }
   .status-plan { background: var(--cream-alt); color: var(--muted); }
 
-  /* CONTENT */
-  .content-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.25rem;
-  }
+  /* ─────── CONTENT CONTRIBUTIONS (with checklist + recs) ─────── */
+  .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.25rem; }
   .content-col {
     background: var(--cream-card);
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.5rem;
   }
-  .content-col h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-  }
-  .content-col .col-sub {
+  .content-col-head { margin-bottom: 1.25rem; }
+  .content-col-head h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .content-col-head .col-sub { color: var(--muted); font-size: 0.78rem; margin-bottom: 0.85rem; font-style: italic; }
+  .progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.72rem;
     color: var(--muted);
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
-    font-style: italic;
+    letter-spacing: 0.03em;
   }
+  .progress-track {
+    flex: 1;
+    height: 5px;
+    background: var(--cream-alt);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-bar {
+    height: 100%;
+    background: var(--sage);
+    width: 0%;
+    transition: width 0.35s ease;
+    border-radius: 3px;
+  }
+  .progress-count { font-weight: 600; color: var(--charcoal); }
+
   .content-item {
+    border-top: 1px dashed var(--border);
+    padding: 0.7rem 0;
+  }
+  .content-item:first-of-type { border-top: none; padding-top: 0.2rem; }
+  .ci-row {
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 0.75rem;
     align-items: center;
-    padding: 0.6rem 0;
-    border-bottom: 1px dashed var(--border);
+    cursor: pointer;
+    user-select: none;
   }
-  .content-item:last-child { border-bottom: none; }
-  .content-item .icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    display: grid;
-    place-items: center;
-    font-size: 0.95rem;
-    background: var(--sage-soft);
-    color: var(--sage);
-  }
-  .content-item.ter .icon { background: var(--terracotta-soft); color: var(--terracotta); }
-  .content-item.wal .icon { background: var(--walnut-soft); color: var(--walnut); }
-  .content-item .title {
-    font-size: 0.88rem;
-    font-weight: 500;
-  }
-  .content-item .detail {
-    font-size: 0.73rem;
-    color: var(--muted);
-    margin-top: 0.1rem;
-  }
-  .content-item .cadence {
-    font-size: 0.7rem;
-    color: var(--muted);
-    font-weight: 500;
-    white-space: nowrap;
-  }
-
-  /* TIMELINE */
-  .timeline {
-    background: var(--cream-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.75rem;
-  }
-  .tl-row {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 1.25rem;
-    padding: 1rem 0;
-    border-bottom: 1px dashed var(--border);
-    align-items: start;
-  }
-  .tl-row:last-child { border-bottom: none; }
-  .tl-phase {
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--terracotta);
-  }
-  .tl-phase .weeks {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    color: var(--muted);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-top: 0.15rem;
-    display: block;
-    font-weight: 500;
-  }
-  .tl-content h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.35rem;
-  }
-  .tl-content p {
-    font-size: 0.88rem;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-  }
-  .tl-tasks { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .tl-task {
-    font-size: 0.72rem;
-    padding: 3px 9px;
-    background: var(--cream);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    color: var(--charcoal);
-  }
-
-  /* FOOTER */
-  .footer {
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.8rem;
-    color: var(--muted);
-    text-align: center;
-    font-style: italic;
-  }
-  .palette-strip {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-    margin: 1rem 0 0.5rem;
-  }
-  .palette-swatch {
+  .ci-check {
     width: 22px;
     height: 22px;
-    border-radius: 50%;
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 2px solid var(--sage-light);
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    transition: all 0.2s;
+    flex-shrink: 0;
   }
+  .ci-check svg { width: 14px; height: 14px; stroke: white; stroke-width: 3; fill: none; display: none; }
+  .content-item.checked .ci-check { background: var(--sage); border-color: var(--sage); }
+  .content-item.checked .ci-check svg { display: block; }
+  .content-item.checked .ci-title { text-decoration: line-through; color: var(--muted); }
+
+  .ci-text { min-width: 0; }
+  .ci-title { font-size: 0.92rem; font-weight: 500; transition: color 0.2s; line-height: 1.35; }
+  .ci-detail { font-size: 0.73rem; color: var(--muted); margin-top: 0.1rem; }
+  .ci-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.25rem; }
+  .ci-cadence { font-size: 0.7rem; color: var(--muted); font-weight: 500; white-space: nowrap; }
+  .ci-toggle {
+    font-size: 0.9rem;
+    color: var(--sage);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s;
+  }
+  .content-item.open .ci-toggle { transform: rotate(180deg); }
+
+  .ci-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    margin-left: 30px;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--sage-soft);
+  }
+  .content-item.open .ci-panel { max-height: 800px; }
+  .ci-panel-inner { padding: 0.85rem 0 0.25rem; }
+
+  .ci-panel h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-style: normal;
+  }
+  .ci-recs { list-style: none; margin-bottom: 1rem; }
+  .ci-recs li {
+    font-size: 0.82rem;
+    color: var(--charcoal);
+    padding: 0.3rem 0 0.3rem 1.2rem;
+    position: relative;
+    line-height: 1.45;
+  }
+  .ci-recs li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--sage);
+    font-weight: 600;
+  }
+
+  .ci-subtasks { list-style: none; }
+  .ci-subtask {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.6rem;
+    align-items: center;
+    padding: 0.35rem 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  .st-check {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--walnut-soft);
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .st-check svg { width: 10px; height: 10px; stroke: white; stroke-width: 3; fill: none; display: none; }
+  .ci-subtask.checked .st-check { background: var(--walnut); border-color: var(--walnut); }
+  .ci-subtask.checked .st-check svg { display: block; }
+  .st-label { font-size: 0.78rem; color: var(--charcoal); transition: color 0.15s; }
+  .ci-subtask.checked .st-label { text-decoration: line-through; color: var(--muted); }
+
+  /* TIMELINE */
+  .timeline { background: var(--cream-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 1.25rem; padding: 1rem 0; border-bottom: 1px dashed var(--border); align-items: start; }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-phase { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 0.95rem; color: var(--terracotta); }
+  .tl-phase .weeks { font-family: 'Inter', sans-serif; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 0.15rem; display: block; font-weight: 500; }
+  .tl-content h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem; }
+  .tl-content p { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .tl-tasks { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tl-task { font-size: 0.72rem; padding: 3px 9px; background: var(--cream); border: 1px solid var(--border); border-radius: 4px; color: var(--charcoal); }
+
+  /* RESET BUTTON */
+  .reset-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.35rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .reset-btn:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+  /* FOOTER */
+  .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); text-align: center; font-style: italic; }
+  .palette-strip { display: flex; gap: 6px; justify-content: center; margin: 1rem 0 0.5rem; }
+  .palette-swatch { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.08); }
 
   @media (max-width: 780px) {
     .revenue-hero { grid-template-columns: 1fr; }
@@ -403,6 +340,7 @@
     .header .meta { text-align: left; }
     .tl-row { grid-template-columns: 1fr; }
     .revenue-amount { font-size: 3rem; }
+    .ci-panel { margin-left: 0; padding-left: 0.6rem; }
   }
 </style>
 </head>
@@ -474,7 +412,7 @@
   <div class="section">
     <div class="section-head">
       <h2>Product Stack</h2>
-      <div class="hint">12 products across 6 tiers — click any card to drill into the source doc</div>
+      <div class="hint">14 products across 6 tiers</div>
     </div>
     <div class="products" id="products"></div>
   </div>
@@ -482,173 +420,13 @@
   <!-- CONTENT CONTRIBUTIONS -->
   <div class="section">
     <div class="section-head">
-      <h2>Phyllis's Content Contributions</h2>
-      <div class="hint">What she personally needs to produce to activate the stack</div>
+      <h2>Content Contributions</h2>
+      <div class="hint">
+        Tap any item for recommendations · check off as you go · progress saves automatically
+        <button class="reset-btn" id="resetBtn" style="margin-left: 0.6rem;">Reset progress</button>
+      </div>
     </div>
-    <div class="content-grid">
-
-      <div class="content-col">
-        <h3>Video</h3>
-        <div class="col-sub">Talking-head, filmed at home with natural light</div>
-
-        <div class="content-item">
-          <div class="icon">▶</div>
-          <div><div class="title">Flagship course lessons</div><div class="detail">27 lessons · ~15 min each</div></div>
-          <div class="cadence">Batch x 3 days</div>
-        </div>
-        <div class="content-item ter">
-          <div class="icon">▶</div>
-          <div><div class="title">7-Day Reset lessons</div><div class="detail">7 lessons · ~10 min each</div></div>
-          <div class="cadence">Batch x 1 day</div>
-        </div>
-        <div class="content-item ter">
-          <div class="icon">▶</div>
-          <div><div class="title">Sales page VSL</div><div class="detail">5–7 min video for flagship landing page</div></div>
-          <div class="cadence">One take</div>
-        </div>
-        <div class="content-item wal">
-          <div class="icon">▶</div>
-          <div><div class="title">Instagram Reels</div><div class="detail">15–30s, 2 per week</div></div>
-          <div class="cadence">Weekly batch</div>
-        </div>
-        <div class="content-item wal">
-          <div class="icon">▶</div>
-          <div><div class="title">Monthly Q&amp;A lives</div><div class="detail">Family Edition · Zoom, recorded</div></div>
-          <div class="cadence">1× / month</div>
-        </div>
-      </div>
-
-      <div class="content-col">
-        <h3>Written</h3>
-        <div class="col-sub">Her voice — captured on paper</div>
-
-        <div class="content-item">
-          <div class="icon">✎</div>
-          <div><div class="title">Weekly email letter</div><div class="detail">One personal note · 300–500 words</div></div>
-          <div class="cadence">1× / week</div>
-        </div>
-        <div class="content-item">
-          <div class="icon">✎</div>
-          <div><div class="title">Instagram captions</div><div class="detail">~30 per month across pillars</div></div>
-          <div class="cadence">2× / month batch</div>
-        </div>
-        <div class="content-item ter">
-          <div class="icon">✎</div>
-          <div><div class="title">Ebook drafts</div><div class="detail">3 backend ebooks · 45–55 pg each</div></div>
-          <div class="cadence">1 per month</div>
-        </div>
-        <div class="content-item ter">
-          <div class="icon">✎</div>
-          <div><div class="title">Student stories</div><div class="detail">Collect &amp; curate testimonials</div></div>
-          <div class="cadence">Ongoing</div>
-        </div>
-        <div class="content-item wal">
-          <div class="icon">✎</div>
-          <div><div class="title">Blog / SEO posts</div><div class="detail">Long-form articles for phyllisinman.com</div></div>
-          <div class="cadence">2× / month</div>
-        </div>
-      </div>
-
-      <div class="content-col">
-        <h3>Audio</h3>
-        <div class="col-sub">Calm, slow-paced, her voice at its most soothing</div>
-
-        <div class="content-item">
-          <div class="icon">♪</div>
-          <div><div class="title">Guided meditations</div><div class="detail">8 tracks · 10–15 min each</div></div>
-          <div class="cadence">Batch x 1 day</div>
-        </div>
-        <div class="content-item ter">
-          <div class="icon">♪</div>
-          <div><div class="title">Module audio exports</div><div class="detail">MP3 versions of flagship course</div></div>
-          <div class="cadence">Auto from video</div>
-        </div>
-        <div class="content-item wal">
-          <div class="icon">♪</div>
-          <div><div class="title">Podcast (optional)</div><div class="detail">25 min weekly conversation</div></div>
-          <div class="cadence">1× / week</div>
-        </div>
-      </div>
-
-      <div class="content-col">
-        <h3>Visual / Photo</h3>
-        <div class="col-sub">Paired with a photographer quarterly</div>
-
-        <div class="content-item">
-          <div class="icon">◉</div>
-          <div><div class="title">Brand portrait library</div><div class="detail">Natural light, home, no food</div></div>
-          <div class="cadence">Quarterly</div>
-        </div>
-        <div class="content-item">
-          <div class="icon">◉</div>
-          <div><div class="title">Lifestyle flat-lays</div><div class="detail">Journal, tea, linen, plant</div></div>
-          <div class="cadence">Quarterly</div>
-        </div>
-        <div class="content-item ter">
-          <div class="icon">◉</div>
-          <div><div class="title">Product-in-use shots</div><div class="detail">For POD launches</div></div>
-          <div class="cadence">Per product drop</div>
-        </div>
-        <div class="content-item wal">
-          <div class="icon">◉</div>
-          <div><div class="title">B-roll clips</div><div class="detail">Hands, kettles, morning light</div></div>
-          <div class="cadence">Each shoot day</div>
-        </div>
-      </div>
-
-      <div class="content-col">
-        <h3>Community &amp; 1:1</h3>
-        <div class="col-sub">Real-time presence · human touch</div>
-
-        <div class="content-item">
-          <div class="icon">♡</div>
-          <div><div class="title">Community replies</div><div class="detail">Private student group moderation</div></div>
-          <div class="cadence">15 min / day</div>
-        </div>
-        <div class="content-item ter">
-          <div class="icon">♡</div>
-          <div><div class="title">1:1 coaching sessions</div><div class="detail">$1,497 package · 6 sessions</div></div>
-          <div class="cadence">As booked</div>
-        </div>
-        <div class="content-item wal">
-          <div class="icon">♡</div>
-          <div><div class="title">B2B discovery calls</div><div class="detail">School partnerships · curriculum</div></div>
-          <div class="cadence">2× / month</div>
-        </div>
-        <div class="content-item wal">
-          <div class="icon">♡</div>
-          <div><div class="title">Instagram DMs</div><div class="detail">Personal replies to warm followers</div></div>
-          <div class="cadence">20 min / day</div>
-        </div>
-      </div>
-
-      <div class="content-col">
-        <h3>Strategic (once · high leverage)</h3>
-        <div class="col-sub">Build-once, compound forever</div>
-
-        <div class="content-item">
-          <div class="icon">★</div>
-          <div><div class="title">Signature talk / keynote</div><div class="detail">45-min talk she can give anywhere</div></div>
-          <div class="cadence">One-time</div>
-        </div>
-        <div class="content-item ter">
-          <div class="icon">★</div>
-          <div><div class="title">Webinar / live training</div><div class="detail">"The 3 Shifts" — sales event</div></div>
-          <div class="cadence">1× / quarter</div>
-        </div>
-        <div class="content-item wal">
-          <div class="icon">★</div>
-          <div><div class="title">Press / media kit</div><div class="detail">Bio, photos, talking points, pitches</div></div>
-          <div class="cadence">One-time</div>
-        </div>
-        <div class="content-item wal">
-          <div class="icon">★</div>
-          <div><div class="title">Podcast guesting</div><div class="detail">8–12 guest appearances / year</div></div>
-          <div class="cadence">Monthly</div>
-        </div>
-      </div>
-
-    </div>
+    <div class="content-grid" id="content-grid"></div>
   </div>
 
   <!-- TIMELINE -->
@@ -730,28 +508,25 @@
 </div>
 
 <script>
-/* ---------- PRODUCT DATA ---------- */
+/* ================= PRODUCTS ================= */
 const products = [
-  {tier:"Lead Magnet",  tierClass:"tier-lead", name:"The Peaceful Plate",            desc:"20-page starter guide — email capture.",        price:"Free",   format:"PDF ebook",      status:"ready"},
-  {tier:"Tripwire",     tierClass:"tier-trip", name:"7-Day Mindful Eating Reset",    desc:"Seven daily video lessons + pocket workbook.",   price:"$27",    format:"Video course",   status:"draft"},
-  {tier:"Flagship",     tierClass:"tier-flag", name:"Purposefully Eating (Core)",    desc:"6-module mindset-first method — the anchor.",    price:"$297",   format:"Video course",   status:"draft"},
+  {tier:"Lead Magnet",  tierClass:"tier-lead", name:"The Peaceful Plate",            desc:"20-page starter guide — email capture.",        price:"Free",   format:"PDF ebook",       status:"ready"},
+  {tier:"Tripwire",     tierClass:"tier-trip", name:"7-Day Mindful Eating Reset",    desc:"Seven daily video lessons + pocket workbook.",  price:"$27",    format:"Video course",    status:"draft"},
+  {tier:"Flagship",     tierClass:"tier-flag", name:"Purposefully Eating (Core)",    desc:"6-module mindset-first method — the anchor.",   price:"$297",   format:"Video course",    status:"draft"},
   {tier:"Flagship+",    tierClass:"tier-flag", name:"Purposefully Eating Family",    desc:"Core + Family Toolkit + live Q&A + community.", price:"$497",   format:"Course + community", status:"draft"},
-  {tier:"Backend",      tierClass:"tier-back", name:"The Mindful Family Kitchen",    desc:"55-pg ebook · meals, rhythm, pantry system.",    price:"$37",    format:"Ebook",          status:"plan"},
-  {tier:"Backend",      tierClass:"tier-back", name:"Eating Through Emotions",       desc:"50-pg ebook · 5-tool emotional eating kit.",     price:"$37",    format:"Ebook",          status:"plan"},
-  {tier:"Backend",      tierClass:"tier-back", name:"Raising Intuitive Eaters",      desc:"55-pg ebook · scripts + family protocols.",      price:"$37",    format:"Ebook",          status:"plan"},
-  {tier:"POD",          tierClass:"tier-pod",  name:"The Purposeful Plate Journal",  desc:"90-day hardcover reflection journal.",           price:"$24",    format:"Print-on-demand",status:"plan"},
-  {tier:"POD",          tierClass:"tier-pod",  name:"Mindful Meal Planner",          desc:"Undated weekly planner — no calorie math.",      price:"$22",    format:"Print-on-demand",status:"plan"},
-  {tier:"POD",          tierClass:"tier-pod",  name:"Mealtime Moments Cards",        desc:"52 family dinner conversation starters.",        price:"$18",    format:"Card deck",      status:"plan"},
-  {tier:"POD",          tierClass:"tier-pod",  name:"Apparel + Home",                desc:"Tees, sweatshirts, mugs, totes, linens.",        price:"$18–48", format:"Print-on-demand",status:"plan"},
-  {tier:"Printables",   tierClass:"tier-pod",  name:"Peaceful Plate Printable Pack", desc:"10 brand-aligned printables — zero fulfillment.",price:"$14",    format:"Digital download",status:"plan"},
-  {tier:"High-Ticket",  tierClass:"tier-high", name:"1:1 Family Coaching",           desc:"3 months · 6 sessions · deep integration.",      price:"$1,497", format:"Coaching",       status:"plan"},
-  {tier:"B2B",          tierClass:"tier-high", name:"School & Partnership Curriculum",desc:"Licensed program + instructor training.",       price:"$5K–25K",format:"Enterprise",    status:"plan"},
+  {tier:"Backend",      tierClass:"tier-back", name:"The Mindful Family Kitchen",    desc:"55-pg ebook · meals, rhythm, pantry system.",   price:"$37",    format:"Ebook",           status:"plan"},
+  {tier:"Backend",      tierClass:"tier-back", name:"Eating Through Emotions",       desc:"50-pg ebook · 5-tool emotional eating kit.",    price:"$37",    format:"Ebook",           status:"plan"},
+  {tier:"Backend",      tierClass:"tier-back", name:"Raising Intuitive Eaters",      desc:"55-pg ebook · scripts + family protocols.",     price:"$37",    format:"Ebook",           status:"plan"},
+  {tier:"POD",          tierClass:"tier-pod",  name:"The Purposeful Plate Journal",  desc:"90-day hardcover reflection journal.",          price:"$24",    format:"Print-on-demand", status:"plan"},
+  {tier:"POD",          tierClass:"tier-pod",  name:"Mindful Meal Planner",          desc:"Undated weekly planner — no calorie math.",     price:"$22",    format:"Print-on-demand", status:"plan"},
+  {tier:"POD",          tierClass:"tier-pod",  name:"Mealtime Moments Cards",        desc:"52 family dinner conversation starters.",       price:"$18",    format:"Card deck",       status:"plan"},
+  {tier:"POD",          tierClass:"tier-pod",  name:"Apparel + Home",                desc:"Tees, sweatshirts, mugs, totes, linens.",       price:"$18–48", format:"Print-on-demand", status:"plan"},
+  {tier:"Printables",   tierClass:"tier-pod",  name:"Peaceful Plate Printable Pack", desc:"10 brand-aligned printables — zero fulfillment.",price:"$14",   format:"Digital download",status:"plan"},
+  {tier:"High-Ticket",  tierClass:"tier-high", name:"1:1 Family Coaching",           desc:"3 months · 6 sessions · deep integration.",     price:"$1,497", format:"Coaching",        status:"plan"},
+  {tier:"B2B",          tierClass:"tier-high", name:"School & Partnership Curriculum",desc:"Licensed program + instructor training.",      price:"$5K–25K",format:"Enterprise",      status:"plan"},
 ];
-
 const statusLabels = { ready:"✓ Ready", draft:"In progress", plan:"Planned" };
-
-const productsEl = document.getElementById('products');
-productsEl.innerHTML = products.map(p => `
+document.getElementById('products').innerHTML = products.map(p => `
   <div class="product">
     <div class="status status-${p.status}">${statusLabels[p.status]}</div>
     <span class="product-tier ${p.tierClass}">${p.tier}</span>
@@ -764,31 +539,524 @@ productsEl.innerHTML = products.map(p => `
   </div>
 `).join('');
 
-/* ---------- REVENUE CALCULATOR ---------- */
-// Base: per 100 subs = ~$1,445 in 6 months (from strategy doc)
-// Breakdown per 100 subs:
-//   Reset tripwire   8% × $27    = $216
-//   Flagship         3% × $197   = $591   (using founding price)
-//   Family Edition   1% × $397   = $397
-//   Ebook bundle     5% × $37    = $185    (average)
-//   POD merch        2% × $28    = $56     (average)
-// Total = $1,445 per 100
+/* ================= CONTENT CONTRIBUTIONS DATA ================= */
+const contentCols = [
+  {
+    key: "video",
+    title: "Video",
+    subtitle: "Talking-head, filmed at home with natural light",
+    items: [
+      {
+        id: "v-flagship",
+        title: "Flagship course lessons",
+        detail: "27 lessons · ~15 min each",
+        cadence: "Batch · 3 days",
+        recs: [
+          "Film in 9–11 AM window light. Sit with the window at a 45° angle to your face, not directly in front.",
+          "Gear: iPhone 12 or newer on a tripod + a clip-on lav mic (Rode SmartLav+, $60). That's it.",
+          "Wear 1 solid color per module — this makes each week visually distinct without much effort.",
+          "Use bullet-point scripts on an iPad just below the camera. Never read word-for-word — talk like you're explaining to a friend at your kitchen table.",
+          "Batch 3–5 lessons per day. Keep the same outfit, hair, and setup within each batch."
+        ],
+        subs: ["Pick 3 filming days on the calendar","Test your lighting + mic setup","Order lav mic + tripod","Film Module 1 as a pilot","Review pilot before batching the rest"]
+      },
+      {
+        id: "v-reset",
+        title: "7-Day Reset lessons",
+        detail: "7 lessons · ~10 min each",
+        cadence: "Batch · 1 day",
+        recs: [
+          "Use the same setup as the flagship — don't reinvent the wheel for this.",
+          "Keep tone warm and unhurried — NOT tutorial-style. You're offering, not teaching.",
+          "Open each lesson with: 'Hi, welcome to day [X].' Close with: 'I'll see you tomorrow.'",
+          "Film all 7 in one 4-hour block — same outfit, same energy.",
+          "End each lesson with a 10-second pause before cutting — gives editor clean ins/outs."
+        ],
+        subs: ["Schedule the 4-hour block","Film all 7 in order","Upload to Kajabi + set daily drip"]
+      },
+      {
+        id: "v-vsl",
+        title: "Sales page VSL",
+        detail: "5–7 min video for flagship landing page",
+        cadence: "One take · one day",
+        recs: [
+          "Hook first 15 seconds: 'If you're tired of starting over every Monday — I made this for you.'",
+          "Story arc: your story (1 min) → the 3 shifts (2 min) → who this is for (1 min) → offer (1–2 min).",
+          "Look directly into the camera lens, not the screen. Eye contact converts.",
+          "Will autoplay muted on the sales page — make sure captions are clean and on-brand.",
+          "Rehearse 5 times. Film 3 takes. Pick the best one."
+        ],
+        subs: ["Write VSL outline","Rehearse 5 times","Film 3 takes","Add captions + upload"]
+      },
+      {
+        id: "v-reels",
+        title: "Instagram Reels",
+        detail: "15–30s · 2 per week",
+        cadence: "Weekly batch",
+        recs: [
+          "Film all weekly reels in one 60-min Sunday afternoon session. Batch > scramble.",
+          "Hook in the first 1.5 seconds — a surprising sentence or visual. No slow fades.",
+          "Vertical 9:16, 1080x1920. Use trending audio at ~20% volume underneath your voice.",
+          "Add on-screen text that repeats your key point — 85% of viewers watch without sound.",
+          "Finish with one CTA: 'Save this,' 'Tag a friend,' or 'Link in bio.'"
+        ],
+        subs: ["Follow 5 mindful-eating creators for Reels ideas","Batch record 8 Reels (month's worth)","Caption + schedule in Later or Metricool"]
+      },
+      {
+        id: "v-qa",
+        title: "Monthly Q&A lives",
+        detail: "Family Edition bonus · Zoom",
+        cadence: "1× / month",
+        recs: [
+          "Collect questions in advance via a Google Form in the community — don't freestyle.",
+          "Structure: 5 min welcome → 45 min Q&A (6–8 questions) → 10 min open reflection.",
+          "Record and upload to Kajabi within 24 hours so graduates who missed it can watch.",
+          "Don't perform. Pause. Think. Answer like you're on the phone with one person.",
+          "Keep a 'parking lot' for questions you can't fully answer — address in next month's call."
+        ],
+        subs: ["Create monthly Q&A form in community","Pick a recurring time (e.g. 2nd Tuesday 1 PM ET)","Add to calendar + community announcement"]
+      }
+    ]
+  },
+  {
+    key: "written",
+    title: "Written",
+    subtitle: "Your voice — on paper",
+    items: [
+      {
+        id: "w-email",
+        title: "Weekly email letter",
+        detail: "One personal note · 300–500 words",
+        cadence: "1× / week",
+        recs: [
+          "Send Tuesday, Wednesday, or Thursday at 7:15 AM ET. Never Monday (diet-culture 'start over' vibe).",
+          "Write the way you speak. Contractions, short sentences, one idea per email.",
+          "Always close with: 'With you, Phyllis.' Consistency in the sign-off builds intimacy.",
+          "One subject, one CTA. Never more than two links.",
+          "Save your first 20 emails as a swipe file — they'll become book chapters and blog posts later."
+        ],
+        subs: ["Pick your weekly send day + time","Set up email template in Kajabi","Write first 4 emails before going live"]
+      },
+      {
+        id: "w-ig",
+        title: "Instagram captions",
+        detail: "~30 per month across pillars",
+        cadence: "2× / month batch",
+        recs: [
+          "We already wrote 30 captions for you in your IG batch doc — use those as starting points, rewrite in your voice.",
+          "First line is the hook. Treat it like a newspaper headline — it's what decides whether they tap 'more'.",
+          "Break into short paragraphs with white space — mobile readers skim.",
+          "Rotate CTAs: 'save this' / 'tag a friend' / 'DM me the word PEACE' / 'link in bio'.",
+          "Don't stack hashtags in the caption — put them in the first comment."
+        ],
+        subs: ["Review the 30-post batch doc","Rewrite 10 at a time in your voice","Schedule in Later or Metricool"]
+      },
+      {
+        id: "w-ebooks",
+        title: "Ebook drafts",
+        detail: "3 backend ebooks · 45–55 pg each",
+        cadence: "1 per month",
+        recs: [
+          "Don't write ebooks — speak them. Record voice memos walking through each chapter, then transcribe with Otter.ai or Descript.",
+          "Outline first (we already did), then voice-memo one chapter per day = 1 ebook in ~2 weeks.",
+          "Hire a developmental editor on Reedsy ($300–$600) for the final polish. Do NOT self-edit your first draft.",
+          "Pull material from your Instagram captions and emails — you're probably already writing 40% of each ebook without realizing it.",
+          "Design in Canva Pro using the same template across all 3 for visual consistency."
+        ],
+        subs: ["Record voice memos for Book 1","Transcribe + arrange into chapters","Developmental editor pass","Canva layout + export PDF"]
+      },
+      {
+        id: "w-stories",
+        title: "Student stories",
+        detail: "Collect & curate testimonials",
+        cadence: "Ongoing",
+        recs: [
+          "DM graduates 30 days after they finish. Ask: 'What's one thing that's different now?' Short prompts get better answers than long ones.",
+          "Structure: Before (1 sentence) → Turning point (1 sentence) → Now (1 sentence) → Would recommend? (1 sentence).",
+          "Get permission in writing — a simple DM reply '✅ you can use this' is enough.",
+          "Offer a small thank-you: $20 off any future purchase or free ebook download.",
+          "Store in a Google Doc organized by product. You'll reach for these for years."
+        ],
+        subs: ["Create testimonial request DM template","DM first 10 Reset graduates","Build testimonials Google Doc"]
+      },
+      {
+        id: "w-blog",
+        title: "Blog / SEO posts",
+        detail: "Long-form articles for phyllisinman.com",
+        cadence: "2× / month",
+        recs: [
+          "Target these keywords first: 'mindful eating for moms', 'non-diet approach family', 'intuitive eating with kids', 'picky eater reset'.",
+          "1,500–2,500 words. Add a table of contents. Google loves them, readers use them.",
+          "Include your lead magnet CTA after paragraph 2 AND at the end — don't hide it at the bottom.",
+          "Use H2 subheadings every 300 words. Add one real photo (yours, not stock) every 500 words.",
+          "Repurpose each blog post into 5 IG posts + 1 email. You write once, publish four times."
+        ],
+        subs: ["Pick first 8 keywords","Write blog calendar for Q1","Draft post #1","Install Squarespace SEO meta + alt text"]
+      }
+    ]
+  },
+  {
+    key: "audio",
+    title: "Audio",
+    subtitle: "Calm, slow-paced — your voice at its softest",
+    items: [
+      {
+        id: "a-med",
+        title: "Guided meditations",
+        detail: "8 tracks · 10–15 min each",
+        cadence: "Batch · 1 day",
+        recs: [
+          "Record in a quiet room — closet with clothes, bedroom, or walk-in pantry all work great for absorbing sound.",
+          "Use a USB mic ($80 Blue Yeti or $100 Rode NT-USB Mini) + a pop filter. DO NOT use AirPods.",
+          "Script is already written in your bonus pack. Read it SLOWER than feels natural. Half speed.",
+          "Leave 3–5 second pauses where marked. Don't rush them — the pause IS the practice.",
+          "Mix with soft ambient background music (royalty-free: Epidemic Sound, Artlist) at ~15% volume."
+        ],
+        subs: ["Set up recording corner","Record all 8 in one session","Edit + mix with ambient track","Upload to Kajabi as bonus"]
+      },
+      {
+        id: "a-audio",
+        title: "Module audio exports",
+        detail: "MP3 versions of flagship course",
+        cadence: "Auto from video",
+        recs: [
+          "Kajabi automatically extracts audio from your video uploads — just enable 'Audio download' in the course settings.",
+          "Market this explicitly: 'Listen in the car, on a walk, while cooking.' Many of your students are moms who won't sit down to watch video.",
+          "Name files clearly: 'Module 2, Lesson 3 — The Permission Experiment.'"
+        ],
+        subs: ["Enable audio extraction in Kajabi","QA first 3 module audio files","Add 'Listen anywhere' to sales page"]
+      },
+      {
+        id: "a-podcast",
+        title: "Podcast (optional)",
+        detail: "25 min · weekly conversation",
+        cadence: "1× / week",
+        recs: [
+          "Only start this if you ENJOY talking. If you find it draining, skip — your other channels are plenty.",
+          "Start monthly, not weekly. Scale up only if you love it after 3 months.",
+          "Riverside.fm for recording remotely, Descript for editing. Both ~$25/mo.",
+          "Format rotation: 3 solo episodes (teaching) + 1 interview (mom / expert) per month.",
+          "Promote each episode inside your weekly email — no need for separate podcast marketing."
+        ],
+        subs: ["Decide: do you actually want to podcast?","Pick a name + art","Record pilot + first 4 episodes before launching"]
+      }
+    ]
+  },
+  {
+    key: "visual",
+    title: "Visual / Photo",
+    subtitle: "Paired with a photographer quarterly",
+    items: [
+      {
+        id: "p-portrait",
+        title: "Brand portrait library",
+        detail: "Natural light · home · no food",
+        cadence: "Quarterly",
+        recs: [
+          "Book a local lifestyle photographer (not a headshot photographer). Budget $400–$800 per 3-hour session.",
+          "Shoot in your home — kitchen, dining table, reading nook. Your space = your brand.",
+          "Change tops 3–4 times (cream linen, sage green, charcoal, terracotta). Same pants/bottom.",
+          "Ask for: 100+ edited finals + the RAW set for future use. Negotiate RAWs up front.",
+          "Give photographer your palette guide + Pinterest mood board before the shoot."
+        ],
+        subs: ["Build 20-image Pinterest mood board","Shortlist 3 local photographers","Book quarterly recurring session"]
+      },
+      {
+        id: "p-flat",
+        title: "Lifestyle flat-lays",
+        detail: "Journal · tea · linen · plant",
+        cadence: "Quarterly",
+        recs: [
+          "Add this to the portrait shoot day — same photographer, additional 60 min, minimal cost.",
+          "Props to keep on hand: your journal + planner (once printed), linen napkin, ceramic mug, small houseplant, wooden cutting board, cream candle.",
+          "Shoot on a wooden table by a window. Natural light only, 9–11 AM or 3–5 PM.",
+          "Vary crop: top-down, 45°, over-the-shoulder. 30 shots minimum per scene."
+        ],
+        subs: ["Build flat-lay prop kit","Add 60 min to photographer quote","Store props in one labeled bin"]
+      },
+      {
+        id: "p-prod",
+        title: "Product-in-use shots",
+        detail: "For POD launches",
+        cadence: "Per product drop",
+        recs: [
+          "Once Printful samples arrive, spend one afternoon shooting each new product in natural use.",
+          "Journal: being written in, open on a table next to coffee, closed on a shelf.",
+          "Mug: in hands, on a windowsill, mid-pour.",
+          "Apparel: worn in kitchen, at a table, walking with a tote — all on a real person (you or a friend).",
+          "Shoot 30 images per SKU. Use 3–4 in the product listing, save the rest for social."
+        ],
+        subs: ["Order Printful samples for each SKU","Schedule product shoot day","Upload top 3 to each product listing"]
+      },
+      {
+        id: "p-broll",
+        title: "B-roll clips",
+        detail: "Hands, kettles, morning light",
+        cadence: "Each shoot day",
+        recs: [
+          "Film 10–15 short (3–5 sec) clips at every shoot day. iPhone slow-motion is perfect.",
+          "Subjects: water pouring, hands on journal, tea steeping, page turning, door opening, morning light on a table, feet walking through a doorway.",
+          "NO voice, NO music — capture clean so they can be dropped into any Reel or course intro later.",
+          "Store in a labeled 'B-roll' Google Drive folder by shoot date.",
+          "You'll use these dozens of times. The library compounds."
+        ],
+        subs: ["Create B-roll shot list (20 ideas)","Capture at next photo session","Upload + tag in Drive"]
+      }
+    ]
+  },
+  {
+    key: "community",
+    title: "Community & 1:1",
+    subtitle: "Human presence — the highest-trust content",
+    items: [
+      {
+        id: "c-comm",
+        title: "Community replies",
+        detail: "Private student group moderation",
+        cadence: "15 min / day",
+        recs: [
+          "Pick ONE time per day (e.g. morning coffee) — not scattered throughout.",
+          "Your job isn't to over-teach. Heart, acknowledge, encourage. Lean on peer-to-peer learning.",
+          "Build a response library for the top 10 repeated questions — paste + personalize.",
+          "Post a weekly prompt every Monday: 'What did you notice this week?' Creates engagement without you doing all the lifting.",
+          "Delegate by month 3 — hire a community manager ($300–$500/mo) once you have 100+ members."
+        ],
+        subs: ["Pick daily reply time","Write top-10 response library","Schedule Monday weekly prompts"]
+      },
+      {
+        id: "c-1on1",
+        title: "1:1 coaching sessions",
+        detail: "$1,497 package · 6 sessions",
+        cadence: "As booked",
+        recs: [
+          "60 min per session. Structure: 5 min check-in + 45 min work + 10 min next-step.",
+          "Record with client permission — clips become testimonials + course content later.",
+          "Use a simple intake form before session 1. Google Forms is fine.",
+          "Cap at 6 active 1:1 clients so you don't burn out. Send overflow to a waitlist or the flagship.",
+          "Price will increase. Tell new clients: 'This is the $1,497 rate. Next cohort will be $2,000.'"
+        ],
+        subs: ["Build intake form in Google Forms","Set up Calendly for 1:1 sessions","Write session 1–6 frameworks"]
+      },
+      {
+        id: "c-b2b",
+        title: "B2B discovery calls",
+        detail: "School partnerships · curriculum",
+        cadence: "2× / month",
+        recs: [
+          "Target: school counselors, wellness directors, after-school program coordinators, family services orgs.",
+          "Discovery = 30 min. Proposal call = 45 min. Don't try to close on discovery.",
+          "Have a 1-page leave-behind: 'What Purposefully Eating brings to your students/staff.' PDF.",
+          "Start at $5K pilots (8-week program, 1 cohort of 20). Scale to $25K full curriculum license.",
+          "Warm sources beat cold pitches — ask any existing client if they know a school contact."
+        ],
+        subs: ["Build 1-page B2B leave-behind","Build outreach list (20 targets)","Send 5 discovery invites"]
+      },
+      {
+        id: "c-dm",
+        title: "Instagram DMs",
+        detail: "Personal replies to warm followers",
+        cadence: "20 min / day",
+        recs: [
+          "Reply to every story reply within 24 hours. Even a '🤍' or 'thank you for being here' — they notice.",
+          "Welcome new followers with a 2-sentence DM: who you are + link to free guide. Keep it low-key.",
+          "Never pitch in DMs unless they explicitly ask. Conversation → trust → they ask → then you offer.",
+          "Save your 10 best DM replies as templates — paste and personalize.",
+          "Do NOT use automated DM bots. They read as spam and break trust."
+        ],
+        subs: ["Write 2-sentence welcome DM","Build 10-template reply library","Pick daily DM time"]
+      }
+    ]
+  },
+  {
+    key: "strategic",
+    title: "Strategic · Build-Once",
+    subtitle: "High leverage — compounds for years",
+    items: [
+      {
+        id: "s-talk",
+        title: "Signature talk / keynote",
+        detail: "45-min talk she can give anywhere",
+        cadence: "One-time build",
+        recs: [
+          "Build ONE 45-min talk you can deliver at any local event, conference, or podcast appearance.",
+          "Structure: Your story (5 min) → The 3 Shifts (25 min) → 1 tactical exercise (10 min) → Call to action (5 min).",
+          "Record yourself delivering it 5 times on video before giving it live. Watch. Refine.",
+          "Build 2 slide decks: one for schools/wellness orgs, one for women/moms. Same talk, different frames.",
+          "Always end with: 'If this moved you — phyllisinman.com.' Every time."
+        ],
+        subs: ["Outline the 4-section talk","Write full script","Record 5 rehearsals on video","Build both slide decks"]
+      },
+      {
+        id: "s-webinar",
+        title: "Webinar / live training",
+        detail: "'The 3 Shifts' — flagship sales event",
+        cadence: "1× / quarter",
+        recs: [
+          "60 min live: 45 min teaching + 15 min Q&A + flagship offer at the end.",
+          "Promote 2 weeks in advance. 4 emails + 8 IG posts + 2 Reels = enough to fill a room.",
+          "Use StreamYard (cheap) or Zoom Webinar (more pro). Record and repurpose as evergreen funnel later.",
+          "Make a real offer at the end — '$100 off flagship for webinar attendees, expires in 72 hrs.' Real urgency, not fake countdowns.",
+          "Send replay within 24 hours — 40% of your sales come from replay watchers."
+        ],
+        subs: ["Write webinar outline","Build 12 promo assets","Set up StreamYard + Zoom","Pick first quarterly date"]
+      },
+      {
+        id: "s-press",
+        title: "Press / media kit",
+        detail: "Bio · photos · talking points · pitches",
+        cadence: "One-time",
+        recs: [
+          "Three bio lengths: 50 words, 150 words, 300 words. Write once, paste forever.",
+          "Include: 5 high-res photos, 5 talking points, 3 suggested interview questions, 3 sample podcast pitches.",
+          "Host on phyllisinman.com/press as a clean public page. Most media pros will download and use it.",
+          "Add a 'book Phyllis' contact form at the bottom — this is where speaking + podcast invites come from.",
+          "Update every 6 months with new stats (students served, press mentions, etc.)."
+        ],
+        subs: ["Write 3 bio lengths","Select 5 press-ready photos","Draft talking points + interview qs","Publish /press page"]
+      },
+      {
+        id: "s-podcast-guest",
+        title: "Podcast guesting",
+        detail: "8–12 guest spots per year",
+        cadence: "Monthly",
+        recs: [
+          "Target: parenting, wellness, women-over-40, non-diet, family food podcasts. Search 'Apple Podcasts → Nutrition' and filter small/medium shows (5K–50K downloads/episode).",
+          "Pitch 10 shows per month. Expect 2–3 yeses. PodcastGuests.com or a VA on Fiverr ($100/mo) can scale the outreach.",
+          "Always send the host your media kit + 2 sample talking points. Make it easy to say yes.",
+          "Always close with the same CTA: 'Head to phyllisinman.com for the free guide — The Peaceful Plate.' Consistent, memorable.",
+          "Track each appearance and follow up with a thank-you gift (signed journal, $50 value) — guests often get invited back."
+        ],
+        subs: ["Build list of 30 target podcasts","Write 3 pitch email templates","Send first 10 pitches","Track responses in Airtable"]
+      }
+    ]
+  }
+];
 
+/* ================= CHECKLIST STATE ================= */
+const STORAGE_KEY = 'phyllis-content-v2';
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"checked":{},"subs":{}}');
+if (!state.checked) state.checked = {};
+if (!state.subs) state.subs = {};
+
+function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+
+function checkMark() {
+  return '<svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg>';
+}
+
+/* ================= RENDER CONTENT GRID ================= */
+function renderContent() {
+  const grid = document.getElementById('content-grid');
+  grid.innerHTML = contentCols.map(col => {
+    const total = col.items.length;
+    const done = col.items.filter(it => state.checked[it.id]).length;
+    const pct = total ? Math.round((done / total) * 100) : 0;
+
+    const itemsHtml = col.items.map(it => {
+      const checked = !!state.checked[it.id];
+      const recsHtml = it.recs.map(r => `<li>${r}</li>`).join('');
+      const subsHtml = (it.subs || []).map((s, i) => {
+        const subKey = `${it.id}__${i}`;
+        const subChecked = !!state.subs[subKey];
+        return `<li class="ci-subtask ${subChecked ? 'checked' : ''}" data-sub="${subKey}">
+          <span class="st-check">${checkMark()}</span>
+          <span class="st-label">${s}</span>
+        </li>`;
+      }).join('');
+
+      return `<div class="content-item ${checked ? 'checked' : ''}" data-id="${it.id}">
+        <div class="ci-row">
+          <div class="ci-check" data-check="${it.id}">${checkMark()}</div>
+          <div class="ci-text">
+            <div class="ci-title">${it.title}</div>
+            <div class="ci-detail">${it.detail}</div>
+          </div>
+          <div class="ci-right">
+            <button class="ci-toggle" data-toggle="${it.id}" aria-label="Show recommendations">▾</button>
+            <div class="ci-cadence">${it.cadence}</div>
+          </div>
+        </div>
+        <div class="ci-panel">
+          <div class="ci-panel-inner">
+            <h4>Recommendations</h4>
+            <ul class="ci-recs">${recsHtml}</ul>
+            ${subsHtml ? `<h4 style="margin-top:0.5rem;">First steps</h4><ul class="ci-subtasks">${subsHtml}</ul>` : ''}
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+
+    return `<div class="content-col">
+      <div class="content-col-head">
+        <h3>${col.title}</h3>
+        <div class="col-sub">${col.subtitle}</div>
+        <div class="progress-wrap">
+          <span class="progress-count">${done}/${total}</span>
+          <div class="progress-track"><div class="progress-bar" style="width:${pct}%;"></div></div>
+          <span>${pct}%</span>
+        </div>
+      </div>
+      ${itemsHtml}
+    </div>`;
+  }).join('');
+
+  attachHandlers();
+}
+
+function attachHandlers() {
+  // Main check
+  document.querySelectorAll('[data-check]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = el.dataset.check;
+      state.checked[id] = !state.checked[id];
+      save();
+      renderContent();
+    });
+  });
+  // Expand toggle (click anywhere on row except checkbox)
+  document.querySelectorAll('.content-item').forEach(el => {
+    el.querySelector('.ci-row').addEventListener('click', (e) => {
+      if (e.target.closest('[data-check]')) return;
+      el.classList.toggle('open');
+    });
+  });
+  // Subtasks
+  document.querySelectorAll('[data-sub]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const key = el.dataset.sub;
+      state.subs[key] = !state.subs[key];
+      save();
+      el.classList.toggle('checked');
+    });
+  });
+}
+
+renderContent();
+
+/* ================= RESET ================= */
+document.getElementById('resetBtn').addEventListener('click', () => {
+  if (confirm('Reset all progress? This cannot be undone.')) {
+    state = { checked:{}, subs:{} };
+    save();
+    renderContent();
+  }
+});
+
+/* ================= REVENUE CALC ================= */
 const subs = document.getElementById('subs');
 const subsOut = document.getElementById('subs-out');
 const mult = document.getElementById('mult');
 const multOut = document.getElementById('mult-out');
 const projected = document.getElementById('projected');
-
 function fmt(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
-
 function recalc(){
   const s = +subs.value;
   const m = +mult.value;
   subsOut.textContent = s.toLocaleString('en-US');
   multOut.textContent = m.toFixed(1) + '×';
-  const base = (s/100) * 1445 * m;
-  projected.textContent = fmt(base);
+  projected.textContent = fmt((s/100) * 1445 * m);
 }
 subs.addEventListener('input', recalc);
 mult.addEventListener('input', recalc);
