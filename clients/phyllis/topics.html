@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic Bullets — Purposefully Eating</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F1E6;
+    --cream-alt: #EDE3D2;
+    --cream-card: #FDF9F0;
+    --sage: #8A9A5B;
+    --sage-soft: #E3E8D3;
+    --terracotta: #C87F5A;
+    --terracotta-soft: #F2DCCE;
+    --walnut: #6B4E32;
+    --walnut-soft: #C3B097;
+    --charcoal: #2B2A28;
+    --muted: #6F6B63;
+    --border: #D9CEB8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.55;
+    padding: 1.5rem;
+  }
+  .container { max-width: 820px; margin: 0 auto; }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-decoration: none;
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: all 0.15s;
+  }
+  .back-link:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 0.25rem;
+  }
+  h1 em { color: var(--terracotta); font-style: italic; }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 0.92rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Section nav */
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 2rem;
+    padding: 0.75rem;
+    background: var(--cream-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+  }
+  .nav a {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.7rem;
+    background: var(--cream);
+    color: var(--charcoal);
+    text-decoration: none;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    transition: all 0.15s;
+  }
+  .nav a:hover, .nav a.active {
+    background: var(--sage);
+    color: white;
+    border-color: var(--sage);
+  }
+
+  .section { margin-bottom: 3rem; }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.01em;
+  }
+  .section .section-sub {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  /* Topic card */
+  .topic {
+    background: var(--cream-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+  .topic-head {
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .topic-num {
+    width: 28px;
+    height: 28px;
+    background: var(--terracotta-soft);
+    color: var(--terracotta);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+  .topic-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    line-height: 1.35;
+  }
+  .topic-caret {
+    color: var(--sage);
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+  }
+  .topic.open .topic-caret { transform: rotate(180deg); }
+  .topic-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .topic.open .topic-body { max-height: 400px; }
+  .topic-body-inner {
+    padding: 0 1rem 1rem 3.2rem;
+    border-top: 1px dashed var(--border);
+    padding-top: 0.75rem;
+  }
+  .topic-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+  }
+  .topic-body ul { list-style: none; }
+  .topic-body li {
+    font-size: 0.82rem;
+    color: var(--charcoal);
+    padding: 0.3rem 0 0.3rem 1rem;
+    position: relative;
+    line-height: 1.45;
+  }
+  .topic-body li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .expand-all {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.35rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+  }
+  .expand-all:hover { border-color: var(--sage); color: var(--sage); }
+
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <a href="./" class="back-link">← Dashboard</a>
+  <h1>Topic Bullets <em>— Your Outline Library</em></h1>
+  <div class="subtitle">5-bullet outlines for every video and written piece. Tap any topic to reveal its beats.</div>
+
+  <div class="nav" id="nav"></div>
+  <div id="content"></div>
+
+  <div class="footer">
+    <div>Mindful eating, without guilt or restriction.</div>
+    <div style="margin-top: 0.5rem;">Inman Institute · phyllisinman.com · updated 2026-04-17</div>
+  </div>
+</div>
+
+<script>
+/* ===== DATA ===== */
+const sections = [
+  {
+    id: "video-flagship",
+    label: "Flagship course",
+    title: "Flagship Course Lessons",
+    sub: "27 lessons — teaching beats for each",
+    topics: [
+      {t:"Welcome + How to Use This Course", b:["Warmly welcome and acknowledge their courage in choosing something different","Frame the course: 6 modules, 27 lessons, self-paced, ~45 min/week","Explain how to use the workbook (reflection tool, not homework)","Invite them to put down the pressure to 'finish fast'","Tell them to download the workbook before starting Module 1"]},
+      {t:"Why Diet Culture Fails (and Why You Haven't)", b:["Open with the shame-restriction-rebellion cycle","Explain why the industry profits from failure, not success","Name it clearly: not a willpower problem, a system problem","Share the research on long-term diet failure (95% regain within 2 years)","Reframe: 'You didn't fail. Diets failed you.'"]},
+      {t:"Your Food Story: The Invisible Script", b:["Everyone has a food story — inherited from family, culture, media","3 journaling prompts: earliest memory, first 'bad food,' first diet","Introduce the 'invisible script' concept","Workbook exercise: map 5 key food memories","Reassure: naming the script is the first step to rewriting it"]},
+      {t:"What Purposeful Eating Actually Means", b:["Define in one sentence: awareness, permission, presence","Contrast with intuitive eating, mindful eating, normal eating","Preview the 3 shifts coming in Module 2","Bust the 'eat whatever you want' myth","Close: 'This is the method you'll live with, not survive.'"]},
+      {t:"Your Starting Point Assessment", b:["Walk through the 10-question self-assessment","Rate 1–10: food stress, body trust, planning, modeling, emotional eating","No right answers — a starting photo, not a score","Retake in 6 weeks to see the shift","Screenshot or print for reference"]},
+      {t:"Shift 1: From Rules to Awareness", b:["Rules come from outside. Awareness comes from inside.","One old rule, one new awareness question for the same situation","Why rules break and awareness deepens","3 awareness questions to try at every meal this week","Close: 'Courtroom to laboratory.'"]},
+      {t:"Shift 2: From Restriction to Permission", b:["The most counterintuitive shift — and the most powerful","The permission paradox: what most women fear vs. what actually happens","Walk through a 7-day permission experiment","Address the fear: 'it feels scary and that's normal'","Close: 'Permission is the end of the war.'"]},
+      {t:"Shift 3: From Shame to Curiosity", b:["Shame narrows. Curiosity expands.","When shame shows up: 3 questions to ask","Distinguish accountability (helpful) from shame (never helpful)","Workbook: catch one shame thought and reframe it","Close: 'Meet yourself with curiosity. That's where change lives.'"]},
+      {t:"Integration: Journaling the Shifts", b:["The 3 shifts work together — awareness + permission + curiosity","Introduce the 2-minute daily journaling practice","Prompt: 'one shift I practiced today, one I didn't'","Why journaling works: you can't change what you can't see","4 days a week is enough. Consistency > perfection."]},
+      {t:"The Hunger–Fullness Scale", b:["The 1–10 scale as awareness, not control","3–4 = hungry and calm. 7–8 = comfortably full.","Normalize: many haven't felt a real 3 or 5 in years","Practice: 3 readings today, no action required","Close: 'Rebuilding the signal, not following a rule.'"]},
+      {t:"The Satisfaction Factor", b:["Fullness is one signal. Satisfaction is the other.","A meal can fill you and leave you unsatisfied","4 dimensions: flavor, texture, warmth, pleasure","Try: build one satisfying meal this week","Close: 'Satisfaction is a nutrient. Not a luxury.'"]},
+      {t:"Emotional Eating Is Not the Enemy", b:["The 5 flavors: stress, sadness, boredom, celebration, numbing","Why willpower-based approaches fail","The 3-question trace: feeling, what happened, what was I needing","Normalize: everyone eats emotionally sometimes","Preview the 5-tool kit in Ebook 2"]},
+      {t:"Building Your Personal Eating Rhythm", b:["Rhythms > schedules. A rhythm bends.","Most bodies settle into 3 meals + 1–2 snacks","Workbook: map your rhythm for 3 days without changing it","Ask: what feels off? what feels right?","Build one rhythm tweak, not five"]},
+      {t:"What Your Kids Are Really Learning", b:["90% of what kids learn, they learn silently","3 examples of silent modeling","24-hour awareness practice — notice, don't change yet","The generational trauma we can interrupt in one generation","Close: 'You don't need to be perfect. You need to be aware.'"]},
+      {t:"Ending Picky Eating Without Power Struggles", b:["Most picky eating is a power dynamic, not a palate","Division of Responsibility: you/what/when/where, they/if/how much","3 common parent mistakes + what to do instead","Reintroduce foods without pressure","Case study: a family that shifted in 30 days"]},
+      {t:"Talking About Bodies & Food With Kids", b:["Your words become their inner voice","5 phrases to stop saying","5 phrases to start saying","What to say when they comment on your body","What to say when they comment on their own"]},
+      {t:"Family Meals Without the Stress", b:["The myth of the 90-minute family dinner every night","The minimum: 3 meals/week, together, screens off","Simple 4-step structure","No plate policing, nutrition lectures, 'one more bite'","Close: 'Connection is the nutrition.'"]},
+      {t:"Partner & Extended Family: Navigating Pushback", b:["Why even supportive partners sometimes resist","3 conversation starters for partners","3 boundary scripts for grandparents, in-laws","What to do when it escalates","Close: 'You don't need full buy-in. You need enough space to practice.'"]},
+      {t:"Meal Planning That Fits Your Week", b:["The 3-tier framework: simple / medium / leftover","Map a 14-day rotating template","How much planning is enough (less than you think)","Permission: cereal for dinner sometimes","Workbook: build your first 14-day template"]},
+      {t:"The Peaceful Pantry", b:["The 12 staples that make any weeknight possible","What NOT to stock","The 'keep what you actually eat' rule","Rotating fresh list vs. stable pantry","Workbook: your Peaceful Pantry inventory"]},
+      {t:"Grocery Shopping Without Overwhelm", b:["The 20-minute shop template","Shop by category, not recipe","The 'ready to eat' section","Permission to use delivery/pickup","One trip per week is the goal"]},
+      {t:"Cooking: Good Enough > Perfect", b:["Releasing the Instagram cooking performance","The 5-ingredient rule for 80% of weeknights","Batch: 1 protein + 1 starch + 1 vegetable = 3 dinners","Shortcuts aren't 'cheating'","Close: 'Nourished is better than Pinterest.'"]},
+      {t:"When Life Gets Messy", b:["The flex framework: 3 rules that don't bend","Normalize disruption — life interrupts rhythms","How to come back without a 'restart' mindset","Traveling: eat the regional food, move, sleep","Holidays: 1-meal vs. 1-day vs. 1-week mindset"]},
+      {t:"What to Do When You Slip", b:["Redefine 'slip' — it's data, not defeat","Recovery protocol: notice → curious question → next meal forward","Never 'start over Monday' — start at the next bite","3 common slip triggers + how to meet them","Close: 'Peace is what you do with the slips.'"]},
+      {t:"Measuring Progress Without a Scale", b:["5 non-scale markers: bandwidth, sleep, family, flexibility, self-talk","The quarterly check-in template","Why the scale measures the least interesting variable","When weight is a medical concern (non-diet RD)","Workbook: your personal progress dashboard"]},
+      {t:"Building Your Purposeful Plate Plan", b:["Walk through the 8-page plan template","Vision, rituals, rhythms, recovery","Make it yours — not a copy of anyone else's","Plan for 90 days, not 30","Print it. Put it somewhere you'll see it."]},
+      {t:"Your Next 90 Days + Graduation", b:["Celebrate: 6 weeks is not small","Roadmap for the next 90 days","Invite: 1:1 coaching, ebooks, community","Graduation reflection: who were you? who are you now?","Close: 'You are not finished. You are beginning.'"]}
+    ]
+  },
+  {
+    id: "video-reset",
+    label: "7-Day Reset",
+    title: "7-Day Reset Lessons",
+    sub: "One daily practice, 10 minutes each",
+    topics: [
+      {t:"Day 1 — The Pause", b:["Welcome: 'Give me 7 days. Give me 10 minutes a day.'","Today: 3 breaths before every meal","Why it works: creates a 5-second gap between impulse and action","What you might notice: some meals starving, some not hungry","Workbook: after 3 pauses, what did you notice?"]},
+      {t:"Day 2 — The Hunger Ask", b:["Recap: how did The Pause go?","Today: one question, five times — 1–10 hunger scale","No action required. Just the question.","You're rebuilding a signal diet culture trained out","Workbook: log 5 readings with time + context"]},
+      {t:"Day 3 — The Permission Experiment", b:["This is the hardest day. The most freeing day.","Pick ONE food you've labeled 'shouldn't'","Give yourself permission — eat it, or don't","Most find: obsession fades when the war ends","Workbook: expected vs. actual outcome"]},
+      {t:"Day 4 — The Satisfaction Scan", b:["Today: at one meal, pause halfway","Three questions: hungry? satisfied? is this food satisfying?","Satisfaction ≠ fullness","Goal: be the one deciding, not the plate","Workbook: halfway check-in log"]},
+      {t:"Day 5 — The Shame Reframe", b:["If shame shows up, catch it","Ask: what was happening 30 min before I ate?","Shame hides info. Curiosity reveals it.","Usually the eating isn't the problem — it's the message","Workbook: one shame thought + compassionate replacement"]},
+      {t:"Day 6 — The Family Ripple", b:["Today: at one family meal, notice what you model","90% of food learning is silent","Face at your plate, which foods are 'not for me,' which pauses","One small thing to do differently next meal","Workbook: noticed + one change"]},
+      {t:"Day 7 — The Peaceful Plate Promise", b:["The final day. A written commitment to yourself.","Template: this week I learned / keep practicing / release / next step","Sign it. Date it. Keep it visible.","Introduce: $50 flagship discount (RESET50)","Close: 'You did something small for 7 days.'"]}
+    ]
+  },
+  {
+    id: "video-vsl",
+    label: "Sales VSL",
+    title: "Sales Page VSL",
+    sub: "The single video topic",
+    topics: [
+      {t:"\"The 3 Shifts That End Food Stress for Good\" (5–7 min)", b:["Hook (0:00–0:15): 'If you're tired of starting over every Monday — I made this for you.'","Your story (0:15–1:15): old pattern, the moment you stopped, the shift","The 3 shifts (1:15–3:15): awareness → permission → curiosity","Who this is for (3:15–4:15): mom who's tried everything, woman over 40","Offer + guarantee (4:15–6:00): founding price, 30-day guarantee, 'I'd be honored'"]}
+    ]
+  },
+  {
+    id: "video-reels",
+    label: "Reels",
+    title: "Instagram Reels",
+    sub: "24 topics · 12 weeks × 2 per week",
+    topics: [
+      {t:"\"Say this, not that\"", b:["Hook (0–3s): '3 sentences to stop saying about food.'","Swap 1: 'I can't have that' → 'I can. Do I want it?'","Swap 2: 'I was bad today' → 'I'm curious what I was needing'","Swap 3: 'Starting Monday' → 'Starting with my next meal'","CTA: 'Save this. Try one. Tell me which.'"]},
+      {t:"The 3-breath pause", b:["Hook: 'The simplest eating practice I know. 15 seconds.'","Setup: at a table, plate in front, hands in lap","Breath 1, 2, 3 (slow, deliberate, on camera)","Voiceover: 'Not a diet. A pause.'","CTA: 'Try it at your next meal. DM me what you notice.'"]},
+      {t:"\"All foods fit\" — what I mean and don't", b:["Hook: 'My most misunderstood sentence.'","What it means: no food is a moral test","What it doesn't: eat unlimited, ignore how you feel","Real example: birthday cake + body listening","CTA: 'Comment 'plate' if this landed.'"]},
+      {t:"The hunger scale in 30 seconds", b:["Hook: 'Before you eat — one question changes everything.'","1–2 painful. 3–4 good eating window. 5–6 satisfied. 7–8 comfortably full.","Show the visual scale on screen","'Not a rule. Listening.'","CTA: 'Save. Check in before your next meal.'"]},
+      {t:"3 things I wish every mom knew", b:["Hook: 'If I could whisper three things to every mom…'","You decide what's served. They decide how much.","Your kid isn't a problem. Their palate is a process.","What you model > what you say.","CTA: 'Tag a mom who needs this.'"]},
+      {t:"\"What's actually on my plate today\"", b:["Hook: 'The least glamorous meal montage on the internet.'","Real day-in-the-life — breakfast, lunch, snack, dinner","Voiceover: 'Nothing here is photographed for anyone. It's food. For a person. Who was hungry.'","Include the 9pm ice cream, no apology","CTA: 'This is what peaceful looks like.'"]},
+      {t:"Why Monday is the worst day to start", b:["Hook: 'Stop telling yourself you'll start Monday.'","Monday is a diet-culture concept","Truth: every meal is a new meal","At your next bite, choose awareness over rules","CTA: 'What will you try at your next meal?'"]},
+      {t:"What to say when Grandma comments", b:["Hook: '3 scripts for the relative who has opinions about your food.'","Script 1: 'I'm good, thanks — I'm listening to my body today.'","Script 2: 'That's interesting. How's the garden this year?' (redirect)","Script 3: 'Food's not something we talk about at the table here.'","CTA: 'Save for the next family dinner.'"]},
+      {t:"My Sunday reset in 45 minutes", b:["Hook: 'You don't need 4 hours of meal prep on Sunday.'","10 min: pantry check","15 min: loose meal list + grocery list","20 min: store run","CTA: 'This is the rhythm that gives me my week back.'"]},
+      {t:"The \"clean your plate\" myth", b:["Hook: 'The sentence that taught us to override our bodies.'","'Clean your plate' wasn't about gratitude. It was about control.","It taught you to ignore fullness signals","One-generation fix is possible","CTA: 'What did you grow up hearing?'"]},
+      {t:"Satisfaction > fullness", b:["Hook: 'Full and satisfied aren't the same thing.'","Full-but-not-satisfied: low-fat, plain, rushed — sends you looking 20 min later","Satisfied: same calories, more flavor, slower","Ask both questions at your next meal","CTA: 'Try it this week.'"]},
+      {t:"Emotional eating isn't the enemy", b:["Hook: 'Your emotional eating isn't a willpower problem.'","Under every emotional meal is a real need","The problem is treating eating as the only tool","Try: ask what did I actually need?","CTA: 'Save for the next hard moment.'"]},
+      {t:"Birthday party + cake strategy", b:["Hook: 'The birthday party strategy nobody taught us.'","You eat the cake if you want the cake","Not because it's there, expected, or 'not to waste'","Model this in front of your kid","CTA: 'What's your birthday cake policy?'"]},
+      {t:"Pantry staples I'd save in a fire", b:["Hook: '5 pantry items that make any weeknight possible.'","Canned beans. Frozen shrimp. Eggs. Marinara. Parmesan.","Each one is a 10-minute meal","'No meal prep. This is my actual life.'","CTA: 'Comment your go-to staple.'"]},
+      {t:"3 sentences to stop saying at the table", b:["Hook: '3 things I don't say at my table anymore.'","'Clean your plate' — overrides fullness","'No dessert until you finish' — makes dessert the reward","'Ugh, I look fat in this' — kids hear it","CTA: 'Which one are you releasing first?'"]},
+      {t:"The 4 words that changed everything", b:["Hook: 'Four words. That's all it took.'","'Awareness, not rules.'","Every old impulse became a new question","The whole method, condensed","CTA: 'Write this down.'"]},
+      {t:"Why I stopped weighing myself", b:["Hook: 'I stopped weighing myself a year ago. Here's what changed.'","The number had too much power over my day","Non-scale markers showed me more","I'm not anti-scale. I'm no longer ruled by one.","CTA: 'What would you track instead?'"]},
+      {t:"One meal I used to feel guilty about", b:["Hook: 'I used to feel guilty about this meal. Now I just eat it.'","Show the real meal","'Turns out — it's just food. For a person who was hungry.'","Nothing bad happened. I didn't spiral. I just ate.","CTA: 'What's yours?'"]},
+      {t:"What \"balanced\" actually means", b:["Hook: ''Balanced' isn't a pyramid. It's a feeling.'","Balanced = satisfied when you leave the table","Some protein, carb, fat, pleasure","Not measured, tracked, optimized","CTA: 'Save this reframe.'"]},
+      {t:"Kitchen reset on a low-energy day", b:["Hook: 'What to do when you can't even.'","One dish. One counter. One drawer.","Not a deep clean. A soft reset.","Your kitchen meets you where you are","CTA: 'The low-energy version still counts.'"]},
+      {t:"My answer to \"should I be tracking?\"", b:["Hook: 'The most common DM I get.'","For most: tracking activates the same patterns it claims to solve","If it brings peace, keep. If anxiety, pause.","Your body already tracks","CTA: 'What do you notice when you track?'"]},
+      {t:"The body wisdom you were born with", b:["Hook: 'Your body was wise before the first diet.'","Slow B-roll: morning light, breath, hand on chest","Diet culture didn't delete the signals. Just taught you to ignore.","You can rebuild the signals","CTA: 'One slow breath. That's how it starts.'"]},
+      {t:"Family meals: growing up vs. now", b:["Hook: 'Split-screen: my childhood table vs. my table now.'","Left: 'clean your plate,' 'no dessert until,' 'you've had enough'","Right: 'eat to what your body says,' 'food is food,' 'I love you at this table'","One generation. One shift.","CTA: 'What's one phrase you're breaking?'"]},
+      {t:"\"Peace is not a reward for reaching the goal\"", b:["Hook: 'Peace is not the reward. Peace is the path.'","Slow voiceover over soft B-roll","You don't earn peace by losing the weight","You practice peace, and the rest follows","CTA: 'Save this for a hard day.'"]}
+    ]
+  },
+  {
+    id: "video-qa",
+    label: "Monthly Q&A",
+    title: "Monthly Q&A Themes",
+    sub: "12 monthly themes · likely questions to field",
+    topics: [
+      {t:"Jan — New year, no new diet", b:["'How do I start this year without another diet?'","'My family wants me to do a cleanse — how do I opt out?'","'Any 'reset' you recommend for January?'","'My doctor told me to lose weight. What do I do?'","'How do I deal with everyone's resolutions at work?'"]},
+      {t:"Feb — Love & food", b:["'My partner comments on my body. What do I say?'","'How do we eat differently when we live together?'","'Valentine's — chocolate, wine, guilt — help.'","'My partner is dieting. How do we share meals?'","'Can I change my approach without changing theirs?'"]},
+      {t:"Mar — Gentle spring reset", b:["'Is there ANY kind of cleanse that's okay?'","'I want to feel lighter — is that wrong to say?'","'How do I shift with the season without 'dieting for spring'?'","'Mindful version of 'spring cleaning' for my kitchen?'","'How do I resist the April 'bikini body' marketing?'"]},
+      {t:"Apr — Kids & bodies", b:["'My 8-year-old said she's fat. What do I do?'","'How do I talk about my own body in front of kids?'","'Do I need to talk about this if they haven't asked?'","'What about diet talk at school?'","'How do I undo what my mother taught me without blaming her?'"]},
+      {t:"May — Mother's Day & mom guilt", b:["'Why do I feel guilt around food AND being a mom?'","'How do I receive without deflecting?'","'My kids gave me chocolates. Eat or 'save'?'","'Is self-care another thing I'm failing at?'","'How do I mother myself the way I mother my kids?'"]},
+      {t:"Jun — Summer & swimsuit anxiety", b:["'I haven't worn a swimsuit in 5 years. How do I start?'","'Going to the pool with my kids when I hate how I look'","'What do I do when 'before summer' thoughts get loud?'","'How do I decline body comments on vacation?'","'How do I model body peace for my daughters?'"]},
+      {t:"Jul — Family gatherings survival", b:["''You've lost weight' comments — how?'","''You've gained weight' comments — how?'","'Mom pushes food on me at every meal'","'Can I skip a family meal without it being a thing?'","'Staying grounded when diet talk starts at the table'"]},
+      {t:"Aug — Back-to-school", b:["'Picky eater lunches without a war'","'Breakfast without chaos'","'Kid's friend has a 'no sugar' lunch — should mine?'","'School is food-shaming'","'Lunchbox comparison comments'"]},
+      {t:"Sep — Fall rhythm reset", b:["'How do I rebuild routine without being rigid?'","'Good fall eating rhythm for a family?'","''Back to routine' pressure'","'What if I lost my rhythm over summer?'","'How do I stay calm about PSL everything?'"]},
+      {t:"Oct — Halloween + candy peace", b:["'How do I handle the Halloween candy mountain?'","'Let my kid eat 'all the candy'? Really?'","'Kids with dietary restrictions — how do I support?'","'My own sugar stuff gets loud. Help.'","'Celebrate without a food battle'"]},
+      {t:"Nov — Thanksgiving without drama", b:["''You hardly ate' comments'","'Seconds without shame'","'Should I 'earn' Thanksgiving with exercise?'","''What's your Thanksgiving diet plan' convos'","'Not ruining the day with my food anxiety'"]},
+      {t:"Dec — Holidays, travel, grace", b:["'Travel and stay in rhythm'","'Holiday parties — so much food, so much pressure'","'Should I 'maintain' through the holidays?'","''I'll start in January' pressure'","'Overdid it at a holiday meal'"]}
+    ]
+  },
+  {
+    id: "written-email",
+    label: "Weekly emails",
+    title: "Weekly Email Letters",
+    sub: "48 topics across 4 quarterly arcs",
+    topics: [
+      {t:"Welcome — one thing to try today", b:["Warm welcome: 'I'm glad you're here.'","Link to the Peaceful Plate guide","One small practice: 3 breaths before your next meal","Set expectations: one short email per week","Close: 'Welcome to a calmer relationship with food.'"]},
+      {t:"I tried every diet. Then I stopped.", b:["Open: 'I didn't set out to build a method. I set out to survive my kitchen.'","Brief version of your story","The permission week that changed everything","Name what's possible: this became the course","Close: 'You don't have a food problem. You have a relationship problem.'"]},
+      {t:"The sentence that changed everything", b:["The reframe: 'Food is information, not a test of your character.'","Old way: courtroom. New way: laboratory.","Three questions to ask after your next meal","Invite to try this week","Close: 'Simple. Not easy. Worth it.'"]},
+      {t:"What your body is actually telling you", b:["Diet culture taught us to ignore the signal","Hunger isn't a character flaw","Today's practice: one hunger check, no action","Normalize: signals don't return overnight","Close: 'Rebuilding takes time, and it comes back.'"]},
+      {t:"The most counterintuitive thing: permission", b:["Most women say: 'if I allow it, I'll eat it all'","The opposite is what actually happens","Permission ≠ free-for-all","One food to experiment with this week","Close: 'Notice what happens. Obsession fades.'"]},
+      {t:"What happened when I gave myself permission", b:["Tell the specific story","What you thought would happen","What actually happened — the quiet","What that taught you about every other diet","Close: 'This is where it starts — the quiet.'"]},
+      {t:"Maria's Tuesday morning — a client story", b:["Open with her note (with permission)","What's actually different for her now","The thing she didn't expect","Invite reflection: what would your Tuesday feel like?","Close: 'The shift is quiet. That's how you know it's real.'"]},
+      {t:"You are not behind", b:["Direct, gentle reassurance: short on purpose","Acknowledge the hard weeks","You are not broken, not weak, not late","You're practicing something new in an opposite-trained culture","Close: 'Be gentle with yourself this week.'"]},
+      {t:"What my kids see me do at the table", b:["The modeling principle — 90% silent","Faces, plate comments, pauses","Share one thing you changed and why","Give them one modeling exercise this week","Close: 'You don't need to be perfect. You need to be aware.'"]},
+      {t:"The 3-minute morning ritual", b:["Walk through your morning","Why the first 3 minutes set the tone","Keep it simple","Try one piece tomorrow, not all of it","Close: 'Start at your pace, not the world's.'"]},
+      {t:"Why diets work at first, and fail always", b:["Pattern: novelty + structure = short-term wins","Over time: restriction → obsession → rebellion → shame → new diet","The one variable diets skip: your relationship","What to build instead","Close: 'Diets gave you structure. They never gave you peace.'"]},
+      {t:"One question to shift one meal", b:["'What is my body actually hungry for?'","Not moral. Listening.","Practice before your next 3 meals","What shifts when you ask before you act","Close: 'One meal is the whole method in miniature.'"]},
+      {t:"End of Q1 — what's shifted?", b:["A check-in, not a test","5 prompts: food stress, body trust, family, quiet, sleep","Reply if you want — I read every one","Celebrate the invisible shifts","Close: 'This is the quiet work. Thank you.'"]},
+      {t:"What your kids are learning", b:["Silent modeling expanded","3 moments kids watch: mirror, plate, table","Journaling prompt: what did my parent model?","Permission to not be perfect","Close: 'One generation. Spend it gently.'"]},
+      {t:"Division of Responsibility in plain English", b:["Ellyn Satter's framework in a paragraph","Parents: what, when, where. Kids: if, how much.","What this changes at your table tomorrow","Common pushback","Close: 'Most powerful frame you'll learn here.'"]},
+      {t:"Picky eating: the calm approach", b:["Most picky eating is a power dynamic","30-day non-coercive protocol in 3 steps","What NOT to do","Expect slow — works in weeks","Close: 'Your calm is the intervention.'"]},
+      {t:"\"I'm fat\" — when your child says it", b:["Don't panic. Don't overcorrect.","3-step response: curious, reframe, check language","What NOT to say: 'no you're not'","What to say: 'bodies come in all shapes'","Close: 'Your response becomes their inner voice.'"]},
+      {t:"Partners who don't get it yet", b:["Partner resistance is normal","3 conversation starters that aren't lectures","If they stay stuck — you don't need full buy-in","Your practice doesn't depend on theirs","Close: 'Start alone. They'll follow.'"]},
+      {t:"Grandparents, aunts, food comments", b:["3 scripts","When to engage, redirect, step away","How to protect your kids","Why 'keep the peace' often means keep the harm","Close: 'Your calm at the holiday table is generational medicine.'"]},
+      {t:"Birthday parties without the stress", b:["Birthday cake policy: eat it if you want it","What to do when they want seconds, thirds","Party food is not a test","Model permission in front of other parents","Close: 'Celebrate like celebration is the point.'"]},
+      {t:"The sugar conversation", b:["Sugar is not the villain","What IS worth paying attention to","What to stop telling kids","How to include sweets without reward framing","Close: 'Boring sugar. That's the goal.'"]},
+      {t:"Reading labels vs. reading bodies", b:["Obsessive label-reading is a diet behavior","Your body is the better signal","When labels help vs. harm","7-day experiment: stop, notice the shift","Close: 'Your body is smarter than the package.'"]},
+      {t:"Family dinners that aren't performance", b:["Release the Instagram family-dinner fantasy","Minimum: 3 meals/week, together, no screens","Simple rotation + conversation cards","What matters more than food: presence","Close: 'Connection is the nutrition.'"]},
+      {t:"School lunches without performance", b:["Stop making it Pinterest","4-component lunch: protein, carb, produce, pleasure","10-lunch rotation","What to say about other lunches","Close: 'Nourished > photogenic.'"]},
+      {t:"Mid-year check — what's opening?", b:["Check-in prompt","3 questions: softer? still hard? one win?","Reply if you want","No pressure to be further along","Close: 'You're exactly where you are.'"]},
+      {t:"A letter to the mom at 10pm", b:["Open: 'To the mom reading this at 10pm.'","You don't have to do anything tonight","This requires less shame, not more of you","Permission to close this and go to bed","Close: 'I'll be here tomorrow.'"]},
+      {t:"The hunger scale without diet vibes", b:["1–10 scale as awareness","Why most can't feel the mid-range","3-day practice to rebuild","Normalize: weeks, not days","Close: 'Awareness is the whole practice.'"]},
+      {t:"Satisfaction matters more than fullness", b:["The distinction","Low-satisfaction sends you looking 20 min later","4 dimensions: flavor, texture, warmth, pleasure","Try one satisfying meal this week","Close: 'Satisfaction is a nutrient.'"]},
+      {t:"Your body's wisdom was never broken", b:["Diet culture didn't delete signals — taught you to ignore","Signals can be rebuilt","One small daily body check-in","What to expect as signals return","Close: 'Your body remembers.'"]},
+      {t:"Emotional eating isn't the enemy", b:["Reframe: legitimate need in disguise","5 flavors: stress, sadness, boredom, celebration, numbing","3-question trace","When it's a signal vs. a problem","Close: 'Meet it with curiosity.'"]},
+      {t:"The H.A.L.T. check reimagined", b:["Hungry, Angry, Lonely, Tired — expanded","Add: Overwhelmed, Bored, Sad","Awareness tool, not checklist","Walk through a real example","Close: 'The question is the intervention.'"]},
+      {t:"When your body says no — rest as wellness", b:["Rest is wellness. Sleep, stillness, solitude.","The cultural trap of performative self-care","Permission to do less this week","One rest practice","Close: 'Rest is nourishment. Not a reward.'"]},
+      {t:"Swimsuits, mirrors, and peace", b:["Direct about summer body pressure","What I do: wear it, go in the water, be with my kids","What I stopped doing: waiting for the 'right body'","Permission to skip 'before summer' plans","Close: 'The pool is waiting. Not your body.'"]},
+      {t:"Non-scale wins nobody talks about", b:["5 wins: bandwidth, sleep, family, flexibility, self-talk","Why these matter more than weight","Tracking template (not a scale)","Monthly check-in, not daily","Close: 'What you're after is probably on this list.'"]},
+      {t:"Moving without punishment", b:["'Walk it off' is diet culture, not wellness","What movement looks like without earning","3 questions before you move","Walking, yoga, dancing — all count","Close: 'Joy is sustainable fuel.'"]},
+      {t:"Sleep is the missing nutrient", b:["Under-slept bodies crave more, decide worse","The 90 min before bed matters","Small improvements compound","Prioritize sleep over late-night productivity","Close: 'Sleep is the foundation.'"]},
+      {t:"The body at 45 is not the body at 25", b:["Biology changes. Life changes.","Not a loss. Information.","What matters at this age: function, energy, joy","Release comparison to 25-year-old self","Close: 'Meet the body you have now.'"]},
+      {t:"One thing I stopped tracking", b:["Name a specific thing","Why I stopped and what I noticed","Tracking isn't evil — but rarely neutral","7-day experiment: stop tracking X","Close: 'Trust is also a skill.'"]},
+      {t:"Summer's end — kept, released", b:["Seasonal reflection","3 prompts: lighter, heavier, stays","No goal-setting, just noticing","Permission to enter fall without a plan","Close: 'Seasons are doing the work too.'"]},
+      {t:"Fall rituals — morning light, warm mugs", b:["The season's gift: slower mornings, warm food","3 small rituals to add","What to let go from summer","Seasonal shift = nervous-system shift","Close: 'Pour the tea. Sit with it.'"]},
+      {t:"Halloween and the candy conversation", b:["The big kid energy around candy","My family's approach: unrestricted, present, trust","What NOT to do","What to do instead","Close: 'Boring candy. That's the win.'"]},
+      {t:"Thanksgiving without the food drama", b:["3 rules: eat when hungry, honor fullness, skip 'earning' talk","What to say when a relative comments","1-meal vs. 1-day vs. 1-week mindset","Don't earn it. Enjoy it.","Close: 'A meal is a meal. Not a test.'"]},
+      {t:"Leftovers, guilt, and grace", b:["The leftover ritual — reheating as kindness","Why we moralize leftovers","Waste ≠ virtue argument vs. your body's signals","Eat if you want. Compost if not.","Close: 'The guilt is not the gratitude.'"]},
+      {t:"The holidays are not a test", b:["Release 'be good through December / detox in January'","A season is not a character evaluation","What to replace the test mindset","Permission to enjoy imperfectly","Close: 'You don't need to 'survive' your holidays.'"]},
+      {t:"When the relative comments on your plate", b:["Script library expanded","De-escalate, redirect, step away","When to protect kids > peace","You don't owe an explanation","Close: 'Your plate is not a conversation starter.'"]},
+      {t:"Gifting without diet-culture gifting", b:["What NOT to give: scales, diet books, transformation programs","What to give: journals, real food, experiences, time","The subtle message under every gift","Mini gift guide","Close: 'Gifts that say I see you.'"]},
+      {t:"A mid-December permission slip", b:["One-line: 'Permission to skip the routine this week.'","Short reflection","Promise: your work will be there in January","Tiny practice: one pause, one breath","Close: 'Rest is also the work.'"]},
+      {t:"New Year's is a marketing campaign", b:["The scripts we've been sold","What January actually feels like in your body","Small rituals that aren't resolutions","Permission to do nothing new","Close: 'A new year is also a quiet one.'"]}
+    ]
+  },
+  {
+    id: "written-ig",
+    label: "IG captions M2",
+    title: "Instagram Captions — Month 2",
+    sub: "30 more topics after the IG batch doc",
+    topics: [
+      {t:"The sentence I say when shame shows up", b:["Hook: 'When shame shows up, I say one sentence.'","The sentence: 'This is information, not a verdict.'","Why: reframes courtroom → laboratory","Invitation: what's yours?","Close: 'Save this for the next 9pm kitchen moment.'"]},
+      {t:"What 'I was good today' means now", b:["Hook: ''I was good today' used to mean: I ate less than I wanted.'","Now: I listened, rested, fed myself, moved when I felt like it","Difference is the frame, not the behavior","Practice the new definition","Close: 'Redefine 'good' for yourself.'"]},
+      {t:"Why 'starting over' is a trap", b:["Hook: ''Starting over' is the most diet-culture sentence there is.'","Every meal is the start","What to say: 'My next bite.'","Practice at your next meal","Close: 'You're not behind. Right on time.'"]},
+      {t:"The 2am thought that changed everything", b:["Hook: 'At 2am last year, I had the thought that changed it all.'","The thought: 'What if the problem isn't me?'","That question opened everything","What question could open yours?","Close: 'Sometimes clarity comes at 2am.'"]},
+      {t:"A reframe for the woman in the mirror", b:["Hook: 'For the woman who avoids the mirror today.'","Short, gentle","Your body is not a problem to solve","Small ritual: a kind word, out loud, to yourself","Close: 'Try it. See what shifts.'"]},
+      {t:"What permission costs you (nothing)", b:["Hook: 'I used to be so scared of permission.'","I thought it would cost me control","It gave me back my life","Permission is free. Restriction is expensive.","Close: 'Try one permission this week.'"]},
+      {t:"Why I don't believe in willpower", b:["Hook: 'Willpower is a lie diet culture told us.'","Willpower runs out. Systems don't.","Build instead: awareness, rhythm, community","The work is structural, not moral","Close: 'Stop white-knuckling.'"]},
+      {t:"The peaceful version of you", b:["Hook: 'The peaceful version of you is not a different woman.'","She's the same woman with one fewer burden","Not far. Under the noise.","One practice to meet her today","Close: 'She's waiting. She's kind.'"]},
+      {t:"Why 'clean eating' isn't clean", b:["Hook: ''Clean eating' is a belief system dressed as nutrition.'","Language creates hierarchy (clean/dirty)","Your body doesn't care. It cares if it's fuel.","Watch how you feel, not what's labeled","Close: 'The wording is the problem.'"]},
+      {t:"Protein, carbs, fat — no morality", b:["Hook: 'Three macronutrients. Zero morality.'","What each does (1 sentence each)","Balance > cutting","Your plate is not a purity test","Close: 'All three belong.'"]},
+      {t:"What your afternoon crash is about", b:["Hook: 'Your 3pm crash is not a moral failing.'","Common culprits: low protein, under-eating earlier, sleep debt","3-question diagnostic","One small fix","Close: 'It's math, not willpower.'"]},
+      {t:"Fiber is not a diet", b:["Hook: 'Fiber has a marketing problem.'","What it actually does","Easy, non-dietish ways to include more","Not a goal — a quality to notice","Close: 'Add. Don't obsess.'"]},
+      {t:"Breakfast is not a trap", b:["Hook: 'Breakfast is not the most important meal. It's just a meal.'","Some thrive on it. Some don't. Both fine.","What to notice: how you feel by 10, 12","Let your body vote","Close: 'Not everyone needs a 7am plate.'"]},
+      {t:"'Balanced' in real life", b:["Hook: ''Balanced' isn't a pyramid.'","Protein, carb, fat, fiber, pleasure","On your plate, flexibly, most days","Not 100% of meals. Most.","Close: 'Practice, not performance.'"]},
+      {t:"The phrase I banned at my family table", b:["Hook: 'I don't say this at my family table anymore.'","The phrase: 'I'm being bad.'","Why it matters what my kids hear","What I say instead","Close: 'Start with one phrase.'"]},
+      {t:"What I say at school pickup", b:["Hook: 'Other moms bring it up. I'm ready.'","3 scripts I use","When to engage, when to redirect","Don't be defensive — be grounded","Close: 'You're allowed to opt out.'"]},
+      {t:"Teen daughters and weight", b:["Hook: 'If you have a tween or teen daughter — read this.'","The comparison years hit hard","What to say, what not to say","What matters more: what she sees you do","Close: 'Many chances. Don't panic about one.'"]},
+      {t:"'I don't like my body' — scripts", b:["Hook: 'Don't panic. Don't overcorrect.'","3-step response","Why 'you look fine' doesn't work","What does work","Close: 'Your response becomes their inner voice.'"]},
+      {t:"Birthday cake, no bargaining", b:["Hook: 'No, my kid doesn't 'earn' birthday cake.'","Why the bargain backfires","What I say instead","Long-term cost of food bribery","Close: 'Birthday cake is a birthday.'"]},
+      {t:"Dinner then vs. now", b:["Hook: 'My childhood table and my current table look different.'","Old: clean your plate, no dessert until","Now: eat to body, food is food","One generation","Close: 'You can be the shift.'"]},
+      {t:"A peaceful morning in 60 seconds", b:["Hook: 'A peaceful morning — in one paragraph.'","Warm liquid, open window, breath, sit","Not a routine. A rhythm.","One piece, not all","Close: 'Start slow. Start small.'"]},
+      {t:"The one kitchen ritual I protect", b:["Hook: 'One ritual I protect, even on hard days.'","Name it (coffee, window, journal)","Why: only thing that's mine before the day","Permission to guard it","Close: 'What's yours?'"]},
+      {t:"Why I romanticize my ordinary plate", b:["Hook: 'I photograph my Tuesday dinner.'","Not for Instagram. For me.","Beauty in ordinary keeps me present","Old pottery, linen napkin — small","Close: 'Ordinary is the point.'"]},
+      {t:"A Sunday that isn't Sunday-scaries", b:["Hook: 'I don't do the Sunday-scaries.'","What I do instead","Meal-plan isn't mandatory","Your Sunday is not a runway","Close: 'Reclaim the day.'"]},
+      {t:"Slow coffee as radical act", b:["Hook: 'I drink my coffee hot. Hot.'","Sitting still 10 min is a protest","Your nervous system knows the difference","Try it once this week","Close: 'Warm mug. Soft chair. That's it.'"]},
+      {t:"Rest is a form of nourishment", b:["Hook: 'Rest isn't a reward. It's a food group.'","Sleep, stillness, silence, solitude","All nourish. All count.","One rest practice","Close: 'Rest is wellness.'"]},
+      {t:"Wellness nobody sells you", b:["Hook: 'The wellness industry doesn't sell these.'","Because they're free and they work","Touch, sleep, friendship, outdoor light","Inventory your month","Close: 'The unsellable is often what matters.'"]},
+      {t:"5 non-scale wins I track", b:["Hook: 'I track 5 things. None is weight.'","Bandwidth, sleep quality, self-talk, family, flexibility","Why these matter","Permission to choose your 5","Close: 'What would you track?'"]},
+      {t:"What my doctor doesn't ask", b:["Hook: 'My doctor doesn't ask. But I wish she would.'","Sleep. Stress. Relationship with food. Body peace.","Why these matter as much as bloodwork","How to advocate for yourself","Close: 'Ask the questions they don't.'"]},
+      {t:"40 is not a before-picture", b:["Hook: '40 isn't the 'before.' 40 is the now.'","Your body, brain, energy — not a runway","Age comes with gifts. Receive them.","What I'm no longer shrinking for","Close: 'Now is the point.'"]}
+    ]
+  },
+  {
+    id: "written-stories",
+    label: "Student stories",
+    title: "Student Story DM Prompts",
+    sub: "7 prompts that generate testimonial-ready responses",
+    topics: [
+      {t:"\"What's one small thing that's different now?\"", b:["Short, specific, concrete","Gives them permission to share small wins","Generates quotable 1–2 sentence answers","Use for graduates at 30, 60, 90 day marks","Frame: 'I'd love to hear — no pressure, short answer is perfect.'"]},
+      {t:"\"What's a moment you noticed the old pattern — and didn't follow it?\"", b:["Highlights the pivot, not the destination","Surfaces specific scenes (9pm kitchen, Sunday dinner, etc.)","Makes for vivid testimonial copy","Best for month 2+ students","Frame: 'Even a tiny one counts.'"]},
+      {t:"\"Put this week on a stress-to-peace scale. Where are you?\"", b:["Quick, quantifiable","Let them rate 1–10","Ask why — that's where the gold is","Good for monthly check-ins","Frame: 'No right answer. Just curious.'"]},
+      {t:"\"What's one thing your kids have seen you do differently?\"", b:["Surfaces family modeling wins","Emotional, shareable content","Parents love sharing these","Use especially for Family Edition students","Frame: 'Even something tiny that you noticed.'"]},
+      {t:"\"Is there a meal you eat now that you used to avoid?\"", b:["Surfaces concrete before/after","Often becomes an IG post on its own","Permission to name the 'forbidden' food","Great for Reset graduates","Frame: 'I'm collecting these — would love yours.'"]},
+      {t:"\"Has anyone in your family noticed the shift?\"", b:["Third-party validation in their own words","Captures partner/kid comments","Sharp, specific quotes","Best at 60–90 days","Frame: 'Don't ask them — just notice what they've said.'"]},
+      {t:"\"What would you tell someone who's where you were 90 days ago?\"", b:["Graduate-to-new-student testimonial gold","Builds social proof at scale","Phrasing often becomes sales page copy","Use at course completion","Frame: 'Whatever you'd say if she messaged you tonight.'"]}
+    ]
+  },
+  {
+    id: "written-blog",
+    label: "Blog posts",
+    title: "Blog / SEO Posts",
+    sub: "24 keyword-targeted topics · 5 H2 sections each",
+    topics: [
+      {t:"Mindful eating for moms — what it is, what it isn't", b:["The definition in one sentence","What it looks like for a busy mom (real examples)","Common misconceptions — not slow chewing, not another diet","3 entry practices you can start today","Where to go deeper — guide + course + community"]},
+      {t:"How to stop the diet-binge cycle for good", b:["Why the cycle exists (restriction → rebellion → shame)","The root fix — permission, not willpower","The 3-breath pause, permission experiment, shame reframe","What to expect week 1, month 1, month 3","When to get support"]},
+      {t:"What to say when your kid says 'I'm fat'", b:["Why your panic response makes it worse","Ages 3–7 scripts","Ages 8–11 scripts","Ages 12–16 scripts","Your language in the mirror (silent modeling)"]},
+      {t:"Picky eating: why pressure backfires", b:["The power dynamic myth","Division of Responsibility framework","What to stop doing","The 30-day non-coercive protocol","When to see a pediatrician"]},
+      {t:"Division of Responsibility explained", b:["Who Ellyn Satter is","What parents decide","What kids decide","Why this shifts everything","Common partner pushback"]},
+      {t:"How to be a non-diet mom", b:["Why every mom is under pressure","The 5 everyday language shifts","Handling friends, family, school","Protecting kids without being preachy","The long game — one generation"]},
+      {t:"Mindful vs. intuitive eating — the difference", b:["Brief history of each","Where they overlap","Where they differ","Which to start with","Where Purposefully Eating fits"]},
+      {t:"9 phrases diet culture taught us", b:["'Earned it' → 'Chose it'","'Cheat meal' → 'Meal I enjoyed'","'Burn it off' → 'Move because it feels good'","'Being bad' → 'Being human'","5 more + printable wallet card"]},
+      {t:"Family meal ideas that aren't performative", b:["The Pinterest fantasy vs. real families","The 4-component plate","14 real meal ideas","Weeknight vs. weekend routines","Connection when food isn't the point"]},
+      {t:"The 3 shifts for women over 40", b:["Why 40+ + diet culture = particular exhaustion","Shift 1 — rules to awareness","Shift 2 — restriction to permission","Shift 3 — shame to curiosity","Where to go from here"]},
+      {t:"Why emotional eating isn't willpower", b:["What your brain is actually doing","The 5 flavors","Why willpower-based fixes fail","The 5-tool kit","When to involve a clinician"]},
+      {t:"Why Monday is the worst day to start", b:["The Monday-as-reset myth","What neuroscience says about symbolic restarts","The 'next bite' mindset","A practice for Tuesday","Permission to skip the restart"]},
+      {t:"What a peaceful food relationship looks like", b:["What it's NOT","A real day in my food life","The 5 peaceful markers","What peace isn't (not a weight goal)","How to start today"]},
+      {t:"Grocery shopping without overwhelm", b:["Why grocery overwhelm is real","The 20-minute template","Shop by category, not recipe","The Peaceful Pantry list","When delivery/pickup is right"]},
+      {t:"Raising kids who don't hate their bodies", b:["The silent modeling rule","Ages and stages language","What not to say to yourself","What to say about their bodies","Undoing outside messages"]},
+      {t:"What 'all foods fit' means (and doesn't)", b:["The phrase's origin and misunderstanding","What it does mean","What it doesn't mean","How to explain it to a partner","A real week's plates"]},
+      {t:"Why I stopped weighing myself", b:["My personal story","Research on daily weighing + mental health","What I track instead","When the scale is medically useful","Try a 30-day experiment"]},
+      {t:"Satisfaction vs. fullness — the truth", b:["How they're different signals","Why low-satisfaction sends you looking 20 min later","The 4 dimensions","A 7-day experiment","What changes when satisfaction is the target"]},
+      {t:"Holiday eating: a non-diet survival guide", b:["Why holidays trigger old patterns","The 3 rules that don't bend","Scripts for family comments","What to do after 'too much'","A January that isn't a restart"]},
+      {t:"School lunches without food police", b:["What you're modeling","The 4-component lunch template","The 10-lunch rotation","Handling comparison","Notes for your kid's teacher"]},
+      {t:"When a family member comments on your plate", b:["Why it stings","3 script options","What your kids learn when you hold ground","When to revisit later","Permission to protect peace"]},
+      {t:"Why Sunday meal prep is burning moms out", b:["The performance of 'Sunday' prep","The 45-minute alternative","Why flexibility > rigidity","My actual Sunday","Permission to do less"]},
+      {t:"7 things I wish I'd known before 40", b:["Your body will change — not a failure","Sleep > macros","Your worth isn't on the scale","Peace can't be earned by shrinking","3 more + letter to past self"]},
+      {t:"How to talk about food in front of kids", b:["Why what you say about YOUR plate matters","10 to stop saying","10 to start saying","When you slip — how to recover","The phrase to say most often: 'food is food'"]}
+    ]
+  }
+];
+
+/* ===== RENDER ===== */
+const nav = document.getElementById('nav');
+const content = document.getElementById('content');
+
+nav.innerHTML = sections.map(s => `<a href="#${s.id}" data-nav="${s.id}">${s.label}</a>`).join('');
+
+content.innerHTML = sections.map(s => {
+  const topicsHtml = s.topics.map((topic, i) => `
+    <div class="topic" data-topic="${s.id}-${i}">
+      <div class="topic-head">
+        <span class="topic-num">${i + 1}</span>
+        <span class="topic-title">${topic.t}</span>
+        <span class="topic-caret">▾</span>
+      </div>
+      <div class="topic-body">
+        <div class="topic-body-inner">
+          <h4>5-Bullet Outline</h4>
+          <ul>${topic.b.map(b => `<li>${b}</li>`).join('')}</ul>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  return `<div class="section" id="${s.id}">
+    <h2>${s.title}</h2>
+    <div class="section-sub">${s.sub}
+      <button class="expand-all" data-section="${s.id}">Expand all</button>
+    </div>
+    ${topicsHtml}
+  </div>`;
+}).join('');
+
+// Expand/collapse topics
+document.querySelectorAll('.topic-head').forEach(el => {
+  el.addEventListener('click', () => el.parentElement.classList.toggle('open'));
+});
+
+// Expand-all toggle
+document.querySelectorAll('.expand-all').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const section = document.getElementById(btn.dataset.section);
+    const topics = section.querySelectorAll('.topic');
+    const anyClosed = Array.from(topics).some(t => !t.classList.contains('open'));
+    topics.forEach(t => t.classList.toggle('open', anyClosed));
+    btn.textContent = anyClosed ? 'Collapse all' : 'Expand all';
+  });
+});
+
+// Active section highlight on nav
+const navLinks = document.querySelectorAll('[data-nav]');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(l => l.classList.toggle('active', l.dataset.nav === e.target.id));
+    }
+  });
+}, { rootMargin: '-40% 0px -40% 0px' });
+sections.forEach(s => {
+  const el = document.getElementById(s.id);
+  if (el) io.observe(el);
+});
+</script>
+</body>
+</html>
