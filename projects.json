@@ -64,6 +64,16 @@
       "impact": "Massive — this is where every ad dollar lands"
     },
     {
+      "id": "aesthetician-video-schema",
+      "title": "Add VideoObject schema once dedicated esthetician video is ready",
+      "category": "seo",
+      "priority": "medium",
+      "status": "pending",
+      "description": "Ken is creating a dedicated video specifically for the esthetician page. Once the video URL is live, Claude will add a VideoObject entry to the @graph schema and add a video sitemap extension. The 29-image gallery + ImageGallery schema is already shipped.",
+      "estimatedTime": "10 min (after video uploaded)",
+      "impact": "Video rich result eligibility in Google SERP"
+    },
+    {
       "id": "squarespace-seo-headshots-branding",
       "title": "Execute Squarespace SEO plan for Headshots-Branding.com",
       "category": "seo",
@@ -498,6 +508,8 @@
   ],
   "timeline": [
     { "date": "2026-04-16", "project": "signature-branding-app", "event": "Creative Studio upgraded — effects panel (shadow/glow/outline), gradient editor, 3 new shapes (star/arrow/diamond), text rotation + letter spacing", "type": "milestone" },
+    { "date": "2026-04-17", "project": "seo-strategy", "event": "/industries/estheticians dedicated page — added to sitemap (was MISSING — Google couldn't index), ImageGallery + 29 ImageObject schema added to IndustryLandingPage @graph, per-image keyword-rich alt text live on all 3 slideshow positions", "type": "launch" },
+    { "date": "2026-04-17", "project": "seo-strategy", "event": "/industries/beauty/estheticians sub-variant SEO upgrade — 12 FAQs, dual aesthetician/esthetician spelling, ImageGallery schema, per-image alt text", "type": "launch" },
     { "date": "2026-04-17", "project": "seo-strategy", "event": "SEO strategy COMPLETE — GMB content kit (8 markets, 750-char descriptions, Google Posts, Q&A seeds, review templates) + Backlink strategy (50+ directories, 4 outreach templates, PR pitches) shipped to seo-kit/", "type": "milestone" },
     { "date": "2026-04-16", "project": "seo-strategy", "event": "Blog launched — 8 cornerstone SEO articles published covering hairstylist, salon owner, real estate, local, and comparison content clusters (15,000+ words of content)", "type": "milestone" },
     { "date": "2026-04-16", "project": "seo-strategy", "event": "SEO overhaul shipped — beauty page upgraded for paid ads: 12 FAQs, @graph schema, 4 PPC sub-variants (salon-owners/hairstylists/estheticians/nail-techs)", "type": "milestone" },
