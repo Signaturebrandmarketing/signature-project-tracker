@@ -55,12 +55,12 @@
     },
     {
       "id": "lovable-seo-headshot-event",
-      "title": "Run SEO overhaul prompt on signatureheadshotevent.com Lovable project",
+      "title": "Paste Lovable SEO prompt into signatureheadshotevent.com project",
       "category": "deploy",
       "priority": "critical",
       "status": "pending",
-      "description": "Claude will draft the full Lovable prompt with meta tags, schema markup for all 8 markets, Event schema, LocalBusiness for each location, FAQ expansion, and Core Web Vitals improvements. THIS IS THE BOOKING SITE — biggest direct revenue impact.",
-      "estimatedTime": "10 min to run + rebuild",
+      "description": "Prompt is READY at ~/Desktop/signature-ops/seo-kit/lovable-prompt-signatureheadshotevent.md — open that file, copy the entire prompt, paste into the Lovable chat for signatureheadshotevent.com project. Covers 8 location pages, Event schema, LocalBusiness per market, full SEO stack. THIS IS THE BOOKING SITE — biggest direct revenue impact.",
+      "estimatedTime": "15 min to run + rebuild",
       "impact": "Massive — this is where every ad dollar lands"
     },
     {
@@ -77,11 +77,11 @@
       "id": "squarespace-seo-headshots-branding",
       "title": "Execute Squarespace SEO plan for Headshots-Branding.com",
       "category": "seo",
-      "priority": "critical",
+      "priority": "high",
       "status": "pending",
-      "description": "Claude will draft a complete Squarespace-specific SEO plan: page titles, meta descriptions, code injection for schema markup, SEO settings per page, alt text, blog setup. Execute step-by-step in Squarespace admin.",
-      "estimatedTime": "2-3 hours",
-      "impact": "SEO parity with main sites — rank this domain too"
+      "description": "Plan is READY at ~/Desktop/signature-ops/seo-kit/squarespace-seo-headshots-branding.md — 6 phases covering site settings, per-page SEO, code injection schemas (Organization, LocalBusiness x2, Service, FAQPage), image alt text, blog setup, sitemap submission. Execute in Squarespace admin in priority order. 90 min for highest impact phases.",
+      "estimatedTime": "2-3 hours full; 90 min for top priority phases",
+      "impact": "Rank this domain for 'Lake Wales' + 'Fort Lauderdale' + headshot queries, complement main sites"
     },
     {
       "id": "seo-gsc-submit-sitemap",
@@ -508,6 +508,7 @@
   ],
   "timeline": [
     { "date": "2026-04-16", "project": "signature-branding-app", "event": "Creative Studio upgraded — effects panel (shadow/glow/outline), gradient editor, 3 new shapes (star/arrow/diamond), text rotation + letter spacing", "type": "milestone" },
+    { "date": "2026-04-17", "project": "seo-strategy", "event": "Lovable SEO prompt for signatureheadshotevent.com + Squarespace SEO plan for Headshots-Branding.com written and saved to seo-kit/. Ready for Ken to execute.", "type": "milestone" },
     { "date": "2026-04-17", "project": "seo-strategy", "event": "/industries/estheticians dedicated page — added to sitemap (was MISSING — Google couldn't index), ImageGallery + 29 ImageObject schema added to IndustryLandingPage @graph, per-image keyword-rich alt text live on all 3 slideshow positions", "type": "launch" },
     { "date": "2026-04-17", "project": "seo-strategy", "event": "/industries/beauty/estheticians sub-variant SEO upgrade — 12 FAQs, dual aesthetician/esthetician spelling, ImageGallery schema, per-image alt text", "type": "launch" },
     { "date": "2026-04-17", "project": "seo-strategy", "event": "SEO strategy COMPLETE — GMB content kit (8 markets, 750-char descriptions, Google Posts, Q&A seeds, review templates) + Backlink strategy (50+ directories, 4 outreach templates, PR pitches) shipped to seo-kit/", "type": "milestone" },
