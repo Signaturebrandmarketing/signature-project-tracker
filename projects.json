@@ -4,6 +4,36 @@
   "target": 95,
   "actionItems": [
     {
+      "id": "rewards-apply-migrations",
+      "title": "Apply 7 rewards migrations to production Supabase",
+      "category": "deploy",
+      "priority": "critical",
+      "status": "pending",
+      "description": "7 migrations committed to git (Phase 1-7: rewards, ambassadors, marketplace, partners, fundraising, bartering, events) but NOT applied in production. Run the Lovable prompt I'll provide to apply them. Blocks all downstream rewards work.",
+      "estimatedTime": "5 min (Lovable runs the migrations)",
+      "impact": "CRITICAL — unlocks entire rewards + affiliate program"
+    },
+    {
+      "id": "rewards-backfill-codes",
+      "title": "Backfill referral codes for all 58 existing profiles",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "After migrations apply, every existing user needs a unique referral code. Claude will run the backfill via SQL once tables exist.",
+      "estimatedTime": "2 min",
+      "impact": "Every existing client becomes a potential referrer overnight"
+    },
+    {
+      "id": "rewards-ambassador-launch-plan",
+      "title": "Decide ambassador launch criteria + initial invite list",
+      "category": "optimization",
+      "priority": "medium",
+      "status": "pending",
+      "description": "Who gets Platinum vs Gold vs Silver on launch? Top referrers from existing clients? Network personal connections? This drives the first 10-30 ambassadors and sets the tone.",
+      "estimatedTime": "30 min planning",
+      "impact": "Seeds the referral flywheel"
+    },
+    {
       "id": "api-ghl",
       "title": "Provide GoHighLevel API key",
       "category": "api-keys",
@@ -363,21 +393,30 @@
     },
     {
       "id": "rewards-ecosystem",
-      "name": "Signature Rewards & Ecosystem Platform",
+      "name": "Signature Rewards & Affiliate Program",
       "status": "in-progress",
-      "health": "building",
-      "weight": 2,
-      "description": "Referral rewards, marketplace, ambassadors, partners — 7-function ecosystem hub",
+      "health": "needs-attention",
+      "weight": 3,
+      "description": "Client rewards + ambassador affiliate program — TOP PRIORITY. 7-function ecosystem hub with referral engine already built in code but not yet live.",
       "modules": [
-        { "name": "Referral/Rewards Engine", "status": "in-progress", "note": "Priority #1 — dollar-denominated credits" },
-        { "name": "Booking Marketplace", "status": "planned", "note": "Vetted provider network" },
-        { "name": "Ambassador Program", "status": "planned", "note": "Higher-tier referral partners" },
-        { "name": "Preferred Partners Directory", "status": "planned", "note": "$49-$199/mo listings" },
-        { "name": "Non-Profit Fundraising", "status": "planned", "note": "Campaigns, tickets, auctions" },
-        { "name": "Bartering Platform", "status": "planned", "note": "Service exchange" },
-        { "name": "Networking Event Perks", "status": "planned", "note": "QR check-in, VIP access" }
+        { "name": "Database Schema (7 phases)", "status": "in-progress", "note": "Migrations written and committed to git — NOT YET APPLIED to production Supabase" },
+        { "name": "Edge Functions (6 total)", "status": "in-progress", "note": "rewards-record-referral-click, rewards-process-conversion, rewards-submit-action, ambassador-apply, ambassador-approve, ambassador-request-payout — written but blocked by missing tables" },
+        { "name": "Square Payment Hook", "status": "complete", "note": "square-payment-sync already calls rewards-process-conversion on new payments" },
+        { "name": "ReferralLanding page /ref/:code", "status": "complete", "note": "Captures clicks, stores in localStorage, redirects to /redeem" },
+        { "name": "Referral Rewards Engine (Phase 1)", "status": "in-progress", "note": "Needs: apply migrations, backfill codes, user dashboard" },
+        { "name": "Ambassador Program (Phase 2)", "status": "in-progress", "note": "Schema + edge functions ready; needs user-facing application + dashboard" },
+        { "name": "Provider Marketplace (Phase 3)", "status": "in-progress", "note": "Schema committed; needs frontend" },
+        { "name": "Preferred Partners (Phase 4)", "status": "in-progress", "note": "Schema committed; needs listings page + checkout" },
+        { "name": "Fundraising (Phase 5)", "status": "in-progress", "note": "Schema committed; needs campaigns page + payout integration" },
+        { "name": "Bartering (Phase 6)", "status": "in-progress", "note": "Schema committed; needs service exchange UI" },
+        { "name": "Networking Events (Phase 7)", "status": "in-progress", "note": "Schema committed; needs QR check-in + tier perks" },
+        { "name": "User Rewards Dashboard", "status": "planned", "note": "TO BUILD: /rewards page with balance, referral link, history, milestones" },
+        { "name": "Admin Rewards Monitor", "status": "planned", "note": "TO BUILD: approve action submissions, ambassador applications, payouts" }
       ],
-      "lastActivity": "2026-04-08"
+      "lastActivity": "2026-04-19",
+      "issues": [
+        { "severity": "critical", "text": "7 migrations committed to git are NOT applied to production — tables do not exist yet" }
+      ]
     },
     {
       "id": "ghl-conversational-ai",
@@ -507,6 +546,9 @@
     }
   ],
   "timeline": [
+    { "date": "2026-04-19", "project": "rewards-ecosystem", "event": "ELEVATED TO #1 PRIORITY — Ken directed focus on Client Rewards + Affiliate Program. Audit revealed 7 phases of migrations + 6 edge functions already in git but NOT applied to production Supabase.", "type": "milestone" },
+    { "date": "2026-04-19", "project": "signature-branding-app", "event": "Fulfillment Monitor admin panel live — stuck/partial-failure jobs auto-detected, admin alert emails, one-click retry", "type": "launch" },
+    { "date": "2026-04-19", "project": "signature-branding-app", "event": "CRITICAL BUG FIX: fulfillment silently completing with 2/150 images — rate-limit handling rewritten, status validation added, auto-chain fixed, gender bias in 4 styles corrected. Celeste Houston order recovered.", "type": "fix" },
     { "date": "2026-04-16", "project": "signature-branding-app", "event": "Creative Studio upgraded — effects panel (shadow/glow/outline), gradient editor, 3 new shapes (star/arrow/diamond), text rotation + letter spacing", "type": "milestone" },
     { "date": "2026-04-17", "project": "seo-strategy", "event": "Lovable SEO prompt for signatureheadshotevent.com + Squarespace SEO plan for Headshots-Branding.com written and saved to seo-kit/. Ready for Ken to execute.", "type": "milestone" },
     { "date": "2026-04-17", "project": "seo-strategy", "event": "/industries/estheticians dedicated page — added to sitemap (was MISSING — Google couldn't index), ImageGallery + 29 ImageObject schema added to IndustryLandingPage @graph, per-image keyword-rich alt text live on all 3 slideshow positions", "type": "launch" },
