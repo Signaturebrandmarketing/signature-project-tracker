@@ -38,10 +38,20 @@
       "title": "Provide GoHighLevel API key",
       "category": "api-keys",
       "priority": "critical",
-      "status": "pending",
-      "description": "Unblocks the entire CRM Integration project. Go to GHL > Settings > Business Profile > API Keys. This is the #1 bottleneck on your tracker.",
+      "status": "done",
+      "description": "UNBLOCKED 2026-04-19. Keys now in Supabase (GHL_API_KEY for GP, GHL_BRANDING_API_KEY for H&B, webhook secrets). Full bidirectional + cross-sync live.",
       "estimatedTime": "5 min",
       "impact": "Unblocks CRM Integration (+7 health points)"
+    },
+    {
+      "id": "ghl-redeploy-synced",
+      "title": "Redeploy headshot-ghl-sync + square-payment-sync in Lovable",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "Just committed to GitHub (d9289d5): new headshot-ghl-sync edge function + square-payment-sync modifications. Lovable needs to pull + deploy both. Unblocks Outcomes 1, 3, 4 of GHL integration.",
+      "estimatedTime": "5 min (Lovable deploys)",
+      "impact": "Goes live: AI purchases auto-tag contacts, headshot completions auto-flag, AI Full/Premium buyers auto-qualify as GP prospects"
     },
     {
       "id": "api-anthropic",
@@ -438,14 +448,19 @@
     {
       "id": "crm-integration",
       "name": "GHL CRM Integration",
-      "status": "blocked",
-      "health": "blocked",
+      "status": "active",
+      "health": "building",
       "weight": 2,
-      "description": "Connect GoHighLevel CRM to platform — webhooks, pipelines, contact sync",
+      "description": "Two GHL sub-accounts (GP + H&B) with full bidirectional + cross-sync. Auto-tags contacts on purchases/sessions, auto-flags AI Full/Premium buyers as GP prospects.",
       "modules": [
-        { "name": "API Key Setup", "status": "blocked", "note": "Needs GHL API key from Ken" },
-        { "name": "Webhook Configuration", "status": "planned", "note": "gp_integration_connections is empty" },
-        { "name": "Contact Sync", "status": "planned", "note": "Auto-create platform accounts from bookings" }
+        { "name": "API Key Setup", "status": "complete", "note": "GHL_API_KEY (GP) + GHL_BRANDING_API_KEY (H&B) + webhook secrets all live in Supabase" },
+        { "name": "GP Webhook (inbound)", "status": "complete", "note": "Receives contact/appointment events, syncs to enrollments, logs to gp_webhook_events" },
+        { "name": "H&B Webhook (inbound)", "status": "complete", "note": "Receives headshot bookings, auto-creates Supabase profile + session, invite email" },
+        { "name": "GP Outbound Sync", "status": "complete", "note": "gp-ghl-sync manages enrollment lifecycle tags in GP GHL" },
+        { "name": "H&B Outbound Sync", "status": "complete", "note": "NEW headshot-ghl-sync: tags by purchase tier, session completion, milestone. Cross-syncs qualifying buyers to GP prospect pipeline." },
+        { "name": "Square → H&B wiring", "status": "complete", "note": "square-payment-sync now fires headshot-ghl-sync on AI purchases + headshot sessions" },
+        { "name": "Profile Dedup", "status": "complete", "note": "Both webhooks already dedupe profiles by email (no duplicates across sub-accounts)" },
+        { "name": "Auto GP Prospect Flagging", "status": "complete", "note": "AI Full/Premium buyers auto-upserted to GP with tag gp-prospect-warm" }
       ],
       "lastActivity": "2026-04-04",
       "issues": [
@@ -546,6 +561,8 @@
     }
   ],
   "timeline": [
+    { "date": "2026-04-19", "project": "crm-integration", "event": "GHL integration UNBLOCKED — API keys live, H&B outbound sync built, cross-sync GP↔H&B wired, AI Full/Premium buyers now auto-flagged as GP prospects", "type": "milestone" },
+    { "date": "2026-04-19", "project": "rewards-ecosystem", "event": "PROMPT 0 complete: 7 rewards migrations applied, 58 profiles backfilled with referral codes, 6 edge functions deployed. Backend fully live, ready for separate Rewards Lovable app to re-point.", "type": "launch" },
     { "date": "2026-04-19", "project": "rewards-ecosystem", "event": "ELEVATED TO #1 PRIORITY — Ken directed focus on Client Rewards + Affiliate Program. Audit revealed 7 phases of migrations + 6 edge functions already in git but NOT applied to production Supabase.", "type": "milestone" },
     { "date": "2026-04-19", "project": "signature-branding-app", "event": "Fulfillment Monitor admin panel live — stuck/partial-failure jobs auto-detected, admin alert emails, one-click retry", "type": "launch" },
     { "date": "2026-04-19", "project": "signature-branding-app", "event": "CRITICAL BUG FIX: fulfillment silently completing with 2/150 images — rate-limit handling rewritten, status validation added, auto-chain fixed, gender bias in 4 styles corrected. Celeste Houston order recovered.", "type": "fix" },
