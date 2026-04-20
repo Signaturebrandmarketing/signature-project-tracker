@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-20T20:47:49.294695Z",
+  "lastUpdated": "2026-04-20T20:55:07.703202Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -65,13 +65,23 @@
     },
     {
       "id": "anthropic-cost-sync-deploy",
-      "title": "Lovable: apply ai_spend_tracking migration + deploy anthropic-cost-sync",
+      "title": "Anthropic cost sync (RESOLVED: $0 is correct)",
       "category": "deploy",
-      "priority": "high",
+      "priority": "low",
+      "status": "done",
+      "description": "Sync works, but Anthropic Admin API correctly returns $0 because Ken pays for Claude Code via Claude Max subscription ($200/mo flat), not developer API. Edge functions use Gemini. Sync infra kept dormant in case direct Anthropic API calls get added later.",
+      "estimatedTime": "\u2014",
+      "impact": "Truth established: Claude Max is a fixed line item; real variable AI spend is on Gemini"
+    },
+    {
+      "id": "gemini-cost-tracking",
+      "title": "Build real Gemini spend tracking (self-instrumented)",
+      "category": "optimization",
+      "priority": "medium",
       "status": "pending",
-      "description": "GitHub commit fcdeca6 contains: 20260419000001_ai_spend_tracking.sql migration (ai_spend_daily + ai_spend_sync_log tables + 2 views) + anthropic-cost-sync edge function. Once deployed, Claude will run the 30-day backfill and your cost panel will show real numbers.",
-      "estimatedTime": "5 min (Lovable deploy)",
-      "impact": "Cost panel switches from placeholder to live Anthropic billing data"
+      "description": "Create _shared/gemini-client.ts wrapper around all Gemini API calls (generate_single_image, admin-finish-order, admin-generate-image, generate-copy, gp-auto-content, brand-designer-agent, content-scheduler-agent, template-factory-agent). Wrapper logs each call to ai_spend_daily with model, tokens, and calculated cost. Replaces the $120/mo estimate with real numbers.",
+      "estimatedTime": "1-2 hours (8 edge functions to update)",
+      "impact": "Real-time Gemini cost visibility instead of estimate"
     },
     {
       "id": "api-meta",
@@ -270,14 +280,25 @@
     "currentMonth": "2026-04",
     "services": [
       {
-        "id": "claude-api",
-        "name": "Claude Code (Anthropic)",
+        "id": "claude-max",
+        "name": "Claude Max (Anthropic Subscription)",
         "icon": "brain",
-        "monthToDate": 0.0,
-        "lastMonth": 0.0,
-        "dailyAvg": 0.0,
-        "trend": "down",
-        "note": "Auto-synced from Anthropic Admin API. Last update: 2026-04-20 16:47.",
+        "monthToDate": 200.0,
+        "lastMonth": 200.0,
+        "dailyAvg": 6.67,
+        "trend": "stable",
+        "note": "Flat $200/mo subscription for Claude Code (agent sessions). NOT developer API usage — that stays $0 because edge functions use Gemini. Manually tracked, not auto-synced.",
+        "category": "ai"
+      },
+      {
+        "id": "gemini-api",
+        "name": "Gemini API (Google)",
+        "icon": "brain",
+        "monthToDate": 120.0,
+        "lastMonth": 95.0,
+        "dailyAvg": 4.0,
+        "trend": "up",
+        "note": "ESTIMATE — used by image generation, content pipeline, AI designer, etc. Real per-call tracking is pending (add _shared/gemini-client.ts wrapper that logs to ai_spend_daily).",
         "category": "ai"
       },
       {
