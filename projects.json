@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-20T20:42:49.219228Z",
+  "lastUpdated": "2026-04-20T20:47:49.294695Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -274,10 +274,10 @@
         "name": "Claude Code (Anthropic)",
         "icon": "brain",
         "monthToDate": 0.0,
-        "lastMonth": 87.4,
+        "lastMonth": 0.0,
         "dailyAvg": 0.0,
         "trend": "down",
-        "note": "Auto-synced from Anthropic Admin API. Last update: 2026-04-20 16:42.",
+        "note": "Auto-synced from Anthropic Admin API. Last update: 2026-04-20 16:47.",
         "category": "ai"
       },
       {
