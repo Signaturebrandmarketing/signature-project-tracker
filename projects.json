@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-17T12:00:00Z",
+  "lastUpdated": "2026-04-20T20:42:49.219228Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -11,7 +11,7 @@
       "status": "pending",
       "description": "7 migrations committed to git (Phase 1-7: rewards, ambassadors, marketplace, partners, fundraising, bartering, events) but NOT applied in production. Run the Lovable prompt I'll provide to apply them. Blocks all downstream rewards work.",
       "estimatedTime": "5 min (Lovable runs the migrations)",
-      "impact": "CRITICAL — unlocks entire rewards + affiliate program"
+      "impact": "CRITICAL \u2014 unlocks entire rewards + affiliate program"
     },
     {
       "id": "rewards-backfill-codes",
@@ -99,9 +99,9 @@
       "category": "deploy",
       "priority": "critical",
       "status": "pending",
-      "description": "Prompt is READY at ~/Desktop/signature-ops/seo-kit/lovable-prompt-signatureheadshotevent.md — open that file, copy the entire prompt, paste into the Lovable chat for signatureheadshotevent.com project. Covers 8 location pages, Event schema, LocalBusiness per market, full SEO stack. THIS IS THE BOOKING SITE — biggest direct revenue impact.",
+      "description": "Prompt is READY at ~/Desktop/signature-ops/seo-kit/lovable-prompt-signatureheadshotevent.md \u2014 open that file, copy the entire prompt, paste into the Lovable chat for signatureheadshotevent.com project. Covers 8 location pages, Event schema, LocalBusiness per market, full SEO stack. THIS IS THE BOOKING SITE \u2014 biggest direct revenue impact.",
       "estimatedTime": "15 min to run + rebuild",
-      "impact": "Massive — this is where every ad dollar lands"
+      "impact": "Massive \u2014 this is where every ad dollar lands"
     },
     {
       "id": "aesthetician-video-schema",
@@ -119,7 +119,7 @@
       "category": "seo",
       "priority": "high",
       "status": "pending",
-      "description": "Plan is READY at ~/Desktop/signature-ops/seo-kit/squarespace-seo-headshots-branding.md — 6 phases covering site settings, per-page SEO, code injection schemas (Organization, LocalBusiness x2, Service, FAQPage), image alt text, blog setup, sitemap submission. Execute in Squarespace admin in priority order. 90 min for highest impact phases.",
+      "description": "Plan is READY at ~/Desktop/signature-ops/seo-kit/squarespace-seo-headshots-branding.md \u2014 6 phases covering site settings, per-page SEO, code injection schemas (Organization, LocalBusiness x2, Service, FAQPage), image alt text, blog setup, sitemap submission. Execute in Squarespace admin in priority order. 90 min for highest impact phases.",
       "estimatedTime": "2-3 hours full; 90 min for top priority phases",
       "impact": "Rank this domain for 'Lake Wales' + 'Fort Lauderdale' + headshot queries, complement main sites"
     },
@@ -139,7 +139,7 @@
       "category": "seo",
       "priority": "high",
       "status": "pending",
-      "description": "Use ~/Desktop/signature-ops/seo-kit/gmb-content-kit.md — Winter Haven section. Copy-paste description, services, Q&A seeds, Google Posts. HQ market — do this one flawlessly first.",
+      "description": "Use ~/Desktop/signature-ops/seo-kit/gmb-content-kit.md \u2014 Winter Haven section. Copy-paste description, services, Q&A seeds, Google Posts. HQ market \u2014 do this one flawlessly first.",
       "estimatedTime": "30 min",
       "impact": "Local pack rankings in Polk County"
     },
@@ -149,7 +149,7 @@
       "category": "seo",
       "priority": "high",
       "status": "pending",
-      "description": "Use gmb-content-kit.md — Atlanta section. Your strongest revenue market — second priority after Winter Haven.",
+      "description": "Use gmb-content-kit.md \u2014 Atlanta section. Your strongest revenue market \u2014 second priority after Winter Haven.",
       "estimatedTime": "30 min",
       "impact": "Dominates local pack in strongest market"
     },
@@ -159,7 +159,7 @@
       "category": "seo",
       "priority": "high",
       "status": "pending",
-      "description": "Use gmb-content-kit.md — Orlando section. Biggest volume opportunity in Central FL.",
+      "description": "Use gmb-content-kit.md \u2014 Orlando section. Biggest volume opportunity in Central FL.",
       "estimatedTime": "30 min",
       "impact": "Local visibility across Orlando metro"
     },
@@ -189,7 +189,7 @@
       "category": "seo",
       "priority": "medium",
       "status": "pending",
-      "description": "biz.yelp.com — claim/create for each market. Upload 10+ photos per listing.",
+      "description": "biz.yelp.com \u2014 claim/create for each market. Upload 10+ photos per listing.",
       "estimatedTime": "1 hour",
       "impact": "Yelp still drives significant local traffic"
     },
@@ -229,7 +229,7 @@
       "category": "ads",
       "priority": "high",
       "status": "pending",
-      "description": "Update ad sets: salon owners ads → /industries/beauty/salon-owners | hairstylists → /industries/beauty/hairstylists | estheticians → /industries/beauty/estheticians | nail techs → /industries/beauty/nail-techs. Expected Quality Score boost: +2 to +4.",
+      "description": "Update ad sets: salon owners ads \u2192 /industries/beauty/salon-owners | hairstylists \u2192 /industries/beauty/hairstylists | estheticians \u2192 /industries/beauty/estheticians | nail techs \u2192 /industries/beauty/nail-techs. Expected Quality Score boost: +2 to +4.",
       "estimatedTime": "30 min",
       "impact": "Lower CPC, higher conversion from existing ad spend"
     },
@@ -263,91 +263,121 @@
         "id": "claude-api",
         "name": "Claude Code (Anthropic)",
         "icon": "brain",
-        "monthToDate": 87.40,
-        "lastMonth": 62.15,
-        "dailyAvg": 8.74,
-        "trend": "up",
-        "note": "Opus 4.6 — heavy usage this month (dashboard, orchestration layer, rewards architecture)",
+        "monthToDate": 0.0,
+        "lastMonth": 87.4,
+        "dailyAvg": 0.0,
+        "trend": "down",
+        "note": "Auto-synced from Anthropic Admin API. Last update: 2026-04-20 16:42.",
         "category": "ai"
       },
       {
         "id": "supabase",
         "name": "Supabase (Production)",
         "icon": "database",
-        "monthToDate": 25.00,
-        "lastMonth": 25.00,
+        "monthToDate": 25.0,
+        "lastMonth": 25.0,
         "dailyAvg": 0.83,
         "trend": "stable",
-        "note": "Pro plan — edge functions, pg_cron, storage, 19 users",
+        "note": "Pro plan \u2014 edge functions, pg_cron, storage, 19 users",
         "category": "infrastructure"
       },
       {
         "id": "image-gen",
         "name": "AI Image Generation",
         "icon": "image",
-        "monthToDate": 14.20,
-        "lastMonth": 31.50,
+        "monthToDate": 14.2,
+        "lastMonth": 31.5,
         "dailyAvg": 1.42,
         "trend": "down",
-        "note": "Nano Banana — headshot AI styles + branding images",
+        "note": "Nano Banana \u2014 headshot AI styles + branding images",
         "category": "ai"
       },
       {
         "id": "ghl",
         "name": "GoHighLevel CRM",
         "icon": "message",
-        "monthToDate": 97.00,
-        "lastMonth": 97.00,
+        "monthToDate": 97.0,
+        "lastMonth": 97.0,
         "dailyAvg": 3.23,
         "trend": "stable",
-        "note": "Monthly plan — inbox bot, sequences, pipeline",
+        "note": "Monthly plan \u2014 inbox bot, sequences, pipeline",
         "category": "platform"
       },
       {
         "id": "square",
         "name": "Square (Processing Fees)",
         "icon": "dollar",
-        "monthToDate": 42.80,
-        "lastMonth": 118.50,
+        "monthToDate": 42.8,
+        "lastMonth": 118.5,
         "dailyAvg": 4.28,
         "trend": "down",
-        "note": "2.6% + $0.10 per transaction — headshots + AI upgrades",
+        "note": "2.6% + $0.10 per transaction \u2014 headshots + AI upgrades",
         "category": "payments"
       },
       {
         "id": "lovable",
         "name": "Lovable (Platform Builder)",
         "icon": "code",
-        "monthToDate": 20.00,
-        "lastMonth": 20.00,
+        "monthToDate": 20.0,
+        "lastMonth": 20.0,
         "dailyAvg": 0.67,
         "trend": "stable",
-        "note": "Monthly plan — React/Vite/Tailwind builds + email API",
+        "note": "Monthly plan \u2014 React/Vite/Tailwind builds + email API",
         "category": "infrastructure"
       },
       {
         "id": "meta-ads",
         "name": "Meta Ads (Facebook/Instagram)",
         "icon": "megaphone",
-        "monthToDate": 1250.00,
-        "lastMonth": 3800.00,
-        "dailyAvg": 125.00,
+        "monthToDate": 1250.0,
+        "lastMonth": 3800.0,
+        "dailyAvg": 125.0,
         "trend": "down",
-        "note": "Headshot event campaigns — known optimization weakness",
+        "note": "Headshot event campaigns \u2014 known optimization weakness",
         "category": "advertising"
       }
     ],
     "daily": [
-      { "date": "2026-04-01", "total": 48.20 },
-      { "date": "2026-04-02", "total": 52.10 },
-      { "date": "2026-04-03", "total": 61.30 },
-      { "date": "2026-04-04", "total": 55.80 },
-      { "date": "2026-04-05", "total": 72.40 },
-      { "date": "2026-04-06", "total": 38.90 },
-      { "date": "2026-04-07", "total": 44.60 },
-      { "date": "2026-04-08", "total": 58.20 },
-      { "date": "2026-04-09", "total": 63.10 },
-      { "date": "2026-04-10", "total": 41.80 }
+      {
+        "date": "2026-04-01",
+        "total": 48.2
+      },
+      {
+        "date": "2026-04-02",
+        "total": 52.1
+      },
+      {
+        "date": "2026-04-03",
+        "total": 61.3
+      },
+      {
+        "date": "2026-04-04",
+        "total": 55.8
+      },
+      {
+        "date": "2026-04-05",
+        "total": 72.4
+      },
+      {
+        "date": "2026-04-06",
+        "total": 38.9
+      },
+      {
+        "date": "2026-04-07",
+        "total": 44.6
+      },
+      {
+        "date": "2026-04-08",
+        "total": 58.2
+      },
+      {
+        "date": "2026-04-09",
+        "total": 63.1
+      },
+      {
+        "date": "2026-04-10",
+        "total": 41.8
+      }
     ]
   },
   "projects": [
@@ -357,16 +387,48 @@
       "status": "active",
       "health": "healthy",
       "weight": 3,
-      "description": "AI-powered branding platform — main Lovable app",
+      "description": "AI-powered branding platform \u2014 main Lovable app",
       "modules": [
-        { "name": "Creative Studio", "status": "complete", "note": "Effects panel, gradients, 3 new shapes, text rotation, stock photos — Canva-level" },
-        { "name": "Templates System", "status": "complete", "note": "70+ variants with visual previewer — expand to see all styles before selecting" },
-        { "name": "AI Image Generation", "status": "complete", "note": "Working" },
-        { "name": "Growth Partner Dashboard", "status": "complete", "note": "6 enrollments, auto-managed" },
-        { "name": "Authority Sprint", "status": "complete", "note": "Working" },
-        { "name": "Headshot Session Mgmt", "status": "complete", "note": "Working" },
-        { "name": "Email/Nurture System", "status": "complete", "note": "Fixed 4/3, direct signup funnel" },
-        { "name": "Brand Kit Editor", "status": "complete", "note": "Working" }
+        {
+          "name": "Creative Studio",
+          "status": "complete",
+          "note": "Effects panel, gradients, 3 new shapes, text rotation, stock photos \u2014 Canva-level"
+        },
+        {
+          "name": "Templates System",
+          "status": "complete",
+          "note": "70+ variants with visual previewer \u2014 expand to see all styles before selecting"
+        },
+        {
+          "name": "AI Image Generation",
+          "status": "complete",
+          "note": "Working"
+        },
+        {
+          "name": "Growth Partner Dashboard",
+          "status": "complete",
+          "note": "6 enrollments, auto-managed"
+        },
+        {
+          "name": "Authority Sprint",
+          "status": "complete",
+          "note": "Working"
+        },
+        {
+          "name": "Headshot Session Mgmt",
+          "status": "complete",
+          "note": "Working"
+        },
+        {
+          "name": "Email/Nurture System",
+          "status": "complete",
+          "note": "Fixed 4/3, direct signup funnel"
+        },
+        {
+          "name": "Brand Kit Editor",
+          "status": "complete",
+          "note": "Working"
+        }
       ],
       "lastActivity": "2026-04-05"
     },
@@ -378,9 +440,21 @@
       "weight": 3,
       "description": "Three automation layers connecting the system",
       "modules": [
-        { "name": "Square Revenue Sync", "status": "complete", "note": "130 payments, $15,443 synced, runs every 15 min" },
-        { "name": "GP Pipeline Engine", "status": "complete", "note": "Runs daily 7 AM, 166 deliverables, 6 clients" },
-        { "name": "Content Pipeline", "status": "complete", "note": "Runs weekly Sun 10 PM, 140 items across 6 clients" }
+        {
+          "name": "Square Revenue Sync",
+          "status": "complete",
+          "note": "130 payments, $15,443 synced, runs every 15 min"
+        },
+        {
+          "name": "GP Pipeline Engine",
+          "status": "complete",
+          "note": "Runs daily 7 AM, 166 deliverables, 6 clients"
+        },
+        {
+          "name": "Content Pipeline",
+          "status": "complete",
+          "note": "Runs weekly Sun 10 PM, 140 items across 6 clients"
+        }
       ],
       "lastActivity": "2026-04-05"
     },
@@ -390,15 +464,30 @@
       "status": "active",
       "health": "healthy",
       "weight": 1,
-      "description": "Edge function + launchd job — daily business health report at 8 AM",
+      "description": "Edge function + launchd job \u2014 daily business health report at 8 AM",
       "modules": [
-        { "name": "Edge Function", "status": "complete", "note": "16 data points queried" },
-        { "name": "launchd Scheduler", "status": "complete", "note": "Runs daily 8 AM" },
-        { "name": "Report Generation", "status": "complete", "note": "Saves to ~/Desktop/signature-ops/reports/" }
+        {
+          "name": "Edge Function",
+          "status": "complete",
+          "note": "16 data points queried"
+        },
+        {
+          "name": "launchd Scheduler",
+          "status": "complete",
+          "note": "Runs daily 8 AM"
+        },
+        {
+          "name": "Report Generation",
+          "status": "complete",
+          "note": "Saves to ~/Desktop/signature-ops/reports/"
+        }
       ],
       "lastActivity": "2026-04-03",
       "issues": [
-        { "severity": "warning", "text": "send-timed-reminders emails fail with 404 — needs Lovable fix" }
+        {
+          "severity": "warning",
+          "text": "send-timed-reminders emails fail with 404 \u2014 needs Lovable fix"
+        }
       ]
     },
     {
@@ -407,25 +496,80 @@
       "status": "in-progress",
       "health": "needs-attention",
       "weight": 3,
-      "description": "Client rewards + ambassador affiliate program — TOP PRIORITY. 7-function ecosystem hub with referral engine already built in code but not yet live.",
+      "description": "Client rewards + ambassador affiliate program \u2014 TOP PRIORITY. 7-function ecosystem hub with referral engine already built in code but not yet live.",
       "modules": [
-        { "name": "Database Schema (7 phases)", "status": "in-progress", "note": "Migrations written and committed to git — NOT YET APPLIED to production Supabase" },
-        { "name": "Edge Functions (6 total)", "status": "in-progress", "note": "rewards-record-referral-click, rewards-process-conversion, rewards-submit-action, ambassador-apply, ambassador-approve, ambassador-request-payout — written but blocked by missing tables" },
-        { "name": "Square Payment Hook", "status": "complete", "note": "square-payment-sync already calls rewards-process-conversion on new payments" },
-        { "name": "ReferralLanding page /ref/:code", "status": "complete", "note": "Captures clicks, stores in localStorage, redirects to /redeem" },
-        { "name": "Referral Rewards Engine (Phase 1)", "status": "in-progress", "note": "Needs: apply migrations, backfill codes, user dashboard" },
-        { "name": "Ambassador Program (Phase 2)", "status": "in-progress", "note": "Schema + edge functions ready; needs user-facing application + dashboard" },
-        { "name": "Provider Marketplace (Phase 3)", "status": "in-progress", "note": "Schema committed; needs frontend" },
-        { "name": "Preferred Partners (Phase 4)", "status": "in-progress", "note": "Schema committed; needs listings page + checkout" },
-        { "name": "Fundraising (Phase 5)", "status": "in-progress", "note": "Schema committed; needs campaigns page + payout integration" },
-        { "name": "Bartering (Phase 6)", "status": "in-progress", "note": "Schema committed; needs service exchange UI" },
-        { "name": "Networking Events (Phase 7)", "status": "in-progress", "note": "Schema committed; needs QR check-in + tier perks" },
-        { "name": "User Rewards Dashboard", "status": "planned", "note": "TO BUILD: /rewards page with balance, referral link, history, milestones" },
-        { "name": "Admin Rewards Monitor", "status": "planned", "note": "TO BUILD: approve action submissions, ambassador applications, payouts" }
+        {
+          "name": "Database Schema (7 phases)",
+          "status": "in-progress",
+          "note": "Migrations written and committed to git \u2014 NOT YET APPLIED to production Supabase"
+        },
+        {
+          "name": "Edge Functions (6 total)",
+          "status": "in-progress",
+          "note": "rewards-record-referral-click, rewards-process-conversion, rewards-submit-action, ambassador-apply, ambassador-approve, ambassador-request-payout \u2014 written but blocked by missing tables"
+        },
+        {
+          "name": "Square Payment Hook",
+          "status": "complete",
+          "note": "square-payment-sync already calls rewards-process-conversion on new payments"
+        },
+        {
+          "name": "ReferralLanding page /ref/:code",
+          "status": "complete",
+          "note": "Captures clicks, stores in localStorage, redirects to /redeem"
+        },
+        {
+          "name": "Referral Rewards Engine (Phase 1)",
+          "status": "in-progress",
+          "note": "Needs: apply migrations, backfill codes, user dashboard"
+        },
+        {
+          "name": "Ambassador Program (Phase 2)",
+          "status": "in-progress",
+          "note": "Schema + edge functions ready; needs user-facing application + dashboard"
+        },
+        {
+          "name": "Provider Marketplace (Phase 3)",
+          "status": "in-progress",
+          "note": "Schema committed; needs frontend"
+        },
+        {
+          "name": "Preferred Partners (Phase 4)",
+          "status": "in-progress",
+          "note": "Schema committed; needs listings page + checkout"
+        },
+        {
+          "name": "Fundraising (Phase 5)",
+          "status": "in-progress",
+          "note": "Schema committed; needs campaigns page + payout integration"
+        },
+        {
+          "name": "Bartering (Phase 6)",
+          "status": "in-progress",
+          "note": "Schema committed; needs service exchange UI"
+        },
+        {
+          "name": "Networking Events (Phase 7)",
+          "status": "in-progress",
+          "note": "Schema committed; needs QR check-in + tier perks"
+        },
+        {
+          "name": "User Rewards Dashboard",
+          "status": "planned",
+          "note": "TO BUILD: /rewards page with balance, referral link, history, milestones"
+        },
+        {
+          "name": "Admin Rewards Monitor",
+          "status": "planned",
+          "note": "TO BUILD: approve action submissions, ambassador applications, payouts"
+        }
       ],
       "lastActivity": "2026-04-19",
       "issues": [
-        { "severity": "critical", "text": "7 migrations committed to git are NOT applied to production — tables do not exist yet" }
+        {
+          "severity": "critical",
+          "text": "7 migrations committed to git are NOT applied to production \u2014 tables do not exist yet"
+        }
       ]
     },
     {
@@ -434,15 +578,30 @@
       "status": "active",
       "health": "needs-attention",
       "weight": 3,
-      "description": "GoHighLevel inbox bot — auto-books headshot sessions from inbound leads",
+      "description": "GoHighLevel inbox bot \u2014 auto-books headshot sessions from inbound leads",
       "modules": [
-        { "name": "Inbox Bot", "status": "complete", "note": "Working but underperforming" },
-        { "name": "Script Optimization", "status": "in-progress", "note": "Needs better objection handling" },
-        { "name": "Follow-up Sequences", "status": "in-progress", "note": "Needs improvement" }
+        {
+          "name": "Inbox Bot",
+          "status": "complete",
+          "note": "Working but underperforming"
+        },
+        {
+          "name": "Script Optimization",
+          "status": "in-progress",
+          "note": "Needs better objection handling"
+        },
+        {
+          "name": "Follow-up Sequences",
+          "status": "in-progress",
+          "note": "Needs improvement"
+        }
       ],
       "lastActivity": "2026-04-04",
       "issues": [
-        { "severity": "warning", "text": "Booking rate below target — scripts need optimization" }
+        {
+          "severity": "warning",
+          "text": "Booking rate below target \u2014 scripts need optimization"
+        }
       ]
     },
     {
@@ -453,18 +612,53 @@
       "weight": 2,
       "description": "Two GHL sub-accounts (GP + H&B) with full bidirectional + cross-sync. Auto-tags contacts on purchases/sessions, auto-flags AI Full/Premium buyers as GP prospects.",
       "modules": [
-        { "name": "API Key Setup", "status": "complete", "note": "GHL_API_KEY (GP) + GHL_BRANDING_API_KEY (H&B) + webhook secrets all live in Supabase" },
-        { "name": "GP Webhook (inbound)", "status": "complete", "note": "Receives contact/appointment events, syncs to enrollments, logs to gp_webhook_events" },
-        { "name": "H&B Webhook (inbound)", "status": "complete", "note": "Receives headshot bookings, auto-creates Supabase profile + session, invite email" },
-        { "name": "GP Outbound Sync", "status": "complete", "note": "gp-ghl-sync manages enrollment lifecycle tags in GP GHL" },
-        { "name": "H&B Outbound Sync", "status": "complete", "note": "NEW headshot-ghl-sync: tags by purchase tier, session completion, milestone. Cross-syncs qualifying buyers to GP prospect pipeline." },
-        { "name": "Square → H&B wiring", "status": "complete", "note": "square-payment-sync now fires headshot-ghl-sync on AI purchases + headshot sessions" },
-        { "name": "Profile Dedup", "status": "complete", "note": "Both webhooks already dedupe profiles by email (no duplicates across sub-accounts)" },
-        { "name": "Auto GP Prospect Flagging", "status": "complete", "note": "AI Full/Premium buyers auto-upserted to GP with tag gp-prospect-warm" }
+        {
+          "name": "API Key Setup",
+          "status": "complete",
+          "note": "GHL_API_KEY (GP) + GHL_BRANDING_API_KEY (H&B) + webhook secrets all live in Supabase"
+        },
+        {
+          "name": "GP Webhook (inbound)",
+          "status": "complete",
+          "note": "Receives contact/appointment events, syncs to enrollments, logs to gp_webhook_events"
+        },
+        {
+          "name": "H&B Webhook (inbound)",
+          "status": "complete",
+          "note": "Receives headshot bookings, auto-creates Supabase profile + session, invite email"
+        },
+        {
+          "name": "GP Outbound Sync",
+          "status": "complete",
+          "note": "gp-ghl-sync manages enrollment lifecycle tags in GP GHL"
+        },
+        {
+          "name": "H&B Outbound Sync",
+          "status": "complete",
+          "note": "NEW headshot-ghl-sync: tags by purchase tier, session completion, milestone. Cross-syncs qualifying buyers to GP prospect pipeline."
+        },
+        {
+          "name": "Square \u2192 H&B wiring",
+          "status": "complete",
+          "note": "square-payment-sync now fires headshot-ghl-sync on AI purchases + headshot sessions"
+        },
+        {
+          "name": "Profile Dedup",
+          "status": "complete",
+          "note": "Both webhooks already dedupe profiles by email (no duplicates across sub-accounts)"
+        },
+        {
+          "name": "Auto GP Prospect Flagging",
+          "status": "complete",
+          "note": "AI Full/Premium buyers auto-upserted to GP with tag gp-prospect-warm"
+        }
       ],
       "lastActivity": "2026-04-04",
       "issues": [
-        { "severity": "critical", "text": "Blocked — needs GHL API key to proceed" }
+        {
+          "severity": "critical",
+          "text": "Blocked \u2014 needs GHL API key to proceed"
+        }
       ]
     },
     {
@@ -475,10 +669,26 @@
       "weight": 3,
       "description": "Optimize $3-5k/mo ad spend, connect Stripe revenue, improve ROI",
       "modules": [
-        { "name": "Square Integration", "status": "complete", "note": "Synced, 130 payments tracked" },
-        { "name": "Stripe Revenue Flow", "status": "blocked", "note": "$0 in Stripe — no customers yet" },
-        { "name": "Ad Spend Optimization", "status": "in-progress", "note": "$3-5k/mo, known weakness" },
-        { "name": "SEO Strategy", "status": "in-progress", "note": "Known weakness, needs work" }
+        {
+          "name": "Square Integration",
+          "status": "complete",
+          "note": "Synced, 130 payments tracked"
+        },
+        {
+          "name": "Stripe Revenue Flow",
+          "status": "blocked",
+          "note": "$0 in Stripe \u2014 no customers yet"
+        },
+        {
+          "name": "Ad Spend Optimization",
+          "status": "in-progress",
+          "note": "$3-5k/mo, known weakness"
+        },
+        {
+          "name": "SEO Strategy",
+          "status": "in-progress",
+          "note": "Known weakness, needs work"
+        }
       ],
       "lastActivity": "2026-04-05"
     },
@@ -488,13 +698,33 @@
       "status": "in-progress",
       "health": "building",
       "weight": 2,
-      "description": "Expand AI image generation styles, templates, and library — safely scale output quality and variety",
+      "description": "Expand AI image generation styles, templates, and library \u2014 safely scale output quality and variety",
       "modules": [
-        { "name": "Current Style Audit", "status": "in-progress", "note": "Review existing 3 styles" },
-        { "name": "New Style Development", "status": "planned", "note": "Add diverse professional styles" },
-        { "name": "Template Library Growth", "status": "planned", "note": "Industry-specific templates" },
-        { "name": "Quality Safeguards", "status": "planned", "note": "Consistency checks, brand alignment" },
-        { "name": "Batch Generation Pipeline", "status": "planned", "note": "Scale output safely" }
+        {
+          "name": "Current Style Audit",
+          "status": "in-progress",
+          "note": "Review existing 3 styles"
+        },
+        {
+          "name": "New Style Development",
+          "status": "planned",
+          "note": "Add diverse professional styles"
+        },
+        {
+          "name": "Template Library Growth",
+          "status": "planned",
+          "note": "Industry-specific templates"
+        },
+        {
+          "name": "Quality Safeguards",
+          "status": "planned",
+          "note": "Consistency checks, brand alignment"
+        },
+        {
+          "name": "Batch Generation Pipeline",
+          "status": "planned",
+          "note": "Scale output safely"
+        }
       ],
       "lastActivity": "2026-04-10"
     },
@@ -504,18 +734,58 @@
       "status": "active",
       "health": "healthy",
       "weight": 3,
-      "description": "Organic search strategy for signatureheadshotevent.com + signaturebranding.app — reduce dependency on paid ads",
+      "description": "Organic search strategy for signatureheadshotevent.com + signaturebranding.app \u2014 reduce dependency on paid ads",
       "modules": [
-        { "name": "Keyword Research", "status": "complete", "note": "Done for beauty — hairstylist/salon/esthetician/nail tech clusters" },
-        { "name": "On-Page SEO", "status": "complete", "note": "Meta tags, OG, Twitter Card, keywords, canonicals upgraded sitewide" },
-        { "name": "Technical SEO", "status": "complete", "note": "Preconnect hints, noscript fallback, theme color, robots.txt hardened" },
-        { "name": "Schema Markup", "status": "complete", "note": "Service, LocalBusiness, VideoObject, FAQPage, Breadcrumbs, AggregateRating" },
-        { "name": "PPC Landing Pages", "status": "complete", "note": "4 beauty sub-variants: salon-owners, hairstylists, estheticians, nail-techs" },
-        { "name": "Sitemap Rebuild", "status": "complete", "note": "21 industries + image/video extensions + beauty priority 1.0" },
-        { "name": "Location Pages", "status": "complete", "note": "8 locations (Winter Haven, Atlanta, Tampa, Orlando, etc.)" },
-        { "name": "Content Strategy", "status": "complete", "note": "Blog infrastructure + 8 cornerstone articles live covering all industry and local clusters" },
-        { "name": "Local SEO / GMB Kit", "status": "complete", "note": "Full content kit for 8 markets in seo-kit/gmb-content-kit.md — ready to paste into GMB" },
-        { "name": "Backlink Strategy Kit", "status": "complete", "note": "Directory list + 4 outreach templates + PR pitches in seo-kit/backlink-strategy.md" }
+        {
+          "name": "Keyword Research",
+          "status": "complete",
+          "note": "Done for beauty \u2014 hairstylist/salon/esthetician/nail tech clusters"
+        },
+        {
+          "name": "On-Page SEO",
+          "status": "complete",
+          "note": "Meta tags, OG, Twitter Card, keywords, canonicals upgraded sitewide"
+        },
+        {
+          "name": "Technical SEO",
+          "status": "complete",
+          "note": "Preconnect hints, noscript fallback, theme color, robots.txt hardened"
+        },
+        {
+          "name": "Schema Markup",
+          "status": "complete",
+          "note": "Service, LocalBusiness, VideoObject, FAQPage, Breadcrumbs, AggregateRating"
+        },
+        {
+          "name": "PPC Landing Pages",
+          "status": "complete",
+          "note": "4 beauty sub-variants: salon-owners, hairstylists, estheticians, nail-techs"
+        },
+        {
+          "name": "Sitemap Rebuild",
+          "status": "complete",
+          "note": "21 industries + image/video extensions + beauty priority 1.0"
+        },
+        {
+          "name": "Location Pages",
+          "status": "complete",
+          "note": "8 locations (Winter Haven, Atlanta, Tampa, Orlando, etc.)"
+        },
+        {
+          "name": "Content Strategy",
+          "status": "complete",
+          "note": "Blog infrastructure + 8 cornerstone articles live covering all industry and local clusters"
+        },
+        {
+          "name": "Local SEO / GMB Kit",
+          "status": "complete",
+          "note": "Full content kit for 8 markets in seo-kit/gmb-content-kit.md \u2014 ready to paste into GMB"
+        },
+        {
+          "name": "Backlink Strategy Kit",
+          "status": "complete",
+          "note": "Directory list + 4 outreach templates + PR pitches in seo-kit/backlink-strategy.md"
+        }
       ],
       "lastActivity": "2026-04-17"
     },
@@ -525,22 +795,78 @@
       "status": "active",
       "health": "healthy",
       "weight": 3,
-      "description": "Full autonomous campaign engine — 3 engines (acquisition, ascension, retention), 8 product campaigns, 7 niche playbooks, automated email sequences",
+      "description": "Full autonomous campaign engine \u2014 3 engines (acquisition, ascension, retention), 8 product campaigns, 7 niche playbooks, automated email sequences",
       "modules": [
-        { "name": "Campaign Engine (Edge Function)", "status": "complete", "note": "Live — evaluates segments, auto-enrolls, sends sequences, detects conversions" },
-        { "name": "Database Tables (5)", "status": "complete", "note": "campaign_sequences, enrollments, events, segments, niche_tags" },
-        { "name": "Email Sequences (32 emails)", "status": "complete", "note": "8 campaigns seeded: headshot, AI starter/full, sprint, GP, rewards, re-engagement, funnels" },
-        { "name": "Auto-Enrollment Segments (5)", "status": "complete", "note": "headshot-no-ai, ai-starter-no-full, ai-buyer-no-sprint, sprint-no-gp, inactive-90-days" },
-        { "name": "Ad Copy Library (50+ variants)", "status": "complete", "note": "FB/IG, Google, LinkedIn — 7 niches, 4 files" },
-        { "name": "30-Day Social Calendar", "status": "complete", "note": "Daily Instagram + 3x/week LinkedIn, full captions + hashtags" },
-        { "name": "Niche Playbooks (7)", "status": "complete", "note": "Real estate, coaches, attorneys, healthcare, corporate, authors, insurance" },
-        { "name": "Daily Campaign Agent", "status": "complete", "note": "Scheduled 9:03 AM daily — runs campaign engine" },
-        { "name": "Weekly Content Agent", "status": "complete", "note": "Scheduled Sunday 8 PM — generates social + ad copy" },
-        { "name": "Weekly Optimizer Agent", "status": "complete", "note": "Scheduled Monday 7:07 AM — analyzes performance" },
-        { "name": "First Enrollments", "status": "complete", "note": "48 clients enrolled in reactivation-winback campaign" },
-        { "name": "GHL SMS Integration", "status": "planned", "note": "Connect campaign engine to GHL for SMS delivery" },
-        { "name": "Campaign Dashboard UI", "status": "planned", "note": "Admin panel component for campaign metrics" },
-        { "name": "A/B Testing Framework", "status": "planned", "note": "Subject line and ad copy testing" }
+        {
+          "name": "Campaign Engine (Edge Function)",
+          "status": "complete",
+          "note": "Live \u2014 evaluates segments, auto-enrolls, sends sequences, detects conversions"
+        },
+        {
+          "name": "Database Tables (5)",
+          "status": "complete",
+          "note": "campaign_sequences, enrollments, events, segments, niche_tags"
+        },
+        {
+          "name": "Email Sequences (32 emails)",
+          "status": "complete",
+          "note": "8 campaigns seeded: headshot, AI starter/full, sprint, GP, rewards, re-engagement, funnels"
+        },
+        {
+          "name": "Auto-Enrollment Segments (5)",
+          "status": "complete",
+          "note": "headshot-no-ai, ai-starter-no-full, ai-buyer-no-sprint, sprint-no-gp, inactive-90-days"
+        },
+        {
+          "name": "Ad Copy Library (50+ variants)",
+          "status": "complete",
+          "note": "FB/IG, Google, LinkedIn \u2014 7 niches, 4 files"
+        },
+        {
+          "name": "30-Day Social Calendar",
+          "status": "complete",
+          "note": "Daily Instagram + 3x/week LinkedIn, full captions + hashtags"
+        },
+        {
+          "name": "Niche Playbooks (7)",
+          "status": "complete",
+          "note": "Real estate, coaches, attorneys, healthcare, corporate, authors, insurance"
+        },
+        {
+          "name": "Daily Campaign Agent",
+          "status": "complete",
+          "note": "Scheduled 9:03 AM daily \u2014 runs campaign engine"
+        },
+        {
+          "name": "Weekly Content Agent",
+          "status": "complete",
+          "note": "Scheduled Sunday 8 PM \u2014 generates social + ad copy"
+        },
+        {
+          "name": "Weekly Optimizer Agent",
+          "status": "complete",
+          "note": "Scheduled Monday 7:07 AM \u2014 analyzes performance"
+        },
+        {
+          "name": "First Enrollments",
+          "status": "complete",
+          "note": "48 clients enrolled in reactivation-winback campaign"
+        },
+        {
+          "name": "GHL SMS Integration",
+          "status": "planned",
+          "note": "Connect campaign engine to GHL for SMS delivery"
+        },
+        {
+          "name": "Campaign Dashboard UI",
+          "status": "planned",
+          "note": "Admin panel component for campaign metrics"
+        },
+        {
+          "name": "A/B Testing Framework",
+          "status": "planned",
+          "note": "Subject line and ad copy testing"
+        }
       ],
       "lastActivity": "2026-04-12"
     },
@@ -552,53 +878,264 @@
       "weight": 0,
       "description": "Client Vault, Video Generation, Multi-Agent System",
       "modules": [
-        { "name": "Client Vault", "status": "planned", "note": "Design phase" },
-        { "name": "AI Video Generation", "status": "planned", "note": "Talking avatars, voice cloning" },
-        { "name": "Automation Dashboards", "status": "planned", "note": "Design phase" },
-        { "name": "Multi-Agent System", "status": "planned", "note": "Brand Strategist, Content Gen, Funnel Builder, CRM, SEO, Analytics" }
+        {
+          "name": "Client Vault",
+          "status": "planned",
+          "note": "Design phase"
+        },
+        {
+          "name": "AI Video Generation",
+          "status": "planned",
+          "note": "Talking avatars, voice cloning"
+        },
+        {
+          "name": "Automation Dashboards",
+          "status": "planned",
+          "note": "Design phase"
+        },
+        {
+          "name": "Multi-Agent System",
+          "status": "planned",
+          "note": "Brand Strategist, Content Gen, Funnel Builder, CRM, SEO, Analytics"
+        }
       ],
       "lastActivity": "2026-04-05"
     }
   ],
   "timeline": [
-    { "date": "2026-04-19", "project": "crm-integration", "event": "GHL integration UNBLOCKED — API keys live, H&B outbound sync built, cross-sync GP↔H&B wired, AI Full/Premium buyers now auto-flagged as GP prospects", "type": "milestone" },
-    { "date": "2026-04-19", "project": "rewards-ecosystem", "event": "PROMPT 0 complete: 7 rewards migrations applied, 58 profiles backfilled with referral codes, 6 edge functions deployed. Backend fully live, ready for separate Rewards Lovable app to re-point.", "type": "launch" },
-    { "date": "2026-04-19", "project": "rewards-ecosystem", "event": "ELEVATED TO #1 PRIORITY — Ken directed focus on Client Rewards + Affiliate Program. Audit revealed 7 phases of migrations + 6 edge functions already in git but NOT applied to production Supabase.", "type": "milestone" },
-    { "date": "2026-04-19", "project": "signature-branding-app", "event": "Fulfillment Monitor admin panel live — stuck/partial-failure jobs auto-detected, admin alert emails, one-click retry", "type": "launch" },
-    { "date": "2026-04-19", "project": "signature-branding-app", "event": "CRITICAL BUG FIX: fulfillment silently completing with 2/150 images — rate-limit handling rewritten, status validation added, auto-chain fixed, gender bias in 4 styles corrected. Celeste Houston order recovered.", "type": "fix" },
-    { "date": "2026-04-16", "project": "signature-branding-app", "event": "Creative Studio upgraded — effects panel (shadow/glow/outline), gradient editor, 3 new shapes (star/arrow/diamond), text rotation + letter spacing", "type": "milestone" },
-    { "date": "2026-04-17", "project": "seo-strategy", "event": "Lovable SEO prompt for signatureheadshotevent.com + Squarespace SEO plan for Headshots-Branding.com written and saved to seo-kit/. Ready for Ken to execute.", "type": "milestone" },
-    { "date": "2026-04-17", "project": "seo-strategy", "event": "/industries/estheticians dedicated page — added to sitemap (was MISSING — Google couldn't index), ImageGallery + 29 ImageObject schema added to IndustryLandingPage @graph, per-image keyword-rich alt text live on all 3 slideshow positions", "type": "launch" },
-    { "date": "2026-04-17", "project": "seo-strategy", "event": "/industries/beauty/estheticians sub-variant SEO upgrade — 12 FAQs, dual aesthetician/esthetician spelling, ImageGallery schema, per-image alt text", "type": "launch" },
-    { "date": "2026-04-17", "project": "seo-strategy", "event": "SEO strategy COMPLETE — GMB content kit (8 markets, 750-char descriptions, Google Posts, Q&A seeds, review templates) + Backlink strategy (50+ directories, 4 outreach templates, PR pitches) shipped to seo-kit/", "type": "milestone" },
-    { "date": "2026-04-16", "project": "seo-strategy", "event": "Blog launched — 8 cornerstone SEO articles published covering hairstylist, salon owner, real estate, local, and comparison content clusters (15,000+ words of content)", "type": "milestone" },
-    { "date": "2026-04-16", "project": "seo-strategy", "event": "SEO overhaul shipped — beauty page upgraded for paid ads: 12 FAQs, @graph schema, 4 PPC sub-variants (salon-owners/hairstylists/estheticians/nail-techs)", "type": "milestone" },
-    { "date": "2026-04-16", "project": "seo-strategy", "event": "Sitewide technical SEO — index.html preconnects, noscript fallback, Organization schema, sitemap rebuild with 21 industries + image/video extensions", "type": "launch" },
-    { "date": "2026-04-16", "project": "signature-branding-app", "event": "Template library expanded to 51 — IG Feed, IG Story, Facebook, LinkedIn, YouTube variants across 7 industries", "type": "milestone" },
-    { "date": "2026-04-16", "project": "signature-branding-app", "event": "17 industry templates seeded — Real Estate, Coach, Restaurant, Fitness, Speaker, Beauty, Photographer (IG + LinkedIn)", "type": "launch" },
-    { "date": "2026-04-16", "project": "signature-branding-app", "event": "3 AI agents built — Brand Designer, Template Factory, Content Scheduler — all as Supabase edge functions", "type": "milestone" },
-    { "date": "2026-04-16", "project": "signature-branding-app", "event": "AI Designer panel wired into Creative Studio — describe what you want, AI builds it", "type": "launch" },
-    { "date": "2026-04-16", "project": "signature-branding-app", "event": "Stock photo panel (Unsplash integration) added to Creative Studio Add Elements", "type": "launch" },
-    { "date": "2026-04-16", "project": "signature-branding-app", "event": "Template variant previewer built — expand any template to see all styles before selecting", "type": "launch" },
-    { "date": "2026-04-16", "project": "signature-branding-app", "event": "Canvas type system extended with ElementEffects, GradientFill, advanced text properties", "type": "launch" },
-    { "date": "2026-04-12", "project": "campaign-system", "event": "Campaign engine first run — 48 clients auto-enrolled in reactivation-winback", "type": "milestone" },
-    { "date": "2026-04-12", "project": "campaign-system", "event": "Campaign engine edge function deployed and tested — segments, enrollments, email delivery, conversion detection", "type": "launch" },
-    { "date": "2026-04-12", "project": "campaign-system", "event": "32 email sequences seeded across 8 campaigns (headshot, AI, sprint, GP, rewards, re-engagement, funnels)", "type": "launch" },
-    { "date": "2026-04-12", "project": "campaign-system", "event": "Campaign automation tables deployed — 5 tables with RLS, triggers, 5 seed segments", "type": "launch" },
-    { "date": "2026-04-12", "project": "campaign-system", "event": "Full autonomous campaign system built — strategy, 50+ ad variants, 30-day calendar, 7 niche playbooks, 3 scheduled agents", "type": "launch" },
-    { "date": "2026-04-10", "project": "project-tracker", "event": "API Cost Tracker panel added — tracks all service spend with budget alerts", "type": "launch" },
-    { "date": "2026-04-10", "project": "ai-branding-image-library", "event": "AI Branding Image Library project added to tracker", "type": "launch" },
-    { "date": "2026-04-10", "project": "seo-strategy", "event": "SEO Strategy project added — targeting organic growth across all markets", "type": "launch" },
-    { "date": "2026-04-10", "project": "project-tracker", "event": "Project Tracker dashboard created", "type": "launch" },
-    { "date": "2026-04-08", "project": "rewards-ecosystem", "event": "Rewards architecture finalized — 7-function ecosystem plan approved", "type": "milestone" },
-    { "date": "2026-04-07", "project": "rewards-ecosystem", "event": "Decided: all tables in main Supabase, shared auth with 3,000+ clients", "type": "decision" },
-    { "date": "2026-04-05", "project": "orchestration-layer", "event": "All 3 automation layers operational — Square sync, GP pipeline, content pipeline", "type": "milestone" },
-    { "date": "2026-04-05", "project": "signature-branding-app", "event": "Creative Studio & Templates fixed — V2 default, brand kit auto-load", "type": "fix" },
-    { "date": "2026-04-05", "project": "orchestration-layer", "event": "Content pipeline live — 140 items generated for 6 GP clients", "type": "launch" },
-    { "date": "2026-04-05", "project": "orchestration-layer", "event": "GP Pipeline Engine deployed — 166 deliverables, health scores running", "type": "launch" },
-    { "date": "2026-04-04", "project": "orchestration-layer", "event": "Square Revenue Sync deployed — 130 payments ($15,443) synced", "type": "launch" },
-    { "date": "2026-04-04", "project": "crm-integration", "event": "Blocked: GHL API key needed from Ken to proceed", "type": "blocker" },
-    { "date": "2026-04-03", "project": "daily-ops-agent", "event": "Daily ops report fully operational — launchd job at 8 AM", "type": "launch" },
-    { "date": "2026-04-03", "project": "signature-branding-app", "event": "Email/Nurture system fixed — direct signup funnel added", "type": "fix" }
+    {
+      "date": "2026-04-19",
+      "project": "crm-integration",
+      "event": "GHL integration UNBLOCKED \u2014 API keys live, H&B outbound sync built, cross-sync GP\u2194H&B wired, AI Full/Premium buyers now auto-flagged as GP prospects",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-19",
+      "project": "rewards-ecosystem",
+      "event": "PROMPT 0 complete: 7 rewards migrations applied, 58 profiles backfilled with referral codes, 6 edge functions deployed. Backend fully live, ready for separate Rewards Lovable app to re-point.",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-19",
+      "project": "rewards-ecosystem",
+      "event": "ELEVATED TO #1 PRIORITY \u2014 Ken directed focus on Client Rewards + Affiliate Program. Audit revealed 7 phases of migrations + 6 edge functions already in git but NOT applied to production Supabase.",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-19",
+      "project": "signature-branding-app",
+      "event": "Fulfillment Monitor admin panel live \u2014 stuck/partial-failure jobs auto-detected, admin alert emails, one-click retry",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-19",
+      "project": "signature-branding-app",
+      "event": "CRITICAL BUG FIX: fulfillment silently completing with 2/150 images \u2014 rate-limit handling rewritten, status validation added, auto-chain fixed, gender bias in 4 styles corrected. Celeste Houston order recovered.",
+      "type": "fix"
+    },
+    {
+      "date": "2026-04-16",
+      "project": "signature-branding-app",
+      "event": "Creative Studio upgraded \u2014 effects panel (shadow/glow/outline), gradient editor, 3 new shapes (star/arrow/diamond), text rotation + letter spacing",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-17",
+      "project": "seo-strategy",
+      "event": "Lovable SEO prompt for signatureheadshotevent.com + Squarespace SEO plan for Headshots-Branding.com written and saved to seo-kit/. Ready for Ken to execute.",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-17",
+      "project": "seo-strategy",
+      "event": "/industries/estheticians dedicated page \u2014 added to sitemap (was MISSING \u2014 Google couldn't index), ImageGallery + 29 ImageObject schema added to IndustryLandingPage @graph, per-image keyword-rich alt text live on all 3 slideshow positions",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-17",
+      "project": "seo-strategy",
+      "event": "/industries/beauty/estheticians sub-variant SEO upgrade \u2014 12 FAQs, dual aesthetician/esthetician spelling, ImageGallery schema, per-image alt text",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-17",
+      "project": "seo-strategy",
+      "event": "SEO strategy COMPLETE \u2014 GMB content kit (8 markets, 750-char descriptions, Google Posts, Q&A seeds, review templates) + Backlink strategy (50+ directories, 4 outreach templates, PR pitches) shipped to seo-kit/",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-16",
+      "project": "seo-strategy",
+      "event": "Blog launched \u2014 8 cornerstone SEO articles published covering hairstylist, salon owner, real estate, local, and comparison content clusters (15,000+ words of content)",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-16",
+      "project": "seo-strategy",
+      "event": "SEO overhaul shipped \u2014 beauty page upgraded for paid ads: 12 FAQs, @graph schema, 4 PPC sub-variants (salon-owners/hairstylists/estheticians/nail-techs)",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-16",
+      "project": "seo-strategy",
+      "event": "Sitewide technical SEO \u2014 index.html preconnects, noscript fallback, Organization schema, sitemap rebuild with 21 industries + image/video extensions",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-16",
+      "project": "signature-branding-app",
+      "event": "Template library expanded to 51 \u2014 IG Feed, IG Story, Facebook, LinkedIn, YouTube variants across 7 industries",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-16",
+      "project": "signature-branding-app",
+      "event": "17 industry templates seeded \u2014 Real Estate, Coach, Restaurant, Fitness, Speaker, Beauty, Photographer (IG + LinkedIn)",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-16",
+      "project": "signature-branding-app",
+      "event": "3 AI agents built \u2014 Brand Designer, Template Factory, Content Scheduler \u2014 all as Supabase edge functions",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-16",
+      "project": "signature-branding-app",
+      "event": "AI Designer panel wired into Creative Studio \u2014 describe what you want, AI builds it",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-16",
+      "project": "signature-branding-app",
+      "event": "Stock photo panel (Unsplash integration) added to Creative Studio Add Elements",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-16",
+      "project": "signature-branding-app",
+      "event": "Template variant previewer built \u2014 expand any template to see all styles before selecting",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-16",
+      "project": "signature-branding-app",
+      "event": "Canvas type system extended with ElementEffects, GradientFill, advanced text properties",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-12",
+      "project": "campaign-system",
+      "event": "Campaign engine first run \u2014 48 clients auto-enrolled in reactivation-winback",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-12",
+      "project": "campaign-system",
+      "event": "Campaign engine edge function deployed and tested \u2014 segments, enrollments, email delivery, conversion detection",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-12",
+      "project": "campaign-system",
+      "event": "32 email sequences seeded across 8 campaigns (headshot, AI, sprint, GP, rewards, re-engagement, funnels)",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-12",
+      "project": "campaign-system",
+      "event": "Campaign automation tables deployed \u2014 5 tables with RLS, triggers, 5 seed segments",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-12",
+      "project": "campaign-system",
+      "event": "Full autonomous campaign system built \u2014 strategy, 50+ ad variants, 30-day calendar, 7 niche playbooks, 3 scheduled agents",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-10",
+      "project": "project-tracker",
+      "event": "API Cost Tracker panel added \u2014 tracks all service spend with budget alerts",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-10",
+      "project": "ai-branding-image-library",
+      "event": "AI Branding Image Library project added to tracker",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-10",
+      "project": "seo-strategy",
+      "event": "SEO Strategy project added \u2014 targeting organic growth across all markets",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-10",
+      "project": "project-tracker",
+      "event": "Project Tracker dashboard created",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-08",
+      "project": "rewards-ecosystem",
+      "event": "Rewards architecture finalized \u2014 7-function ecosystem plan approved",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-07",
+      "project": "rewards-ecosystem",
+      "event": "Decided: all tables in main Supabase, shared auth with 3,000+ clients",
+      "type": "decision"
+    },
+    {
+      "date": "2026-04-05",
+      "project": "orchestration-layer",
+      "event": "All 3 automation layers operational \u2014 Square sync, GP pipeline, content pipeline",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-05",
+      "project": "signature-branding-app",
+      "event": "Creative Studio & Templates fixed \u2014 V2 default, brand kit auto-load",
+      "type": "fix"
+    },
+    {
+      "date": "2026-04-05",
+      "project": "orchestration-layer",
+      "event": "Content pipeline live \u2014 140 items generated for 6 GP clients",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-05",
+      "project": "orchestration-layer",
+      "event": "GP Pipeline Engine deployed \u2014 166 deliverables, health scores running",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-04",
+      "project": "orchestration-layer",
+      "event": "Square Revenue Sync deployed \u2014 130 payments ($15,443) synced",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-04",
+      "project": "crm-integration",
+      "event": "Blocked: GHL API key needed from Ken to proceed",
+      "type": "blocker"
+    },
+    {
+      "date": "2026-04-03",
+      "project": "daily-ops-agent",
+      "event": "Daily ops report fully operational \u2014 launchd job at 8 AM",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-03",
+      "project": "signature-branding-app",
+      "event": "Email/Nurture system fixed \u2014 direct signup funnel added",
+      "type": "fix"
+    }
   ]
 }
