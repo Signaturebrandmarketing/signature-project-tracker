@@ -55,13 +55,23 @@
     },
     {
       "id": "api-anthropic",
-      "title": "Provide Anthropic API key",
+      "title": "Provide Anthropic Admin API key",
       "category": "api-keys",
       "priority": "high",
-      "status": "pending",
-      "description": "For automated Claude cost tracking. Get from console.anthropic.com > Settings > API Keys. Key starts with sk-ant-",
+      "status": "done",
+      "description": "UNBLOCKED 2026-04-20. ANTHROPIC_ADMIN_API_KEY + ANTHROPIC_ORG_ID live in Supabase. Edge function anthropic-cost-sync built. launchd scheduled for daily 7:00 AM sync.",
       "estimatedTime": "5 min",
       "impact": "Enables real-time API cost tracking"
+    },
+    {
+      "id": "anthropic-cost-sync-deploy",
+      "title": "Lovable: apply ai_spend_tracking migration + deploy anthropic-cost-sync",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "GitHub commit fcdeca6 contains: 20260419000001_ai_spend_tracking.sql migration (ai_spend_daily + ai_spend_sync_log tables + 2 views) + anthropic-cost-sync edge function. Once deployed, Claude will run the 30-day backfill and your cost panel will show real numbers.",
+      "estimatedTime": "5 min (Lovable deploy)",
+      "impact": "Cost panel switches from placeholder to live Anthropic billing data"
     },
     {
       "id": "api-meta",
