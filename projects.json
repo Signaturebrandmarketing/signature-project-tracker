@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-22T15:41:55.670393Z",
+  "lastUpdated": "2026-04-22T15:43:11.105940Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -658,7 +658,7 @@
       "status": "active",
       "health": "healthy",
       "weight": 3,
-      "description": "AI-powered branding platform \u2014 main Lovable app",
+      "description": "AI-powered branding platform \u2014 main Lovable app. Recent: fulfillment silent-fail fix (150-image validation + awaited chain fetch + rate-limit retry), gender-specific wardrobe overrides (StyleRoot.wardrobeFemale / wardrobeMale), Square payment sync with GHL cross-sync on AI purchases + headshot completions.",
       "modules": [
         {
           "name": "Creative Studio",
@@ -701,7 +701,7 @@
           "note": "Working"
         }
       ],
-      "lastActivity": "2026-04-05"
+      "lastActivity": "2026-04-21"
     },
     {
       "id": "orchestration-layer",
@@ -709,7 +709,7 @@
       "status": "active",
       "health": "healthy",
       "weight": 3,
-      "description": "Three automation layers connecting the system",
+      "description": "Three automation layers connecting the system. Recent: daily-ops-report agent (8 AM launchd), Anthropic cost sync daily 7 AM (returns $0 correctly \u2014 Claude Max is flat subscription), Gemini self-instrumented cost tracking queued for build.",
       "modules": [
         {
           "name": "Square Revenue Sync",
@@ -727,7 +727,7 @@
           "note": "Runs weekly Sun 10 PM, 140 items across 6 clients"
         }
       ],
-      "lastActivity": "2026-04-05"
+      "lastActivity": "2026-04-20"
     },
     {
       "id": "daily-ops-agent",
@@ -735,7 +735,7 @@
       "status": "active",
       "health": "healthy",
       "weight": 1,
-      "description": "Edge function + launchd job \u2014 daily business health report at 8 AM",
+      "description": "Edge function + launchd job \u2014 daily business health report at 8 AM. Reports to ~/Desktop/signature-ops/. Anthropic cost sync runs 7 AM before it.",
       "modules": [
         {
           "name": "Edge Function",
@@ -753,7 +753,7 @@
           "note": "Saves to ~/Desktop/signature-ops/reports/"
         }
       ],
-      "lastActivity": "2026-04-03",
+      "lastActivity": "2026-04-20",
       "issues": [
         {
           "severity": "warning",
@@ -904,9 +904,9 @@
       "id": "crm-integration",
       "name": "GHL CRM Integration",
       "status": "active",
-      "health": "building",
+      "health": "healthy",
       "weight": 2,
-      "description": "Two GHL sub-accounts (GP + H&B) with full bidirectional + cross-sync. Auto-tags contacts on purchases/sessions, auto-flags AI Full/Premium buyers as GP prospects.",
+      "description": "Two GHL sub-accounts (GP + H&B) with full bidirectional + cross-sync. Auto-tags contacts on purchases/sessions, auto-flags AI Full/Premium buyers as GP prospects. API keys live in Supabase; both edge functions deployed.",
       "modules": [
         {
           "name": "API Key Setup",
@@ -949,11 +949,11 @@
           "note": "AI Full/Premium buyers auto-upserted to GP with tag gp-prospect-warm"
         }
       ],
-      "lastActivity": "2026-04-04",
+      "lastActivity": "2026-04-21",
       "issues": [
         {
-          "severity": "critical",
-          "text": "Blocked \u2014 needs GHL API key to proceed"
+          "severity": "info",
+          "text": "Pending Lovable redeploy of headshot-ghl-sync + square-payment-sync to make auto-tag/cross-sync fully live"
         }
       ]
     },
@@ -986,7 +986,7 @@
           "note": "Known weakness, needs work"
         }
       ],
-      "lastActivity": "2026-04-05"
+      "lastActivity": "2026-04-19"
     },
     {
       "id": "ai-branding-image-library",
@@ -1022,7 +1022,7 @@
           "note": "Scale output safely"
         }
       ],
-      "lastActivity": "2026-04-10"
+      "lastActivity": "2026-04-15"
     },
     {
       "id": "seo-strategy",
