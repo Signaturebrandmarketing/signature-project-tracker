@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="80" viewBox="0 0 560 80" font-family="Playfair Display, serif">
+  <title>Inman Institute — Parent Entity Wordmark</title>
+  <text x="280" y="50" text-anchor="middle" font-size="32" font-weight="600" fill="#2B2A28" letter-spacing="7">INMAN</text>
+  <line x1="268" y1="43" x2="292" y2="43" stroke="#C87F5A" stroke-width="1.5"/>
+  <text x="280" y="50" text-anchor="middle" font-size="32" font-weight="600" fill="#2B2A28" letter-spacing="7" visibility="hidden">INMAN INSTITUTE</text>
+  <g transform="translate(0, 0)">
+    <text x="180" y="50" text-anchor="middle" font-size="32" font-weight="600" fill="#2B2A28" letter-spacing="6">INMAN</text>
+    <line x1="262" y1="43" x2="302" y2="43" stroke="#C87F5A" stroke-width="1.5"/>
+    <text x="390" y="50" text-anchor="middle" font-size="32" font-weight="600" fill="#2B2A28" letter-spacing="6">INSTITUTE</text>
+  </g>
+</svg>

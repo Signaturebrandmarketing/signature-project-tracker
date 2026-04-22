@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 120 120">
+  <title>Purposefully Eating — Cream Logomark (for dark backgrounds)</title>
+  <circle cx="60" cy="60" r="52" fill="none" stroke="#F7F1E6" stroke-width="2.2"/>
+  <circle cx="60" cy="60" r="42" fill="none" stroke="#F7F1E6" stroke-width="1.2" opacity="0.3"/>
+  <path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#F7F1E6" stroke-width="2" stroke-linecap="round"/>
+  <path d="M52 62 Q48 54 52 48" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M52 62 Q58 58 64 56" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M60 54 Q54 48 56 40" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M60 54 Q68 52 72 48" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M70 46 Q68 38 72 32" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M70 46 Q78 44 82 40" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="82" cy="38" r="2.5" fill="#C87F5A"/>
+</svg>

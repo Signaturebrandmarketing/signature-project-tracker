@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Identity System — Phyllis Inman</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F1E6; --cream-alt: #EDE3D2; --paper: #FDF9F0;
+    --sage: #8A9A5B; --sage-soft: #E3E8D3; --sage-dark: #6B7A42;
+    --terracotta: #C87F5A; --terracotta-soft: #F2DCCE; --terracotta-dark: #A85E3C;
+    --walnut: #6B4E32; --walnut-soft: #C3B097;
+    --charcoal: #2B2A28; --muted: #6F6B63;
+    --gold: #D4AF37; --border: #D9CEB8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream); color: var(--charcoal);
+    line-height: 1.6; padding: 3rem 1.5rem;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  /* TOP BAR */
+  .top-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 2rem; margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .back-link {
+    font-size: 0.8rem; color: var(--muted); text-decoration: none;
+    padding: 0.4rem 0.8rem; border: 1px solid var(--border); border-radius: 6px;
+    transition: all 0.15s;
+  }
+  .back-link:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+  /* HEADER */
+  .header { margin-bottom: 3rem; }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; font-weight: 600;
+    letter-spacing: -0.01em; line-height: 1.1;
+    margin-bottom: 0.4rem;
+  }
+  .header h1 em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .header .sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1.2rem;
+    color: var(--muted);
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 4rem; padding-bottom: 3rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+  .section-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  .section-eyebrow {
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--sage);
+  }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 600;
+    margin: 0.3rem 0 0.5rem;
+  }
+  .section h2 em { color: var(--terracotta); font-style: italic; }
+  .section-lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; color: var(--walnut);
+    font-size: 1.1rem;
+  }
+
+  /* LOGO STAGE */
+  .stage {
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: 14px; padding: 3rem;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; min-height: 200px;
+  }
+  .stage.small { min-height: 140px; padding: 2rem; }
+  .stage.tight { padding: 1.5rem; min-height: 100px; }
+  .stage-grid {
+    display: grid; gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .stage.cream { background: var(--cream); border-color: var(--border); }
+  .stage.sage { background: var(--sage); border-color: var(--sage); }
+  .stage.terracotta { background: var(--terracotta); border-color: var(--terracotta); }
+  .stage.walnut { background: var(--walnut); border-color: var(--walnut); }
+  .stage.charcoal { background: var(--charcoal); border-color: var(--charcoal); }
+
+  .stage-label {
+    position: absolute; bottom: 0.8rem; left: 1rem;
+    font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted);
+    font-weight: 600;
+  }
+  .stage.sage .stage-label, .stage.terracotta .stage-label,
+  .stage.walnut .stage-label, .stage.charcoal .stage-label {
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* =========== LOGO COMPONENTS =========== */
+  /* Primary wordmark */
+  .wordmark-primary {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+  }
+  .wordmark-primary .lead-text {
+    font-size: 3.5rem; font-weight: 600;
+    letter-spacing: -0.02em; line-height: 1;
+    color: var(--charcoal);
+  }
+  .wordmark-primary .lead-text em {
+    font-style: italic; font-weight: 500;
+    color: var(--terracotta);
+  }
+  .wordmark-primary .divider {
+    width: 60px; height: 2px;
+    background: var(--terracotta);
+    margin: 0.9rem auto;
+  }
+  .wordmark-primary .byline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-style: italic;
+    color: var(--walnut); letter-spacing: 0.05em;
+  }
+  .wordmark-primary .subtle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.35em;
+    text-transform: uppercase; color: var(--muted);
+    margin-top: 0.8rem;
+  }
+
+  /* Horizontal wordmark */
+  .wordmark-horizontal {
+    display: flex; align-items: center; gap: 1.5rem;
+  }
+  .wordmark-horizontal .mark { flex-shrink: 0; }
+  .wordmark-horizontal .text-block {
+    font-family: 'Playfair Display', serif;
+  }
+  .wordmark-horizontal .lead-text {
+    font-size: 1.8rem; font-weight: 600;
+    line-height: 1; letter-spacing: -0.01em;
+    margin-bottom: 0.2rem;
+  }
+  .wordmark-horizontal .lead-text em {
+    font-style: italic; font-weight: 500; color: var(--terracotta);
+  }
+  .wordmark-horizontal .byline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem; font-style: italic;
+    color: var(--walnut);
+  }
+
+  /* Parent entity wordmark */
+  .wordmark-parent {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    letter-spacing: 0.28em;
+    font-size: 1.6rem; font-weight: 600;
+    text-transform: uppercase;
+    color: var(--charcoal);
+  }
+  .wordmark-parent .sep {
+    display: inline-block; width: 28px; height: 1px;
+    background: var(--terracotta); vertical-align: middle;
+    margin: 0 0.8rem;
+  }
+
+  /* Inversions for dark bgs */
+  .inverted .lead-text, .inverted .wordmark-parent,
+  .inverted.wordmark-parent { color: var(--cream); }
+  .inverted .lead-text em { color: var(--terracotta-soft); }
+  .inverted .byline, .inverted .subtle { color: var(--cream-alt); }
+  .inverted .divider { background: var(--terracotta-soft); }
+
+  /* =========== LOGOMARK (ICON) =========== */
+  .mark-plate {
+    /* Container for the SVG icon */
+  }
+
+  /* Icon size grid */
+  .icon-sizes {
+    display: flex; gap: 2rem; align-items: center;
+    justify-content: center; flex-wrap: wrap;
+  }
+  .icon-size-item {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 0.5rem;
+  }
+  .icon-size-item .label {
+    font-size: 0.68rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted);
+    font-weight: 600;
+  }
+
+  /* Monogram */
+  .monogram-box {
+    display: inline-block;
+    width: 120px; height: 120px;
+    border-radius: 50%; background: var(--terracotta);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .monogram-box .letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem; font-weight: 600;
+    font-style: italic; color: var(--cream);
+    line-height: 1; transform: translateY(-4px);
+  }
+
+  /* COLOR SYSTEM */
+  .palette-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+  .color-chip {
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden;
+  }
+  .color-swatch {
+    height: 110px; display: flex;
+    align-items: flex-end; padding: 0.8rem;
+  }
+  .color-swatch .role {
+    font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase; font-weight: 700;
+  }
+  .color-info { padding: 0.8rem 1rem; font-size: 0.78rem; }
+  .color-info .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  .color-info .hex {
+    font-family: 'Inter', monospace;
+    color: var(--muted); font-size: 0.75rem;
+  }
+
+  /* TYPOGRAPHY */
+  .type-specimen {
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.5rem 2rem; margin-bottom: 1rem;
+  }
+  .type-meta {
+    display: flex; gap: 1rem; align-items: baseline;
+    font-size: 0.7rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted); font-weight: 600;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.7rem; border-bottom: 1px dashed var(--border);
+  }
+  .type-meta .role { color: var(--sage); }
+  .type-sample-playfair {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem; font-weight: 600;
+    line-height: 1.1; letter-spacing: -0.01em;
+    color: var(--charcoal);
+  }
+  .type-sample-playfair em { font-style: italic; color: var(--terracotta); font-weight: 500; }
+  .type-sample-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-style: italic;
+    color: var(--walnut); line-height: 1.3;
+  }
+  .type-sample-inter {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem; color: var(--charcoal); line-height: 1.6;
+  }
+  .type-scale { display: grid; grid-template-columns: 100px 1fr; gap: 0.8rem; margin-top: 1rem; font-size: 0.8rem; }
+  .type-scale-label { color: var(--muted); font-family: 'Inter', monospace; font-size: 0.72rem; }
+
+  /* USAGE RULES */
+  .rules {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  }
+  .rule-box {
+    padding: 1.5rem; border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .rule-box.do { background: var(--sage-soft); border-color: var(--sage); }
+  .rule-box.dont { background: var(--terracotta-soft); border-color: var(--terracotta); }
+  .rule-box h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .rule-box.do h4 { color: var(--sage-dark); }
+  .rule-box.dont h4 { color: var(--terracotta-dark); }
+  .rule-box ul { list-style: none; padding: 0; }
+  .rule-box li {
+    padding: 0.4rem 0 0.4rem 1.4rem;
+    font-size: 0.88rem; position: relative;
+    line-height: 1.5;
+  }
+  .rule-box.do li::before {
+    content: "✓"; position: absolute; left: 0;
+    color: var(--sage-dark); font-weight: 700;
+  }
+  .rule-box.dont li::before {
+    content: "✕"; position: absolute; left: 0;
+    color: var(--terracotta-dark); font-weight: 700;
+  }
+
+  /* CLEAR SPACE DEMO */
+  .clearspace-demo {
+    position: relative; padding: 3rem;
+    background: var(--paper); border: 1px dashed var(--border);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .clearspace-grid::before, .clearspace-grid::after {
+    content: ""; position: absolute; background: var(--terracotta-soft);
+  }
+  .clearspace-x {
+    position: absolute; width: 32px; height: 32px;
+    border: 1px dashed var(--terracotta);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; color: var(--terracotta);
+    font-family: 'Playfair Display', serif; font-style: italic;
+  }
+
+  /* FILE LIST */
+  .file-list {
+    display: grid; gap: 0.6rem;
+  }
+  .file-row {
+    display: grid; grid-template-columns: auto 1fr auto;
+    gap: 1rem; align-items: center;
+    padding: 0.75rem 1rem;
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: 8px; font-size: 0.85rem;
+  }
+  .file-icon {
+    width: 28px; height: 28px; background: var(--sage-soft);
+    color: var(--sage); border-radius: 4px;
+    display: grid; place-items: center;
+    font-size: 0.55rem; font-weight: 700; letter-spacing: 0.1em;
+  }
+  .file-icon.svg { background: var(--terracotta-soft); color: var(--terracotta); }
+  .file-name { font-family: 'Inter', monospace; color: var(--charcoal); font-size: 0.82rem; }
+  .file-desc { color: var(--muted); font-size: 0.8rem; }
+
+  @media (max-width: 780px) {
+    body { padding: 1.5rem 0.75rem; }
+    .wordmark-primary .lead-text { font-size: 2rem; }
+    .wordmark-horizontal { flex-direction: column; text-align: center; }
+    .rules { grid-template-columns: 1fr; }
+    .header h1 { font-size: 1.8rem; }
+    .stage { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="top-bar">
+    <a href="./" class="back-link">← Dashboard</a>
+    <span style="font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); font-weight: 600;">Brand Identity v1</span>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="section-eyebrow">Brand Identity System</div>
+    <h1>Phyllis Inman <em>— visual system.</em></h1>
+    <div class="sub">Logomark, wordmarks, typography, palette, and usage rules for everything branded.</div>
+  </div>
+
+  <!-- ========== PRIMARY WORDMARK ========== -->
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">01 · Primary Lockup</div>
+        <h2>The <em>Purposefully Eating</em> wordmark.</h2>
+        <div class="section-lead">The hero mark. Use on covers, headers, and anywhere the brand needs its fullest voice.</div>
+      </div>
+    </div>
+
+    <div class="stage cream" style="min-height: 340px;">
+      <div class="wordmark-primary">
+        <div class="lead-text">Purposefully <em>Eating</em></div>
+        <div class="divider"></div>
+        <div class="byline">with Phyllis Inman</div>
+        <div class="subtle">Inman Institute</div>
+      </div>
+      <div class="stage-label">Light · Cream #F7F1E6</div>
+    </div>
+
+    <div class="stage-grid" style="margin-top: 1rem;">
+      <div class="stage charcoal small">
+        <div class="wordmark-primary inverted">
+          <div class="lead-text" style="font-size: 2rem;">Purposefully <em>Eating</em></div>
+          <div class="divider" style="width: 40px;"></div>
+          <div class="byline">with Phyllis Inman</div>
+        </div>
+        <div class="stage-label">Dark · Charcoal</div>
+      </div>
+      <div class="stage sage small">
+        <div class="wordmark-primary inverted">
+          <div class="lead-text" style="font-size: 2rem;">Purposefully <em>Eating</em></div>
+          <div class="divider" style="width: 40px;"></div>
+          <div class="byline">with Phyllis Inman</div>
+        </div>
+        <div class="stage-label">Sage</div>
+      </div>
+      <div class="stage terracotta small">
+        <div class="wordmark-primary inverted">
+          <div class="lead-text" style="font-size: 2rem;">Purposefully <em style="color: var(--cream);">Eating</em></div>
+          <div class="divider" style="width: 40px;"></div>
+          <div class="byline">with Phyllis Inman</div>
+        </div>
+        <div class="stage-label">Terracotta</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== LOGOMARK (ICON) ========== -->
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">02 · Logomark</div>
+        <h2>The <em>plate mark.</em></h2>
+        <div class="section-lead">The icon. Used for favicons, social avatars, email signatures, and anywhere the wordmark won't fit. A plate viewed from above, with a single sprig lying on it — food, rest, permission.</div>
+      </div>
+    </div>
+
+    <div class="stage cream">
+      <svg width="180" height="180" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <!-- Plate edge ring -->
+        <circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.2"/>
+        <circle cx="60" cy="60" r="42" fill="none" stroke="#6B4E32" stroke-width="1.2" opacity="0.5"/>
+        <!-- Sprig stem -->
+        <path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/>
+        <!-- Leaves -->
+        <path d="M52 62 Q48 54 52 48" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M52 62 Q58 58 64 56" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M60 54 Q54 48 56 40" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M60 54 Q68 52 72 48" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M70 46 Q68 38 72 32" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M70 46 Q78 44 82 40" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/>
+        <!-- Small terracotta dot (mindful accent) -->
+        <circle cx="82" cy="38" r="2.5" fill="#C87F5A"/>
+      </svg>
+      <div class="stage-label">Primary mark · 180px</div>
+    </div>
+
+    <div class="section-head" style="margin-top: 2rem; margin-bottom: 1rem;">
+      <div>
+        <div class="section-eyebrow">Scale test</div>
+        <h2 style="font-size: 1.2rem; margin-top: 0.2rem;">Works at every size, from favicon up.</h2>
+      </div>
+    </div>
+
+    <div class="stage cream" style="min-height: 180px;">
+      <div class="icon-sizes">
+        <div class="icon-size-item">
+          <svg width="16" height="16" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="4.5"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="4.5" stroke-linecap="round"/><path d="M52 62 Q48 54 52 48" fill="none" stroke="#8A9A5B" stroke-width="4" stroke-linecap="round"/><path d="M52 62 Q58 58 64 56" fill="none" stroke="#8A9A5B" stroke-width="4" stroke-linecap="round"/><path d="M70 46 Q68 38 72 32" fill="none" stroke="#8A9A5B" stroke-width="4" stroke-linecap="round"/><path d="M70 46 Q78 44 82 40" fill="none" stroke="#8A9A5B" stroke-width="4" stroke-linecap="round"/><circle cx="82" cy="38" r="5" fill="#C87F5A"/></svg>
+          <div class="label">16 · favicon</div>
+        </div>
+        <div class="icon-size-item">
+          <svg width="32" height="32" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="3"/><circle cx="60" cy="60" r="42" fill="none" stroke="#6B4E32" stroke-width="1.5" opacity="0.5"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2.5" stroke-linecap="round"/><path d="M52 62 Q48 54 52 48" fill="none" stroke="#8A9A5B" stroke-width="2.2" stroke-linecap="round"/><path d="M52 62 Q58 58 64 56" fill="none" stroke="#8A9A5B" stroke-width="2.2" stroke-linecap="round"/><path d="M60 54 Q54 48 56 40" fill="none" stroke="#8A9A5B" stroke-width="2.2" stroke-linecap="round"/><path d="M60 54 Q68 52 72 48" fill="none" stroke="#8A9A5B" stroke-width="2.2" stroke-linecap="round"/><path d="M70 46 Q68 38 72 32" fill="none" stroke="#8A9A5B" stroke-width="2.2" stroke-linecap="round"/><path d="M70 46 Q78 44 82 40" fill="none" stroke="#8A9A5B" stroke-width="2.2" stroke-linecap="round"/><circle cx="82" cy="38" r="3" fill="#C87F5A"/></svg>
+          <div class="label">32 · icon</div>
+        </div>
+        <div class="icon-size-item">
+          <svg width="64" height="64" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.5"/><circle cx="60" cy="60" r="42" fill="none" stroke="#6B4E32" stroke-width="1.2" opacity="0.5"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/><path d="M52 62 Q48 54 52 48" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M52 62 Q58 58 64 56" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q54 48 56 40" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q68 52 72 48" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q68 38 72 32" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q78 44 82 40" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg>
+          <div class="label">64 · social</div>
+        </div>
+        <div class="icon-size-item">
+          <svg width="96" height="96" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.2"/><circle cx="60" cy="60" r="42" fill="none" stroke="#6B4E32" stroke-width="1.2" opacity="0.5"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/><path d="M52 62 Q48 54 52 48" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M52 62 Q58 58 64 56" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q54 48 56 40" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q68 52 72 48" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q68 38 72 32" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q78 44 82 40" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg>
+          <div class="label">96 · Zoom</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-grid" style="margin-top: 1rem;">
+      <div class="stage charcoal small">
+        <svg width="110" height="110" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#F7F1E6" stroke-width="2.2"/><circle cx="60" cy="60" r="42" fill="none" stroke="#F7F1E6" stroke-width="1.2" opacity="0.3"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#AFBD88" stroke-width="2" stroke-linecap="round"/><path d="M52 62 Q48 54 52 48" fill="none" stroke="#AFBD88" stroke-width="1.8" stroke-linecap="round"/><path d="M52 62 Q58 58 64 56" fill="none" stroke="#AFBD88" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q54 48 56 40" fill="none" stroke="#AFBD88" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q68 52 72 48" fill="none" stroke="#AFBD88" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q68 38 72 32" fill="none" stroke="#AFBD88" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q78 44 82 40" fill="none" stroke="#AFBD88" stroke-width="1.8" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#F2DCCE"/></svg>
+        <div class="stage-label">On charcoal</div>
+      </div>
+      <div class="stage sage small">
+        <svg width="110" height="110" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#F7F1E6" stroke-width="2.2"/><circle cx="60" cy="60" r="42" fill="none" stroke="#F7F1E6" stroke-width="1.2" opacity="0.3"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#F7F1E6" stroke-width="2" stroke-linecap="round"/><path d="M52 62 Q48 54 52 48" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/><path d="M52 62 Q58 58 64 56" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q54 48 56 40" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q68 52 72 48" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q68 38 72 32" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q78 44 82 40" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg>
+        <div class="stage-label">On sage</div>
+      </div>
+      <div class="stage terracotta small">
+        <svg width="110" height="110" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#F7F1E6" stroke-width="2.2"/><circle cx="60" cy="60" r="42" fill="none" stroke="#F7F1E6" stroke-width="1.2" opacity="0.3"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#F7F1E6" stroke-width="2" stroke-linecap="round"/><path d="M52 62 Q48 54 52 48" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/><path d="M52 62 Q58 58 64 56" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q54 48 56 40" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q68 52 72 48" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q68 38 72 32" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q78 44 82 40" fill="none" stroke="#F7F1E6" stroke-width="1.8" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#8A9A5B"/></svg>
+        <div class="stage-label">On terracotta</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== HORIZONTAL LOCKUP ========== -->
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">03 · Horizontal Lockup</div>
+        <h2>Icon <em>+ wordmark.</em></h2>
+        <div class="section-lead">For email signatures, footers, website headers, and anywhere space is horizontal.</div>
+      </div>
+    </div>
+
+    <div class="stage cream">
+      <div class="wordmark-horizontal">
+        <svg width="64" height="64" viewBox="0 0 120 120" class="mark"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.2"/><circle cx="60" cy="60" r="42" fill="none" stroke="#6B4E32" stroke-width="1.2" opacity="0.5"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/><path d="M52 62 Q48 54 52 48" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M52 62 Q58 58 64 56" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q54 48 56 40" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q68 52 72 48" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q68 38 72 32" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q78 44 82 40" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg>
+        <div class="text-block">
+          <div class="lead-text">Purposefully <em>Eating</em></div>
+          <div class="byline">with Phyllis Inman</div>
+        </div>
+      </div>
+      <div class="stage-label">Horizontal lockup · cream</div>
+    </div>
+  </div>
+
+  <!-- ========== PARENT ENTITY ========== -->
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">04 · Parent Entity</div>
+        <h2>Inman <em>Institute.</em></h2>
+        <div class="section-lead">The legal/corporate mark. Use on contracts, invoices, official communications, and anywhere the institute is the entity speaking (as opposed to the consumer brand).</div>
+      </div>
+    </div>
+
+    <div class="stage cream">
+      <div class="wordmark-parent">Inman<span class="sep"></span>Institute</div>
+      <div class="stage-label">Parent wordmark · cream</div>
+    </div>
+
+    <div class="stage-grid" style="margin-top: 1rem;">
+      <div class="stage charcoal small">
+        <div class="wordmark-parent inverted" style="font-size: 1.3rem;">Inman<span class="sep" style="background: var(--terracotta-soft);"></span>Institute</div>
+        <div class="stage-label">Charcoal</div>
+      </div>
+      <div class="stage walnut small">
+        <div class="wordmark-parent inverted" style="font-size: 1.3rem;">Inman<span class="sep" style="background: var(--gold);"></span>Institute</div>
+        <div class="stage-label">Walnut</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MONOGRAM ========== -->
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">05 · Monogram</div>
+        <h2>The <em>"P"</em> monogram.</h2>
+        <div class="section-lead">Short-form mark for journal spines, merch, packaging stickers, and social avatars when the plate mark isn't distinctive enough.</div>
+      </div>
+    </div>
+
+    <div class="stage cream">
+      <div style="display: flex; gap: 2rem; align-items: center;">
+        <div class="monogram-box">
+          <div class="letter">P</div>
+        </div>
+        <div class="monogram-box" style="background: var(--sage);">
+          <div class="letter">P</div>
+        </div>
+        <div class="monogram-box" style="background: var(--walnut);">
+          <div class="letter">P</div>
+        </div>
+        <div class="monogram-box" style="background: var(--charcoal);">
+          <div class="letter">P</div>
+        </div>
+      </div>
+      <div class="stage-label">Monogram · 4 colorways</div>
+    </div>
+  </div>
+
+  <!-- ========== PALETTE ========== -->
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">06 · Color System</div>
+        <h2>The <em>earthy palette.</em></h2>
+        <div class="section-lead">Six colors. Three primary, two accents, one ornament. The hex codes below are the truth; everything branded uses exactly these.</div>
+      </div>
+    </div>
+
+    <div class="palette-grid">
+      <div class="color-chip">
+        <div class="color-swatch" style="background: #F7F1E6;"><div class="role" style="color: #2B2A28;">Primary</div></div>
+        <div class="color-info"><div class="name">Cream</div><div class="hex">#F7F1E6</div></div>
+      </div>
+      <div class="color-chip">
+        <div class="color-swatch" style="background: #8A9A5B;"><div class="role" style="color: #F7F1E6;">Primary</div></div>
+        <div class="color-info"><div class="name">Sage</div><div class="hex">#8A9A5B</div></div>
+      </div>
+      <div class="color-chip">
+        <div class="color-swatch" style="background: #C87F5A;"><div class="role" style="color: #F7F1E6;">Primary</div></div>
+        <div class="color-info"><div class="name">Terracotta</div><div class="hex">#C87F5A</div></div>
+      </div>
+      <div class="color-chip">
+        <div class="color-swatch" style="background: #6B4E32;"><div class="role" style="color: #F7F1E6;">Accent</div></div>
+        <div class="color-info"><div class="name">Walnut</div><div class="hex">#6B4E32</div></div>
+      </div>
+      <div class="color-chip">
+        <div class="color-swatch" style="background: #2B2A28;"><div class="role" style="color: #F7F1E6;">Text</div></div>
+        <div class="color-info"><div class="name">Charcoal</div><div class="hex">#2B2A28</div></div>
+      </div>
+      <div class="color-chip">
+        <div class="color-swatch" style="background: #D4AF37;"><div class="role" style="color: #2B2A28;">Ornament</div></div>
+        <div class="color-info"><div class="name">Gold</div><div class="hex">#D4AF37</div></div>
+      </div>
+    </div>
+
+    <div class="stage cream" style="margin-top: 1rem; min-height: 80px; padding: 1.2rem;">
+      <p style="font-size: 0.9rem; color: var(--walnut); font-style: italic; text-align: center; max-width: 560px;">Gold is reserved for tactile premium moments only — journal foil, packaging accents, premium tier markers. Never as a primary brand color. Cream-first, always.</p>
+    </div>
+  </div>
+
+  <!-- ========== TYPOGRAPHY ========== -->
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">07 · Typography</div>
+        <h2>The <em>voice</em> in letterform.</h2>
+        <div class="section-lead">Three fonts. All free via Google Fonts. Never substitute.</div>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">
+        <span class="role">Headings</span>
+        <span style="color: var(--charcoal);">Playfair Display</span>
+        <span>— Google Fonts · serif</span>
+      </div>
+      <div class="type-sample-playfair">Mindful eating, <em>without guilt.</em></div>
+      <div class="type-scale">
+        <div class="type-scale-label">H1 · 2.4rem</div>
+        <div style="font-family: 'Playfair Display'; font-size: 2.4rem; font-weight: 600; line-height: 1;">Headline size</div>
+        <div class="type-scale-label">H2 · 1.6rem</div>
+        <div style="font-family: 'Playfair Display'; font-size: 1.6rem; font-weight: 600;">Section heading</div>
+        <div class="type-scale-label">H3 · 1.25rem</div>
+        <div style="font-family: 'Playfair Display'; font-size: 1.25rem; font-weight: 600;">Subheading</div>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">
+        <span class="role">Accent</span>
+        <span style="color: var(--charcoal);">Cormorant Garamond</span>
+        <span>— Google Fonts · serif italic</span>
+      </div>
+      <div class="type-sample-cormorant">For pullquotes, section leads, and byline italics — where the voice softens.</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">
+        <span class="role">Body</span>
+        <span style="color: var(--charcoal);">Inter</span>
+        <span>— Google Fonts · sans-serif</span>
+      </div>
+      <div class="type-sample-inter">Inter is the working horse of the brand. Clean, readable at every size, and pairs with Playfair without competing. All body copy, navigation, buttons, and small-text UI lives in Inter. Weights: 300 (light), 400 (regular), 500 (medium), 600 (semibold), 700 (bold).</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">
+        <span class="role">Pairings</span>
+        <span style="color: var(--charcoal);">How they work together</span>
+      </div>
+      <div style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: baseline;">
+        <div style="font-family: 'Playfair Display'; font-size: 1.8rem; font-weight: 600; line-height: 1;">Playfair Display</div>
+        <div style="font-family: 'Inter'; font-size: 0.88rem; color: var(--muted);">for a headline</div>
+      </div>
+      <div style="margin-top: 0.4rem; font-family: 'Inter'; font-size: 0.95rem;">and Inter for the body copy underneath it, like this sentence — that's the whole pairing rule.</div>
+      <div style="margin-top: 1rem; font-family: 'Cormorant Garamond'; font-style: italic; font-size: 1.15rem; color: var(--walnut);">And Cormorant Garamond, when the voice needs to get quieter and more intimate.</div>
+    </div>
+  </div>
+
+  <!-- ========== CLEAR SPACE + MIN SIZE ========== -->
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">08 · Clear Space &amp; Minimum Size</div>
+        <h2>Give it <em>room.</em></h2>
+        <div class="section-lead">The mark always needs breathing room. Minimum size rules protect legibility.</div>
+      </div>
+    </div>
+
+    <div class="stage cream" style="padding: 2rem;">
+      <div class="clearspace-demo" style="padding: 3rem 4rem;">
+        <div class="clearspace-x" style="top: 0; left: 0;">X</div>
+        <div class="clearspace-x" style="top: 0; right: 0;">X</div>
+        <div class="clearspace-x" style="bottom: 0; left: 0;">X</div>
+        <div class="clearspace-x" style="bottom: 0; right: 0;">X</div>
+        <svg width="96" height="96" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.2"/><circle cx="60" cy="60" r="42" fill="none" stroke="#6B4E32" stroke-width="1.2" opacity="0.5"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/><path d="M52 62 Q48 54 52 48" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M52 62 Q58 58 64 56" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q54 48 56 40" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M60 54 Q68 52 72 48" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q68 38 72 32" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q78 44 82 40" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg>
+      </div>
+      <div class="stage-label">Clear space · X = ⅓ mark height, on all sides</div>
+    </div>
+
+    <div style="margin-top: 1rem;">
+      <div class="stage cream" style="padding: 1.5rem; min-height: auto;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; width: 100%;">
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem;">Minimum size · digital</div>
+            <p style="font-size: 0.88rem; color: var(--muted);">16 px wide. Below this, use the favicon variant only (thicker strokes). The logomark is not designed for sizes under 16px.</p>
+          </div>
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem;">Minimum size · print</div>
+            <p style="font-size: 0.88rem; color: var(--muted);">0.4 inches (10mm) wide. Below this, the sprig details will print muddy. Use the monogram instead at smaller sizes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== DOs AND DON'Ts ========== -->
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">09 · Usage Rules</div>
+        <h2>Do &amp; <em>don't.</em></h2>
+        <div class="section-lead">The small things that protect the brand over years. Share this with any designer, VA, or printer who handles the marks.</div>
+      </div>
+    </div>
+
+    <div class="rules">
+      <div class="rule-box do">
+        <h4>Do</h4>
+        <ul>
+          <li>Use the logomark on cream, white, or photography</li>
+          <li>Maintain clear space of at least ⅓ mark height on all sides</li>
+          <li>Use the horizontal lockup where space is wider than tall</li>
+          <li>Pair marks only with Playfair Display, Cormorant Garamond, or Inter</li>
+          <li>Use the SVG files whenever possible (scales perfectly)</li>
+          <li>Use the monogram when the full mark is too detailed for the surface</li>
+          <li>Reserve gold for foil / premium tier moments only</li>
+        </ul>
+      </div>
+      <div class="rule-box dont">
+        <h4>Don't</h4>
+        <ul>
+          <li>Place on busy photography without adjusting the photo's opacity</li>
+          <li>Stretch, skew, or rotate any mark</li>
+          <li>Change the colors outside the approved palette</li>
+          <li>Re-draw the sprig or modify the SVG geometry</li>
+          <li>Set the wordmark in fonts other than Playfair Display</li>
+          <li>Add drop shadows, glows, or filters</li>
+          <li>Use the mark on brightly colored backgrounds outside the palette</li>
+          <li>Use gold as a primary color (it's ornamental only)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FILE DELIVERY ========== -->
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">10 · Handoff Files</div>
+        <h2>What to <em>download.</em></h2>
+        <div class="section-lead">Every mark is provided as SVG (infinite scaling) and reference PNG. Print production requires SVG.</div>
+      </div>
+    </div>
+
+    <div class="file-list">
+      <div class="file-row">
+        <div class="file-icon svg">SVG</div>
+        <div>
+          <div class="file-name"><a href="identity/svg-files/logomark-primary.svg" download style="color: var(--charcoal); text-decoration: none;">logomark-primary.svg</a></div>
+          <div class="file-desc">Primary plate + sprig mark · walnut/sage/terracotta on transparent</div>
+        </div>
+        <a href="identity/svg-files/logomark-primary.svg" download class="back-link" style="font-size: 0.72rem;">Download</a>
+      </div>
+      <div class="file-row">
+        <div class="file-icon svg">SVG</div>
+        <div>
+          <div class="file-name"><a href="identity/svg-files/logomark-cream.svg" download style="color: var(--charcoal); text-decoration: none;">logomark-cream.svg</a></div>
+          <div class="file-desc">Cream variant · for dark backgrounds (charcoal, sage, terracotta)</div>
+        </div>
+        <a href="identity/svg-files/logomark-cream.svg" download class="back-link" style="font-size: 0.72rem;">Download</a>
+      </div>
+      <div class="file-row">
+        <div class="file-icon svg">SVG</div>
+        <div>
+          <div class="file-name"><a href="identity/svg-files/logomark-favicon.svg" download style="color: var(--charcoal); text-decoration: none;">logomark-favicon.svg</a></div>
+          <div class="file-desc">Thicker-stroke variant · optimized for 16–32 px sizes</div>
+        </div>
+        <a href="identity/svg-files/logomark-favicon.svg" download class="back-link" style="font-size: 0.72rem;">Download</a>
+      </div>
+      <div class="file-row">
+        <div class="file-icon svg">SVG</div>
+        <div>
+          <div class="file-name"><a href="identity/svg-files/wordmark-primary.svg" download style="color: var(--charcoal); text-decoration: none;">wordmark-primary.svg</a></div>
+          <div class="file-desc">"Purposefully Eating / with Phyllis Inman" — full lockup</div>
+        </div>
+        <a href="identity/svg-files/wordmark-primary.svg" download class="back-link" style="font-size: 0.72rem;">Download</a>
+      </div>
+      <div class="file-row">
+        <div class="file-icon svg">SVG</div>
+        <div>
+          <div class="file-name"><a href="identity/svg-files/wordmark-horizontal.svg" download style="color: var(--charcoal); text-decoration: none;">wordmark-horizontal.svg</a></div>
+          <div class="file-desc">Icon + wordmark · horizontal layout</div>
+        </div>
+        <a href="identity/svg-files/wordmark-horizontal.svg" download class="back-link" style="font-size: 0.72rem;">Download</a>
+      </div>
+      <div class="file-row">
+        <div class="file-icon svg">SVG</div>
+        <div>
+          <div class="file-name"><a href="identity/svg-files/wordmark-inman-institute.svg" download style="color: var(--charcoal); text-decoration: none;">wordmark-inman-institute.svg</a></div>
+          <div class="file-desc">Parent entity · "INMAN — INSTITUTE"</div>
+        </div>
+        <a href="identity/svg-files/wordmark-inman-institute.svg" download class="back-link" style="font-size: 0.72rem;">Download</a>
+      </div>
+      <div class="file-row">
+        <div class="file-icon svg">SVG</div>
+        <div>
+          <div class="file-name"><a href="identity/svg-files/monogram-p.svg" download style="color: var(--charcoal); text-decoration: none;">monogram-p.svg</a></div>
+          <div class="file-desc">"P" monogram · for merch, spines, stickers, avatars</div>
+        </div>
+        <a href="identity/svg-files/monogram-p.svg" download class="back-link" style="font-size: 0.72rem;">Download</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.8rem; color: var(--muted); font-style: italic;">
+    <div>Phyllis Inman · Inman Institute · Brand Identity v1 · 2026-04-22</div>
+    <div style="margin-top: 0.4rem;">Questions? The designer (that's Ken, via Signature Branding) has the original files and can produce any variant.</div>
+  </div>
+
+</div>
+</body>
+</html>
