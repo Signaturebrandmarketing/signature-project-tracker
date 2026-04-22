@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-20T20:55:07.703202Z",
+  "lastUpdated": "2026-04-22T15:30:29.246306Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -8,18 +8,18 @@
       "title": "Apply 7 rewards migrations to production Supabase",
       "category": "deploy",
       "priority": "critical",
-      "status": "pending",
-      "description": "7 migrations committed to git (Phase 1-7: rewards, ambassadors, marketplace, partners, fundraising, bartering, events) but NOT applied in production. Run the Lovable prompt I'll provide to apply them. Blocks all downstream rewards work.",
+      "status": "done",
+      "description": "RESOLVED 2026-04-21. All 8 rewards migrations applied to production (phase 1-7). Verified via REST \u2014 all tables exist, RLS policies in place, reward_tiers seeded with 8 rows. Rewards backend schema is 100% live on stsowpflccehekknumkb.",
       "estimatedTime": "5 min (Lovable runs the migrations)",
       "impact": "CRITICAL \u2014 unlocks entire rewards + affiliate program"
     },
     {
       "id": "rewards-backfill-codes",
-      "title": "Backfill referral codes for all 58 existing profiles",
+      "title": "Backfill referral codes for 62 existing profiles",
       "category": "deploy",
       "priority": "high",
       "status": "pending",
-      "description": "After migrations apply, every existing user needs a unique referral code. Claude will run the backfill via SQL once tables exist.",
+      "description": "62 profiles now in production. Some already have referral_code + referral_links from the handle_new_user trigger (fires on NEW signups only). Run /admin/health \u2192 \"Profiles missing referral_code or referral_links\" \u2192 Backfill. Confirms every existing client is referral-ready before launch email goes out.",
       "estimatedTime": "2 min",
       "impact": "Every existing client becomes a potential referrer overnight"
     },
@@ -272,6 +272,246 @@
       "description": "Stripe shows $0 because it's platform-only. Not urgent unless you want to unify revenue reporting. Square works fine for now.",
       "estimatedTime": "Decision + optional migration plan",
       "impact": "Clean revenue reporting (optional)"
+    },
+    {
+      "id": "rewards-add-platinum-authority-tiers",
+      "title": "Add Platinum + Authority Sprint rows to reward_tiers",
+      "category": "deploy",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Live reward_tiers is missing platinum ($197) and authority_sprint ($297) referral entries. Today, a Platinum purchase via referral credits $0. SQL ready: Platinum $40/$60 (client/ambassador), Authority $50/$75. Paste into Signature Brand Studio \u2192 Cloud \u2192 SQL editor. 30 seconds.",
+      "estimatedTime": "1 min",
+      "impact": "Closes referral-fee gap on two highest-margin products"
+    },
+    {
+      "id": "rewards-ref-smart-redirect",
+      "title": "Build /ref/:code smart redirect (Option C)",
+      "category": "deploy",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Spec delivered to Lovable. Client-side React route that logs the click, sets ref_code cookie on .signaturebranding.app, then redirects based on ?to= param \u2014 AI / GP / Authority / Platinum / Event / default headshot event page. Cross-domain attribution via ?ref= URL param (cookies CANNOT cross apex domains).",
+      "estimatedTime": "30 min (Lovable)",
+      "impact": "Core referral loop functions at all"
+    },
+    {
+      "id": "rewards-customize-link-ui",
+      "title": "Add \"Customize link\" UI on /app/referrals",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "Expandable section with radio buttons (Headshot default / AI / GP / Authority / Event), city dropdown populated from networking_events, per-option Copy Link buttons. Base default link stays prominent at top.",
+      "estimatedTime": "45 min (Lovable)",
+      "impact": "Ambassadors can funnel to specific products"
+    },
+    {
+      "id": "rewards-square-attribution",
+      "title": "Verify square-payment-sync reads ref_code + fires conversion",
+      "category": "deploy",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Read supabase/functions/square-payment-sync/index.ts. Confirm: (1) reads ref_code from booking metadata, (2) calls rewards-process-conversion with correct conversion_type matching reward_tiers.service_category (headshot_session / ai_starter / ai_full / platinum / authority_sprint / gp_setup), (3) fires on successful payment webhook. Patch if not.",
+      "estimatedTime": "20 min audit + patch",
+      "impact": "Without this, zero referrals fire a credit"
+    },
+    {
+      "id": "rewards-event-site-attribution",
+      "title": "Inject attribution script on signatureheadshotevent.com",
+      "category": "deploy",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Squarespace code injection. On page load: read ?ref= URL param, set local cookie on .signatureheadshotevent.com, surface \"Sarah sent you\" hero banner, pass ref_code through to Square checkout metadata. 30-min Squarespace template work.",
+      "estimatedTime": "30 min",
+      "impact": "Closes cross-domain attribution gap for #1 booking destination"
+    },
+    {
+      "id": "rewards-hb-site-attribution",
+      "title": "Inject attribution script on headshots-branding.com",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "Same pattern as event site. Squarespace code injection reads ?ref=, sets local cookie, passes through to any checkout/signup events.",
+      "estimatedTime": "30 min",
+      "impact": "Completes the 3-domain attribution trident"
+    },
+    {
+      "id": "rewards-landing-hero-banners",
+      "title": "\"Sarah sent you\" hero banners on all product landing pages",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "On /ai, /growth-partner, /authority-sprint, /app entry pages: detect ?ref= URL param or ref_code cookie \u2192 lookup referrer via referral_links. code \u2192 display hero banner with their first name + avatar. Launch-day banner copy: \"Welcome from {Name}\" \u2014 NOT promising a $10 discount until Square promo-code plumbing is wired.",
+      "estimatedTime": "1 hr (Lovable)",
+      "impact": "Social proof at point of conversion"
+    },
+    {
+      "id": "rewards-stripe-tickets",
+      "title": "Wire real Stripe checkout for event ticket purchases",
+      "category": "deploy",
+      "priority": "critical",
+      "status": "pending",
+      "description": "event_tickets.status currently stubs to \"confirmed\" in dev mode with a \"Payment bypassed\" banner. Replace with real Stripe checkout: create payment_intent, redirect to Stripe Checkout, webhook flips status to \"confirmed\" and stores stripe_payment_intent_id. Must complete before first paid event sells tickets.",
+      "estimatedTime": "3-4 hr",
+      "impact": "Paid events can actually sell tickets"
+    },
+    {
+      "id": "rewards-stripe-partners",
+      "title": "Wire Stripe subscription for Preferred Partner listings",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "partner-apply edge function currently creates a pending application. After admin approves, need to send Stripe Checkout link for the tier price ($49/$99/$199 monthly). Webhook updates preferred_partners.subscription_status to \"active\" and sets stripe_subscription_id.",
+      "estimatedTime": "2-3 hr",
+      "impact": "Partner MRR actually hits your bank"
+    },
+    {
+      "id": "rewards-stripe-donations",
+      "title": "Wire Stripe for fundraising donations",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "fundraising_donations.status stubs to \"completed\" in dev. Replace with Stripe payment_intent. Webhook flips status to \"completed\", then the existing trigger_update_campaign_totals + credit_donation_reward triggers fire automatically. Also decide: platform fee kept by Signature or forwarded to org via Stripe Connect?",
+      "estimatedTime": "3 hr",
+      "impact": "Real donations, real money, real tax receipts"
+    },
+    {
+      "id": "rewards-ambassador-stripe-connect",
+      "title": "Ambassador payouts via Stripe Connect",
+      "category": "deploy",
+      "priority": "medium",
+      "status": "pending",
+      "description": "ambassador-request-payout currently records a pending row for manual admin processing. Upgrade to Stripe Connect Express accounts: ambassador onboards once with bank info, payouts queue automatically and hit their account 2 business days later. Reduces admin workload to zero.",
+      "estimatedTime": "1 day",
+      "impact": "Ambassadors get paid without Ken lifting a finger"
+    },
+    {
+      "id": "rewards-health-check-run",
+      "title": "Run /admin/health and backfill everything",
+      "category": "deploy",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Visit /admin/health (dev-gated). Run all 4 checks: (1) profiles missing referral_code + referral_links (backfill), (2) ambassadors without matching user_roles, (3) marketplace providers without role, (4) reward_balance \u2260 ledger sum (recompute). Takes <2 min total. Do this once right before launch email.",
+      "estimatedTime": "5 min",
+      "impact": "Data consistency locked before real users arrive"
+    },
+    {
+      "id": "rewards-clean-dev-seeds",
+      "title": "Remove DEV_SEED rows before launch",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "Production currently shows dev-seed content: 2 partners (Magnolia, Ridgeline, Coastline), 2 events (Spring Mixer, Founders Coffee), 1 fundraising org (Tuscaloosa Youth Arts), 1 campaign (Summer Arts Scholarships), 2 barter listings, 1 test donor account. Decide: keep as \"launch content\" or DELETE FROM where notes = 'DEV_SEED' across all tables. Recommend keeping Magnolia/Ridgeline as real-looking launch content while you onboard real partners.",
+      "estimatedTime": "15 min",
+      "impact": "Real users see real content, not test data"
+    },
+    {
+      "id": "rewards-custom-domain",
+      "title": "Decide rewards-app domain (signaturebranding.app vs. subdomain)",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "Signature Perks Plus is currently hosted at a Lovable preview URL. Pick one: (A) make signaturebranding.app the rewards platform directly, (B) point rewards.signaturebranding.app at it, (C) keep perks.signaturebranding.app as a separate destination. Recommendation: A \u2014 make the rewards app the main app, since auth is already shared and it's the strongest funnel.",
+      "estimatedTime": "30 min + DNS",
+      "impact": "Launchable URL customers can actually remember"
+    },
+    {
+      "id": "rewards-legal-pages",
+      "title": "Privacy, Terms, Rewards Program Terms pages",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "Three legal docs needed before launch: (1) privacy policy (GDPR-safe template + Signature-specific data handling), (2) terms of service, (3) rewards program terms (how credits are earned, what voids them, cash-out thresholds, no-purchase-necessary disclosure, tax 1099 thresholds for ambassadors earning >$600/yr). Use Termly or iubenda generator, then have a lawyer eyeball the rewards-specific terms.",
+      "estimatedTime": "2 hr + legal review",
+      "impact": "Liability protection + app store / Stripe compliance"
+    },
+    {
+      "id": "rewards-notifications-email",
+      "title": "Email notifications: referral conversion + reward credit",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "Two transactional emails via the existing email stack (Resend or whatever is wired): (1) \"\ud83c\udf89 {Name} just signed up via your link \u2014 you earned $X\", (2) \"Your rewards balance just hit ${balance}\". Triggered by rewards_ledger inserts where entry_type='referral_credit' or 'action_credit'. Makes the program feel alive instead of silent.",
+      "estimatedTime": "2 hr",
+      "impact": "Drives repeat sharing \u2014 the notification IS the dopamine hit"
+    },
+    {
+      "id": "rewards-launch-email-draft",
+      "title": "Draft launch email for 62 existing clients",
+      "category": "optimization",
+      "priority": "high",
+      "status": "pending",
+      "description": "\"Introducing Signature Rewards \u2014 thank you for being part of this from the start. Your account already has a referral code waiting. Here's how it works.\" Include personal P.S. from Ken. Include Sarah's exact referral link (merge field). Soft-launch to 10 first, wide-send to 52 after 48hrs if nothing breaks.",
+      "estimatedTime": "1 hr draft + review",
+      "impact": "First-day conversions from warmest possible audience"
+    },
+    {
+      "id": "rewards-soft-launch",
+      "title": "Soft launch to first 10 clients, monitor 48 hr",
+      "category": "optimization",
+      "priority": "high",
+      "status": "pending",
+      "description": "Send launch email to 10 hand-picked active clients. Watch /admin activity feed + /admin/health for anything weird. Patch whatever real users surface \u2014 there WILL be something. Then wide-send to remaining 52.",
+      "estimatedTime": "48 hr elapsed",
+      "impact": "Catches launch-day bugs before they embarrass you at scale"
+    },
+    {
+      "id": "rewards-redemption-catalog",
+      "title": "Build reward_redemption_items table + /app/redeem page",
+      "category": "optimization",
+      "priority": "medium",
+      "status": "deferred",
+      "description": "v1 ships with credits applied at checkout only (no self-serve catalog). Post-launch: new table reward_redemption_items (id, slug, name, cost_dollars, stock, fulfillment_type) seeded with perks (free print pack, swag bundle, Amazon gift card tiers, free AI month). New /app/redeem page lets members spend credits directly on perks.",
+      "estimatedTime": "1 day",
+      "impact": "Adds second \"what can I do with my credits\" answer"
+    },
+    {
+      "id": "rewards-real-time-admin",
+      "title": "Real-time subscriptions on admin activity feed",
+      "category": "optimization",
+      "priority": "low",
+      "status": "deferred",
+      "description": "Admin feed currently polls. Upgrade to Supabase real-time subscription so new conversions / donations / trades appear live. Nice-to-have for launch-day dopamine when watching it fill up.",
+      "estimatedTime": "2 hr",
+      "impact": "Admin UX feel"
+    },
+    {
+      "id": "rewards-sms-notifications",
+      "title": "SMS notifications on high-value conversions",
+      "category": "optimization",
+      "priority": "medium",
+      "status": "deferred",
+      "description": "On GP referrals ($100+), send Ken AND the referrer an SMS via Twilio. Email is great but SMS lands instantly and drives immediate re-sharing. Threshold-based: only fire SMS on credits >= $25 to avoid spam.",
+      "estimatedTime": "4 hr",
+      "impact": "Higher-velocity referrer re-engagement"
+    },
+    {
+      "id": "rewards-barter-dispute-flow",
+      "title": "Proper barter dispute resolution UI",
+      "category": "optimization",
+      "priority": "low",
+      "status": "deferred",
+      "description": "Current /admin/barter has a \"disputes\" tab that just lists rows \u2014 no resolution actions. Build: admin can view evidence (messages, reviews), refund rewards, suspend either party, mark dispute resolved. Needed once barter volume >10 matches/month.",
+      "estimatedTime": "1 day",
+      "impact": "Scales barter to real volume without support chaos"
+    },
+    {
+      "id": "rewards-events-perks-sponsors-admin",
+      "title": "Admin CRUD for event_perks + event_sponsors",
+      "category": "optimization",
+      "priority": "medium",
+      "status": "deferred",
+      "description": "event_perks and event_sponsors tables exist but no admin UI to manage them. Right now sponsors + tier-specific perks must be seeded via SQL. Build proper CRUD tabs on /admin/events for each event.",
+      "estimatedTime": "4 hr",
+      "impact": "Non-engineer admins can manage event content"
+    },
+    {
+      "id": "rewards-upgrade-email-sequences",
+      "title": "Post-purchase email sequences to nudge upgrades",
+      "category": "optimization",
+      "priority": "medium",
+      "status": "deferred",
+      "description": "Day-1/7/30 post-headshot emails that move customers up the value ladder (headshot \u2192 AI Full \u2192 Platinum \u2192 Growth Partner). Each upgrade credits the original referrer, compounding the flywheel. Build in the existing email automation stack after launch proves the base loop works.",
+      "estimatedTime": "1 day",
+      "impact": "Doubles lifetime referrer earnings \u2192 doubles referral velocity"
     }
   ],
   "costs": {
@@ -287,7 +527,7 @@
         "lastMonth": 200.0,
         "dailyAvg": 6.67,
         "trend": "stable",
-        "note": "Flat $200/mo subscription for Claude Code (agent sessions). NOT developer API usage — that stays $0 because edge functions use Gemini. Manually tracked, not auto-synced.",
+        "note": "Flat $200/mo subscription for Claude Code (agent sessions). NOT developer API usage \u2014 that stays $0 because edge functions use Gemini. Manually tracked, not auto-synced.",
         "category": "ai"
       },
       {
@@ -298,7 +538,7 @@
         "lastMonth": 95.0,
         "dailyAvg": 4.0,
         "trend": "up",
-        "note": "ESTIMATE — used by image generation, content pipeline, AI designer, etc. Real per-call tracking is pending (add _shared/gemini-client.ts wrapper that logs to ai_spend_daily).",
+        "note": "ESTIMATE \u2014 used by image generation, content pipeline, AI designer, etc. Real per-call tracking is pending (add _shared/gemini-client.ts wrapper that logs to ai_spend_daily).",
         "category": "ai"
       },
       {
