@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raising Intuitive Eaters — Phyllis Inman</title>
+<meta name="description" content="How to give your kids the food relationship you wish you'd had. An ebook by Phyllis Inman of Inman Institute.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F1E6; --cream-alt: #EDE3D2; --paper: #FDF9F0;
+    --sage: #8A9A5B; --sage-soft: #E3E8D3;
+    --terracotta: #C87F5A; --terracotta-soft: #F2DCCE;
+    --walnut: #6B4E32; --charcoal: #2B2A28;
+    --muted: #6F6B63; --gold: #D4AF37; --border: #D9CEB8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream-alt); color: var(--charcoal);
+    line-height: 1.65; padding: 2rem 1rem;
+  }
+  .action-bar { position: fixed; top: 1rem; right: 1rem; z-index: 100; display: flex; gap: 0.5rem; }
+  .btn {
+    background: var(--paper); color: var(--charcoal); border: 1px solid var(--border);
+    padding: 0.55rem 1rem; border-radius: 8px; font-family: 'Inter', sans-serif;
+    font-size: 0.82rem; font-weight: 500; cursor: pointer; text-decoration: none;
+    transition: all 0.15s; box-shadow: 0 2px 8px rgba(107, 78, 50, 0.08);
+  }
+  .btn:hover { border-color: var(--terracotta); color: var(--terracotta); }
+  .btn-primary { background: var(--sage); color: white; border-color: var(--sage); }
+  .btn-primary:hover { background: var(--walnut); border-color: var(--walnut); color: white; }
+  .back-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; }
+
+  .page {
+    width: 100%; max-width: 8.5in; min-height: 11in;
+    margin: 0 auto 1.5rem; background: var(--paper);
+    padding: 0.9in 0.95in;
+    box-shadow: 0 6px 40px rgba(107, 78, 50, 0.1);
+    position: relative; page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+  .page-num {
+    position: absolute; bottom: 0.45in; left: 0; right: 0; text-align: center;
+    font-size: 0.7rem; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .page-brand {
+    position: absolute; bottom: 0.45in; right: 0.95in;
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 0.72rem; color: var(--muted);
+  }
+
+  .cover {
+    padding: 0; overflow: hidden; display: flex; flex-direction: column;
+    background: linear-gradient(180deg, var(--cream-alt) 0%, var(--paper) 65%);
+  }
+  .cover-art {
+    width: 100%; height: 5.5in;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--sage-soft) 0%, var(--terracotta-soft) 50%, var(--cream) 100%);
+    border-bottom: 1px solid var(--border); position: relative;
+  }
+  .cover-art::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      radial-gradient(circle at 30% 70%, rgba(138, 154, 91, 0.25) 0%, transparent 35%),
+      radial-gradient(circle at 70% 30%, rgba(200, 127, 90, 0.22) 0%, transparent 35%);
+  }
+  .cover-illustration { position: relative; z-index: 1; }
+  .cover-meta { flex: 1; padding: 0.7in 0.95in 0.8in; text-align: center; }
+  .cover-tag {
+    font-size: 0.72rem; color: var(--sage);
+    letter-spacing: 0.42em; text-transform: uppercase;
+    font-weight: 600; margin-bottom: 0.8rem;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', serif; font-size: 3rem;
+    font-weight: 700; color: var(--charcoal);
+    letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.6rem;
+  }
+  .cover-title em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .cover-rule { width: 48px; height: 2px; background: var(--terracotta); margin: 1rem auto 1.2rem; }
+  .cover-sub {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.25rem;
+    font-weight: 400; font-style: italic; color: var(--walnut);
+    max-width: 5in; margin: 0 auto 1.5rem; line-height: 1.4;
+  }
+  .cover-author {
+    font-family: 'Playfair Display', serif; font-size: 1.1rem;
+    font-weight: 500; color: var(--charcoal); letter-spacing: 0.04em;
+  }
+  .cover-institute {
+    font-size: 0.7rem; color: var(--muted);
+    letter-spacing: 0.3em; text-transform: uppercase; margin-top: 0.35rem;
+  }
+
+  h2.section-title {
+    font-family: 'Playfair Display', serif; font-size: 2.2rem;
+    font-weight: 600; line-height: 1.1; letter-spacing: -0.01em;
+    color: var(--charcoal); margin-bottom: 0.4rem;
+  }
+  h2.section-title em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .section-eyebrow {
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 0.8rem;
+  }
+  .section-lead {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+    font-style: italic; color: var(--walnut); line-height: 1.4;
+    margin-bottom: 1.5rem; padding-bottom: 1.2rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.35rem;
+    font-weight: 600; color: var(--charcoal);
+    margin: 1.75rem 0 0.6rem;
+  }
+  h3 em { color: var(--terracotta); font-style: italic; }
+  p { font-size: 0.95rem; color: var(--charcoal); margin-bottom: 0.9rem; }
+  p.drop-cap::first-letter {
+    font-family: 'Playfair Display', serif; font-size: 3.6rem;
+    font-weight: 600; color: var(--terracotta); float: left;
+    line-height: 0.85; margin: 0.1rem 0.45rem 0 0;
+  }
+  ul, ol { padding-left: 1.2rem; margin-bottom: 0.9rem; }
+  li { font-size: 0.93rem; color: var(--charcoal); margin-bottom: 0.35rem; }
+
+  .part-opener {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 2.5in 1in;
+    background: linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
+    border-top: 3px solid var(--terracotta);
+    border-bottom: 3px solid var(--sage);
+    min-height: 11in;
+  }
+  .part-num { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 700; color: var(--terracotta); line-height: 1; letter-spacing: -0.02em; margin-bottom: 0.3rem; }
+  .part-label { font-size: 0.78rem; color: var(--sage); letter-spacing: 0.5em; text-transform: uppercase; font-weight: 700; margin-bottom: 1.5rem; }
+  .part-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 600; color: var(--charcoal); letter-spacing: -0.01em; line-height: 1.1; max-width: 6in; margin-bottom: 1.2rem; }
+  .part-title em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .part-sub { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--walnut); max-width: 5.5in; line-height: 1.4; }
+
+  .pullquote {
+    margin: 1.3rem 0; padding: 1.1rem 1.4rem;
+    border-left: 3px solid var(--sage); background: var(--sage-soft);
+    font-family: 'Playfair Display', serif; font-size: 1.15rem;
+    font-style: italic; font-weight: 500; line-height: 1.35;
+    color: var(--charcoal); position: relative;
+  }
+  .pullquote::before {
+    content: "\201C"; position: absolute; top: -0.3rem; left: 0.7rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; color: var(--sage); opacity: 0.3; line-height: 1;
+  }
+  .svg-divider { display: flex; align-items: center; gap: 1rem; margin: 1.3rem 0; justify-content: center; }
+  .svg-divider::before, .svg-divider::after { content: ""; flex: 1; max-width: 80px; height: 1px; background: var(--border); }
+  .svg-divider svg { color: var(--sage); flex-shrink: 0; }
+  .callout {
+    background: var(--terracotta-soft); border-radius: 8px;
+    padding: 1rem 1.2rem; margin: 1rem 0;
+  }
+  .callout-label {
+    font-size: 0.66rem; font-weight: 700;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 0.4rem;
+  }
+  .callout p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .callout p:last-child { margin-bottom: 0; }
+  .sage-box {
+    background: var(--sage-soft); border-radius: 8px;
+    padding: 1rem 1.2rem; margin: 1rem 0;
+  }
+  .sage-box-label {
+    font-size: 0.66rem; font-weight: 700;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 0.4rem;
+  }
+  .sage-box p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .sage-box p:last-child { margin-bottom: 0; }
+
+  /* SCRIPT BOX — specialized for this book */
+  .script {
+    background: var(--paper); border: 1px solid var(--border);
+    border-left: 4px solid var(--terracotta);
+    border-radius: 6px; padding: 0.9rem 1.1rem; margin: 0.7rem 0;
+  }
+  .script-label {
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 0.3rem;
+  }
+  .script p {
+    font-family: 'Playfair Display', serif; font-size: 1rem;
+    font-style: italic; color: var(--charcoal);
+    margin-bottom: 0.3rem; line-height: 1.4;
+  }
+  .script p:last-child { margin-bottom: 0; }
+  .script .why {
+    font-family: 'Inter', sans-serif; font-style: normal;
+    font-size: 0.82rem; color: var(--muted); margin-top: 0.4rem;
+    padding-top: 0.4rem; border-top: 1px dotted var(--border);
+  }
+
+  /* AGE CARD */
+  .age-card {
+    background: var(--cream); padding: 1.2rem 1.4rem;
+    border-radius: 10px; margin: 1rem 0;
+    border: 1px solid var(--border);
+  }
+  .age-card .age-label {
+    display: inline-block;
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    background: var(--terracotta); color: white;
+    margin-bottom: 0.5rem;
+  }
+  .age-card h3 {
+    margin: 0.2rem 0 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  /* DAY PROTOCOL */
+  .day-block {
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: 6px; padding: 0.75rem 1rem; margin: 0.5rem 0;
+    display: grid; grid-template-columns: 70px 1fr;
+    gap: 1rem; align-items: baseline;
+  }
+  .day-block-label {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; color: var(--terracotta);
+    font-size: 0.85rem;
+  }
+  .day-block-body { font-size: 0.85rem; color: var(--charcoal); line-height: 1.45; }
+  .day-block-body strong { color: var(--walnut); }
+
+  /* TOC */
+  .toc-part { margin-bottom: 1.1rem; padding-bottom: 0.7rem; border-bottom: 1px dashed var(--border); }
+  .toc-part:last-child { border-bottom: none; }
+  .toc-part-title {
+    font-family: 'Playfair Display', serif; font-size: 0.8rem;
+    font-weight: 700; color: var(--terracotta);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 0.45rem;
+  }
+  .toc-item {
+    display: grid; grid-template-columns: 24px 1fr auto;
+    gap: 0.6rem; align-items: baseline;
+    padding: 0.35rem 0; font-size: 0.88rem;
+  }
+  .toc-num { font-family: 'Playfair Display', serif; font-weight: 600; color: var(--sage); font-size: 0.9rem; }
+  .toc-title { font-family: 'Playfair Display', serif; font-size: 0.92rem; color: var(--charcoal); }
+  .toc-page { color: var(--muted); font-size: 0.76rem; font-variant-numeric: tabular-nums; }
+
+  /* CHAPTER */
+  .chapter-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.4rem; }
+  .chapter-num { font-family: 'Playfair Display', serif; font-size: 0.75rem; color: var(--sage); letter-spacing: 0.35em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.4rem; }
+  .chapter-title { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--charcoal); margin-bottom: 0.5rem; }
+  .chapter-title em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .chapter-sub { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: var(--walnut); margin-bottom: 1.3rem; padding-bottom: 1rem; border-bottom: 1px dashed var(--border); }
+  .chapter-icon { width: 55px; height: 55px; flex-shrink: 0; opacity: 0.4; color: var(--sage); }
+
+  .closing { text-align: center; padding: 2rem 0; }
+  .closing .sig { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; color: var(--terracotta); margin: 1.2rem 0 0.3rem; }
+  .closing .sig-meta { font-size: 0.76rem; color: var(--muted); letter-spacing: 0.25em; text-transform: uppercase; }
+  .colophon { text-align: center; padding-top: 2.5in; font-size: 0.74rem; color: var(--muted); line-height: 1.6; }
+  .colophon-mark { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--terracotta); margin-bottom: 0.8rem; }
+
+  @media print {
+    @page { size: letter; margin: 0; }
+    body { background: white; padding: 0; }
+    .action-bar, .back-link { display: none !important; }
+    .page { margin: 0; box-shadow: none; min-height: 11in; height: 11in; overflow: hidden; page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+    .pullquote, .callout, .sage-box, .script, .age-card, .day-block { break-inside: avoid; }
+  }
+  @media (max-width: 780px) {
+    body { padding: 0.5rem; }
+    .page { padding: 1.8rem 1.3rem; min-height: auto; }
+    .cover-art { height: 3.5in; }
+    .cover-title { font-size: 2.1rem; }
+    .cover-sub { font-size: 1.05rem; }
+    .part-opener { padding: 2rem 1rem; min-height: auto; }
+    .part-num { font-size: 3.5rem; }
+    .part-title { font-size: 1.8rem; }
+    .action-bar { top: auto; bottom: 1rem; right: 1rem; }
+    .back-link { top: auto; bottom: 1rem; left: 1rem; }
+    .chapter-title { font-size: 1.5rem; }
+    .day-block { grid-template-columns: 55px 1fr; gap: 0.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;">
+  <defs>
+    <symbol id="sprig" viewBox="0 0 60 80"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M30 75 L30 8"/><path d="M30 20 Q18 16 14 8"/><path d="M30 30 Q42 26 46 18"/><path d="M30 40 Q18 36 14 28"/><path d="M30 50 Q42 46 46 38"/><path d="M30 60 Q18 56 14 48"/><path d="M30 70 Q42 66 46 58"/></g></symbol>
+    <symbol id="leafy-divider" viewBox="0 0 120 16"><g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M60 8 L45 8 M60 8 L75 8"/><path d="M45 8 Q38 4 32 8 Q26 12 20 8"/><path d="M75 8 Q82 4 88 8 Q94 12 100 8"/><circle cx="60" cy="8" r="1.5" fill="currentColor"/></g></symbol>
+    <symbol id="breath" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1"><circle cx="30" cy="30" r="22" opacity="0.3"/><circle cx="30" cy="30" r="16" opacity="0.5"/><circle cx="30" cy="30" r="10" opacity="0.8"/><circle cx="30" cy="30" r="2" fill="currentColor"/></g></symbol>
+    <symbol id="heart" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M30 50 Q14 38 14 26 Q14 18 22 18 Q28 18 30 24 Q32 18 38 18 Q46 18 46 26 Q46 38 30 50 Z"/></g></symbol>
+    <symbol id="speech" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M10 14 L50 14 Q54 14 54 18 L54 38 Q54 42 50 42 L30 42 L22 50 L22 42 L14 42 Q10 42 10 38 L10 18 Q10 14 14 14 Z"/><path d="M18 24 L46 24 M18 30 L42 30"/></g></symbol>
+    <symbol id="bloom" viewBox="0 0 20 20"><g fill="currentColor"><circle cx="10" cy="5" r="2"/><circle cx="15" cy="10" r="2"/><circle cx="10" cy="15" r="2"/><circle cx="5" cy="10" r="2"/><circle cx="10" cy="10" r="1.5" fill="#F7F1E6"/></g></symbol>
+    <symbol id="two-kids" viewBox="0 0 120 80"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="38" cy="26" r="10"/><path d="M28 40 Q28 58 38 58 L38 70 M48 40 Q48 58 38 58"/><path d="M30 40 L46 40"/><circle cx="82" cy="22" r="11"/><path d="M71 38 Q71 58 82 58 L82 72 M93 38 Q93 58 82 58"/><path d="M72 38 L92 38"/></g></symbol>
+    <symbol id="growing-plant" viewBox="0 0 60 80"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M30 72 L30 20"/><path d="M30 40 Q20 38 16 30"/><path d="M30 34 Q40 32 44 24"/><path d="M30 50 Q22 50 18 44"/><path d="M30 46 Q38 44 42 38"/><path d="M30 20 Q24 14 26 6 Q30 10 30 14 Q30 10 34 6 Q36 14 30 20 Z"/></g></symbol>
+    <symbol id="shield" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M30 8 L46 14 L46 32 Q46 46 30 54 Q14 46 14 32 L14 14 Z"/><path d="M22 28 L28 34 L40 22"/></g></symbol>
+  </defs>
+</svg>
+
+<a href="./" class="btn back-link">← Dashboard</a>
+<div class="action-bar">
+  <a href="the-raising-intuitive-eaters.pdf" class="btn" download>Download PDF</a>
+  <button class="btn btn-primary" onclick="window.print()">Print · Save as PDF</button>
+</div>
+
+<!-- COVER -->
+<div class="page cover">
+  <div class="cover-art">
+    <div class="cover-illustration">
+      <svg width="240" height="160" style="color: var(--walnut);"><use href="#two-kids"/></svg>
+    </div>
+  </div>
+  <div class="cover-meta">
+    <div class="cover-tag">The Purposefully Eating Ebook Series · 03</div>
+    <div class="cover-title">Raising Intuitive <em>Eaters</em></div>
+    <div class="cover-rule"></div>
+    <div class="cover-sub">How to give your kids the food relationship you wish you'd had. Scripts, ages &amp; stages, and the 30-day picky eating reset.</div>
+    <svg width="28" height="28" style="color: var(--terracotta); margin: 0.5rem 0;"><use href="#bloom"/></svg>
+    <div class="cover-author">Phyllis Inman</div>
+    <div class="cover-institute">Inman Institute · phyllisinman.com</div>
+  </div>
+</div>
+
+<!-- NOTE + TOC -->
+<div class="page">
+  <div class="section-eyebrow">A note from Phyllis</div>
+  <h2 class="section-title">You are not a <em>nutrition expert.</em></h2>
+  <p class="drop-cap" style="margin-top: 1rem;">You are also not supposed to be. You are a parent. Your job is not to produce a child with a perfect palate, or a child who eats seven vegetables, or a child who never asks about a piece of candy. Your job is something quieter and more important.</p>
+  <p>Your job is to raise a person who can listen to their own body. Who knows, without a rulebook, when they're hungry and when they're not. Who can eat a birthday cake without a ledger and a plate of vegetables without resentment. Who grows into an adult whose food choices are theirs — not yours, not a diet's, not the internet's.</p>
+  <p>That is the work of this book.</p>
+  <div class="pullquote">
+    You cannot hand your child a perfect nutrition education. You can hand them something better: a relationship with food that is not built on fear.
+  </div>
+  <p>You will find, in these eighteen chapters, a framework for each age they pass through, a library of scripts for the hard conversations you'll have, a 30-day non-coercive protocol for picky eating, and a letter-writing exercise to close.</p>
+  <p>What you won't find: food rules, portion charts, meal plans, or lectures on what makes a good mother. You already know how to love your child. This book is only about the small adjustments — at the table, in the mirror, in the car after school — that let that love shape a healthier relationship with food than the one most of us inherited.</p>
+  <p>One last thing. You will not do this perfectly. Neither have I. The goal is not perfect. The goal is <em>different</em> from what you grew up with, in the ways that matter.</p>
+  <div class="svg-divider"><svg width="16" height="16"><use href="#bloom"/></svg></div>
+  <p style="text-align: right; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--terracotta);">With you,</p>
+  <p style="text-align: right; font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--charcoal);">Phyllis</p>
+  <div class="page-num">2</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- TOC -->
+<div class="page">
+  <div class="section-eyebrow">Inside this guide</div>
+  <h2 class="section-title">Contents</h2>
+
+  <div style="margin-top: 1.2rem;">
+    <div class="toc-part">
+      <div class="toc-part-title">Part I · What Intuitive Eating Means for Kids</div>
+      <div class="toc-item"><div class="toc-num">1</div><div class="toc-title">The research, the reality, the myths</div><div class="toc-page">05</div></div>
+      <div class="toc-item"><div class="toc-num">2</div><div class="toc-title">What kids actually need at the table</div><div class="toc-page">07</div></div>
+      <div class="toc-item"><div class="toc-num">3</div><div class="toc-title">Rebuilding trust after "finish your plate"</div><div class="toc-page">08</div></div>
+      <div class="toc-item"><div class="toc-num">4</div><div class="toc-title">Undoing the messages kids hear everywhere else</div><div class="toc-page">09</div></div>
+    </div>
+    <div class="toc-part">
+      <div class="toc-part-title">Part II · Ages &amp; Stages</div>
+      <div class="toc-item"><div class="toc-num">5</div><div class="toc-title">Ages 3–7 · The permission years</div><div class="toc-page">12</div></div>
+      <div class="toc-item"><div class="toc-num">6</div><div class="toc-title">Ages 8–11 · The comparison years</div><div class="toc-page">14</div></div>
+      <div class="toc-item"><div class="toc-num">7</div><div class="toc-title">Ages 12–16 · The image years</div><div class="toc-page">16</div></div>
+    </div>
+    <div class="toc-part">
+      <div class="toc-part-title">Part III · Scripts, Not Scripts-Free</div>
+      <div class="toc-item"><div class="toc-num">8</div><div class="toc-title">"Why can't I have that?" — the response library</div><div class="toc-page">20</div></div>
+      <div class="toc-item"><div class="toc-num">9</div><div class="toc-title">When your child comments on their body</div><div class="toc-page">22</div></div>
+      <div class="toc-item"><div class="toc-num">10</div><div class="toc-title">When your child comments on your body</div><div class="toc-page">24</div></div>
+      <div class="toc-item"><div class="toc-num">11</div><div class="toc-title">When a relative comments on your child</div><div class="toc-page">25</div></div>
+      <div class="toc-item"><div class="toc-num">12</div><div class="toc-title">School, friends, and the internet</div><div class="toc-page">27</div></div>
+    </div>
+    <div class="toc-part">
+      <div class="toc-part-title">Part IV · The Picky Eating 30-Day Reset</div>
+      <div class="toc-item"><div class="toc-num">13</div><div class="toc-title">Why picky eating is usually a power dynamic</div><div class="toc-page">30</div></div>
+      <div class="toc-item"><div class="toc-num">14</div><div class="toc-title">The 30-day non-coercive protocol (day by day)</div><div class="toc-page">31</div></div>
+      <div class="toc-item"><div class="toc-num">15</div><div class="toc-title">Expanding the accepted food list</div><div class="toc-page">34</div></div>
+      <div class="toc-item"><div class="toc-num">16</div><div class="toc-title">When to see a pediatrician</div><div class="toc-page">35</div></div>
+    </div>
+    <div class="toc-part">
+      <div class="toc-part-title">Part V · The Long Game</div>
+      <div class="toc-item"><div class="toc-num">17</div><div class="toc-title">Raising kids who don't hate their bodies</div><div class="toc-page">38</div></div>
+      <div class="toc-item"><div class="toc-num">18</div><div class="toc-title">A letter to your child (and to yourself)</div><div class="toc-page">40</div></div>
+    </div>
+  </div>
+
+  <div class="page-num">3</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- PART I OPENER -->
+<div class="page part-opener">
+  <div class="part-num">I</div>
+  <div class="part-label">Part One</div>
+  <div class="part-title">What Intuitive Eating <em>Means for Kids.</em></div>
+  <div class="part-sub">Before scripts, before ages, before protocols — four things worth understanding about what you're actually raising when you're raising an intuitive eater.</div>
+  <svg width="120" height="16" style="color: var(--sage); margin-top: 2rem;"><use href="#leafy-divider"/></svg>
+</div>
+
+<!-- CHAPTER 1 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 1</div>
+      <h2 class="chapter-title">The research, the reality, <em>the myths.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#growing-plant"/></svg>
+  </div>
+  <div class="chapter-sub">What the evidence actually shows — and what diet culture has successfully pretended is evidence for decades.</div>
+
+  <p>Every human child is born an intuitive eater. This is not an opinion — it is a well-established finding in developmental pediatrics. Infants self-regulate caloric intake with startling precision. They eat when hungry. They stop when full. They do not count calories, moralize food, or have complicated feelings about their thighs.</p>
+
+  <p>That skill is intact for the first two to three years of every child's life. What happens after that is not biology. It is <em>culture</em>.</p>
+
+  <p>Kids learn — from us, from grandparents, from ads, from schools, from their friends' parents — that some foods are "good" and some are "bad." That bodies come in correct and incorrect sizes. That eating is morally weighted. That being "a good girl" at the dinner table means eating what you're told, in the amounts you're told, regardless of what your body is saying.</p>
+
+  <p>Every single one of those lessons overrides the intuitive eating they were born with. The skill doesn't disappear. It just gets buried under noise.</p>
+
+  <h3>What the research actually says</h3>
+
+  <p>Some things worth knowing, backed by decades of evidence across pediatric nutrition, family systems, and eating disorder prevention research:</p>
+
+  <ul>
+    <li><strong>Pressure to eat backfires.</strong> Children who are pressured to eat certain foods eat <em>less</em> of those foods in the long run — and develop more anxiety around mealtimes.</li>
+    <li><strong>Restriction creates obsession.</strong> Children whose parents heavily restrict sweets or specific foods eat significantly more of those foods when given access, and develop stickier relationships with them into adolescence.</li>
+    <li><strong>Parental commentary on weight — positive or negative — is one of the strongest predictors of disordered eating.</strong> Not abusive commentary. Everyday commentary. "You look great, you've lost weight!" is in the same risk bucket as "you should watch what you're eating."</li>
+    <li><strong>Family meals (3+ per week) reduce risk across every eating-related outcome.</strong> Not because of the food. Because of the regular, unpressured presence.</li>
+    <li><strong>Modeling matters more than instruction.</strong> What children see you do with food has a far bigger effect than what you tell them about food.</li>
+  </ul>
+
+  <div class="page-num">4</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CH 1 continued -->
+<div class="page">
+  <h3>The three biggest myths to retire</h3>
+
+  <p><strong>Myth 1: "If I don't teach them what's healthy, they'll grow up eating junk."</strong></p>
+  <p>They won't. Not if you model a varied, relaxed, pleasurable relationship with food. Kids eat what the adults around them eat. Your plate is the curriculum. You don't need to lecture them about kale — eat kale with visible enjoyment in front of them a few times a week for a decade and they'll be fine.</p>
+
+  <p><strong>Myth 2: "Children need rules about food or they'll lose control."</strong></p>
+  <p>They actually need structure — mealtimes, location, the general what — without rigid rules about amount or specific foods within a meal. Children given this structure, with the freedom to eat and stop when their body says, self-regulate beautifully. Children handed heavy rules develop either rebellion or over-compliance, both of which lead to problems.</p>
+
+  <p><strong>Myth 3: "It's my job to make them eat vegetables."</strong></p>
+  <p>It's your job to serve them. It's their job to eat them. This is a load-bearing distinction. The moment you try to cross that line and make them eat, you enter a dynamic that is very, very hard to exit.</p>
+
+  <div class="pullquote">
+    Every child is born an intuitive eater. Your real job is not to teach them to be one. Your real job is to not teach them to stop being one.
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">The shift</div>
+    <p>You are not building a nutrition curriculum for your child. You are <strong>protecting a natural capacity</strong> they already have. The posture changes from active (teaching, correcting) to receptive (serving, modeling, trusting).</p>
+  </div>
+
+  <div class="page-num">5</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CHAPTER 2 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 2</div>
+      <h2 class="chapter-title">What kids actually <em>need at the table.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#heart"/></svg>
+  </div>
+  <div class="chapter-sub">A short chapter. A short list. Much shorter than diet culture wants you to believe.</div>
+
+  <p>You may already have a version of this list in your head that is fifty items long. Variety. Balance. Macros. Micronutrients. Organic when possible. Five fruits and vegetables a day. Protein at every meal. Hydration. Sleep. Less sugar. Less sodium. Less seed oils. More fiber. More fermented foods.</p>
+
+  <p>Here is the short version. The one that's actually load-bearing.</p>
+
+  <div class="sage-box">
+    <div class="sage-box-label">What kids actually need at the table</div>
+    <p><strong>Regular access to food.</strong> Three meals, two snacks, roughly predictable times.</p>
+    <p><strong>Variety over time, not every meal.</strong> Over a week, they'll see most food groups. Any given meal can be incomplete.</p>
+    <p><strong>Calm adults.</strong> More important than almost any nutrient.</p>
+    <p><strong>Permission to eat to their body.</strong> Not to a plate. Not to the adult's timeline.</p>
+    <p><strong>Permission to stop.</strong> No bargaining over the last three bites.</p>
+    <p><strong>Conversation about their day, not their plate.</strong> They should associate mealtimes with being heard, not being evaluated.</p>
+  </div>
+
+  <p>That is the whole list. If you deliver on these, you've done the nutrition part. If you miss on the last three, you can produce organic quinoa with perfect macros every meal and still raise a disordered eater.</p>
+
+  <h3>What they don't need</h3>
+
+  <ul>
+    <li>A nutrition lecture (ever)</li>
+    <li>Commentary on amounts (theirs or anyone's)</li>
+    <li>Adults deciding their fullness for them</li>
+    <li>Bargaining ("one more bite and you can have dessert")</li>
+    <li>A separate, special "kid meal" different from what the family eats</li>
+    <li>Praise for eating ("good job! you ate your whole plate!" — this is still commentary)</li>
+    <li>Sugar hidden from them like contraband</li>
+    <li>Any conversation that connects food to body size, good behavior, or moral worth</li>
+  </ul>
+
+  <div class="page-num">6</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CHAPTER 3 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 3</div>
+      <h2 class="chapter-title">Rebuilding trust <em>after "finish your plate."</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#heart"/></svg>
+  </div>
+  <div class="chapter-sub">If you've done some of what this book recommends against — and you have — here is how to pivot without performing a correction.</div>
+
+  <p>If you are reading this book — and your kids are already past toddlerhood — you have probably said some version of "finish your plate," "three more bites," "you've barely touched your broccoli," or "let me know when you're full" (while the child was clearly full and you were clearly fishing for a different answer).</p>
+
+  <p>That is normal. That is almost universal. You are not going to apologize your way out of it.</p>
+
+  <p>Here is what you're going to do instead: <strong>change quietly</strong>. No big announcement. No conversation with a four-year-old about how mommy is going to do things differently now. You just start doing them differently. The change itself is the intervention.</p>
+
+  <h3>The three pivots</h3>
+
+  <p><strong>Stop commenting on their plate.</strong> Not even positively. If the habit is strong, practice biting your tongue. Hear yourself begin to say "good job" or "you hardly ate" and swallow it. Over weeks, the muscle memory forms.</p>
+
+  <p><strong>Start trusting their "I'm full" answer.</strong> When they say it, say "okay, you can be excused." That's it. No double-check. No "are you sure?" No "but you only had two bites."</p>
+
+  <p><strong>Offer consistent food without performance.</strong> Serve what you've planned. Don't make a separate meal if it's refused. Don't make a big deal if they eat well. Consistency of both the menu and your reaction is the work.</p>
+
+  <h3>What to expect</h3>
+
+  <p>For the first two weeks, things may get worse before they get better. Your child has internalized the old dynamic. They may test the new one. They may eat more than usual, or less. They may announce they're full in two bites just to see what happens. They're not gaming you. They're recalibrating. Let them.</p>
+
+  <p>By week three or four, something shifts. Eating becomes less of an event. Your child's eating amounts stabilize into something that looks like what their body actually needs. You stop watching their plate as if it's a stock ticker. Mealtime starts to feel like it used to, before either of you knew what was supposed to happen there.</p>
+
+  <p>That is the rebuild. It happens in quiet. It is the most important thing you'll do.</p>
+
+  <div class="page-num">7</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CHAPTER 4 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 4</div>
+      <h2 class="chapter-title">Undoing the messages <em>kids hear everywhere else.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#shield"/></svg>
+  </div>
+  <div class="chapter-sub">Your house is not the only place they're learning. Here is what to do about the rest of the world.</div>
+
+  <p>You can set up a flawless home food environment. Your child will still, inevitably, encounter the other world. The world where the first-grade teacher praises a kid for "eating healthy." The world where a friend's mother is on a juice cleanse. The world where the children's show has an episode about a character embarrassed by her weight. The world where an ad on YouTube promises to "lose the belly fat for good."</p>
+
+  <p>Your job is not to sanitize their environment. That's impossible. Your job is to be the <em>counter-narrative</em> inside the one space you do control.</p>
+
+  <h3>The counter-narrative</h3>
+
+  <p>This is a long-game project. It doesn't happen in one speech. It happens in short, repeated corrections over years. Something like:</p>
+
+  <p><strong>When they bring home food-morality:</strong> "Sarah's mom said cookies are unhealthy." Your response: "That's one way to think about it. In our family, we think cookies are food. Not every day food, but food. All foods fit when we listen to our bodies."</p>
+
+  <p><strong>When they bring home body-morality:</strong> "Jake said Mason is fat." Your response: "Bodies come in lots of different shapes and sizes. That's what bodies do. We don't talk about people's bodies like that in our family."</p>
+
+  <p><strong>When they bring home diet content:</strong> "An ad said I should drink this to lose weight." Your response: "Hmm. What do you think about that? Sometimes companies try to sell us things by making us worry about our bodies. That's not a great reason to buy something."</p>
+
+  <div class="pullquote">
+    You are not arguing with diet culture. You are outlasting it. Your voice, repeated calmly over years, is louder than theirs.
+  </div>
+
+  <h3>What you're modeling when you do this</h3>
+
+  <p>Every time you offer a gentle counter to a diet-culture message, you are teaching your child two things at once:</p>
+
+  <ol>
+    <li>The specific reframe (cookies are food, not a moral test)</li>
+    <li>The skill of <em>critical consumption</em> — that not every message the world sends deserves uncritical acceptance</li>
+  </ol>
+
+  <p>The second one may matter more than the first. Because they'll face these messages for the rest of their lives. Your job is to hand them the muscle that questions the message — not to shield them from ever hearing one.</p>
+
+  <div class="page-num">8</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CH 4 continued -->
+<div class="page">
+  <h3>One thing to be careful of</h3>
+
+  <p>There is a temptation, once you've internalized this framework, to become the person who corrects everyone. The relative who comments on a child's weight. The teacher who praises "healthy eaters." The friend who's on another cleanse. You'll want to fix it all.</p>
+
+  <p>Resist. Your job is not to educate every adult your child meets. Your job is to be consistent in your own home and your own voice. The rest is noise.</p>
+
+  <p>When the noise gets loud — say, at Thanksgiving, when a relative comments on your daughter's plate — you'll want to handle it in the moment without turning the table into a classroom. Chapter 11 has specific scripts for exactly those situations.</p>
+
+  <p>For now, the principle: be the counter-narrative in your own home. That alone is enough. That alone is the most important job there is.</p>
+
+  <div class="callout">
+    <div class="callout-label">The inoculation principle</div>
+    <p>Kids who grow up hearing an alternative to diet culture — even a quiet one, even one that disagrees with what their friends' parents say — are significantly more resistant to disordered thinking as adolescents and adults. Your calm voice at the kitchen table is generational medicine.</p>
+  </div>
+
+  <div class="svg-divider" style="margin-top: 2rem;"><svg width="100" height="16"><use href="#leafy-divider"/></svg></div>
+
+  <p style="text-align: center; font-family: 'Playfair Display', serif; font-style: italic; color: var(--muted); font-size: 1rem;">
+    That's Part One. The premise.<br>Now — the ages.
+  </p>
+
+  <div class="page-num">9</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- PART II OPENER -->
+<div class="page part-opener">
+  <div class="part-num">II</div>
+  <div class="part-label">Part Two</div>
+  <div class="part-title">Ages &amp; <em>Stages.</em></div>
+  <div class="part-sub">The method is the same at every age. The application is not. Three chapters, three stages, three sets of what actually changes as your child moves from small to nearly-grown.</div>
+  <svg width="120" height="16" style="color: var(--sage); margin-top: 2rem;"><use href="#leafy-divider"/></svg>
+</div>
+
+<!-- CHAPTER 5 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 5</div>
+      <h2 class="chapter-title">Ages 3 to 7 · <em>The permission years.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#growing-plant"/></svg>
+  </div>
+  <div class="chapter-sub">What's happening developmentally · what to do · what not to say · what kind of parent your child needs you to be in this window.</div>
+
+  <div class="age-card">
+    <div class="age-label">Ages 3–7</div>
+    <h3>What's happening developmentally</h3>
+    <p style="font-size: 0.9rem;">Your child's palate is still forming. They are building food preferences — and equally important, they are forming an internal model of what eating is. Hunger, fullness, pleasure, social eating, emotional eating: the templates for all of these are laid down now, through observation. This is the most plastic window you'll ever have.</p>
+  </div>
+
+  <h3>What matters in this window</h3>
+
+  <ul>
+    <li><strong>Consistent, predictable mealtimes.</strong> Small children thrive on rhythm. Serve around the same times.</li>
+    <li><strong>One menu for the family.</strong> Same meal for the adults and the kids. Including them in the "grown-up" food is more valuable than you think.</li>
+    <li><strong>Exposure without pressure.</strong> Serve foods you want them to become familiar with, over and over, with no requirement to eat them. Research is clear: it takes 10–15 exposures before a new food becomes accepted. You are in the exposure phase for years.</li>
+    <li><strong>A "safe" component at every meal.</strong> Bread, rice, fruit — something they reliably eat. Not a concession. A bridge.</li>
+    <li><strong>No commentary on their eating.</strong> Not the amount, not the choices, not the refusals. Total silence on this subject is the goal.</li>
+  </ul>
+
+  <h3>What not to say — at any age, but especially now</h3>
+
+  <ul>
+    <li>"You have to eat your vegetables before dessert." (Makes dessert superior.)</li>
+    <li>"One more bite." (Overrides their fullness.)</li>
+    <li>"Think about all the children who would love this food." (Introduces guilt.)</li>
+    <li>"If you eat your broccoli, I'll give you a cookie." (Food as reward.)</li>
+    <li>"You hardly ate anything." (Implies they should eat more than they're telling you.)</li>
+    <li>"Are you sure you want another helping?" (Second-guesses their hunger.)</li>
+  </ul>
+
+  <div class="page-num">10</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CH 5 continued -->
+<div class="page">
+  <h3>What to say instead</h3>
+
+  <div class="script">
+    <div class="script-label">Their plate</div>
+    <p>"Okay, you can be excused."</p>
+    <p>"Here's your plate. Dinner's done when you're done."</p>
+    <div class="why">Neutral. No fishing. No negotiating.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">When they refuse a food</div>
+    <p>"No problem. There'll be more tomorrow."</p>
+    <p>"That's okay. You don't have to like it today."</p>
+    <div class="why">Removes the power struggle. Keeps the door open for future exposures.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">When they ask for "more"</div>
+    <p>"Sure, here you go."</p>
+    <div class="why">No hesitation, no questioning. Trust their body. They'll self-regulate.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">Sweets &amp; desserts</div>
+    <p>"Dessert's after dinner. Everyone can have some."</p>
+    <p>"We're having cookies with lunch today."</p>
+    <div class="why">Desserts served <em>with</em> meals — not as a reward — reduces their moral charge.</div>
+  </div>
+
+  <h3>The secret gift of this window</h3>
+
+  <p>If you can get through ages 3–7 without making food a battleground or a moral category — even imperfectly — you will have given your child something most adults are still trying to reconstruct in their 40s. You will have protected their intuitive signals. You will have modeled pleasure without guilt. You will have laid a foundation that the rest of their life will rest on.</p>
+
+  <div class="pullquote">
+    The permission years are the foundation years. What you don't do here — the commentary you don't make, the battles you don't start — is as important as what you do.
+  </div>
+
+  <div class="page-num">11</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CHAPTER 6 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 6</div>
+      <h2 class="chapter-title">Ages 8 to 11 · <em>The comparison years.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#growing-plant"/></svg>
+  </div>
+  <div class="chapter-sub">A harder window. The outside world starts arriving.</div>
+
+  <div class="age-card">
+    <div class="age-label">Ages 8–11</div>
+    <h3>What's happening developmentally</h3>
+    <p style="font-size: 0.9rem;">Social comparison becomes the central task. Your child is now noticing difference — bodies, clothes, lunchboxes, families, whose mom packs what. They are learning that there are "better" and "worse" ways to be, and food and body are often the landing zone for that sorting. School is a major source of new input. So is friend-group dynamics. So, increasingly, is media.</p>
+  </div>
+
+  <h3>What changes from the earlier window</h3>
+
+  <p>In the 3–7 window, you mostly controlled the food environment. In the 8–11 window, you don't. Your child eats lunch with peers. They see other kids' plates. They attend birthday parties you aren't at. They watch content with body and food themes baked in. And they start bringing all of it home to you.</p>
+
+  <p>Your job shifts from <em>setting the environment</em> to <em>being the counter-narrative</em>. Chapter 4 laid this out at a high level. Here's what it looks like specifically in this age window.</p>
+
+  <h3>What matters now</h3>
+
+  <ul>
+    <li><strong>Protecting family meals — even when they resist.</strong> Especially when they resist. Mealtime is your steady communication channel.</li>
+    <li><strong>Asking open questions about what they're seeing.</strong> "What do you think about that?" is more powerful than any lecture.</li>
+    <li><strong>Being matter-of-fact about bodies.</strong> Bodies come in all shapes. That's what bodies do.</li>
+    <li><strong>Not commenting on <em>their</em> body, yours, or anyone else's.</strong> Positive or negative. Commentary creates the frame.</li>
+    <li><strong>Noticing early warning signs.</strong> Sudden changes in how they eat — restriction, secrecy, shame — deserve attention.</li>
+  </ul>
+
+  <div class="page-num">12</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CH 6 continued -->
+<div class="page">
+  <h3>Scripts for this age</h3>
+
+  <div class="script">
+    <div class="script-label">When they bring home diet talk</div>
+    <p>"Hmm. Where did you hear that?"</p>
+    <p>"That's one way to think about it. In our family we think about food differently."</p>
+    <div class="why">You're acknowledging they're encountering other ideas, and placing your family's view among them.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">When they ask about calories or diets</div>
+    <p>"Calories are information. They're not grades. Let's talk about what your body needs to feel good."</p>
+    <div class="why">Reframes a potentially loaded topic as one of awareness, not control.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">When they compare their body to a friend's</div>
+    <p>"Bodies come in all shapes. Sarah's body is her body. Yours is yours. Both are good bodies."</p>
+    <div class="why">Factual. Neutral. Doesn't engage the comparison as legitimate.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">When they ask "am I fat?"</div>
+    <p>"What made you ask that? Let's talk about where you heard that word."</p>
+    <div class="why">Don't rush to reassure ("no you're not!"). That reinforces that "fat" is something bad to be reassured about. Get curious first.</div>
+  </div>
+
+  <h3>The warning signs to take seriously</h3>
+
+  <p>In this age window, early eating disorders can begin. The signs are subtle and often easily dismissed. If you notice several of these persisting:</p>
+
+  <ul>
+    <li>New, sustained restriction (skipping meals, eating much less)</li>
+    <li>Sudden interest in calorie-counting or "clean eating"</li>
+    <li>Eating alone or secrecy around food</li>
+    <li>Distress around mealtimes that's new</li>
+    <li>Frequent body-critical comments about themselves</li>
+    <li>Wearing layers to hide their body</li>
+    <li>Obsessive exercise</li>
+  </ul>
+
+  <p>Any one of these, briefly, is probably nothing. Several, persisting for weeks, is worth a conversation with your pediatrician — and possibly a non-diet therapist.</p>
+
+  <p>Do not wait and see. Eating disorders in this age window are treatable, and the earlier the intervention, the better the outcome. Trust your gut.</p>
+
+  <div class="page-num">13</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CHAPTER 7 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 7</div>
+      <h2 class="chapter-title">Ages 12 to 16 · <em>The image years.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#growing-plant"/></svg>
+  </div>
+  <div class="chapter-sub">The hardest window. Social media, puberty, hormones, identity. You will feel helpless. You are not.</div>
+
+  <div class="age-card">
+    <div class="age-label">Ages 12–16</div>
+    <h3>What's happening developmentally</h3>
+    <p style="font-size: 0.9rem;">Identity formation is the central task. Your child is deciding — not consciously, but through a thousand small choices — who they are, who they want to be, and how they want to be seen. Bodies are changing rapidly. Hormones are in upheaval. Peer groups are reorganizing. And social media is, for better and worse, the dominant social environment. This is the window most vulnerable to body dissatisfaction and disordered eating. It is also the window where what you've built earlier pays its largest dividends.</p>
+  </div>
+
+  <h3>The honest truth about this age</h3>
+
+  <p>If your child is going to struggle with food or body image, it is likely to surface between 12 and 16. That is not because you failed. It is because that is the developmental window when these patterns emerge almost universally in our culture. Social media is partly responsible. So are hormones. So is the bewildering task of becoming a person with a public-facing body in a world that comments on bodies.</p>
+
+  <p>Your job in this window is not to prevent every wobble. It is to be the kind of parent they can come to when something hurts.</p>
+
+  <h3>What matters in this window</h3>
+
+  <ul>
+    <li><strong>Keep the family table, even briefly.</strong> Three meals a week, phones off. This is your communication lifeline.</li>
+    <li><strong>Never comment on their weight.</strong> Not even praise. "You look great, have you lost weight?" is among the most harmful sentences in a parent's vocabulary.</li>
+    <li><strong>Talk openly about what they're seeing online.</strong> Not to moralize. To understand.</li>
+    <li><strong>Model eating with pleasure in front of them.</strong> This is more important now than ever. They are watching you.</li>
+    <li><strong>Trust your gut about warning signs.</strong> The threshold for getting professional help is lower, not higher, in this window.</li>
+  </ul>
+
+  <div class="page-num">14</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CH 7 continued -->
+<div class="page">
+  <h3>Scripts for this age</h3>
+
+  <div class="script">
+    <div class="script-label">When they say they want to diet</div>
+    <p>"Can we talk about it? Tell me what's going on."</p>
+    <p>"I'm not going to tell you no — but I want to understand what you're hoping for first."</p>
+    <div class="why">Don't forbid. Don't enable. Understand first. The "why" is usually more important than the "what."</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">When they hate their body</div>
+    <p>"I hear you. I'm sorry. That's really painful."</p>
+    <p>"Your body is doing exactly what bodies are supposed to do right now. It's changing fast. That can be disorienting."</p>
+    <div class="why">Don't argue with their feelings. Acknowledge them. Then gently offer context.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">When you see them watching restrictive eating content online</div>
+    <p>"I noticed you were watching [X]. What do you think about it? Some of that content is made to make people feel bad so they'll buy things."</p>
+    <div class="why">Open, curious, teaches critical thinking without banning (which would push it underground).</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">When your teenage daughter asks "do I look fat in this?"</div>
+    <p>"You look like you. I love how you look."</p>
+    <p>"What's going on? What's making you ask that?"</p>
+    <div class="why">Don't take the bait of a "yes" or "no." Redirect to the underlying worry.</div>
+  </div>
+
+  <h3>When to escalate</h3>
+
+  <p>In this window, these deserve immediate professional attention:</p>
+
+  <ul>
+    <li>Sustained restriction or binging</li>
+    <li>Purging behaviors (vomiting, laxative use, excessive exercise)</li>
+    <li>Rapid weight loss or refusal to eat</li>
+    <li>Food-related distress severe enough to affect school or sleep</li>
+    <li>Any expression of self-harm or suicidal ideation</li>
+  </ul>
+
+  <p>Do not "wait and see" with any of these. Call your pediatrician this week. The National Eating Disorders Association (NEDA) at 1-800-931-2237 can also help you find an appropriate clinician quickly.</p>
+
+  <div class="pullquote">
+    The teenage years are when your earlier work gets tested and your new work becomes lifesaving. Show up. Keep the table. Don't comment on bodies. Get help when it's needed.
+  </div>
+
+  <div class="page-num">15</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CH 7 continued -->
+<div class="page">
+  <h3>A note to parents of teens who are already struggling</h3>
+
+  <p>If your child is 14, not 4, and you're reading this book wondering if it's too late — it isn't. But the approach shifts. You're no longer preventing a pattern; you're navigating one that's already forming. That is harder, but it is not hopeless.</p>
+
+  <p>Three things, briefly:</p>
+
+  <ol>
+    <li><strong>Get professional support sooner rather than later.</strong> A non-diet eating-disorder-informed clinician can do in six months what a parent alone cannot do in six years.</li>
+    <li><strong>Stop the commentary on bodies and food, effective immediately.</strong> Yours, theirs, everyone's. This is the single highest-leverage change you can make.</li>
+    <li><strong>Be honest with them that you've learned new things.</strong> An older child can handle: "I've been learning about how I talked about bodies and food when you were younger. I got some of it wrong. I'm going to try to do it differently."</li>
+  </ol>
+
+  <p>A teenager who hears a parent acknowledge imperfection, without over-performing it, can actually receive that as a gift. It models the thing you're trying to teach them: that we grow. That we adjust. That what we said yesterday doesn't have to be what we say tomorrow.</p>
+
+  <div class="svg-divider" style="margin-top: 2rem;"><svg width="100" height="16"><use href="#leafy-divider"/></svg></div>
+
+  <p style="text-align: center; font-family: 'Playfair Display', serif; font-style: italic; color: var(--muted); font-size: 1rem;">
+    That's Part Two. The ages.<br>Now — the scripts.
+  </p>
+
+  <div class="page-num">16</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- PART III OPENER -->
+<div class="page part-opener">
+  <div class="part-num">III</div>
+  <div class="part-label">Part Three</div>
+  <div class="part-title">Scripts, Not <em>Scripts-Free.</em></div>
+  <div class="part-sub">Real phrases, for real moments, in real families. Five chapters of specific language for the conversations you're already having — and the ones you've been avoiding because you didn't know what to say.</div>
+  <svg width="120" height="16" style="color: var(--sage); margin-top: 2rem;"><use href="#leafy-divider"/></svg>
+</div>
+
+<!-- CHAPTER 8 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 8</div>
+      <h2 class="chapter-title">"Why can't I have that?" — <em>the response library.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#speech"/></svg>
+  </div>
+  <div class="chapter-sub">Ten common questions your child will ask — and answers that don't box you in or moralize food.</div>
+
+  <div class="script">
+    <div class="script-label">"Why can't I have candy for breakfast?"</div>
+    <p>"Candy's great for dessert. For breakfast we want something that keeps your belly full till lunch."</p>
+    <div class="why">Not "candy is bad." Not "it'll rot your teeth." Just functional: it's a wrong-time food for the job of breakfast.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">"Is this healthy?"</div>
+    <p>"That's food. All food does different things for your body. This one has protein and vegetables, which give you energy for a long time."</p>
+    <div class="why">Avoids the healthy/unhealthy binary. Describes function instead.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">"Why does Jake get to eat [X] and I don't?"</div>
+    <p>"Every family does this a little differently. In ours, we eat at the table. Jake's family does it their way. Both are okay."</p>
+    <div class="why">Normalizes variation. Doesn't moralize either family's approach.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">"Can I have another one?"</div>
+    <p>"Sure." (And mean it.)</p>
+    <div class="why">No fishing. No "are you sure you're still hungry?" Trust their body.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">"Is sugar bad?"</div>
+    <p>"Sugar's not bad. Too much sugar all at once can make you feel weird. That's true of most things — you can have too much water, too much salt, too much anything. We're just trying to listen to our bodies."</p>
+    <div class="why">Takes the morality out. Introduces the real concept: balance, not ban.</div>
+  </div>
+
+  <div class="page-num">17</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CH 8 continued -->
+<div class="page">
+  <div class="script">
+    <div class="script-label">"But I'm not hungry."</div>
+    <p>"Okay, you can leave what you don't want."</p>
+    <div class="why">Not "you need to eat something." Not "one more bite." Just — okay.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">"Do I have to finish my plate?"</div>
+    <p>"No. You're done when you're full."</p>
+    <div class="why">Short. Plain. Undoes generations of the opposite.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">"Why are you eating that?" (when they see you enjoying something they've labeled 'bad')</div>
+    <p>"Because it tastes good. Want some?"</p>
+    <div class="why">Models pleasure without apology. Offers sharing without making it a big deal.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">"Are you on a diet?"</div>
+    <p>"No. I'm not on a diet. I just listen to what my body wants."</p>
+    <div class="why">Clear, calm, and one of the most important sentences you'll say.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">"Can I have dessert?" (before they've eaten dinner)</div>
+    <p>"Dessert's after dinner. Everybody's having some tonight."</p>
+    <div class="why">Structure without bargaining. Everyone gets dessert — not a reward for finishing.</div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">The principle</div>
+    <p>Every response here shares a structure: <strong>functional, not moral</strong>. No food is called good, bad, healthy, or unhealthy. Every response describes what the food <em>does</em>, or how the family <em>operates</em> — not what kind of person eats it.</p>
+  </div>
+
+  <div class="page-num">18</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CHAPTER 9 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 9</div>
+      <h2 class="chapter-title">When your child comments <em>on their body.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#heart"/></svg>
+  </div>
+  <div class="chapter-sub">The moment most parents dread. The moment that matters most. A three-step response that fits every version of it.</div>
+
+  <p>Your daughter, at seven, says, "I don't like my legs." Your son, at ten, says, "I'm fat." Your fourteen-year-old says, "I hate the way I look."</p>
+
+  <p>When this happens — and it will — what you say next will be remembered. Not word-for-word. But its shape, its energy, its tone — those will land in their body and stay.</p>
+
+  <p>Most parents panic. They rush in with reassurance. "No you're not!" "Don't say that, you're beautiful!" "Stop saying that, you're perfect!" All of these are well-meaning. All of them, subtly, do the wrong work. Because they confirm the premise — that being "fat" or "ugly" is bad, and the job is to reassure the child that they aren't one of those bad things.</p>
+
+  <h3>The three-step response</h3>
+
+  <div class="sage-box">
+    <div class="sage-box-label">Step 1 · Pause and get curious</div>
+    <p>Don't rush to reassure. Take one breath. Then say, calmly:</p>
+    <p><em>"Tell me more. What's making you think about that?"</em></p>
+  </div>
+
+  <div class="sage-box">
+    <div class="sage-box-label">Step 2 · Listen for the actual feeling</div>
+    <p>The surface statement ("I'm fat") is rarely the real issue. Usually underneath is: I feel excluded. I got teased. I saw something on TV. I'm worried I'm different. Listen. Ask follow-ups. Don't fix anything yet.</p>
+  </div>
+
+  <div class="sage-box">
+    <div class="sage-box-label">Step 3 · Reframe the category, not the self</div>
+    <p><em>"Bodies come in all shapes and sizes. All of them are good bodies. Your body is yours, and it's a good one. The idea that some bodies are better than others isn't true — someone sold that idea to a lot of people. It's not actually true."</em></p>
+  </div>
+
+  <h3>Why this works</h3>
+
+  <p>The standard parental response — "no you're not fat!" — treats the category as real. Your child hears: fat is bad, thin is good, and I need to make sure I stay in the good category. That message sticks.</p>
+
+  <p>The three-step response treats the category as the problem. Your child hears: there is no good-body / bad-body ladder. The premise is the lie. My body is okay because all bodies are okay. That message also sticks.</p>
+
+  <div class="page-num">19</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CH 9 continued -->
+<div class="page">
+  <h3>What <em>not</em> to say</h3>
+
+  <ul>
+    <li>"You're perfect!" (Performs perfection; when they inevitably feel imperfect again, the message doesn't hold.)</li>
+    <li>"You're not fat!" (Confirms "fat" is bad and worth denying.)</li>
+    <li>"Don't say that about yourself." (Teaches them to hide the feeling from you.)</li>
+    <li>"Look how thin I was at your age." (Makes thinness the aspiration.)</li>
+    <li>"Well, have you been eating a lot of sugar lately?" (Makes food a solution to body dissatisfaction — this is literally how eating disorders begin.)</li>
+  </ul>
+
+  <h3>What to do afterward</h3>
+
+  <p>If your child said something like this once, and seemed to receive your response, you don't need to follow up with a lecture. Let it be. What they said, and what you said, has been said.</p>
+
+  <p>If it keeps coming up — weekly, daily, in different forms — pay attention. A persistent narrative of body dissatisfaction in a child or teen is a reason to consult with a pediatrician, a counselor, or a non-diet therapist.</p>
+
+  <div class="pullquote">
+    Don't argue with the comment. Argue with the category. "All bodies are good bodies" outlasts every reassurance.
+  </div>
+
+  <div class="page-num">20</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CHAPTER 10 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 10</div>
+      <h2 class="chapter-title">When your child comments <em>on your body.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#heart"/></svg>
+  </div>
+  <div class="chapter-sub">This one catches parents off-guard. It doesn't have to.</div>
+
+  <p>Your child walks into the room while you're changing. "Mommy, why is your tummy like that?" Or the classic: "You're soft." Or, painfully: "You look big today."</p>
+
+  <p>A child saying any of these is not being cruel. They are being developmentally normal. Young children describe what they see without social filter. Older children are usually testing something — sometimes repeating something they heard, sometimes trying to understand their own feelings about bodies.</p>
+
+  <p>Your response is a chance to teach three things at once:</p>
+
+  <ol>
+    <li>That bodies are a neutral topic (not shameful, not magical, not a virtue test)</li>
+    <li>That you love your body as it is (which teaches them to do the same for theirs)</li>
+    <li>That there are kinder ways to talk about bodies</li>
+  </ol>
+
+  <h3>The response</h3>
+
+  <div class="script">
+    <div class="script-label">The "why is your tummy like that?" moment</div>
+    <p>"It's my tummy. It's carried two babies and a lot of good meals. It's a good tummy."</p>
+    <div class="why">Functional, affectionate, matter-of-fact. Not self-deprecating. Not performative.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">If they're older and the comment has an edge</div>
+    <p>"That comment felt like it was about more than my body. What's going on for you?"</p>
+    <div class="why">Doesn't take offense. Redirects to the real question.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">If they compare your body to someone else's</div>
+    <p>"My body is mine. Hers is hers. Bodies aren't things we compare like that in our family."</p>
+    <div class="why">Kind, firm, sets the cultural tone.</div>
+  </div>
+
+  <h3>What to avoid</h3>
+
+  <ul>
+    <li>Laughing it off while clearly feeling hurt (teaches emotional dissonance)</li>
+    <li>Going into a self-critical monologue ("I know, I need to lose weight")</li>
+    <li>Getting angry at them (they were being developmentally normal)</li>
+    <li>Launching into a lecture about body positivity (too heavy; over-corrects)</li>
+  </ul>
+
+  <p>A brief, warm, affectionate response does more than you think. You are teaching them, in real time, how to receive a comment about a body without shame. That is a skill they will need their whole lives.</p>
+
+  <div class="page-num">21</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CHAPTER 11 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 11</div>
+      <h2 class="chapter-title">When a relative <em>comments on your child.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#shield"/></svg>
+  </div>
+  <div class="chapter-sub">Thanksgiving. Grandparents. Aunts with opinions. The 30-second intervention that protects your child without starting a war.</div>
+
+  <p>This is the moment every parent at some point is going to face. You're at a family dinner. Aunt Linda says to your eight-year-old daughter: "My, you've grown! Look at you — you might want to watch those cookies." Or Grandma says: "She looks just like me at that age — you should see how many I used to eat." Or Uncle Dave says: "You're eating like a bird — that's why you're so little."</p>
+
+  <p>In the two seconds after a comment like that, your child looks at you. They are waiting to see whose side you're on. Not consciously. But they are watching.</p>
+
+  <p>This chapter is about what to do in those two seconds.</p>
+
+  <h3>The 30-second intervention</h3>
+
+  <p>You have three goals, in this order:</p>
+
+  <ol>
+    <li>Signal to your child that you heard the comment and it's not okay</li>
+    <li>Interrupt it firmly but without escalating the holiday into a fight</li>
+    <li>Keep your relationship with the relative intact enough to keep seeing them</li>
+  </ol>
+
+  <p>All three at once. In about thirty seconds.</p>
+
+  <div class="script">
+    <div class="script-label">Low-key redirect (often enough)</div>
+    <p>"[Child's name], can you come help me with something in the kitchen for a second?"</p>
+    <div class="why">Removes your child from the situation without making a scene. Addresses it with the relative privately if needed, later.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">In-the-moment verbal intervention (when you can't leave)</div>
+    <p>"We don't talk about anybody's body or food choices at the table. [Change subject.] How's your garden this year?"</p>
+    <div class="why">Clear, firm, redirects. Doesn't shame the relative. Doesn't negotiate.</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">Stronger, when it's repeated or pointed</div>
+    <p>"I know you mean well. But please don't comment on her body or her plate. It's not something we do in our family."</p>
+    <div class="why">Direct. Doesn't argue. Names the boundary once, then moves on.</div>
+  </div>
+
+  <div class="page-num">22</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CH 11 continued -->
+<div class="page">
+  <h3>The private follow-up</h3>
+
+  <p>After the event, if this is a pattern, have a private conversation. Not at the table. Not in front of your child. On the phone, or in a text:</p>
+
+  <div class="script">
+    <div class="script-label">The once-and-done private conversation</div>
+    <p>"Hey — I know you love [child] and I know the comments about her body and food come from a good place. But we're raising her to listen to her body, not to us, and any commentary on her weight or plate makes that harder. I need you to not do that when you see her. Can I count on you?"</p>
+    <div class="why">Appeals to their goodwill. Names the why. Makes a specific ask. Gives them a chance to say yes.</div>
+  </div>
+
+  <h3>When they don't comply</h3>
+
+  <p>Some relatives will continue to comment anyway. It happens. Here's the escalation ladder:</p>
+
+  <ol>
+    <li><strong>First slip after the conversation:</strong> Private remind once. "I know we talked about this."</li>
+    <li><strong>Repeated pattern:</strong> Reduce exposure. Fewer visits, shorter visits. No open-ended time with your child one-on-one.</li>
+    <li><strong>Consistent pattern over a year:</strong> Your child's mental health is more important than any family harmony. Set firmer limits. This is not punishment. It is protection.</li>
+  </ol>
+
+  <div class="pullquote">
+    Your calm at the holiday table, and your firmness in the private follow-up, are the quiet interventions that protect a generation. That is not overstating it.
+  </div>
+
+  <h3>What your child is learning</h3>
+
+  <p>When you intervene on their behalf, your child learns two things: that you have their back, and that it's okay to protect yourself from comments like this when they're grown. Both lessons outlast any single holiday dinner.</p>
+
+  <div class="page-num">23</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CHAPTER 12 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 12</div>
+      <h2 class="chapter-title">School, friends, <em>and the internet.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#shield"/></svg>
+  </div>
+  <div class="chapter-sub">The three arenas you can't control — and what to do about the messages coming from each.</div>
+
+  <h3>School</h3>
+
+  <p>School is a complicated environment. The cafeteria has social dynamics you can't see. Health class still, in many districts, teaches "food pyramids" or BMI measurements or moralizes food. Teachers, with the best intentions, praise kids for "eating healthy" at lunch and shame kids for bringing chips.</p>
+
+  <p>You can't control any of it. What you can do:</p>
+
+  <ul>
+    <li><strong>Ask questions.</strong> "What did you talk about in health today?" "What do people say about lunches at school?" Listen.</li>
+    <li><strong>Be the counter-narrative when it comes home.</strong> See Chapter 4 for the general approach.</li>
+    <li><strong>Advocate if needed.</strong> If a teacher is weighing children publicly, commenting on plates, or running "clean eating" campaigns, you can write a short, non-confrontational email. Most school professionals respond well to concerns about mental health and body image.</li>
+    <li><strong>Protect lunch.</strong> Pack what your child will actually eat. Don't make them a subject of comparison. Don't apologize for it.</li>
+  </ul>
+
+  <h3>Friends</h3>
+
+  <p>Friends matter more than anything else in the 8+ window. Your child will eventually have friends whose families do food and body very differently. That's not a problem — it's reality. Your job is not to replace their friend group. Your job is to make your home a steady, different reference point.</p>
+
+  <div class="script">
+    <div class="script-label">When friend-influence shows up</div>
+    <p>"I hear that's what Jessica's mom does. Every family does it a little differently. This is what our family does. Neither way is wrong."</p>
+    <div class="why">Validates their observation. Preserves your family's approach without trashing anyone else's.</div>
+  </div>
+
+  <div class="page-num">24</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CH 12 continued -->
+<div class="page">
+  <h3>The internet</h3>
+
+  <p>This is the hardest one. Your pre-teen or teen is on TikTok, Instagram, Snapchat, Discord. They are exposed — constantly, in scrolls, algorithmically amplified — to content about bodies, diets, "what I eat in a day," and filtered, edited, comparison-driven imagery. You cannot shield them from it. You can, however, shape their relationship with it.</p>
+
+  <h3>Three things that actually work</h3>
+
+  <p><strong>One: Watch with them, sometimes.</strong> Not to police. Side-by-side. "Show me what you're watching." Ask open questions. "What do you think about this?" Become a curious, non-judgmental viewer beside them.</p>
+
+  <p><strong>Two: Explicitly name the mechanism.</strong> Your teen needs to understand that the content they're consuming is optimized for engagement, not their wellbeing. That the people in the videos are paid. That filters are universal. That a 14-year-old influencer with an apparent perfect life has a team producing it and is often miserable. The more they understand the structure, the less it grips them.</p>
+
+  <p><strong>Three: Follow different accounts together.</strong> Find body-diverse, non-diet, mental-health-positive accounts together. Follow them. Follow the ones your child picks. Slowly shape their feed together, not as a lecture.</p>
+
+  <div class="sage-box">
+    <div class="sage-box-label">Accounts worth knowing (as of this writing)</div>
+    <p>Anti-diet dietitians on Instagram · HAES-aligned nutrition educators · non-diet therapists · creators who show non-idealized bodies doing ordinary things. Names change; search terms "intuitive eating," "Health at Every Size," and "non-diet dietitian" are stable and will return useful results.</p>
+  </div>
+
+  <h3>When to intervene harder</h3>
+
+  <p>If you notice your child is spending hours on "what I eat in a day" content, restrictive eating accounts, "glow up" content, or explicitly pro-disordered-eating accounts — this is a moment. Have the conversation. If needed, adjust access. If their mental state seems to deteriorate, seek professional support.</p>
+
+  <p>Phone and social media access is a privilege, not a right. It's okay to make changes. It is also okay to say: "I've noticed this content is making you feel worse. Let's take a break from it together."</p>
+
+  <div class="svg-divider" style="margin-top: 2rem;"><svg width="100" height="16"><use href="#leafy-divider"/></svg></div>
+
+  <p style="text-align: center; font-family: 'Playfair Display', serif; font-style: italic; color: var(--muted); font-size: 1rem;">
+    That's Part Three. The scripts.<br>Now — picky eating.
+  </p>
+
+  <div class="page-num">25</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- PART IV OPENER -->
+<div class="page part-opener">
+  <div class="part-num">IV</div>
+  <div class="part-label">Part Four</div>
+  <div class="part-title">The Picky Eating <em>30-Day Reset.</em></div>
+  <div class="part-sub">The specific, day-by-day protocol that turns most power-struggle "picky eating" into ordinary eating — without bribery, punishment, or turning mealtime into a negotiation.</div>
+  <svg width="120" height="16" style="color: var(--sage); margin-top: 2rem;"><use href="#leafy-divider"/></svg>
+</div>
+
+<!-- CHAPTER 13 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 13</div>
+      <h2 class="chapter-title">Why picky eating is usually <em>a power dynamic.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#speech"/></svg>
+  </div>
+  <div class="chapter-sub">A short, clarifying chapter before the protocol. Not every picky eater is the same. Most are this.</div>
+
+  <p>A small percentage of children — maybe 5% — have genuine sensory or medical issues that make certain foods genuinely intolerable. That is a real condition. It responds to feeding therapy. This chapter and the next are not for them.</p>
+
+  <p>Everyone else — the other 95% of kids labeled "picky" — is describing a <em>relational</em> pattern, not a palate. They are responding to the dynamic around the food. And the dynamic can be changed.</p>
+
+  <h3>How it usually starts</h3>
+
+  <p>A toddler, around age 2, refuses a food they used to eat. This is developmentally normal. Their world is expanding. Saying "no" is how they test their own agency. You respond, reasonably, by gently pressing them to try a bite. They resist harder. You press harder. Now they're crying. You make them grilled cheese.</p>
+
+  <p>That interaction, repeated fifty times over the course of a year, teaches your child: <em>if I refuse, I get what I want, and my refusal matters more than what the family is eating.</em></p>
+
+  <p>Three years later, you have a "picky eater."</p>
+
+  <p>This is not your fault. This dynamic emerges almost universally. It is also not the child's fault. It is the dynamic's fault. And the dynamic is fixable.</p>
+
+  <div class="pullquote">
+    Most "picky eating" is not a palate problem. It is a dynamic, in which both the parent and the child are stuck. Dissolving the dynamic is the whole fix.
+  </div>
+
+  <h3>The two dynamics that need to end</h3>
+
+  <p><strong>Short-order cooking:</strong> Making a separate meal for the kid when they reject what's served. Teaches that refusing is rewarded.</p>
+
+  <p><strong>Pressuring:</strong> "One more bite," "try it for me," "you haven't even touched it." Teaches that eating is for the parent, not for the child's body.</p>
+
+  <p>Stop both. That is the work of the next chapter.</p>
+
+  <div class="page-num">26</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CHAPTER 14 — 30-DAY PROTOCOL -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 14</div>
+      <h2 class="chapter-title">The <em>30-day</em> non-coercive protocol.</h2>
+    </div>
+    <svg class="chapter-icon"><use href="#growing-plant"/></svg>
+  </div>
+  <div class="chapter-sub">Day by day. Do it for the full month. Expect to get worse before better. Here is the whole plan.</div>
+
+  <p>This is the protocol. Follow it for 30 days — the whole 30, not ten days then a break. The mechanism depends on consistency. Some days you'll be sure it's failing. Trust the timeline.</p>
+
+  <h3>The ground rules (read these first)</h3>
+
+  <ul>
+    <li><strong>One meal for the family.</strong> What you serve is what everyone eats.</li>
+    <li><strong>Always include one "safe" food.</strong> Bread, rice, a fruit your child reliably eats. They will not starve.</li>
+    <li><strong>No commentary.</strong> Not on amount, not on choices, not on refusals.</li>
+    <li><strong>No bribes, no rewards, no punishments.</strong> No dessert for finishing. No loss of privileges for not.</li>
+    <li><strong>You eat the same food.</strong> With visible, unperformed pleasure.</li>
+    <li><strong>Mealtime ends when mealtime ends.</strong> Not when they've eaten "enough."</li>
+  </ul>
+
+  <h3>The 30-day timeline</h3>
+
+  <div class="day-block">
+    <div class="day-block-label">Days 1–3</div>
+    <div class="day-block-body"><strong>Announce nothing.</strong> Just start. Begin serving one-meal-for-the-family. Your child will be confused and may escalate. Stay calm. Do not apologize. Do not explain.</div>
+  </div>
+  <div class="day-block">
+    <div class="day-block-label">Days 4–7</div>
+    <div class="day-block-body"><strong>Escalation is normal.</strong> Your child may cry, refuse everything, eat only the safe food, melt down at the table. This is them testing the new system. Keep going. Say nothing about their plate. They will not starve in a week.</div>
+  </div>
+  <div class="day-block">
+    <div class="day-block-label">Days 8–14</div>
+    <div class="day-block-body"><strong>The first shift.</strong> Around this point, most children stop escalating. They start eating some of the meal — not all. That's fine. They've realized the bridge is stable. Continue serving. Continue not commenting.</div>
+  </div>
+  <div class="day-block">
+    <div class="day-block-label">Days 15–21</div>
+    <div class="day-block-body"><strong>Quiet expansion.</strong> Around now, your child may begin tasting new foods on their own. No announcement. They may eat a bite of the thing they "never eat." Don't celebrate. Don't notice out loud. Just pass the bread.</div>
+  </div>
+
+  <div class="page-num">27</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CH 14 continued -->
+<div class="page">
+  <div class="day-block">
+    <div class="day-block-label">Days 22–30</div>
+    <div class="day-block-body"><strong>Stabilization.</strong> By the end of the month, most children have expanded their accepted-food list, stopped making mealtime a conflict, and settled into a pattern that looks like normal eating. Some foods they still won't touch. That's fine. The list will keep expanding over months.</div>
+  </div>
+
+  <h3>The hardest days</h3>
+
+  <p>The hardest days of this protocol are days 3 through 7. Your child may eat very little. You will be tempted — strongly — to make grilled cheese, to bargain, to "just this once" produce something you know they'll eat. Don't.</p>
+
+  <p>Here is what to remember: a child who is consistently offered food, in predictable meals, at regular times, will not starve. Their body is wise. They will eat what they need, even if it's less than you think they need for a few days. They will not miss a school day. They will not be malnourished.</p>
+
+  <p>What will happen, if you can hold steady for that hardest week, is that the dynamic will break. And on the other side of that break is a family that eats together without fighting about it.</p>
+
+  <h3>If you slip</h3>
+
+  <p>You will slip. At some point, you will serve the grilled cheese. Don't catastrophize. The next meal is a new meal. Start again. The protocol doesn't need to be perfect. It needs to be, mostly, consistent over weeks.</p>
+
+  <div class="callout">
+    <div class="callout-label">A gentle truth</div>
+    <p>If this protocol feels impossible to execute emotionally — if you can't stand the thought of your child eating only bread for three days — that is worth examining. Usually, underneath, is a fear of being a "bad mom" if your child doesn't eat vegetables this week. That fear is understandable, and it is also not true. Your love for your child is not measured in broccoli.</p>
+  </div>
+
+  <h3>Your partner</h3>
+
+  <p>For the protocol to work, both adults at the table have to be running it. If one parent is saying "one more bite" while the other is practicing silence, the dynamic doesn't break. Have the conversation with your partner before you start. Agree on the approach. Expect them to slip too. Forgive each other and keep going.</p>
+
+  <div class="page-num">28</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CH 14 continued -->
+<div class="page">
+  <h3>What "success" looks like at day 30</h3>
+
+  <p>Most families who run this protocol to completion report the same markers at the end:</p>
+
+  <ul>
+    <li>Mealtime feels 50–80% less stressful than before</li>
+    <li>The accepted-food list has expanded by 3–8 new foods</li>
+    <li>The child is eating roughly the right amount most days (some days more, some less)</li>
+    <li>The parent is no longer watching the plate with anxiety</li>
+    <li>Family dinner happens more often, because it feels like something to look forward to, not endure</li>
+  </ul>
+
+  <p>None of these is "my kid now eats everything." That isn't the goal. The goal is that food stops being a battleground and your child begins, at their own pace, to expand.</p>
+
+  <p>In three months, the list will be longer. In a year, longer still. In five years, you will barely remember that "my kid doesn't eat X" was ever an identity.</p>
+
+  <div class="pullquote">
+    The protocol doesn't change the child. It changes the dynamic. The child, freed of the dynamic, becomes an ordinary eater at their own pace.
+  </div>
+
+  <div class="page-num">29</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CHAPTER 15 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 15</div>
+      <h2 class="chapter-title">Expanding the <em>accepted food list.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#growing-plant"/></svg>
+  </div>
+  <div class="chapter-sub">After the 30-day reset. How to keep adding, gently, over months and years.</div>
+
+  <p>Once the dynamic around food has softened, you can start thinking about expansion — adding new foods to your child's accepted list over time. This is a longer, quieter project than the reset. It runs on exposure, patience, and no pressure.</p>
+
+  <h3>The principles</h3>
+
+  <p><strong>One: Exposure repeatedly.</strong> Research is consistent: children need 10–15 exposures to a new food before they'll try it. You are probably a quarter of the way there when you think you've "tried everything." Keep serving.</p>
+
+  <p><strong>Two: Exposure without requirement.</strong> The food appears on the table. There is no obligation to taste it. Make no eye contact with the food.</p>
+
+  <p><strong>Three: Eat it yourself, visibly.</strong> Your plate is the curriculum.</p>
+
+  <p><strong>Four: Offer alongside — not instead of — safe foods.</strong> A child who feels secure that there's something they'll eat is more likely to try the new thing. A child who's anxious that they'll go hungry is more likely to refuse everything new.</p>
+
+  <p><strong>Five: Let them engage on their terms.</strong> Touching, smelling, licking, putting on the plate and not eating — all of these are parts of the exposure process. Let them handle the food without pressure.</p>
+
+  <h3>The "exploration plate"</h3>
+
+  <p>Some families find it useful to add a small "exploration plate" at family meals — a tiny plate next to each person's regular plate, with a small sample of a newer or less-accepted food. No commentary, no requirement. Just an invitation.</p>
+
+  <p>Your child can ignore it. Over weeks, they may touch it. Over months, taste it. Over years, add it to their regular rotation.</p>
+
+  <div class="pullquote">
+    You are not racing the food into their diet. You are inviting it, over and over, and letting them arrive in their own time.
+  </div>
+
+  <div class="page-num">30</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CHAPTER 16 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 16</div>
+      <h2 class="chapter-title">When to see <em>a pediatrician.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#shield"/></svg>
+  </div>
+  <div class="chapter-sub">A brief, clear chapter on when picky eating is actually something that needs a specialist.</div>
+
+  <p>Most "picky eating" resolves with the protocol in Chapter 14. A small number of children have genuine medical or sensory reasons that keep them stuck. Here is when to get help.</p>
+
+  <div class="callout">
+    <div class="callout-label">See a pediatrician or feeding specialist if…</div>
+    <p>— Your child is consistently losing weight or not growing as expected</p>
+    <p>— Their accepted-food list is severely restricted (fewer than 15–20 foods) and isn't expanding over months</p>
+    <p>— They gag, vomit, or have extreme sensory distress with unfamiliar textures</p>
+    <p>— Mealtime distress is severe or chronic despite the protocol</p>
+    <p>— You suspect any sensory processing issues beyond food</p>
+    <p>— The 30-day protocol is impossible to run because of your child's distress</p>
+  </div>
+
+  <h3>What they might find</h3>
+
+  <ul>
+    <li><strong>ARFID (Avoidant/Restrictive Food Intake Disorder).</strong> A real diagnosis. Responds well to treatment.</li>
+    <li><strong>Sensory Processing Disorder (SPD).</strong> Often goes with feeding issues. Requires occupational therapy, not parenting fixes.</li>
+    <li><strong>Gastrointestinal issues.</strong> Reflux, food intolerances — can make eating genuinely unpleasant.</li>
+    <li><strong>Anxiety.</strong> General anxiety can show up at the dinner table.</li>
+  </ul>
+
+  <h3>How to find the right help</h3>
+
+  <p>Your pediatrician is the first stop. Ask for a referral to a <strong>feeding therapist</strong> (usually an occupational therapist or speech-language pathologist specializing in feeding) or a <strong>non-diet pediatric registered dietitian</strong>.</p>
+
+  <p>Avoid anyone who talks about your child's weight as the problem. You are looking for specialists who focus on <em>the eating experience</em> — textures, sensations, anxiety, feeding mechanics — not on the calories or the number on the scale.</p>
+
+  <p>Getting help is not a failure. It is a sign that you are the kind of parent who takes this seriously. Most families who get specialized help for a struggling eater see significant improvement within 3–6 months.</p>
+
+  <div class="svg-divider" style="margin-top: 1.5rem;"><svg width="100" height="16"><use href="#leafy-divider"/></svg></div>
+  <p style="text-align: center; font-family: 'Playfair Display', serif; font-style: italic; color: var(--muted); font-size: 1rem;">
+    That's Part Four. Now — the long game.
+  </p>
+  <div class="page-num">31</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- PART V OPENER -->
+<div class="page part-opener">
+  <div class="part-num">V</div>
+  <div class="part-label">Part Five</div>
+  <div class="part-title">The Long <em>Game.</em></div>
+  <div class="part-sub">Two chapters to close with. What you are actually raising when you raise an intuitive eater. And a letter-writing exercise for you and for them.</div>
+  <svg width="120" height="16" style="color: var(--sage); margin-top: 2rem;"><use href="#leafy-divider"/></svg>
+</div>
+
+<!-- CHAPTER 17 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 17</div>
+      <h2 class="chapter-title">Raising kids who <em>don't hate their bodies.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#heart"/></svg>
+  </div>
+  <div class="chapter-sub">The highest goal of this book — quietly named, for the first time.</div>
+
+  <p>If I could hand you one outcome, it would be this: an adult-aged version of your child who does not hate their body. Who can look in the mirror and feel neutral or affectionate, most days, not contempt. Who buys clothes without tears. Who eats dinner with their own kids, eventually, without a running ledger in their head.</p>
+
+  <p>That person is not guaranteed by this book. But she is <em>more likely</em> if the practices in this book have been part of her upbringing.</p>
+
+  <p>Here, in a last distillation, are the six practices most associated with that outcome. These are the ones, if you have to pick, that move the needle most.</p>
+
+  <div class="sage-box">
+    <div class="sage-box-label">The six high-leverage practices</div>
+    <p><strong>1.</strong> Never comment on their body. Not positive, not negative. Not yours either, in front of them.</p>
+    <p><strong>2.</strong> Eat the same foods as your child, with visible pleasure, consistently.</p>
+    <p><strong>3.</strong> Follow the Division of Responsibility: you decide what, when, where. They decide if, how much.</p>
+    <p><strong>4.</strong> Protect family meals. 3+ per week. Screens off. No plate commentary.</p>
+    <p><strong>5.</strong> Be the counter-narrative when diet culture shows up at home.</p>
+    <p><strong>6.</strong> Get professional help early if something is off. Don't wait and see.</p>
+  </div>
+
+  <h3>The quiet compound effect</h3>
+
+  <p>None of these is visible on any given day. You won't be able to point at one Tuesday night and say: that's when I raised an intuitive eater. What you'll see, over years, is the accumulation. Your nine-year-old doesn't comment on their body. Your twelve-year-old pushes back when a friend starts a diet. Your sixteen-year-old tells you, offhandedly, that she's grateful her family doesn't "do that" — meaning diet culture. Your twenty-five-year-old sits down at a restaurant and orders what she wants.</p>
+
+  <p>All of it quiet. All of it yours.</p>
+
+  <div class="pullquote">
+    You will not know, most days, that you are raising a person who will not hate her body. You will find out later — at a restaurant, at a family gathering, in a text she sends you from college. Keep going.
+  </div>
+
+  <div class="page-num">32</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CHAPTER 18 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 18</div>
+      <h2 class="chapter-title">A letter to your child <em>(and to yourself).</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#sprig"/></svg>
+  </div>
+  <div class="chapter-sub">The last exercise. Twenty minutes. It matters.</div>
+
+  <p>Before you close this book, I want you to write two letters. One to your child, one to yourself. Both of them dated ten years from today.</p>
+
+  <h3>The letter to your child</h3>
+
+  <p>Write it as if they are an adult, reading it now. Tell them:</p>
+
+  <ul>
+    <li>What you tried to do at the dinner table, and why</li>
+    <li>What you got wrong, in hindsight</li>
+    <li>What you hope they got from your home</li>
+    <li>What you want them to know, if they ever struggle with food or body</li>
+    <li>What you want them to pass on to their own children, if they have them</li>
+  </ul>
+
+  <p>Date it ten years from today. Seal it. Give it to them on their 18th birthday, or 21st, or when it feels right. They may read it and tear up. They may not understand it for years. Either way, it will exist, and they will have it.</p>
+
+  <h3>The letter to yourself</h3>
+
+  <p>Write to the version of you who exists ten years from now. Tell her:</p>
+
+  <ul>
+    <li>What you were trying to untangle when you started this work</li>
+    <li>What you were afraid of</li>
+    <li>What you hope you figured out in the decade between</li>
+    <li>What you hope your relationship with food and your body looks like now</li>
+    <li>What you want her to remember, on the hard days</li>
+  </ul>
+
+  <p>Put it somewhere safe. Read it in ten years.</p>
+
+  <h3>A final thing</h3>
+
+  <p>You may not feel like you're doing this perfectly. You're not. No one is. You are a person who read a book about raising intuitive eaters because you care about your children and you wanted to do something differently than you grew up with. That alone is the work.</p>
+
+  <p>The rest — the scripts, the protocols, the quiet corrections at the dinner table — is just the practice of caring, repeated over years.</p>
+
+  <p>Keep practicing.</p>
+
+  <div class="page-num">33</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+<!-- CLOSING -->
+<div class="page">
+  <div class="closing">
+    <svg width="60" height="80" style="color: var(--sage); opacity: 0.5; margin-bottom: 1.5rem;"><use href="#sprig"/></svg>
+    <div class="section-eyebrow">A closing note</div>
+    <h2 class="section-title" style="margin-top: 0.5rem;">One generation is <em>all it takes.</em></h2>
+    <div class="svg-divider" style="margin: 1.5rem 0;"><svg width="16" height="16"><use href="#bloom"/></svg></div>
+
+    <p style="max-width: 5in; margin: 0 auto 1.2rem; font-size: 1.02rem;">Whatever food story you inherited — the rules, the shame, the rigid eating, the hidden kitchen rituals — it took exactly one generation to arrive in you. It takes exactly one generation to interrupt.</p>
+    <p style="max-width: 5in; margin: 0 auto 1.2rem; font-size: 1.02rem;">That generation is yours. That work is yours. Your children do not need your perfection. They need your practice. Your calm at the dinner table, your quiet corrections, your refusal to comment on their bodies, your willingness to eat alongside them without performing. All of it, accumulated over a childhood, becomes a person.</p>
+    <div class="pullquote" style="max-width: 5in; margin: 1.5rem auto; text-align: left;">
+      You are not the perfect mother. You are the one who broke the pattern. That is enough. That has always been enough.
+    </div>
+    <p style="font-size: 0.95rem; color: var(--walnut); font-style: italic;">Thank you for trusting me with your table.</p>
+    <div class="sig">With you,</div>
+    <div class="sig" style="margin: 0.2rem 0 0.4rem;">Phyllis</div>
+    <div class="sig-meta">Inman Institute · phyllisinman.com</div>
+  </div>
+
+  <div class="colophon">
+    <div class="colophon-mark">· · ·</div>
+    <div>© Inman Institute LLC · Raising Intuitive Eaters · Ebook 03 of the Purposefully Eating Series</div>
+    <div>For you and one friend. Please don't redistribute — instead, send them to phyllisinman.com.</div>
+    <div style="margin-top: 0.8rem;">The full trilogy: <strong style="color: var(--terracotta);">The Mindful Family Kitchen</strong> · <strong style="color: var(--terracotta);">Eating Through Emotions</strong> · <strong style="color: var(--terracotta);">Raising Intuitive Eaters</strong></div>
+    <div style="margin-top: 0.5rem;">Ready for the full transformation? <strong style="color: var(--terracotta);">Purposefully Eating</strong> — the 6-week flagship course — at <strong style="color: var(--terracotta);">phyllisinman.com</strong></div>
+  </div>
+
+  <div class="page-num">34</div><div class="page-brand">Raising Intuitive Eaters</div>
+</div>
+
+</body>
+</html>
