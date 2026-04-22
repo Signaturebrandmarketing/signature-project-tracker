@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram Graphics Library — Phyllis Inman</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F1E6; --cream-alt: #EDE3D2; --paper: #FDF9F0;
+    --sage: #8A9A5B; --sage-soft: #E3E8D3; --sage-dark: #6B7A42;
+    --terracotta: #C87F5A; --terracotta-soft: #F2DCCE; --terracotta-dark: #A85E3C;
+    --walnut: #6B4E32; --walnut-soft: #C3B097;
+    --charcoal: #2B2A28; --muted: #6F6B63;
+    --gold: #D4AF37; --border: #D9CEB8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream-alt); color: var(--charcoal);
+    padding: 2rem 1rem; line-height: 1.5;
+  }
+  .container { max-width: 1300px; margin: 0 auto; }
+
+  .back-link {
+    font-size: 0.75rem; color: var(--muted); text-decoration: none;
+    padding: 0.4rem 0.8rem; border: 1px solid var(--border); border-radius: 6px;
+    display: inline-block; margin-bottom: 1.5rem;
+    transition: all 0.15s;
+  }
+  .back-link:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 600;
+    letter-spacing: -0.01em; line-height: 1.1;
+    margin-bottom: 0.4rem;
+  }
+  .header h1 em { color: var(--terracotta); font-style: italic; }
+  .header .sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1.15rem;
+    color: var(--walnut); margin-bottom: 2rem;
+  }
+  .eyebrow {
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 0.5rem;
+  }
+
+  .usage {
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 2rem;
+    font-size: 0.88rem; color: var(--muted);
+  }
+  .usage strong { color: var(--charcoal); font-family: 'Playfair Display', serif; font-size: 0.95rem; }
+
+  h2.pillar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 600;
+    margin: 3rem 0 0.2rem; letter-spacing: -0.01em;
+    padding-bottom: 0.5rem; border-bottom: 1px dashed var(--border);
+  }
+  h2.pillar-title em { color: var(--terracotta); font-style: italic; }
+  h2.pillar-title small {
+    display: block; font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: 1rem; font-style: italic;
+    color: var(--muted); margin-top: 0.25rem; letter-spacing: normal;
+  }
+
+  /* GRID */
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem; margin-top: 1.5rem;
+  }
+  .card { background: transparent; }
+  .card-label {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 0.5rem; font-size: 0.72rem;
+  }
+  .card-label .num {
+    font-family: 'Playfair Display', serif; font-weight: 600;
+    color: var(--terracotta); font-size: 0.88rem;
+  }
+  .card-label .type {
+    color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.15em; font-weight: 600; font-size: 0.65rem;
+  }
+  .card-caption {
+    font-size: 0.78rem; color: var(--muted);
+    font-style: italic; margin-top: 0.5rem; line-height: 1.5;
+  }
+
+  /* SCALE WRAPPER — shows 1080x1350 at 0.28 scale = 300x378px */
+  .ig-wrapper {
+    width: 300px; height: 378px;
+    overflow: hidden; background: var(--paper);
+    border: 1px solid var(--border); border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(107,78,50,0.08);
+  }
+  /* For Reels (9:16) — 1080x1920 scaled to 270x480 */
+  .ig-wrapper.reel {
+    width: 270px; height: 480px;
+  }
+  .ig-content {
+    transform-origin: top left;
+    transform: scale(0.2778); /* 300/1080 */
+  }
+  .ig-wrapper.reel .ig-content { transform: scale(0.25); /* 270/1080 */ }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━
+     INSTAGRAM POST BASE (1080x1350)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .ig-post {
+    width: 1080px; height: 1350px;
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+    padding: 90px; font-family: 'Inter', sans-serif;
+  }
+  .ig-reel {
+    width: 1080px; height: 1920px;
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+    padding: 100px 80px; font-family: 'Inter', sans-serif;
+  }
+
+  /* Brand handle corner signature */
+  .brand-sig {
+    position: absolute; bottom: 60px; left: 90px; right: 90px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Inter', sans-serif; font-size: 24px;
+    color: var(--muted); letter-spacing: 0.1em;
+  }
+  .brand-sig-logo {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .brand-sig-logo svg { flex-shrink: 0; }
+  .brand-sig-logo .name {
+    font-family: 'Playfair Display', serif; font-size: 28px;
+    font-weight: 600; color: var(--charcoal); font-style: italic;
+  }
+  .brand-sig-handle {
+    font-family: 'Inter', sans-serif; font-size: 22px;
+    color: var(--muted); letter-spacing: 0.2em; text-transform: lowercase;
+  }
+
+  /* Eyebrow inside posts */
+  .ig-eyebrow {
+    font-size: 24px; font-weight: 700;
+    letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  /* Quote types */
+  .ig-quote {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: flex-start; justify-content: center;
+  }
+  .ig-quote-rule {
+    width: 100px; height: 4px; background: var(--terracotta);
+    margin-bottom: 40px;
+  }
+  .ig-quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 110px; font-weight: 500;
+    font-style: italic; line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--charcoal);
+  }
+  .ig-quote-text em { color: var(--terracotta); font-style: italic; }
+  .ig-quote-text strong { font-style: normal; font-weight: 700; }
+
+  .ig-quote-small {
+    font-family: 'Playfair Display', serif;
+    font-size: 76px; font-weight: 500;
+    font-style: italic; line-height: 1.15;
+    color: var(--charcoal);
+  }
+  .ig-quote-small em { color: var(--terracotta); }
+
+  .ig-attribution {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-style: italic; color: var(--walnut);
+    margin-top: 40px; letter-spacing: 0.02em;
+  }
+
+  /* Swap box */
+  .ig-swap {
+    background: var(--cream); border-left: 8px solid var(--walnut);
+    padding: 48px 60px; margin: 24px 0;
+    border-radius: 16px;
+  }
+  .ig-swap-label {
+    font-size: 24px; letter-spacing: 0.25em; text-transform: uppercase;
+    font-weight: 700; color: var(--muted); margin-bottom: 16px;
+  }
+  .ig-swap-old {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px; color: var(--muted); text-decoration: line-through;
+    margin-bottom: 24px; line-height: 1.15;
+  }
+  .ig-swap-new {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px; color: var(--sage-dark); font-weight: 500; font-style: italic;
+    line-height: 1.15;
+  }
+
+  /* Numbered list carousel slides */
+  .ig-numbered-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 88px; font-weight: 600;
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin-bottom: 60px;
+  }
+  .ig-numbered-heading em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .ig-number-huge {
+    font-family: 'Playfair Display', serif;
+    font-size: 320px; font-weight: 700;
+    line-height: 0.85; letter-spacing: -0.04em;
+    color: var(--terracotta); font-style: italic;
+    margin-bottom: 40px;
+  }
+  .ig-number-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px; font-weight: 600;
+    line-height: 1.1;
+  }
+  .ig-number-label em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .ig-number-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px; line-height: 1.5;
+    color: var(--charcoal); margin-top: 30px;
+    font-weight: 400;
+  }
+
+  /* Statement post (bold background) */
+  .ig-statement {
+    flex: 1; display: flex;
+    align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .ig-statement-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 96px; font-weight: 600;
+    line-height: 1.05; color: var(--cream);
+    letter-spacing: -0.02em;
+  }
+  .ig-statement-text em { font-style: italic; font-weight: 500; }
+
+  /* Carousel indicator */
+  .carousel-slides {
+    display: grid; grid-auto-flow: column;
+    gap: 0.75rem; overflow-x: auto; padding: 0.5rem 0 1rem;
+    scroll-snap-type: x mandatory;
+  }
+  .carousel-slides .card { scroll-snap-align: start; flex-shrink: 0; }
+
+  .slide-indicator {
+    position: absolute; bottom: 60px; right: 90px;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-style: italic;
+    color: var(--muted);
+  }
+
+  /* SVG ornament in-post */
+  .ig-bloom {
+    width: 80px; height: 80px; margin-bottom: 40px;
+  }
+
+  /* Cadence checklist (for list posts) */
+  .ig-list { margin-top: 20px; }
+  .ig-list li {
+    list-style: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 56px; font-weight: 500;
+    line-height: 1.2; padding: 28px 0 28px 100px;
+    position: relative;
+    border-bottom: 2px dashed var(--border);
+    color: var(--charcoal);
+  }
+  .ig-list li:last-child { border-bottom: none; }
+  .ig-list li::before {
+    content: ""; position: absolute;
+    left: 30px; top: 50%; transform: translateY(-50%);
+    width: 44px; height: 44px; background: var(--sage-soft);
+    border-radius: 50%;
+  }
+  .ig-list li::after {
+    content: ""; position: absolute;
+    left: 44px; top: 50%; transform: translateY(-50%);
+    width: 16px; height: 16px; background: var(--sage);
+    border-radius: 50%;
+  }
+
+  /* Backgrounds */
+  .bg-cream { background: var(--cream); }
+  .bg-paper { background: var(--paper); }
+  .bg-sage-soft { background: var(--sage-soft); }
+  .bg-terracotta-soft { background: var(--terracotta-soft); }
+  .bg-sage { background: var(--sage); color: var(--cream); }
+  .bg-terracotta { background: var(--terracotta); color: var(--cream); }
+  .bg-walnut { background: var(--walnut); color: var(--cream); }
+  .bg-gradient-soft {
+    background: linear-gradient(135deg, var(--sage-soft) 0%, var(--cream) 50%, var(--terracotta-soft) 100%);
+  }
+  .bg-gradient-warm {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--terracotta-soft) 100%);
+  }
+
+  /* Text color helpers */
+  .text-cream { color: var(--cream); }
+  .text-cream em { color: var(--terracotta-soft); }
+  .text-cream .ig-quote-rule { background: var(--terracotta-soft); }
+  .text-cream .ig-attribution { color: var(--cream-alt); }
+
+  @media (max-width: 900px) {
+    body { padding: 1rem 0.5rem; }
+    .grid { grid-template-columns: 1fr; gap: 1.2rem; }
+    .ig-wrapper { width: 320px; margin: 0 auto; }
+    .ig-wrapper.reel { width: 270px; margin: 0 auto; }
+    .ig-content { transform: scale(0.2963); /* 320/1080 */ }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <a href="./" class="back-link">← Dashboard</a>
+
+  <div class="header">
+    <div class="eyebrow">Instagram Graphics Library · 30 posts</div>
+    <h1>Month one — <em>ready to schedule.</em></h1>
+    <div class="sub">Designed at true Instagram dimensions (1080 × 1350 for posts · 1080 × 1920 for Reels). Screenshot or print the enlarged version to export.</div>
+  </div>
+
+  <div class="usage">
+    <strong>How to export:</strong> Each graphic is designed at production size but displayed scaled down. To produce a real post: on desktop, right-click a graphic and "Inspect" to find the .ig-post container, then take a screenshot at 100% scale. Alternatively, print the page and select only the graphic. Or drop the HTML into a headless Chrome/Puppeteer pipeline for batch PNG export. Every graphic below is production-ready — just screenshot and schedule.
+  </div>
+
+  <!-- ━━━━━━━━━━ PILLAR 1 ━━━━━━━━━━ -->
+  <h2 class="pillar-title">Pillar 1 · Mindset <small>Posts 1–8</small></h2>
+  <div class="grid">
+
+    <!-- POST 1 -->
+    <div class="card">
+      <div class="card-label"><span class="num">01</span><span class="type">Quote Card</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-cream">
+        <div class="ig-eyebrow">The Shift</div>
+        <div class="ig-quote">
+          <div class="ig-quote-rule"></div>
+          <div class="ig-quote-text">Food is not a test of your <em>character.</em> It is information your body is giving you.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-logo">
+            <svg width="52" height="52" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.2"/><circle cx="60" cy="60" r="42" fill="none" stroke="#6B4E32" stroke-width="1.2" opacity="0.5"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/><path d="M52 62 Q48 54 52 48" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M52 62 Q58 58 64 56" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q68 38 72 32" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q78 44 82 40" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg>
+          </div>
+          <div class="brand-sig-handle">@phyllisinman</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Hook quote · save to kitchen drawer · most-used quote from the ebook series.</div>
+    </div>
+
+    <!-- POST 2 - Carousel Slide 1 -->
+    <div class="card">
+      <div class="card-label"><span class="num">02</span><span class="type">Carousel · Cover</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-gradient-soft">
+        <div class="ig-eyebrow">Carousel · 1 of 5</div>
+        <div class="ig-quote">
+          <div class="ig-numbered-heading" style="margin-top: 80px;">3 shifts that end <em>food stress</em> for good.</div>
+        </div>
+        <div class="ig-attribution" style="margin-top: 0;">Swipe →</div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">01/05</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Cover of the 5-slide carousel. Swipe indicator at bottom-right.</div>
+    </div>
+
+    <!-- POST 2 - Slide 2 -->
+    <div class="card">
+      <div class="card-label"><span class="num">02</span><span class="type">Carousel · Slide 2</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-cream">
+        <div class="ig-eyebrow">Shift 01</div>
+        <div class="ig-quote">
+          <div class="ig-number-huge">1</div>
+          <div class="ig-number-label">From rules <em>to awareness.</em></div>
+          <div class="ig-number-desc">Rules are outside of you. Awareness is inside of you. One breaks under pressure. The other deepens.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">02/05</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Shift 1 — uses the big terracotta numeral system.</div>
+    </div>
+
+    <!-- POST 2 - Slide 3 -->
+    <div class="card">
+      <div class="card-label"><span class="num">02</span><span class="type">Carousel · Slide 3</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-cream">
+        <div class="ig-eyebrow">Shift 02</div>
+        <div class="ig-quote">
+          <div class="ig-number-huge">2</div>
+          <div class="ig-number-label">From restriction <em>to permission.</em></div>
+          <div class="ig-number-desc">Permission isn't a free-for-all. It's the end of a war.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">03/05</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Shift 2 — the end-of-war line.</div>
+    </div>
+
+    <!-- POST 2 - Slide 4 -->
+    <div class="card">
+      <div class="card-label"><span class="num">02</span><span class="type">Carousel · Slide 4</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-cream">
+        <div class="ig-eyebrow">Shift 03</div>
+        <div class="ig-quote">
+          <div class="ig-number-huge">3</div>
+          <div class="ig-number-label">From shame <em>to curiosity.</em></div>
+          <div class="ig-number-desc">Shame says something is wrong with me. Curiosity asks what's happening around me.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">04/05</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Shift 3 — the self-compassion reframe.</div>
+    </div>
+
+    <!-- POST 2 - Slide 5 (CTA) -->
+    <div class="card">
+      <div class="card-label"><span class="num">02</span><span class="type">Carousel · CTA</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-terracotta text-cream">
+        <div class="ig-eyebrow" style="color: var(--cream-alt);">Try This Week</div>
+        <div class="ig-statement">
+          <div class="ig-statement-text">Save this carousel. <em>Try one shift.</em> Tell me which.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle" style="color: var(--cream-alt);">@phyllisinman · phyllisinman.com</div>
+          <div class="brand-sig-handle" style="color: var(--cream-alt);">05/05</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">CTA slide · terracotta background · closes the carousel.</div>
+    </div>
+
+    <!-- POST 3 -->
+    <div class="card">
+      <div class="card-label"><span class="num">03</span><span class="type">Single Quote</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-paper">
+        <div class="ig-eyebrow">Reframe</div>
+        <div class="ig-quote">
+          <div class="ig-quote-text" style="font-size: 88px;">"I'll eat peacefully once I lose the weight." <em>No —</em> peace is the path <em>to</em> the goal. Not the reward.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-logo">
+            <svg width="44" height="44" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.2"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/><path d="M52 62 Q48 54 52 48" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M52 62 Q58 58 64 56" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q68 38 72 32" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg>
+          </div>
+          <div class="brand-sig-handle">@phyllisinman</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Peace-as-path reframe · sets up the flagship course promise.</div>
+    </div>
+
+    <!-- POST 4 - Reel cover -->
+    <div class="card">
+      <div class="card-label"><span class="num">04</span><span class="type">Reel Cover · 9:16</span></div>
+      <div class="ig-wrapper reel"><div class="ig-content"><div class="ig-reel bg-cream">
+        <div class="ig-eyebrow" style="margin-top: 100px;">Reel · Say this</div>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+          <div class="ig-quote-text" style="font-size: 140px; line-height: 1;">Say this, <em>not that.</em></div>
+          <div class="ig-attribution" style="font-size: 48px; margin-top: 60px;">3 diet-culture language swaps.</div>
+        </div>
+        <div class="brand-sig" style="bottom: 100px;">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle" style="font-size: 26px;">▶ 0:15</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Reel cover · 9:16 vertical · auto-generated from the Reel script.</div>
+    </div>
+
+    <!-- POST 5 - Gentle reminder -->
+    <div class="card">
+      <div class="card-label"><span class="num">05</span><span class="type">Single Quote</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-sage-soft">
+        <div class="ig-eyebrow">A gentle reminder</div>
+        <div class="ig-quote">
+          <svg class="ig-bloom" viewBox="0 0 20 20"><g fill="#C87F5A"><circle cx="10" cy="5" r="2"/><circle cx="15" cy="10" r="2"/><circle cx="10" cy="15" r="2"/><circle cx="5" cy="10" r="2"/><circle cx="10" cy="10" r="1.5" fill="#E3E8D3"/></g></svg>
+          <div class="ig-quote-text" style="font-size: 92px;">If you needed <em>three snacks</em> today, you weren't being "bad." You were being a human with a body that needed something.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">SAVE THIS</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Sage background · softens permission messaging.</div>
+    </div>
+
+    <!-- POST 6 - The cycle -->
+    <div class="card">
+      <div class="card-label"><span class="num">06</span><span class="type">Bold Statement</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-walnut text-cream">
+        <div class="ig-eyebrow" style="color: var(--cream-alt);">The Cycle</div>
+        <div class="ig-quote">
+          <div class="ig-quote-rule" style="background: var(--terracotta-soft);"></div>
+          <div class="ig-quote-text" style="font-size: 92px; color: var(--cream);">Restriction creates obsession. Obsession creates rebellion. Rebellion creates shame. <em>Shame sends you back to restriction.</em></div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle" style="color: var(--cream-alt);">@phyllisinman · phyllisinman.com</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Walnut background · the cycle named in one post.</div>
+    </div>
+
+    <!-- POST 7 - Carousel · question that changes everything -->
+    <div class="card">
+      <div class="card-label"><span class="num">07</span><span class="type">Carousel · Cover</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-gradient-warm">
+        <div class="ig-eyebrow">Carousel · 1 of 4</div>
+        <div class="ig-quote">
+          <div class="ig-numbered-heading" style="font-size: 100px;">One question that <em>changes everything.</em></div>
+        </div>
+        <div class="ig-attribution">Swipe →</div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">01/04</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Opens the "what is my body actually hungry for" carousel.</div>
+    </div>
+
+    <!-- POST 7 - Slide 2 -->
+    <div class="card">
+      <div class="card-label"><span class="num">07</span><span class="type">Carousel · The Question</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-cream">
+        <div class="ig-eyebrow">The Question</div>
+        <div class="ig-quote">
+          <div class="ig-quote-text" style="font-size: 100px;">Before your next bite, ask: <em>"What is my body actually hungry for?"</em></div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">02/04</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">The actual question · large, italic, terracotta.</div>
+    </div>
+
+    <!-- POST 8 - You are not behind -->
+    <div class="card">
+      <div class="card-label"><span class="num">08</span><span class="type">Anchor Quote</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-cream">
+        <div class="ig-eyebrow">If you're tired this week</div>
+        <div class="ig-quote">
+          <div class="ig-quote-rule"></div>
+          <div class="ig-quote-text" style="font-size: 130px; font-weight: 600;">You are not <em>behind.</em></div>
+          <div class="ig-attribution" style="font-size: 40px; margin-top: 60px;">Not broken. Not weak. Not late. <br>Just practicing something new.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-logo">
+            <svg width="44" height="44" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.2"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/><path d="M52 62 Q48 54 52 48" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M52 62 Q58 58 64 56" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><path d="M70 46 Q68 38 72 32" fill="none" stroke="#8A9A5B" stroke-width="1.8" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg>
+          </div>
+          <div class="brand-sig-handle">@phyllisinman</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Signature anchor post · the "you are not behind" line is her signature.</div>
+    </div>
+
+  </div>
+
+  <!-- ━━━━━━━━━━ PILLAR 2 ━━━━━━━━━━ -->
+  <h2 class="pillar-title">Pillar 2 · Food Education <small>Posts 9–14</small></h2>
+  <div class="grid">
+
+    <!-- POST 9 - Hunger scale carousel cover -->
+    <div class="card">
+      <div class="card-label"><span class="num">09</span><span class="type">Carousel · Cover</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-sage-soft">
+        <div class="ig-eyebrow">Carousel · 1 of 5</div>
+        <div class="ig-quote">
+          <div class="ig-numbered-heading">The hunger scale, <em>without the diet vibes.</em></div>
+          <div class="ig-number-desc" style="font-size: 42px;">Awareness, not control.</div>
+        </div>
+        <div class="ig-attribution">Swipe →</div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">01/05</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Cover of the 5-slide hunger scale carousel.</div>
+    </div>
+
+    <!-- POST 9 - Hunger scale slide -->
+    <div class="card">
+      <div class="card-label"><span class="num">09</span><span class="type">Carousel · Scale</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-cream">
+        <div class="ig-eyebrow">The 1-10 Scale</div>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+          <div style="display: grid; grid-template-columns: 80px 1fr; gap: 28px; font-family: 'Playfair Display', serif;">
+            <div style="font-size: 56px; color: var(--terracotta); font-weight: 600;">1-2</div><div style="font-size: 42px; align-self: center;">Painful hunger. Over this.</div>
+            <div style="font-size: 56px; color: var(--terracotta); font-weight: 600;">3-4</div><div style="font-size: 42px; align-self: center;">Hungry, calm. Good time to eat.</div>
+            <div style="font-size: 56px; color: var(--sage-dark); font-weight: 600;">5-6</div><div style="font-size: 42px; align-self: center;">Satisfied. Maybe done.</div>
+            <div style="font-size: 56px; color: var(--sage-dark); font-weight: 600;">7-8</div><div style="font-size: 42px; align-self: center;">Comfortably full. Natural stop.</div>
+          </div>
+          <div class="ig-attribution" style="margin-top: 60px;">Use as awareness. Not a rule.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">02/05</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">The actual scale · color-coded (terracotta/sage) for eat/stop ranges.</div>
+    </div>
+
+    <!-- POST 10 - No bad foods -->
+    <div class="card">
+      <div class="card-label"><span class="num">10</span><span class="type">Statement</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-cream">
+        <div class="ig-eyebrow">The Truth</div>
+        <div class="ig-quote">
+          <div class="ig-quote-text" style="font-size: 120px; line-height: 1;">There are no <em>"bad" foods.</em></div>
+          <div class="ig-attribution" style="font-size: 40px; margin-top: 50px;">Kale and cake are both food. They do different things. Both belong.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-logo"><svg width="44" height="44" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.2"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg></div>
+          <div class="brand-sig-handle">@phyllisinman</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Core brand message · clean cream background · large italic terracotta accent.</div>
+    </div>
+
+    <!-- POST 11 - What balanced means -->
+    <div class="card">
+      <div class="card-label"><span class="num">11</span><span class="type">Carousel · Cover</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-gradient-soft">
+        <div class="ig-eyebrow">Carousel · 1 of 4</div>
+        <div class="ig-quote">
+          <div class="ig-numbered-heading">What <em>"balanced"</em> actually means.</div>
+        </div>
+        <div class="ig-attribution">Swipe →</div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">01/04</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Reframes "balanced" away from macros to "satisfied when you leave the table."</div>
+    </div>
+
+    <!-- POST 12 - Satisfaction -->
+    <div class="card">
+      <div class="card-label"><span class="num">12</span><span class="type">Bold Type</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-terracotta-soft">
+        <div class="ig-eyebrow">Food Education</div>
+        <div class="ig-quote">
+          <div class="ig-quote-text" style="font-size: 108px; line-height: 1.02;">Fullness is <em>one</em> signal. <strong>Satisfaction</strong> is the other.</div>
+          <div class="ig-attribution" style="font-size: 42px; margin-top: 50px;">Most diets trained satisfaction out of you. Let's bring it back.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">SAVE THIS</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Satisfaction vs. fullness · core teaching from Module 3.</div>
+    </div>
+
+    <!-- POST 13 - Reel cover · pantry staples -->
+    <div class="card">
+      <div class="card-label"><span class="num">13</span><span class="type">Reel Cover · 9:16</span></div>
+      <div class="ig-wrapper reel"><div class="ig-content"><div class="ig-reel bg-sage-soft">
+        <div class="ig-eyebrow" style="margin-top: 120px;">Reel</div>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+          <div class="ig-quote-text" style="font-size: 140px; line-height: 1;">3 pantry staples <em>that save</em> weeknight dinners.</div>
+          <div class="ig-attribution" style="font-size: 48px; margin-top: 60px;">No meal prep. Real life.</div>
+        </div>
+        <div class="brand-sig" style="bottom: 100px;">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle" style="font-size: 26px;">▶ 0:20</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Reel cover · pantry staples explainer.</div>
+    </div>
+
+    <!-- POST 14 - Afternoon crash -->
+    <div class="card">
+      <div class="card-label"><span class="num">14</span><span class="type">Functional Insight</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-paper">
+        <div class="ig-eyebrow">Food Math</div>
+        <div class="ig-quote">
+          <div class="ig-quote-text" style="font-size: 84px;">If you're always hungry 2 hours after lunch, your lunch <em>didn't have enough</em> protein or fat.</div>
+          <div class="ig-attribution" style="font-size: 40px; margin-top: 50px;">Not a moral failing. Just math.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-logo"><svg width="44" height="44" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.2"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg></div>
+          <div class="brand-sig-handle">@phyllisinman</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Removes shame from hunger — positions it as information.</div>
+    </div>
+
+  </div>
+
+  <!-- ━━━━━━━━━━ PILLAR 3 ━━━━━━━━━━ -->
+  <h2 class="pillar-title">Pillar 3 · Family Habits <small>Posts 15–20</small></h2>
+  <div class="grid">
+
+    <!-- POST 15 - What your kids are learning -->
+    <div class="card">
+      <div class="card-label"><span class="num">15</span><span class="type">Carousel · Cover</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-gradient-warm">
+        <div class="ig-eyebrow">Carousel · 1 of 6</div>
+        <div class="ig-quote">
+          <div class="ig-numbered-heading" style="font-size: 96px;">What your kids are <em>really learning</em> at the table.</div>
+          <div class="ig-number-desc" style="font-size: 40px;">90% of it is silent.</div>
+        </div>
+        <div class="ig-attribution">Swipe →</div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">01/06</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">6-slide carousel · the silent modeling principle.</div>
+    </div>
+
+    <!-- POST 16 - Dinner is not a nutrition lecture -->
+    <div class="card">
+      <div class="card-label"><span class="num">16</span><span class="type">Statement</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-sage text-cream">
+        <div class="ig-eyebrow" style="color: var(--cream-alt);">Family Table</div>
+        <div class="ig-quote">
+          <div class="ig-quote-rule" style="background: var(--terracotta-soft);"></div>
+          <div class="ig-quote-text" style="font-size: 104px; color: var(--cream);">Dinner is <em>not</em> a nutrition lecture.</div>
+          <div class="ig-attribution" style="color: var(--cream-alt); font-size: 42px; margin-top: 50px;">If you only have energy for one thing at the family table — make it connection.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle" style="color: var(--cream-alt);">@phyllisinman · phyllisinman.com</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Sage background · releases pressure from family meals.</div>
+    </div>
+
+    <!-- POST 17 - Things to stop saying -->
+    <div class="card">
+      <div class="card-label"><span class="num">17</span><span class="type">List</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-cream">
+        <div class="ig-eyebrow">3 phrases to release</div>
+        <div class="ig-quote" style="align-items: stretch;">
+          <div class="ig-numbered-heading" style="font-size: 64px; margin-bottom: 30px;">3 sentences to stop saying <em>at the table.</em></div>
+          <ul class="ig-list">
+            <li>"Clean your plate."</li>
+            <li>"No dessert until…"</li>
+            <li>"Ugh, I look fat."</li>
+          </ul>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">SAVE THIS</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Sage-dotted list · 3 banned phrases.</div>
+    </div>
+
+    <!-- POST 18 - Picky eating calm approach -->
+    <div class="card">
+      <div class="card-label"><span class="num">18</span><span class="type">Carousel · Cover</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-gradient-soft">
+        <div class="ig-eyebrow">Carousel · 1 of 4</div>
+        <div class="ig-quote">
+          <div class="ig-numbered-heading">Picky eating — <em>the calm approach.</em></div>
+          <div class="ig-number-desc" style="font-size: 40px;">The power struggle is the problem. Not the palate.</div>
+        </div>
+        <div class="ig-attribution">Swipe →</div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">01/04</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Sets up the 30-day non-coercive reset.</div>
+    </div>
+
+    <!-- POST 19 - Mother who eats -->
+    <div class="card">
+      <div class="card-label"><span class="num">19</span><span class="type">Anchor</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-cream">
+        <div class="ig-eyebrow">For the mom reading this</div>
+        <div class="ig-quote">
+          <div class="ig-quote-rule"></div>
+          <div class="ig-quote-text" style="font-size: 96px;">A mother who eats without guilt <em>raises a child</em> who eats without shame.</div>
+          <div class="ig-attribution">Start there.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-logo"><svg width="44" height="44" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.2"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg></div>
+          <div class="brand-sig-handle">@phyllisinman</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">One of her signature quotes · central to Ebook 3.</div>
+    </div>
+
+    <!-- POST 20 - Reel cover "I'm fat" -->
+    <div class="card">
+      <div class="card-label"><span class="num">20</span><span class="type">Reel Cover · 9:16</span></div>
+      <div class="ig-wrapper reel"><div class="ig-content"><div class="ig-reel bg-terracotta-soft">
+        <div class="ig-eyebrow" style="margin-top: 120px;">Reel · Parenting</div>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+          <div class="ig-quote-text" style="font-size: 120px; line-height: 1;">What to say when your kid says <em>"I'm fat."</em></div>
+          <div class="ig-attribution" style="font-size: 48px; margin-top: 60px;">A 3-step response.</div>
+        </div>
+        <div class="brand-sig" style="bottom: 100px;">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle" style="font-size: 26px;">▶ 0:25</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">High-save Reel cover · pulls directly from Ebook 3.</div>
+    </div>
+
+  </div>
+
+  <!-- ━━━━━━━━━━ PILLAR 4 ━━━━━━━━━━ -->
+  <h2 class="pillar-title">Pillar 4 · Lifestyle <small>Posts 21–25</small></h2>
+  <div class="grid">
+
+    <!-- POST 21 - Sunday rhythm -->
+    <div class="card">
+      <div class="card-label"><span class="num">21</span><span class="type">Quiet Image</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-cream">
+        <div class="ig-eyebrow">Sunday</div>
+        <div class="ig-quote">
+          <div class="ig-quote-text" style="font-size: 96px;">A Sunday <em>rhythm</em>, not a Sunday <em>scaries.</em></div>
+          <div class="ig-attribution" style="margin-top: 50px;">A walk. A list. A short trip to the store. 45 min, max.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-logo"><svg width="44" height="44" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.2"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg></div>
+          <div class="brand-sig-handle">@phyllisinman</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Soft lifestyle content · releases Sunday-meal-prep pressure.</div>
+    </div>
+
+    <!-- POST 22 - Kitchen aesthetic -->
+    <div class="card">
+      <div class="card-label"><span class="num">22</span><span class="type">Texture</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-terracotta-soft">
+        <div class="ig-eyebrow">The kitchen</div>
+        <div class="ig-quote">
+          <div class="ig-quote-text" style="font-size: 100px;">The cream ceramic. The linen. <em>The plate you actually like.</em></div>
+          <div class="ig-attribution" style="margin-top: 50px;">Your kitchen is a place you <em>live</em> in — not a performance space.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">SAVE THIS</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Aesthetic post · ties to POD merch + kitchen rituals.</div>
+    </div>
+
+    <!-- POST 23 - Sunday 45min carousel -->
+    <div class="card">
+      <div class="card-label"><span class="num">23</span><span class="type">Carousel · Cover</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-sage-soft">
+        <div class="ig-eyebrow">Carousel · 1 of 4</div>
+        <div class="ig-quote">
+          <div class="ig-numbered-heading">A peaceful Sunday <em>in 45 minutes.</em></div>
+          <div class="ig-number-desc" style="font-size: 40px;">The alternative to "I lost my whole day."</div>
+        </div>
+        <div class="ig-attribution">Swipe →</div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">01/04</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Sunday rhythm carousel cover.</div>
+    </div>
+
+    <!-- POST 24 - Small joys -->
+    <div class="card">
+      <div class="card-label"><span class="num">24</span><span class="type">Permission</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-paper">
+        <div class="ig-eyebrow">Permission Slip</div>
+        <div class="ig-quote">
+          <div class="ig-quote-text" style="font-size: 104px;">Small joys are <em>not</em> optional. They are <em>the point.</em></div>
+          <div class="ig-attribution" style="margin-top: 50px;">A good mug. A bowl you like. Music while you cook.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-logo"><svg width="44" height="44" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.2"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg></div>
+          <div class="brand-sig-handle">@phyllisinman</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Permission-for-beauty post · lifestyle meets philosophy.</div>
+    </div>
+
+    <!-- POST 25 - Reel cover morning -->
+    <div class="card">
+      <div class="card-label"><span class="num">25</span><span class="type">Reel Cover · 9:16</span></div>
+      <div class="ig-wrapper reel"><div class="ig-content"><div class="ig-reel bg-gradient-soft">
+        <div class="ig-eyebrow" style="margin-top: 120px;">Reel · 60 sec</div>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+          <div class="ig-quote-text" style="font-size: 140px; line-height: 0.95;">A peaceful <em>morning.</em></div>
+          <div class="ig-attribution" style="font-size: 48px; margin-top: 60px;">Start at your pace. Not the world's.</div>
+        </div>
+        <div class="brand-sig" style="bottom: 100px;">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle" style="font-size: 26px;">▶ 0:30</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Morning-ritual Reel cover · soft gradient.</div>
+    </div>
+
+  </div>
+
+  <!-- ━━━━━━━━━━ PILLAR 5 ━━━━━━━━━━ -->
+  <h2 class="pillar-title">Pillar 5 · Whole-Person Wellness <small>Posts 26–30</small></h2>
+  <div class="grid">
+
+    <!-- POST 26 - Rest is wellness -->
+    <div class="card">
+      <div class="card-label"><span class="num">26</span><span class="type">Redefine</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-cream">
+        <div class="ig-eyebrow">Wellness — redefined</div>
+        <div class="ig-quote" style="align-items: stretch;">
+          <div style="display: grid; gap: 20px; font-family: 'Playfair Display', serif; font-size: 60px; color: var(--charcoal); line-height: 1.2;">
+            <div>Rest is <em style="color: var(--terracotta); font-style: italic;">wellness.</em></div>
+            <div>Sleep is <em style="color: var(--terracotta); font-style: italic;">wellness.</em></div>
+            <div>Touch is <em style="color: var(--terracotta); font-style: italic;">wellness.</em></div>
+            <div>Friendship is <em style="color: var(--terracotta); font-style: italic;">wellness.</em></div>
+            <div>Boredom is <em style="color: var(--terracotta); font-style: italic;">wellness.</em></div>
+          </div>
+          <div class="ig-attribution" style="margin-top: 50px;">"Wellness" was never supposed to be an industry. It was supposed to be a full life.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">SAVE THIS</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">5-line wellness reframe · highly saveable.</div>
+    </div>
+
+    <!-- POST 27 - 5 non-scale markers -->
+    <div class="card">
+      <div class="card-label"><span class="num">27</span><span class="type">Carousel · List</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-gradient-soft">
+        <div class="ig-eyebrow">Carousel · 1 of 4</div>
+        <div class="ig-quote">
+          <div class="ig-numbered-heading">5 non-scale markers <em>of progress.</em></div>
+          <div class="ig-number-desc" style="font-size: 40px;">Things worth tracking that don't need a scale.</div>
+        </div>
+        <div class="ig-attribution">Swipe →</div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">01/04</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">5-marker carousel · pulls from the flagship course.</div>
+    </div>
+
+    <!-- POST 28 - Not a before/after -->
+    <div class="card">
+      <div class="card-label"><span class="num">28</span><span class="type">Anchor</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-cream">
+        <div class="ig-eyebrow">Reframe</div>
+        <div class="ig-quote">
+          <div class="ig-quote-rule"></div>
+          <div class="ig-quote-text" style="font-size: 108px;">Your body is <em>not</em> a before-and-after.</div>
+          <div class="ig-attribution" style="margin-top: 50px;">Feed it. Move it. Rest it. Thank it.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-logo"><svg width="44" height="44" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#6B4E32" stroke-width="2.2"/><path d="M42 78 Q52 62 70 46 Q76 40 82 38" fill="none" stroke="#8A9A5B" stroke-width="2" stroke-linecap="round"/><circle cx="82" cy="38" r="2.5" fill="#C87F5A"/></svg></div>
+          <div class="brand-sig-handle">@phyllisinman</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Anti-diet culture statement · saveable.</div>
+    </div>
+
+    <!-- POST 29 - Permission to not optimize -->
+    <div class="card">
+      <div class="card-label"><span class="num">29</span><span class="type">Permission Slip</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-sage-soft">
+        <div class="ig-eyebrow">Permission Slip</div>
+        <div class="ig-quote">
+          <div class="ig-quote-text" style="font-size: 88px;">Permission to <em>not optimize</em> everything.</div>
+          <div class="ig-attribution" style="font-size: 40px; margin-top: 50px;">Your water intake does not need a spreadsheet. Your walk does not need a split pace.</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle">@phyllisinman</div>
+          <div class="brand-sig-handle">SAVE THIS</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Gently mocks hyper-optimized wellness culture.</div>
+    </div>
+
+    <!-- POST 30 - Month one anchor -->
+    <div class="card">
+      <div class="card-label"><span class="num">30</span><span class="type">Anchor · CTA</span></div>
+      <div class="ig-wrapper"><div class="ig-content"><div class="ig-post bg-walnut text-cream">
+        <div class="ig-eyebrow" style="color: var(--cream-alt);">One Month In</div>
+        <div class="ig-quote">
+          <div class="ig-quote-rule" style="background: var(--terracotta-soft);"></div>
+          <div class="ig-quote-text" style="font-size: 88px; color: var(--cream);">Thank you for <em>being here.</em> For reading. For trying. For catching yourself mid-spiral and choosing a different sentence.</div>
+          <div class="ig-attribution" style="color: var(--cream-alt); margin-top: 40px;">My free starter guide, <em>The Peaceful Plate</em> — phyllisinman.com</div>
+        </div>
+        <div class="brand-sig">
+          <div class="brand-sig-handle" style="color: var(--cream-alt);">@phyllisinman · phyllisinman.com</div>
+          <div class="brand-sig-handle" style="color: var(--cream-alt);">— Phyllis</div>
+        </div>
+      </div></div></div>
+      <div class="card-caption">Closing anchor post · walnut background · CTA to lead magnet.</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.82rem; color: var(--muted); font-style: italic;">
+    <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--terracotta); margin-bottom: 0.5rem;">· · ·</div>
+    <div>30 Instagram posts · Month 1 · @phyllisinman</div>
+    <div style="margin-top: 0.4rem;">All graphics designed at production size (1080×1350 posts / 1080×1920 Reels) · brand system v1 · 2026-04-22</div>
+  </div>
+</div>
+</body>
+</html>
