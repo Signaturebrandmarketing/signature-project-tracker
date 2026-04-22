@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mindful Family Kitchen — Phyllis Inman</title>
+<meta name="description" content="Peaceful meals for real families — no power struggles, no perfectionism, no separate chef required. An ebook by Phyllis Inman of Inman Institute.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F1E6; --cream-alt: #EDE3D2; --paper: #FDF9F0;
+    --sage: #8A9A5B; --sage-soft: #E3E8D3;
+    --terracotta: #C87F5A; --terracotta-soft: #F2DCCE;
+    --walnut: #6B4E32; --charcoal: #2B2A28;
+    --muted: #6F6B63; --gold: #D4AF37; --border: #D9CEB8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream-alt); color: var(--charcoal);
+    line-height: 1.65; padding: 2rem 1rem;
+  }
+  .action-bar { position: fixed; top: 1rem; right: 1rem; z-index: 100; display: flex; gap: 0.5rem; }
+  .btn {
+    background: var(--paper); color: var(--charcoal); border: 1px solid var(--border);
+    padding: 0.55rem 1rem; border-radius: 8px; font-family: 'Inter', sans-serif;
+    font-size: 0.82rem; font-weight: 500; cursor: pointer; text-decoration: none;
+    transition: all 0.15s; box-shadow: 0 2px 8px rgba(107, 78, 50, 0.08);
+  }
+  .btn:hover { border-color: var(--terracotta); color: var(--terracotta); }
+  .btn-primary { background: var(--sage); color: white; border-color: var(--sage); }
+  .btn-primary:hover { background: var(--walnut); border-color: var(--walnut); color: white; }
+  .back-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; }
+
+  .page {
+    width: 100%; max-width: 8.5in; min-height: 11in;
+    margin: 0 auto 1.5rem; background: var(--paper);
+    padding: 0.9in 0.95in;
+    box-shadow: 0 6px 40px rgba(107, 78, 50, 0.1);
+    position: relative; page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+  .page-num {
+    position: absolute; bottom: 0.45in; left: 0; right: 0; text-align: center;
+    font-size: 0.7rem; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .page-brand {
+    position: absolute; bottom: 0.45in; right: 0.95in;
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 0.72rem; color: var(--muted);
+  }
+
+  /* COVER */
+  .cover {
+    padding: 0; overflow: hidden;
+    display: flex; flex-direction: column;
+    background: linear-gradient(180deg, var(--cream-alt) 0%, var(--paper) 65%);
+  }
+  .cover-art {
+    width: 100%; height: 5.5in;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--sage-soft) 0%, var(--cream) 55%, var(--terracotta-soft) 100%);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .cover-art::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      radial-gradient(circle at 20% 80%, rgba(138, 154, 91, 0.25) 0%, transparent 30%),
+      radial-gradient(circle at 80% 20%, rgba(200, 127, 90, 0.2) 0%, transparent 35%);
+  }
+  .cover-illustration { position: relative; z-index: 1; }
+  .cover-meta {
+    flex: 1; padding: 0.7in 0.95in 0.8in;
+    text-align: center;
+  }
+  .cover-tag {
+    font-size: 0.72rem; color: var(--sage);
+    letter-spacing: 0.42em; text-transform: uppercase;
+    font-weight: 600; margin-bottom: 0.8rem;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', serif; font-size: 3.2rem;
+    font-weight: 700; color: var(--charcoal);
+    letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.6rem;
+  }
+  .cover-title em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .cover-rule { width: 48px; height: 2px; background: var(--terracotta); margin: 1rem auto 1.2rem; }
+  .cover-sub {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.25rem;
+    font-weight: 400; font-style: italic; color: var(--walnut);
+    max-width: 5in; margin: 0 auto 1.5rem; line-height: 1.4;
+  }
+  .cover-author {
+    font-family: 'Playfair Display', serif; font-size: 1.1rem;
+    font-weight: 500; color: var(--charcoal); letter-spacing: 0.04em;
+  }
+  .cover-institute {
+    font-size: 0.7rem; color: var(--muted);
+    letter-spacing: 0.3em; text-transform: uppercase; margin-top: 0.35rem;
+  }
+
+  /* TYPOGRAPHY */
+  h2.section-title {
+    font-family: 'Playfair Display', serif; font-size: 2.2rem;
+    font-weight: 600; line-height: 1.1; letter-spacing: -0.01em;
+    color: var(--charcoal); margin-bottom: 0.4rem;
+  }
+  h2.section-title em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .section-eyebrow {
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 0.8rem;
+  }
+  .section-lead {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+    font-style: italic; color: var(--walnut); line-height: 1.4;
+    margin-bottom: 1.5rem; padding-bottom: 1.2rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.35rem;
+    font-weight: 600; letter-spacing: -0.005em; color: var(--charcoal);
+    margin: 1.75rem 0 0.6rem;
+  }
+  h3 em { color: var(--terracotta); font-style: italic; }
+  h4 {
+    font-family: 'Playfair Display', serif; font-size: 1.05rem;
+    font-weight: 600; color: var(--charcoal);
+    margin: 1.2rem 0 0.5rem;
+  }
+  p { font-size: 0.95rem; color: var(--charcoal); margin-bottom: 0.9rem; }
+  p.drop-cap::first-letter {
+    font-family: 'Playfair Display', serif; font-size: 3.6rem;
+    font-weight: 600; color: var(--terracotta); float: left;
+    line-height: 0.85; margin: 0.1rem 0.45rem 0 0;
+  }
+  ul, ol { padding-left: 1.2rem; margin-bottom: 0.9rem; }
+  li { font-size: 0.93rem; color: var(--charcoal); margin-bottom: 0.35rem; }
+
+  /* PART OPENER (full bleed, elegant) */
+  .part-opener {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 2.5in 1in;
+    background: linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
+    border-top: 3px solid var(--terracotta);
+    border-bottom: 3px solid var(--sage);
+    min-height: 11in;
+  }
+  .part-num {
+    font-family: 'Playfair Display', serif; font-size: 5rem;
+    font-weight: 700; color: var(--terracotta);
+    line-height: 1; letter-spacing: -0.02em; margin-bottom: 0.3rem;
+  }
+  .part-label {
+    font-size: 0.78rem; color: var(--sage);
+    letter-spacing: 0.5em; text-transform: uppercase;
+    font-weight: 700; margin-bottom: 1.5rem;
+  }
+  .part-title {
+    font-family: 'Playfair Display', serif; font-size: 2.5rem;
+    font-weight: 600; color: var(--charcoal);
+    letter-spacing: -0.01em; line-height: 1.1;
+    max-width: 6in; margin-bottom: 1.2rem;
+  }
+  .part-title em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .part-sub {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+    font-style: italic; color: var(--walnut);
+    max-width: 5.5in; line-height: 1.4;
+  }
+
+  /* COMPONENTS */
+  .pullquote {
+    margin: 1.3rem 0; padding: 1.1rem 1.4rem;
+    border-left: 3px solid var(--sage); background: var(--sage-soft);
+    font-family: 'Playfair Display', serif; font-size: 1.15rem;
+    font-style: italic; font-weight: 500; line-height: 1.35;
+    color: var(--charcoal); position: relative;
+  }
+  .pullquote::before {
+    content: "\201C"; position: absolute; top: -0.3rem; left: 0.7rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; color: var(--sage); opacity: 0.3; line-height: 1;
+  }
+  .ornament {
+    text-align: center; margin: 1.5rem 0;
+    font-size: 1.1rem; letter-spacing: 1rem; color: var(--terracotta);
+  }
+  .svg-divider {
+    display: flex; align-items: center; gap: 1rem;
+    margin: 1.3rem 0; justify-content: center;
+  }
+  .svg-divider::before, .svg-divider::after {
+    content: ""; flex: 1; max-width: 80px;
+    height: 1px; background: var(--border);
+  }
+  .svg-divider svg { color: var(--sage); flex-shrink: 0; }
+
+  .callout {
+    background: var(--terracotta-soft); border-radius: 8px;
+    padding: 1rem 1.2rem; margin: 1rem 0; position: relative;
+  }
+  .callout-label {
+    font-size: 0.66rem; font-weight: 700;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 0.4rem;
+  }
+  .callout p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .sage-box {
+    background: var(--sage-soft); border-radius: 8px;
+    padding: 1rem 1.2rem; margin: 1rem 0;
+  }
+  .sage-box-label {
+    font-size: 0.66rem; font-weight: 700;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 0.4rem;
+  }
+  .sage-box p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .sage-box p:last-child { margin-bottom: 0; }
+
+  .swap-box {
+    background: var(--cream); padding: 0.75rem 1rem;
+    border-radius: 6px; margin: 0.75rem 0;
+    font-size: 0.9rem; border-left: 3px solid var(--walnut);
+  }
+  .swap-box .old { color: var(--muted); text-decoration: line-through; margin-bottom: 0.2rem; }
+  .swap-box .new { color: var(--sage); font-weight: 500; }
+  .swap-box .label {
+    font-size: 0.64rem; text-transform: uppercase;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  /* TOC */
+  .toc-part {
+    margin-bottom: 1.25rem; padding-bottom: 0.8rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  .toc-part:last-child { border-bottom: none; }
+  .toc-part-title {
+    font-family: 'Playfair Display', serif; font-size: 0.85rem;
+    font-weight: 700; color: var(--terracotta);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 0.55rem;
+  }
+  .toc-item {
+    display: grid; grid-template-columns: 28px 1fr auto;
+    gap: 0.7rem; align-items: baseline;
+    padding: 0.45rem 0; font-size: 0.92rem;
+  }
+  .toc-num { font-family: 'Playfair Display', serif; font-weight: 600; color: var(--sage); font-size: 0.95rem; }
+  .toc-title { font-family: 'Playfair Display', serif; font-size: 0.98rem; color: var(--charcoal); }
+  .toc-page { color: var(--muted); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+
+  /* CHAPTER HEADER */
+  .chapter-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 1rem; margin-bottom: 0.4rem;
+  }
+  .chapter-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem; color: var(--sage);
+    letter-spacing: 0.35em; text-transform: uppercase;
+    font-weight: 700; margin-bottom: 0.4rem;
+  }
+  .chapter-title {
+    font-family: 'Playfair Display', serif; font-size: 1.9rem;
+    font-weight: 600; line-height: 1.1; letter-spacing: -0.01em;
+    color: var(--charcoal); margin-bottom: 0.5rem;
+  }
+  .chapter-title em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .chapter-sub {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+    font-style: italic; color: var(--walnut);
+    margin-bottom: 1.3rem; padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  .chapter-icon {
+    width: 55px; height: 55px; flex-shrink: 0;
+    opacity: 0.4; color: var(--sage);
+  }
+
+  /* MEAL CARDS GRID */
+  .meals-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.8rem; margin: 1rem 0;
+  }
+  .meal-card {
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.9rem 1rem;
+    break-inside: avoid;
+  }
+  .meal-card-num {
+    display: inline-block;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 0.25rem;
+  }
+  .meal-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 1rem;
+    font-weight: 600; color: var(--charcoal);
+    margin: 0.2rem 0 0.4rem; line-height: 1.2;
+  }
+  .meal-card .ing {
+    font-size: 0.78rem; color: var(--muted);
+    line-height: 1.5; margin-bottom: 0.4rem;
+  }
+  .meal-card .note {
+    font-size: 0.75rem; color: var(--walnut);
+    font-style: italic; line-height: 1.4;
+    padding-top: 0.35rem; border-top: 1px dotted var(--border);
+  }
+
+  /* HERO RECIPE */
+  .hero-recipe {
+    background: var(--cream); border-radius: 10px;
+    padding: 1.4rem 1.6rem; margin: 1.2rem 0;
+    border: 1px solid var(--border); position: relative;
+  }
+  .hero-recipe-label {
+    display: inline-block;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: white; background: var(--terracotta);
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 0.7rem;
+  }
+  .hero-recipe h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.55rem;
+    font-weight: 600; margin: 0 0 0.4rem; line-height: 1.15;
+  }
+  .hero-recipe .caption {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    color: var(--walnut); font-size: 1.05rem;
+    margin-bottom: 1rem; padding-bottom: 0.8rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  .hero-recipe-cols {
+    display: grid; grid-template-columns: 1fr 1.6fr;
+    gap: 1.2rem; margin-bottom: 0.9rem;
+  }
+  .hero-recipe h5 {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 0.5rem;
+  }
+  .hero-recipe ul { list-style: none; padding: 0; }
+  .hero-recipe ul li {
+    font-size: 0.84rem; padding: 0.2rem 0;
+    border-bottom: 1px dotted var(--cream-alt);
+  }
+  .hero-recipe ul li:last-child { border-bottom: none; }
+  .hero-recipe ol { list-style: none; padding: 0; counter-reset: step; }
+  .hero-recipe ol li {
+    counter-increment: step; padding: 0.4rem 0 0.4rem 1.8rem;
+    position: relative; font-size: 0.88rem;
+  }
+  .hero-recipe ol li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 0.35rem;
+    width: 22px; height: 22px;
+    background: var(--terracotta-soft); color: var(--terracotta);
+    border-radius: 50%; display: grid; place-items: center;
+    font-size: 0.7rem; font-weight: 700;
+    font-family: 'Playfair Display', serif;
+  }
+  .hero-recipe .note-block {
+    background: var(--sage-soft); padding: 0.7rem 0.9rem;
+    border-radius: 6px; font-size: 0.82rem; color: var(--charcoal);
+    margin-top: 0.7rem;
+  }
+
+  /* TEMPLATE TABLE (14-day plan) */
+  .template-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.82rem; margin: 1rem 0;
+  }
+  .template-table th, .template-table td {
+    border: 1px solid var(--border); padding: 0.45rem 0.5rem;
+    text-align: left; vertical-align: top;
+  }
+  .template-table th {
+    background: var(--sage-soft); color: var(--sage);
+    font-weight: 700; font-size: 0.7rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+  }
+  .template-table td strong { color: var(--terracotta); }
+
+  /* CLOSING */
+  .closing { text-align: center; padding: 2rem 0; }
+  .closing .sig {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1.5rem; color: var(--terracotta); margin: 1.2rem 0 0.3rem;
+  }
+  .closing .sig-meta {
+    font-size: 0.76rem; color: var(--muted);
+    letter-spacing: 0.25em; text-transform: uppercase;
+  }
+  .colophon {
+    text-align: center; padding-top: 2.5in;
+    font-size: 0.74rem; color: var(--muted); line-height: 1.6;
+  }
+  .colophon-mark {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--terracotta); margin-bottom: 0.8rem;
+  }
+
+  @media print {
+    @page { size: letter; margin: 0; }
+    body { background: white; padding: 0; }
+    .action-bar, .back-link { display: none !important; }
+    .page {
+      margin: 0; box-shadow: none;
+      min-height: 11in; height: 11in; overflow: hidden;
+      page-break-after: always;
+    }
+    .page:last-child { page-break-after: auto; }
+    .pullquote, .callout, .sage-box, .meal-card, .hero-recipe, .swap-box { break-inside: avoid; }
+  }
+
+  @media (max-width: 780px) {
+    body { padding: 0.5rem; }
+    .page { padding: 1.8rem 1.3rem; min-height: auto; }
+    .cover-art { height: 3.5in; }
+    .cover-title { font-size: 2.3rem; }
+    .cover-sub { font-size: 1.05rem; }
+    .part-opener { padding: 2rem 1rem; min-height: auto; }
+    .part-num { font-size: 3.5rem; }
+    .part-title { font-size: 1.8rem; }
+    .meals-grid { grid-template-columns: 1fr; }
+    .hero-recipe-cols { grid-template-columns: 1fr; }
+    .action-bar { top: auto; bottom: 1rem; right: 1rem; }
+    .back-link { top: auto; bottom: 1rem; left: 1rem; }
+    .chapter-title { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SVG SYMBOLS -->
+<svg width="0" height="0" style="position:absolute;">
+  <defs>
+    <symbol id="sprig" viewBox="0 0 60 80"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M30 75 L30 8"/><path d="M30 20 Q18 16 14 8"/><path d="M30 30 Q42 26 46 18"/><path d="M30 40 Q18 36 14 28"/><path d="M30 50 Q42 46 46 38"/><path d="M30 60 Q18 56 14 48"/><path d="M30 70 Q42 66 46 58"/></g></symbol>
+    <symbol id="leafy-divider" viewBox="0 0 120 16"><g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M60 8 L45 8 M60 8 L75 8"/><path d="M45 8 Q38 4 32 8 Q26 12 20 8"/><path d="M75 8 Q82 4 88 8 Q94 12 100 8"/><circle cx="60" cy="8" r="1.5" fill="currentColor"/></g></symbol>
+    <symbol id="plate" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="30" cy="30" r="22"/><circle cx="30" cy="30" r="15"/><path d="M14 14 L14 22 M12 14 L12 22 M10 14 L10 22 M12 22 L12 34" stroke-linecap="round"/></g></symbol>
+    <symbol id="mug" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M18 30 L18 48 Q18 52 22 52 L38 52 Q42 52 42 48 L42 30 Z"/><path d="M42 34 Q48 34 48 40 Q48 46 42 46"/><path d="M22 20 Q24 16 22 12"/><path d="M28 22 Q30 18 28 14"/><path d="M34 20 Q36 16 34 12"/></g></symbol>
+    <symbol id="skillet" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><ellipse cx="26" cy="36" rx="18" ry="5"/><path d="M8 36 L8 30 Q8 24 14 24 L38 24 Q44 24 44 30 L44 36"/><path d="M44 32 L56 30" /></g></symbol>
+    <symbol id="bowl" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M10 26 L50 26 Q48 44 30 46 Q12 44 10 26 Z"/><ellipse cx="30" cy="26" rx="20" ry="3"/></g></symbol>
+    <symbol id="leaf" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M15 48 Q15 18 45 10 Q48 40 15 48 Z"/><path d="M15 48 Q30 30 45 15"/></g></symbol>
+    <symbol id="egg" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2"><ellipse cx="30" cy="32" rx="14" ry="18"/></g></symbol>
+    <symbol id="carrot" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M22 18 L38 18 L30 52 Z"/><path d="M30 18 L30 10 M26 18 L24 8 M34 18 L36 8"/><path d="M25 28 L35 28 M26 36 L34 36"/></g></symbol>
+    <symbol id="clock" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="30" cy="30" r="22"/><path d="M30 18 L30 30 L38 34"/></g></symbol>
+    <symbol id="bloom" viewBox="0 0 20 20"><g fill="currentColor"><circle cx="10" cy="5" r="2"/><circle cx="15" cy="10" r="2"/><circle cx="10" cy="15" r="2"/><circle cx="5" cy="10" r="2"/><circle cx="10" cy="10" r="1.5" fill="#F7F1E6"/></g></symbol>
+    <symbol id="family-table" viewBox="0 0 120 80"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="25" y="45" width="70" height="4"/><path d="M30 49 L30 65 M90 49 L90 65"/><circle cx="42" cy="34" r="6"/><circle cx="60" cy="32" r="7"/><circle cx="78" cy="34" r="6"/><path d="M35 42 L35 45 M47 42 L47 45 M53 41 L53 45 M67 41 L67 45 M71 42 L71 45 M83 42 L83 45"/><circle cx="60" cy="45" r="3" fill="currentColor" opacity="0.2"/></g></symbol>
+  </defs>
+</svg>
+
+<a href="./" class="btn back-link">← Dashboard</a>
+<div class="action-bar">
+  <a href="the-mindful-family-kitchen.pdf" class="btn" download>Download PDF</a>
+  <button class="btn btn-primary" onclick="window.print()">Print · Save as PDF</button>
+</div>
+
+<!-- ━━━━━━━━━ COVER ━━━━━━━━━ -->
+<div class="page cover">
+  <div class="cover-art">
+    <div class="cover-illustration">
+      <svg width="240" height="160" style="color: var(--walnut);"><use href="#family-table"/></svg>
+    </div>
+  </div>
+  <div class="cover-meta">
+    <div class="cover-tag">The Purposefully Eating Ebook Series · 01</div>
+    <div class="cover-title">The Mindful Family <em>Kitchen</em></div>
+    <div class="cover-rule"></div>
+    <div class="cover-sub">Peaceful meals for real families — no power struggles, no perfectionism, no separate chef required.</div>
+    <svg width="28" height="28" style="color: var(--terracotta); margin: 0.5rem 0;"><use href="#bloom"/></svg>
+    <div class="cover-author">Phyllis Inman</div>
+    <div class="cover-institute">Inman Institute · phyllisinman.com</div>
+  </div>
+</div>
+
+<!-- ━━━━━━━━━ A NOTE FROM PHYLLIS ━━━━━━━━━ -->
+<div class="page">
+  <div class="section-eyebrow">A note from Phyllis</div>
+  <h2 class="section-title">This is not a <em>cookbook.</em></h2>
+
+  <p class="drop-cap" style="margin-top: 1rem;">It contains 30 meal ideas — some of my favorites, all of them family-tested — but that is not the point.</p>
+
+  <p>The point is this: most moms I work with don't actually have a food problem at the family table. They have a <em>pressure</em> problem. Pressure to plate Pinterest dinners. Pressure to feed kids who will eat them. Pressure to get enough vegetables in, avoid the wrong things, model the right things, and somehow also enjoy the meal themselves.</p>
+
+  <p>That kind of pressure is exhausting. It's also invisible. And it's one of the quietest ways our generation inherits diet culture from the last — not by being told what to eat, but by watching our own mothers perform the meal instead of eating it.</p>
+
+  <p>This book is a different invitation.</p>
+
+  <div class="pullquote">
+    The goal is not to feed your family perfectly. The goal is to feed your family peacefully.
+  </div>
+
+  <p>What you'll find inside is a framework first, a kitchen system second, and a small library of meals third. You'll find a way of thinking about meal planning that bends with your week instead of breaking under it. You'll find scripts for the hard conversations — picky eating, sweets, grandparent comments, the birthday party with too much sugar. And you'll find 30 meals that are, mercifully, unimpressive.</p>
+
+  <p>Read it in order if you're new to the method. Skip to Part Four if you just need dinner tonight. Use what you want. Leave what you don't.</p>
+
+  <div class="svg-divider"><svg width="16" height="16"><use href="#bloom"/></svg></div>
+
+  <p style="text-align: right; margin-top: 0.5rem; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--terracotta);">With you,</p>
+  <p style="text-align: right; font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--charcoal);">Phyllis</p>
+
+  <div class="page-num">2</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ TOC ━━━━━━━━━ -->
+<div class="page">
+  <div class="section-eyebrow">Inside this guide</div>
+  <h2 class="section-title">Contents</h2>
+  <div style="margin-top: 1.5rem;">
+
+    <div class="toc-part">
+      <div class="toc-part-title">Part I · The Mindful Family Premise</div>
+      <div class="toc-item"><div class="toc-num">1</div><div class="toc-title">Why family meals are worth protecting</div><div class="toc-page">06</div></div>
+      <div class="toc-item"><div class="toc-num">2</div><div class="toc-title">The Division of Responsibility</div><div class="toc-page">08</div></div>
+      <div class="toc-item"><div class="toc-num">3</div><div class="toc-title">Releasing the "clean plate" legacy</div><div class="toc-page">10</div></div>
+      <div class="toc-item"><div class="toc-num">4</div><div class="toc-title">What your kids are really learning at the table</div><div class="toc-page">11</div></div>
+    </div>
+
+    <div class="toc-part">
+      <div class="toc-part-title">Part II · The Peaceful Kitchen System</div>
+      <div class="toc-item"><div class="toc-num">5</div><div class="toc-title">The 3-tier meal planning framework</div><div class="toc-page">14</div></div>
+      <div class="toc-item"><div class="toc-num">6</div><div class="toc-title">The 12-item Peaceful Pantry</div><div class="toc-page">16</div></div>
+      <div class="toc-item"><div class="toc-num">7</div><div class="toc-title">Grocery shopping in 20 minutes</div><div class="toc-page">18</div></div>
+      <div class="toc-item"><div class="toc-num">8</div><div class="toc-title">"Good enough" cooking</div><div class="toc-page">20</div></div>
+      <div class="toc-item"><div class="toc-num">9</div><div class="toc-title">The rotating 14-day meal template</div><div class="toc-page">21</div></div>
+    </div>
+
+    <div class="toc-part">
+      <div class="toc-part-title">Part III · The Family Table in Real Life</div>
+      <div class="toc-item"><div class="toc-num">10</div><div class="toc-title">Picky eating — the 30-day calm reset</div><div class="toc-page">25</div></div>
+      <div class="toc-item"><div class="toc-num">11</div><div class="toc-title">Kids &amp; sweets, without the drama</div><div class="toc-page">27</div></div>
+      <div class="toc-item"><div class="toc-num">12</div><div class="toc-title">Birthdays, grandparents, sleepovers</div><div class="toc-page">29</div></div>
+      <div class="toc-item"><div class="toc-num">13</div><div class="toc-title">Partner alignment</div><div class="toc-page">31</div></div>
+      <div class="toc-item"><div class="toc-num">14</div><div class="toc-title">Ages &amp; stages — 3 to 16</div><div class="toc-page">32</div></div>
+    </div>
+
+    <div class="toc-part">
+      <div class="toc-part-title">Part IV · 30 Peaceful Meals</div>
+      <div class="toc-item"><div class="toc-num">·</div><div class="toc-title">10 Breakfasts</div><div class="toc-page">36</div></div>
+      <div class="toc-item"><div class="toc-num">·</div><div class="toc-title">10 Lunches &amp; Snacks</div><div class="toc-page">39</div></div>
+      <div class="toc-item"><div class="toc-num">·</div><div class="toc-title">10 Dinners</div><div class="toc-page">42</div></div>
+    </div>
+
+  </div>
+  <div class="page-num">3</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ PART I OPENER ━━━━━━━━━ -->
+<div class="page part-opener">
+  <div class="part-num">I</div>
+  <div class="part-label">Part One</div>
+  <div class="part-title">The Mindful Family <em>Premise.</em></div>
+  <div class="part-sub">Before the system, the scripts, and the meals — four things worth understanding about why the family table is worth protecting at all.</div>
+  <svg width="120" height="16" style="color: var(--sage); margin-top: 2rem;"><use href="#leafy-divider"/></svg>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 1 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 1</div>
+      <h2 class="chapter-title">Why family meals are <em>worth protecting.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#family-table"/></svg>
+  </div>
+  <div class="chapter-sub">The research, honestly — and the part of it nobody talks about.</div>
+
+  <p>You have probably heard the family-meal statistics. Kids who eat dinner with their families have better grades, lower rates of substance use, fewer eating disorders, stronger mental health outcomes. The data shows up in pediatrics journals and parenting magazines with a reliability that should make us all suspicious.</p>
+
+  <p>It is mostly true. But it is not the whole truth.</p>
+
+  <p>The part nobody prints on the glossy pages is this: the benefit doesn't come from the food. It doesn't come from the number of meals. It doesn't come from whether you ate a vegetable or set a napkin or said a blessing. The benefit comes from <em>presence</em>. From children experiencing, on a weekly basis, an adult sitting with them without urgency, without a phone, without a rush — asking how their day was and listening to the answer.</p>
+
+  <p>That is what the research is actually measuring. And that is a much easier target to hit than the Instagram version.</p>
+
+  <h3>What we've been sold</h3>
+
+  <p>Here is the family dinner our culture has handed us: a ninety-minute affair. A table set three ways. Four vegetables, one protein, one starch, all of them something the kids will actually eat. Conversations that loop from school to soccer to feelings to the future. A mother who is somehow calm, a father who is somehow home, a child who is somehow not looking at a screen.</p>
+
+  <p>Most of us, most nights, do not live in that commercial.</p>
+
+  <p>Which is fine. Because that commercial is not what actually produces the outcomes we want. Which brings us to the real minimum.</p>
+
+  <h3>What actually works</h3>
+
+  <p>Research across a range of studies points to a consistent floor: <strong>three shared meals a week, screens off, no plate policing.</strong> That's the minimum. Anywhere from three to five family meals a week, eaten together without distractions and without anyone's food being commented on, is what appears to move the needle on every outcome we care about.</p>
+
+  <div class="sage-box">
+    <div class="sage-box-label">The real minimum</div>
+    <p><strong>Three meals a week. Together. No screens. No plate policing.</strong> That is the floor. Everything above that is a bonus.</p>
+  </div>
+
+  <p>Notice what's not on that list. You don't need to cook the meal. You don't need to sit for an hour. You don't need to produce conversation topics, or draw chore charts, or model seven-vegetable salads. You need to be there, present, without making the meal a referendum on anyone's plate.</p>
+
+  <h3>What meals are not for</h3>
+
+  <p>Family meals are not a time to discuss grades. They are not the moment to correct table manners (mostly). They are not a nutrition lecture, a weigh-in, a parenting intervention, or an opportunity to catch up on what your child ate at school. All of those things have their place. None of them is at the dinner table.</p>
+
+  <p>The table, protected, is a strange and rare thing in a family's week: a space where nobody is being optimized. Where the only job is to be together, eat something, and leave. That is what the research is pointing at. That is what we are protecting.</p>
+
+  <div class="pullquote">
+    The benefit is not the food. The benefit is the presence.
+  </div>
+
+  <p>Which is good news. Because presence is something you can offer even when dinner is cereal.</p>
+
+  <div class="page-num">6</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- CHAPTER 1 continued -->
+<div class="page">
+  <h3>A permission slip, early</h3>
+
+  <p>Before you read the next thirteen chapters, I want you to accept something: your family meals do not need to be good. They need to be regular. The regular-ness is what builds the ritual. The quality of any one meal is — genuinely, research-supported — almost irrelevant.</p>
+
+  <p>The dinner that matters is the one where your eight-year-old mentions, offhandedly, that a kid at school said something mean to them. You catch it because you were there. You were there because dinner is something your family does. And the dinner itself? Frozen pizza.</p>
+
+  <p>Frozen pizza will carry all of the benefit.</p>
+
+  <p>Release the fantasy. Keep the rhythm.</p>
+
+  <div class="callout">
+    <div class="callout-label">Take with you</div>
+    <p>Three meals a week, together, no screens, no plate policing. Begin there. Everything in the rest of this book serves that baseline — it does not replace it.</p>
+  </div>
+
+  <div class="page-num">7</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 2 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 2</div>
+      <h2 class="chapter-title">The Division of <em>Responsibility.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#plate"/></svg>
+  </div>
+  <div class="chapter-sub">The single most useful frame I can give you. Developed by Ellyn Satter. Simple. Liberating. Works at every age.</div>
+
+  <p>If you learn nothing else in this book, learn this.</p>
+
+  <p>A feeding specialist named Ellyn Satter spent most of a long career studying what actually works between parents and children at mealtimes. The framework she landed on is called the Division of Responsibility — DOR for short — and it distributes the job of feeding between you and your child like this:</p>
+
+  <div class="sage-box" style="padding: 1.2rem 1.4rem;">
+    <div class="sage-box-label">The Division of Responsibility</div>
+    <p><strong>You decide: </strong>what is served, when it's served, and where it's served.</p>
+    <p><strong>They decide: </strong>whether they eat, and how much.</p>
+  </div>
+
+  <p>That's it. That's the whole framework. It will take you the rest of your parenting career to get comfortable with it. And it will change everything.</p>
+
+  <h3>Why this works</h3>
+
+  <p>Most mealtime conflict happens because the parent is trying to control something that isn't theirs to control. You cannot make a child swallow. You cannot install their hunger signals. You cannot decide how much food their body needs today. Those signals live inside them — and when you try to override them, you're training them out of the only meaningful nutrition tool they'll ever have.</p>
+
+  <p>The DOR frees you from a job that was never yours. <em>What, when, where</em> — those are real jobs. You decide what goes on the table. You decide that it's served at six, not at four or at eight. You decide that eating happens at the table, not on the couch or in the car.</p>
+
+  <p>And then you step back.</p>
+
+  <h3>What this looks like in practice</h3>
+
+  <p>At dinner, you serve what you've made. You don't make a separate meal for the child who decided last week he hates chicken. You don't bargain. You don't rearrange.</p>
+
+  <p>Your child sits at the table. They may eat all of it. They may eat one thing. They may eat nothing. You do not comment.</p>
+
+  <p>They say they don't like it. "Okay — there will be something else tomorrow." You do not panic. You do not start producing alternatives. You trust that a healthy child will not starve themselves for spite over the long run.</p>
+
+  <p>They ask, quietly, if there's bread. There's bread. You pass the bread.</p>
+
+  <p>Dinner ends. They either ate or they didn't. There's no weighing in, no debrief, no note about calories owed. If they ate very little, they may be hungry at bedtime. You can offer a simple food then — fruit, milk, toast — without commentary.</p>
+
+  <div class="pullquote">
+    You are not raising a child who eats broccoli. You are raising an adult who listens to their body.
+  </div>
+
+  <div class="page-num">8</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- CHAPTER 2 continued -->
+<div class="page">
+  <h3>What breaks it</h3>
+
+  <p>There are three common ways parents accidentally break the DOR. I'm going to name them because they've each broken mine at some point.</p>
+
+  <p><strong>One:</strong> Short-order cooking. "You don't want this? I'll make you grilled cheese." Offering an alternative every time a child refuses the family meal teaches them that refusing gets them something preferable. It also doubles your workload and quietly destroys family dinner.</p>
+
+  <p><strong>Two:</strong> Pressuring. "Just try one bite. One more. One for Daddy. You've barely eaten. Are you sure you're full?" Pressure — even cheerful, well-meaning pressure — overrides the child's hunger signal. If they eat because you pushed, they learn to ignore fullness. If they refuse because you pushed, they learn that food is a battle. Either way, they lose something.</p>
+
+  <p><strong>Three:</strong> Rewarding and punishing. "No dessert until you finish your dinner." This teaches that dessert is superior to the rest of the meal (it isn't, to a child's body — it's just food), that dinner is a chore to endure (it shouldn't be), and that eating is transactional (it shouldn't be either).</p>
+
+  <div class="callout">
+    <div class="callout-label">If you do nothing else</div>
+    <p>For one week, try not commenting on anyone's plate at dinner. Not the amount, not the choices, not the finish. Just eat with them. Notice what shifts — in them, and in you.</p>
+  </div>
+
+  <h3>What you get back</h3>
+
+  <p>When you stop doing a job that was never yours, you get your attention back. You get to actually enjoy your food. You get to hear what your kids are saying. You get to be a person at the table instead of a food police officer.</p>
+
+  <p>And your children — slowly, without fanfare — develop the most important eating skill they'll ever have: the ability to listen to their own body and feed it accordingly. That skill will outlast every food rule, every trend, every diet. It will feed them for the rest of their lives.</p>
+
+  <p>That is what the Division of Responsibility is really about. Not what ends up on the plate. What ends up in the person.</p>
+
+  <div class="page-num">9</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 3 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 3</div>
+      <h2 class="chapter-title">Releasing the <em>"clean plate"</em> legacy.</h2>
+    </div>
+    <svg class="chapter-icon"><use href="#plate"/></svg>
+  </div>
+  <div class="chapter-sub">A short chapter about a long inheritance.</div>
+
+  <p>"Clean your plate" entered the cultural bloodstream during the Great Depression and World War II — eras when food was genuinely scarce and waste was genuinely a moral issue. It made sense then. It passed down to our parents. It passed down to us. And now, in a time when food waste is a real problem but not the one "clean your plate" was designed to solve, it continues to move from mouth to child.</p>
+
+  <p>It is time to retire it.</p>
+
+  <div class="pullquote">
+    "Clean your plate" taught generations to override their own body in the name of gratitude. That is not gratitude. That is training.</div>
+
+  <h3>Why it stays so stubbornly</h3>
+
+  <p>Most parents who say "clean your plate" are not thinking about post-war rationing. They are thinking about: <em>I worked hard on this meal, I want you to appreciate it, there are children who would love this food, we are not wasting.</em>All of those instincts are real and valid and also — not your child's body's problem.</p>
+
+  <p>Your child's job at the meal is to eat until they are full. That's it. The "work you put in" was your decision, not theirs. The children who would love this food are not at this table. And the food waste question has a better solution than overriding a child's fullness signal: smaller portions to start, with seconds available.</p>
+
+  <h3>What to say instead</h3>
+
+  <div class="swap-box">
+    <div class="old"><span class="label">Old way ·</span> "Clean your plate before you leave the table."</div>
+    <div class="new"><span class="label">Peaceful way ·</span> "Are you all done? Okay, you can be excused."</div>
+  </div>
+
+  <div class="swap-box">
+    <div class="old"><span class="label">Old way ·</span> "Just three more bites."</div>
+    <div class="new"><span class="label">Peaceful way ·</span> "I hear you — you're full. No worries."</div>
+  </div>
+
+  <div class="swap-box">
+    <div class="old"><span class="label">Old way ·</span> "There are children who would love this food."</div>
+    <div class="new"><span class="label">Peaceful way ·</span> (Nothing. Let it go.)</div>
+  </div>
+
+  <h3>On food waste, honestly</h3>
+
+  <p>If the waste bothers you — and it probably will, the first few weeks you try this — here are two real strategies:</p>
+
+  <ol>
+    <li>Serve smaller portions. Children can always ask for more.</li>
+    <li>Save uneaten food. A barely-touched chicken breast becomes tomorrow's lunch wrap. Half a bowl of pasta becomes a quick reheat.</li>
+  </ol>
+
+  <p>Most kids, given permission to stop when they're full, do not overeat and do not under-eat. They eat the amount their body needed today. Some days that amount is huge. Some days it's nearly nothing. Both are fine. Both are information. Both are how bodies work.</p>
+
+  <div class="page-num">10</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 4 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 4</div>
+      <h2 class="chapter-title">What your kids are really <em>learning at the table.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#family-table"/></svg>
+  </div>
+  <div class="chapter-sub">Ninety percent of their food education is silent. Here is what they are absorbing.</div>
+
+  <p>Children are miniature anthropologists. They arrive in the world without food preferences, without body shame, without diet scripts. Their job, for the first decade and a half, is to study the adults around them and reverse-engineer what it means to be a person in their particular culture. They do this through observation, mostly. Not instruction.</p>
+
+  <p>Which means that the food messages you <em>say</em> to your children matter perhaps ten percent as much as the ones you <em>show</em> them.</p>
+
+  <p>This is uncomfortable. It is also freeing. Here's why:</p>
+
+  <p>If what they were absorbing was your carefully worded nutrition lectures, you'd have to be a nutrition expert to raise healthy eaters. You're not. You're a person with a job and a commute and a dishwasher that might be broken. You're not going to deliver a perfect food curriculum.</p>
+
+  <p>But if what they're absorbing is your <em>demeanor</em> around food — your calm, your pleasure, your willingness to eat a meal without grading it — then all you have to do is practice those things. Imperfectly. In front of them.</p>
+
+  <p>You can do that.</p>
+
+  <h3>Three silent lessons you are already teaching</h3>
+
+  <p><strong>The face you make at your own plate.</strong> When you sit down and audibly say "ugh, I shouldn't have this" — they learn food is a test. When you sit down, take a breath, and eat — they learn food is food.</p>
+
+  <p><strong>The way you talk about your body in the mirror.</strong> You think you're muttering to yourself. They're recording it. The word they hear most often about your body becomes one of the first words they apply to their own.</p>
+
+  <p><strong>Whether you eat, or whether you "just have a salad."</strong> When mom declines to eat, child notices mom declines to eat. When mom eats alongside her child, child learns eating is a normal thing mothers do.</p>
+
+  <div class="pullquote">
+    A mother who eats without guilt raises a child who eats without shame.
+  </div>
+
+  <h3>The corrective is not a lecture</h3>
+
+  <p>If some of those silent lessons have been happening in your kitchen — and they have, because they have in everyone's kitchen — you do not need to sit your child down and correct the record. You do not owe them a talk.</p>
+
+  <p>You change what you do at the table. They absorb the new version, the same way they absorbed the old one. Slowly. Silently. Without any announcement. One day, a year from now, you'll notice them eat a piece of cake without flinching and you'll realize: oh. That landed.</p>
+
+  <div class="page-num">11</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- CHAPTER 4 continued -->
+<div class="page">
+  <h3>The modeling audit</h3>
+
+  <p>Spend 48 hours noticing — not changing, not correcting — just noticing — the following:</p>
+
+  <ul>
+    <li>Do I comment on my own food when I sit down?</li>
+    <li>Do I comment on other people's food at the table?</li>
+    <li>Do I eat the same foods I serve my kids?</li>
+    <li>Do I make faces or sounds about my body in front of them?</li>
+    <li>Do I use food as a reward or punishment in my own head?</li>
+    <li>Do I pause and enjoy a meal, or rush through it?</li>
+  </ul>
+
+  <p>No shame in any answer. The audit is not a verdict. It's a photograph. And like any photograph, it shows you what's there so you can decide what, if anything, you want to change.</p>
+
+  <div class="callout">
+    <div class="callout-label">One generation</div>
+    <p>Whatever script you grew up with, it took exactly one generation to arrive in you. It takes exactly one generation to interrupt. That generation is yours.</p>
+  </div>
+
+  <div class="svg-divider" style="margin-top: 2rem;"><svg width="100" height="16"><use href="#leafy-divider"/></svg></div>
+
+  <p style="text-align: center; font-family: 'Playfair Display', serif; font-style: italic; color: var(--muted); font-size: 1rem; margin-top: 1rem;">
+    That is Part One. The premise. <br>Now — the kitchen.
+  </p>
+
+  <div class="page-num">12</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ PART II OPENER ━━━━━━━━━ -->
+<div class="page part-opener">
+  <div class="part-num">II</div>
+  <div class="part-label">Part Two</div>
+  <div class="part-title">The Peaceful Kitchen <em>System.</em></div>
+  <div class="part-sub">The part where the philosophy meets the groceries. Five short chapters on planning, pantries, shopping, cooking, and a rotating template that actually fits a real week.</div>
+  <svg width="120" height="16" style="color: var(--sage); margin-top: 2rem;"><use href="#leafy-divider"/></svg>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 5 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 5</div>
+      <h2 class="chapter-title">The 3-tier meal <em>planning framework.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#skillet"/></svg>
+  </div>
+  <div class="chapter-sub">Stop planning seven dinners for seven nights. Start planning three tiers of effort.</div>
+
+  <p>Most meal planning fails for the same reason: it asks the version of you doing the planning to predict the version of you doing the cooking. That prediction is almost always wrong.</p>
+
+  <p>Sunday-afternoon you, clipboard in hand, is optimistic. She imagines Tuesday-evening you as capable, energized, and open to trying a new grain bowl. Tuesday-evening you, when she arrives, is exhausted, low on groceries, and wants cereal.</p>
+
+  <p>The 3-tier framework stops that argument from happening.</p>
+
+  <h3>The three tiers</h3>
+
+  <p>Instead of planning seven dinners, you plan a week of <em>flexibility buckets</em> — and you pull from whichever bucket matches the night you're actually having.</p>
+
+  <div class="sage-box">
+    <div class="sage-box-label">Tier 1 · Full cook (2–3 nights/week)</div>
+    <p>A meal that takes 30–45 minutes of real kitchen time. Usually requires prep and pots. Plan for this on the nights you know you have bandwidth.</p>
+  </div>
+
+  <div class="sage-box">
+    <div class="sage-box-label">Tier 2 · Quick assemble (2–3 nights/week)</div>
+    <p>A meal that comes together in 15 minutes or less using pantry staples + something fresh. Pasta with jarred sauce. Tacos. Quesadillas. Breakfast-for-dinner.</p>
+  </div>
+
+  <div class="sage-box">
+    <div class="sage-box-label">Tier 3 · Leftover or wildcard (1–2 nights/week)</div>
+    <p>Repurposed leftovers, a grain bowl from what's in the fridge, takeout, cereal, scrambled eggs with toast. No shame. No cooking. This tier is a feature, not a failure.</p>
+  </div>
+
+  <h3>Why this works</h3>
+
+  <p>On Sunday, you don't decide which meal goes on which night. You decide: <em>two Tier-1 meals this week, three Tier-2s, two Tier-3s.</em> You make sure your groceries support the Tier-1 and Tier-2 meals. Tier 3 runs on whatever's already in your kitchen.</p>
+
+  <p>Then you pull from the buckets based on the day you're actually having. Tuesday is soccer night? Tier 2. Wednesday got upended by a work emergency? Tier 3. Saturday morning you're energized and curious? That's a Tier 1.</p>
+
+  <div class="callout">
+    <div class="callout-label">The shift</div>
+    <p>Stop planning meals to nights. Start planning tiers to weeks. The match happens in real time — not in advance.</p>
+  </div>
+
+  <div class="page-num">13</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- CHAPTER 5 continued + sample week -->
+<div class="page">
+  <h3>A sample week in tiers</h3>
+
+  <p>Here's what a real week looks like when planning is tier-based instead of day-based.</p>
+
+  <table class="template-table">
+    <tr><th>Day</th><th>Tier</th><th>What ended up happening</th></tr>
+    <tr><td>Monday</td><td><strong>Tier 2</strong></td><td>Taco night (seasoned ground beef, pre-shredded cheese, tortillas, avocado)</td></tr>
+    <tr><td>Tuesday</td><td><strong>Tier 3</strong></td><td>Breakfast for dinner — scrambled eggs, toast, fruit. Soccer ran late.</td></tr>
+    <tr><td>Wednesday</td><td><strong>Tier 1</strong></td><td>Sheet-pan chicken & vegetables. Worth the 35 minutes.</td></tr>
+    <tr><td>Thursday</td><td><strong>Tier 3</strong></td><td>Leftover chicken, reheated, over greens with bottled dressing.</td></tr>
+    <tr><td>Friday</td><td><strong>Tier 2</strong></td><td>Pizza night — store-bought dough, whatever toppings were in the fridge.</td></tr>
+    <tr><td>Saturday</td><td><strong>Tier 1</strong></td><td>One-pot pasta with greens. The cooking felt pleasant, not desperate.</td></tr>
+    <tr><td>Sunday</td><td><strong>Tier 2</strong></td><td>Grain bowls from the fridge — rice, a protein, two veg, a sauce.</td></tr>
+  </table>
+
+  <p>Notice: no day was ruined by misalignment between plan and reality. The plan was about capacity, not recipes. The recipes were chosen last-minute from what the week actually looked like.</p>
+
+  <p>This is what sustainable meal planning looks like. Unsexy. Ordinary. Impossible to screenshot. And it works for years.</p>
+
+  <div class="page-num">14</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 6 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 6</div>
+      <h2 class="chapter-title">The 12-item <em>Peaceful Pantry.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#bowl"/></svg>
+  </div>
+  <div class="chapter-sub">The staples that make any Tier-2 or Tier-3 meal possible, any weeknight, without a grocery run.</div>
+
+  <p>A peaceful pantry is not an aspirational pantry. It is not stocked with esoteric grains and single-use ingredients from a recipe you made once. It is stocked with the things you actually reach for when you have twenty minutes and a hungry family.</p>
+
+  <p>Here is the 12-item list. Keep these 12 things in your house at all times. When any of them dips low, it goes on the list. Every other ingredient is rotating and optional.</p>
+
+  <h3>The pantry</h3>
+
+  <ol>
+    <li><strong>Eggs.</strong> Protein, breakfast, binder, savior. Always.</li>
+    <li><strong>Canned beans</strong> (black, chickpea, or cannellini). Ten-minute protein. Put on anything.</li>
+    <li><strong>Jarred pasta sauce.</strong> Decent quality. Marinara. Don't overthink it.</li>
+    <li><strong>Dry pasta</strong> in two shapes. Long and short. Keeps forever.</li>
+    <li><strong>Rice</strong> (white or brown, cook's choice). Base for 1,000 meals.</li>
+    <li><strong>Tortillas</strong> (flour or corn). Tacos. Wraps. Quesadillas. Breakfast burritos.</li>
+    <li><strong>Sharp cheddar and parmesan.</strong> Melt the cheddar. Grate the parm. Done.</li>
+    <li><strong>Salsa</strong> (jarred). Works on eggs, beans, rice, chicken, everything.</li>
+    <li><strong>Olive oil, salt, black pepper, garlic powder.</strong> The core four.</li>
+    <li><strong>Frozen vegetables</strong> (peas, broccoli, stir-fry mix). Always fresh-equivalent. No shame.</li>
+    <li><strong>Frozen shrimp or chicken thighs.</strong> Thaw quickly. Cook quickly. Save the night.</li>
+    <li><strong>Bread of some kind.</strong> Sandwich, toast, breakfast-for-dinner backup.</li>
+  </ol>
+
+  <p>That's it. Twelve ingredients. With these in your house — and maybe two or three fresh produce items rotating week to week — you can make dinner. Always.</p>
+
+  <div class="pullquote">
+    A peaceful pantry is not about what's in it. It's about what's always in it.
+  </div>
+
+  <div class="page-num">15</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- CHAPTER 6 continued -->
+<div class="page">
+  <h3>What a stocked peaceful pantry unlocks</h3>
+
+  <p>With just the 12 items above, here are meals you can make tonight without going to the store:</p>
+
+  <ul>
+    <li><strong>Pasta with red sauce</strong> — add parm, done.</li>
+    <li><strong>Rice and beans</strong> — add salsa, egg on top, done.</li>
+    <li><strong>Quesadilla</strong> — tortilla, cheese, pan, done.</li>
+    <li><strong>Egg and cheese tacos</strong> — scrambled eggs, cheese, warm tortilla, salsa.</li>
+    <li><strong>Pasta with peas and cheese</strong> — boil, drain, stir in peas, parm, butter.</li>
+    <li><strong>Fried rice</strong> — rice, egg, frozen veg, soy sauce (if in).</li>
+    <li><strong>Grilled cheese</strong> — bread, cheese, butter, pan.</li>
+    <li><strong>Breakfast for dinner</strong> — eggs, toast, fruit.</li>
+    <li><strong>Shrimp + rice + frozen broccoli</strong> — sauté shrimp, serve over rice.</li>
+    <li><strong>Bean and cheese burrito</strong> — beans, cheese, tortilla, salsa.</li>
+  </ul>
+
+  <p>Ten meals from the same 12 ingredients. That's the whole point.</p>
+
+  <h3>What NOT to stock</h3>
+
+  <p>Skip the "aspirational" pantry items:</p>
+
+  <ul>
+    <li>Ancient grains you bought for one recipe and never touched again.</li>
+    <li>"Healthy" snacks you bought because you felt guilty about the snacks you wanted.</li>
+    <li>Cooking wines, rare oils, and specialty pastes that expire unopened.</li>
+    <li>Anything you don't actually like and are telling yourself you "should" eat.</li>
+  </ul>
+
+  <p>If you haven't used it in 6 months, it's taking up real estate. Give it away. Stock what you actually reach for.</p>
+
+  <div class="callout">
+    <div class="callout-label">Inventory day</div>
+    <p>Set aside one Sunday a quarter for a ten-minute pantry check. Toss what's expired. Note what's running low. This is not a cleaning project — it's a maintenance ritual.</p>
+  </div>
+
+  <div class="page-num">16</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 7 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 7</div>
+      <h2 class="chapter-title">Grocery shopping <em>in 20 minutes.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#clock"/></svg>
+  </div>
+  <div class="chapter-sub">A real template for one weekly shop that ends the Sunday doom spiral.</div>
+
+  <p>The best grocery shopping is the fastest grocery shopping. Speed is not about rushing — it's about not wandering. A wandering shop is an anxious shop, and an anxious shop is one where every decision feels like a referendum on your worth as a feeder of humans.</p>
+
+  <p>Here's a template that takes 20 minutes from parking lot to car.</p>
+
+  <h3>Before you leave the house (3 minutes)</h3>
+
+  <ol>
+    <li>Open the fridge. Note what needs to go this week.</li>
+    <li>Open the pantry. Check the 12-item list — what's low?</li>
+    <li>Decide: 2 Tier-1 meals, 3 Tier-2 meals, 2 Tier-3 nights. Rough sketch only.</li>
+    <li>Write list in four sections: <strong>Produce · Protein · Pantry · Dairy</strong>.</li>
+  </ol>
+
+  <h3>The shop (15–20 minutes)</h3>
+
+  <p>Walk the store in the same order every week. Most grocery stores are laid out with produce at the front, dairy at the back, and the aisles between them. Use that architecture.</p>
+
+  <p><strong>Produce first.</strong> Buy the 3–5 fresh items on your list. Do not browse. Do not "see what looks good." See what looks good later, if you're making a cookbook. For a family Tuesday, stick to the list.</p>
+
+  <p><strong>Proteins second.</strong> One or two proteins for the Tier-1 meals. If chicken's on sale, get extra for the freezer.</p>
+
+  <p><strong>Pantry refills in the aisles.</strong> Only what's on the list. Skip the center aisles entirely unless you need something there.</p>
+
+  <p><strong>Dairy and eggs last.</strong> Milk, cheese, yogurt, eggs. Done.</p>
+
+  <div class="pullquote">
+    The store is set up to distract you. Your list is set up to protect you. Trust the list.
+  </div>
+
+  <h3>On delivery, pickup, and the no-shop week</h3>
+
+  <p>Grocery delivery and curbside pickup are not cheating. They are time management. If the cost of delivery saves you 45 minutes of shopping plus 20 minutes of decision fatigue — and you can afford the $10 — that is a perfectly reasonable trade.</p>
+
+  <p>And every 4–6 weeks, take a "no-shop week." Use up what's in the freezer and pantry. Your pantry should be deep enough to feed your family for a week with only produce and milk added. If it isn't, your pantry is thinner than it should be.</p>
+
+  <div class="page-num">17</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- CHAPTER 7 continued -->
+<div class="page">
+  <h3>A printable shop-list template</h3>
+
+  <table class="template-table">
+    <tr><th>Produce</th><th>Protein</th></tr>
+    <tr><td>
+      · Greens (1–2 bags)<br>
+      · 2 fruits (whatever's in season)<br>
+      · 1 hearty veg (broccoli, carrots, cauliflower)<br>
+      · 1 allium (onion, garlic, shallots)<br>
+      · 1 optional: avocados, tomatoes, berries
+    </td><td>
+      · Tier-1 main protein (chicken, ground beef, fish)<br>
+      · 1 backup protein (rotisserie chicken, deli turkey)<br>
+      · Eggs (refill from pantry list)
+    </td></tr>
+    <tr><th>Pantry (refills only)</th><th>Dairy</th></tr>
+    <tr><td>
+      · Pasta / rice / tortillas (as needed)<br>
+      · Canned beans<br>
+      · Jarred sauce<br>
+      · Olive oil, salt<br>
+      · Frozen veg, frozen protein
+    </td><td>
+      · Milk<br>
+      · Cheese (cheddar, parm)<br>
+      · Yogurt<br>
+      · Butter
+    </td></tr>
+  </table>
+
+  <p>Tape this on your fridge. Check boxes as needed. Shop the same way every week until it becomes invisible.</p>
+
+  <div class="page-num">18</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 8 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 8</div>
+      <h2 class="chapter-title">"Good enough" <em>cooking.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#skillet"/></svg>
+  </div>
+  <div class="chapter-sub">Permission to simplify. Permission to repeat. Permission to stop performing in your own kitchen.</div>
+
+  <p>There is a Pinterest version of cooking. It involves multiple pans, garnishes, fresh herbs, a clean apron, and a mother who chuckles as she stirs. It is a fiction. It was always a fiction. It is the culinary equivalent of the mother in a light-filled kitchen smiling at her children's artwork — beautiful, aspirational, and not a description of any real Tuesday night.</p>
+
+  <p>Your actual Tuesday night deserves a different approach.</p>
+
+  <h3>The four rules of good-enough cooking</h3>
+
+  <p><strong>One: Five ingredients or fewer, most nights.</strong> You do not need complexity. You need heat, a protein, a vegetable, and a starch. That's four things. Add salt and you have five.</p>
+
+  <p><strong>Two: Repetition is not a failure.</strong> You can make the same five dinners every two weeks for a year, and your children will be fine. Restaurants have menus for a reason — and their menus don't change weekly. Stop trying to be more varied than Olive Garden.</p>
+
+  <p><strong>Three: Shortcuts are not cheating.</strong> Pre-chopped onions. Rotisserie chicken. Jarred marinara. Bagged salad. These are not moral failings. They are tools. A person with a full life uses tools. A person who insists on chopping everything from scratch with four children underfoot is a person who will eventually stop cooking entirely.</p>
+
+  <p><strong>Four: Batch what you can, but don't worship at the altar of meal prep.</strong> Cooking extra rice on Sunday is useful. Spending four hours producing twenty-three Tupperware containers is not. Find the minimum that actually serves you.</p>
+
+  <div class="callout">
+    <div class="callout-label">One-pan math</div>
+    <p>Protein + vegetable + starch = dinner. If you can get all three in one pan or pot, you can get dinner in one pan or pot. This is the basis of every weeknight meal worth repeating.</p>
+  </div>
+
+  <h3>Release the performance</h3>
+
+  <p>Nobody in your family is grading you on dinner. Your 7-year-old does not care about plating. Your partner would rather you sit down than serve beautifully. Your friends, if they're honest, are envious of anyone who's making any meal at all.</p>
+
+  <p>Cook for the people actually at the table. Feed them. Sit down. Eat with them. That is the entire job. Everything else is extra.</p>
+
+  <div class="page-num">19</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 9 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 9</div>
+      <h2 class="chapter-title">The rotating <em>14-day template.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#bowl"/></svg>
+  </div>
+  <div class="chapter-sub">Build once. Rotate forever. A real two-week rotation that fits a real family's week.</div>
+
+  <p>Here is the secret nobody selling meal-planning apps wants you to know: most families eat roughly 8–12 dinners in rotation and are perfectly happy. The apps make you feel like you need thirty new ideas every month. You don't. You need ten meals that work, and a rotation that makes them feel fresh enough.</p>
+
+  <p>Here's a starter template. Use it as-is, or customize it. The point is that you build a rotation once, and then you stop planning from scratch.</p>
+
+  <h3>Week A</h3>
+
+  <table class="template-table">
+    <tr><th>Night</th><th>Meal</th><th>Tier</th></tr>
+    <tr><td>Mon</td><td>Taco night</td><td>2</td></tr>
+    <tr><td>Tue</td><td>Sheet-pan chicken &amp; veg</td><td>1</td></tr>
+    <tr><td>Wed</td><td>Leftover chicken + grain bowl</td><td>3</td></tr>
+    <tr><td>Thu</td><td>Pasta with marinara + salad</td><td>2</td></tr>
+    <tr><td>Fri</td><td>Pizza night (store dough)</td><td>2</td></tr>
+    <tr><td>Sat</td><td>One-pot pasta with greens</td><td>1</td></tr>
+    <tr><td>Sun</td><td>Breakfast for dinner</td><td>3</td></tr>
+  </table>
+
+  <h3>Week B</h3>
+
+  <table class="template-table">
+    <tr><th>Night</th><th>Meal</th><th>Tier</th></tr>
+    <tr><td>Mon</td><td>Quesadilla night</td><td>2</td></tr>
+    <tr><td>Tue</td><td>Slow-cooker beans &amp; rice</td><td>1</td></tr>
+    <tr><td>Wed</td><td>Leftover beans as burritos</td><td>3</td></tr>
+    <tr><td>Thu</td><td>Stir-fry (frozen veg + protein)</td><td>2</td></tr>
+    <tr><td>Fri</td><td>Takeout or pizza</td><td>3</td></tr>
+    <tr><td>Sat</td><td>Salmon + rice + vegetable</td><td>1</td></tr>
+    <tr><td>Sun</td><td>Grilled cheese + soup</td><td>2</td></tr>
+  </table>
+
+  <p>Two weeks. Fourteen meals. Most repeat every month. Every few months, swap one out for something new. That's your whole menu planning system.</p>
+
+  <div class="pullquote">
+    You are not opening a restaurant. You are feeding a family. Rotation is not boring. It is sustainable.
+  </div>
+
+  <div class="page-num">20</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ PART III OPENER ━━━━━━━━━ -->
+<div class="page part-opener">
+  <div class="part-num">III</div>
+  <div class="part-label">Part Three</div>
+  <div class="part-title">The Family Table <em>in Real Life.</em></div>
+  <div class="part-sub">Picky eating. Sweets. Birthdays. In-laws. Partners. Teenagers. All the places where the system meets the messiness — and the scripts to get through them.</div>
+  <svg width="120" height="16" style="color: var(--sage); margin-top: 2rem;"><use href="#leafy-divider"/></svg>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 10 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 10</div>
+      <h2 class="chapter-title">Picky eating — the <em>30-day calm reset.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#carrot"/></svg>
+  </div>
+  <div class="chapter-sub">Most "picky eating" is not about the palate. It is about the power dynamic. Here is how to dismantle the second one and watch the first one expand.</div>
+
+  <p>I want to say something that will relieve many parents reading this book: your child is probably not actually that picky. They are responding to the dynamic around the food, not to the food itself.</p>
+
+  <p>There is a difference between a child with a medically significant feeding disorder (which exists, is real, and requires professional support) and a child who has learned that refusing green things produces a grilled cheese. Most "picky eating" in most families is the second one. The good news is: the second one responds to a change in parental behavior.</p>
+
+  <h3>The 30-day calm reset</h3>
+
+  <p>For the next 30 days, try this. Not a day or two. Thirty full days. This is not a fast fix — this is a re-patterning.</p>
+
+  <ol>
+    <li><strong>Serve the same meal to the whole family.</strong> No separate kid meals. No short-order cooking. Whatever everyone's eating — that's what's served.</li>
+    <li><strong>Always include one "safe" component on the table.</strong> Bread, rice, noodles, a simple fruit — something they reliably eat. This isn't a cave-in. It's a bridge. Keeps them fed while the rest of the meal gets familiar.</li>
+    <li><strong>Do not comment on their eating. At all.</strong> Not the amount. Not the choices. Not the refusals. Nothing. Not even positive comments like "good job eating those!" Just — normal meal, passing bread, talking about other things.</li>
+    <li><strong>Re-serve rejected foods, without pressure, the next week.</strong> Research shows many children need 10–15 exposures to a new food before they'll try it. If broccoli was refused on Monday, it can reappear on Thursday. And again next Tuesday. And again. Without remark.</li>
+    <li><strong>Eat the food yourself.</strong> Without a sound. Without modeling performative enjoyment. Just eat it. Your child is watching.</li>
+  </ol>
+
+  <div class="sage-box">
+    <div class="sage-box-label">The hard part</div>
+    <p>The first two weeks of this, nothing will appear to change. Your child will eat the bread, ignore the rest, and leave. You will be tempted to intervene. <strong>Don't.</strong> You are waiting for the dynamic to defuse. That takes weeks, not days.</p>
+  </div>
+
+  <div class="page-num">21</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- CHAPTER 10 continued -->
+<div class="page">
+  <h3>What usually happens by day 30</h3>
+
+  <p>Around day 18 to 25 — varies by child — something shifts. A child who has never touched a tomato takes a tomato. A child who refused broccoli for a year asks for some. The foods they've been seeing repeatedly, without pressure, start to cross the threshold from "strange" to "familiar."</p>
+
+  <p>Not every food. Not all at once. But the list of accepted foods slowly expands. And more importantly: mealtime stops being a fight.</p>
+
+  <p>If you make it to day 30 and truly nothing has changed — no expansion at all, no reduction in mealtime stress — that's a signal to check in with your pediatrician or a feeding therapist. Some children genuinely need that level of support. But for most families, the reset works.</p>
+
+  <h3>What breaks the reset</h3>
+
+  <ul>
+    <li>Making a separate meal "just this once" (usually becomes every Tuesday).</li>
+    <li>Bargaining over bites ("one more carrot and you can be done").</li>
+    <li>Hiding vegetables in food to "sneak them in." Your child will find out. The trust cost is not worth it.</li>
+    <li>Weighing them, commenting on weight, or making food about size.</li>
+  </ul>
+
+  <p>None of those are moral failings. All of them interrupt the reset. Notice when they happen, return to the plan, keep going.</p>
+
+  <div class="pullquote">
+    Your calm is the intervention. The intervention takes weeks to land. Keep the calm. Let the weeks do the work.
+  </div>
+
+  <div class="page-num">22</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 11 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 11</div>
+      <h2 class="chapter-title">Kids and sweets, <em>without the drama.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#bloom"/></svg>
+  </div>
+  <div class="chapter-sub">The more you moralize it, the more power you give it. Take the power out. Keep the sweets.</div>
+
+  <p>Every parent I work with has a story about sweets. Usually it involves a moment of rigid control that ended in an unexpected spectacle — the Halloween raid, the birthday party binge, the grandmother's house where the rules broke. The child, suddenly permitted, behaved like a person who had been held under water. Because, in a real sense, they had been.</p>
+
+  <p>The sugar conversation is not about sugar. It's about scarcity.</p>
+
+  <h3>The scarcity paradox</h3>
+
+  <p>When sugar is rare, forbidden, or special, a child's brain flags it as valuable — the same way a brain flags any scarce resource. The rarer you make it, the more your child thinks about it. The stricter the rule, the bigger the payoff when they can get some.</p>
+
+  <p>The counter-intuitive truth: <strong>when sweets are casually available, they lose their grip.</strong> A child who can have a cookie if they want one, most days, thinks about cookies less than a child for whom cookies are a weekend-only event.</p>
+
+  <div class="pullquote">
+    The way to reduce sugar's power is to reduce sugar's drama. Boring sugar. That's the goal.
+  </div>
+
+  <h3>A workable approach</h3>
+
+  <ul>
+    <li><strong>Sweets are part of the food landscape, not a separate moral category.</strong> Put them on the pantry shelf, not hidden behind other foods.</li>
+    <li><strong>Dessert is served when it's served, without being the reward for finishing dinner.</strong> "We're having brownies tonight, after dinner." Full stop. Eating or not eating dinner doesn't change that.</li>
+    <li><strong>If a child wants an afternoon cookie, they can have an afternoon cookie.</strong> Not every hour. Not instead of lunch. But an afternoon cookie is not a crisis.</li>
+    <li><strong>Never call dessert "bad" or yourself "bad" for having it.</strong> Your child is listening. What they absorb is not "sweets are dangerous" — they absorb "mom is weird around food."</li>
+  </ul>
+
+  <h3>The Halloween test</h3>
+
+  <p>Halloween is the ultimate case study. A child with unrestricted access to Halloween candy, after the first night's predictable blowout, usually eats a few pieces a day for the first week — then forgets about most of it. The remainder goes stale in a bowl.</p>
+
+  <p>A child with rationed Halloween candy thinks about the candy continuously, sneaks it, hides it, bargains for it, and develops a stickier relationship with sugar over the coming year.</p>
+
+  <p>Try the unrestricted version once. Watch what actually happens. Most parents are surprised.</p>
+
+  <div class="page-num">23</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 12 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 12</div>
+      <h2 class="chapter-title">Birthdays, grandparents, <em>sleepovers.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#family-table"/></svg>
+  </div>
+  <div class="chapter-sub">The approach you've built at home will be tested by the world. Here's how to hold it without becoming the difficult parent at every event.</div>
+
+  <p>Your approach will leave your house. It will arrive at birthday parties, grandparents' kitchens, friend sleepovers, school cafeterias, holiday gatherings, and every other place your child eats without you. You will not be able to control any of it. You should not try.</p>
+
+  <p>Here's what works instead.</p>
+
+  <h3>Birthday parties</h3>
+
+  <p>At a birthday party, your child is likely to eat: pizza, cake, chips, soda, candy from the piñata, and whatever else is in arm's reach. All of it. A lot of it. This is normal. This is fine.</p>
+
+  <p>Your job at a birthday party is the same as your job at dinner: you decide what, when, where. At a birthday party, the "what" is decided by the host. Your job shifts down to showing up, supervising, and going home. That's it.</p>
+
+  <p>If your child asks — "can I have another slice of cake?" — the answer is yes. It is a birthday party. Cake is the point. Send them back to the table.</p>
+
+  <p>They will not be ruined by this. They will have a great time. You will not be That Parent.</p>
+
+  <h3>Grandparents and in-laws</h3>
+
+  <p>Grandparents (and other well-meaning relatives) will comment on your child's eating. They have been doing this since the '50s. They are not going to stop because you handed them this book.</p>
+
+  <p>You have three options, roughly in order of effort:</p>
+
+  <ul>
+    <li><strong>Let it go.</strong> If the commentary is occasional and your child is resilient, sometimes the best move is to let Grandma say "she's not eating enough" — and then move the conversation along.</li>
+    <li><strong>Redirect at the table.</strong> "Mom, we don't comment on plates at our house. Hey, did you see the tomato plants out back?"</li>
+    <li><strong>Have the talk, privately, once.</strong> Not in front of your child. Not at the table. A quiet conversation where you say: "I know you're doing it with love, but we're raising her to listen to her body, not to us. I need you to not comment on what she eats."</li>
+  </ul>
+
+  <div class="sage-box">
+    <div class="sage-box-label">A script that works</div>
+    <p><em>"We're working on letting her listen to her own body. That means we don't comment on her plate — not even encouragement. It's harder than it sounds. Would you help me with that?"</em> Appeal to their cooperation, not their compliance.</p>
+  </div>
+
+  <div class="page-num">24</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- CHAPTER 12 continued -->
+<div class="page">
+  <h3>Sleepovers</h3>
+
+  <p>Sleepovers are fascinating. Your child will encounter: families who pray before dinner and families who eat in front of the TV. Families who serve steamed vegetables and families who order pizza three nights a week. Families who talk about weight and families who don't.</p>
+
+  <p>This is good. Your child is learning that other families do things differently. That is how they develop the ability to hold their own family's values without thinking their family is the only way to live.</p>
+
+  <p>If they come home and ask, "why do we not have soda at dinner?" or "how come we eat at the table?" — the answer is not defensive. It is: <em>"every family does this a little differently. In ours, this is how we do it."</em> That's enough. You don't need to litigate.</p>
+
+  <h3>School cafeterias</h3>
+
+  <p>Your child will be exposed, at some school, to food-shaming. A kid will say something about someone's lunch. An adult will say something stupid about a kid's body. A nutrition curriculum will use the words "good food" and "bad food."</p>
+
+  <p>Your job at home is to be the counter-narrative. You cannot sanitize their environment. You can be the voice that contradicts, gently, when they bring the bad version home. "That's one way to think about it. In our family, we think about food a little differently — food is food, and bodies come in all shapes."</p>
+
+  <p>Over enough years, your voice wins. Not always on that day. But over the arc.</p>
+
+  <div class="callout">
+    <div class="callout-label">Remember</div>
+    <p>You are not protecting your child from a world with diet culture in it. You are helping them develop the lens to see through it.</p>
+  </div>
+
+  <div class="page-num">25</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 13 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 13</div>
+      <h2 class="chapter-title">Partner <em>alignment.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#family-table"/></svg>
+  </div>
+  <div class="chapter-sub">Even if your partner isn't reading this book. Even if they disagree. How to hold your approach without holding a grudge.</div>
+
+  <p>Partner alignment is, for many of the moms I work with, the hardest part of this whole framework. You can change how you feed. You can change what you say to your kids. You cannot change another adult who did not ask to be changed.</p>
+
+  <p>So here's what I recommend — and what I have seen actually work across dozens of families.</p>
+
+  <h3>Start alone</h3>
+
+  <p>You do not need your partner's agreement to change what you do. Change your own behavior first. Eat without guilt in front of your kids, even if your partner doesn't. Stop commenting on plates, even if he does. Serve meals without commentary, even if she says "is that all you're giving her?"</p>
+
+  <p>Your kids are watching two adults. If one of them is calm, curious, and consistent about food, that alone shifts what they absorb. You don't need both of you to change for the generational script to interrupt.</p>
+
+  <h3>The single conversation</h3>
+
+  <p>At some point — not immediately — you will want to have one conversation with your partner about the approach. Not a lecture. Not a convert-you campaign. One conversation.</p>
+
+  <p>Here is what works better than "we need to talk about how you talk to the kids about food":</p>
+
+  <div class="sage-box">
+    <div class="sage-box-label">The opening that doesn't backfire</div>
+    <p><em>"I've been learning about how kids develop their relationship with food. I'm trying some things at the table. I don't need you to do all of them — I just want to tell you what I'm doing, and why, and ask if there are two or three things you'd be willing to join me on."</em></p>
+  </div>
+
+  <p>Two or three things. Not twelve. Pick the biggest levers and let the rest go.</p>
+
+  <p>Usually the first two things to ask for are: <strong>"Can you not comment on the kids' plates at dinner?"</strong> and <strong>"Can we not call any food 'bad' in front of them?"</strong> Those two are enormous. They do 80% of the work.</p>
+
+  <h3>When it stays hard</h3>
+
+  <p>Some partners come along slowly, some never do. That's worth naming. If you are in a household where food shaming or body shaming continues despite conversation — where a parent is actively harming a child's relationship with food — that is a real problem, and it may need real help. A family therapist, a pediatrician, a couple's counselor.</p>
+
+  <p>But most partners, given a clear ask and enough time, land somewhere reasonable. It takes a year, not a weekend. And your children are watching — on year one, year two, year five.</p>
+
+  <div class="page-num">26</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ CHAPTER 14 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 14</div>
+      <h2 class="chapter-title">Ages and stages <em>— 3 to 16.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#family-table"/></svg>
+  </div>
+  <div class="chapter-sub">The method is the same at every age. The application is not. Here is what changes.</div>
+
+  <h3>Ages 3–7 · The permission years</h3>
+
+  <p>The foundational years. Your child's palate is still forming and their beliefs about food and body are being imprinted in real time. Most of what you do in these years is modeling and exposure.</p>
+
+  <ul>
+    <li>Offer a variety without pressure. Serve. Don't negotiate.</li>
+    <li>Eat with them, visibly, the same foods you serve them.</li>
+    <li>Never call foods "good" or "bad." Just "food."</li>
+    <li>Do not comment on their body, or yours, in front of them.</li>
+    <li>Let them stop when they say they're full. Every time.</li>
+  </ul>
+
+  <p>This is the Division of Responsibility in its purest form. You are not trying to teach them anything explicit about food in this window. You are showing them what eating looks like.</p>
+
+  <h3>Ages 8–11 · The comparison years</h3>
+
+  <p>School lunches happen. Friends' houses happen. Comparisons begin. Your child may notice that their body or plate looks different from a classmate's. They may come home with ideas — that carbs are bad, that skipping meals is normal, that thin is better.</p>
+
+  <ul>
+    <li>Be the counter-narrative, calmly, when they bring external messages home.</li>
+    <li>Talk about food as fuel, pleasure, connection — not as virtue or sin.</li>
+    <li>If they ask about your body or theirs, answer factually and briefly. "Bodies come in all shapes. Mine is shaped this way. Yours is shaped yours."</li>
+    <li>Model enjoying food yourself. Out loud, at the table.</li>
+    <li>Do not use food as a reward or punishment, now or ever.</li>
+  </ul>
+
+  <h3>Ages 12–16 · The image years</h3>
+
+  <p>This is the hardest stage. Social media. Peer comments. Hormonal body changes. Diet culture arriving in their feeds, their friend groups, sometimes in their own minds. You may feel helpless. You are not.</p>
+
+  <ul>
+    <li>Keep the family table. Even when they resist it, even when it's brief. The ritual matters.</li>
+    <li>Do not comment on their weight. Ever. Even positively ("you look great! have you lost weight?"). That sentence teaches them that smaller = better.</li>
+    <li>If they start restricting or behaving oddly around food, take it seriously. Get professional help early.</li>
+    <li>Keep eating with visible pleasure yourself. Your relationship with food is still their clearest reference point.</li>
+    <li>Talk about the stuff they're seeing — diet culture, filtered bodies, influencer nonsense — with curiosity, not panic. "What are you seeing out there? What do you think about it?"</li>
+  </ul>
+
+  <div class="pullquote">
+    The method is the same at every age: serve, trust, model, don't comment. The age changes the application — never the principle.
+  </div>
+
+  <div class="page-num">27</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ PART IV OPENER ━━━━━━━━━ -->
+<div class="page part-opener">
+  <div class="part-num">IV</div>
+  <div class="part-label">Part Four</div>
+  <div class="part-title">Thirty <em>peaceful meals.</em></div>
+  <div class="part-sub">Ten breakfasts. Ten lunches and snacks. Ten dinners. Most are meal cards you'll use for years. Five are hero recipes you'll come back to weekly.</div>
+  <svg width="120" height="16" style="color: var(--sage); margin-top: 2rem;"><use href="#leafy-divider"/></svg>
+</div>
+
+<!-- ━━━━━━━━━ BREAKFASTS ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Ten meals · Breakfast</div>
+      <h2 class="chapter-title">Morning <em>rotation.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#mug"/></svg>
+  </div>
+
+  <!-- HERO BREAKFAST -->
+  <div class="hero-recipe">
+    <div class="hero-recipe-label">Hero Recipe · 01</div>
+    <h3>Warm Oats with Berries &amp; Seeds</h3>
+    <div class="caption">Ten minutes. Five ingredients. A winter-morning staple that doesn't taste like health food.</div>
+    <div class="hero-recipe-cols">
+      <div>
+        <h5>Ingredients · Serves 4</h5>
+        <ul>
+          <li>2 cups old-fashioned oats</li>
+          <li>4 cups whole milk (or water + splash of milk)</li>
+          <li>Pinch salt</li>
+          <li>2 tbsp butter</li>
+          <li>1 cup berries (fresh or frozen)</li>
+          <li>¼ cup seeds (pumpkin, hemp, or chia)</li>
+          <li>Honey, maple syrup, or brown sugar to finish</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Method</h5>
+        <ol>
+          <li>Bring milk and salt to a simmer in a medium saucepan.</li>
+          <li>Stir in oats. Reduce heat to low. Cook, stirring occasionally, 5–7 minutes until thickened.</li>
+          <li>Stir in butter. Taste — add a pinch more salt if needed.</li>
+          <li>Divide into bowls. Top with berries, seeds, and a drizzle of honey or maple.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="note-block"><strong>Note ·</strong> Frozen berries are perfect here — they'll melt slightly into the hot oats. If someone refuses the seeds, serve theirs without. This is a build-your-own morning. Leftovers keep 3 days; add a splash of milk when reheating.</div>
+  </div>
+
+  <div class="page-num">28</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- BREAKFAST CARDS -->
+<div class="page">
+  <h3 style="margin-top: 0;">The other nine breakfasts</h3>
+  <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 1rem;">Card format — ingredients and a note. Make yours. Skip yours. Repeat as needed.</p>
+
+  <div class="meals-grid">
+    <div class="meal-card">
+      <div class="meal-card-num">Breakfast · 02</div>
+      <h4>Soft scrambled eggs on buttered toast</h4>
+      <div class="ing">Eggs · butter · good bread · salt</div>
+      <div class="note">Low heat. Patient stirring. Pull from the heat while still glossy — they'll finish cooking in the pan.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Breakfast · 03</div>
+      <h4>Yogurt &amp; granola parfait</h4>
+      <div class="ing">Plain whole-milk yogurt · granola · fruit · drizzle of honey</div>
+      <div class="note">Use plain yogurt and let the honey make it sweet — controls the sugar without performing it.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Breakfast · 04</div>
+      <h4>Green smoothie with banana &amp; spinach</h4>
+      <div class="ing">1 banana · 1 cup spinach · 1 cup milk · 1 tbsp nut butter · ice</div>
+      <div class="note">Can't taste the spinach. Kids usually don't notice. No one has to announce it.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Breakfast · 05</div>
+      <h4>Peanut butter banana toast</h4>
+      <div class="ing">Toast · peanut butter · sliced banana · pinch cinnamon</div>
+      <div class="note">The breakfast that always works. Under 3 minutes, everyone eats it, nothing gets thrown out.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Breakfast · 06</div>
+      <h4>Savory breakfast wrap</h4>
+      <div class="ing">Tortilla · scrambled egg · shredded cheese · greens · salsa</div>
+      <div class="note">Fold, roll, cut in half. Kids hold theirs. You eat standing up. Everyone's happy.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Breakfast · 07</div>
+      <h4>Overnight oats, three ways</h4>
+      <div class="ing">Oats + milk + chia (base) · variations: berries, apple-cinnamon, peanut butter-banana</div>
+      <div class="note">Mix in jars Sunday night. Grab for 4 weekday mornings. Cold and ready.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Breakfast · 08</div>
+      <h4>Cottage cheese bowl with fruit</h4>
+      <div class="ing">Whole-milk cottage cheese · peaches or berries · honey · flaky salt</div>
+      <div class="note">Protein-forward, genuinely delicious, no cooking required. Underrated.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Breakfast · 09</div>
+      <h4>Two-ingredient pancakes</h4>
+      <div class="ing">1 ripe banana · 2 eggs · butter for pan · berries on top</div>
+      <div class="note">Mash, mix, cook like pancakes. No flour. Fragile in the pan — flip once, gently.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Breakfast · 10</div>
+      <h4>Weekend French toast</h4>
+      <div class="ing">Stale bread · eggs · milk · vanilla · cinnamon · butter · maple</div>
+      <div class="note">Saturday morning territory. Treat-shaped. No apology.</div>
+    </div>
+  </div>
+
+  <div class="page-num">29</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ LUNCHES & SNACKS ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Ten meals · Lunch &amp; Snacks</div>
+      <h2 class="chapter-title">Midday <em>rotation.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#bowl"/></svg>
+  </div>
+
+  <!-- HERO LUNCH -->
+  <div class="hero-recipe">
+    <div class="hero-recipe-label">Hero Recipe · 02</div>
+    <h3>The Anytime Grain Bowl</h3>
+    <div class="caption">Not a recipe so much as a formula. Works for lunch, dinner, leftovers, travel, whatever.</div>
+    <div class="hero-recipe-cols">
+      <div>
+        <h5>The Formula</h5>
+        <ul>
+          <li><strong>Base:</strong> rice, quinoa, farro, or any leftover grain (1 cup per bowl)</li>
+          <li><strong>Protein:</strong> chicken, beans, hard-boiled egg, leftover fish</li>
+          <li><strong>Fresh thing:</strong> greens, cucumber, tomato, avocado</li>
+          <li><strong>Crunchy thing:</strong> seeds, nuts, crispy chickpeas, crumbled chips</li>
+          <li><strong>Sauce:</strong> olive oil + lemon, tahini, vinaigrette, pesto</li>
+          <li><strong>Optional:</strong> cheese, pickled onion, olives</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Method</h5>
+        <ol>
+          <li>Pick one from each category.</li>
+          <li>Layer in a bowl: base, then protein, then fresh, then crunchy.</li>
+          <li>Drizzle sauce over everything. Don't toss — let the sauce settle.</li>
+          <li>Eat immediately. Or pack in a jar and eat at a desk.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="note-block"><strong>Note ·</strong> This is the formula that feeds you when the fridge feels empty. As long as you have a grain, a protein, and something fresh, you have lunch. Kids can build their own with the components laid out — Division of Responsibility, lunch edition.</div>
+  </div>
+
+  <div class="page-num">30</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- LUNCH CARDS -->
+<div class="page">
+  <h3 style="margin-top: 0;">The other nine lunches &amp; snacks</h3>
+
+  <div class="meals-grid">
+    <div class="meal-card">
+      <div class="meal-card-num">Lunch · 12</div>
+      <h4>Chicken salad wrap</h4>
+      <div class="ing">Rotisserie chicken · mayo · celery · greens · tortilla</div>
+      <div class="note">Chop, mix, wrap. Uses up the rotisserie chicken from earlier in the week.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Lunch · 13</div>
+      <h4>Tuna melt on sourdough</h4>
+      <div class="ing">Canned tuna · mayo · mustard · cheddar · sourdough · butter</div>
+      <div class="note">Pan-fry like grilled cheese. Crispy outside, warm center. 10 minutes.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Lunch · 14</div>
+      <h4>Hummus plate</h4>
+      <div class="ing">Hummus · cucumber · carrot · pita · feta · olives</div>
+      <div class="note">Snack plate for lunch. No cooking. Everyone pieces it together themselves.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Lunch · 15</div>
+      <h4>Turkey &amp; cheese roll-ups</h4>
+      <div class="ing">Deli turkey · sliced cheese · apple slices · crackers</div>
+      <div class="note">Cold lunchbox gold. Grown-ups eat this too, unapologetically.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Lunch · 16</div>
+      <h4>Leftover-night lunch</h4>
+      <div class="ing">Whatever's in the fridge · over greens · with olive oil &amp; salt</div>
+      <div class="note">The most peaceful lunch there is. Nothing wasted. Nothing performed.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Lunch · 17</div>
+      <h4>Soup + grilled cheese</h4>
+      <div class="ing">Canned soup · good bread · cheddar · butter</div>
+      <div class="note">Comfort math: warm liquid + melted cheese = everything is okay.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Snack · 18</div>
+      <h4>Apple + almond butter + cheese</h4>
+      <div class="ing">Sliced apple · almond butter · sharp cheddar</div>
+      <div class="note">Weirdly satisfying. Protein + carb + fat. Holds you until dinner.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Lunch · 19</div>
+      <h4>Avocado toast with egg</h4>
+      <div class="ing">Toast · avocado · fried or poached egg · salt · pepper · chili flake</div>
+      <div class="note">Not just for millennials. Works for every age.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Lunch · 20</div>
+      <h4>Bean &amp; cheese quesadilla</h4>
+      <div class="ing">Tortilla · refried or canned beans · cheddar · salsa</div>
+      <div class="note">Folded, crisped in butter, cut into triangles. Kids inhale it.</div>
+    </div>
+  </div>
+
+  <div class="page-num">31</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ DINNERS — HERO 3 ━━━━━━━━━ -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Ten meals · Dinner</div>
+      <h2 class="chapter-title">Evening <em>rotation.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#skillet"/></svg>
+  </div>
+
+  <!-- HERO DINNER 1 -->
+  <div class="hero-recipe">
+    <div class="hero-recipe-label">Hero Recipe · 03</div>
+    <h3>Sheet-Pan Chicken &amp; Vegetables</h3>
+    <div class="caption">The Tier-1 dinner that raised my kids. One pan. One oven. Minimal dishes. Forty minutes, mostly hands-off.</div>
+    <div class="hero-recipe-cols">
+      <div>
+        <h5>Ingredients · Serves 4</h5>
+        <ul>
+          <li>6 bone-in, skin-on chicken thighs</li>
+          <li>1 lb small potatoes, halved</li>
+          <li>1 head broccoli, cut into florets</li>
+          <li>1 red onion, cut into wedges</li>
+          <li>3 tbsp olive oil</li>
+          <li>2 tsp salt · 1 tsp pepper · 1 tsp garlic powder · 1 tsp paprika</li>
+          <li>1 lemon, halved</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Method</h5>
+        <ol>
+          <li>Heat oven to 425°F.</li>
+          <li>Toss potatoes with 1 tbsp oil, salt, pepper. Spread on sheet pan. Roast 10 min.</li>
+          <li>Meanwhile, pat chicken dry. Rub with remaining oil and spices.</li>
+          <li>Add chicken and onion to the pan. Roast 20 min.</li>
+          <li>Add broccoli. Roast 10 more min until chicken reads 165°F and veg is tender-crisp.</li>
+          <li>Squeeze lemon over everything. Serve from the pan.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="note-block"><strong>Note ·</strong> Swap the broccoli for whatever's in the fridge — green beans, brussels sprouts, cauliflower. Swap the chicken thighs for sausages or salmon. The method is the principle — roast the dense things first, tender things later. Once you've made this three times, you'll never need a recipe again.</div>
+  </div>
+
+  <div class="page-num">32</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ HERO 4 ━━━━━━━━━ -->
+<div class="page">
+  <div class="hero-recipe" style="margin-top: 0;">
+    <div class="hero-recipe-label">Hero Recipe · 04</div>
+    <h3>One-Pot Pasta with Greens</h3>
+    <div class="caption">The weeknight pasta that surprises people. One pot, no draining, comes together in 20 minutes. Greens cook right into the sauce.</div>
+    <div class="hero-recipe-cols">
+      <div>
+        <h5>Ingredients · Serves 4</h5>
+        <ul>
+          <li>1 lb short pasta (rigatoni, penne, fusilli)</li>
+          <li>4 cups chicken or vegetable broth</li>
+          <li>2 cloves garlic, smashed</li>
+          <li>1 tsp red pepper flakes (optional)</li>
+          <li>1 large bunch greens (kale, spinach, chard), chopped</li>
+          <li>3 tbsp butter</li>
+          <li>½ cup grated parmesan, plus more for serving</li>
+          <li>Salt, pepper, olive oil</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Method</h5>
+        <ol>
+          <li>In a large pot, combine pasta, broth, garlic, pepper flakes, and a good pinch of salt. Bring to a boil.</li>
+          <li>Reduce to a steady simmer. Cook, stirring occasionally, until pasta is al dente and most of the liquid is absorbed — about 10 min.</li>
+          <li>Stir in greens. Cover. Let them wilt 1–2 min.</li>
+          <li>Remove from heat. Stir in butter and parmesan until creamy.</li>
+          <li>Taste for salt. Serve with more parmesan and a drizzle of olive oil.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="note-block"><strong>Note ·</strong> The magic here is the starchy broth — it becomes the sauce. Don't drain, don't rinse, don't add extra water. If it seems too dry at the end, splash in more broth before stirring in the butter.</div>
+  </div>
+
+  <div class="page-num">33</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ HERO 5 ━━━━━━━━━ -->
+<div class="page">
+  <div class="hero-recipe" style="margin-top: 0;">
+    <div class="hero-recipe-label">Hero Recipe · 05</div>
+    <h3>Slow-Cooker Beans &amp; Rice</h3>
+    <div class="caption">The Sunday set-it-forget-it that gives you two dinners, a lunch, and a freezer stash. Deeply comforting. Costs almost nothing.</div>
+    <div class="hero-recipe-cols">
+      <div>
+        <h5>Ingredients · Serves 6–8</h5>
+        <ul>
+          <li>1 lb dry black or pinto beans (soaked overnight, drained)</li>
+          <li>1 onion, chopped</li>
+          <li>4 cloves garlic, minced</li>
+          <li>1 bell pepper, chopped</li>
+          <li>2 tsp cumin · 2 tsp oregano · 2 tsp smoked paprika · 1 tsp chili powder</li>
+          <li>2 bay leaves</li>
+          <li>6 cups water or broth</li>
+          <li>2 tsp salt (add late)</li>
+          <li>Rice, for serving</li>
+          <li>Toppings: avocado, cilantro, lime, hot sauce, cheese</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Method</h5>
+        <ol>
+          <li>Add beans, onion, garlic, pepper, spices, bay leaves, and water to the slow cooker.</li>
+          <li>Cook on low 8 hours or high 4 hours, until beans are creamy.</li>
+          <li>Season with salt at the end (adding earlier toughens the beans).</li>
+          <li>Remove bay leaves. Mash a cup of beans against the side for creaminess.</li>
+          <li>Serve over rice with toppings, family-style.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="note-block"><strong>Note ·</strong> Night 1: bowls with rice. Night 2: burritos (warm tortilla, beans, cheese, salsa). Lunch: leftover beans + rice + greens. Freezer: the rest, in a big container. One hour of effort. Four meals.</div>
+  </div>
+
+  <div class="page-num">34</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- REMAINING DINNER CARDS -->
+<div class="page">
+  <h3 style="margin-top: 0;">The other seven dinners</h3>
+
+  <div class="meals-grid">
+    <div class="meal-card">
+      <div class="meal-card-num">Dinner · 24</div>
+      <h4>Taco night</h4>
+      <div class="ing">Seasoned ground beef or beans · tortillas · shredded cheese · lettuce · salsa · avocado</div>
+      <div class="note">Everyone builds their own. Division of Responsibility, dinner edition.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Dinner · 25</div>
+      <h4>Rotisserie chicken + rice + broccoli</h4>
+      <div class="ing">Store-bought rotisserie chicken · rice · steamed broccoli · soy sauce · sesame oil</div>
+      <div class="note">The "I did not cook" dinner. Still a meal. Still works.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Dinner · 26</div>
+      <h4>Frozen-veg stir-fry</h4>
+      <div class="ing">Frozen stir-fry veg · frozen shrimp · garlic · soy · rice · ginger</div>
+      <div class="note">Freezer to table in 15 minutes. No chopping required.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Dinner · 27</div>
+      <h4>Breakfast for dinner</h4>
+      <div class="ing">Scrambled eggs · toast · bacon or sausage · fruit · maple syrup</div>
+      <div class="note">The permission dinner. Kids love it. You love it. No one loses.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Dinner · 28</div>
+      <h4>Pasta with marinara &amp; meatballs</h4>
+      <div class="ing">Pasta · jarred marinara · frozen meatballs · parmesan · garlic bread</div>
+      <div class="note">Italian-grandma energy, zero Italian grandma required.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Dinner · 29</div>
+      <h4>Quesadilla night</h4>
+      <div class="ing">Tortillas · cheese · leftover chicken or beans · salsa · sour cream</div>
+      <div class="note">Fold, crisp, cut in triangles. Under 10 minutes. Universally loved.</div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-card-num">Dinner · 30</div>
+      <h4>Salmon + rice + vegetable</h4>
+      <div class="ing">Salmon fillets · rice · roasted or steamed vegetable · lemon · butter</div>
+      <div class="note">Tier 1 when you have the energy. Under 30 min. Feels nice to eat.</div>
+    </div>
+  </div>
+
+  <div class="svg-divider" style="margin-top: 2rem;"><svg width="100" height="16"><use href="#leafy-divider"/></svg></div>
+  <p style="text-align: center; font-family: 'Playfair Display', serif; font-style: italic; color: var(--muted); font-size: 1rem;">
+    Thirty meals. Five heroes. Rotate forever.
+  </p>
+
+  <div class="page-num">35</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+<!-- ━━━━━━━━━ CLOSING ━━━━━━━━━ -->
+<div class="page">
+  <div class="closing">
+    <svg width="60" height="80" style="color: var(--sage); opacity: 0.5; margin-bottom: 1.5rem;"><use href="#sprig"/></svg>
+    <div class="section-eyebrow">A closing note</div>
+    <h2 class="section-title" style="margin-top: 0.5rem;">Ordinary is <em>the point.</em></h2>
+
+    <div class="svg-divider" style="margin: 1.5rem 0;"><svg width="16" height="16"><use href="#bloom"/></svg></div>
+
+    <p style="max-width: 5in; margin: 0 auto 1.2rem; font-size: 1.02rem;">If you take one thing from this book, let it be this: the meal you're going to feed your family tonight is not going to go on Instagram. It is not going to be perfect. It is not going to satisfy every eater at the table.</p>
+
+    <p style="max-width: 5in; margin: 0 auto 1.2rem; font-size: 1.02rem;">And it is still, quietly, one of the most important things you will do today. Not because of what's on the plate. Because of the adult who sat down with them, and the child who learned — without being taught — that eating is a normal thing, and food is food, and the people you love show up and pass the bread.</p>
+
+    <div class="pullquote" style="max-width: 5in; margin: 1.5rem auto; text-align: left;">
+      That is the mindful family kitchen. Unglamorous. Uncomplicated. Absolutely worth it.
+    </div>
+
+    <p style="font-size: 0.95rem; color: var(--walnut); font-style: italic;">Thank you for letting me into your kitchen.</p>
+
+    <div class="sig">With you,</div>
+    <div class="sig" style="margin: 0.2rem 0 0.4rem;">Phyllis</div>
+    <div class="sig-meta">Inman Institute · phyllisinman.com</div>
+  </div>
+
+  <div class="colophon">
+    <div class="colophon-mark">· · ·</div>
+    <div>© Inman Institute LLC · The Mindful Family Kitchen · Ebook 01 of the Purposefully Eating Series</div>
+    <div>For your family and one friend. Please don't redistribute — instead, send them to phyllisinman.com.</div>
+    <div style="margin-top: 0.8rem;">Want to go deeper? <strong style="color: var(--terracotta);">Purposefully Eating</strong> — the 6-week flagship course. Learn more at <strong style="color: var(--terracotta);">phyllisinman.com</strong></div>
+  </div>
+
+  <div class="page-num">36</div><div class="page-brand">The Mindful Family Kitchen</div>
+</div>
+
+</body>
+</html>
