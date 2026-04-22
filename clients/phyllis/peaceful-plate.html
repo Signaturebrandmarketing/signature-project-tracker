@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Peaceful Plate — Phyllis Inman</title>
+<meta name="description" content="A 5-step starter guide to eating without guilt, rules, or restriction. By Phyllis Inman of Inman Institute.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F1E6;
+    --cream-alt: #EDE3D2;
+    --paper: #FDF9F0;
+    --sage: #8A9A5B;
+    --sage-soft: #E3E8D3;
+    --terracotta: #C87F5A;
+    --terracotta-soft: #F2DCCE;
+    --walnut: #6B4E32;
+    --charcoal: #2B2A28;
+    --muted: #6F6B63;
+    --gold: #D4AF37;
+    --border: #D9CEB8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream-alt);
+    color: var(--charcoal);
+    line-height: 1.65;
+    padding: 2rem 1rem;
+  }
+
+  /* ━━━━━━━━━ ACTION BAR (hidden in print) ━━━━━━━━━ */
+  .action-bar {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .btn {
+    background: var(--paper);
+    color: var(--charcoal);
+    border: 1px solid var(--border);
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+    box-shadow: 0 2px 8px rgba(107, 78, 50, 0.08);
+  }
+  .btn:hover { border-color: var(--terracotta); color: var(--terracotta); }
+  .btn-primary {
+    background: var(--sage);
+    color: white;
+    border-color: var(--sage);
+  }
+  .btn-primary:hover {
+    background: var(--walnut);
+    border-color: var(--walnut);
+    color: white;
+  }
+  .back-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+  }
+
+  /* ━━━━━━━━━ PAGE (book format) ━━━━━━━━━ */
+  .page {
+    width: 100%;
+    max-width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto 1.5rem;
+    background: var(--paper);
+    padding: 0.9in 0.95in;
+    box-shadow: 0 6px 40px rgba(107, 78, 50, 0.1);
+    position: relative;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  .page-num {
+    position: absolute;
+    bottom: 0.45in;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .page-brand {
+    position: absolute;
+    bottom: 0.45in;
+    right: 0.95in;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  /* ━━━━━━━━━ COVER ━━━━━━━━━ */
+  .cover {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5in 1in;
+    border-top: 8px solid var(--sage);
+  }
+  .cover-tag {
+    font-size: 0.75rem;
+    color: var(--sage);
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.2rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--charcoal);
+    margin-bottom: 1.25rem;
+  }
+  .cover-title em {
+    color: var(--terracotta);
+    font-style: italic;
+    font-weight: 500;
+  }
+  .cover-rule {
+    width: 60px;
+    height: 2px;
+    background: var(--terracotta);
+    margin: 1.5rem auto;
+  }
+  .cover-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--walnut);
+    max-width: 5in;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+  }
+  .cover-author {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: 0.06em;
+  }
+  .cover-institute {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-top: 0.35rem;
+  }
+  .cover-mark {
+    position: absolute;
+    bottom: 0.9in;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  .cover-mark svg { width: 44px; height: 44px; fill: none; stroke: var(--terracotta); stroke-width: 1.2; }
+
+  /* ━━━━━━━━━ TYPOGRAPHY ━━━━━━━━━ */
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+  h2.section-title em {
+    color: var(--terracotta);
+    font-style: italic;
+    font-weight: 500;
+  }
+  .section-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.85rem;
+  }
+  .section-lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--walnut);
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--charcoal);
+    margin: 2rem 0 0.7rem;
+  }
+  h3 em { color: var(--terracotta); font-style: italic; }
+  p {
+    font-size: 0.96rem;
+    color: var(--charcoal);
+    margin-bottom: 0.95rem;
+  }
+  p.drop-cap::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    float: left;
+    line-height: 0.85;
+    margin: 0.1rem 0.45rem 0 0;
+  }
+
+  /* ━━━━━━━━━ COMPONENTS ━━━━━━━━━ */
+  .pullquote {
+    margin: 1.5rem 0;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--sage);
+    background: var(--sage-soft);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--charcoal);
+  }
+  .ornament {
+    text-align: center;
+    margin: 1.75rem 0;
+    font-size: 1.2rem;
+    letter-spacing: 1rem;
+    color: var(--terracotta);
+  }
+  .shift {
+    margin: 2rem 0;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--border);
+  }
+  .shift-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: var(--terracotta);
+    color: white;
+    border-radius: 50%;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.85rem;
+  }
+  .shift-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+  }
+  .shift-title em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--terracotta);
+  }
+  .swap-box {
+    background: var(--cream);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin: 0.75rem 0;
+    font-size: 0.92rem;
+    border-left: 3px solid var(--walnut);
+  }
+  .swap-box .old {
+    color: var(--muted);
+    text-decoration: line-through;
+    margin-bottom: 0.25rem;
+  }
+  .swap-box .new { color: var(--sage); font-weight: 500; }
+  .swap-box .label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+  }
+  .swap-box .old .label { color: var(--muted); }
+  .swap-box .new .label { color: var(--sage); }
+  .try-this {
+    background: var(--terracotta-soft);
+    border-radius: 8px;
+    padding: 1.1rem 1.3rem;
+    margin: 1.25rem 0;
+    position: relative;
+  }
+  .try-this-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 0.5rem;
+  }
+  .try-this p {
+    font-size: 0.92rem;
+    margin-bottom: 0.5rem;
+  }
+  .try-this p:last-child { margin-bottom: 0; }
+
+  /* Table of contents */
+  .toc h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--charcoal);
+  }
+  .toc-item {
+    display: grid;
+    grid-template-columns: 32px 1fr auto;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0.9rem 0;
+    border-bottom: 1px dotted var(--border);
+    font-size: 0.95rem;
+  }
+  .toc-item:last-child { border-bottom: none; }
+  .toc-num {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--terracotta);
+    font-size: 1.15rem;
+  }
+  .toc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--charcoal);
+  }
+  .toc-title em { font-style: italic; color: var(--muted); font-size: 0.85rem; display: block; margin-top: 0.2rem; }
+  .toc-page {
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Day card */
+  .day-card {
+    background: var(--cream);
+    padding: 1.2rem 1.4rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 3px solid var(--sage);
+  }
+  .day-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.3rem;
+  }
+  .day-card h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    margin-bottom: 0.55rem;
+  }
+  .day-card p { font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+  /* Sample day */
+  .day-schedule { margin: 1.5rem 0; }
+  .schedule-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1.2rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dotted var(--border);
+    align-items: baseline;
+  }
+  .schedule-row:last-child { border-bottom: none; }
+  .schedule-time {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--terracotta);
+    font-size: 0.9rem;
+  }
+  .schedule-body {
+    font-size: 0.93rem;
+    color: var(--charcoal);
+    line-height: 1.55;
+  }
+
+  /* Next steps cards */
+  .step-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem 1.3rem;
+    margin: 0.85rem 0;
+  }
+  .step-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.35rem;
+  }
+  .step-card .price {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--sage-soft);
+    color: var(--sage);
+    margin-bottom: 0.55rem;
+  }
+  .step-card.paid .price { background: var(--terracotta-soft); color: var(--terracotta); }
+  .step-card p {
+    font-size: 0.88rem;
+    margin-bottom: 0;
+    color: var(--muted);
+  }
+
+  /* Closing */
+  .closing {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  .closing .sig {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--terracotta);
+    margin: 1.5rem 0 0.4rem;
+  }
+  .closing .sig-meta {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
+  /* Copyright */
+  .colophon {
+    text-align: center;
+    padding-top: 5in;
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .colophon-mark {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--terracotta);
+    margin-bottom: 0.8rem;
+  }
+
+  /* ━━━━━━━━━ PRINT ━━━━━━━━━ */
+  @media print {
+    @page {
+      size: letter;
+      margin: 0;
+    }
+    body {
+      background: white;
+      padding: 0;
+    }
+    .action-bar, .back-link { display: none !important; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      min-height: 11in;
+      height: 11in;
+      overflow: hidden;
+      page-break-after: always;
+    }
+    .page:last-child { page-break-after: auto; }
+    .pullquote, .try-this, .day-card, .step-card, .swap-box {
+      break-inside: avoid;
+    }
+  }
+
+  /* ━━━━━━━━━ MOBILE ━━━━━━━━━ */
+  @media (max-width: 780px) {
+    body { padding: 0.5rem; }
+    .page {
+      padding: 1.8rem 1.3rem;
+      min-height: auto;
+    }
+    .cover { padding: 3rem 1.5rem; }
+    .cover-title { font-size: 2.8rem; }
+    .cover-sub { font-size: 1.15rem; }
+    .action-bar { top: auto; bottom: 1rem; right: 1rem; }
+    .back-link { top: auto; bottom: 1rem; left: 1rem; }
+    h2.section-title { font-size: 1.8rem; }
+    .schedule-row { grid-template-columns: 70px 1fr; gap: 0.8rem; }
+    .toc-item { grid-template-columns: 26px 1fr auto; gap: 0.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<a href="./" class="btn back-link">← Dashboard</a>
+<div class="action-bar">
+  <a href="the-peaceful-plate.pdf" class="btn" download>Download PDF</a>
+  <button class="btn btn-primary" onclick="window.print()">Print · Save as PDF</button>
+</div>
+
+<!-- ━━━━━━━━━ COVER ━━━━━━━━━ -->
+<div class="page cover">
+  <div class="cover-tag">A Free Gift · Inman Institute</div>
+  <h1 class="cover-title">The Peaceful <em>Plate</em></h1>
+  <div class="cover-rule"></div>
+  <div class="cover-sub">A 5-step starter guide to eating without guilt, rules, or restriction.</div>
+  <div class="cover-author">Phyllis Inman</div>
+  <div class="cover-institute">Inman Institute · phyllisinman.com</div>
+  <div class="cover-mark">
+    <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="18"/><circle cx="22" cy="22" r="3" fill="#C87F5A" stroke="none"/></svg>
+  </div>
+</div>
+
+<!-- ━━━━━━━━━ A NOTE BEFORE YOU BEGIN ━━━━━━━━━ -->
+<div class="page">
+  <div class="section-eyebrow">A note before you begin</div>
+  <h2 class="section-title">If you're reading this, <em>something in you is tired.</em></h2>
+
+  <p class="drop-cap" style="margin-top: 1.5rem;">Tired of starting over on Monday. Tired of the same internal argument in the grocery store. Tired of feeling like a hypocrite when you tell your kids "all foods are okay" — but privately, you don't believe it about yourself.</p>
+
+  <p>I want you to know: you didn't fail diets. Diets failed you. And the part of you that's looking for something different? That part is wise.</p>
+
+  <p>This guide won't hand you another set of rules. It won't tell you what to eat or when. What it will do is introduce you to a different way of relating to food — one built on awareness, permission, and peace.</p>
+
+  <p>Read it slowly. Do the small exercises. Give yourself an hour with it.</p>
+
+  <p>Then decide what to keep.</p>
+
+  <div class="ornament">· · ·</div>
+
+  <p style="text-align: right; margin-top: 2rem; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--terracotta);">With you,</p>
+  <p style="text-align: right; font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--charcoal);">Phyllis</p>
+
+  <div class="page-num">2</div>
+  <div class="page-brand">The Peaceful Plate</div>
+</div>
+
+<!-- ━━━━━━━━━ TABLE OF CONTENTS ━━━━━━━━━ -->
+<div class="page toc">
+  <div class="section-eyebrow">Inside this guide</div>
+  <h2>Contents</h2>
+
+  <div class="toc-item">
+    <div class="toc-num">I</div>
+    <div class="toc-title">The Real Reason Diets Don't Work <em>(and why it isn't willpower)</em></div>
+    <div class="toc-page">04</div>
+  </div>
+  <div class="toc-item">
+    <div class="toc-num">II</div>
+    <div class="toc-title">The Five Shifts of The Peaceful Plate <em>the core of the method</em></div>
+    <div class="toc-page">06</div>
+  </div>
+  <div class="toc-item">
+    <div class="toc-num">III</div>
+    <div class="toc-title">Your 3-Day Starter Practice <em>begin small, begin gently</em></div>
+    <div class="toc-page">12</div>
+  </div>
+  <div class="toc-item">
+    <div class="toc-num">IV</div>
+    <div class="toc-title">A Sample Peaceful Day <em>what this looks like in real life</em></div>
+    <div class="toc-page">14</div>
+  </div>
+  <div class="toc-item">
+    <div class="toc-num">V</div>
+    <div class="toc-title">Where to Go From Here <em>next steps, your pace</em></div>
+    <div class="toc-page">16</div>
+  </div>
+
+  <div class="pullquote" style="margin-top: 2.5rem;">
+    Food is not a test of your character. It is information your body is giving you.
+  </div>
+
+  <p style="font-size: 0.85rem; color: var(--muted); font-style: italic; text-align: center; margin-top: 2rem;">
+    Estimated read time · 25 minutes · 4 exercises
+  </p>
+
+  <div class="page-num">3</div>
+  <div class="page-brand">The Peaceful Plate</div>
+</div>
+
+<!-- ━━━━━━━━━ PART I ━━━━━━━━━ -->
+<div class="page">
+  <div class="section-eyebrow">Part One</div>
+  <h2 class="section-title">The real reason diets <em>don't work.</em></h2>
+  <div class="section-lead">Here is the quiet truth most diet programs will never tell you.</div>
+
+  <div class="pullquote">
+    Restriction creates obsession. Obsession creates rebellion. Rebellion creates shame. Shame sends you back to restriction.
+  </div>
+
+  <p>That is the cycle. Not a lack of willpower. Not a broken metabolism. Not some moral weakness on your part. A cycle — engineered by an industry that profits every time you start over.</p>
+
+  <p>When you remove a food from your life, your brain doesn't file it under "healthy." It files it under <em>scarce</em>. And your brain is very, very good at protecting you from scarcity. It thinks about the forbidden food more. It notices it in every store, every social media scroll, every commercial break. Eventually, your resolve cracks — not because you're weak, but because your brain is doing exactly what brains evolved to do.</p>
+
+  <p>Then comes the shame. Then the promise to "be better tomorrow." Then a new diet. Then the cycle again.</p>
+
+  <h3>The Peaceful Plate breaks the cycle <em>at the root</em> — not at the willpower level.</h3>
+
+  <p>It doesn't ask you to resist more. It asks you to relate differently.</p>
+
+  <div class="ornament">· · ·</div>
+
+  <h3>The shift, in one sentence</h3>
+
+  <div class="pullquote" style="background: var(--terracotta-soft); border-left-color: var(--terracotta);">
+    Food is not a test of your character. It is information your body is giving you.
+  </div>
+
+  <p>Hold that sentence. Read it again. Notice how your body responds to it.</p>
+
+  <div class="page-num">4</div>
+  <div class="page-brand">The Peaceful Plate</div>
+</div>
+
+<!-- ━━━━━━━━━ PART II — THE 5 SHIFTS (intro) ━━━━━━━━━ -->
+<div class="page">
+  <div class="section-eyebrow">Part Two</div>
+  <h2 class="section-title">The five shifts of <em>The Peaceful Plate.</em></h2>
+  <div class="section-lead">These are the five reframes that change everything. Not in a week. But starting today.</div>
+
+  <!-- SHIFT 1 -->
+  <div class="shift">
+    <div class="shift-num">1</div>
+    <div class="shift-title">From rules <em>to awareness.</em></div>
+
+    <div class="swap-box">
+      <div class="old"><span class="label">The old way ·</span> "Don't eat carbs after 6pm."</div>
+      <div class="new"><span class="label">The peaceful way ·</span> "How did I feel after I ate tonight? What does my body want tomorrow?"</div>
+    </div>
+
+    <p>Rules are outside of you. Awareness is inside of you. Rules break the moment life gets hard. Awareness deepens every time you practice it.</p>
+
+    <p>You don't need a new set of rules. You need to learn how to listen to the body you already have.</p>
+
+    <div class="try-this">
+      <div class="try-this-label">Try this right now</div>
+      <p>Think about your last meal. Without judging whether it was "good" or "bad," ask:</p>
+      <p>— How did I feel an hour after eating?<br>— How did I feel three hours after?<br>— What was my energy like?</p>
+      <p style="font-style: italic; margin-top: 0.5rem;">Notice: that is data. Not judgment. Data.</p>
+    </div>
+  </div>
+
+  <div class="page-num">5</div>
+  <div class="page-brand">The Peaceful Plate</div>
+</div>
+
+<!-- ━━━━━━━━━ SHIFT 2 ━━━━━━━━━ -->
+<div class="page">
+  <div class="shift">
+    <div class="shift-num">2</div>
+    <div class="shift-title">From restriction <em>to permission.</em></div>
+
+    <div class="swap-box">
+      <div class="old"><span class="label">The old way ·</span> "I can't have that."</div>
+      <div class="new"><span class="label">The peaceful way ·</span> "I can have that. Do I want it right now?"</div>
+    </div>
+
+    <p>This shift feels scary at first. Most women I work with say some version of: <em>"If I give myself permission to eat anything, I'll eat everything."</em></p>
+
+    <p>Here is what I've seen, every single time: <strong>the opposite is true.</strong></p>
+
+    <p>When a food is truly, genuinely allowed — when it isn't going anywhere, when it isn't "the last time before I start over Monday" — it loses its grip. You can have it, and you might. But you can also not have it. And the decision isn't loaded anymore.</p>
+
+    <div class="pullquote">
+      Permission isn't a free-for-all. It's the end of a war.
+    </div>
+
+    <div class="try-this">
+      <div class="try-this-label">Try this</div>
+      <p>Choose one food you've told yourself you "shouldn't" eat. Buy it, keep it in your house, and simply let it sit. Notice what happens in you over a week. Most people find the obsession fades within days.</p>
+    </div>
+  </div>
+
+  <!-- SHIFT 3 -->
+  <div class="shift">
+    <div class="shift-num">3</div>
+    <div class="shift-title">From shame <em>to curiosity.</em></div>
+
+    <div class="swap-box">
+      <div class="old"><span class="label">The old way ·</span> "I can't believe I ate that. I have no self-control."</div>
+      <div class="new"><span class="label">The peaceful way ·</span> "Interesting. What was I feeling before I ate? What was I needing?"</div>
+    </div>
+
+    <p>Shame tells you something is wrong with <em>you</em>. Curiosity asks what is happening <em>around</em> you.</p>
+  </div>
+
+  <div class="page-num">6</div>
+  <div class="page-brand">The Peaceful Plate</div>
+</div>
+
+<!-- ━━━━━━━━━ SHIFT 3 continued + SHIFT 4 ━━━━━━━━━ -->
+<div class="page">
+  <p>Nine times out of ten, what looks like "overeating" is actually: under-sleeping, under-eating earlier in the day, unprocessed emotion, loneliness, a hard conversation, a news cycle, a particularly long afternoon with small children.</p>
+
+  <p>The eating isn't the problem. The eating is the message.</p>
+
+  <p>When you meet yourself with curiosity instead of shame, you get the information. When you meet yourself with shame, you get more shame — and more eating.</p>
+
+  <!-- SHIFT 4 -->
+  <div class="shift">
+    <div class="shift-num">4</div>
+    <div class="shift-title">From good and bad foods <em>to neutral foods.</em></div>
+
+    <div class="swap-box">
+      <div class="old"><span class="label">The old way ·</span> "Kale is clean. Cake is bad."</div>
+      <div class="new"><span class="label">The peaceful way ·</span> "Kale and cake are both food. They do different things. Both can belong."</div>
+    </div>
+
+    <p>When foods carry moral weight, so do the people who eat them. If cake is "bad," then eating cake makes you "bad." That is a lot of moral freight to put on a slice of birthday cake.</p>
+
+    <p>Food is not a moral category. It's a source of energy, nourishment, pleasure, connection, and sometimes just comfort. All of those are valid. None of them require punishment.</p>
+
+    <div class="pullquote">
+      When you strip food of moral weight, you also strip it from your children. They grow up seeing food as <em>food</em> — not as a virtue test.
+    </div>
+
+    <p>That is one of the most valuable things you will ever give them.</p>
+  </div>
+
+  <div class="page-num">7</div>
+  <div class="page-brand">The Peaceful Plate</div>
+</div>
+
+<!-- ━━━━━━━━━ SHIFT 5 ━━━━━━━━━ -->
+<div class="page">
+  <div class="shift" style="border-top: none; padding-top: 0;">
+    <div class="shift-num">5</div>
+    <div class="shift-title">From "someday" <em>to right now.</em></div>
+
+    <div class="swap-box">
+      <div class="old"><span class="label">The old way ·</span> "I'll eat peacefully once I lose the weight / finish this challenge / get through the holidays."</div>
+      <div class="new"><span class="label">The peaceful way ·</span> "I can eat peacefully today. The meal in front of me is the only one I have to get right — and 'right' just means aware."</div>
+    </div>
+
+    <p>Peace is not a reward for reaching your goal. Peace is the path <em>to</em> your goal. And if "your goal" turns out to be something different once you're calm enough to see it clearly — that is a gift, not a failure.</p>
+
+    <div class="pullquote">
+      Right now is always the place where things change.
+    </div>
+  </div>
+
+  <div class="ornament" style="margin-top: 3rem;">· · ·</div>
+
+  <p style="text-align: center; font-family: 'Playfair Display', serif; font-style: italic; color: var(--muted); font-size: 1rem; margin-top: 1.5rem;">
+    Those are the five shifts. Simple. Not easy. Worth it.
+  </p>
+
+  <div class="page-num">8</div>
+  <div class="page-brand">The Peaceful Plate</div>
+</div>
+
+<!-- ━━━━━━━━━ PART III — 3-DAY STARTER ━━━━━━━━━ -->
+<div class="page">
+  <div class="section-eyebrow">Part Three</div>
+  <h2 class="section-title">Your 3-day <em>starter practice.</em></h2>
+  <div class="section-lead">Start small. Start gently. Don't try to change everything at once.</div>
+
+  <p>For the next 3 days, practice one micro-habit per day. That's it. Nothing else has to change.</p>
+
+  <div class="day-card">
+    <div class="day-label">Day One</div>
+    <h3>The Pause</h3>
+    <p>Before your first bite of any meal, pause for 3 breaths. That's the whole practice.</p>
+    <p>You don't have to do anything with those breaths. Just take them. What you'll notice:</p>
+    <p style="padding-left: 1rem;">— Some meals, you were starving and didn't realize it.<br>— Some meals, you weren't really hungry — you were bored, or stressed, or on autopilot.<br>— All meals, you are now present for them.</p>
+    <p style="font-style: italic; color: var(--muted); margin-top: 0.5rem;">
+      Workbook line: <em>"After 3 days of The Pause, what did I notice?"</em>
+    </p>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label">Day Two</div>
+    <h3>The Check-In</h3>
+    <p>Halfway through a meal, pause. Put your fork down. Ask yourself:</p>
+    <p style="padding-left: 1rem;">— Am I still hungry?<br>— Am I satisfied?<br>— Am I eating because of the food — or because of the feeling?</p>
+    <p>No right answer. Just listening.</p>
+    <p>You'll likely keep eating at some meals, and stop at others. Both are fine. The goal is to be the one deciding — not the plate deciding for you.</p>
+  </div>
+
+  <div class="page-num">9</div>
+  <div class="page-brand">The Peaceful Plate</div>
+</div>
+
+<!-- ━━━━━━━━━ DAY 3 + PART IV intro ━━━━━━━━━ -->
+<div class="page">
+  <div class="day-card">
+    <div class="day-label">Day Three</div>
+    <h3>The Kindness Ledger</h3>
+    <p>At the end of Day 3, write down:</p>
+    <p style="padding-left: 1rem;">— One meal where you listened to your body<br>— One meal where you didn't — and what was happening in your life at that moment<br>— One thing you want to keep doing</p>
+    <p>That's your ledger. No "bad" entries. No "failures." Just data and kindness.</p>
+  </div>
+
+  <div class="ornament">· · ·</div>
+
+  <p style="text-align: center; font-family: 'Playfair Display', serif; font-style: italic; color: var(--muted); font-size: 1rem; margin-bottom: 3rem;">
+    Three days. Three small things. That is the whole practice.
+  </p>
+
+  <!-- Part IV intro -->
+  <div class="section-eyebrow">Part Four</div>
+  <h2 class="section-title">A sample <em>peaceful day.</em></h2>
+  <div class="section-lead">This is not a meal plan. It is a shape — an example of what this method looks like in a real life, with real kids, real mornings, real meetings.</div>
+
+  <div class="page-num">10</div>
+  <div class="page-brand">The Peaceful Plate</div>
+</div>
+
+<!-- ━━━━━━━━━ SAMPLE DAY ━━━━━━━━━ -->
+<div class="page">
+  <div class="day-schedule">
+    <div class="schedule-row">
+      <div class="schedule-time">6:50 am</div>
+      <div class="schedule-body">I wake up. Glass of water. I am not going to make my body prove itself before I feed it.</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">7:30 am</div>
+      <div class="schedule-body">Breakfast with my family. Scrambled eggs, toast with butter, berries, coffee. No food rules announced at this table. My daughter sees me eat breakfast. My son sees me enjoy breakfast.</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">10:15 am</div>
+      <div class="schedule-body">Mid-morning. I notice hunger. Not dramatic — just a whisper. I have an apple and a handful of almonds at my desk.</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">12:30 pm</div>
+      <div class="schedule-body">Lunch. Leftovers from last night's chicken dinner over greens, plus a piece of bread. I take 3 breaths before I start. I'm present for the first few bites.</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">3:00 pm</div>
+      <div class="schedule-body">Afternoon slump. My old instinct says "you don't need anything." My new instinct asks: <em>do I want something?</em> I have a piece of dark chocolate and a cup of tea. Not a crisis. Just an afternoon.</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">6:15 pm</div>
+      <div class="schedule-body">Family dinner. Pasta with meat sauce, salad, bread. I serve myself. My kids serve themselves. No one is commenting on anyone's plate. We talk about our days.</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">8:30 pm</div>
+      <div class="schedule-body">I want something sweet. I have a small bowl of ice cream. I enjoy it. It is not an event.</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">10:00 pm</div>
+      <div class="schedule-body">I go to bed. No post-mortem. No "tomorrow I'll be better." Just tired. Just rested. Just a regular person who ate regular meals.</div>
+    </div>
+  </div>
+
+  <div class="ornament">· · ·</div>
+
+  <div class="pullquote" style="text-align: center;">
+    That is it. That is the whole method in a day. <br>Not glamorous. Not restrictive. Not dramatic. <br><strong style="color: var(--terracotta);">Just peaceful.</strong>
+  </div>
+
+  <div class="page-num">11</div>
+  <div class="page-brand">The Peaceful Plate</div>
+</div>
+
+<!-- ━━━━━━━━━ PART V — WHERE TO GO ━━━━━━━━━ -->
+<div class="page">
+  <div class="section-eyebrow">Part Five</div>
+  <h2 class="section-title">Where to go <em>from here.</em></h2>
+  <div class="section-lead">You now have a new frame for food, five core shifts, a 3-day starter practice, and a picture of what "peaceful" looks like. If you want to go deeper, here are three next steps — pick the one that fits where you are.</div>
+
+  <div class="step-card">
+    <h4>If you have 15 minutes a week</h4>
+    <div class="price">Free · ongoing</div>
+    <p><strong>Join my email list.</strong> Every Wednesday, I send one short note with a single practice, reflection, or reframe. No sales pitches disguised as emails. Just one thing to try. (You're probably already on the list — that's how you got this guide.)</p>
+  </div>
+
+  <div class="step-card paid">
+    <h4>If you're ready to try one small thing</h4>
+    <div class="price">$27 · one-time</div>
+    <p><strong>The 7-Day Mindful Eating Reset.</strong> One week. Daily 10-minute videos + a pocket-sized workbook. If this guide gave you a new lens, the Reset gives you a new week. <em>Launching soon at phyllisinman.com.</em></p>
+  </div>
+
+  <div class="step-card paid">
+    <h4>If you're ready to rebuild the whole relationship</h4>
+    <div class="price">$197–$297 · self-paced</div>
+    <p><strong>Purposefully Eating</strong> — the 6-week flagship course. Six modules. The full method. A workbook, meditations, and a family toolkit (optional). <em>Founding member pricing opens soon. Email list gets first access.</em></p>
+  </div>
+
+  <div class="page-num">12</div>
+  <div class="page-brand">The Peaceful Plate</div>
+</div>
+
+<!-- ━━━━━━━━━ CLOSING ━━━━━━━━━ -->
+<div class="page">
+  <div class="closing">
+    <div class="section-eyebrow">One last thing</div>
+    <h2 class="section-title" style="margin-top: 0.5rem;">You are not behind. <br>You are not <em>broken.</em> <br>You are not weak.</h2>
+
+    <div class="ornament" style="margin-top: 1.5rem;">· · ·</div>
+
+    <p style="max-width: 5in; margin: 0 auto 1.5rem; font-size: 1.05rem;">You are a person who has been handed a lot of bad information about food and your body, over a lot of years, and is now, today, choosing to relate to both of them differently.</p>
+
+    <div class="pullquote" style="max-width: 5in; margin: 1.5rem auto; text-align: left;">
+      That is the beginning of every good thing.
+    </div>
+
+    <p style="font-size: 1rem; color: var(--walnut); font-style: italic;">Welcome to The Peaceful Plate.</p>
+
+    <div class="sig">With you,</div>
+    <div class="sig" style="margin: 0.2rem 0 0.5rem;">Phyllis</div>
+    <div class="sig-meta">Inman Institute · phyllisinman.com</div>
+  </div>
+
+  <div class="colophon">
+    <div class="colophon-mark">· · ·</div>
+    <div>© Inman Institute LLC. This guide is free to read and share with a friend who needs it.</div>
+    <div>Please don't copy the contents into your own materials without permission —</div>
+    <div>instead, share this link: <strong style="color: var(--terracotta);">phyllisinman.com</strong></div>
+  </div>
+
+  <div class="page-num">13</div>
+  <div class="page-brand">The Peaceful Plate</div>
+</div>
+
+</body>
+</html>
