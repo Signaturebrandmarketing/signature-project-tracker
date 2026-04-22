@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eating Through Emotions — Phyllis Inman</title>
+<meta name="description" content="A compassionate guide to what's really happening when food feels bigger than food. An ebook by Phyllis Inman of Inman Institute.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F1E6; --cream-alt: #EDE3D2; --paper: #FDF9F0;
+    --sage: #8A9A5B; --sage-soft: #E3E8D3;
+    --terracotta: #C87F5A; --terracotta-soft: #F2DCCE;
+    --walnut: #6B4E32; --charcoal: #2B2A28;
+    --muted: #6F6B63; --gold: #D4AF37; --border: #D9CEB8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--cream-alt); color: var(--charcoal);
+    line-height: 1.65; padding: 2rem 1rem;
+  }
+  .action-bar { position: fixed; top: 1rem; right: 1rem; z-index: 100; display: flex; gap: 0.5rem; }
+  .btn {
+    background: var(--paper); color: var(--charcoal); border: 1px solid var(--border);
+    padding: 0.55rem 1rem; border-radius: 8px; font-family: 'Inter', sans-serif;
+    font-size: 0.82rem; font-weight: 500; cursor: pointer; text-decoration: none;
+    transition: all 0.15s; box-shadow: 0 2px 8px rgba(107, 78, 50, 0.08);
+  }
+  .btn:hover { border-color: var(--terracotta); color: var(--terracotta); }
+  .btn-primary { background: var(--sage); color: white; border-color: var(--sage); }
+  .btn-primary:hover { background: var(--walnut); border-color: var(--walnut); color: white; }
+  .back-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; }
+
+  .page {
+    width: 100%; max-width: 8.5in; min-height: 11in;
+    margin: 0 auto 1.5rem; background: var(--paper);
+    padding: 0.9in 0.95in;
+    box-shadow: 0 6px 40px rgba(107, 78, 50, 0.1);
+    position: relative; page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+  .page-num {
+    position: absolute; bottom: 0.45in; left: 0; right: 0; text-align: center;
+    font-size: 0.7rem; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .page-brand {
+    position: absolute; bottom: 0.45in; right: 0.95in;
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 0.72rem; color: var(--muted);
+  }
+
+  /* COVER */
+  .cover {
+    padding: 0; overflow: hidden; display: flex; flex-direction: column;
+    background: linear-gradient(180deg, var(--cream-alt) 0%, var(--paper) 65%);
+  }
+  .cover-art {
+    width: 100%; height: 5.5in;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--terracotta-soft) 0%, var(--cream) 55%, var(--sage-soft) 100%);
+    border-bottom: 1px solid var(--border); position: relative;
+  }
+  .cover-art::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      radial-gradient(circle at 25% 30%, rgba(200, 127, 90, 0.22) 0%, transparent 35%),
+      radial-gradient(circle at 75% 75%, rgba(138, 154, 91, 0.18) 0%, transparent 35%);
+  }
+  .cover-illustration { position: relative; z-index: 1; }
+  .cover-meta {
+    flex: 1; padding: 0.7in 0.95in 0.8in; text-align: center;
+  }
+  .cover-tag {
+    font-size: 0.72rem; color: var(--sage);
+    letter-spacing: 0.42em; text-transform: uppercase;
+    font-weight: 600; margin-bottom: 0.8rem;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', serif; font-size: 3.1rem;
+    font-weight: 700; color: var(--charcoal);
+    letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.6rem;
+  }
+  .cover-title em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .cover-rule { width: 48px; height: 2px; background: var(--terracotta); margin: 1rem auto 1.2rem; }
+  .cover-sub {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.25rem;
+    font-weight: 400; font-style: italic; color: var(--walnut);
+    max-width: 5in; margin: 0 auto 1.5rem; line-height: 1.4;
+  }
+  .cover-author {
+    font-family: 'Playfair Display', serif; font-size: 1.1rem;
+    font-weight: 500; color: var(--charcoal); letter-spacing: 0.04em;
+  }
+  .cover-institute {
+    font-size: 0.7rem; color: var(--muted);
+    letter-spacing: 0.3em; text-transform: uppercase; margin-top: 0.35rem;
+  }
+
+  /* TYPOGRAPHY */
+  h2.section-title {
+    font-family: 'Playfair Display', serif; font-size: 2.2rem;
+    font-weight: 600; line-height: 1.1; letter-spacing: -0.01em;
+    color: var(--charcoal); margin-bottom: 0.4rem;
+  }
+  h2.section-title em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .section-eyebrow {
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 0.8rem;
+  }
+  .section-lead {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+    font-style: italic; color: var(--walnut); line-height: 1.4;
+    margin-bottom: 1.5rem; padding-bottom: 1.2rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.35rem;
+    font-weight: 600; letter-spacing: -0.005em; color: var(--charcoal);
+    margin: 1.75rem 0 0.6rem;
+  }
+  h3 em { color: var(--terracotta); font-style: italic; }
+  p { font-size: 0.95rem; color: var(--charcoal); margin-bottom: 0.9rem; }
+  p.drop-cap::first-letter {
+    font-family: 'Playfair Display', serif; font-size: 3.6rem;
+    font-weight: 600; color: var(--terracotta); float: left;
+    line-height: 0.85; margin: 0.1rem 0.45rem 0 0;
+  }
+  ul, ol { padding-left: 1.2rem; margin-bottom: 0.9rem; }
+  li { font-size: 0.93rem; color: var(--charcoal); margin-bottom: 0.35rem; }
+
+  /* PART OPENER */
+  .part-opener {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 2.5in 1in;
+    background: linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
+    border-top: 3px solid var(--terracotta);
+    border-bottom: 3px solid var(--sage);
+    min-height: 11in;
+  }
+  .part-num {
+    font-family: 'Playfair Display', serif; font-size: 5rem;
+    font-weight: 700; color: var(--terracotta);
+    line-height: 1; letter-spacing: -0.02em; margin-bottom: 0.3rem;
+  }
+  .part-label {
+    font-size: 0.78rem; color: var(--sage);
+    letter-spacing: 0.5em; text-transform: uppercase;
+    font-weight: 700; margin-bottom: 1.5rem;
+  }
+  .part-title {
+    font-family: 'Playfair Display', serif; font-size: 2.5rem;
+    font-weight: 600; color: var(--charcoal);
+    letter-spacing: -0.01em; line-height: 1.1;
+    max-width: 6in; margin-bottom: 1.2rem;
+  }
+  .part-title em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .part-sub {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+    font-style: italic; color: var(--walnut);
+    max-width: 5.5in; line-height: 1.4;
+  }
+
+  /* COMPONENTS */
+  .pullquote {
+    margin: 1.3rem 0; padding: 1.1rem 1.4rem;
+    border-left: 3px solid var(--sage); background: var(--sage-soft);
+    font-family: 'Playfair Display', serif; font-size: 1.15rem;
+    font-style: italic; font-weight: 500; line-height: 1.35;
+    color: var(--charcoal); position: relative;
+  }
+  .pullquote::before {
+    content: "\201C"; position: absolute; top: -0.3rem; left: 0.7rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; color: var(--sage); opacity: 0.3; line-height: 1;
+  }
+  .svg-divider {
+    display: flex; align-items: center; gap: 1rem;
+    margin: 1.3rem 0; justify-content: center;
+  }
+  .svg-divider::before, .svg-divider::after {
+    content: ""; flex: 1; max-width: 80px;
+    height: 1px; background: var(--border);
+  }
+  .svg-divider svg { color: var(--sage); flex-shrink: 0; }
+  .callout {
+    background: var(--terracotta-soft); border-radius: 8px;
+    padding: 1rem 1.2rem; margin: 1rem 0;
+  }
+  .callout-label {
+    font-size: 0.66rem; font-weight: 700;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 0.4rem;
+  }
+  .callout p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .callout p:last-child { margin-bottom: 0; }
+  .sage-box {
+    background: var(--sage-soft); border-radius: 8px;
+    padding: 1rem 1.2rem; margin: 1rem 0;
+  }
+  .sage-box-label {
+    font-size: 0.66rem; font-weight: 700;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 0.4rem;
+  }
+  .sage-box p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .sage-box p:last-child { margin-bottom: 0; }
+  .swap-box {
+    background: var(--cream); padding: 0.75rem 1rem;
+    border-radius: 6px; margin: 0.75rem 0;
+    font-size: 0.9rem; border-left: 3px solid var(--walnut);
+  }
+  .swap-box .old { color: var(--muted); text-decoration: line-through; margin-bottom: 0.2rem; }
+  .swap-box .new { color: var(--sage); font-weight: 500; }
+  .swap-box .label {
+    font-size: 0.64rem; text-transform: uppercase;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  /* TOC */
+  .toc-part { margin-bottom: 1.25rem; padding-bottom: 0.8rem; border-bottom: 1px dashed var(--border); }
+  .toc-part:last-child { border-bottom: none; }
+  .toc-part-title {
+    font-family: 'Playfair Display', serif; font-size: 0.85rem;
+    font-weight: 700; color: var(--terracotta);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 0.55rem;
+  }
+  .toc-item {
+    display: grid; grid-template-columns: 28px 1fr auto;
+    gap: 0.7rem; align-items: baseline;
+    padding: 0.45rem 0; font-size: 0.92rem;
+  }
+  .toc-num { font-family: 'Playfair Display', serif; font-weight: 600; color: var(--sage); font-size: 0.95rem; }
+  .toc-title { font-family: 'Playfair Display', serif; font-size: 0.98rem; color: var(--charcoal); }
+  .toc-page { color: var(--muted); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+
+  /* CHAPTER */
+  .chapter-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 1rem; margin-bottom: 0.4rem;
+  }
+  .chapter-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem; color: var(--sage);
+    letter-spacing: 0.35em; text-transform: uppercase;
+    font-weight: 700; margin-bottom: 0.4rem;
+  }
+  .chapter-title {
+    font-family: 'Playfair Display', serif; font-size: 1.9rem;
+    font-weight: 600; line-height: 1.1; letter-spacing: -0.01em;
+    color: var(--charcoal); margin-bottom: 0.5rem;
+  }
+  .chapter-title em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .chapter-sub {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+    font-style: italic; color: var(--walnut);
+    margin-bottom: 1.3rem; padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  .chapter-icon {
+    width: 55px; height: 55px; flex-shrink: 0;
+    opacity: 0.4; color: var(--sage);
+  }
+
+  /* TOOL CARD */
+  .tool-card {
+    background: var(--cream); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.4rem; margin: 1rem 0;
+    border-left: 4px solid var(--terracotta);
+  }
+  .tool-card-label {
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 0.3rem;
+  }
+  .tool-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.3rem;
+    margin: 0.2rem 0 0.5rem;
+  }
+  .tool-card p { font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+  /* SIDE-BY-SIDE COMPARISON */
+  .compare {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.8rem; margin: 1.2rem 0;
+  }
+  .compare-col {
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.9rem 1rem;
+  }
+  .compare-col h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 0.55rem;
+  }
+  .compare-col.left h5 { color: var(--muted); }
+  .compare-col.right h5 { color: var(--sage); }
+  .compare-col ul { list-style: none; padding: 0; margin: 0; }
+  .compare-col li {
+    font-size: 0.82rem; padding: 0.25rem 0;
+    border-bottom: 1px dotted var(--cream-alt);
+  }
+  .compare-col li:last-child { border-bottom: none; }
+
+  /* CLOSING */
+  .closing { text-align: center; padding: 2rem 0; }
+  .closing .sig {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1.5rem; color: var(--terracotta); margin: 1.2rem 0 0.3rem;
+  }
+  .closing .sig-meta {
+    font-size: 0.76rem; color: var(--muted);
+    letter-spacing: 0.25em; text-transform: uppercase;
+  }
+  .colophon {
+    text-align: center; padding-top: 2.5in;
+    font-size: 0.74rem; color: var(--muted); line-height: 1.6;
+  }
+  .colophon-mark {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--terracotta); margin-bottom: 0.8rem;
+  }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    background: var(--cream); border: 1px solid var(--border);
+    border-left: 4px solid var(--walnut);
+    border-radius: 8px; padding: 1rem 1.2rem; margin: 1rem 0;
+    font-size: 0.88rem;
+  }
+  .disclaimer strong { color: var(--walnut); }
+
+  @media print {
+    @page { size: letter; margin: 0; }
+    body { background: white; padding: 0; }
+    .action-bar, .back-link { display: none !important; }
+    .page { margin: 0; box-shadow: none; min-height: 11in; height: 11in; overflow: hidden; page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+    .pullquote, .callout, .sage-box, .tool-card, .swap-box, .disclaimer, .compare { break-inside: avoid; }
+  }
+  @media (max-width: 780px) {
+    body { padding: 0.5rem; }
+    .page { padding: 1.8rem 1.3rem; min-height: auto; }
+    .cover-art { height: 3.5in; }
+    .cover-title { font-size: 2.2rem; }
+    .cover-sub { font-size: 1.05rem; }
+    .part-opener { padding: 2rem 1rem; min-height: auto; }
+    .part-num { font-size: 3.5rem; }
+    .part-title { font-size: 1.8rem; }
+    .compare { grid-template-columns: 1fr; }
+    .action-bar { top: auto; bottom: 1rem; right: 1rem; }
+    .back-link { top: auto; bottom: 1rem; left: 1rem; }
+    .chapter-title { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;">
+  <defs>
+    <symbol id="sprig" viewBox="0 0 60 80"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M30 75 L30 8"/><path d="M30 20 Q18 16 14 8"/><path d="M30 30 Q42 26 46 18"/><path d="M30 40 Q18 36 14 28"/><path d="M30 50 Q42 46 46 38"/><path d="M30 60 Q18 56 14 48"/><path d="M30 70 Q42 66 46 58"/></g></symbol>
+    <symbol id="leafy-divider" viewBox="0 0 120 16"><g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M60 8 L45 8 M60 8 L75 8"/><path d="M45 8 Q38 4 32 8 Q26 12 20 8"/><path d="M75 8 Q82 4 88 8 Q94 12 100 8"/><circle cx="60" cy="8" r="1.5" fill="currentColor"/></g></symbol>
+    <symbol id="breath" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1"><circle cx="30" cy="30" r="22" opacity="0.3"/><circle cx="30" cy="30" r="16" opacity="0.5"/><circle cx="30" cy="30" r="10" opacity="0.8"/><circle cx="30" cy="30" r="2" fill="currentColor"/></g></symbol>
+    <symbol id="hand" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M20 40 Q18 34 18 30 L18 22 Q18 19 21 19 Q24 19 24 22 L24 28"/><path d="M24 22 L24 20 Q24 16 28 16 Q32 16 32 20 L32 28"/><path d="M32 22 Q32 18 36 18 Q40 18 40 22 L40 30"/><path d="M40 26 Q40 23 43 23 Q46 23 46 26 L46 34 Q46 44 38 48 L28 48 Q20 46 20 40"/></g></symbol>
+    <symbol id="journal" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M8 18 L30 14 L52 18 L52 46 L30 42 L8 46 Z"/><path d="M30 14 L30 42"/><path d="M14 24 L24 22 M14 30 L24 28 M36 22 L46 24 M36 28 L46 30"/></g></symbol>
+    <symbol id="clock" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="30" cy="30" r="22"/><path d="M30 18 L30 30 L38 34"/></g></symbol>
+    <symbol id="heart" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M30 50 Q14 38 14 26 Q14 18 22 18 Q28 18 30 24 Q32 18 38 18 Q46 18 46 26 Q46 38 30 50 Z"/></g></symbol>
+    <symbol id="wave" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M6 30 Q14 20 22 30 Q30 40 38 30 Q46 20 54 30"/><path d="M6 40 Q14 30 22 40 Q30 50 38 40 Q46 30 54 40"/></g></symbol>
+    <symbol id="bloom" viewBox="0 0 20 20"><g fill="currentColor"><circle cx="10" cy="5" r="2"/><circle cx="15" cy="10" r="2"/><circle cx="10" cy="15" r="2"/><circle cx="5" cy="10" r="2"/><circle cx="10" cy="10" r="1.5" fill="#F7F1E6"/></g></symbol>
+    <symbol id="two-hearts" viewBox="0 0 120 60"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M35 50 Q20 38 20 26 Q20 18 28 18 Q33 18 35 24 Q37 18 43 18 Q51 18 51 26 Q51 38 35 50 Z"/><path d="M85 50 Q70 38 70 26 Q70 18 78 18 Q83 18 85 24 Q87 18 93 18 Q101 18 101 26 Q101 38 85 50 Z"/></g></symbol>
+  </defs>
+</svg>
+
+<a href="./" class="btn back-link">← Dashboard</a>
+<div class="action-bar">
+  <a href="the-eating-through-emotions.pdf" class="btn" download>Download PDF</a>
+  <button class="btn btn-primary" onclick="window.print()">Print · Save as PDF</button>
+</div>
+
+<!-- COVER -->
+<div class="page cover">
+  <div class="cover-art">
+    <div class="cover-illustration">
+      <svg width="220" height="120" style="color: var(--walnut);"><use href="#two-hearts"/></svg>
+    </div>
+  </div>
+  <div class="cover-meta">
+    <div class="cover-tag">The Purposefully Eating Ebook Series · 02</div>
+    <div class="cover-title">Eating Through <em>Emotions</em></div>
+    <div class="cover-rule"></div>
+    <div class="cover-sub">A compassionate guide to what's really happening when food feels bigger than food.</div>
+    <svg width="28" height="28" style="color: var(--terracotta); margin: 0.5rem 0;"><use href="#bloom"/></svg>
+    <div class="cover-author">Phyllis Inman</div>
+    <div class="cover-institute">Inman Institute · phyllisinman.com</div>
+  </div>
+</div>
+
+<!-- NOTE FROM PHYLLIS -->
+<div class="page">
+  <div class="section-eyebrow">A note from Phyllis</div>
+  <h2 class="section-title">This book is not <em>against</em> emotional eating.</h2>
+
+  <p class="drop-cap" style="margin-top: 1rem;">Most books on this subject are. They treat it as a bug in your wiring — a behavior to stop, a habit to break, a willpower gap to close. The language is military: conquer, defeat, beat. As if the part of you that reaches for food when you're sad or tired or overwhelmed is a kind of enemy.</p>
+
+  <p>I don't believe that. I never have.</p>
+
+  <p>Emotional eating is not the enemy. It is a signal. It is one of the oldest, most reliable ways human beings have always self-soothed. The part of you that opened the pantry after a hard phone call — that part is not broken. That part is trying to help.</p>
+
+  <p>What I'll teach you in this book is not how to stop that part. I'll teach you how to meet it. How to hear what it's trying to tell you. And how, over time, to build a wider menu of responses — so that food becomes one tool among many, instead of the only tool on your workbench.</p>
+
+  <div class="pullquote">
+    You do not need to defeat your emotional eating. You need to understand it. The rest — the softening, the slowing, the expanding — follows.
+  </div>
+
+  <p>This is a gentle book. It is also a useful one. By the end, you'll have a 5-tool kit for the moments when food feels like the only option, a framework for reading your own patterns, and — most importantly — a new relationship with the version of you who eats when she's not hungry.</p>
+
+  <p>She has always been trying to take care of you. Let's finally let her.</p>
+
+  <div class="svg-divider"><svg width="16" height="16"><use href="#bloom"/></svg></div>
+
+  <p style="text-align: right; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--terracotta);">With you,</p>
+  <p style="text-align: right; font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--charcoal);">Phyllis</p>
+
+  <div class="page-num">2</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- DISCLAIMER + TOC -->
+<div class="page">
+  <div class="section-eyebrow">Before we begin</div>
+  <h2 class="section-title">A <em>clinical</em> note.</h2>
+
+  <div class="disclaimer">
+    <p><strong>This book is educational. It is not clinical care.</strong></p>
+    <p>If you are currently experiencing symptoms of a clinical eating disorder — binge eating disorder, bulimia, anorexia, ARFID, or disordered patterns significant enough to affect your health — please work with a qualified clinician. This book is a supplement to, never a replacement for, that care.</p>
+    <p>Resources at the end of this book include the National Eating Disorders Association (NEDA) and how to find a non-diet registered dietitian or therapist specializing in disordered eating. Please use them if you need them.</p>
+    <p>If you are generally well and the pattern that brought you here is the very common one of eating when you're stressed, sad, lonely, bored, or overwhelmed — then this book is for you. Let's begin.</p>
+  </div>
+
+  <div style="margin-top: 1.5rem;">
+    <div class="section-eyebrow">Inside this guide</div>
+    <h2 class="section-title" style="font-size: 1.8rem;">Contents</h2>
+
+    <div class="toc-part" style="margin-top: 1rem;">
+      <div class="toc-part-title">Part I · The Truth About Emotional Eating</div>
+      <div class="toc-item"><div class="toc-num">1</div><div class="toc-title">Emotional eating is not the enemy</div><div class="toc-page">06</div></div>
+      <div class="toc-item"><div class="toc-num">2</div><div class="toc-title">The five flavors — stress, sadness, boredom, celebration, numbing</div><div class="toc-page">08</div></div>
+      <div class="toc-item"><div class="toc-num">3</div><div class="toc-title">Why "just use willpower" doesn't work</div><div class="toc-page">10</div></div>
+      <div class="toc-item"><div class="toc-num">4</div><div class="toc-title">The neuroscience, in plain English</div><div class="toc-page">12</div></div>
+    </div>
+
+    <div class="toc-part">
+      <div class="toc-part-title">Part II · The Awareness Layer</div>
+      <div class="toc-item"><div class="toc-num">5</div><div class="toc-title">The pre-eating pause</div><div class="toc-page">15</div></div>
+      <div class="toc-item"><div class="toc-num">6</div><div class="toc-title">The H.A.L.T. check, reimagined</div><div class="toc-page">17</div></div>
+      <div class="toc-item"><div class="toc-num">7</div><div class="toc-title">Tracing the trigger — three questions</div><div class="toc-page">19</div></div>
+      <div class="toc-item"><div class="toc-num">8</div><div class="toc-title">Emotional hunger vs. physical hunger</div><div class="toc-page">21</div></div>
+      <div class="toc-item"><div class="toc-num">9</div><div class="toc-title">Journal prompts for the in-between</div><div class="toc-page">23</div></div>
+    </div>
+
+    <div class="toc-part">
+      <div class="toc-part-title">Part III · The 5-Tool Kit</div>
+      <div class="toc-item"><div class="toc-num">10</div><div class="toc-title">Tool 1 · The 10-minute buffer</div><div class="toc-page">26</div></div>
+      <div class="toc-item"><div class="toc-num">11</div><div class="toc-title">Tool 2 · The body check</div><div class="toc-page">28</div></div>
+      <div class="toc-item"><div class="toc-num">12</div><div class="toc-title">Tool 3 · The decision filter</div><div class="toc-page">30</div></div>
+      <div class="toc-item"><div class="toc-num">13</div><div class="toc-title">Tool 4 · Eat with awareness</div><div class="toc-page">32</div></div>
+      <div class="toc-item"><div class="toc-num">14</div><div class="toc-title">Tool 5 · The aftercare script</div><div class="toc-page">34</div></div>
+    </div>
+
+    <div class="toc-part">
+      <div class="toc-part-title">Part IV · The Long Game</div>
+      <div class="toc-item"><div class="toc-num">15</div><div class="toc-title">When emotional eating is a signal, not a problem</div><div class="toc-page">37</div></div>
+      <div class="toc-item"><div class="toc-num">16</div><div class="toc-title">20 non-food alternatives that actually work</div><div class="toc-page">39</div></div>
+      <div class="toc-item"><div class="toc-num">17</div><div class="toc-title">When to work with a therapist</div><div class="toc-page">41</div></div>
+      <div class="toc-item"><div class="toc-num">18</div><div class="toc-title">A letter to yourself, one year from now</div><div class="toc-page">42</div></div>
+    </div>
+  </div>
+
+  <div class="page-num">3</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- PART I OPENER -->
+<div class="page part-opener">
+  <div class="part-num">I</div>
+  <div class="part-label">Part One</div>
+  <div class="part-title">The Truth About <em>Emotional Eating.</em></div>
+  <div class="part-sub">Before any tools, any practices, any fixes — four things worth understanding about what emotional eating actually is, and why the war you've been waging against it has been the wrong war.</div>
+  <svg width="120" height="16" style="color: var(--sage); margin-top: 2rem;"><use href="#leafy-divider"/></svg>
+</div>
+
+<!-- CHAPTER 1 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 1</div>
+      <h2 class="chapter-title">Emotional eating is <em>not the enemy.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#heart"/></svg>
+  </div>
+  <div class="chapter-sub">A reframe you may need to read several times before it lands. That's fine. Keep reading.</div>
+
+  <p>Here is what emotional eating actually is: one of the oldest, most reliable ways human beings have known how to self-soothe.</p>
+
+  <p>Long before we had therapists, or meditation apps, or spin classes, or Xanax, or Instagram, we had food. Food was how we gathered. How we mourned. How we celebrated. How we welcomed. How we apologized. How we said <em>I love you</em> to a sick friend and <em>thank you</em> to a neighbor and <em>you matter to me</em> to a child.</p>
+
+  <p>Food was never only fuel. That is a modern, Puritan, calorie-counting fiction. Food has, for the entirety of human history, also been <em>comfort</em>. And there is nothing pathological about that. Not yesterday, not today, not tomorrow.</p>
+
+  <div class="pullquote">
+    The part of you that eats when you're tired, sad, or overwhelmed is not broken. It is ancient. It is trying, in the way it knows how, to take care of you.
+  </div>
+
+  <h3>So what's the problem, then?</h3>
+
+  <p>The problem is not that you sometimes eat for reasons that aren't hunger. That is normal, human, and often fine. The problem — if there is one — is that food has become the <em>only</em> tool in your toolbox.</p>
+
+  <p>When food is one of many ways you meet your emotional needs — alongside rest, connection, movement, creative expression, touch, tears, conversation, nature — it plays its rightful role. You eat a bowl of ice cream after a hard day, enjoy it, and move on.</p>
+
+  <p>When food is the <em>only</em> way you meet your emotional needs, it starts to stagger under that weight. It can't. No single tool was meant to do every job. The ice cream that was never the problem becomes the only companion on a lonely Tuesday, the only celebration on a good Thursday, the only numbing agent on a hard Friday. That is when the pattern stops serving you.</p>
+
+  <h3>The shift this book is built on</h3>
+
+  <p>We are not going to try to stop the emotional eating. We are going to try to expand the toolbox.</p>
+
+  <p>We are going to build your awareness, so you can see the pattern with curiosity instead of shame. We are going to hand you five new tools, so food doesn't have to carry every emotional need by itself. And over time — slowly, without force — you'll find the reach for food becomes one option among several, not the only one.</p>
+
+  <p>That is the work. It is kinder than what you've been taught. And it is far more effective.</p>
+
+  <div class="sage-box">
+    <div class="sage-box-label">Reframe of the chapter</div>
+    <p>Emotional eating is not something to defeat. It is something to understand, integrate, and — over time — expand beyond. The reach for food carries information. Your job is to hear it, not silence it.</p>
+  </div>
+
+  <div class="page-num">4</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 1 continued -->
+<div class="page">
+  <h3>What I am <em>not</em> saying</h3>
+
+  <p>Three things I want to make clear, so nobody reads this and feels I've waved away a real problem:</p>
+
+  <p><strong>One:</strong> If food is actively harming you — if you're in a binge-purge cycle, if eating is disrupting your ability to function, if it's causing genuine distress or medical risk — that is not what this book is for. Please get clinical support. A non-diet registered dietitian, a therapist specializing in eating disorders, a treatment program if needed. The reframe I've just offered is for people with <em>problematic</em> but not <em>clinical</em> patterns. The distinction matters.</p>
+
+  <p><strong>Two:</strong> Permission is not a free-for-all. Saying "emotional eating is not the enemy" is not the same as saying "eat anything, any time, and never think about it." The method in this book is built on awareness, not abandonment. You will absolutely still be thinking about it. Just differently.</p>
+
+  <p><strong>Three:</strong> This work is slow. There is no 30-day fix. What you'll learn here will likely take a year to feel natural. Five years to integrate. That is a feature, not a bug. We are rewiring a lifelong pattern. That does not happen in a weekend.</p>
+
+  <div class="callout">
+    <div class="callout-label">Take with you</div>
+    <p>Your emotional eating is trying to help you. We are not going to stop it. We are going to <strong>expand your toolkit</strong> so it has company. Over time, it will quiet. Not through force. Through not needing to carry everything alone.</p>
+  </div>
+
+  <div class="page-num">5</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 2 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 2</div>
+      <h2 class="chapter-title">The <em>five flavors</em> of emotional eating.</h2>
+    </div>
+    <svg class="chapter-icon"><use href="#heart"/></svg>
+  </div>
+  <div class="chapter-sub">Not all emotional eating is the same. Identifying which flavor is visiting you changes everything about how you meet it.</div>
+
+  <p>In my work with clients, I've noticed that "emotional eating" as a category is too broad to be useful. When someone says "I'm an emotional eater," I've learned to ask a second question: <em>which flavor?</em> The answer changes the entire response.</p>
+
+  <p>There are five flavors I see over and over. You will recognize yourself in some of them. You may be familiar with several. Almost nobody is only one.</p>
+
+  <h3>Flavor 1 · Stress eating</h3>
+
+  <p>The big one. Your nervous system is flooded with cortisol, you're in a state of mild-to-major fight-or-flight, and your body — sensibly — reaches for quick, dense energy. Sugar. Crunchy things. Carb-heavy comfort. This is not a character flaw. It is a body doing exactly what it was built to do under stress.</p>
+
+  <p><em>Often looks like:</em> afternoon snack binges after hard meetings, midnight freezer raids after fights, a handful of chocolate in the pantry after a boundary-violating phone call.</p>
+
+  <h3>Flavor 2 · Sadness eating</h3>
+
+  <p>Grief, loneliness, loss, disappointment. Sadness eating tends to be slower, softer, and more solitary than stress eating. It seeks <em>warmth</em> and <em>company</em> — foods that feel like a hug. Creamy pasta. Hot soup. Mashed potatoes. Ice cream that tastes like childhood.</p>
+
+  <p><em>Often looks like:</em> eating alone after a breakup, reaching for childhood foods when you're missing someone, warm comfort food on a cold emotional day.</p>
+
+  <h3>Flavor 3 · Boredom eating</h3>
+
+  <p>Understimulation, restlessness, a dulled inner life. You're not hungry, not sad, not stressed — you're <em>bored</em>. And food gives your hands and your mouth and your brain something to do. This one is often mindless, almost automatic — a graze-y, steady pull through the pantry.</p>
+
+  <p><em>Often looks like:</em> grazing while working from home, chips during a dull movie, the 3pm "what's there to eat?" lap of the kitchen.</p>
+
+  <h3>Flavor 4 · Celebration eating</h3>
+
+  <p>The friendliest flavor — and the one that rarely needs fixing. This is eating tied to joy, connection, ritual, and reward. Birthday cake. Wedding cake. The first bite of seasonal food. Dinner out to celebrate a win. This is food at its most cultural, most communal, most human.</p>
+
+  <p><em>Often looks like:</em> the dinner with friends, the dessert on vacation, the celebratory takeout on a Friday night.</p>
+
+  <p>If all five flavors were this one, you wouldn't need this book.</p>
+
+  <div class="page-num">6</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 2 continued -->
+<div class="page">
+  <h3>Flavor 5 · Numbing eating</h3>
+
+  <p>The heaviest flavor. Not stress exactly, not sadness exactly — a feeling of <em>too muchness</em>. Overwhelm, suppressed anger, low-grade despair, disconnection. Numbing eating seeks to make something stop. To dial down the volume of whatever is happening inside.</p>
+
+  <p>It often has a disassociative quality — you're not quite present for it. Twenty minutes can pass without you tasting anything. When it ends, there's often a wave of shame.</p>
+
+  <p><em>Often looks like:</em> eating in front of the TV until you feel nothing, late-night eating that isn't about hunger, eating on autopilot during periods of emotional exhaustion.</p>
+
+  <p>This is the flavor most worth understanding. It is also the one that benefits most from the 5-tool kit in Part Three — and, sometimes, from professional support.</p>
+
+  <h3>Why the flavors matter</h3>
+
+  <p>Because the response to each flavor is different. Stress eating responds to nervous-system regulation — breath, walking, a cold glass of water. Sadness eating needs connection — a call to a friend, a bath, a good cry. Boredom eating needs stimulation — movement, a creative project, a walk outside. Celebration eating needs absolutely nothing — enjoy it. Numbing eating needs compassion, self-understanding, and often the slowest, gentlest approach of all.</p>
+
+  <div class="sage-box">
+    <div class="sage-box-label">A practice for this week</div>
+    <p>The next time you find yourself reaching for food when you're not hungry, ask one question — without judgment, without changing anything: <em>which flavor is this?</em> Just name it. That's the whole practice for now. Naming is the beginning.</p>
+  </div>
+
+  <p>In Part Two, we'll build the awareness layer that lets you catch the flavor before the reach. In Part Three, we'll build the five specific tools. For now, just start noticing.</p>
+
+  <div class="pullquote">
+    Not all emotional eating is the same thing. Name the flavor. That is the first tool.
+  </div>
+
+  <div class="page-num">7</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 3 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 3</div>
+      <h2 class="chapter-title">Why "just use willpower" <em>doesn't work.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#hand"/></svg>
+  </div>
+  <div class="chapter-sub">A short chapter on why you are not a weak-willed person — and why every book that promised willpower would fix this was lying to you.</div>
+
+  <p>Willpower-based approaches to emotional eating rest on a simple premise: there is a wrong behavior (eating when not hungry), and a right response (not doing that), and the bridge between them is <em>self-control</em>. If you have enough of it, you win. If you don't, you lose.</p>
+
+  <p>This premise is wrong in three specific ways. I'll name them — because once you see them, a lot of the self-blame you've been carrying will be harder to carry.</p>
+
+  <h3>First: willpower is a finite resource</h3>
+
+  <p>Psychologists call it "ego depletion." Your capacity to exert self-control is not infinite. It is drained by every decision, interaction, and effortful task you perform in a day. By the time you reach 8pm — after work, kids, traffic, dinner, dishes — your willpower tank is usually nearly empty. That is when most emotional eating happens. Not because you are "weak at night." Because you've been using your willpower all day, and there is none left.</p>
+
+  <p>Telling a person with an empty willpower tank to "use more willpower" is like telling a person with an empty gas tank to "drive harder."</p>
+
+  <h3>Second: willpower fights the symptom, not the cause</h3>
+
+  <p>If emotional eating is an attempt to regulate an emotion, then using willpower to stop the eating does not address the emotion. The stress, sadness, boredom, or overwhelm is still there. It's just not being met with food anymore.</p>
+
+  <p>In the short term, this looks like success. In the long term, the suppressed emotion finds another outlet — or it comes back, louder, and breaks through willpower entirely. This is why "diets fail." It is not because the dieter was weak. It is because the dieter never actually addressed what was driving the eating. The eating was the smoke. The fire was still burning.</p>
+
+  <h3>Third: willpower relies on self-punishment</h3>
+
+  <p>Every willpower-based approach is, at its core, adversarial. You versus yourself. The good part versus the bad part. And when the bad part wins — which it will, because finite resources — the good part punishes the bad part. With shame, with restriction, with a new rule.</p>
+
+  <p>This self-punishment does not produce change. It produces <em>more of the same behavior</em>. Shame activates the exact nervous system state that sent you to food in the first place. You eat when you're stressed. Being ashamed of eating stresses you out. So you eat.</p>
+
+  <div class="pullquote">
+    You are not failing at willpower. You have been handed an approach that was designed to fail. No one could have succeeded at it.
+  </div>
+
+  <div class="page-num">8</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 3 continued -->
+<div class="page">
+  <h3>What works instead</h3>
+
+  <p>If willpower is the wrong tool, what's the right one?</p>
+
+  <p>Awareness. Curiosity. Self-compassion. A wider toolkit. Patience with yourself across years, not weeks. Noticing without judging. Responding without punishing. Expanding the range of ways you meet your needs — with food still on the list, just no longer alone.</p>
+
+  <p>These sound soft. They are not. They are slower, harder, and more psychologically demanding than sheer self-denial — because they ask you to feel what you've been numbing. That is the real work. That is also the work that lasts.</p>
+
+  <div class="callout">
+    <div class="callout-label">A permission slip</div>
+    <p>If you've been trying to "just use willpower" for years and failing — please know you were not failing at a reasonable task. You were failing at an impossible one. Put it down. We're going to build something else.</p>
+  </div>
+
+  <div class="page-num">9</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 4 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 4</div>
+      <h2 class="chapter-title">The neuroscience, <em>in plain English.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#breath"/></svg>
+  </div>
+  <div class="chapter-sub">What your brain is actually doing when you reach for food. No jargon. No fancy brain-diagram. Just the parts worth knowing.</div>
+
+  <p>You don't need a neuroscience degree to work with your emotional eating. But knowing a few things about what's happening in your brain and body — the actual, physical story — will help you stop blaming yourself.</p>
+
+  <p>Here are the four things worth knowing.</p>
+
+  <h3>One · Food activates reward circuits</h3>
+
+  <p>When you eat — especially foods high in sugar, fat, or salt — your brain releases dopamine. Dopamine is the neurotransmitter of <em>pleasure anticipation</em> and <em>reward</em>. It feels good. It is supposed to feel good. This is how our species survived — we were rewarded for eating calorie-dense foods because they were scarce and we needed them.</p>
+
+  <p>In modern life, that reward system still runs on old software. The food is no longer scarce, but your brain doesn't know that. It still hands out dopamine every time you eat something sweet, rich, or crunchy. That is not "addiction" — it is normal human biology. It is why that bite of ice cream after a hard day feels like relief. It is, at the chemical level, relief.</p>
+
+  <h3>Two · Stress raises cortisol, which raises appetite</h3>
+
+  <p>When you're under stress, your adrenal glands release cortisol. Cortisol has many jobs, but one of them is: <em>mobilize quick energy.</em> In ancestral terms, you were about to fight a predator or flee one, and you needed fuel fast.</p>
+
+  <p>Today, the predator is usually an email or an in-law. But the cortisol response is the same. Your body gets ready for a physical effort that never comes. And a cortisol-elevated body craves quick-energy food. Sweet. Dense. Easy.</p>
+
+  <p>This is not a failure of discipline. This is your endocrine system doing exactly what it was designed to do. Blaming yourself for craving sugar during a stressful week is like blaming yourself for sweating when you're hot.</p>
+
+  <h3>Three · Emotion and eating share neural real estate</h3>
+
+  <p>The insula, the amygdala, and the hypothalamus — three brain regions involved in emotional processing — also play a role in regulating hunger and fullness. This is not an accident. In the human brain, emotion and eating are not separate systems. They are deeply intertwined, on purpose. Food has always been emotional.</p>
+
+  <p>Which means that trying to "separate emotions from eating" is, at a neural level, fighting biology. The more useful goal is not separation but <em>awareness</em>. To know which system is running, and respond accordingly.</p>
+
+  <div class="page-num">10</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 4 continued -->
+<div class="page">
+  <h3>Four · The nervous system runs the show</h3>
+
+  <p>Most emotional eating happens when your nervous system is dysregulated — either in fight-or-flight (sympathetic) or in collapse/freeze (dorsal vagal). In either state, your executive brain (prefrontal cortex, the part that does logic and long-term thinking) goes offline. You are not "choosing" to eat in those moments, not really. The older, faster parts of your brain are choosing.</p>
+
+  <p>This is why willpower often fails at the moment of the eating. The part of you that would use willpower is not in the room.</p>
+
+  <p>The solution? Not more willpower. Nervous system regulation. Breath work. Cold water on your face. A short walk. Anything that signals to your nervous system that you are safe, slows the cortisol, and brings your executive brain back online. <em>Then</em> you can make a real decision.</p>
+
+  <div class="pullquote">
+    You cannot think your way out of a dysregulated nervous system. You have to regulate it first. Then thinking becomes possible again.
+  </div>
+
+  <h3>Why this matters</h3>
+
+  <p>The takeaway of this chapter is not complicated: <em>you are not broken</em>. The mechanisms that produce emotional eating are the same mechanisms that kept your ancestors alive. They are functioning correctly. The issue is that they are running on ancient software in a modern world that is very different from the world they were designed for.</p>
+
+  <p>The work ahead is not to override your biology. It is to work with it.</p>
+
+  <div class="svg-divider" style="margin-top: 2rem;"><svg width="100" height="16"><use href="#leafy-divider"/></svg></div>
+
+  <p style="text-align: center; font-family: 'Playfair Display', serif; font-style: italic; color: var(--muted); font-size: 1rem;">
+    That's Part One. The truth.<br>Now — the awareness.
+  </p>
+
+  <div class="page-num">11</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- PART II OPENER -->
+<div class="page part-opener">
+  <div class="part-num">II</div>
+  <div class="part-label">Part Two</div>
+  <div class="part-title">The Awareness <em>Layer.</em></div>
+  <div class="part-sub">Five short chapters that teach you how to see the pattern before you live the pattern. Without awareness, no tool works. With awareness, most tools become optional.</div>
+  <svg width="120" height="16" style="color: var(--sage); margin-top: 2rem;"><use href="#leafy-divider"/></svg>
+</div>
+
+<!-- CHAPTER 5 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 5</div>
+      <h2 class="chapter-title">The <em>pre-eating pause.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#breath"/></svg>
+  </div>
+  <div class="chapter-sub">A 30-second practice that does more than most 30-day programs.</div>
+
+  <p>Before we build tools, we build awareness. And before we build awareness, we create a gap. A space. A moment between the urge and the action.</p>
+
+  <p>Most emotional eating is automatic. The urge arises, the hand reaches, the eating happens. Often you don't even remember deciding. The whole sequence takes maybe seven seconds, and by the time your conscious mind catches up, you're three bites in.</p>
+
+  <p>The pre-eating pause interrupts the automatic part. That's it. That's the whole job. It doesn't ask you to not eat. It doesn't ask you to "choose better." It just asks you, briefly, to be present.</p>
+
+  <h3>The practice</h3>
+
+  <div class="sage-box">
+    <div class="sage-box-label">The pre-eating pause · 30 seconds</div>
+    <p>Before eating — any eating, meal or not — take <strong>three slow breaths</strong>. Hand on chest if it helps. Eyes open or closed.</p>
+    <p>Then ask yourself, silently: <em>"What is this for?"</em></p>
+    <p>Don't answer out loud. Don't change your decision based on the answer. Just ask. Then eat, or don't. Both are fine.</p>
+  </div>
+
+  <p>That's the whole practice. Three breaths. One question. No decision required.</p>
+
+  <h3>Why it works</h3>
+
+  <p>Those three breaths are doing more than you think. They are signaling to your nervous system that there is time — that you are not, at this moment, being chased by a predator. That signal allows the prefrontal cortex — the rational, present part of your brain — to come back online. Which means: whatever you do next, you're doing with your whole self.</p>
+
+  <p>And the question — <em>"What is this for?"</em> — is not asking you to justify or deny the eating. It is asking you to notice what's happening. That alone shifts everything.</p>
+
+  <p>Some of the answers you'll get, with practice:</p>
+
+  <ul>
+    <li><em>"I'm hungry."</em> Great. Eat.</li>
+    <li><em>"I'm stressed."</em> Okay. Now you know. Maybe you still eat. Maybe you pause longer.</li>
+    <li><em>"I'm bored."</em> Noted. Sometimes you still eat. Sometimes something else sounds better.</li>
+    <li><em>"I'm sad."</em> Ah. That's useful information. The eating might help for the moment. It won't solve the sadness. But now you at least know.</li>
+  </ul>
+
+  <p>The pause doesn't change the outcome of any one meal. It changes your relationship with the whole pattern.</p>
+
+  <div class="page-num">12</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 5 continued -->
+<div class="page">
+  <h3>The expected pushback</h3>
+
+  <p>Many of my clients, when they first try this, say some version of: <em>"I know I'm eating for emotional reasons. I don't need to pause. I just want to stop."</em></p>
+
+  <p>I hear them. And still — I ask them to do the pause.</p>
+
+  <p>Because the thing they think they know — "I know I'm eating for emotional reasons" — is usually a story told from shame. It isn't actual awareness. Actual awareness, in the moment, is a different animal. It is curious. It is not-judging. It is genuinely open to what the answer turns out to be.</p>
+
+  <p>The pause builds that kind of awareness. Story-level knowing doesn't.</p>
+
+  <div class="callout">
+    <div class="callout-label">Your assignment this week</div>
+    <p>Practice the pre-eating pause for the next seven days. Before every eating event — meals, snacks, the 3pm handful of almonds, the 9pm ice cream. Three breaths. One question. No change required.</p>
+    <p>Track how it went in the journal prompts in Chapter 9. Just note what you noticed. That's the whole week's work.</p>
+  </div>
+
+  <div class="page-num">13</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 6 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 6</div>
+      <h2 class="chapter-title">The H.A.L.T. check, <em>reimagined.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#journal"/></svg>
+  </div>
+  <div class="chapter-sub">A classic tool from recovery circles — updated for women, mothers, and the particular textures of modern emotional eating.</div>
+
+  <p>You may have encountered H.A.L.T. before. It comes out of the addiction recovery tradition. The acronym stands for four common states that precede compulsive behavior:</p>
+
+  <ul>
+    <li><strong>H</strong>ungry</li>
+    <li><strong>A</strong>ngry</li>
+    <li><strong>L</strong>onely</li>
+    <li><strong>T</strong>ired</li>
+  </ul>
+
+  <p>The original practice is to ask, before acting on an urge: <em>Am I Hungry? Angry? Lonely? Tired?</em> If the answer is yes to any of them, the idea is to address that state first — feed yourself, move the anger, call someone, sleep — <em>before</em> making any other decision.</p>
+
+  <p>It's a good tool. It works. It has helped millions of people.</p>
+
+  <p>It is also — I've come to believe — <strong>incomplete</strong> for the specific population of women, mothers, and caregivers most likely to be reading this book.</p>
+
+  <h3>The expanded H.A.L.T.</h3>
+
+  <p>Over years of working with clients, I've found that four states is not quite enough. There are three more that show up regularly for women navigating the particular textures of modern life:</p>
+
+  <ul>
+    <li><strong>O</strong>verwhelmed</li>
+    <li><strong>B</strong>ored (or understimulated)</li>
+    <li><strong>S</strong>ad</li>
+  </ul>
+
+  <p>I call the expanded version <strong>H.A.L.T.O.B.S.</strong> Not a catchy acronym. But a more complete checklist.</p>
+
+  <h3>The practice</h3>
+
+  <p>When an urge to eat arrives — outside of a regular mealtime, or with more intensity than ordinary hunger — run through the full list in your head.</p>
+
+  <ul>
+    <li>Am I <strong>Hungry</strong>? (If yes, eat. That's not emotional eating. That's eating.)</li>
+    <li>Am I <strong>Angry</strong>? (What about? What's unsaid?)</li>
+    <li>Am I <strong>Lonely</strong>? (Who could I reach out to?)</li>
+    <li>Am I <strong>Tired</strong>? (Sleep debt, low iron, hard week?)</li>
+    <li>Am I <strong>Overwhelmed</strong>? (Is there a task I'm avoiding?)</li>
+    <li>Am I <strong>Bored</strong>? (Understimulated, restless, creatively stuck?)</li>
+    <li>Am I <strong>Sad</strong>? (Is there a grief, disappointment, or loss in the air?)</li>
+  </ul>
+
+  <p>Any "yes" is useful. A yes doesn't mean "don't eat." It means "now you know." And knowing changes what's possible next.</p>
+
+  <div class="page-num">14</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 6 continued -->
+<div class="page">
+  <h3>What to do with a "yes"</h3>
+
+  <p>Once you've named the state, you have three options. All three are valid. Pick the one that fits the moment.</p>
+
+  <div class="compare">
+    <div class="compare-col left">
+      <h5>Option 1 · Address the state first</h5>
+      <ul>
+        <li>Tired → 20-minute nap or early bedtime</li>
+        <li>Lonely → Text or call someone</li>
+        <li>Overwhelmed → List the top 3 tasks, do one</li>
+        <li>Bored → Walk, music, creative play</li>
+        <li>Sad → Cry, journal, call a friend</li>
+      </ul>
+    </div>
+    <div class="compare-col right">
+      <h5>Option 2 · Eat with awareness</h5>
+      <ul>
+        <li>Acknowledge: "I'm eating because I'm [state]"</li>
+        <li>Sit down. Plate the food.</li>
+        <li>Eat slowly. Taste it.</li>
+        <li>Stop when satisfied.</li>
+        <li>No shame spiral afterward — just data.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p><strong>Option 3:</strong> Name the state, do nothing else. You don't have to address it. You don't have to not-eat. You can simply have said, inside yourself: <em>I see you. I know what this is. I'm here.</em> That alone has value.</p>
+
+  <div class="sage-box">
+    <div class="sage-box-label">The shift</div>
+    <p>H.A.L.T.O.B.S. isn't a decision tree that tells you what to do. It's an awareness tool that tells you <em>what's happening</em>. What you do with that information is yours.</p>
+  </div>
+
+  <div class="page-num">15</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 7 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 7</div>
+      <h2 class="chapter-title">Tracing the trigger — <em>three questions.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#journal"/></svg>
+  </div>
+  <div class="chapter-sub">The detective work that turns a vague "I'm emotional eating again" into useful, specific information.</div>
+
+  <p>Awareness at the moment of eating is one thing. Awareness of the <em>pattern</em> — the shape of when and why it tends to happen — is another. This chapter is about the pattern.</p>
+
+  <p>Here is a truth I've come to believe: most emotional eating has a trigger that occurred 30 minutes to 24 hours <em>before</em> the eating. Not the moment itself. Earlier.</p>
+
+  <p>The afternoon binge that appears to come out of nowhere is usually preceded by a morning phone call that felt small but wasn't. The 9pm ice cream at the end of a normal day is often the echo of a hard 4pm meeting, not anything that happened at 9.</p>
+
+  <p>If you only ask "why am I eating now?" — you'll miss it. The trigger already happened.</p>
+
+  <h3>The three questions</h3>
+
+  <p>When you notice you've been eating emotionally — in real time, or afterward — run through these three questions. Slowly. With a journal if you have one nearby.</p>
+
+  <div class="sage-box">
+    <div class="sage-box-label">Question 1</div>
+    <p><strong>What was I feeling an hour before I started eating?</strong></p>
+    <p>Not what I was feeling in the moment of the eating. Earlier. What was in the air?</p>
+  </div>
+
+  <div class="sage-box">
+    <div class="sage-box-label">Question 2</div>
+    <p><strong>What happened yesterday (or earlier today) that might still be in my body?</strong></p>
+    <p>An emotional trigger can lag by hours. Sometimes a full day. Sometimes a whole week.</p>
+  </div>
+
+  <div class="sage-box">
+    <div class="sage-box-label">Question 3</div>
+    <p><strong>What was I needing — that wasn't food?</strong></p>
+    <p>Rest? Company? Acknowledgment? Movement? Permission to stop working? A cry?</p>
+  </div>
+
+  <p>You'll be surprised what shows up. Patterns start to emerge. Certain people trigger you. Certain conversations. Certain weekly events. Certain moments of the day.</p>
+
+  <h3>The pattern journal</h3>
+
+  <p>Over two to four weeks, keep a simple log. You don't need an app. A small notebook will do. Every time you notice emotional eating, write a short entry:</p>
+
+  <ul>
+    <li><strong>When:</strong> day and time</li>
+    <li><strong>What I ate:</strong> briefly, no judgment</li>
+    <li><strong>Flavor:</strong> stress / sadness / boredom / celebration / numbing</li>
+    <li><strong>What I was feeling an hour earlier:</strong> one sentence</li>
+    <li><strong>What I was needing:</strong> one word if you can</li>
+  </ul>
+
+  <p>After two weeks, read back through. The pattern will be obvious. Often it's one thing. Sometimes it's two. Almost never is it "everything."</p>
+
+  <div class="page-num">16</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 7 continued -->
+<div class="page">
+  <h3>What this reveals</h3>
+
+  <p>The pattern journal is powerful because it moves the problem from <em>"I have no control"</em> to <em>"this specific thing is happening"</em>. And specific things have specific solutions.</p>
+
+  <p>A client of mine kept this log for three weeks and discovered that 80% of her emotional eating followed calls with her mother. Not a surprise, in retrospect. But she'd never named it before. Once she could see it, she had options — change the frequency of the calls, debrief with a friend after them, schedule a walk immediately afterward. The eating, by the way, decreased dramatically — not because she tried to stop it, but because she was addressing the actual source.</p>
+
+  <p>Another client found her pattern wasn't external at all. It was that Wednesday afternoons were her busiest workday and she wasn't eating enough at lunch. Her "emotional eating" at 8pm turned out to be, mostly, under-fueling at 1pm. The fix was a bigger lunch. The pattern resolved in a week.</p>
+
+  <p>You don't know what your pattern is until you look. The looking is the work.</p>
+
+  <div class="pullquote">
+    The trigger happened 30 minutes ago, or yesterday, or last Thursday. The eating is the echo. Find the echo's source.
+  </div>
+
+  <div class="page-num">17</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 8 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 8</div>
+      <h2 class="chapter-title">Emotional hunger vs. <em>physical hunger.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#heart"/></svg>
+  </div>
+  <div class="chapter-sub">How to tell the difference. Not to shame one. To learn to respond to each in its own language.</div>
+
+  <p>Most people carry a half-formed belief that "real" hunger is physical, and emotional hunger is fake, or wrong, or evidence of a broken system. That belief needs gentle correction. Both are real. Both are legitimate. They just want different things.</p>
+
+  <p>Here is a clear-eyed map of the differences.</p>
+
+  <div class="compare">
+    <div class="compare-col left">
+      <h5>Physical hunger</h5>
+      <ul>
+        <li>Builds gradually</li>
+        <li>Felt in the body (stomach, low energy)</li>
+        <li>Satisfied by almost any food</li>
+        <li>Stops when you're full</li>
+        <li>No guilt after eating</li>
+        <li>You can wait 10–20 min without crisis</li>
+      </ul>
+    </div>
+    <div class="compare-col right">
+      <h5>Emotional hunger</h5>
+      <ul>
+        <li>Comes on suddenly</li>
+        <li>Felt in the mind (craving, mental pull)</li>
+        <li>Wants a <em>specific</em> food — often sweet, rich, crunchy</li>
+        <li>Doesn't stop at fullness</li>
+        <li>Often followed by guilt or disconnection</li>
+        <li>Feels urgent, "now"</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Neither is wrong. Both are real.</h3>
+
+  <p>I want to stress: the point of distinguishing the two is not to honor one and deny the other. Emotional hunger is a <em>real hunger</em> — it is just hunger for something other than food. Connection. Rest. Relief. Stimulation. Pleasure. Soothing.</p>
+
+  <p>If you respond to emotional hunger with food, you are not wrong. You are using one of the most ancient, effective soothing tools available. You will get some of what you're looking for. The food will offer real comfort. And then — because food wasn't the actual need — the underlying state will still be there. That's the pattern.</p>
+
+  <p>Learning to tell the two apart doesn't make you better at denying yourself food. It makes you better at <em>responding to the actual hunger</em>. Sometimes that response is food. Often it's something else.</p>
+
+  <h3>The third category nobody names</h3>
+
+  <p>There's a third kind of hunger that doesn't fit neatly on either side of the map: <strong>pleasure hunger</strong>. The desire to eat something because it tastes good and because eating it would be a source of joy.</p>
+
+  <p>Pleasure hunger is not physical. You're not starving. It's also not "emotional" in the clinical sense. You're not in distress. You simply want to enjoy something delicious. That is legitimate, healthy, and part of a full human life.</p>
+
+  <p>The world does not need fewer people eating for pleasure. It needs fewer people eating in shame. Pleasure is one of the most underrated forms of nourishment.</p>
+
+  <div class="page-num">18</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 8 continued + CHAPTER 9 -->
+<div class="page">
+  <h3>The practice</h3>
+
+  <p>Next time you're about to eat — meal or not — ask a single question: <em>"What kind of hunger is this?"</em></p>
+
+  <p>Physical. Emotional. Pleasure. Or some combination.</p>
+
+  <p>Don't change your action based on the answer. Just name it. Awareness is the whole job for now.</p>
+
+  <div class="sage-box">
+    <div class="sage-box-label">The reframe</div>
+    <p>Physical hunger is a message that your body needs fuel.</p>
+    <p>Emotional hunger is a message that something inside you needs care.</p>
+    <p>Pleasure hunger is a message that your life would be slightly better with something delicious in it.</p>
+    <p>All three are legitimate. All three deserve a thoughtful response. None of them requires shame.</p>
+  </div>
+
+  <div class="svg-divider" style="margin-top: 1.2rem;"><svg width="80" height="16"><use href="#leafy-divider"/></svg></div>
+
+  <!-- CHAPTER 9 -->
+  <div class="chapter-head" style="margin-top: 1.5rem;">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 9</div>
+      <h2 class="chapter-title">Journal prompts <em>for the in-between.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#journal"/></svg>
+  </div>
+  <div class="chapter-sub">Twelve prompts for the quiet work of noticing. Do one a day. Do one a week. Whatever fits your life.</div>
+
+  <p>The awareness layer is built, more than anything, through writing. Not long journaling. Not therapy-style processing. Just small, specific prompts that turn a fog into a sentence.</p>
+
+  <p>Here are twelve. Use them in order, or shuffle them, or read through and pick the one that pulls at you. No rules. Two minutes each.</p>
+
+  <ol>
+    <li>What am I <em>actually</em> hungry for right now?</li>
+    <li>What have I been postponing eating — and why?</li>
+    <li>When was the last time food felt peaceful?</li>
+    <li>What did food mean in my childhood home?</li>
+    <li>What is the one food I would not eat in front of someone else — and what does that tell me?</li>
+    <li>Which relationship in my life most reliably sends me to food afterward?</li>
+    <li>What did I actually need the last time I emotionally ate?</li>
+    <li>What's something I know I'm avoiding feeling?</li>
+    <li>If food were not an option today, what would I reach for instead?</li>
+    <li>What's one small thing I could do this week to feel more nourished (not by food)?</li>
+    <li>What does my body want me to know right now?</li>
+    <li>If a kind friend were listening to my inner dialogue about food this week, what would she gently say?</li>
+  </ol>
+
+  <p>No prompt is wrong. No answer is the point. The writing is the work.</p>
+
+  <div class="page-num">19</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- PART III OPENER -->
+<div class="page part-opener">
+  <div class="part-num">III</div>
+  <div class="part-label">Part Three</div>
+  <div class="part-title">The 5-Tool <em>Kit.</em></div>
+  <div class="part-sub">Five specific, practical tools for the moments when emotional eating is happening — or about to happen. Pick one. Try it this week. Add the next one when you're ready.</div>
+  <svg width="120" height="16" style="color: var(--sage); margin-top: 2rem;"><use href="#leafy-divider"/></svg>
+</div>
+
+<!-- CHAPTER 10 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 10 · Tool 1</div>
+      <h2 class="chapter-title">The <em>10-minute buffer.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#clock"/></svg>
+  </div>
+  <div class="chapter-sub">One of the simplest tools I teach. Does more than people expect.</div>
+
+  <p>The practice: when the urge to eat emotionally arrives — not meal hunger, but the <em>I want something specific and I want it now</em> urge — set a 10-minute timer before you eat.</p>
+
+  <p>During those 10 minutes, do literally anything else. Walk to another room. Drink a glass of water. Text a friend. Step outside. Stretch. Put on a song. Brush your teeth. Open the window.</p>
+
+  <p>At the end of 10 minutes, check in. Do you still want the food? If yes, eat it — with full permission, no shame. If no, move on.</p>
+
+  <div class="tool-card">
+    <div class="tool-card-label">The 10-minute buffer</div>
+    <h3>Pause. Do something else for 10 minutes. Then decide.</h3>
+    <p><strong>What it does:</strong> Creates a gap between urge and action. Gives your nervous system time to regulate. Lets your prefrontal cortex come back online.</p>
+    <p><strong>What it does not do:</strong> Ban anything. You are not promising yourself you won't eat. You are simply creating a window of awareness first.</p>
+  </div>
+
+  <h3>Why 10 minutes, specifically</h3>
+
+  <p>Most emotional urges — not all, but most — are shaped like waves. They build, they crest, they fall. The full cycle of a typical emotional-eating urge is between 8 and 20 minutes. Ten minutes lands in the middle. Often the urge has crested and begun to fall by then. Sometimes it has resolved entirely.</p>
+
+  <p>The buffer doesn't suppress the wave. It surfs it. You're not fighting. You're just waiting.</p>
+
+  <h3>The two common outcomes</h3>
+
+  <p><strong>Outcome A:</strong> You wait 10 minutes, and the urge fades. Maybe you were stressed or bored and needed movement. Maybe you were tired and needed rest. Whatever the cause, food was not the actual need. You move on.</p>
+
+  <p><strong>Outcome B:</strong> You wait 10 minutes, and you still want the food. Great — eat it. But now you're eating with awareness. You know you chose it. You know you weren't on autopilot. You'll likely eat less of it, taste more of it, and walk away without shame.</p>
+
+  <p>Both outcomes are wins. There is no losing outcome. That's the genius of this tool.</p>
+
+  <div class="page-num">20</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 11 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 11 · Tool 2</div>
+      <h2 class="chapter-title">The <em>body check.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#breath"/></svg>
+  </div>
+  <div class="chapter-sub">30 seconds of somatic awareness. Not yoga-level. Normal-person level.</div>
+
+  <p>The body check is a short practice — about 30 seconds — that brings you into your body before you make a food decision. It's pulled from somatic therapy but stripped of jargon.</p>
+
+  <div class="tool-card">
+    <div class="tool-card-label">The body check · 30 seconds</div>
+    <h3>Scan. Notice. Name.</h3>
+    <p><strong>Close your eyes if safe.</strong> Take one breath.</p>
+    <p><strong>Scan your body</strong> from the top of your head to your feet. Not analyzing. Just noticing.</p>
+    <p><strong>Name two things:</strong> one place of tension, one place of ease.</p>
+    <p>Open your eyes. Decide what to do next.</p>
+  </div>
+
+  <p>That's it. Two sensations. One tense, one easy.</p>
+
+  <h3>Why this works</h3>
+
+  <p>Most emotional eating happens because you're dissociated from your body. You're in your head — looping on a thought, replaying a conversation, anticipating something. Meanwhile, your body is sending signals you can't hear. Maybe your jaw is clenched. Your shoulders are up. Your breath is shallow. Your chest feels tight.</p>
+
+  <p>The body check isn't about relaxing. It's about <em>reconnecting</em>. Once you've felt what's going on physically — even a little — you're in a different mental state. The urge to eat may still be there. But now you're present for the decision.</p>
+
+  <p>Often, clients tell me that the body check alone reveals what the emotional eating was for. "Oh — my shoulders are up to my ears. I'm tense. I was going to eat to calm down. Now that I know I'm tense, I'm going to stretch for 2 minutes first."</p>
+
+  <div class="sage-box">
+    <div class="sage-box-label">The reframe</div>
+    <p>You cannot feed a body you've lost touch with. The body check is not a step in the eating process. It's a step in the <em>returning-to-yourself</em> process. Food decisions are much clearer from there.</p>
+  </div>
+
+  <h3>When to use it</h3>
+
+  <p>Before any meal or snack that you're about to eat impulsively. Before and after a stressful interaction. In the car before you go home. In bed before you sleep.</p>
+
+  <p>It's short enough that you can do it anywhere. Private enough that nobody notices.</p>
+
+  <div class="page-num">21</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 12 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 12 · Tool 3</div>
+      <h2 class="chapter-title">The <em>decision filter.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#journal"/></svg>
+  </div>
+  <div class="chapter-sub">A three-question filter that turns a foggy urge into a clear choice.</div>
+
+  <p>The decision filter is the most cognitive of the five tools. It gives you a fast, repeatable protocol for deciding whether to eat. It works best in moments when the answer feels genuinely unclear.</p>
+
+  <div class="tool-card">
+    <div class="tool-card-label">The decision filter</div>
+    <h3>Three questions, one answer.</h3>
+    <ol>
+      <li><strong>Am I hungry?</strong> (Physical hunger, body-level. If yes, eat. Question resolved.)</li>
+      <li><strong>If I wait 20 minutes, will the urge still be here?</strong> (If you suspect no — it's emotional, not physical. Question resolved.)</li>
+      <li><strong>Do I want this food specifically — or any food?</strong> (A specific craving is almost always emotional. Hunger doesn't care what it is.)</li>
+    </ol>
+  </div>
+
+  <h3>Using the filter</h3>
+
+  <p>Run the three questions in order. Stop when you have enough clarity. Most people stop after question 2.</p>
+
+  <p>The questions don't tell you what to do. They tell you what's happening. From there, you make the call — eat, wait, or do something else.</p>
+
+  <div class="compare">
+    <div class="compare-col left">
+      <h5>Example · Real hunger</h5>
+      <ul>
+        <li>Q1: Am I hungry? <strong>Yes.</strong></li>
+        <li>→ Eat. No further questions needed.</li>
+      </ul>
+    </div>
+    <div class="compare-col right">
+      <h5>Example · Emotional</h5>
+      <ul>
+        <li>Q1: Hungry? <strong>Not really.</strong></li>
+        <li>Q2: Still here in 20? <strong>Probably not.</strong></li>
+        <li>Q3: This specific food? <strong>Yes — I want chocolate.</strong></li>
+        <li>→ Emotional. Decide with awareness.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>The filter doesn't forbid emotional eating</h3>
+
+  <p>If the filter tells you this is emotional — you can still eat. Remember: the point of this book is not to stop emotional eating. It's to make it conscious, chosen, and not shame-bound.</p>
+
+  <p>What the filter prevents is the <em>automatic</em> eating. The four handfuls of chips you don't remember having. The pantry raid that happens in a fog. The filter puts a choice back into what was previously reflexive.</p>
+
+  <p>Some days you'll choose to eat. Some days you'll choose not to. Both are fine. The quality of the choice is what matters.</p>
+
+  <div class="page-num">22</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 13 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 13 · Tool 4</div>
+      <h2 class="chapter-title">Eat with <em>awareness.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#bloom"/></svg>
+  </div>
+  <div class="chapter-sub">If you've decided to eat — here's how to actually be present for it.</div>
+
+  <p>When you've run the other tools and decided that eating is what you want — whether the eating is for hunger, for comfort, or for pleasure — this tool is about being fully there for it.</p>
+
+  <p>Because mindless eating is not the same as mindful eating, even of the same food. The same bowl of ice cream, eaten on the couch in front of a screen, is a different experience than eaten at the table in silence. Both are legitimate. But only one counts as actually having the ice cream. The other counts as having something shaped like ice cream while you thought about other things.</p>
+
+  <div class="tool-card">
+    <div class="tool-card-label">Eat with awareness · the protocol</div>
+    <h3>Five small shifts. That's the whole tool.</h3>
+    <ol>
+      <li><strong>Plate it.</strong> No eating out of the bag or carton. Use a plate or bowl.</li>
+      <li><strong>Sit down.</strong> Not in the car, not at the counter, not in bed.</li>
+      <li><strong>No screens.</strong> Not even music with lyrics.</li>
+      <li><strong>Taste the first three bites slowly.</strong> Really taste. Temperature, texture, flavor.</li>
+      <li><strong>Check in halfway through.</strong> Am I satisfied? Stop if yes. Keep going if no.</li>
+    </ol>
+  </div>
+
+  <h3>What you'll notice</h3>
+
+  <p>Usually — and this surprises people — you'll eat less of the food, and enjoy more of it. The unstoppable quality of some emotional eating episodes often comes from the fact that you're not actually present for the food. You eat, but you don't taste. You don't register fullness. So you keep eating, looking for the experience that never quite arrives.</p>
+
+  <p>When you eat with awareness — plated, seated, tasting — your brain registers the experience. You feel satisfied. You stop naturally.</p>
+
+  <p>This is not a trick to eat less. It is a practice to eat <em>fully</em>.</p>
+
+  <div class="pullquote">
+    You cannot be satisfied by food you were not present for. Being present is the tool.
+  </div>
+
+  <h3>The ice-cream test</h3>
+
+  <p>Try this once. The next time you want ice cream, have it — all of it — but do it with this protocol. Plate it. Sit at the table. No phone. Taste it. Notice the temperature change on the spoon. Notice when the wanting begins to soften.</p>
+
+  <p>Many of my clients report, after doing this: "I couldn't finish it." That is not a brag. It's a revelation. The same amount of ice cream, eaten presently, delivered more pleasure than they were used to — and satisfied sooner.</p>
+
+  <div class="page-num">23</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 14 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 14 · Tool 5</div>
+      <h2 class="chapter-title">The <em>aftercare script.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#hand"/></svg>
+  </div>
+  <div class="chapter-sub">The most important tool. What you say to yourself afterward.</div>
+
+  <p>Of the five tools in this kit, this one does the most work. Not during the eating. After.</p>
+
+  <p>Because the emotional-eating cycle is not completed by the eating. It is completed by the <em>aftermath</em>. The shame. The self-talk. The "I did it again." The scrolling for motivation, the promise to do better Monday, the tightening of restriction that begins the whole cycle again.</p>
+
+  <p>If you interrupt that aftermath, you interrupt the cycle. Even without changing a single bite of what you ate.</p>
+
+  <div class="tool-card">
+    <div class="tool-card-label">The aftercare script</div>
+    <h3>After any emotional eating episode, say this to yourself.</h3>
+    <p><em>"That was information, not a verdict. I was feeling [name the state]. Food was a tool I used. It helped a little. It didn't solve it. Tomorrow I'll have another chance to meet this differently. For now — I'm okay. I am not behind. I am not broken. I am a person, practicing."</em></p>
+  </div>
+
+  <h3>Why this matters</h3>
+
+  <p>Shame activates the exact nervous-system state that drives emotional eating in the first place. When you punish yourself for eating, you are making the next eating episode more likely. That is not a character judgment; it is a neurological mechanism.</p>
+
+  <p>Compassion does the opposite. Self-compassion — not "letting yourself off the hook," but actually speaking to yourself the way you'd speak to a friend — regulates your nervous system. It keeps your executive brain online. It makes the next decision a cleaner one.</p>
+
+  <p>If you do only one thing from this book, let it be this: <strong>change what you say to yourself after.</strong></p>
+
+  <h3>Writing your own</h3>
+
+  <p>The script above is mine. Yours can be different. What matters is that it has three components:</p>
+
+  <ol>
+    <li><strong>Reframe:</strong> "This was information, not a verdict."</li>
+    <li><strong>Name what was true:</strong> "I was feeling [X]. Food was a tool I used."</li>
+    <li><strong>Reassurance:</strong> "I am not behind. I am practicing."</li>
+  </ol>
+
+  <p>Write yours on a notecard. Stick it in your kitchen drawer. Read it after. Read it when you don't think you need it. Read it every day for a month if you want.</p>
+
+  <div class="pullquote">
+    The eating is not the cycle. The shame after is the cycle. Break the shame, you break the cycle.
+  </div>
+
+  <div class="page-num">24</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- PART IV OPENER -->
+<div class="page part-opener">
+  <div class="part-num">IV</div>
+  <div class="part-label">Part Four</div>
+  <div class="part-title">The Long <em>Game.</em></div>
+  <div class="part-sub">Four short chapters on what this work looks like over years, not weeks. When emotional eating is a signal. Twenty non-food tools to build. When a therapist helps. And a letter to the version of you who'll finish this book a year from now.</div>
+  <svg width="120" height="16" style="color: var(--sage); margin-top: 2rem;"><use href="#leafy-divider"/></svg>
+</div>
+
+<!-- CHAPTER 15 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 15</div>
+      <h2 class="chapter-title">When emotional eating is <em>a signal, not a problem.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#wave"/></svg>
+  </div>
+  <div class="chapter-sub">A controversial reframe. Sometimes, the emotional eating is doing you a favor.</div>
+
+  <p>I want to say something that may not be said enough in books about this subject.</p>
+
+  <p>Sometimes the emotional eating is correctly diagnosing something about your life that needs to change — and the food is the message.</p>
+
+  <p>If every time you come home from a certain job, you emotionally eat — the eating may be pointing at the job. If every time you spend an evening with a certain person, you emotionally eat — the eating may be pointing at that relationship. If every time you sit alone after the kids are in bed, you emotionally eat — the eating may be pointing at an unnamed loneliness that isn't your kids' fault and isn't your fault but is real.</p>
+
+  <p>The tools in Part Three help you respond to emotional eating with skill. But sometimes, the better response is not to manage the symptom. It is to listen to what the symptom is telling you.</p>
+
+  <div class="pullquote">
+    Food that reliably arrives after a specific trigger is not a bad habit. It is a smoke signal. Sometimes the right response is to find the fire.
+  </div>
+
+  <h3>Ask the bigger question</h3>
+
+  <p>After a few weeks of pattern journaling (Chapter 7), if you notice that your emotional eating is tightly correlated with something specific — a relationship, a job, a routine, a family dynamic — pause before you try to "fix" the eating.</p>
+
+  <p>Ask: <em>what is my body trying to tell me?</em></p>
+
+  <p>Sometimes the answer is: "I need to set a boundary with [person]." Sometimes: "I need to find different work." Sometimes: "I need to be in a different marriage." Sometimes: "I need to grieve something I've never named."</p>
+
+  <p>These are not small answers. They may require significant life changes. The emotional eating will often resolve on its own once the underlying issue is addressed — not because you used willpower, but because the smoke signal got answered.</p>
+
+  <p>This is one of the hardest and most important chapters of this book. Because it says: sometimes the eating isn't the problem you need to solve. Sometimes the eating is the wise one.</p>
+
+  <div class="page-num">25</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 16 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 16</div>
+      <h2 class="chapter-title">Twenty non-food alternatives <em>that actually work.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#bloom"/></svg>
+  </div>
+  <div class="chapter-sub">Not a list of things you should do. A menu of things you could try, matched to the flavor you're meeting.</div>
+
+  <p>When emotional eating is the only tool in your box, everything looks like a need for food. Expanding the toolbox — slowly, gently — means finding other tools that meet the actual need.</p>
+
+  <p>Here are twenty. Most take under 15 minutes. Most require nothing you don't already have. Pick two or three that appeal to you. Try them. See what fits.</p>
+
+  <h3>For stress (sympathetic overdrive)</h3>
+  <ol>
+    <li>Cold water on your face and inner wrists — activates the dive reflex, rapidly slows heart rate</li>
+    <li>Four slow breaths, exhale longer than inhale (4-in, 7-hold, 8-out)</li>
+    <li>A 10-minute walk outside, without a phone</li>
+    <li>Two minutes of shaking — literally shake out your hands, arms, whole body</li>
+  </ol>
+
+  <h3>For sadness</h3>
+  <ol start="5">
+    <li>A 5-minute cry (set a timer; give yourself permission; it releases)</li>
+    <li>Call someone — not to talk about the sadness, just to hear their voice</li>
+    <li>A hot bath or shower, as long as you need</li>
+    <li>Put on a song that makes you feel seen</li>
+  </ol>
+
+  <h3>For loneliness</h3>
+  <ol start="9">
+    <li>Text a specific person with a specific question</li>
+    <li>Go somewhere with other humans — coffee shop, library, park bench</li>
+    <li>Re-read a letter, text thread, or card from someone who loves you</li>
+    <li>Pet an animal (yours or a neighbor's)</li>
+  </ol>
+
+  <h3>For boredom / understimulation</h3>
+  <ol start="13">
+    <li>A 20-minute walk in a new direction</li>
+    <li>A small creative project — draw, write, rearrange a shelf</li>
+    <li>Learn something — a 10-minute tutorial on anything</li>
+    <li>Cold exposure — quick cold shower, dip hands in ice water</li>
+  </ol>
+
+  <h3>For overwhelm</h3>
+  <ol start="17">
+    <li>Write a brain dump — everything on your mind, unfiltered, for 5 minutes</li>
+    <li>Pick one thing from the dump. Do only that for 15 minutes.</li>
+    <li>Say no to one thing — anything — this week</li>
+    <li>Lie on the floor. Three minutes. Nothing else.</li>
+  </ol>
+
+  <div class="page-num">26</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 16 continued + 17 -->
+<div class="page">
+  <h3>How to use the menu</h3>
+
+  <p>Don't try to remember all twenty. Pick three — ideally one for stress, one for sadness/loneliness, one for overwhelm — and put them on a sticky note where you can see it.</p>
+
+  <p>When the urge arrives, you now have three options that aren't food. You may still choose food sometimes. That's fine. But "food or food" is no longer the menu. You've expanded it.</p>
+
+  <div class="sage-box">
+    <div class="sage-box-label">The slow shift</div>
+    <p>Over six months of reaching for one of these tools a few times a week — not every time, just sometimes — you will notice food has quietly become one option among several. You didn't stop emotional eating. You grew a wider menu. That is the whole game.</p>
+  </div>
+
+  <div class="svg-divider" style="margin-top: 1.2rem;"><svg width="80" height="16"><use href="#leafy-divider"/></svg></div>
+
+  <!-- CHAPTER 17 -->
+  <div class="chapter-head" style="margin-top: 1.5rem;">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 17</div>
+      <h2 class="chapter-title">When to work <em>with a therapist.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#heart"/></svg>
+  </div>
+  <div class="chapter-sub">Gentle clarity on when this book is enough, and when it is not.</div>
+
+  <p>I wrote this book to be useful. I did not write it to replace clinical care. Here are signs that your emotional eating may benefit from professional support.</p>
+
+  <div class="disclaimer">
+    <p><strong>Consider working with a therapist or a non-diet registered dietitian if…</strong></p>
+    <ul>
+      <li>You binge-eat regularly (defined as eating unusually large amounts in a short period, feeling out of control)</li>
+      <li>You engage in compensatory behaviors after eating (vomiting, laxatives, excessive exercise)</li>
+      <li>Your eating patterns are significantly disrupting your health, work, or relationships</li>
+      <li>You experience sustained periods of not eating or severely restricted eating</li>
+      <li>Food takes up the majority of your mental bandwidth most days</li>
+      <li>You have a history of trauma that you suspect is connected to your eating</li>
+      <li>You've been working on this alone for a while and it isn't shifting</li>
+    </ul>
+  </div>
+
+  <p><strong>Resources:</strong> National Eating Disorders Association (nationaleatingdisorders.org · helpline 1-800-931-2237). Eating Disorder Registered Dietitians (EDRD) directory. Association for Size Diversity and Health (ASDAH) for non-diet clinicians. <strong>Psychology Today</strong> therapist search (filter for "eating disorders" and "Health at Every Size").</p>
+
+  <p>Working with a therapist or non-diet dietitian is not a failure. It is a sign that you take this work seriously enough to get the right support for it.</p>
+
+  <div class="page-num">27</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CHAPTER 18 -->
+<div class="page">
+  <div class="chapter-head">
+    <div style="flex:1;">
+      <div class="chapter-num">Chapter 18</div>
+      <h2 class="chapter-title">A letter to yourself, <em>one year from now.</em></h2>
+    </div>
+    <svg class="chapter-icon"><use href="#sprig"/></svg>
+  </div>
+  <div class="chapter-sub">The last exercise of the book. Twenty minutes. Do it now, or do it when you're ready.</div>
+
+  <p>Before you close this book, I want to ask you to do one more thing. It will take maybe 20 minutes. You'll need paper and a pen.</p>
+
+  <p>Write a letter to yourself, dated one year from today.</p>
+
+  <p>In it, describe:</p>
+
+  <ul>
+    <li>What kind of relationship with food you have now</li>
+    <li>How you spoke to yourself after the last hard day</li>
+    <li>Which of the five tools you reach for most often</li>
+    <li>One non-food tool you've added to your life</li>
+    <li>One situation that used to send you to food, and no longer does</li>
+    <li>One thing that still does — and how you've made peace with that</li>
+    <li>How your body feels different — not smaller, necessarily. Different.</li>
+    <li>What you'd say to the version of you who opened this book a year ago</li>
+  </ul>
+
+  <p>Date the letter one year from today. Put it in a sealed envelope. Put it somewhere you'll find in a year.</p>
+
+  <div class="pullquote">
+    The version of you described in that letter is not a fantasy. She is the natural outcome of what you're practicing now. She is coming.
+  </div>
+
+  <h3>Two last things</h3>
+
+  <p><strong>One:</strong> You will have setbacks. You will have days when none of these tools work and you eat emotionally and feel the old shame. When that happens, open this book to Chapter 14. Read the aftercare script. Then close the book and go on with your day. The work continues.</p>
+
+  <p><strong>Two:</strong> The woman who completes this book a year from now is already, in some sense, real. She is the sum of the small choices you will make between today and then. Every pause you take. Every journal entry. Every body check. Every time you reach for a tool instead of food. Every aftercare script you read to yourself.</p>
+
+  <p>She is coming. Your job is not to force her. Your job is to keep practicing. She'll arrive on her own.</p>
+
+  <div class="page-num">28</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+<!-- CLOSING -->
+<div class="page">
+  <div class="closing">
+    <svg width="60" height="80" style="color: var(--sage); opacity: 0.5; margin-bottom: 1.5rem;"><use href="#sprig"/></svg>
+    <div class="section-eyebrow">A closing note</div>
+    <h2 class="section-title" style="margin-top: 0.5rem;">You were never <em>the enemy.</em></h2>
+
+    <div class="svg-divider" style="margin: 1.5rem 0;"><svg width="16" height="16"><use href="#bloom"/></svg></div>
+
+    <p style="max-width: 5in; margin: 0 auto 1.2rem; font-size: 1.02rem;">If you take one thing from these eighteen chapters, let it be this: the part of you that reaches for food when the world feels too much — that part has been trying to take care of you. She has been doing her best, with the only tools she was ever given.</p>
+
+    <p style="max-width: 5in; margin: 0 auto 1.2rem; font-size: 1.02rem;">She is not broken. She does not need defeating. She needs, if anything, company. She needs other tools in the box so she isn't carrying every emotional need alone. She needs to be thanked — and, slowly, asked to step aside for the ones better suited to the job.</p>
+
+    <div class="pullquote" style="max-width: 5in; margin: 1.5rem auto; text-align: left;">
+      This has never been a story of defeat. It has always been a story of meeting yourself with more tenderness than you thought you deserved.
+    </div>
+
+    <p style="font-size: 0.95rem; color: var(--walnut); font-style: italic;">Thank you for letting me walk with you through this.</p>
+
+    <div class="sig">With you,</div>
+    <div class="sig" style="margin: 0.2rem 0 0.4rem;">Phyllis</div>
+    <div class="sig-meta">Inman Institute · phyllisinman.com</div>
+  </div>
+
+  <div class="colophon">
+    <div class="colophon-mark">· · ·</div>
+    <div>© Inman Institute LLC · Eating Through Emotions · Ebook 02 of the Purposefully Eating Series</div>
+    <div>For you and one friend. Please don't redistribute — instead, send them to phyllisinman.com.</div>
+    <div style="margin-top: 0.8rem;">Want to go deeper? <strong style="color: var(--terracotta);">Purposefully Eating</strong> — the 6-week flagship course. Learn more at <strong style="color: var(--terracotta);">phyllisinman.com</strong></div>
+  </div>
+
+  <div class="page-num">29</div><div class="page-brand">Eating Through Emotions</div>
+</div>
+
+</body>
+</html>
