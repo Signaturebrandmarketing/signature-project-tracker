@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-22T15:43:11.105940Z",
+  "lastUpdated": "2026-04-22T19:15:00.000000Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -1167,6 +1167,113 @@
       "lastActivity": "2026-04-12"
     },
     {
+      "id": "client-phyllis-inman",
+      "name": "Client · Phyllis Inman (Growth Partner) — Purposefully Eating",
+      "status": "active",
+      "health": "healthy",
+      "weight": 3,
+      "description": "Full brand + product ecosystem buildout for GP client Phyllis Inman. Wellness coaching brand — 'Purposefully Eating' (consumer-facing) under Inman Institute LLC. Positioning: mindset-first, non-restrictive, family-centered mindful eating for women 30–50. Brand palette revised from photography (cream/sage/terracotta/walnut, gold accent only). Live at signaturebrandmarketing.github.io/signature-project-tracker/clients/phyllis/",
+      "modules": [
+        {
+          "name": "Strategy & Product Ladder",
+          "status": "complete",
+          "note": "Product ladder (7 tiers), 90-day launch plan, 1-year growth roadmap. At 1k subs, projected ~$14,450 / 6mo; at 2k subs w/ trilogy, ~$6k/mo passive backend revenue."
+        },
+        {
+          "name": "Brand Kit (Supabase)",
+          "status": "complete",
+          "note": "Updated primary_color #E8DCC8 cream (was gold), secondary_colors populated w/ sage/terracotta/walnut/charcoal/gold. Plan bumped to pro + creative addon. signup_source: growth_partner_fulfillment."
+        },
+        {
+          "name": "Brand Identity System",
+          "status": "complete",
+          "note": "Logomark (plate + sprig), primary wordmark, horizontal lockup, Inman Institute parent mark, P monogram. 7 SVG files w/ usage guide, clear-space rules, Do/Don'ts. Live at /identity.html"
+        },
+        {
+          "name": "Lead Magnet · The Peaceful Plate",
+          "status": "complete",
+          "note": "14-page designed ebook + PDF. Real photography integrated, 10 custom SVG illustrations. Print-ready w/ Download PDF + Print buttons. Live."
+        },
+        {
+          "name": "Ebook 01 · The Mindful Family Kitchen ($37)",
+          "status": "complete",
+          "note": "42-page paid ebook · 15 chapters across 5 parts (framework, system, scripts, 30 meals w/ 5 hero recipes, whole-food/organic swaps + Dirty Dozen guide). Gumroad listing + launch email ready."
+        },
+        {
+          "name": "Ebook 02 · Eating Through Emotions ($37)",
+          "status": "complete",
+          "note": "29-page paid ebook · 18 chapters · 5-tool kit, H.A.L.T.O.B.S. framework, 20 non-food alternatives, clinical escalation guide. Gumroad listing ready."
+        },
+        {
+          "name": "Ebook 03 · Raising Intuitive Eaters ($37)",
+          "status": "complete",
+          "note": "34-page paid ebook · 18 chapters · Ages 3–16 playbooks, 20+ scripts, 30-day non-coercive picky eating reset. Trilogy bundle spec ($79, saves $32)."
+        },
+        {
+          "name": "Flagship Sales Page",
+          "status": "complete",
+          "note": "12-section conversion-optimized designed HTML for $297 course. Real photography, logomark integrated, 2-tier pricing ($197 Core / $397 Family), accordion FAQ, 30-day guarantee. Deploy-ready for Kajabi or Squarespace."
+        },
+        {
+          "name": "Course Content · Modules 1–2",
+          "status": "complete",
+          "note": "9 of 27 lesson scripts written (Module 1: 5 lessons on foundation; Module 2: 4 lessons on the 3 shifts). Each script ready-to-film with recording guidance, workbook references, and pull quotes. Build tracker live at /course-content/"
+        },
+        {
+          "name": "Course Content · Modules 3–6",
+          "status": "planned",
+          "note": "18 remaining lesson scripts: Module 3 Body's Wisdom (4), Module 4 Family Table (5), Module 5 Mindful Kitchen (5), Module 6 Purposeful Plate Plan (5). ~20k words total."
+        },
+        {
+          "name": "The Peaceful Plate Workbook",
+          "status": "planned",
+          "note": "80-page designed PDF · every exercise, reflection, assessment from the course. Next in queue after Module 3–6 scripts."
+        },
+        {
+          "name": "Bonus · Meditation Library",
+          "status": "planned",
+          "note": "8 guided audio scripts (10–15 min each) for Phyllis to record. $47 value bonus inside course."
+        },
+        {
+          "name": "Bonus · Emergency Scripts PDF",
+          "status": "planned",
+          "note": "~15-page designed PDF · wallet-card-ready scripts for family/relative/coworker food moments. $17 value bonus."
+        },
+        {
+          "name": "Content Topic Library",
+          "status": "complete",
+          "note": "900+ topic bullets across 27 flagship lessons, 7-Day Reset, sales VSL, 24 Reels, 12 Q&A themes, 48 weekly emails, 30 IG captions, student story prompts, 24 blog posts. Live at /topics.html"
+        },
+        {
+          "name": "Social Content Library (written)",
+          "status": "complete",
+          "note": "30 IG captions (month 1) + 24 Reel scripts + 48 weekly email topics + 30 more IG captions (month 2). All written in Phyllis's voice, tied to the 5 brand pillars."
+        },
+        {
+          "name": "POD Product Catalog",
+          "status": "complete",
+          "note": "12-SKU spec (journal, planner, conversation cards, tees, sweatshirts, mugs, tote, tea towels, digital printables). Margin math + Printful integration plan included."
+        },
+        {
+          "name": "Client Dashboard",
+          "status": "complete",
+          "note": "Interactive dashboard w/ revenue calculator, product stack, content contributions (checklist + recommendations + topic bullets), 90-day roadmap. LocalStorage progress persistence. Live at /clients/phyllis/"
+        },
+        {
+          "name": "Photography",
+          "status": "pending",
+          "note": "2 brand portraits in use (banner + garden). Recommended quarterly photographer sessions for lifestyle + product shots. Budget $400–800 per 3-hour session."
+        },
+        {
+          "name": "30 Instagram Graphics",
+          "status": "planned",
+          "note": "Designed post templates (HTML) for all 30 month-1 captions. Last visual design deliverable."
+        }
+      ],
+      "lastActivity": "2026-04-22",
+      "issues": []
+    },
+    {
       "id": "future-state",
       "name": "Future State (Design Phase)",
       "status": "planned",
@@ -1199,6 +1306,60 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-04-22",
+      "project": "client-phyllis-inman",
+      "event": "Course content batch 1 shipped \u2014 Modules 1 & 2 lesson scripts (9 of 27) + course build tracker live at /course-content/. Scripts ready-to-film w/ recording guidance + workbook refs + pull quotes.",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-22",
+      "project": "client-phyllis-inman",
+      "event": "Flagship sales page shipped \u2014 12-section designed HTML at /sales-page.html, real photography, logomark, 2-tier pricing ($197 Core / $397 Family), accordion FAQ, 30-day guarantee seal. Deploy-ready for Kajabi.",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-22",
+      "project": "client-phyllis-inman",
+      "event": "Brand identity system shipped \u2014 logomark (plate + sprig), 3 wordmark variations (primary, horizontal, Inman Institute), P monogram, 7 downloadable SVG files. Full usage guide + clear-space rules live at /identity.html",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-22",
+      "project": "client-phyllis-inman",
+      "event": "Ebook trilogy COMPLETE \u2014 Raising Intuitive Eaters shipped (34 pp, 18 chapters, ages 3-16 playbooks, 30-day picky eating reset). Trilogy bundle spec at $79 saves $32. All 3 x $37 ebooks now Gumroad-ready.",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-04-22",
+      "project": "client-phyllis-inman",
+      "event": "Eating Through Emotions ebook shipped \u2014 29 pages, 18 chapters, H.A.L.T.O.B.S. framework + 5-tool kit. Ebook 02 of 03 trilogy.",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-22",
+      "project": "client-phyllis-inman",
+      "event": "Mindful Family Kitchen ebook shipped (42 pp, $37) \u2014 includes Part V bonus chapter on whole-food & organic swaps with Dirty Dozen guide + 10 total hero recipes.",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-22",
+      "project": "client-phyllis-inman",
+      "event": "Lead magnet 'The Peaceful Plate' designed PDF shipped \u2014 14 pages, real photography + 10 custom SVG illustrations, print-ready, downloadable from /peaceful-plate.html. Mobile-responsive.",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-22",
+      "project": "client-phyllis-inman",
+      "event": "Client dashboard + interactive progress tracker live at /clients/phyllis/ \u2014 revenue calculator, product stack, 25-item content checklist with recommendations + topic bullets + localStorage progress persistence. 900+ topic bullets across all content.",
+      "type": "launch"
+    },
+    {
+      "date": "2026-04-22",
+      "project": "client-phyllis-inman",
+      "event": "Brand kit palette updated in Supabase \u2014 primary_color shifted from gold to cream (#E8DCC8) per photography. App plan bumped pro + creative addon. App features now reflect GP-tier access.",
+      "type": "fix"
+    },
     {
       "date": "2026-04-19",
       "project": "crm-integration",
