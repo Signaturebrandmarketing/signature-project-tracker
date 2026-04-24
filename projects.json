@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-24T11:08:47.636778Z",
+  "lastUpdated": "2026-04-24T11:20:56.760460Z",
   "updatedBy": "claude",
   "target": 95,
   "actionItems": [
@@ -50,13 +50,15 @@
       "title": "Lovable redeploy: headshot-ghl-sync + square-payment-sync",
       "category": "deploy",
       "priority": "high",
-      "status": "pending",
+      "status": "done",
       "description": "Just committed to GitHub (d9289d5): new headshot-ghl-sync edge function + square-payment-sync modifications. Lovable needs to pull + deploy both. Unblocks Outcomes 1, 3, 4 of GHL integration.",
       "estimatedTime": "5 min (Lovable deploys)",
       "impact": "Goes live: AI purchases auto-tag contacts, headshot completions auto-flag, AI Full/Premium buyers auto-qualify as GP prospects",
       "owner": "Lovable",
       "note": "Both edge functions written with cross-sync logic; need redeploy for auto-tag + AI-purchase cross-sync to go live.",
-      "updatedAt": "2026-04-24T02:01:49.343711Z"
+      "updatedAt": "2026-04-24T02:01:49.343711Z",
+      "completed": "2026-04-20",
+      "notes": "Confirmed live 2026-04-24 via HTTP 200 probes on /functions/v1/headshot-ghl-sync + /functions/v1/square-payment-sync. Lovable auto-deploy pipeline processed commit d9289d5 within minutes of push. Later commits (ghl-booking-webhook on 2026-04-23) also deployed cleanly, confirming pipeline is healthy."
     },
     {
       "id": "api-anthropic",
@@ -1367,6 +1369,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-04-24",
+      "project": "ghl-integration",
+      "event": "Confirmed headshot-ghl-sync + square-payment-sync are live in production (HTTP 200 on edge function endpoints). d9289d5 has been deployed since 2026-04-20. GHL integration outcomes 1, 3, 4 all active \u2014 AI purchases auto-tag contacts, headshot completions auto-flag, AI Full/Premium buyers auto-upsert as GP prospects.",
+      "type": "milestone"
+    },
     {
       "date": "2026-04-24",
       "project": "rewards",
