@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-24T11:06:17.124933Z",
+  "lastUpdated": "2026-04-24T11:08:47.636778Z",
   "updatedBy": "claude",
   "target": 95,
   "actionItems": [
@@ -399,10 +399,12 @@
       "title": "Run /admin/health and backfill everything",
       "category": "deploy",
       "priority": "critical",
-      "status": "pending",
+      "status": "done",
       "description": "Visit /admin/health (dev-gated). Run all 4 checks: (1) profiles missing referral_code + referral_links (backfill), (2) ambassadors without matching user_roles, (3) marketplace providers without role, (4) reward_balance \u2260 ledger sum (recompute). Takes <2 min total. Do this once right before launch email.",
       "estimatedTime": "5 min",
-      "impact": "Data consistency locked before real users arrive"
+      "impact": "Data consistency locked before real users arrive",
+      "completed": "2026-04-24",
+      "notes": "Resolved earlier today \u2014 all 4 checks verified via direct SQL. No drift found."
     },
     {
       "id": "rewards-clean-dev-seeds",
@@ -565,11 +567,12 @@
       "title": "Build /admin/health page in Lovable",
       "category": "build",
       "priority": "medium",
-      "status": "in-progress",
+      "status": "done",
       "description": "Lovable prompt READY at ~/Desktop/signature-ops/lovable-admin-health-prompt.md. Paste into Signature Rewards Lovable project chat. Builds /admin/health with 4 one-click checks (referral backfill, ambassador roles, provider roles, balance recompute) + 4 edge functions + admin_health_log table.",
       "estimatedTime": "15 min",
       "impact": "No more SQL-editor gymnastics before launches \u2014 one page confirms system is clean",
-      "notes": "Backend live: admin_health_log table + 4 SECURITY DEFINER RPCs (admin_backfill_referrals, admin_sync_ambassador_roles, admin_sync_provider_roles, admin_recompute_balances). Pivoted from edge functions after confirming Ken has no deploy access to stsowpflccehekknumkb. Frontend swap to rpc() calls pending in Lovable."
+      "notes": "Done. Backend: admin_health_log + 4 SECURITY DEFINER RPCs on stsowpflccehekknumkb. Frontend: useAdminHealth.ts calls supabase.rpc(). Edge functions abandoned \u2014 Ken has no deploy access to that project.",
+      "completed": "2026-04-24"
     }
   ],
   "costs": {
@@ -1364,6 +1367,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-04-24",
+      "project": "rewards",
+      "event": "/admin/health page fully live \u2014 frontend swapped to supabase.rpc() calls, edge functions & supabase/functions/ deleted from repo. Admin can now one-click backfill referrals, sync ambassador/provider roles, recompute balance drift.",
+      "type": "milestone"
+    },
     {
       "date": "2026-04-24",
       "project": "rewards",
