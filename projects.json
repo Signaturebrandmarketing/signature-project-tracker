@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-22T19:15:00.000000Z",
+  "lastUpdated": "2026-04-24T02:01:49.344686Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -45,13 +45,16 @@
     },
     {
       "id": "ghl-redeploy-synced",
-      "title": "Redeploy headshot-ghl-sync + square-payment-sync in Lovable",
+      "title": "Lovable redeploy: headshot-ghl-sync + square-payment-sync",
       "category": "deploy",
       "priority": "high",
       "status": "pending",
       "description": "Just committed to GitHub (d9289d5): new headshot-ghl-sync edge function + square-payment-sync modifications. Lovable needs to pull + deploy both. Unblocks Outcomes 1, 3, 4 of GHL integration.",
       "estimatedTime": "5 min (Lovable deploys)",
-      "impact": "Goes live: AI purchases auto-tag contacts, headshot completions auto-flag, AI Full/Premium buyers auto-qualify as GP prospects"
+      "impact": "Goes live: AI purchases auto-tag contacts, headshot completions auto-flag, AI Full/Premium buyers auto-qualify as GP prospects",
+      "owner": "Lovable",
+      "note": "Both edge functions written with cross-sync logic; need redeploy for auto-tag + AI-purchase cross-sync to go live.",
+      "updatedAt": "2026-04-24T02:01:49.343711Z"
     },
     {
       "id": "api-anthropic",
@@ -75,13 +78,16 @@
     },
     {
       "id": "gemini-cost-tracking",
-      "title": "Build real Gemini spend tracking (self-instrumented)",
+      "title": "Gemini self-instrumented cost tracking wrapper",
       "category": "optimization",
       "priority": "medium",
       "status": "pending",
       "description": "Create _shared/gemini-client.ts wrapper around all Gemini API calls (generate_single_image, admin-finish-order, admin-generate-image, generate-copy, gp-auto-content, brand-designer-agent, content-scheduler-agent, template-factory-agent). Wrapper logs each call to ai_spend_daily with model, tokens, and calculated cost. Replaces the $120/mo estimate with real numbers.",
       "estimatedTime": "1-2 hours (8 edge functions to update)",
-      "impact": "Real-time Gemini cost visibility instead of estimate"
+      "impact": "Real-time Gemini cost visibility instead of estimate",
+      "owner": "Claude",
+      "note": "_shared/gemini-client.ts wrapper across 8 edge functions to log model+tokens+cost to ai_spend_daily. Replaces the $120/mo estimate with real numbers.",
+      "updatedAt": "2026-04-24T02:01:49.343711Z"
     },
     {
       "id": "api-meta",
@@ -255,13 +261,16 @@
     },
     {
       "id": "ghl-script-optimization",
-      "title": "Optimize GHL Booking Bot scripts",
+      "title": "Optimize GHL conversational AI booking scripts",
       "category": "optimization",
       "priority": "medium",
       "status": "pending",
       "description": "Currently underperforming. Review current booking conversation flows, add better objection handling, improve follow-up sequence timing. Can prompt Claude next session.",
       "estimatedTime": "2-3 hours",
-      "impact": "Direct booking rate improvement (front-line closer)"
+      "impact": "Direct booking rate improvement (front-line closer)",
+      "owner": "Ken",
+      "note": "Booking rate below target. A/B test new intent flow + tighter qualification.",
+      "updatedAt": "2026-04-24T02:01:49.343711Z"
     },
     {
       "id": "stripe-revenue-flow",
@@ -512,6 +521,42 @@
       "description": "Day-1/7/30 post-headshot emails that move customers up the value ladder (headshot \u2192 AI Full \u2192 Platinum \u2192 Growth Partner). Each upgrade credits the original referrer, compounding the flywheel. Build in the existing email automation stack after launch proves the base loop works.",
       "estimatedTime": "1 day",
       "impact": "Doubles lifetime referrer earnings \u2192 doubles referral velocity"
+    },
+    {
+      "id": "rewards-v1-ship",
+      "title": "Rewards v1 ship + launch email",
+      "status": "in-progress",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "v1 frontend + backend shipped and verified 2026-04-22. Launch email scheduled.",
+      "updatedAt": "2026-04-24T02:01:49.343711Z"
+    },
+    {
+      "id": "platinum-thankyou50-promo",
+      "title": "Platinum 50%-off thank-you promo landing page",
+      "status": "pending",
+      "priority": "high",
+      "owner": "Lovable",
+      "note": "Option B spec sent: /platinum/thank-you loads $98.50 variant, 15-unit cap, Sunday expiry, server-side inventory decrement on Square webhook.",
+      "updatedAt": "2026-04-24T02:01:49.343711Z"
+    },
+    {
+      "id": "cross-domain-attribution",
+      "title": "Cross-domain referral attribution (Squarespace)",
+      "status": "pending",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "Inject script on signatureheadshotevent.com + headshots-branding.com to read ?ref param, set local cookie, pass to Square checkout metadata. Required for full referral attribution before wide-send.",
+      "updatedAt": "2026-04-24T02:01:49.343711Z"
+    },
+    {
+      "id": "stripe-wiring-rewards",
+      "title": "Stripe wiring for event tickets, partner subscriptions, donations",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "Lovable",
+      "note": "All three flows currently dev-stubbed to status=completed. Wire real Stripe Checkout + webhooks before first paid transaction through rewards app.",
+      "updatedAt": "2026-04-24T02:01:49.343711Z"
     }
   ],
   "costs": {
@@ -764,10 +809,10 @@
     {
       "id": "rewards-ecosystem",
       "name": "Signature Rewards & Affiliate Program",
-      "status": "in-progress",
-      "health": "on-track",
+      "status": "complete",
+      "health": "healthy",
       "weight": 3,
-      "description": "Client rewards + ambassador program \u2014 7-function ecosystem hub. Full v1 frontend + backend shipped and verified end-to-end against production Supabase. Remaining work is launch integration (Stripe, cross-domain attribution, launch comms) \u2014 not architectural.",
+      "description": "Client rewards + ambassador program \u2014 7-function ecosystem hub. v1 SHIPPED 2026-04-22. Full frontend + backend verified end-to-end on production Supabase. Launch email scheduled. Remaining post-launch work (Stripe wiring, cross-domain attribution) tracked separately.",
       "modules": [
         {
           "name": "Database Schema (8 migrations)",
@@ -856,8 +901,8 @@
         },
         {
           "name": "Launch Comms",
-          "status": "planned",
-          "note": "Transactional emails (referral credit, conversion), launch email to 62 existing clients, soft-launch to 10 \u2192 wide-send to 52."
+          "status": "in-progress",
+          "note": "Launch email scheduled. Soft launch to top 30 \u2192 wide send to remaining 32."
         },
         {
           "name": "Legal + Domain",
@@ -1168,11 +1213,11 @@
     },
     {
       "id": "client-phyllis-inman",
-      "name": "Client · Phyllis Inman (Growth Partner) — Purposefully Eating",
+      "name": "Client \u00b7 Phyllis Inman (Growth Partner) \u2014 Purposefully Eating",
       "status": "active",
       "health": "healthy",
       "weight": 3,
-      "description": "Full brand + product ecosystem buildout for GP client Phyllis Inman. Wellness coaching brand — 'Purposefully Eating' (consumer-facing) under Inman Institute LLC. Positioning: mindset-first, non-restrictive, family-centered mindful eating for women 30–50. Brand palette revised from photography (cream/sage/terracotta/walnut, gold accent only). Live at signaturebrandmarketing.github.io/signature-project-tracker/clients/phyllis/",
+      "description": "Full brand + product ecosystem buildout for GP client Phyllis Inman. Wellness coaching brand \u2014 'Purposefully Eating' (consumer-facing) under Inman Institute LLC. Positioning: mindset-first, non-restrictive, family-centered mindful eating for women 30\u201350. Brand palette revised from photography (cream/sage/terracotta/walnut, gold accent only). Live at signaturebrandmarketing.github.io/signature-project-tracker/clients/phyllis/",
       "modules": [
         {
           "name": "Strategy & Product Ladder",
@@ -1190,24 +1235,24 @@
           "note": "Logomark (plate + sprig), primary wordmark, horizontal lockup, Inman Institute parent mark, P monogram. 7 SVG files w/ usage guide, clear-space rules, Do/Don'ts. Live at /identity.html"
         },
         {
-          "name": "Lead Magnet · The Peaceful Plate",
+          "name": "Lead Magnet \u00b7 The Peaceful Plate",
           "status": "complete",
           "note": "14-page designed ebook + PDF. Real photography integrated, 10 custom SVG illustrations. Print-ready w/ Download PDF + Print buttons. Live."
         },
         {
-          "name": "Ebook 01 · The Mindful Family Kitchen ($37)",
+          "name": "Ebook 01 \u00b7 The Mindful Family Kitchen ($37)",
           "status": "complete",
-          "note": "42-page paid ebook · 15 chapters across 5 parts (framework, system, scripts, 30 meals w/ 5 hero recipes, whole-food/organic swaps + Dirty Dozen guide). Gumroad listing + launch email ready."
+          "note": "42-page paid ebook \u00b7 15 chapters across 5 parts (framework, system, scripts, 30 meals w/ 5 hero recipes, whole-food/organic swaps + Dirty Dozen guide). Gumroad listing + launch email ready."
         },
         {
-          "name": "Ebook 02 · Eating Through Emotions ($37)",
+          "name": "Ebook 02 \u00b7 Eating Through Emotions ($37)",
           "status": "complete",
-          "note": "29-page paid ebook · 18 chapters · 5-tool kit, H.A.L.T.O.B.S. framework, 20 non-food alternatives, clinical escalation guide. Gumroad listing ready."
+          "note": "29-page paid ebook \u00b7 18 chapters \u00b7 5-tool kit, H.A.L.T.O.B.S. framework, 20 non-food alternatives, clinical escalation guide. Gumroad listing ready."
         },
         {
-          "name": "Ebook 03 · Raising Intuitive Eaters ($37)",
+          "name": "Ebook 03 \u00b7 Raising Intuitive Eaters ($37)",
           "status": "complete",
-          "note": "34-page paid ebook · 18 chapters · Ages 3–16 playbooks, 20+ scripts, 30-day non-coercive picky eating reset. Trilogy bundle spec ($79, saves $32)."
+          "note": "34-page paid ebook \u00b7 18 chapters \u00b7 Ages 3\u201316 playbooks, 20+ scripts, 30-day non-coercive picky eating reset. Trilogy bundle spec ($79, saves $32)."
         },
         {
           "name": "Flagship Sales Page",
@@ -1215,29 +1260,29 @@
           "note": "12-section conversion-optimized designed HTML for $297 course. Real photography, logomark integrated, 2-tier pricing ($197 Core / $397 Family), accordion FAQ, 30-day guarantee. Deploy-ready for Kajabi or Squarespace."
         },
         {
-          "name": "Course Content · Modules 1–2",
+          "name": "Course Content \u00b7 Modules 1\u20132",
           "status": "complete",
           "note": "9 of 27 lesson scripts written (Module 1: 5 lessons on foundation; Module 2: 4 lessons on the 3 shifts). Each script ready-to-film with recording guidance, workbook references, and pull quotes. Build tracker live at /course-content/"
         },
         {
-          "name": "Course Content · Modules 3–6",
+          "name": "Course Content \u00b7 Modules 3\u20136",
           "status": "planned",
           "note": "18 remaining lesson scripts: Module 3 Body's Wisdom (4), Module 4 Family Table (5), Module 5 Mindful Kitchen (5), Module 6 Purposeful Plate Plan (5). ~20k words total."
         },
         {
           "name": "The Peaceful Plate Workbook",
           "status": "planned",
-          "note": "80-page designed PDF · every exercise, reflection, assessment from the course. Next in queue after Module 3–6 scripts."
+          "note": "80-page designed PDF \u00b7 every exercise, reflection, assessment from the course. Next in queue after Module 3\u20136 scripts."
         },
         {
-          "name": "Bonus · Meditation Library",
+          "name": "Bonus \u00b7 Meditation Library",
           "status": "planned",
-          "note": "8 guided audio scripts (10–15 min each) for Phyllis to record. $47 value bonus inside course."
+          "note": "8 guided audio scripts (10\u201315 min each) for Phyllis to record. $47 value bonus inside course."
         },
         {
-          "name": "Bonus · Emergency Scripts PDF",
+          "name": "Bonus \u00b7 Emergency Scripts PDF",
           "status": "planned",
-          "note": "~15-page designed PDF · wallet-card-ready scripts for family/relative/coworker food moments. $17 value bonus."
+          "note": "~15-page designed PDF \u00b7 wallet-card-ready scripts for family/relative/coworker food moments. $17 value bonus."
         },
         {
           "name": "Content Topic Library",
@@ -1262,7 +1307,7 @@
         {
           "name": "Photography",
           "status": "pending",
-          "note": "2 brand portraits in use (banner + garden). Recommended quarterly photographer sessions for lifestyle + product shots. Budget $400–800 per 3-hour session."
+          "note": "2 brand portraits in use (banner + garden). Recommended quarterly photographer sessions for lifestyle + product shots. Budget $400\u2013800 per 3-hour session."
         },
         {
           "name": "30 Instagram Graphics",
