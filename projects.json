@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-24T14:18:00.537048Z",
+  "lastUpdated": "2026-04-24T16:56:35.113277Z",
   "updatedBy": "claude",
   "target": 95,
   "actionItems": [
@@ -591,6 +591,16 @@
       "completed": "2026-04-24",
       "description": "Hand-picked master ambassadors earn 5% override on gross revenue driven by their downline ambassadors. Monthly cap $1000, 1-year terms, sponsor link persists across resets. Single-level only (not MLM).",
       "notes": "Shipped end-to-end: (1) schema + master_ambassador_terms table on stsowpflccehekknumkb; (2) 3 admin RPCs (grant/revoke/set-sponsor); (3) rewards_credit_master_override RPC; (4) Lovable UI \u2014 admin buttons on /admin/ambassadors, /ambassador/master dashboard with MTD earnings + downline table; (5) rewards-process-conversion edge function wired to call override RPC after ambassador credit (commit 117354e on signature-brand-forge)."
+    },
+    {
+      "id": "gp-auto-content-cron",
+      "title": "Set up weekly cron for gp-auto-content",
+      "category": "ops",
+      "priority": "high",
+      "status": "done",
+      "completed": "2026-04-24",
+      "description": "GP content wasn't regenerating for clients after initial onboarding batch. Root cause: gp-auto-content edge function had no scheduled invoker.",
+      "notes": "pg_cron job 'gp-auto-content-weekly' scheduled at 0 2 * * 1 (Mondays 02:00 UTC). Uses vault secret email_queue_service_role_key to authenticate to the function. jobid 10."
     }
   ],
   "costs": {
@@ -1385,6 +1395,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-04-24",
+      "project": "growth-partner",
+      "event": "Fixed stuck GP client didib6789 (A&A Health & Wealth Solutions): activated enrollment, added weekly cron for gp-auto-content. Content was stalled since 2026-04-05 \u2014 auto-regeneration now scheduled for every Monday 02:00 UTC.",
+      "type": "fix"
+    },
     {
       "date": "2026-04-24",
       "project": "rewards",
