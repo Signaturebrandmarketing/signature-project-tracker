@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-24T10:22:24.263150Z",
+  "lastUpdated": "2026-04-24T10:25:27.564458Z",
   "updatedBy": "claude",
   "target": 95,
   "actionItems": [
@@ -559,6 +559,16 @@
       "owner": "Lovable",
       "note": "All three flows currently dev-stubbed to status=completed. Wire real Stripe Checkout + webhooks before first paid transaction through rewards app.",
       "updatedAt": "2026-04-24T02:01:49.343711Z"
+    },
+    {
+      "id": "rewards-admin-health-page",
+      "title": "Build /admin/health page in Lovable",
+      "category": "build",
+      "priority": "medium",
+      "status": "pending",
+      "description": "Lovable prompt READY at ~/Desktop/signature-ops/lovable-admin-health-prompt.md. Paste into Signature Rewards Lovable project chat. Builds /admin/health with 4 one-click checks (referral backfill, ambassador roles, provider roles, balance recompute) + 4 edge functions + admin_health_log table.",
+      "estimatedTime": "15 min",
+      "impact": "No more SQL-editor gymnastics before launches \u2014 one page confirms system is clean"
     }
   ],
   "costs": {
@@ -1353,6 +1363,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-04-24",
+      "project": "rewards",
+      "event": "Lovable prompt for /admin/health page written and saved (~/Desktop/signature-ops/lovable-admin-health-prompt.md). Ready to paste \u2014 builds 4-check health dashboard + 4 backfill edge functions + admin_health_log table.",
+      "type": "milestone"
+    },
     {
       "date": "2026-04-24",
       "project": "rewards",
