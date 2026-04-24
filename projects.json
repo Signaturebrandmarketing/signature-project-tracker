@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-24T16:56:35.113277Z",
+  "lastUpdated": "2026-04-24T17:19:23.353810Z",
   "updatedBy": "claude",
   "target": 95,
   "actionItems": [
@@ -601,6 +601,16 @@
       "completed": "2026-04-24",
       "description": "GP content wasn't regenerating for clients after initial onboarding batch. Root cause: gp-auto-content edge function had no scheduled invoker.",
       "notes": "pg_cron job 'gp-auto-content-weekly' scheduled at 0 2 * * 1 (Mondays 02:00 UTC). Uses vault secret email_queue_service_role_key to authenticate to the function. jobid 10."
+    },
+    {
+      "id": "gp-auto-triggers",
+      "title": "GP pipeline auto-triggers (activation + deliverable assignment)",
+      "category": "ops",
+      "priority": "high",
+      "status": "done",
+      "completed": "2026-04-24",
+      "description": "Prevent future GP clients from getting stuck in onboarding with unassigned deliverables. Auto-activate on approval + auto-assign deliverables to the enrollment's agent.",
+      "notes": "Two Postgres triggers on stsowpflccehekknumkb: (1) gp_auto_activate_on_approval \u2014 BEFORE UPDATE on gp_client_enrollments, flips status to active when onboarding_status becomes approved; (2) gp_auto_assign_deliverable \u2014 BEFORE INSERT on gp_deliverables, inherits assigned_agent_id from enrollment's agent_user_id (fallback: strategist_user_id). Backfilled 3 stuck submitted clients (LaToya, Signature Test, We Care More) \u2014 all auto-activated via the trigger in one UPDATE."
     }
   ],
   "costs": {
@@ -1395,6 +1405,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-04-24",
+      "project": "growth-partner",
+      "event": "GP pipeline guardrails shipped \u2014 2 auto-triggers (activation on approval, deliverable assignment). 3 submitted clients backfilled to active in one SQL UPDATE. Future GP clients now self-activate when onboarding is approved; deliverables auto-route to their agent.",
+      "type": "milestone"
+    },
     {
       "date": "2026-04-24",
       "project": "growth-partner",
