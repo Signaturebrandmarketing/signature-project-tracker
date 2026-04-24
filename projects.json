@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-24T11:20:56.760460Z",
+  "lastUpdated": "2026-04-24T11:22:09.806592Z",
   "updatedBy": "claude",
   "target": 95,
   "actionItems": [
@@ -321,10 +321,12 @@
       "title": "Verify square-payment-sync reads ref_code + fires conversion",
       "category": "deploy",
       "priority": "critical",
-      "status": "pending",
+      "status": "done",
       "description": "Read supabase/functions/square-payment-sync/index.ts. Confirm: (1) reads ref_code from booking metadata, (2) calls rewards-process-conversion with correct conversion_type matching reward_tiers.service_category (headshot_session / ai_starter / ai_full / platinum / authority_sprint / gp_setup), (3) fires on successful payment webhook. Patch if not.",
       "estimatedTime": "20 min audit + patch",
-      "impact": "Without this, zero referrals fire a credit"
+      "impact": "Without this, zero referrals fire a credit",
+      "completed": "2026-04-23",
+      "notes": "Verified and tested by Ken 2026-04-23. square-payment-sync reads ref_code and fires referral conversions correctly."
     },
     {
       "id": "rewards-event-site-attribution",
@@ -1369,6 +1371,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-04-23",
+      "project": "rewards",
+      "event": "square-payment-sync referral attribution verified end-to-end by Ken \u2014 ref_code is being read on purchase and conversion events fire into rewards_ledger as expected.",
+      "type": "milestone"
+    },
     {
       "date": "2026-04-24",
       "project": "ghl-integration",
