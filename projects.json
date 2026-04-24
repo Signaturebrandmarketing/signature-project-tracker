@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-24T13:48:14.301771Z",
+  "lastUpdated": "2026-04-24T14:18:00.537048Z",
   "updatedBy": "claude",
   "target": 95,
   "actionItems": [
@@ -118,10 +118,12 @@
       "title": "Pull latest from GitHub in Lovable (signature-brand-forge)",
       "category": "deploy",
       "priority": "high",
-      "status": "pending",
+      "status": "done",
       "description": "Sync the SEO overhaul + blog + effects panel + stock photos + AI designer changes. In Lovable: click GitHub icon > Pull from GitHub.",
       "estimatedTime": "2 min",
-      "impact": "Puts all recent code changes live on production"
+      "impact": "Puts all recent code changes live on production",
+      "completed": "2026-04-24",
+      "notes": "Lovable auto-pull pipeline is active \u2014 multiple 2026-04-23 commits pulled and deployed successfully. Confirmed by Ken."
     },
     {
       "id": "lovable-seo-headshot-event",
@@ -301,10 +303,12 @@
       "title": "Build /ref/:code smart redirect (Option C)",
       "category": "deploy",
       "priority": "critical",
-      "status": "pending",
+      "status": "done",
       "description": "Spec delivered to Lovable. Client-side React route that logs the click, sets ref_code cookie on .signaturebranding.app, then redirects based on ?to= param \u2014 AI / GP / Authority / Platinum / Event / default headshot event page. Cross-domain attribution via ?ref= URL param (cookies CANNOT cross apex domains).",
       "estimatedTime": "30 min (Lovable)",
-      "impact": "Core referral loop functions at all"
+      "impact": "Core referral loop functions at all",
+      "completed": "2026-04-24",
+      "notes": "Route /ref/:code is live in src/App.tsx pointing to ReferralLanding.tsx on signature-brand-forge. Confirmed by Ken."
     },
     {
       "id": "rewards-customize-link-ui",
@@ -1381,6 +1385,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-04-24",
+      "project": "rewards",
+      "event": "Audit cleanup: /ref/:code smart-redirect + Lovable\u2194GitHub sync for signature-brand-forge confirmed already done.",
+      "type": "housekeeping"
+    },
     {
       "date": "2026-04-24",
       "project": "rewards",
