@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-24T11:22:09.806592Z",
+  "lastUpdated": "2026-04-24T13:48:14.301771Z",
   "updatedBy": "claude",
   "target": 95,
   "actionItems": [
@@ -577,6 +577,16 @@
       "impact": "No more SQL-editor gymnastics before launches \u2014 one page confirms system is clean",
       "notes": "Done. Backend: admin_health_log + 4 SECURITY DEFINER RPCs on stsowpflccehekknumkb. Frontend: useAdminHealth.ts calls supabase.rpc(). Edge functions abandoned \u2014 Ken has no deploy access to that project.",
       "completed": "2026-04-24"
+    },
+    {
+      "id": "rewards-master-ambassador",
+      "title": "Master ambassador tier (5% override, 1-yr term, $1K/mo cap)",
+      "category": "build",
+      "priority": "medium",
+      "status": "done",
+      "completed": "2026-04-24",
+      "description": "Hand-picked master ambassadors earn 5% override on gross revenue driven by their downline ambassadors. Monthly cap $1000, 1-year terms, sponsor link persists across resets. Single-level only (not MLM).",
+      "notes": "Shipped end-to-end: (1) schema + master_ambassador_terms table on stsowpflccehekknumkb; (2) 3 admin RPCs (grant/revoke/set-sponsor); (3) rewards_credit_master_override RPC; (4) Lovable UI \u2014 admin buttons on /admin/ambassadors, /ambassador/master dashboard with MTD earnings + downline table; (5) rewards-process-conversion edge function wired to call override RPC after ambassador credit (commit 117354e on signature-brand-forge)."
     }
   ],
   "costs": {
@@ -1371,6 +1381,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-04-24",
+      "project": "rewards",
+      "event": "Master ambassador tier shipped \u2014 5% override on downline gross, $1K/mo cap, 1-yr terms, hand-picked by admin. Schema + 4 RPCs + frontend + edge function all live.",
+      "type": "milestone"
+    },
     {
       "date": "2026-04-23",
       "project": "rewards",
