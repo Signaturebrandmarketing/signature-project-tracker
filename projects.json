@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-24T10:25:27.564458Z",
+  "lastUpdated": "2026-04-24T11:06:17.124933Z",
   "updatedBy": "claude",
   "target": 95,
   "actionItems": [
@@ -565,10 +565,11 @@
       "title": "Build /admin/health page in Lovable",
       "category": "build",
       "priority": "medium",
-      "status": "pending",
+      "status": "in-progress",
       "description": "Lovable prompt READY at ~/Desktop/signature-ops/lovable-admin-health-prompt.md. Paste into Signature Rewards Lovable project chat. Builds /admin/health with 4 one-click checks (referral backfill, ambassador roles, provider roles, balance recompute) + 4 edge functions + admin_health_log table.",
       "estimatedTime": "15 min",
-      "impact": "No more SQL-editor gymnastics before launches \u2014 one page confirms system is clean"
+      "impact": "No more SQL-editor gymnastics before launches \u2014 one page confirms system is clean",
+      "notes": "Backend live: admin_health_log table + 4 SECURITY DEFINER RPCs (admin_backfill_referrals, admin_sync_ambassador_roles, admin_sync_provider_roles, admin_recompute_balances). Pivoted from edge functions after confirming Ken has no deploy access to stsowpflccehekknumkb. Frontend swap to rpc() calls pending in Lovable."
     }
   ],
   "costs": {
@@ -1363,6 +1364,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-04-24",
+      "project": "rewards",
+      "event": "Admin health backend deployed as Postgres RPCs (SECURITY DEFINER) instead of edge functions \u2014 4 functions + admin_health_log table live on stsowpflccehekknumkb. Frontend swap to supabase.rpc() in progress.",
+      "type": "milestone"
+    },
     {
       "date": "2026-04-24",
       "project": "rewards",
