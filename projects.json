@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-04-24T02:01:49.344686Z",
-  "updatedBy": "Claude",
+  "lastUpdated": "2026-04-24T10:22:24.263150Z",
+  "updatedBy": "claude",
   "target": 95,
   "actionItems": [
     {
@@ -18,10 +18,12 @@
       "title": "Backfill referral codes for 62 existing profiles",
       "category": "deploy",
       "priority": "high",
-      "status": "pending",
+      "status": "done",
       "description": "62 profiles now in production. Some already have referral_code + referral_links from the handle_new_user trigger (fires on NEW signups only). Run /admin/health \u2192 \"Profiles missing referral_code or referral_links\" \u2192 Backfill. Confirms every existing client is referral-ready before launch email goes out.",
       "estimatedTime": "2 min",
-      "impact": "Every existing client becomes a potential referrer overnight"
+      "impact": "Every existing client becomes a potential referrer overnight",
+      "completed": "2026-04-24",
+      "notes": "Verified via SQL: all 69 profiles have referral_code + client referral_links row. handle_new_user trigger was seeding both all along."
     },
     {
       "id": "rewards-ambassador-launch-plan",
@@ -1351,6 +1353,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-04-24",
+      "project": "rewards",
+      "event": "Backfill task verified complete \u2014 all 69 profiles have referral_code + 'client' referral_links row. No action needed; handle_new_user trigger already seeds both.",
+      "type": "milestone"
+    },
     {
       "date": "2026-04-22",
       "project": "client-phyllis-inman",
