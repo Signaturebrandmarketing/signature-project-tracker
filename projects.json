@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-24T17:19:23.353810Z",
+  "lastUpdated": "2026-04-25T15:07:42.865898Z",
   "updatedBy": "claude",
   "target": 95,
   "actionItems": [
@@ -611,6 +611,26 @@
       "completed": "2026-04-24",
       "description": "Prevent future GP clients from getting stuck in onboarding with unassigned deliverables. Auto-activate on approval + auto-assign deliverables to the enrollment's agent.",
       "notes": "Two Postgres triggers on stsowpflccehekknumkb: (1) gp_auto_activate_on_approval \u2014 BEFORE UPDATE on gp_client_enrollments, flips status to active when onboarding_status becomes approved; (2) gp_auto_assign_deliverable \u2014 BEFORE INSERT on gp_deliverables, inherits assigned_agent_id from enrollment's agent_user_id (fallback: strategist_user_id). Backfilled 3 stuck submitted clients (LaToya, Signature Test, We Care More) \u2014 all auto-activated via the trigger in one UPDATE."
+    },
+    {
+      "id": "marketplace-booking-system",
+      "title": "Marketplace booking system + provider monetization",
+      "category": "build",
+      "priority": "high",
+      "status": "done",
+      "completed": "2026-04-25",
+      "description": "Full provider marketplace with bookings, platform-fee monetization, featured tiers, ref_code attribution, and master ambassador override on fees.",
+      "notes": "Backend (stsowpflccehekknumkb): marketplace_categories with 6 categories + flat fees + reward amounts + booking_mode (instant/quote); marketplace_bookings full lifecycle with auto-fee stamping + auto-reward firing triggers; Stripe columns on marketplace_providers (customer_id, payment_method_id, featured_tier, etc.); content_engagement table for future stats integration. Edge functions: marketplace-charge-provider-fee, marketplace-create-setup-intent, marketplace-create-featured-checkout. stripe-webhook extended to handle featured-tier subscription create/update/delete events. Frontend (signature-rewards): provider directory with featured rail + tier badges, instant-vs-quote booking flow, ref_code capture, /provider/setup-payment Stripe Elements, /provider/featured two-tier subscription page, /provider dashboard with confirm\u2192charge flow + retry rail, /admin/marketplace revenue breakdown, premium hero rotation on home. Pricing: portrait $35, beauty $40, family $50, event $150, corporate $200, wedding $300. Featured tiers: Verified Pro $49/mo, Premium Featured $149/mo. Client rewards on booking: $10\u2013$50 by category. Master 5% override on platform fee."
+    },
+    {
+      "id": "marketplace-stripe-env-vars",
+      "title": "Set Stripe price IDs for marketplace featured tiers",
+      "category": "ops",
+      "priority": "medium",
+      "status": "pending",
+      "description": "Required to activate Featured tier subscriptions ($49 Verified Pro, $149 Premium Featured). Create both products in Stripe Dashboard as recurring monthly, then set STRIPE_PRICE_VERIFIED_PRO and STRIPE_PRICE_PREMIUM_FEATURED in Supabase Secrets. Also set VITE_STRIPE_PUBLISHABLE_KEY in Lovable Cloud build env if not already set.",
+      "estimatedTime": "10 min",
+      "impact": "Without this, /provider/featured page errors. Booking flow + fee charging works without it."
     }
   ],
   "costs": {
@@ -1405,6 +1425,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-04-25",
+      "project": "marketplace",
+      "event": "Marketplace booking system shipped end-to-end. Provider directory, instant + quote booking flows, fee-only monetization ($35\u2013$300 per category), 2-tier Featured subscriptions ($49/$149), client rewards on booking ($10\u2013$50), master ambassador 5% override on platform fees. 4 edge functions deployed (charge-fee, setup-intent, featured-checkout, stripe-webhook patched).",
+      "type": "milestone"
+    },
     {
       "date": "2026-04-24",
       "project": "growth-partner",
