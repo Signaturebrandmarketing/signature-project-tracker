@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T20:58:41.273139Z",
+  "lastUpdated": "2026-04-27T22:50:03.828925Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -784,6 +784,33 @@
       "owner": "Lovable",
       "note": "VERIFIED 2026-04-27. Activity log writes cleanly on every PIT save: action_type=ghl_credentials_updated, title includes actor email, metadata includes pit_valid/location_id/updated_fields/pit_validation_error WITHOUT exposing raw PIT, visibility=internal, actor_id populated. Two test saves on Bless Me Now (enrollment a8127ccc) both logged correctly within 10 seconds. Audit trail is operational.",
       "updatedAt": "2026-04-27T20:58:41.273139Z"
+    },
+    {
+      "id": "liveloop-product-launch",
+      "title": "Launch Signature LiveLoop\u2122 as bundled subscription product",
+      "status": "planned",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "New product line \u2014 three tiers ($297/$497/$797 + setup $497/$997/$1497) bundling Brand Kit + AI generation + LiveLoop autonomous publishing into a single recurring offer. Phases out standalone AI Branding ($59/$99) plans which had no system attached. Sales page, billing, migration plan for existing AI Branding subscribers. Sequence: ship pricing page first, migrate existing subs second, public launch third.",
+      "updatedAt": "2026-04-27T22:50:03.828925Z"
+    },
+    {
+      "id": "ai-branding-legacy-migration",
+      "title": "Migrate existing AI Branding subscribers to LiveLoop tier (or grandfather)",
+      "status": "planned",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "Email all current Signature Essential ($59) and Pro ($99) subscribers with two options: (a) upgrade to LiveLoop Starter at $247/mo with 6-month founder discount (vs $297 standard) + setup fee waived, or (b) keep current plan as long as continuously subscribed. Honor relationships, phase out the SKU by attrition not by force.",
+      "updatedAt": "2026-04-27T22:50:03.828925Z"
+    },
+    {
+      "id": "gp-pricing-restructure",
+      "title": "Restructure Growth Partner pricing tiers ($1,200/$1,800/$2,800)",
+      "status": "planned",
+      "priority": "critical",
+      "owner": "Ken",
+      "note": "Current $500/mo + $500 setup is materially below cost when founder time is honestly accounted for. New tiers: Starter $1,200, Growth $1,800 (recommended), Scale $2,800 + setup $1,500\u2013$2,500. Existing 9 GP clients grandfathered at $500/mo legacy rate or invited to upgrade to Growth tier at $1,200/mo founder discount. New clients all priced at new tier starting immediately.",
+      "updatedAt": "2026-04-27T22:50:03.828925Z"
     }
   ],
   "costs": {
