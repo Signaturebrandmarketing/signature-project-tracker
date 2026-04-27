@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T18:49:40.691946Z",
+  "lastUpdated": "2026-04-27T20:04:35.479729Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -688,12 +688,12 @@
     },
     {
       "id": "gp-phase5-flag-flip",
-      "title": "Set GP_USE_TOP_PERFORMERS=true after Phase 5 ships + 14-day data warmup",
+      "title": "Flip GP_USE_TOP_PERFORMERS=true after 14-day real-engagement warmup",
       "status": "planned",
       "priority": "medium",
       "owner": "Ken",
-      "note": "Once Phase 5 publishing pipeline is live and real GHL engagement data has accumulated for ~10-20 published posts (give it 7-14 days post-launch), set GP_USE_TOP_PERFORMERS=true in Lovable secrets to re-enable the closed-loop prompt injection. Spot-check the next generation cycle for relevance.",
-      "updatedAt": "2026-04-27T17:59:40.002538Z"
+      "note": "Phase 5 shipped 2026-04-27. Real engagement metrics start flowing as posts publish + GHL syncs. After ~10-20 published posts have accumulated real metrics (give 7-14 days), set GP_USE_TOP_PERFORMERS=true in Lovable secrets to re-enable closed-loop prompt injection. Calendar reminder: ~2026-05-11.",
+      "updatedAt": "2026-04-27T20:04:35.479729Z"
     },
     {
       "id": "gp-phase5-schema-prep",
@@ -721,6 +721,33 @@
       "owner": "Lovable",
       "note": "Post-launch optimization (NOT pre-meeting work). Current Pattern B does two queries (row \u2192 enrollment); Pattern A consolidates into one with a join. Saves ~20-50ms per call. Worth doing once Phase 5 is stable AND if bulk approval volume justifies it.",
       "updatedAt": "2026-04-27T18:49:40.691946Z"
+    },
+    {
+      "id": "gp-phase5-cron-schedule",
+      "title": "Schedule gp-publish-retry-worker (every min) + gp-sync-engagement-daily (5am UTC)",
+      "status": "in-progress",
+      "priority": "critical",
+      "owner": "Ken",
+      "note": "Phase 5 shipped 2026-04-27. Both crons need pg_cron schedules in Signature Brand Studio SQL editor. SQL block ready. May need to verify auth pattern (current_setting vs vault.decrypted_secrets) with Dexter if 401s appear.",
+      "updatedAt": "2026-04-27T20:04:35.479729Z"
+    },
+    {
+      "id": "gp-ghl-webhook-config",
+      "title": "Configure GHL inbound webhook for publish confirmations",
+      "status": "pending",
+      "priority": "critical",
+      "owner": "Ken",
+      "note": "In GHL (both GP and KLH sub-accounts as relevant): add webhook pointing to https://stsowpflccehekknumkb.supabase.co/functions/v1/gp-publish-webhook with x-signature header (sha256=<hex>) using GP_PUBLISH_WEBHOOK_SECRET. Pull secret from 1Password, NOT chat. Get Dexter on screen-share for 5 min if GHL UI is unclear.",
+      "updatedAt": "2026-04-27T20:04:35.479729Z"
+    },
+    {
+      "id": "gp-phase5-smoke-test",
+      "title": "Phase 5 end-to-end smoke test: approve \u2192 publish \u2192 confirm webhook \u2192 metrics",
+      "status": "pending",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "Once crons + GHL webhook configured, run: pick a test enrollment, generate draft, approve via /growth-partner/content, watch for status=scheduled then status=published, verify external_post_refs populated, verify gp-sync-engagement pulls metrics within 24h. End-to-end proof of Phase 5 working before any real client uses it.",
+      "updatedAt": "2026-04-27T20:04:35.479729Z"
     }
   ],
   "costs": {
@@ -1507,6 +1534,58 @@
         }
       ],
       "lastActivity": "2026-04-05"
+    },
+    {
+      "id": "gp-content-engine",
+      "name": "Growth Partner Content Engine",
+      "status": "active",
+      "health": "healthy",
+      "weight": 3,
+      "description": "Autonomous content generation + publishing engine for GP clients. Phases 1-7 complete. Phase 5 (GHL publishing pipeline) shipped 2026-04-27 with direct GHL API, per-enrollment PIT, HMAC webhook verification, 3-attempt exponential backoff to DLQ, and real engagement sync.",
+      "modules": [
+        {
+          "name": "Schema & Auto-Generation (Phase 1)",
+          "status": "complete"
+        },
+        {
+          "name": "gp-auto-content edge function (Phase 2)",
+          "status": "complete"
+        },
+        {
+          "name": "Client Review UX (Phase 3)",
+          "status": "complete"
+        },
+        {
+          "name": "Notifications: in-app + 9am ET digest (Phase 4)",
+          "status": "complete"
+        },
+        {
+          "name": "GHL Publishing Pipeline (Phase 5)",
+          "status": "complete",
+          "note": "gp-publish-content (direct GHL API, per-enrollment PIT, GHL Media Library upload, 3-attempt backoff to DLQ); gp-publish-webhook (HMAC-SHA256 verified); gp-publish-retry-worker (pgmq drainer, needs minute-cron); gp_publish_dlq table with admin-only RLS."
+        },
+        {
+          "name": "Performance Feedback Loop (Phase 6)",
+          "status": "complete",
+          "note": "gp-sync-engagement now pulls real GHL post metrics. Top-performers prompt injection gated behind GP_USE_TOP_PERFORMERS env flag (still off). Flip to true after 2 weeks of real data."
+        },
+        {
+          "name": "Admin Health & Alerting (Phase 7)",
+          "status": "complete"
+        },
+        {
+          "name": "Schema lockdown",
+          "status": "complete",
+          "note": "external_post_refs JSONB, media_refs JSONB, status enum CHECK constraint (8 values). All verified live 2026-04-27."
+        },
+        {
+          "name": "Multi-tenant security audit",
+          "status": "complete",
+          "note": "gp-client-content-action verified Pattern B ownership check (lines 67-83). No IDOR vulnerability."
+        }
+      ],
+      "lastActivity": "2026-04-27",
+      "issues": []
     }
   ],
   "timeline": [
