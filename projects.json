@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T12:32:46.294771Z",
+  "lastUpdated": "2026-04-27T15:21:46.569470Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -649,6 +649,33 @@
       "owner": "Ken",
       "note": "Process change: every new transactional email template (donation receipts, rewards conversion, ticket confirmation, partner approval, etc.) must have all CTA URLs visited and verified before deploy. Prevents repeat of the 6-broken-template incident. One-line addition to the launch checklist.",
       "updatedAt": "2026-04-27T12:32:46.294771Z"
+    },
+    {
+      "id": "gp-content-vault-guardrail",
+      "title": "GP content gen: pre-flight image check + skip-on-empty",
+      "status": "pending",
+      "priority": "high",
+      "owner": "Lovable",
+      "note": "Prevent A&A-style silent failures: gp-auto-content should query gp_vault_files for the enrollment before generating; if image count below threshold, skip gen and log to gp_activity_log as content_gen_skipped_no_images.",
+      "updatedAt": "2026-04-27T15:21:46.569470Z"
+    },
+    {
+      "id": "gp-vault-status-column",
+      "title": "Add Vault Status column to /growth-partner/admin/clients",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "Lovable",
+      "note": "Per-client image count from gp_vault_files with traffic-light status (green/yellow/red). Sortable. One-glance visibility into which clients have content-gen bottlenecks.",
+      "updatedAt": "2026-04-27T15:21:46.569470Z"
+    },
+    {
+      "id": "gp-content-bulk-delete",
+      "title": "Add bulk-delete-rejected to GP Admin Content Calendar",
+      "status": "pending",
+      "priority": "low",
+      "owner": "Lovable",
+      "note": "When Status=Rejected filter active AND specific client selected, surface red \"Delete All Rejected for [Client]\" button with type-DELETE confirmation. Avoids future SQL workarounds.",
+      "updatedAt": "2026-04-27T15:21:46.569470Z"
     }
   ],
   "costs": {
