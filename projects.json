@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T23:01:30.083240Z",
+  "lastUpdated": "2026-04-27T23:31:18.870583Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -791,8 +791,8 @@
       "status": "planned",
       "priority": "high",
       "owner": "Ken",
-      "note": "FINAL TIERS LOCKED 2026-04-27: Starter $397/mo + $497 setup, Professional $497/mo + $997 setup (recommended), Elite $697/mo + $1,497 setup. Bundles Brand Kit + AI image generation + autonomous publishing into one offer. Replaces standalone AI Branding ($59/$99). Funnel: $75 headshot \u2192 $97-197 AI Branding (one-time) \u2192 $397-697 LiveLoop (recurring) \u2192 $1,200-2,800 Growth Partner (recurring).",
-      "updatedAt": "2026-04-27T23:01:30.083240Z"
+      "note": "FINAL TIERS LOCKED 2026-04-27: Starter $397/mo + $497 setup, Professional $497/mo + $997 setup (recommended), Elite $697/mo + $1,497 setup. Bundles Brand Kit + AI image generation + autonomous publishing into one offer. Replaces standalone AI Branding ($59/$99). Funnel: $75 headshot \u2192 $97-197 AI Branding (one-time) \u2192 $397-697 LiveLoop (recurring) \u2192 $1,200-2,800 Growth Partner (recurring). AUTHORITY SPRINT INTEGRATION (added 2026-04-27): Setup fees include the $297 48-Hour Authority Sprint as required onboarding \u2014 positioning, audience profile, content pillars produced in 48 hours and auto-loaded into LiveLoop Brand Kit. This closes the strategy gap between AI assets and automated publishing.",
+      "updatedAt": "2026-04-27T23:31:18.870583Z"
     },
     {
       "id": "ai-branding-legacy-migration",
@@ -811,6 +811,15 @@
       "owner": "Ken",
       "note": "Current $500/mo + $500 setup is materially below cost when founder time is honestly accounted for. New tiers: Starter $1,200, Growth $1,800 (recommended), Scale $2,800 + setup $1,500\u2013$2,500. Existing 9 GP clients grandfathered at $500/mo legacy rate or invited to upgrade to Growth tier at $1,200/mo founder discount. New clients all priced at new tier starting immediately.",
       "updatedAt": "2026-04-27T22:50:03.828925Z"
+    },
+    {
+      "id": "authority-sprint-repositioning",
+      "title": "Reposition 48-Hour Authority Sprint as required LiveLoop onboarding",
+      "status": "planned",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "$297 Authority Sprint becomes the strategic bridge between AI Branding (one-time visual library) and LiveLoop (recurring automation). Two roles: (A) baked into every LiveLoop setup fee as required onboarding (positioning + audience + pillars \u2192 auto-loaded into LiveLoop Brand Kit); (B) sold standalone as $297 cold-traffic entry with $297 credit toward LiveLoop upgrade. Run both in parallel. Final funnel: $75 headshot \u2192 $97-197 AI Branding \u2192 $297 Authority Sprint \u2192 $397-697 LiveLoop \u2192 $1,200-2,800 Growth Partner.",
+      "updatedAt": "2026-04-27T23:31:18.870583Z"
     }
   ],
   "costs": {
