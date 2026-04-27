@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-04-25T15:07:42.865898Z",
-  "updatedBy": "claude",
+  "lastUpdated": "2026-04-27T12:32:46.294771Z",
+  "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
     {
@@ -631,6 +631,24 @@
       "description": "Required to activate Featured tier subscriptions ($49 Verified Pro, $149 Premium Featured). Create both products in Stripe Dashboard as recurring monthly, then set STRIPE_PRICE_VERIFIED_PRO and STRIPE_PRICE_PREMIUM_FEATURED in Supabase Secrets. Also set VITE_STRIPE_PUBLISHABLE_KEY in Lovable Cloud build env if not already set.",
       "estimatedTime": "10 min",
       "impact": "Without this, /provider/featured page errors. Booking flow + fee charging works without it."
+    },
+    {
+      "id": "gp-broken-link-followup",
+      "title": "Send brief follow-up to GP clients re: fixed content-calendar link",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "Ken",
+      "note": "6 transactional email templates had dead CTA URLs going to 404 (agent-assigned, onboarding-completed, content-calendar-ready, cs-agent-reply, client-status-change, cs-escalation-alert). Fixed + redeployed 2026-04-27. Send a brief, human note to GP clients who may have hit dead links. Turn the issue into a trust-positive moment.",
+      "updatedAt": "2026-04-27T12:32:46.294771Z"
+    },
+    {
+      "id": "email-url-audit-process",
+      "title": "Add transactional email URL audit step to launch checklist",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "Ken",
+      "note": "Process change: every new transactional email template (donation receipts, rewards conversion, ticket confirmation, partner approval, etc.) must have all CTA URLs visited and verified before deploy. Prevents repeat of the 6-broken-template incident. One-line addition to the launch checklist.",
+      "updatedAt": "2026-04-27T12:32:46.294771Z"
     }
   ],
   "costs": {
@@ -854,7 +872,7 @@
       "status": "active",
       "health": "healthy",
       "weight": 1,
-      "description": "Edge function + launchd job \u2014 daily business health report at 8 AM. Reports to ~/Desktop/signature-ops/. Anthropic cost sync runs 7 AM before it.",
+      "description": "Edge function + launchd job \u2014 daily business health report at 8 AM. Reports to ~/Desktop/signature-ops/. Anthropic cost sync runs 7 AM before it. Transactional email templates audited 2026-04-27 \u2014 6 broken CTA links across 5 templates (content-calendar-ready, agent-assigned, cs-agent-reply, onboarding-completed, client-status-change, cs-escalation-alert) corrected; legacy redirect aliases added for in-flight emails.",
       "modules": [
         {
           "name": "Edge Function",
@@ -872,13 +890,8 @@
           "note": "Saves to ~/Desktop/signature-ops/reports/"
         }
       ],
-      "lastActivity": "2026-04-20",
-      "issues": [
-        {
-          "severity": "warning",
-          "text": "send-timed-reminders emails fail with 404 \u2014 needs Lovable fix"
-        }
-      ]
+      "lastActivity": "2026-04-27",
+      "issues": []
     },
     {
       "id": "rewards-ecosystem",
