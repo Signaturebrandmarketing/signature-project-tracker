@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T18:14:11.389359Z",
+  "lastUpdated": "2026-04-27T18:42:42.462071Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -694,6 +694,24 @@
       "owner": "Ken",
       "note": "Once Phase 5 publishing pipeline is live and real GHL engagement data has accumulated for ~10-20 published posts (give it 7-14 days post-launch), set GP_USE_TOP_PERFORMERS=true in Lovable secrets to re-enable the closed-loop prompt injection. Spot-check the next generation cycle for relevance.",
       "updatedAt": "2026-04-27T17:59:40.002538Z"
+    },
+    {
+      "id": "gp-phase5-schema-prep",
+      "title": "Phase 5 schema prep: external_post_refs, media_refs, status enum",
+      "status": "done",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "COMPLETED 2026-04-27. Added external_post_refs JSONB (default {}), media_refs JSONB (default []), and CHECK constraint locking status to 8 valid values (draft, pending_review, approved, rejected, scheduled, published, publish_failed, archived). All three verified live via REST. Phase 5 build can proceed against typed schema.",
+      "updatedAt": "2026-04-27T18:42:42.462071Z"
+    },
+    {
+      "id": "gp-content-action-security-audit",
+      "title": "Audit gp-client-content-action for IDOR / ownership check",
+      "status": "pending",
+      "priority": "critical",
+      "owner": "Lovable",
+      "note": "Request sent: confirm Pattern A/B/C ownership verification exists before approve/reject/edit actions process. Without it, any GP client could mutate any other client's drafts. If missing, patch with Pattern A and ship before next non-pilot client uses the system.",
+      "updatedAt": "2026-04-27T18:42:42.462071Z"
     }
   ],
   "costs": {
