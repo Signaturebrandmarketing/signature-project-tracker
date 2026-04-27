@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T15:21:46.569470Z",
+  "lastUpdated": "2026-04-27T17:59:40.002538Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -676,6 +676,24 @@
       "owner": "Lovable",
       "note": "When Status=Rejected filter active AND specific client selected, surface red \"Delete All Rejected for [Client]\" button with type-DELETE confirmation. Avoids future SQL workarounds.",
       "updatedAt": "2026-04-27T15:21:46.569470Z"
+    },
+    {
+      "id": "gp-prompt-synthetic-fix",
+      "title": "Gate gp-auto-content top-performers injection behind env flag",
+      "status": "in-progress",
+      "priority": "critical",
+      "owner": "Lovable",
+      "note": "Phase 6 synthetic engagement data was being read into the AI prompt as style references, polluting every generation cycle. Fix: GP_USE_TOP_PERFORMERS env flag (default off). Re-enable post-Phase-5 once real GHL analytics flow. Plus: unschedule synthetic sync cron + wipe existing synthetic metrics (Ken handles via SQL).",
+      "updatedAt": "2026-04-27T17:59:40.002538Z"
+    },
+    {
+      "id": "gp-phase5-flag-flip",
+      "title": "Set GP_USE_TOP_PERFORMERS=true after Phase 5 ships + 14-day data warmup",
+      "status": "planned",
+      "priority": "medium",
+      "owner": "Ken",
+      "note": "Once Phase 5 publishing pipeline is live and real GHL engagement data has accumulated for ~10-20 published posts (give it 7-14 days post-launch), set GP_USE_TOP_PERFORMERS=true in Lovable secrets to re-enable the closed-loop prompt injection. Spot-check the next generation cycle for relevance.",
+      "updatedAt": "2026-04-27T17:59:40.002538Z"
     }
   ],
   "costs": {
