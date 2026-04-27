@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T20:16:30.049011Z",
+  "lastUpdated": "2026-04-27T20:22:47.752239Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -734,11 +734,11 @@
     {
       "id": "gp-ghl-webhook-config",
       "title": "Configure GHL inbound webhook for publish confirmations",
-      "status": "pending",
+      "status": "cancelled",
       "priority": "critical",
       "owner": "Ken",
-      "note": "In GHL (both GP and KLH sub-accounts as relevant): add webhook pointing to https://stsowpflccehekknumkb.supabase.co/functions/v1/gp-publish-webhook with x-signature header (sha256=<hex>) using GP_PUBLISH_WEBHOOK_SECRET. Pull secret from 1Password, NOT chat. Get Dexter on screen-share for 5 min if GHL UI is unclear.",
-      "updatedAt": "2026-04-27T20:04:35.479729Z"
+      "note": "CANCELLED 2026-04-27 \u2014 architecture pivot. Switched from webhook (push) to polling (pull) for publish confirmation, using per-enrollment PIT same as gp-sync-engagement. Webhook URL no longer needed in GHL config. HMAC secret retained in case webhook path is revived later.",
+      "updatedAt": "2026-04-27T20:22:47.752239Z"
     },
     {
       "id": "gp-phase5-smoke-test",
@@ -748,6 +748,24 @@
       "owner": "Ken",
       "note": "Once crons + GHL webhook configured, run: pick a test enrollment, generate draft, approve via /growth-partner/content, watch for status=scheduled then status=published, verify external_post_refs populated, verify gp-sync-engagement pulls metrics within 24h. End-to-end proof of Phase 5 working before any real client uses it.",
       "updatedAt": "2026-04-27T20:04:35.479729Z"
+    },
+    {
+      "id": "gp-publish-status-poller",
+      "title": "Build publish-status poller (replaces webhook)",
+      "status": "pending",
+      "priority": "critical",
+      "owner": "Lovable",
+      "note": "Per architecture pivot 2026-04-27: instead of GHL webhook firing back, poll GHL via per-enrollment PIT for status of scheduled posts. Either (A) new gp-publish-status-poller edge function on minute-cron, or (B) fold into existing gp-publish-retry-worker as a second responsibility. Query each scheduled row via GHL API using gp_get_location_pit lookup. Update status=published + populate external_post_refs when GHL confirms live. Send to gp_publish_dlq if GHL reports failure.",
+      "updatedAt": "2026-04-27T20:22:47.752239Z"
+    },
+    {
+      "id": "gp-social-status-pit-capture",
+      "title": "Verify Social Status page captures location_id + PIT per client",
+      "status": "pending",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "Self-serve onboarding requires each GP client to provide their GHL location_id and PIT via the Social Status page. Verify the form exists, validates the PIT (test query), stores in encrypted/RLS-safe location, and is wired to gp_get_location_pit lookup function used by gp-publish-content and gp-sync-engagement.",
+      "updatedAt": "2026-04-27T20:22:47.752239Z"
     }
   ],
   "costs": {
