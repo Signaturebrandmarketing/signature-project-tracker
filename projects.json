@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T22:50:03.828925Z",
+  "lastUpdated": "2026-04-27T23:01:30.083240Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -791,8 +791,8 @@
       "status": "planned",
       "priority": "high",
       "owner": "Ken",
-      "note": "New product line \u2014 three tiers ($297/$497/$797 + setup $497/$997/$1497) bundling Brand Kit + AI generation + LiveLoop autonomous publishing into a single recurring offer. Phases out standalone AI Branding ($59/$99) plans which had no system attached. Sales page, billing, migration plan for existing AI Branding subscribers. Sequence: ship pricing page first, migrate existing subs second, public launch third.",
-      "updatedAt": "2026-04-27T22:50:03.828925Z"
+      "note": "FINAL TIERS LOCKED 2026-04-27: Starter $397/mo + $497 setup, Professional $497/mo + $997 setup (recommended), Elite $697/mo + $1,497 setup. Bundles Brand Kit + AI image generation + autonomous publishing into one offer. Replaces standalone AI Branding ($59/$99). Funnel: $75 headshot \u2192 $97-197 AI Branding (one-time) \u2192 $397-697 LiveLoop (recurring) \u2192 $1,200-2,800 Growth Partner (recurring).",
+      "updatedAt": "2026-04-27T23:01:30.083240Z"
     },
     {
       "id": "ai-branding-legacy-migration",
@@ -800,8 +800,8 @@
       "status": "planned",
       "priority": "high",
       "owner": "Ken",
-      "note": "Email all current Signature Essential ($59) and Pro ($99) subscribers with two options: (a) upgrade to LiveLoop Starter at $247/mo with 6-month founder discount (vs $297 standard) + setup fee waived, or (b) keep current plan as long as continuously subscribed. Honor relationships, phase out the SKU by attrition not by force.",
-      "updatedAt": "2026-04-27T22:50:03.828925Z"
+      "note": "Migration email ready: existing $59/$99 subscribers offered $297/mo for 6 months ($100 founder discount + $497 setup waived = $597 value gifted) to upgrade to LiveLoop Starter, OR grandfather at current price as long as continuously subscribed. Honor relationships, phase out the legacy SKUs by attrition.",
+      "updatedAt": "2026-04-27T23:01:30.083240Z"
     },
     {
       "id": "gp-pricing-restructure",
