@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T20:37:35.937937Z",
+  "lastUpdated": "2026-04-27T20:52:24.991522Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -761,11 +761,11 @@
     {
       "id": "gp-social-status-pit-capture",
       "title": "Wire Social Status form \u2192 gp_set_location_pit RPC + ghl_location_id UPDATE",
-      "status": "in-progress",
+      "status": "done",
       "priority": "high",
       "owner": "Lovable",
-      "note": "Spec sent 2026-04-27. Schema already exists: gp_client_enrollments.ghl_location_id (text) + ghl_location_pit_secret_id (uuid \u2192 vault). Form must call gp_set_location_pit RPC for PIT (vault-encrypted, write-only) and direct UPDATE for location_id. Render \"GHL Connected\" badge when both populated; never display the PIT value back to UI; audit-log to gp_activity_log on save.",
-      "updatedAt": "2026-04-27T20:37:35.937937Z"
+      "note": "VERIFIED 2026-04-27 with Bless Me Now (enrollment a8127ccc-0800-494a-818d-46a1691a8e4d). ghl_location_id=\"T48jDH65Vj5kOKRoIDfO\" + ghl_location_pit_secret_id=\"ba8edcac-d2d3-41a7-be87-44a4cce25011\" populated correctly. Raw PIT not visible in any column. gp_get_location_pit RPC denies authed users (service-role-only \u2014 correct). Lovable also added bonus features beyond spec: real-time GHL token validation via post-save ping + amber \"Token rejected\" badge. Note: gp_activity_log row not yet written on save \u2014 separate follow-up filed.",
+      "updatedAt": "2026-04-27T20:52:24.991522Z"
     },
     {
       "id": "ghl-mcp-availability",
@@ -775,6 +775,15 @@
       "owner": "Ken",
       "note": "No GHL MCP available in registry as of 2026-04-27. If/when one ships, wire it up so Claude can query GHL directly during work sessions (similar to how supabase MCP works for stsowpflccehekknumkb today). Would unlock per-client analytics audits, post-status spot-checks, and weekly reporting from this side. Until then: all GHL queries flow through Dexter's edge functions.",
       "updatedAt": "2026-04-27T20:29:57.195778Z"
+    },
+    {
+      "id": "gp-social-status-audit-log",
+      "title": "Add gp_activity_log row to GHL credentials save flow",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "Lovable",
+      "note": "Spec called for activity log row on each PIT save (action_type=ghl_credentials_updated, internal visibility). Verified missing on Bless Me Now save. Add INSERT to gp-social-status?action=link edge function. CRITICAL: never include PIT itself in metadata \u2014 only location_id + pit_valid status.",
+      "updatedAt": "2026-04-27T20:52:24.991522Z"
     }
   ],
   "costs": {
