@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T20:04:35.479729Z",
+  "lastUpdated": "2026-04-27T20:16:30.049011Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -725,11 +725,11 @@
     {
       "id": "gp-phase5-cron-schedule",
       "title": "Schedule gp-publish-retry-worker (every min) + gp-sync-engagement-daily (5am UTC)",
-      "status": "in-progress",
+      "status": "done",
       "priority": "critical",
       "owner": "Ken",
-      "note": "Phase 5 shipped 2026-04-27. Both crons need pg_cron schedules in Signature Brand Studio SQL editor. SQL block ready. May need to verify auth pattern (current_setting vs vault.decrypted_secrets) with Dexter if 401s appear.",
-      "updatedAt": "2026-04-27T20:04:35.479729Z"
+      "note": "COMPLETED 2026-04-27. Both crons live: gp-publish-retry-worker (every minute), gp-sync-engagement-daily (5am UTC). Verified via cron.job_run_details \u2014 retry worker firing every 60s with status=succeeded, processing 1 row per invocation from pgmq queue. Auth pattern (current_setting service_role_key) working \u2014 no 401s.",
+      "updatedAt": "2026-04-27T20:16:30.049011Z"
     },
     {
       "id": "gp-ghl-webhook-config",
