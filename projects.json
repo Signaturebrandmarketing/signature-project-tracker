@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T20:52:24.991522Z",
+  "lastUpdated": "2026-04-27T20:58:41.273139Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -779,11 +779,11 @@
     {
       "id": "gp-social-status-audit-log",
       "title": "Add gp_activity_log row to GHL credentials save flow",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "owner": "Lovable",
-      "note": "Spec called for activity log row on each PIT save (action_type=ghl_credentials_updated, internal visibility). Verified missing on Bless Me Now save. Add INSERT to gp-social-status?action=link edge function. CRITICAL: never include PIT itself in metadata \u2014 only location_id + pit_valid status.",
-      "updatedAt": "2026-04-27T20:52:24.991522Z"
+      "note": "VERIFIED 2026-04-27. Activity log writes cleanly on every PIT save: action_type=ghl_credentials_updated, title includes actor email, metadata includes pit_valid/location_id/updated_fields/pit_validation_error WITHOUT exposing raw PIT, visibility=internal, actor_id populated. Two test saves on Bless Me Now (enrollment a8127ccc) both logged correctly within 10 seconds. Audit trail is operational.",
+      "updatedAt": "2026-04-27T20:58:41.273139Z"
     }
   ],
   "costs": {
