@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T20:29:57.195778Z",
+  "lastUpdated": "2026-04-27T20:37:35.937937Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -760,12 +760,12 @@
     },
     {
       "id": "gp-social-status-pit-capture",
-      "title": "Verify Social Status page captures location_id + PIT per client",
-      "status": "pending",
+      "title": "Wire Social Status form \u2192 gp_set_location_pit RPC + ghl_location_id UPDATE",
+      "status": "in-progress",
       "priority": "high",
-      "owner": "Ken",
-      "note": "Self-serve onboarding requires each GP client to provide their GHL location_id and PIT via the Social Status page. Verify the form exists, validates the PIT (test query), stores in encrypted/RLS-safe location, and is wired to gp_get_location_pit lookup function used by gp-publish-content and gp-sync-engagement.",
-      "updatedAt": "2026-04-27T20:22:47.752239Z"
+      "owner": "Lovable",
+      "note": "Spec sent 2026-04-27. Schema already exists: gp_client_enrollments.ghl_location_id (text) + ghl_location_pit_secret_id (uuid \u2192 vault). Form must call gp_set_location_pit RPC for PIT (vault-encrypted, write-only) and direct UPDATE for location_id. Render \"GHL Connected\" badge when both populated; never display the PIT value back to UI; audit-log to gp_activity_log on save.",
+      "updatedAt": "2026-04-27T20:37:35.937937Z"
     },
     {
       "id": "ghl-mcp-availability",
