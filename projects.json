@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T20:22:47.752239Z",
+  "lastUpdated": "2026-04-27T20:29:57.195778Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -755,8 +755,8 @@
       "status": "pending",
       "priority": "critical",
       "owner": "Lovable",
-      "note": "Per architecture pivot 2026-04-27: instead of GHL webhook firing back, poll GHL via per-enrollment PIT for status of scheduled posts. Either (A) new gp-publish-status-poller edge function on minute-cron, or (B) fold into existing gp-publish-retry-worker as a second responsibility. Query each scheduled row via GHL API using gp_get_location_pit lookup. Update status=published + populate external_post_refs when GHL confirms live. Send to gp_publish_dlq if GHL reports failure.",
-      "updatedAt": "2026-04-27T20:22:47.752239Z"
+      "note": "Per architecture pivot 2026-04-27: instead of GHL webhook firing back, poll GHL via per-enrollment PIT for status of scheduled posts. CONFIRMED endpoints exist: POST /social-media-posting/:locationId/posts/list (for status polling) and GET /social-media-posting/:locationId/statistics (for engagement sync, 7-day rollup). Implementation: either (A) new gp-publish-status-poller edge function on minute-cron, or (B) fold into existing gp-publish-retry-worker as a second responsibility. Update status=published + populate external_post_refs when GHL confirms live. Verify whether per-post engagement metrics live on /posts/list response or only on account-level /statistics rollup before finalizing top-performers query.",
+      "updatedAt": "2026-04-27T20:29:57.195778Z"
     },
     {
       "id": "gp-social-status-pit-capture",
@@ -766,6 +766,15 @@
       "owner": "Ken",
       "note": "Self-serve onboarding requires each GP client to provide their GHL location_id and PIT via the Social Status page. Verify the form exists, validates the PIT (test query), stores in encrypted/RLS-safe location, and is wired to gp_get_location_pit lookup function used by gp-publish-content and gp-sync-engagement.",
       "updatedAt": "2026-04-27T20:22:47.752239Z"
+    },
+    {
+      "id": "ghl-mcp-availability",
+      "title": "Watch for GoHighLevel MCP server in registry \u2014 useful for direct Claude\u2192GHL queries",
+      "status": "planned",
+      "priority": "low",
+      "owner": "Ken",
+      "note": "No GHL MCP available in registry as of 2026-04-27. If/when one ships, wire it up so Claude can query GHL directly during work sessions (similar to how supabase MCP works for stsowpflccehekknumkb today). Would unlock per-client analytics audits, post-status spot-checks, and weekly reporting from this side. Until then: all GHL queries flow through Dexter's edge functions.",
+      "updatedAt": "2026-04-27T20:29:57.195778Z"
     }
   ],
   "costs": {
