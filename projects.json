@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T17:59:40.002538Z",
+  "lastUpdated": "2026-04-27T18:14:11.389359Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -680,11 +680,11 @@
     {
       "id": "gp-prompt-synthetic-fix",
       "title": "Gate gp-auto-content top-performers injection behind env flag",
-      "status": "in-progress",
+      "status": "done",
       "priority": "critical",
       "owner": "Lovable",
-      "note": "Phase 6 synthetic engagement data was being read into the AI prompt as style references, polluting every generation cycle. Fix: GP_USE_TOP_PERFORMERS env flag (default off). Re-enable post-Phase-5 once real GHL analytics flow. Plus: unschedule synthetic sync cron + wipe existing synthetic metrics (Ken handles via SQL).",
-      "updatedAt": "2026-04-27T17:59:40.002538Z"
+      "note": "COMPLETED 2026-04-27. Lovable shipped GP_USE_TOP_PERFORMERS env flag (default off, prompt injection gated). Cron gp-sync-engagement-daily unscheduled. All synthetic metrics wiped from gp_content_calendar (verified 0 polluted rows). System on clean baseline ready for Phase 5 build.",
+      "updatedAt": "2026-04-27T18:14:11.389359Z"
     },
     {
       "id": "gp-phase5-flag-flip",
