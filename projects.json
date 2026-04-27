@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T18:42:42.462071Z",
+  "lastUpdated": "2026-04-27T18:49:40.691946Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -707,11 +707,20 @@
     {
       "id": "gp-content-action-security-audit",
       "title": "Audit gp-client-content-action for IDOR / ownership check",
-      "status": "pending",
+      "status": "done",
       "priority": "critical",
       "owner": "Lovable",
-      "note": "Request sent: confirm Pattern A/B/C ownership verification exists before approve/reject/edit actions process. Without it, any GP client could mutate any other client's drafts. If missing, patch with Pattern A and ship before next non-pilot client uses the system.",
-      "updatedAt": "2026-04-27T18:42:42.462071Z"
+      "note": "COMPLETED 2026-04-27. Pattern B verified in production code (lines 67-83 of supabase/functions/gp-client-content-action/index.ts). Two-step ownership check: row \u2192 enrollment \u2192 enrollment.user_id === JWT.sub. 403 returned before any mutation. All 5 action branches gated. Bonus safeguards: published-content lock at line 85, swap_image cross-tenant guard at lines 144-148. No IDOR vulnerability. Service-role client used intentionally (Pattern C not in play, Pattern B fully compensates).",
+      "updatedAt": "2026-04-27T18:49:40.691946Z"
+    },
+    {
+      "id": "gp-content-action-perf-opt",
+      "title": "Consolidate gp-client-content-action ownership check to single-query Pattern A",
+      "status": "planned",
+      "priority": "low",
+      "owner": "Lovable",
+      "note": "Post-launch optimization (NOT pre-meeting work). Current Pattern B does two queries (row \u2192 enrollment); Pattern A consolidates into one with a join. Saves ~20-50ms per call. Worth doing once Phase 5 is stable AND if bulk approval volume justifies it.",
+      "updatedAt": "2026-04-27T18:49:40.691946Z"
     }
   ],
   "costs": {
