@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T01:05:28.314424Z",
+  "lastUpdated": "2026-04-28T01:10:53.309913Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -878,11 +878,11 @@
     {
       "id": "gp-application-auth-decision",
       "title": "Decide: GP application form requires auth, OR allow anon submissions",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "Ken",
-      "note": "Current state after RLS tightening: anon INSERT on gp_applications is blocked. Two valid product paths: (A) restore anon INSERT for guest applicants + add CAPTCHA, or (B) keep current state \u2014 visitor must sign up first to apply. Recommendation: Option B for $1,200+/mo product. Sign-up wall is a cheap filter that protects against spam, locks identity from row 1, and filters out non-serious prospects. If Option B: add UX on /growth-partner/apply to gate logged-out users with \"Sign up to apply\" CTA.",
-      "updatedAt": "2026-04-28T01:05:28.314424Z"
+      "note": "DECIDED + SHIPPED 2026-04-27. Option B chosen: GP application form requires auth before submission. Lovable shipped /growth-partner/apply with logged-out gate showing \"Sign up to apply\", auto-fills name + email after auth, stamps user_id on the gp_applications row. Verified via REST: anon INSERT denied, authed INSERT succeeds with user_id, anon SELECT returns nothing, admin SELECT works. All RLS layers behave correctly.",
+      "updatedAt": "2026-04-28T01:10:53.309913Z"
     }
   ],
   "costs": {
