@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T01:39:26.200895Z",
+  "lastUpdated": "2026-04-28T01:51:56.042175Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -905,11 +905,11 @@
     {
       "id": "stripe-webhook-fail-closed",
       "title": "Patch stripe-webhook to require HMAC signature (no silent fallback)",
-      "status": "pending",
+      "status": "done",
       "priority": "critical",
       "owner": "Lovable",
-      "note": "Lovable self-flagged: current stripe-webhook silently falls through to JSON.parse(body) if STRIPE_WEBHOOK_SECRET env is missing OR stripe-signature header is absent. Risk: if secret ever unset (e.g., env rotation), forged events could grant subscription access without payment. Patch: require both env + header, return 400 if missing, log forge attempts. 5-line fix. Verify post-patch with forged unsigned POST \u2192 expect 400, not 200.",
-      "updatedAt": "2026-04-28T01:39:26.200895Z"
+      "note": "VERIFIED 2026-04-27. Three attack vectors tested via REST: (1) unsigned forged POST \u2192 HTTP 400, (2) bogus signature header \u2192 HTTP 400, (3) empty body \u2192 HTTP 400. All correctly rejected. STRIPE_WEBHOOK_SECRET confirmed set in production. Replay/forgery attempts logged with IP + UA for monitoring. Webhook is fail-closed.",
+      "updatedAt": "2026-04-28T01:51:56.042175Z"
     }
   ],
   "costs": {
