@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T02:03:10.200205Z",
+  "lastUpdated": "2026-04-28T02:37:37.677935Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -937,6 +937,33 @@
       "owner": "Ken",
       "note": "Once both migration emails have landed (give existing customers 48-72hr to respond first), announce LiveLoop publicly to broader email list. Use LiveLoop itself to publish the announcement (drink your own champagne).",
       "updatedAt": "2026-04-28T02:03:10.200205Z"
+    },
+    {
+      "id": "team-activation-meeting",
+      "title": "Team activation meeting with Dex, Mae, Eric \u2014 roles + comp + futures",
+      "status": "pending",
+      "priority": "critical",
+      "owner": "Ken",
+      "note": "30-min team huddle to: (1) tell the team what shipped today and what is coming, (2) propose new role structures (Dex = Director of Technical Ops, Mae = Director of Client Ops, Eric = Production Specialist, Lead Producer path), (3) ASK each what they want career-wise, (4) outline compensation increase tied to LiveLoop MRR milestones, (5) open profit-share/equity conversation for long-term partners. Run it within 7 days.",
+      "updatedAt": "2026-04-28T02:37:37.677935Z"
+    },
+    {
+      "id": "comp-restructure-team",
+      "title": "Restructure compensation for Dex/Mae/Eric \u2014 title + raise + profit share",
+      "status": "planned",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "After team huddle: implement (1) title promotions immediately, (2) compensation raise of 25-40% triggered when LiveLoop MRR hits $10K (probably month 2-3 post-launch), (3) profit-share pool conversation for years 1-2 with path to equity for long-term partners. Cash impact scales with revenue \u2014 sustainable. Loyalty impact compounds.",
+      "updatedAt": "2026-04-28T02:37:37.677935Z"
+    },
+    {
+      "id": "team-role-deployment",
+      "title": "Deploy team against new product line: Dex/tech, Mae/client ops, Eric/production",
+      "status": "planned",
+      "priority": "critical",
+      "owner": "Ken",
+      "note": "Real capacity to scale: Dex owns Lovable + GHL + integrations, Mae owns onboarding + Authority Sprint delivery + content review + client comms, Eric owns AI image production + video deliverables + style pack expansions. You step out of production, into sales/strategy/founder mode. Path to 50 GP clients + 150 LiveLoop subs in 6 months becomes mathematically achievable instead of aspirational.",
+      "updatedAt": "2026-04-28T02:37:37.677935Z"
     }
   ],
   "costs": {
@@ -1383,7 +1410,7 @@
       "status": "in-progress",
       "health": "needs-attention",
       "weight": 3,
-      "description": "Optimize $3-5k/mo ad spend, connect Stripe revenue, improve ROI",
+      "description": "Optimize revenue + ad spend, connect Stripe revenue, improve ROI. NEW CONTEXT 2026-04-27: 3-person VA team (Dex/Mae/Eric) confirmed and loyal \u2014 capacity ceiling concerns retired. Path to $1.5M+ ARR in 12 months mathematically achievable with team deployment against new LiveLoop + restructured GP product lines.",
       "modules": [
         {
           "name": "Square Integration",
@@ -1406,7 +1433,7 @@
           "note": "Known weakness, needs work"
         }
       ],
-      "lastActivity": "2026-04-19"
+      "lastActivity": "2026-04-27"
     },
     {
       "id": "ai-branding-image-library",
