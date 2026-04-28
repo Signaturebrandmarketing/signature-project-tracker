@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T00:55:35.134530Z",
+  "lastUpdated": "2026-04-28T01:05:28.314424Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -869,11 +869,20 @@
     {
       "id": "gp-applications-rls-tighten",
       "title": "Tighten gp_applications RLS \u2014 anon SELECT must be blocked",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "Lovable",
-      "note": "Phase 1 audit caught: anon GET on /rest/v1/gp_applications returns HTTP 200 instead of denial. Once real applications flow in, this is a data leak risk for applicant business names, revenue ranges, and growth bottlenecks. Fix: drop any over-permissive SELECT policy, add owner-scoped SELECT for authenticated users only, keep admin policy. Verify with anon GET returning 401 or empty with explicit deny.",
-      "updatedAt": "2026-04-28T00:55:35.134530Z"
+      "note": "VERIFIED 2026-04-27. Anon SELECT explicitly denied via restrictive RLS policy (confirmed via test insert + read cycle). Side-effect caught: anon INSERT also now blocked. Either keep as-is (auth required to apply) or restore anon INSERT. Ken decision pending.",
+      "updatedAt": "2026-04-28T01:05:28.314424Z"
+    },
+    {
+      "id": "gp-application-auth-decision",
+      "title": "Decide: GP application form requires auth, OR allow anon submissions",
+      "status": "pending",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "Current state after RLS tightening: anon INSERT on gp_applications is blocked. Two valid product paths: (A) restore anon INSERT for guest applicants + add CAPTCHA, or (B) keep current state \u2014 visitor must sign up first to apply. Recommendation: Option B for $1,200+/mo product. Sign-up wall is a cheap filter that protects against spam, locks identity from row 1, and filters out non-serious prospects. If Option B: add UX on /growth-partner/apply to gate logged-out users with \"Sign up to apply\" CTA.",
+      "updatedAt": "2026-04-28T01:05:28.314424Z"
     }
   ],
   "costs": {
