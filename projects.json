@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T01:10:53.309913Z",
+  "lastUpdated": "2026-04-28T01:32:09.240608Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -883,6 +883,24 @@
       "owner": "Ken",
       "note": "DECIDED + SHIPPED 2026-04-27. Option B chosen: GP application form requires auth before submission. Lovable shipped /growth-partner/apply with logged-out gate showing \"Sign up to apply\", auto-fills name + email after auth, stamps user_id on the gp_applications row. Verified via REST: anon INSERT denied, authed INSERT succeeds with user_id, anon SELECT returns nothing, admin SELECT works. All RLS layers behave correctly.",
       "updatedAt": "2026-04-28T01:10:53.309913Z"
+    },
+    {
+      "id": "phase-2-restructure-shipped",
+      "title": "Phase 2 of product line restructure shipped",
+      "status": "in-progress",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "Phase 2 shipped 2026-04-27. Three new edge functions deployed: create-liveloop-checkout (verified \u2014 validates tier, customer_id, JWT identity), create-authority-sprint-checkout (deployed, needs empty-body validation confirmation), stripe-webhook extended (deployed, needs HMAC verification confirmation). claim_authority_sprint_credit RPC registered with named params + SELECT FOR UPDATE SKIP LOCKED for race safety. /liveloop + /authority-sprint marketing pages live. Sprint app routes moved to /authority-sprint/app/*. Two clarifications pending from Lovable before Ken does visual walk.",
+      "updatedAt": "2026-04-28T01:32:09.240608Z"
+    },
+    {
+      "id": "phase-2-edge-function-clarifications",
+      "title": "Confirm input validation on Phase 2 edge functions",
+      "status": "pending",
+      "priority": "high",
+      "owner": "Lovable",
+      "note": "Two questions: (1) create-authority-sprint-checkout returns HTTP 200 on empty body \u2014 confirm it validates customer_id before Stripe session creation. (2) stripe-webhook returns HTTP 200 on empty body (probably correct per Stripe contract) \u2014 confirm HMAC signature verification is happening on every request and unsigned bodies are dropped, not processed. (3) Paste claim_authority_sprint_credit RPC signature for documentation.",
+      "updatedAt": "2026-04-28T01:32:09.240608Z"
     }
   ],
   "costs": {
