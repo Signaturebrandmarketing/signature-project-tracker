@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T00:25:40.432848Z",
+  "lastUpdated": "2026-04-28T00:30:36.984753Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -827,8 +827,8 @@
       "status": "in-progress",
       "priority": "critical",
       "owner": "Lovable",
-      "note": "Comprehensive product line restructure brief sent to Lovable 2026-04-27. Removes $59/$99 AI Branding tiers from public pricing. Adds three LiveLoop tiers ($397/$497/$697). Adds standalone Authority Sprint page. Restructures GP into 3 tiers ($1,200/$1,800/$2,800) with application-only access. Industry pages updated. Stripe/Square products created. Existing $59/$99 subscribers grandfathered (hidden from public pricing, billing continues). Phased rollout suggested. BILLING DECISION 2026-04-27: Single Stripe Checkout session with mode=subscription containing both setup (one_time price) and subscription (recurring price) line items. Customer charged together on day one; subscription continues monthly. Cleaner UX, lower abandonment, standard SaaS pattern. Receipt should itemize both charges for transparency. SPRINT CREDIT MECHANIC 2026-04-27: Server-side check at LiveLoop checkout. New table authority_sprint_purchases (customer_id, stripe_payment_intent_id, credit_used, credit_redeemed_at, credit_redemption_session_id). Edge function queries for eligible unredeemed Sprint purchase within 30-day window, attaches $297 auto-generated single-use Stripe coupon to Checkout. Webhook marks credit_used=true on subscription creation. Race-safe via SELECT FOR UPDATE SKIP LOCKED. Nightly cleanup reverts abandoned pending redemptions. Zero customer-facing codes or admin manual work.",
-      "updatedAt": "2026-04-28T00:25:40.432848Z"
+      "note": "Comprehensive product line restructure brief sent to Lovable 2026-04-27. Removes $59/$99 AI Branding tiers from public pricing. Adds three LiveLoop tiers ($397/$497/$697). Adds standalone Authority Sprint page. Restructures GP into 3 tiers ($1,200/$1,800/$2,800) with application-only access. Industry pages updated. Stripe/Square products created. Existing $59/$99 subscribers grandfathered (hidden from public pricing, billing continues). Phased rollout suggested. BILLING DECISION 2026-04-27: Single Stripe Checkout session with mode=subscription containing both setup (one_time price) and subscription (recurring price) line items. Customer charged together on day one; subscription continues monthly. Cleaner UX, lower abandonment, standard SaaS pattern. Receipt should itemize both charges for transparency. SPRINT CREDIT MECHANIC 2026-04-27: Server-side check at LiveLoop checkout. New table authority_sprint_purchases (customer_id, stripe_payment_intent_id, credit_used, credit_redeemed_at, credit_redemption_session_id). Edge function queries for eligible unredeemed Sprint purchase within 30-day window, attaches $297 auto-generated single-use Stripe coupon to Checkout. Webhook marks credit_used=true on subscription creation. Race-safe via SELECT FOR UPDATE SKIP LOCKED. Nightly cleanup reverts abandoned pending redemptions. Zero customer-facing codes or admin manual work. GP ACCESS DECISION 2026-04-27: Application-only, admin-approved. NO direct checkout anywhere on public site. /growth-partner shows tier prices for transparency, gates only the checkout. /growth-partner/apply form (6 fields). gp_applications table with status workflow (pending \u2192 approved/fit_call/declined). Admin approval generates one-time-use 7-day checkout token URL. Decline gracefully redirects to LiveLoop or Authority Sprint. No public /growth-partner/checkout route \u2014 token is the only access path.",
+      "updatedAt": "2026-04-28T00:30:36.984753Z"
     },
     {
       "id": "three-sales-pages-draft",
@@ -847,6 +847,15 @@
       "owner": "Claude",
       "note": "Three emails: (1) to existing $59/$99 AI Branding subscribers offering upgrade or grandfather option, (2) to existing 9 GP clients with $500 founder rate confirmation + Option C upgrade invitation, (3) public list announcing LiveLoop launch. Drafts to be written by Claude on demand.",
       "updatedAt": "2026-04-27T23:48:14.029794Z"
+    },
+    {
+      "id": "gp-application-sla-system",
+      "title": "48-hour SLA enforcement on GP application reviews",
+      "status": "planned",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "The \"48-hour response\" promise on /growth-partner needs operational backing. Three options: (a) daily morning queue review habit, (b) SLA alert at 36hr firing to phone, (c) part-time VA at $300-500/mo to triage. For first 20 applications, (a) or (b) is fine. Once volume hits 5+/week, hire the VA. Broken SLA = broken trust.",
+      "updatedAt": "2026-04-28T00:30:36.984753Z"
     }
   ],
   "costs": {
