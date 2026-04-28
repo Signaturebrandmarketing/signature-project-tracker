@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T01:51:56.042175Z",
+  "lastUpdated": "2026-04-28T02:03:10.200205Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -824,11 +824,11 @@
     {
       "id": "lovable-product-line-restructure",
       "title": "Lovable comprehensive rebuild: pricing page, LiveLoop page, Authority Sprint page, GP restructure",
-      "status": "in-progress",
+      "status": "done",
       "priority": "critical",
       "owner": "Lovable",
-      "note": "Comprehensive product line restructure brief sent to Lovable 2026-04-27. Removes $59/$99 AI Branding tiers from public pricing. Adds three LiveLoop tiers ($397/$497/$697). Adds standalone Authority Sprint page. Restructures GP into 3 tiers ($1,200/$1,800/$2,800) with application-only access. Industry pages updated. Stripe/Square products created. Existing $59/$99 subscribers grandfathered (hidden from public pricing, billing continues). Phased rollout suggested. BILLING DECISION 2026-04-27: Single Stripe Checkout session with mode=subscription containing both setup (one_time price) and subscription (recurring price) line items. Customer charged together on day one; subscription continues monthly. Cleaner UX, lower abandonment, standard SaaS pattern. Receipt should itemize both charges for transparency. SPRINT CREDIT MECHANIC 2026-04-27: Server-side check at LiveLoop checkout. New table authority_sprint_purchases (customer_id, stripe_payment_intent_id, credit_used, credit_redeemed_at, credit_redemption_session_id). Edge function queries for eligible unredeemed Sprint purchase within 30-day window, attaches $297 auto-generated single-use Stripe coupon to Checkout. Webhook marks credit_used=true on subscription creation. Race-safe via SELECT FOR UPDATE SKIP LOCKED. Nightly cleanup reverts abandoned pending redemptions. Zero customer-facing codes or admin manual work. GP ACCESS DECISION 2026-04-27: Application-only, admin-approved. NO direct checkout anywhere on public site. /growth-partner shows tier prices for transparency, gates only the checkout. /growth-partner/apply form (6 fields). gp_applications table with status workflow (pending \u2192 approved/fit_call/declined). Admin approval generates one-time-use 7-day checkout token URL. Decline gracefully redirects to LiveLoop or Authority Sprint. No public /growth-partner/checkout route \u2014 token is the only access path. LEGACY PLAN UI 2026-04-27: Hide Essential ($59) and Pro ($99) from /pricing + all marketing surfaces. KEEP visible in customer account page with gold \"LEGACY\" pill badge + grandfather copy: \"This plan is no longer offered to new customers. You're grandfathered at this price for as long as your subscription stays continuous.\" Plus subtle \"View what's new \u2014 Signature LiveLoop\" link to /liveloop. Database layer unchanged \u2014 Stripe products keep billing, no migration runs automatically.",
-      "updatedAt": "2026-04-28T00:34:20.261788Z"
+      "note": "Comprehensive product line restructure brief sent to Lovable 2026-04-27. Removes $59/$99 AI Branding tiers from public pricing. Adds three LiveLoop tiers ($397/$497/$697). Adds standalone Authority Sprint page. Restructures GP into 3 tiers ($1,200/$1,800/$2,800) with application-only access. Industry pages updated. Stripe/Square products created. Existing $59/$99 subscribers grandfathered (hidden from public pricing, billing continues). Phased rollout suggested. BILLING DECISION 2026-04-27: Single Stripe Checkout session with mode=subscription containing both setup (one_time price) and subscription (recurring price) line items. Customer charged together on day one; subscription continues monthly. Cleaner UX, lower abandonment, standard SaaS pattern. Receipt should itemize both charges for transparency. SPRINT CREDIT MECHANIC 2026-04-27: Server-side check at LiveLoop checkout. New table authority_sprint_purchases (customer_id, stripe_payment_intent_id, credit_used, credit_redeemed_at, credit_redemption_session_id). Edge function queries for eligible unredeemed Sprint purchase within 30-day window, attaches $297 auto-generated single-use Stripe coupon to Checkout. Webhook marks credit_used=true on subscription creation. Race-safe via SELECT FOR UPDATE SKIP LOCKED. Nightly cleanup reverts abandoned pending redemptions. Zero customer-facing codes or admin manual work. GP ACCESS DECISION 2026-04-27: Application-only, admin-approved. NO direct checkout anywhere on public site. /growth-partner shows tier prices for transparency, gates only the checkout. /growth-partner/apply form (6 fields). gp_applications table with status workflow (pending \u2192 approved/fit_call/declined). Admin approval generates one-time-use 7-day checkout token URL. Decline gracefully redirects to LiveLoop or Authority Sprint. No public /growth-partner/checkout route \u2014 token is the only access path. LEGACY PLAN UI 2026-04-27: Hide Essential ($59) and Pro ($99) from /pricing + all marketing surfaces. KEEP visible in customer account page with gold \"LEGACY\" pill badge + grandfather copy: \"This plan is no longer offered to new customers. You're grandfathered at this price for as long as your subscription stays continuous.\" Plus subtle \"View what's new \u2014 Signature LiveLoop\" link to /liveloop. Database layer unchanged \u2014 Stripe products keep billing, no migration runs automatically. RESTRUCTURE COMPLETE 2026-04-27. Phase 1 (pricing + Stripe + LEGACY badge) and Phase 2 (LiveLoop + Sprint pages + edge functions + webhook hardening) both shipped and verified. Three more action items follow: sales page copy refinement, migration emails to existing subscribers, public launch.",
+      "updatedAt": "2026-04-28T02:03:10.200205Z"
     },
     {
       "id": "three-sales-pages-draft",
@@ -887,11 +887,11 @@
     {
       "id": "phase-2-restructure-shipped",
       "title": "Phase 2 of product line restructure shipped",
-      "status": "in-progress",
+      "status": "done",
       "priority": "high",
       "owner": "Ken",
-      "note": "Phase 2 shipped 2026-04-27. Three new edge functions deployed: create-liveloop-checkout (verified \u2014 validates tier, customer_id, JWT identity), create-authority-sprint-checkout (deployed, needs empty-body validation confirmation), stripe-webhook extended (deployed, needs HMAC verification confirmation). claim_authority_sprint_credit RPC registered with named params + SELECT FOR UPDATE SKIP LOCKED for race safety. /liveloop + /authority-sprint marketing pages live. Sprint app routes moved to /authority-sprint/app/*. Two clarifications pending from Lovable before Ken does visual walk.",
-      "updatedAt": "2026-04-28T01:32:09.240608Z"
+      "note": "COMPLETED 2026-04-27 (Path A signoff). All Phase 2 components shipped, deployed, and verified at component level: /liveloop + /authority-sprint marketing pages, Sprint route restructure with 301, three edge functions (create-liveloop-checkout with identity binding, create-authority-sprint-checkout with JWT-bound user, stripe-webhook hardened with HMAC fail-closed), claim_authority_sprint_credit RPC race-safe via SELECT FOR UPDATE SKIP LOCKED. Three forge vectors rejected with HTTP 400. Real Stripe test card runs deferred \u2014 first real customer transaction (likely Ken self-test) will validate end-to-end flow. Risk accepted as low.",
+      "updatedAt": "2026-04-28T02:03:10.200205Z"
     },
     {
       "id": "phase-2-edge-function-clarifications",
@@ -910,6 +910,33 @@
       "owner": "Lovable",
       "note": "VERIFIED 2026-04-27. Three attack vectors tested via REST: (1) unsigned forged POST \u2192 HTTP 400, (2) bogus signature header \u2192 HTTP 400, (3) empty body \u2192 HTTP 400. All correctly rejected. STRIPE_WEBHOOK_SECRET confirmed set in production. Replay/forgery attempts logged with IP + UA for monitoring. Webhook is fail-closed.",
       "updatedAt": "2026-04-28T01:51:56.042175Z"
+    },
+    {
+      "id": "migration-email-ai-branding-subs",
+      "title": "Send migration email to existing AI Branding subscribers (54 Essential + 16 Pro = 70)",
+      "status": "planned",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "After Phase 2 verified live, send personal migration email to 70 grandfathered subscribers offering: (a) upgrade to LiveLoop Professional ($397/mo) at $297/mo for 6 months ($100 founder discount + $497 setup waived = $597 value gifted), or (b) keep current Essential/Pro plan continuously subscribed at current rate. Draft ready in earlier conversation; finalize copy + send.",
+      "updatedAt": "2026-04-28T02:03:10.200205Z"
+    },
+    {
+      "id": "migration-email-existing-gp-clients",
+      "title": "Send Option C grandfather email to 9 existing GP clients",
+      "status": "planned",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "Acknowledge $500/mo founder rate honored as long as continuously enrolled. Offer optional upgrade to GP Growth ($1,200/mo founder discount, normally $1,800/mo) which unlocks LiveLoop + multi-platform + bi-weekly strategy. No pressure; honors relationships built early. Draft ready from earlier conversation.",
+      "updatedAt": "2026-04-28T02:03:10.200205Z"
+    },
+    {
+      "id": "public-launch-liveloop",
+      "title": "Public launch announcement of Signature LiveLoop\u2122 to broader email list",
+      "status": "planned",
+      "priority": "medium",
+      "owner": "Ken",
+      "note": "Once both migration emails have landed (give existing customers 48-72hr to respond first), announce LiveLoop publicly to broader email list. Use LiveLoop itself to publish the announcement (drink your own champagne).",
+      "updatedAt": "2026-04-28T02:03:10.200205Z"
     }
   ],
   "costs": {
