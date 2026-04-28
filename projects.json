@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T00:06:29.625127Z",
+  "lastUpdated": "2026-04-28T00:11:50.791874Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -791,8 +791,8 @@
       "status": "planned",
       "priority": "high",
       "owner": "Ken",
-      "note": "FINAL TIERS LOCKED 2026-04-27: Starter $397/mo + $497 setup (1 style from Signature Style Pack, 50 imgs, keep 10), Premium $497/mo + $997 setup (3 styles from Signature Style Pack, 150 imgs, keep 20) \u2b50 recommended, Platinum $697/mo + $1,497 setup (1 style from the 14-pack Platinum Style Pack, 100 elaborate images at 20 prompts \u00d7 5 variations, keep 20). Tier names: Starter / Premium / Platinum. The Platinum tier ties terminology with the existing $197 one-time Platinum Style Pack \u2014 same curated library, recurring delivery vs one-time. Funnel: $75 headshot \u2192 $97-197 AI Branding \u2192 $297 Authority Sprint \u2192 $397-697 LiveLoop \u2192 $1,200-2,800 Growth Partner.",
-      "updatedAt": "2026-04-28T00:06:29.625127Z"
+      "note": "FINAL TIERS LOCKED 2026-04-27 (final naming pass): PROFESSIONAL $397/mo + $497 setup (1 style from Signature Style Pack, 50 imgs, keep 10), ELITE $497/mo + $997 setup (3 styles from Signature Style Pack, 150 imgs, keep 20) \u2b50 recommended, PLATINUM $697/mo + $1,497 setup (1 style from the 14-pack Platinum Style Pack, 100 elaborate images at 20 prompts \u00d7 5 variations, keep 20). Tier names: Professional / Elite / Platinum. Always reference as \"Signature LiveLoop Professional\" etc to avoid confusion with Growth Partner tier names. Funnel: $75 headshot \u2192 $97-197 AI Branding \u2192 $297 Authority Sprint \u2192 $397-697 LiveLoop \u2192 $1,200-2,800 Growth Partner.",
+      "updatedAt": "2026-04-28T00:11:50.791874Z"
     },
     {
       "id": "ai-branding-legacy-migration",
