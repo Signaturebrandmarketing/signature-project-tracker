@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T00:34:20.261788Z",
+  "lastUpdated": "2026-04-28T00:55:35.134530Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -856,6 +856,24 @@
       "owner": "Ken",
       "note": "The \"48-hour response\" promise on /growth-partner needs operational backing. Three options: (a) daily morning queue review habit, (b) SLA alert at 36hr firing to phone, (c) part-time VA at $300-500/mo to triage. For first 20 applications, (a) or (b) is fine. Once volume hits 5+/week, hire the VA. Broken SLA = broken trust.",
       "updatedAt": "2026-04-28T00:30:36.984753Z"
+    },
+    {
+      "id": "phase-1-restructure-shipped",
+      "title": "Phase 1 of product line restructure shipped + verified",
+      "status": "in-progress",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "Phase 1 shipped 2026-04-27. 11 Stripe products created. Two new tables (authority_sprint_purchases, gp_applications) with RLS. /pricing rewrite with LiveLoop tiers + Authority Sprint + GP application section. LEGACY badge on PlanCard for 54 Essential + 16 Pro subscribers (70 total). NEEDS PATCH: gp_applications anon SELECT returning HTTP 200 \u2014 should be denied. Patch request sent to Lovable. After patch + Ken visual review, green-light Phase 2.",
+      "updatedAt": "2026-04-28T00:55:35.134530Z"
+    },
+    {
+      "id": "gp-applications-rls-tighten",
+      "title": "Tighten gp_applications RLS \u2014 anon SELECT must be blocked",
+      "status": "pending",
+      "priority": "high",
+      "owner": "Lovable",
+      "note": "Phase 1 audit caught: anon GET on /rest/v1/gp_applications returns HTTP 200 instead of denial. Once real applications flow in, this is a data leak risk for applicant business names, revenue ranges, and growth bottlenecks. Fix: drop any over-permissive SELECT policy, add owner-scoped SELECT for authenticated users only, keep admin policy. Verify with anon GET returning 401 or empty with explicit deny.",
+      "updatedAt": "2026-04-28T00:55:35.134530Z"
     }
   ],
   "costs": {
