@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T01:32:09.240608Z",
+  "lastUpdated": "2026-04-28T01:39:26.200895Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -896,11 +896,20 @@
     {
       "id": "phase-2-edge-function-clarifications",
       "title": "Confirm input validation on Phase 2 edge functions",
-      "status": "pending",
+      "status": "partial",
       "priority": "high",
       "owner": "Lovable",
-      "note": "Two questions: (1) create-authority-sprint-checkout returns HTTP 200 on empty body \u2014 confirm it validates customer_id before Stripe session creation. (2) stripe-webhook returns HTTP 200 on empty body (probably correct per Stripe contract) \u2014 confirm HMAC signature verification is happening on every request and unsigned bodies are dropped, not processed. (3) Paste claim_authority_sprint_credit RPC signature for documentation.",
-      "updatedAt": "2026-04-28T01:32:09.240608Z"
+      "note": "CLARIFIED 2026-04-27. Item 1 (Sprint checkout empty body): CORRECT \u2014 single-product flow, JWT-bound to user, no body needed. Item 3 (RPC signature): CORRECT \u2014 claim_authority_sprint_credit(_customer_id uuid, _redemption_session_id text) RETURNS uuid, service_role-only EXECUTE. Item 2 (webhook HMAC): REAL RISK FOUND \u2014 silent fallback to trusted JSON.parse if STRIPE_WEBHOOK_SECRET unset or signature header missing. Patch requested separately.",
+      "updatedAt": "2026-04-28T01:39:26.200895Z"
+    },
+    {
+      "id": "stripe-webhook-fail-closed",
+      "title": "Patch stripe-webhook to require HMAC signature (no silent fallback)",
+      "status": "pending",
+      "priority": "critical",
+      "owner": "Lovable",
+      "note": "Lovable self-flagged: current stripe-webhook silently falls through to JSON.parse(body) if STRIPE_WEBHOOK_SECRET env is missing OR stripe-signature header is absent. Risk: if secret ever unset (e.g., env rotation), forged events could grant subscription access without payment. Patch: require both env + header, return 400 if missing, log forge attempts. 5-line fix. Verify post-patch with forged unsigned POST \u2192 expect 400, not 200.",
+      "updatedAt": "2026-04-28T01:39:26.200895Z"
     }
   ],
   "costs": {
