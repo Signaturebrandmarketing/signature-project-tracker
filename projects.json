@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T00:21:02.122457Z",
+  "lastUpdated": "2026-04-28T00:25:40.432848Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -827,8 +827,8 @@
       "status": "in-progress",
       "priority": "critical",
       "owner": "Lovable",
-      "note": "Comprehensive product line restructure brief sent to Lovable 2026-04-27. Removes $59/$99 AI Branding tiers from public pricing. Adds three LiveLoop tiers ($397/$497/$697). Adds standalone Authority Sprint page. Restructures GP into 3 tiers ($1,200/$1,800/$2,800) with application-only access. Industry pages updated. Stripe/Square products created. Existing $59/$99 subscribers grandfathered (hidden from public pricing, billing continues). Phased rollout suggested. BILLING DECISION 2026-04-27: Single Stripe Checkout session with mode=subscription containing both setup (one_time price) and subscription (recurring price) line items. Customer charged together on day one; subscription continues monthly. Cleaner UX, lower abandonment, standard SaaS pattern. Receipt should itemize both charges for transparency.",
-      "updatedAt": "2026-04-28T00:21:02.122457Z"
+      "note": "Comprehensive product line restructure brief sent to Lovable 2026-04-27. Removes $59/$99 AI Branding tiers from public pricing. Adds three LiveLoop tiers ($397/$497/$697). Adds standalone Authority Sprint page. Restructures GP into 3 tiers ($1,200/$1,800/$2,800) with application-only access. Industry pages updated. Stripe/Square products created. Existing $59/$99 subscribers grandfathered (hidden from public pricing, billing continues). Phased rollout suggested. BILLING DECISION 2026-04-27: Single Stripe Checkout session with mode=subscription containing both setup (one_time price) and subscription (recurring price) line items. Customer charged together on day one; subscription continues monthly. Cleaner UX, lower abandonment, standard SaaS pattern. Receipt should itemize both charges for transparency. SPRINT CREDIT MECHANIC 2026-04-27: Server-side check at LiveLoop checkout. New table authority_sprint_purchases (customer_id, stripe_payment_intent_id, credit_used, credit_redeemed_at, credit_redemption_session_id). Edge function queries for eligible unredeemed Sprint purchase within 30-day window, attaches $297 auto-generated single-use Stripe coupon to Checkout. Webhook marks credit_used=true on subscription creation. Race-safe via SELECT FOR UPDATE SKIP LOCKED. Nightly cleanup reverts abandoned pending redemptions. Zero customer-facing codes or admin manual work.",
+      "updatedAt": "2026-04-28T00:25:40.432848Z"
     },
     {
       "id": "three-sales-pages-draft",
