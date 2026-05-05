@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-05T21:57:22.303896Z",
+  "lastUpdated": "2026-05-05T22:22:22.154883Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -968,11 +968,11 @@
     {
       "id": "liveloop-flyer-prompt-v2",
       "title": "Rewrite gp-auto-content flyer prompt to actually use Brand Kit",
-      "status": "pending",
+      "status": "partial",
       "priority": "high",
       "owner": "Lovable",
-      "note": "Diagnosis 2026-05-05: current flyer prompt pulls brand_kits for colors/fonts only. Strategic fields (mission_statement, target_audience, personality_tags, tone_tags, keywords, banned_words) are populated in live data but never reach Gemini. Result: every flyer feels generic. Spec saved to ~/Desktop/signature-ops/lovable-prompts/liveloop-flyer-prompt-v2.md. Includes extended SELECT, replacement prompt template, template-specific shortener limits (loosens 6-word cap), aesthetic mapping table, industry visual vocabulary table, banned-words enforcement. Single edge function change. No schema migration. Acceptance test: wellness vs realtor flyers should look materially different.",
-      "updatedAt": "2026-05-05T21:57:22.303896Z"
+      "note": "Diagnosis 2026-05-05: current flyer prompt pulls brand_kits for colors/fonts only. Strategic fields (mission_statement, target_audience, personality_tags, tone_tags, keywords, banned_words) are populated in live data but never reach Gemini. Result: every flyer feels generic. Spec saved to ~/Desktop/signature-ops/lovable-prompts/liveloop-flyer-prompt-v2.md. Includes extended SELECT, replacement prompt template, template-specific shortener limits (loosens 6-word cap), aesthetic mapping table, industry visual vocabulary table, banned-words enforcement. Single edge function change. No schema migration. Acceptance test: wellness vs realtor flyers should look materially different. v2 SHIPPED 2026-05-05 but introduced new bugs visible on LaToya R. King output: art-direction prose rendered as text on flyers (with typos), Instagram caption body leaked into visible flyer text, sentences truncated mid-word. v3 spec written addressing all three.",
+      "updatedAt": "2026-05-05T22:22:22.154883Z"
     },
     {
       "id": "brand-kits-completion-audit",
@@ -982,6 +982,24 @@
       "owner": "Mae",
       "note": "Before flyer prompt v2 will materially improve output, verify the fields it relies on are actually populated. Open 2-3 active GP client brand kits and confirm: mission_statement, target_audience, personality_tags, tone_tags, keywords are all filled with real values (not placeholders). If empty, that's a Brand Kit completion gap to address before judging flyer quality.",
       "updatedAt": "2026-05-05T21:57:22.303896Z"
+    },
+    {
+      "id": "liveloop-flyer-prompt-v3",
+      "title": "Flyer prompt v3: structured KEY:value format + strict visibleLines + sentence-aware shortener",
+      "status": "pending",
+      "priority": "high",
+      "owner": "Lovable",
+      "note": "Spec at ~/Desktop/signature-ops/lovable-prompts/liveloop-flyer-prompt-v3.md. Three fixes: (1) restructure prompt to TEXT TO RENDER vs ART DIRECTION vs HARD RULES blocks with KEY:value pairs (eliminates rendered-instruction bug), (2) strict per-template visibleLines builder excludes body/caption/description fields, (3) sentence-aware shortener replaces word-count cap. Acceptance: regenerate LaToya R. King flyers with 3 different templates and verify zero art-direction words, zero caption leak, zero mid-word cuts.",
+      "updatedAt": "2026-05-05T22:22:22.154883Z"
+    },
+    {
+      "id": "liveloop-flyer-hybrid-composition",
+      "title": "Phase 4: hybrid composition \u2014 AI background + layout-engine typography",
+      "status": "planned",
+      "priority": "medium",
+      "owner": "Lovable",
+      "note": "Strategic note for next sprint after v3 ships. Image-gen models cannot reliably render text. Even with v3 prompt fixes, expect 5-10% typo rate on visible flyer text. Production-grade fix: AI generates BACKGROUND only (no text in prompt), then Satori/html-to-image/Puppeteer renders typography on top with real fonts (Playfair Display + Inter, matching brand kit). 100% reliable text rendering, 100% on-brand typography. ~2-3 days of Lovable work. Standard pattern (Notion social cards, Vercel OG images, Substack headers all use this).",
+      "updatedAt": "2026-05-05T22:22:22.154883Z"
     }
   ],
   "costs": {
