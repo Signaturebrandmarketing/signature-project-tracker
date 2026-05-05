@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T02:37:37.677935Z",
+  "lastUpdated": "2026-05-05T21:57:22.303896Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -964,6 +964,24 @@
       "owner": "Ken",
       "note": "Real capacity to scale: Dex owns Lovable + GHL + integrations, Mae owns onboarding + Authority Sprint delivery + content review + client comms, Eric owns AI image production + video deliverables + style pack expansions. You step out of production, into sales/strategy/founder mode. Path to 50 GP clients + 150 LiveLoop subs in 6 months becomes mathematically achievable instead of aspirational.",
       "updatedAt": "2026-04-28T02:37:37.677935Z"
+    },
+    {
+      "id": "liveloop-flyer-prompt-v2",
+      "title": "Rewrite gp-auto-content flyer prompt to actually use Brand Kit",
+      "status": "pending",
+      "priority": "high",
+      "owner": "Lovable",
+      "note": "Diagnosis 2026-05-05: current flyer prompt pulls brand_kits for colors/fonts only. Strategic fields (mission_statement, target_audience, personality_tags, tone_tags, keywords, banned_words) are populated in live data but never reach Gemini. Result: every flyer feels generic. Spec saved to ~/Desktop/signature-ops/lovable-prompts/liveloop-flyer-prompt-v2.md. Includes extended SELECT, replacement prompt template, template-specific shortener limits (loosens 6-word cap), aesthetic mapping table, industry visual vocabulary table, banned-words enforcement. Single edge function change. No schema migration. Acceptance test: wellness vs realtor flyers should look materially different.",
+      "updatedAt": "2026-05-05T21:57:22.303896Z"
+    },
+    {
+      "id": "brand-kits-completion-audit",
+      "title": "Mae: spot-check brand_kits population for 2-3 active GP clients",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "Mae",
+      "note": "Before flyer prompt v2 will materially improve output, verify the fields it relies on are actually populated. Open 2-3 active GP client brand kits and confirm: mission_statement, target_audience, personality_tags, tone_tags, keywords are all filled with real values (not placeholders). If empty, that's a Brand Kit completion gap to address before judging flyer quality.",
+      "updatedAt": "2026-05-05T21:57:22.303896Z"
     }
   ],
   "costs": {
