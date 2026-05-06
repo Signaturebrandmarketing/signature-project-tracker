@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-06T19:43:27.672757Z",
+  "lastUpdated": "2026-05-06T20:09:50.514981Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -1016,8 +1016,35 @@
       "status": "planned",
       "priority": "medium",
       "owner": "Ken",
-      "note": "When Teams subscription activates and team members install Claude Code: distribute role-specific memory files to each. DEX gets technical files (user_ken_profile, signature_branding_system, liveloop, daily_ops_agent, supabase_access). MAE gets client-ops files (signature_branding_system, liveloop, rewards_program, client_phyllis_inman, client_we_care_more). ERIC gets production files (signature_branding_system, liveloop, platinum_pack). Each set goes into their ~/.claude/projects/<dir>/memory/. Shared Dropbox/Drive folder for ongoing sync if team usage grows.",
-      "updatedAt": "2026-05-06T19:43:27.672757Z"
+      "note": "REFINED 2026-05-06: recommendation is to start with individual Pro plans, not jump to Teams immediately. Phase 1 test with Dex on Pro for 30 days. Phase 2 add Mae on Pro if Phase 1 succeeds. Reconsider Teams only after 60+ days of active 4-person usage, usage limits being hit regularly, OR clear shared-Projects workflow that justifies the ~$480/year premium. Memory distribution to each person is the SAME work regardless of subscription tier \u2014 both paths require copying role-specific memory files to each Mac.",
+      "updatedAt": "2026-05-06T20:09:50.514981Z"
+    },
+    {
+      "id": "dex-claude-pro-onboarding",
+      "title": "Onboard Dex onto Claude Pro + Claude Code with technical memory subset",
+      "status": "planned",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "Phase 1 of team Claude rollout. Cost: $20/month. Steps: (1) Dex creates his own Anthropic Pro account on his email, (2) installs Claude Code on his Mac, (3) Ken AirDrops the 5-file technical memory subset (user_ken_profile, project_signature_branding_system, project_liveloop, project_daily_ops_agent, reference_supabase_access), (4) screenshare verify memory loads correctly, (5) 30-day usage observation. After 30 days: evaluate whether Pro is sufficient or whether Teams is justified.",
+      "updatedAt": "2026-05-06T20:09:50.514981Z"
+    },
+    {
+      "id": "mae-claude-pro-evaluation",
+      "title": "Evaluate Mae for Claude Pro after Dex onboarding succeeds",
+      "status": "planned",
+      "priority": "medium",
+      "owner": "Ken",
+      "note": "Phase 2 of team rollout. Add Mae on Claude Pro ($20/mo) IF Dex onboarding goes well over 30 days. Memory subset for Mae: user_ken_profile, project_signature_branding_system, project_liveloop, project_rewards_program, project_client_phyllis_inman, project_client_we_care_more.",
+      "updatedAt": "2026-05-06T20:09:50.514981Z"
+    },
+    {
+      "id": "teams-revisit-trigger",
+      "title": "Re-evaluate Claude Teams upgrade once 4 people are active for 60+ days",
+      "status": "planned",
+      "priority": "low",
+      "owner": "Ken",
+      "note": "Triggers to upgrade Pro\u2192Teams: (a) hit Pro usage limits 3+ times/month, (b) clear shared web Projects workflow that justifies $480/year premium, (c) bookkeeping for 4-6 individual subscriptions becomes annoying, (d) team scales past 5-6 seats. Until then, individual Pro plans are cheaper and offer the same Claude Code capability.",
+      "updatedAt": "2026-05-06T20:09:50.514981Z"
     }
   ],
   "costs": {
