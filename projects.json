@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-06T20:09:50.514981Z",
+  "lastUpdated": "2026-05-06T20:24:59.711501Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -1022,11 +1022,11 @@
     {
       "id": "dex-claude-pro-onboarding",
       "title": "Onboard Dex onto Claude Pro + Claude Code with technical memory subset",
-      "status": "planned",
+      "status": "in-progress",
       "priority": "high",
       "owner": "Ken",
-      "note": "Phase 1 of team Claude rollout. Cost: $20/month. Steps: (1) Dex creates his own Anthropic Pro account on his email, (2) installs Claude Code on his Mac, (3) Ken AirDrops the 5-file technical memory subset (user_ken_profile, project_signature_branding_system, project_liveloop, project_daily_ops_agent, reference_supabase_access), (4) screenshare verify memory loads correctly, (5) 30-day usage observation. After 30 days: evaluate whether Pro is sufficient or whether Teams is justified.",
-      "updatedAt": "2026-05-06T20:09:50.514981Z"
+      "note": "Phase 1 of team Claude rollout in progress. Memory bundle ready at ~/Desktop/Claude-Memory-for-Dex/ and ~/Desktop/Claude-Memory-for-Dex.zip (14 KB). Contains 6 memory files (MEMORY.md, user_ken_profile, project_signature_branding_system, project_liveloop, project_daily_ops_agent, reference_supabase_access) plus README-INSTALL.md walkthrough. Ken to deliver via AirDrop/iMessage/email. Dex installs Pro account ($20/mo), Claude Code, drops files into ~/.claude/projects/<dir>/memory/, restarts. Verify with three-question test prompt.",
+      "updatedAt": "2026-05-06T20:24:59.711501Z"
     },
     {
       "id": "mae-claude-pro-evaluation",
