@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-05T22:22:22.154883Z",
+  "lastUpdated": "2026-05-06T19:43:27.672757Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -1000,6 +1000,24 @@
       "owner": "Lovable",
       "note": "Strategic note for next sprint after v3 ships. Image-gen models cannot reliably render text. Even with v3 prompt fixes, expect 5-10% typo rate on visible flyer text. Production-grade fix: AI generates BACKGROUND only (no text in prompt), then Satori/html-to-image/Puppeteer renders typography on top with real fonts (Playfair Display + Inter, matching brand kit). 100% reliable text rendering, 100% on-brand typography. ~2-3 days of Lovable work. Standard pattern (Notion social cards, Vercel OG images, Substack headers all use this).",
       "updatedAt": "2026-05-05T22:22:22.154883Z"
+    },
+    {
+      "id": "claude-memory-backup-routine",
+      "title": "Weekly Claude Code memory backup routine",
+      "status": "in-progress",
+      "priority": "low",
+      "owner": "Ken",
+      "note": "First backup created 2026-05-06: ~/Desktop/Signature-Claude-Memory-Backup-20260506.zip (31 KB, 17 memory files). Add a weekly recurring reminder to refresh: cp -R ~/.claude/projects/-Users-ken-Desktop/memory ~/Desktop/SCM-Backup-{date}/. Insurance against Mac failure, account change, or Teams migration. Keep latest copy in iCloud Drive or 1Password.",
+      "updatedAt": "2026-05-06T19:43:27.672757Z"
+    },
+    {
+      "id": "teams-rollout-memory-distribution",
+      "title": "When upgrading to Teams: distribute role-specific memory subsets to Dex/Mae/Eric",
+      "status": "planned",
+      "priority": "medium",
+      "owner": "Ken",
+      "note": "When Teams subscription activates and team members install Claude Code: distribute role-specific memory files to each. DEX gets technical files (user_ken_profile, signature_branding_system, liveloop, daily_ops_agent, supabase_access). MAE gets client-ops files (signature_branding_system, liveloop, rewards_program, client_phyllis_inman, client_we_care_more). ERIC gets production files (signature_branding_system, liveloop, platinum_pack). Each set goes into their ~/.claude/projects/<dir>/memory/. Shared Dropbox/Drive folder for ongoing sync if team usage grows.",
+      "updatedAt": "2026-05-06T19:43:27.672757Z"
     }
   ],
   "costs": {
