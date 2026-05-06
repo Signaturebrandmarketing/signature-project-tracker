@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-06T20:24:59.711501Z",
+  "lastUpdated": "2026-05-06T20:28:47.396075Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -1032,10 +1032,10 @@
       "id": "mae-claude-pro-evaluation",
       "title": "Evaluate Mae for Claude Pro after Dex onboarding succeeds",
       "status": "planned",
-      "priority": "medium",
+      "priority": "low",
       "owner": "Ken",
-      "note": "Phase 2 of team rollout. Add Mae on Claude Pro ($20/mo) IF Dex onboarding goes well over 30 days. Memory subset for Mae: user_ken_profile, project_signature_branding_system, project_liveloop, project_rewards_program, project_client_phyllis_inman, project_client_we_care_more.",
-      "updatedAt": "2026-05-06T20:09:50.514981Z"
+      "note": "DEFERRED to ~2026-06-05 per Ken decision 2026-05-06. Not evaluating Mae for Claude until Dex's 30-day Phase 1 surfaces real-world data on usage patterns, value, and any setup gotchas. Pattern proven with Dex first, then replicate. Memory subset for Mae already documented (signature_branding_system, liveloop, rewards_program, client_phyllis_inman, client_we_care_more) \u2014 will bundle when triggered.",
+      "updatedAt": "2026-05-06T20:28:47.396075Z"
     },
     {
       "id": "teams-revisit-trigger",
@@ -1045,6 +1045,15 @@
       "owner": "Ken",
       "note": "Triggers to upgrade Pro\u2192Teams: (a) hit Pro usage limits 3+ times/month, (b) clear shared web Projects workflow that justifies $480/year premium, (c) bookkeeping for 4-6 individual subscriptions becomes annoying, (d) team scales past 5-6 seats. Until then, individual Pro plans are cheaper and offer the same Claude Code capability.",
       "updatedAt": "2026-05-06T20:09:50.514981Z"
+    },
+    {
+      "id": "dex-30-day-checkin",
+      "title": "Dex 30-day Claude Pro check-in (~2026-06-05)",
+      "status": "planned",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "Calendar this. Around 2026-06-05, do a 15-min check-in with Dex on his Claude Pro experience. Specifically ask: (1) hit usage limits in any week, (2) which memory files he uses most / least, (3) any context gaps where he had to re-explain Signature concepts to Claude, (4) whether he'd recommend rolling out to Mae next, (5) any workflow ideas worth sharing. Output of check-in determines: stay on Pro for whole team OR upgrade to Teams OR adjust memory file subsets.",
+      "updatedAt": "2026-05-06T20:28:47.396075Z"
     }
   ],
   "costs": {
