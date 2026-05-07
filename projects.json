@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-06T20:28:47.396075Z",
+  "lastUpdated": "2026-05-07T03:25:00.000000Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -150,30 +150,36 @@
       "title": "Execute Squarespace SEO plan for Headshots-Branding.com",
       "category": "seo",
       "priority": "high",
-      "status": "pending",
-      "description": "Plan is READY at ~/Desktop/signature-ops/seo-kit/squarespace-seo-headshots-branding.md \u2014 6 phases covering site settings, per-page SEO, code injection schemas (Organization, LocalBusiness x2, Service, FAQPage), image alt text, blog setup, sitemap submission. Execute in Squarespace admin in priority order. 90 min for highest impact phases.",
+      "status": "done",
+      "description": "COMPLETED 2026-05-06. Live walkthrough with Ken. Updated homepage SEO (title + meta), updated SEO on 7 existing pages, updated Squarespace global settings, created 3 new location pages (Lake Wales, Winter Haven, Lakeland) with full content + URL slugs, added Locations dropdown navigation, cross-linked between all 3 location pages + signaturebranding.app. Resolved past-due payment issue.",
       "estimatedTime": "2-3 hours full; 90 min for top priority phases",
-      "impact": "Rank this domain for 'Lake Wales' + 'Fort Lauderdale' + headshot queries, complement main sites"
+      "impact": "Rank this domain for 'Lake Wales' + 'Winter Haven' + 'Lakeland' headshot queries, complement main sites",
+      "completed": "2026-05-06",
+      "notes": "Ken did the full Squarespace edit live in one session. All 3 city pages published. Cross-linking complete. Payment past-due issue resolved during session."
     },
     {
       "id": "seo-gsc-submit-sitemap",
       "title": "Submit sitemap to Google Search Console",
       "category": "seo",
       "priority": "high",
-      "status": "pending",
-      "description": "URL: https://signaturebranding.app/sitemap.xml. Go to search.google.com/search-console > add property > Sitemaps > submit. Also submit signatureheadshotevent.com sitemap once updated.",
+      "status": "done",
+      "description": "COMPLETED 2026-05-06. Sitemap submitted at https://signaturebranding.app/sitemap.xml — Status: Success, Discovered URLs: 252 (50 existing + 200 location×industry combo pages). Domain property verified via DNS. Also manually requested indexing for top 10 priority URLs (24-48 hr indexing vs normal 2-4 week wait).",
       "estimatedTime": "10 min",
-      "impact": "Gets new pages indexed within days instead of weeks"
+      "impact": "Gets new pages indexed within days instead of weeks",
+      "completed": "2026-05-06",
+      "notes": "Domain property in GSC. 252 URLs discovered. 10 priority URLs manually indexed (Lake Wales, Atlanta combos, top industries). Bing Webmaster Tools also live with same sitemap submission and Lake Wales URL manually indexed."
     },
     {
       "id": "seo-gmb-winter-haven",
-      "title": "Set up Winter Haven GMB from kit",
+      "title": "Optimize Lake Wales GBP (Kenneth Lamor Signature Photography)",
       "category": "seo",
       "priority": "high",
-      "status": "pending",
-      "description": "Use ~/Desktop/signature-ops/seo-kit/gmb-content-kit.md \u2014 Winter Haven section. Copy-paste description, services, Q&A seeds, Google Posts. HQ market \u2014 do this one flawlessly first.",
+      "status": "done",
+      "description": "COMPLETED 2026-05-06. Lake Wales is the studio HQ (241 E Park Ave). Full GBP optimization done: added 2 booking links (signatureheadshotevent.com as preferred, headshots-branding.com secondary), added 6 priced services pending review (Signature Headshot $75, AI Branding Starter $37, AI Branding Full $97, Mini Branding $699, Signature Branding $1500, Authority Sprint $297), expanded service area to 19+ markets covering Polk County + Tampa + Orlando, posted Week 1 Google Update with image + Book CTA. Already had 30+ photos, 5.0\u2605 with 455 reviews.",
       "estimatedTime": "30 min",
-      "impact": "Local pack rankings in Polk County"
+      "impact": "Local pack rankings across Polk County + Tampa + Orlando metros",
+      "completed": "2026-05-06",
+      "notes": "GBP profile name: Kenneth Lamor Signature Photography. Address: 241 E Park Ave #241, Lake Wales, FL 33853. Services edit pending Google review (24 hr). Profile is anchor for 7M+ population radius from studio."
     },
     {
       "id": "seo-gmb-atlanta",
@@ -207,13 +213,14 @@
     },
     {
       "id": "seo-bing-apple",
-      "title": "Submit to Bing Places + Apple Business Connect",
+      "title": "Submit to Bing Webmaster Tools + Apple Business Connect",
       "category": "seo",
       "priority": "high",
-      "status": "pending",
-      "description": "Easy wins. Bing = bingplaces.com. Apple = businessconnect.apple.com. Use NAP details from backlink-strategy.md.",
-      "estimatedTime": "30 min",
-      "impact": "~15% of desktop search traffic + Apple Maps"
+      "status": "in-progress",
+      "description": "Bing Webmaster Tools — DONE 2026-05-06. Property added for signaturebranding.app, sitemap submitted (Processing → 252 URLs discovered), Lake Wales URL manually indexed. Apple Business Connect at businessconnect.apple.com still pending — that one is for Apple Maps presence on iPhone search.",
+      "estimatedTime": "15 min remaining (Apple only)",
+      "impact": "~15% of desktop search traffic via Bing/DuckDuckGo + Apple Maps coverage",
+      "notes": "Bing component complete. Apple Business Connect still TBD."
     },
     {
       "id": "seo-yelp-8-markets",
@@ -244,6 +251,54 @@
       "description": "Use templates in backlink-strategy.md. Target wedding vendors + real estate brokerages + salons in Winter Haven or Atlanta.",
       "estimatedTime": "1 hour",
       "impact": "15-25 backlinks over 30 days"
+    },
+    {
+      "id": "seo-combo-pages-200",
+      "title": "Build 200 location × industry combo pages on signaturebranding.app",
+      "category": "seo",
+      "priority": "high",
+      "status": "done",
+      "description": "COMPLETED 2026-05-06. Created LocationIndustryPage component at /headshots/:city/:industry. 8 locations × 25 industries = 200 ultra-specific long-tail SEO pages. Each page includes combined Service + LocalBusiness schema, FAQPage schema, BreadcrumbList schema, visible breadcrumbs, dual hero badges, packages, use cases, FAQs, and bidirectional cross-links. Updated location pages to link to city-specific industry combos, updated industry pages to link to industry-in-each-city combos. 200 sitemap entries added. UTM tracking on all booking CTAs.",
+      "estimatedTime": "1.5 hours",
+      "impact": "200 long-tail keyword targets like 'wedding planner Lake Wales', 'real estate headshots Atlanta', 'dentist headshots Tampa'. Doubled SEO surface area in one move.",
+      "completed": "2026-05-06",
+      "notes": "Total indexable pages on signaturebranding.app went from 31 to 231. Each combo page targets ultra-specific transactional intent with combined location credibility + industry expertise."
+    },
+    {
+      "id": "seo-og-images-all-pages",
+      "title": "Add Open Graph images to all SEO pages",
+      "category": "seo",
+      "priority": "high",
+      "status": "done",
+      "description": "COMPLETED 2026-05-06. Created /og-default.jpg brand fallback (1920x1080 from hero-bg). SEOHead component now auto-resolves og:image with relative→absolute conversion, defaults to /og-default.jpg when no page-specific image provided. LocationIndustryPage uses first matched style preview (industry-specific). HeadshotLocationPage, HeadshotsIndex, IndustriesIndex use brand default. Twitter card now also gets the resolved image.",
+      "estimatedTime": "30 min",
+      "impact": "+3-5x social CTR when URLs forwarded on Facebook/LinkedIn/Twitter/iMessage/Slack. All 231 SEO pages now have proper social previews.",
+      "completed": "2026-05-06",
+      "notes": "Previously only IndustryLandingPage had og:image. Now every SEO page has proper preview cards. Future enhancement: build dynamic OG generator (Satori edge function) for per-page custom images."
+    },
+    {
+      "id": "seo-manual-indexing-gsc",
+      "title": "Manual indexing requests for top 10 priority URLs (Google)",
+      "category": "seo",
+      "priority": "high",
+      "status": "done",
+      "description": "COMPLETED 2026-05-06. Used GSC Request Indexing on 10 priority URLs: Lake Wales pages (location + wedding planner combo), Atlanta pages (location + real estate + wedding planner combos), top 5 industry pages (wedding planner, real estate, dental, financial advisors, mobile notary). These get indexed in 24-48 hr vs normal 2-4 week organic crawl.",
+      "estimatedTime": "5 min",
+      "impact": "Top revenue URLs hit Google search results within 48 hours instead of weeks",
+      "completed": "2026-05-06",
+      "notes": "Tomorrow's batch (per Ken's strategic shift to local market priority): Winter Haven, Lakeland, Tampa, Orlando location pages + their real estate combos. Use GSC's 10/day quota strategically on drivable markets vs distant Atlanta."
+    },
+    {
+      "id": "seo-headshots-branding-payment",
+      "title": "Resolve headshots-branding.com Squarespace past-due payment",
+      "category": "seo",
+      "priority": "critical",
+      "status": "done",
+      "description": "COMPLETED 2026-05-06. Squarespace flagged 'Your website payment is past-due. You must subscribe to enable your website.' Resolved during Squarespace SEO walkthrough — without this fix, none of the SEO work would have been live to public visitors.",
+      "estimatedTime": "5 min",
+      "impact": "Site stays publicly accessible — without resolution, all Squarespace SEO work would be invisible",
+      "completed": "2026-05-06",
+      "notes": "Caught during live walkthrough. Critical fix-it issue."
     },
     {
       "id": "seo-directory-submissions-tier1",
@@ -1618,9 +1673,34 @@
           "name": "Backlink Strategy Kit",
           "status": "complete",
           "note": "Directory list + 4 outreach templates + PR pitches in seo-kit/backlink-strategy.md"
+        },
+        {
+          "name": "Location × Industry Combo Pages",
+          "status": "complete",
+          "note": "200 ultra-long-tail SEO pages live (8 cities × 25 industries) — /headshots/:city/:industry. Combined Service+LocalBusiness+FAQPage+BreadcrumbList schemas. Each targets queries like 'real estate headshots Atlanta', 'wedding planner Lake Wales'. Doubled SEO surface area to 231 indexable pages."
+        },
+        {
+          "name": "Open Graph Images Sitewide",
+          "status": "complete",
+          "note": "/og-default.jpg fallback + per-page custom OG. SEOHead component auto-resolves with relative→absolute URL conversion. All 231 pages now have proper social preview cards (FB/LinkedIn/Twitter/iMessage/Slack)."
+        },
+        {
+          "name": "Sitemap Submission (GSC + Bing)",
+          "status": "complete",
+          "note": "Submitted to Google Search Console (Domain property, DNS verified) — 252 URLs discovered. Submitted to Bing Webmaster Tools — Lake Wales URL manually indexed, sitemap processing. Top 10 priority URLs manually indexed in GSC for 24-48 hr indexing."
+        },
+        {
+          "name": "Squarespace SEO (headshots-branding.com)",
+          "status": "complete",
+          "note": "Full execution 2026-05-06. Homepage SEO + 7 existing pages SEO + Global Settings + 3 new location pages (Lake Wales, Winter Haven, Lakeland) + Locations dropdown navigation + bidirectional cross-linking + signaturebranding.app cross-domain links. Past-due payment also resolved during walkthrough."
+        },
+        {
+          "name": "Lake Wales Google Business Profile",
+          "status": "complete",
+          "note": "Full optimization 2026-05-06. Booking links (signatureheadshotevent.com preferred + headshots-branding.com), 6 priced services pending review ($75-$1,500 range + $297 sprint), service area expanded to 19+ markets covering Polk County + Tampa + Orlando, first Google Update posted with image + Book CTA. Profile already had 5.0★ with 455 reviews and 30+ photos."
         }
       ],
-      "lastActivity": "2026-04-17"
+      "lastActivity": "2026-05-06"
     },
     {
       "id": "campaign-system",
