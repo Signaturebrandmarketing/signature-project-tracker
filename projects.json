@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-07T12:54:11.234162Z",
+  "lastUpdated": "2026-05-07T13:41:07.153375Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -1118,6 +1118,24 @@
       "owner": "Ken",
       "note": "When bundling memory for team members: TWO valid approaches. (A) Trim MEMORY.md to match files actually included (subset approach for narrow-scope team members). (B) Send full 17-file library when team member is true peer / leadership tier and should have full visibility. Dex (Director of Tech Ops) received Approach B 2026-05-07. Mae (Director of Client Ops) is also Director-tier and likely Approach B when her turn comes. Eric (Production Specialist) is more likely Approach A with focused subset. Decide per role at distribution time.",
       "updatedAt": "2026-05-07T12:54:11.234162Z"
+    },
+    {
+      "id": "voice-mode-claude-desktop",
+      "title": "Try Claude Desktop native voice mode (free, included in Max)",
+      "status": "planned",
+      "priority": "medium",
+      "owner": "Ken",
+      "note": "Phase 1 of voice setup. Open Claude Desktop on Mac, sign in, click mic icon in conversation, speak. Anthropic shipped voice in/out across web and desktop in 2025-2026, now polished. Five voices to choose from (Buttery, Airy, Mellow, Glassy, Rounded). Zero additional cost. Use for general strategy/conversation work with Claude. Won't cover Claude Code specifically \u2014 that's Phase 2.",
+      "updatedAt": "2026-05-07T13:41:07.153375Z"
+    },
+    {
+      "id": "voice-mode-claude-code-mcp",
+      "title": "Install VoiceMode MCP server for Claude Code (free, local)",
+      "status": "planned",
+      "priority": "low",
+      "owner": "Ken",
+      "note": "Phase 2 of voice setup, AFTER Claude Desktop voice has proven useful. Open-source MCP server that adds bidirectional voice to Claude Code via local Whisper STT + Kokoro TTS. ~5 min install: curl -LsSf https://astral.sh/uv/install.sh | sh && uvx voice-mode-install && claude mcp add --scope user voicemode -- uvx --refresh voice-mode. Then \"claude converse\" starts a voice session. Known bug as of April 2026: Claude Code 2.1.105+ kills MCP server on ESC during voice. Let conversations end naturally instead.",
+      "updatedAt": "2026-05-07T13:41:07.153375Z"
     }
   ],
   "costs": {
