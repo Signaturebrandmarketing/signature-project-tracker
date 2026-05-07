@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-07T12:50:45.525777Z",
+  "lastUpdated": "2026-05-07T12:54:11.234162Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -1080,8 +1080,8 @@
       "status": "in-progress",
       "priority": "high",
       "owner": "Ken",
-      "note": "Phase 1 of team Claude rollout in progress. Memory bundle ready at ~/Desktop/Claude-Memory-for-Dex/ and ~/Desktop/Claude-Memory-for-Dex.zip (14 KB). Contains 6 memory files (MEMORY.md, user_ken_profile, project_signature_branding_system, project_liveloop, project_daily_ops_agent, reference_supabase_access) plus README-INSTALL.md walkthrough. Ken to deliver via AirDrop/iMessage/email. Dex installs Pro account ($20/mo), Claude Code, drops files into ~/.claude/projects/<dir>/memory/, restarts. Verify with three-question test prompt. UPDATE 2026-05-07: Dex reported MEMORY.md referenced files not in his bundle. Rebuilt with expanded subset (10 memory files instead of 5) plus trimmed MEMORY.md that only references files actually present. Adds: rewards_program, ghl_conversational_ai, outbound_sales_system, tracker_dashboard, claude_design. Now covers ~90% of his role scope. Bundle at ~/Desktop/Claude-Memory-for-Dex.zip (21 KB).",
-      "updatedAt": "2026-05-07T12:50:45.525777Z"
+      "note": "Phase 1 of team Claude rollout in progress. Memory bundle ready at ~/Desktop/Claude-Memory-for-Dex/ and ~/Desktop/Claude-Memory-for-Dex.zip (14 KB). Contains 6 memory files (MEMORY.md, user_ken_profile, project_signature_branding_system, project_liveloop, project_daily_ops_agent, reference_supabase_access) plus README-INSTALL.md walkthrough. Ken to deliver via AirDrop/iMessage/email. Dex installs Pro account ($20/mo), Claude Code, drops files into ~/.claude/projects/<dir>/memory/, restarts. Verify with three-question test prompt. UPDATE 2026-05-07: Dex reported MEMORY.md referenced files not in his bundle. Rebuilt with expanded subset (10 memory files instead of 5) plus trimmed MEMORY.md that only references files actually present. Adds: rewards_program, ghl_conversational_ai, outbound_sales_system, tracker_dashboard, claude_design. Now covers ~90% of his role scope. Bundle at ~/Desktop/Claude-Memory-for-Dex.zip (21 KB). UPGRADE 2026-05-07 (later same morning): Ken decided to give Dex the FULL 17-file memory library, not a subset. Reasoning: Dex is right hand / Director of Technical Operations and should have visibility into the whole business. Bundle rebuilt with all 17 memory files + README that lists each file plus notes sensitive files (client buildouts, personal brand, Supabase auth). Bundle now 33 KB at ~/Desktop/Claude-Memory-for-Dex.zip.",
+      "updatedAt": "2026-05-07T12:54:11.234162Z"
     },
     {
       "id": "mae-claude-pro-evaluation",
@@ -1116,8 +1116,8 @@
       "status": "planned",
       "priority": "low",
       "owner": "Ken",
-      "note": "When bundling memory for Mae and Eric (or any future team member): always rewrite the MEMORY.md index to reference ONLY the files actually in their bundle. Otherwise Claude warns about missing files at startup. Apply this pattern consistently.",
-      "updatedAt": "2026-05-07T12:50:45.525777Z"
+      "note": "When bundling memory for team members: TWO valid approaches. (A) Trim MEMORY.md to match files actually included (subset approach for narrow-scope team members). (B) Send full 17-file library when team member is true peer / leadership tier and should have full visibility. Dex (Director of Tech Ops) received Approach B 2026-05-07. Mae (Director of Client Ops) is also Director-tier and likely Approach B when her turn comes. Eric (Production Specialist) is more likely Approach A with focused subset. Decide per role at distribution time.",
+      "updatedAt": "2026-05-07T12:54:11.234162Z"
     }
   ],
   "costs": {
