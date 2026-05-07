@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-07T03:25:00.000000Z",
+  "lastUpdated": "2026-05-07T12:50:45.525777Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -163,7 +163,7 @@
       "category": "seo",
       "priority": "high",
       "status": "done",
-      "description": "COMPLETED 2026-05-06. Sitemap submitted at https://signaturebranding.app/sitemap.xml — Status: Success, Discovered URLs: 252 (50 existing + 200 location×industry combo pages). Domain property verified via DNS. Also manually requested indexing for top 10 priority URLs (24-48 hr indexing vs normal 2-4 week wait).",
+      "description": "COMPLETED 2026-05-06. Sitemap submitted at https://signaturebranding.app/sitemap.xml \u2014 Status: Success, Discovered URLs: 252 (50 existing + 200 location\u00d7industry combo pages). Domain property verified via DNS. Also manually requested indexing for top 10 priority URLs (24-48 hr indexing vs normal 2-4 week wait).",
       "estimatedTime": "10 min",
       "impact": "Gets new pages indexed within days instead of weeks",
       "completed": "2026-05-06",
@@ -217,7 +217,7 @@
       "category": "seo",
       "priority": "high",
       "status": "in-progress",
-      "description": "Bing Webmaster Tools — DONE 2026-05-06. Property added for signaturebranding.app, sitemap submitted (Processing → 252 URLs discovered), Lake Wales URL manually indexed. Apple Business Connect at businessconnect.apple.com still pending — that one is for Apple Maps presence on iPhone search.",
+      "description": "Bing Webmaster Tools \u2014 DONE 2026-05-06. Property added for signaturebranding.app, sitemap submitted (Processing \u2192 252 URLs discovered), Lake Wales URL manually indexed. Apple Business Connect at businessconnect.apple.com still pending \u2014 that one is for Apple Maps presence on iPhone search.",
       "estimatedTime": "15 min remaining (Apple only)",
       "impact": "~15% of desktop search traffic via Bing/DuckDuckGo + Apple Maps coverage",
       "notes": "Bing component complete. Apple Business Connect still TBD."
@@ -254,11 +254,11 @@
     },
     {
       "id": "seo-combo-pages-200",
-      "title": "Build 200 location × industry combo pages on signaturebranding.app",
+      "title": "Build 200 location \u00d7 industry combo pages on signaturebranding.app",
       "category": "seo",
       "priority": "high",
       "status": "done",
-      "description": "COMPLETED 2026-05-06. Created LocationIndustryPage component at /headshots/:city/:industry. 8 locations × 25 industries = 200 ultra-specific long-tail SEO pages. Each page includes combined Service + LocalBusiness schema, FAQPage schema, BreadcrumbList schema, visible breadcrumbs, dual hero badges, packages, use cases, FAQs, and bidirectional cross-links. Updated location pages to link to city-specific industry combos, updated industry pages to link to industry-in-each-city combos. 200 sitemap entries added. UTM tracking on all booking CTAs.",
+      "description": "COMPLETED 2026-05-06. Created LocationIndustryPage component at /headshots/:city/:industry. 8 locations \u00d7 25 industries = 200 ultra-specific long-tail SEO pages. Each page includes combined Service + LocalBusiness schema, FAQPage schema, BreadcrumbList schema, visible breadcrumbs, dual hero badges, packages, use cases, FAQs, and bidirectional cross-links. Updated location pages to link to city-specific industry combos, updated industry pages to link to industry-in-each-city combos. 200 sitemap entries added. UTM tracking on all booking CTAs.",
       "estimatedTime": "1.5 hours",
       "impact": "200 long-tail keyword targets like 'wedding planner Lake Wales', 'real estate headshots Atlanta', 'dentist headshots Tampa'. Doubled SEO surface area in one move.",
       "completed": "2026-05-06",
@@ -270,7 +270,7 @@
       "category": "seo",
       "priority": "high",
       "status": "done",
-      "description": "COMPLETED 2026-05-06. Created /og-default.jpg brand fallback (1920x1080 from hero-bg). SEOHead component now auto-resolves og:image with relative→absolute conversion, defaults to /og-default.jpg when no page-specific image provided. LocationIndustryPage uses first matched style preview (industry-specific). HeadshotLocationPage, HeadshotsIndex, IndustriesIndex use brand default. Twitter card now also gets the resolved image.",
+      "description": "COMPLETED 2026-05-06. Created /og-default.jpg brand fallback (1920x1080 from hero-bg). SEOHead component now auto-resolves og:image with relative\u2192absolute conversion, defaults to /og-default.jpg when no page-specific image provided. LocationIndustryPage uses first matched style preview (industry-specific). HeadshotLocationPage, HeadshotsIndex, IndustriesIndex use brand default. Twitter card now also gets the resolved image.",
       "estimatedTime": "30 min",
       "impact": "+3-5x social CTR when URLs forwarded on Facebook/LinkedIn/Twitter/iMessage/Slack. All 231 SEO pages now have proper social previews.",
       "completed": "2026-05-06",
@@ -294,9 +294,9 @@
       "category": "seo",
       "priority": "critical",
       "status": "done",
-      "description": "COMPLETED 2026-05-06. Squarespace flagged 'Your website payment is past-due. You must subscribe to enable your website.' Resolved during Squarespace SEO walkthrough — without this fix, none of the SEO work would have been live to public visitors.",
+      "description": "COMPLETED 2026-05-06. Squarespace flagged 'Your website payment is past-due. You must subscribe to enable your website.' Resolved during Squarespace SEO walkthrough \u2014 without this fix, none of the SEO work would have been live to public visitors.",
       "estimatedTime": "5 min",
-      "impact": "Site stays publicly accessible — without resolution, all Squarespace SEO work would be invisible",
+      "impact": "Site stays publicly accessible \u2014 without resolution, all Squarespace SEO work would be invisible",
       "completed": "2026-05-06",
       "notes": "Caught during live walkthrough. Critical fix-it issue."
     },
@@ -1080,8 +1080,8 @@
       "status": "in-progress",
       "priority": "high",
       "owner": "Ken",
-      "note": "Phase 1 of team Claude rollout in progress. Memory bundle ready at ~/Desktop/Claude-Memory-for-Dex/ and ~/Desktop/Claude-Memory-for-Dex.zip (14 KB). Contains 6 memory files (MEMORY.md, user_ken_profile, project_signature_branding_system, project_liveloop, project_daily_ops_agent, reference_supabase_access) plus README-INSTALL.md walkthrough. Ken to deliver via AirDrop/iMessage/email. Dex installs Pro account ($20/mo), Claude Code, drops files into ~/.claude/projects/<dir>/memory/, restarts. Verify with three-question test prompt.",
-      "updatedAt": "2026-05-06T20:24:59.711501Z"
+      "note": "Phase 1 of team Claude rollout in progress. Memory bundle ready at ~/Desktop/Claude-Memory-for-Dex/ and ~/Desktop/Claude-Memory-for-Dex.zip (14 KB). Contains 6 memory files (MEMORY.md, user_ken_profile, project_signature_branding_system, project_liveloop, project_daily_ops_agent, reference_supabase_access) plus README-INSTALL.md walkthrough. Ken to deliver via AirDrop/iMessage/email. Dex installs Pro account ($20/mo), Claude Code, drops files into ~/.claude/projects/<dir>/memory/, restarts. Verify with three-question test prompt. UPDATE 2026-05-07: Dex reported MEMORY.md referenced files not in his bundle. Rebuilt with expanded subset (10 memory files instead of 5) plus trimmed MEMORY.md that only references files actually present. Adds: rewards_program, ghl_conversational_ai, outbound_sales_system, tracker_dashboard, claude_design. Now covers ~90% of his role scope. Bundle at ~/Desktop/Claude-Memory-for-Dex.zip (21 KB).",
+      "updatedAt": "2026-05-07T12:50:45.525777Z"
     },
     {
       "id": "mae-claude-pro-evaluation",
@@ -1109,6 +1109,15 @@
       "owner": "Ken",
       "note": "Calendar this. Around 2026-06-05, do a 15-min check-in with Dex on his Claude Pro experience. Specifically ask: (1) hit usage limits in any week, (2) which memory files he uses most / least, (3) any context gaps where he had to re-explain Signature concepts to Claude, (4) whether he'd recommend rolling out to Mae next, (5) any workflow ideas worth sharing. Output of check-in determines: stay on Pro for whole team OR upgrade to Teams OR adjust memory file subsets.",
       "updatedAt": "2026-05-06T20:28:47.396075Z"
+    },
+    {
+      "id": "memory-bundle-process-improvement",
+      "title": "Lesson from Dex bundle: trim MEMORY.md to match files actually included",
+      "status": "planned",
+      "priority": "low",
+      "owner": "Ken",
+      "note": "When bundling memory for Mae and Eric (or any future team member): always rewrite the MEMORY.md index to reference ONLY the files actually in their bundle. Otherwise Claude warns about missing files at startup. Apply this pattern consistently.",
+      "updatedAt": "2026-05-07T12:50:45.525777Z"
     }
   ],
   "costs": {
@@ -1675,19 +1684,19 @@
           "note": "Directory list + 4 outreach templates + PR pitches in seo-kit/backlink-strategy.md"
         },
         {
-          "name": "Location × Industry Combo Pages",
+          "name": "Location \u00d7 Industry Combo Pages",
           "status": "complete",
-          "note": "200 ultra-long-tail SEO pages live (8 cities × 25 industries) — /headshots/:city/:industry. Combined Service+LocalBusiness+FAQPage+BreadcrumbList schemas. Each targets queries like 'real estate headshots Atlanta', 'wedding planner Lake Wales'. Doubled SEO surface area to 231 indexable pages."
+          "note": "200 ultra-long-tail SEO pages live (8 cities \u00d7 25 industries) \u2014 /headshots/:city/:industry. Combined Service+LocalBusiness+FAQPage+BreadcrumbList schemas. Each targets queries like 'real estate headshots Atlanta', 'wedding planner Lake Wales'. Doubled SEO surface area to 231 indexable pages."
         },
         {
           "name": "Open Graph Images Sitewide",
           "status": "complete",
-          "note": "/og-default.jpg fallback + per-page custom OG. SEOHead component auto-resolves with relative→absolute URL conversion. All 231 pages now have proper social preview cards (FB/LinkedIn/Twitter/iMessage/Slack)."
+          "note": "/og-default.jpg fallback + per-page custom OG. SEOHead component auto-resolves with relative\u2192absolute URL conversion. All 231 pages now have proper social preview cards (FB/LinkedIn/Twitter/iMessage/Slack)."
         },
         {
           "name": "Sitemap Submission (GSC + Bing)",
           "status": "complete",
-          "note": "Submitted to Google Search Console (Domain property, DNS verified) — 252 URLs discovered. Submitted to Bing Webmaster Tools — Lake Wales URL manually indexed, sitemap processing. Top 10 priority URLs manually indexed in GSC for 24-48 hr indexing."
+          "note": "Submitted to Google Search Console (Domain property, DNS verified) \u2014 252 URLs discovered. Submitted to Bing Webmaster Tools \u2014 Lake Wales URL manually indexed, sitemap processing. Top 10 priority URLs manually indexed in GSC for 24-48 hr indexing."
         },
         {
           "name": "Squarespace SEO (headshots-branding.com)",
@@ -1697,7 +1706,7 @@
         {
           "name": "Lake Wales Google Business Profile",
           "status": "complete",
-          "note": "Full optimization 2026-05-06. Booking links (signatureheadshotevent.com preferred + headshots-branding.com), 6 priced services pending review ($75-$1,500 range + $297 sprint), service area expanded to 19+ markets covering Polk County + Tampa + Orlando, first Google Update posted with image + Book CTA. Profile already had 5.0★ with 455 reviews and 30+ photos."
+          "note": "Full optimization 2026-05-06. Booking links (signatureheadshotevent.com preferred + headshots-branding.com), 6 priced services pending review ($75-$1,500 range + $297 sprint), service area expanded to 19+ markets covering Polk County + Tampa + Orlando, first Google Update posted with image + Book CTA. Profile already had 5.0\u2605 with 455 reviews and 30+ photos."
         }
       ],
       "lastActivity": "2026-05-06"
