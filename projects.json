@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-07T13:41:07.153375Z",
+  "lastUpdated": "2026-05-08T15:16:00.824620Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -1136,6 +1136,33 @@
       "owner": "Ken",
       "note": "Phase 2 of voice setup, AFTER Claude Desktop voice has proven useful. Open-source MCP server that adds bidirectional voice to Claude Code via local Whisper STT + Kokoro TTS. ~5 min install: curl -LsSf https://astral.sh/uv/install.sh | sh && uvx voice-mode-install && claude mcp add --scope user voicemode -- uvx --refresh voice-mode. Then \"claude converse\" starts a voice session. Known bug as of April 2026: Claude Code 2.1.105+ kills MCP server on ESC during voice. Let conversations end naturally instead.",
       "updatedAt": "2026-05-07T13:41:07.153375Z"
+    },
+    {
+      "id": "signature-studio-partner-program",
+      "title": "Build Signature Studio Partner program \u2014 photographer-as-channel model",
+      "status": "in-progress",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "Strategic opening 2026-05-08: Jessie G (longtime photographer friend, has attorney + car dealership clients) signed up as marketplace provider, said the platform is a \"game changer,\" asked to be a distribution channel for her network. Proposed structure: revenue-share Studio Partner tier above standard Ambassador. Jessie pays $0 upfront. Earns: 40% of headshot sessions she does, 25% of Platinum/Authority Sprint, tiered first-month cut on LiveLoop + 10% lifetime recurring, $300/mo per active GP client. Strategy: get one attorney + one car dealership through the funnel via Jessie within 7 days. Refine program after seeing real data. Jessie is prototype #1 \u2014 handle well, she sets the template for the photographer-partner network across markets.",
+      "updatedAt": "2026-05-08T15:16:00.824620Z"
+    },
+    {
+      "id": "jessie-g-first-clients",
+      "title": "Run Jessie's first 1-2 referrals (attorney + car dealership) through funnel",
+      "status": "pending",
+      "priority": "high",
+      "owner": "Ken",
+      "note": "Concrete first test of the Studio Partner model. Jessie brings 1 attorney and/or 1 car dealership through the funnel. Document: how the handoff feels for her, how the customer experience flows, what gets sticky in the booking + delivery, what tier of LiveLoop they buy. Pay Jessie on the spot for what she earns \u2014 sets the trust precedent. Real-world data > program theory.",
+      "updatedAt": "2026-05-08T15:16:00.824620Z"
+    },
+    {
+      "id": "photographer-partner-network-strategy",
+      "title": "Document and scale Studio Partner program after Jessie validation",
+      "status": "planned",
+      "priority": "medium",
+      "owner": "Ken",
+      "note": "After Jessie's first 1-2 deals close: write a one-page Studio Partner program agreement (lightweight). Decide scaled comp structure (lifetime 10% LiveLoop trailing for prototypes vs 12-month trailing for scale). Open to additional photographers in Jessie's network and markets Signature doesn't directly serve. Could become primary distribution layer across attorneys, car dealerships, real estate, and other adjacent local-business verticals where photographers already have trust relationships.",
+      "updatedAt": "2026-05-08T15:16:00.824620Z"
     }
   ],
   "costs": {
