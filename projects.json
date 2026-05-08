@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-08T15:16:00.824620Z",
+  "lastUpdated": "2026-05-08T15:27:12.605405Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -1139,12 +1139,14 @@
     },
     {
       "id": "signature-studio-partner-program",
-      "title": "Build Signature Studio Partner program \u2014 photographer-as-channel model",
+      "title": "Signature Certified Photographer program \u2014 affiliate model",
       "status": "in-progress",
       "priority": "high",
       "owner": "Ken",
-      "note": "Strategic opening 2026-05-08: Jessie G (longtime photographer friend, has attorney + car dealership clients) signed up as marketplace provider, said the platform is a \"game changer,\" asked to be a distribution channel for her network. Proposed structure: revenue-share Studio Partner tier above standard Ambassador. Jessie pays $0 upfront. Earns: 40% of headshot sessions she does, 25% of Platinum/Authority Sprint, tiered first-month cut on LiveLoop + 10% lifetime recurring, $300/mo per active GP client. Strategy: get one attorney + one car dealership through the funnel via Jessie within 7 days. Refine program after seeing real data. Jessie is prototype #1 \u2014 handle well, she sets the template for the photographer-partner network across markets.",
-      "updatedAt": "2026-05-08T15:16:00.824620Z"
+      "note": [
+        "REFINED 2026-05-08 after deeper conversation with Ken: this is an AFFILIATE/REFERRAL model, NOT a marketplace model. Photographer (Jessie G is prototype #1) keeps 100% of her photography fee \u2014 Signature never touches her core business. She EARNS commission when her clients buy add-on services. Structure: 40% one-time on Platinum/AI/Authority Sprint, $80-140 first-month bonus + 10% lifetime recurring on LiveLoop tiers, $400 first-month + $180/mo lifetime on Growth Partner. Three-tier progression: Certified \u2192 Master Certified (auto-upgrade at 10 active LiveLoop subscribers, higher rates) \u2192 Authorized Studio (invitation-only co-branded regional presence, retainer + premium rates). Renamed to \"Signature Certified Photographer\" \u2014 better positioning than \"Studio Partner\"."
+      ],
+      "updatedAt": "2026-05-08T15:27:12.605405Z"
     },
     {
       "id": "jessie-g-first-clients",
@@ -1163,6 +1165,24 @@
       "owner": "Ken",
       "note": "After Jessie's first 1-2 deals close: write a one-page Studio Partner program agreement (lightweight). Decide scaled comp structure (lifetime 10% LiveLoop trailing for prototypes vs 12-month trailing for scale). Open to additional photographers in Jessie's network and markets Signature doesn't directly serve. Could become primary distribution layer across attorneys, car dealerships, real estate, and other adjacent local-business verticals where photographers already have trust relationships.",
       "updatedAt": "2026-05-08T15:16:00.824620Z"
+    },
+    {
+      "id": "mobile-branding-tour-strategy",
+      "title": "Mobile branding tour \u2014 Jessie as traveling Signature ambassador",
+      "status": "planned",
+      "priority": "medium",
+      "owner": "Ken",
+      "note": "Jessie mentioned plans to acquire high-roof vehicles for mobile branding and headshot services in different markets. This is significantly bigger than local affiliate work \u2014 she becomes Signature's national brand ambassador. Each city she visits = new recurring-revenue annuity. Pattern: mobile Signature Certified photographers activate geographic markets we'd never naturally enter. After Jessie validates 1-2 deals locally, investigate co-marketing the mobile tour: Signature provides marketing support, branded materials, lead-gen pre-tour. She delivers in-market service. Both build national presence without franchise complexity.",
+      "updatedAt": "2026-05-08T15:27:12.605405Z"
+    },
+    {
+      "id": "certified-photographer-positioning-decision",
+      "title": "Lock \"Signature Certified Photographer\" as the program name",
+      "status": "done",
+      "priority": "medium",
+      "owner": "Ken",
+      "note": "DECIDED 2026-05-08: program named \"Signature Certified Photographer\" rather than \"Studio Partner\". \"Certified\" implies earned standard, gives her a designation/asset she keeps for her own marketing, creates natural tier progression (Certified \u2192 Master Certified \u2192 Authorized Studio), and positions her as part of an honor-based network rather than a contractor.",
+      "updatedAt": "2026-05-08T15:27:12.605405Z"
     }
   ],
   "costs": {
