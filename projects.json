@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-08T15:27:12.605405Z",
+  "lastUpdated": "2026-05-28T22:00:00.000000Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -1183,6 +1183,194 @@
       "owner": "Ken",
       "note": "DECIDED 2026-05-08: program named \"Signature Certified Photographer\" rather than \"Studio Partner\". \"Certified\" implies earned standard, gives her a designation/asset she keeps for her own marketing, creates natural tier progression (Certified \u2192 Master Certified \u2192 Authorized Studio), and positions her as part of an honor-based network rather than a contractor.",
       "updatedAt": "2026-05-08T15:27:12.605405Z"
+    },
+    {
+      "id": "certified-photographer-single-level",
+      "title": "Lock Signature Certified Photographer as single-level affiliate (no MLM)",
+      "status": "decision-locked",
+      "note": "Design principle: each photographer earns ONLY on their own end-customer referrals. No down-line overrides. Recruitment incentivized via flat $500 finder fee + status perks + public recognition \u2014 NOT % of others' production. Stays clearly inside FTC Koscot test."
+    },
+    {
+      "id": "certified-photographer-attorney-review",
+      "title": "Attorney review of Certified Photographer program before scaling",
+      "status": "pending",
+      "note": "$300-500 review. Required before opening program beyond Jessie + initial pilot group. Confirms affiliate vs. MLM classification, 1099 handling, terms of service."
+    },
+    {
+      "id": "certified-photographer-phase4-overrides",
+      "title": "Phase 4 (theoretical): Authorized Studio override structure",
+      "status": "parked",
+      "note": "5% cap, 12-month sunset, on directly sponsored photographer's first-year production. ONLY if/when attorney clears. Do not implement in v1."
+    },
+    {
+      "id": "signature-marketing-site-rebuild",
+      "title": "Rebuild signaturebrandmarketing.com (master Lovable prompt ready)",
+      "status": "ready-to-ship",
+      "note": "Spec: ~/Desktop/signature-ops/lovable-prompts/signature-website-rebuild-master-prompt.md. Hero locked, sitemap locked, three-verb framework woven, /certified included."
+    },
+    {
+      "id": "personal-brand-site-future",
+      "title": "Personal brand site for Ken (separate property, post-marketing-site)",
+      "status": "queued",
+      "note": "Alex Hormozi pattern \u2014 kennethbridgett.com or similar. Cross-links from /about on signature site. Build after marketing site lands."
+    },
+    {
+      "id": "plausible-analytics-rollout",
+      "title": "Set up Plausible analytics across all 3 properties",
+      "status": "launch-week",
+      "note": "One $9/mo account covers all sites. Add: signaturebrandmarketing.com (Lovable wires script), signaturerewards.lovable.app, signatureheadshotevent.com. Each gets own dashboard, billing combined by total pageviews. 5 min per site after first signup at plausible.io."
+    },
+    {
+      "id": "certified-dispatch-mechanic-locked",
+      "title": "Signature Certified \u2014 dispatch mechanic locked",
+      "status": "decision-locked",
+      "note": "Signature-originated bookings: $40 standalone headshot / $100 bundle ($197) dispatch fee. +$50 LiveLoop conversion bonus (within 90 days). 5% recurring on LiveLoop, capped 12 months. 5% one-time capped first year on Authority Sprint / Platinum / AI standalone post-shoot. $200 Growth Partner conversion bonus. Routing: Master Certified first refusal within 25-mile radius, then rotates among Certified."
+    },
+    {
+      "id": "certified-dispatch-ledger-build",
+      "title": "Build dispatch ledger + admin tooling",
+      "status": "queued",
+      "note": "Table certified_photographer_dispatches in spec. Need admin UI to: (1) assign incoming bookings to photographers per routing rules, (2) mark dispatch fee paid, (3) auto-flag LiveLoop/GP conversions for bonus payouts. Phase 2 of /certified rollout."
+    },
+    {
+      "id": "certified-bundle-vs-standalone-economics",
+      "title": "Validated dispatch economics",
+      "status": "validated",
+      "note": "Bundle nets ~$50/client, standalone+upsell nets ~$81/client when upsell occurs (55% of cases). Strategy: lead ad creative with bundle (better ROAS, higher LiveLoop conversion); keep $75 headshot funnel for cold traffic. CAC ~$25 historically, expected to decline with SEO + rewards platform driving organic."
+    },
+    {
+      "id": "certified-program-projections-2026",
+      "title": "Signature Certified \u2014 Year 1-3 financial projections (baseline 2026-05-10)",
+      "status": "baseline-locked",
+      "note": "BASELINE PROJECTIONS \u2014 locked at program launch. Measure actuals against these monthly.\n\nASSUMPTIONS (BASE CASE):\n- 30 active certified photographers by month 12 (avg 20 across Y1)\n- 10 annual referrals per active photographer (Path 1)\n- $4K/mo avg ad spend on dispatch funnel; $25 CAC\n- 60% bundle attach, 40% standalone\n- 30% LiveLoop conversion from bundle, 15% from standalone+upsell\n- 14-month avg LiveLoop sub lifetime; $497 blended ARPU\n\nYEAR 1 NET TO SIGNATURE:\n- Conservative: $253K\n- Base: $635K\n- Aggressive: $1.67M\n\nYEAR 2 NET:\n- Conservative: $740K\n- Base: $1.78M\n- Aggressive: $4.1M\n\nYEAR 3 NET:\n- Conservative: $1.3M\n- Base: $3.2M\n- Aggressive: $7.5M\n\nKEY VARIANCE LEVERS (monitor monthly):\n1. LiveLoop attach rate from bundle/headshot clients \u2014 single biggest driver\n2. Active photographer count growth\n3. LiveLoop sub lifetime (churn)\n\nKILL RISKS:\n1. Recruitment stalls below 15-20 photographers by month 12\n2. Bundle attach falls below 50%\n3. LiveLoop churn at 4-6 months instead of 12-18\n\nSTRATEGIC VALUE BEYOND P&L:\n- Geographic distribution without payroll (~$500K-1M capex avoided)\n- Brand defensibility \u2014 moat after 30+ active photographers\n- Distribution platform unit economics \u2192 meaningful valuation multiple lift if ever raising or selling"
+    },
+    {
+      "id": "agent-os-strategy-locked",
+      "title": "Signature Agent OS \u2014 full strategic positioning locked",
+      "category": "strategy",
+      "priority": "critical",
+      "status": "done",
+      "description": "Insurance vertical locked (no real estate, no HVAC, no generic SMB). FL+GA dual-anchor geography. 4-tier service ladder: Activation $1,497/$297mo, Launch $3,500/$597mo, Engine $11K/$1,997mo, Operating Partner $35K+/$7,500+mo. Annie McCrimmon prototype dual-offer client. Brand Consultant + Systems Engineer identity adopted. Three-platform ecosystem narrative (Branding System + Rewards + Agent OS).",
+      "estimatedTime": "DONE in 8-hour strategic session",
+      "impact": "Foundation for $1M ARR insurance vertical play. Year 2-3 target: 30 Activation + 15 Launch + 8 Engine + 3 Operating Partner = ~$56K MRR + ~$290K setup = ~$966K ARR.",
+      "completed": "2026-05-28",
+      "notes": "Master strategy + 4 service packages with insurance-native deliverables, delivery automation playbook (130hr Master Automation Stack defined), Apollo list strategy (FL+GA 500 prospects across 3 sub-niches: FE/Medicare/IUL), cold outreach sequences (5-touch email + LinkedIn parallel + reply playbook), Annie case study template + 4 distribution variants, 25-podcast target list + master pitch + 5 angle variations + media kit spec, Dex briefing document for app integration (saved at ~/Desktop/Signature-Agent-OS-Dex-Briefing.md), Activation 7-day delivery SOP (day-by-day playbook, ~5-6hr per client), Activation tier sales page copy (all 10 sections), 5 FB ad creative variants for FL+GA targeting, master Lovable prompt for marketing site build, VSL script (3:45 master + 90sec + 60sec + 30sec versions for different channels). Full memory locked at ~/.claude/projects/-Users-ken-Desktop/memory/project_signature_agent_os.md + project_client_annie_mccrimmon.md + user_ken_profile.md."
+    },
+    {
+      "id": "agent-os-buy-domain",
+      "title": "Buy signatureagentos.com domain",
+      "category": "ops",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Architecture locked May 28: separate Lovable project at signatureagentos.com for Agent OS marketing site (cleanly separated from signaturebranding.app product app). Buy on Namecheap/Cloudflare (~$12). Industry-standard pattern (Stripe, Notion, Linear, Vercel, HubSpot all separate marketing from product).",
+      "estimatedTime": "2 min",
+      "impact": "Unlocks marketing site build + Stripe checkout + cold ad campaigns",
+      "owner": "Ken"
+    },
+    {
+      "id": "agent-os-marketing-site-build",
+      "title": "Build Signature Agent OS marketing site in new Lovable project",
+      "category": "build",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Master Lovable prompt READY (from 2026-05-28 session). Create NEW Lovable project + new Supabase, attach signatureagentos.com domain, paste prompt. Page sections: hero, problem agitation, solution, 3-card includes grid, 7-day timeline, 2-card pricing ($1,497/$297mo + $2,497 one-time), Annie case study, FAQ accordion, final CTA, footer. Must match Signature Branding System dark luxury aesthetic (#0a0a0a bg, #C9A961 gold, Playfair Display serif). Stripe Checkout wired to CTAs. Webhook fires to product app on purchase.",
+      "estimatedTime": "4-8 hours (Lovable does most of the work)",
+      "impact": "Enables $1,497 Activation tier sales pipeline + ad landing destination"
+    },
+    {
+      "id": "agent-os-stripe-setup",
+      "title": "Set up Stripe products + checkout for AI Activation tier",
+      "category": "ops",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Two products in Stripe: (1) AI Activation Monthly: $1,497 setup + $297/mo recurring; (2) AI Activation One-Time: $2,497 single payment. Connect to marketing site CTAs. Build Stripe webhook \u2192 product app onboarding pipeline at signaturebranding.app (creates auth user, gp_client_enrollment row with client_segment=smb_automation, fires welcome email + GHL sub-account clone).",
+      "estimatedTime": "2-3 hours",
+      "impact": "Without this, marketing site cannot convert traffic to revenue"
+    },
+    {
+      "id": "agent-os-master-ghl-snapshot",
+      "title": "Build Master GHL Snapshot (insurance-flavored)",
+      "category": "build",
+      "priority": "critical",
+      "status": "pending",
+      "description": "HIGHEST-LEVERAGE build asset in Master Automation Stack. Complete insurance-flavored GHL sub-account: Universal Insurance Pipeline (Lead\u2192Contacted\u2192Qualified\u2192Quoted\u2192App Submitted\u2192Underwriting\u2192Issued\u2192Cross-Sell), 4 pipeline variants (FE/Medicare/IUL/Recruiting), workflows (welcome 5-email + 2-SMS, application follow-up, aged lead reactivation, birthday + renewal, AEP campaign, cross-sell triggers), tags (products, carriers, IMOs, lead sources, compliance state), forms (lead intake with TCPA, application info, beneficiary, FE health questionnaire), calendars (discovery, application, AEP). Cloned per Launch+ client via GHL snapshot feature on payment trigger.",
+      "estimatedTime": "40 hours (Week 1-4)",
+      "impact": "Reduces Launch tier delivery from 30+ hr to 4-6 hr per client. Pays for itself by client #4.",
+      "owner": "Ken"
+    },
+    {
+      "id": "agent-os-prompt-library",
+      "title": "Build Insurance Prompt Library (100+ prompts)",
+      "category": "build",
+      "priority": "high",
+      "status": "pending",
+      "description": "100+ insurance-specific prompts organized by use case in 8 categories: 01-Lead-Generation, 02-Follow-Up, 03-Content, 04-Sales, 05-Operations, 06-Recruiting-Downline, 07-AEP-Sprint, 08-Compliance-Safe. Each tagged with sub-niche (FE/Medicare/IUL/Multi-line). Activation clients get 25 starter prompts; Launch+ gets full library. Store in Notion or shared folder, version quarterly.",
+      "estimatedTime": "20 hours (Week 2-3)",
+      "impact": "Replaces hours of per-client prompt writing. Essential for Activation tier delivery.",
+      "owner": "Ken"
+    },
+    {
+      "id": "agent-os-schema-migration",
+      "title": "Apply client_segment + service_tier columns to gp_client_enrollments",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "Per Dex briefing document: ALTER TABLE adds client_segment (personal_brand|smb_automation) + service_tier (activation|launch|engine|operating_partner) columns with backfill of existing rows defaulting to personal_brand/launch. Non-breaking. Foundation for SMB module routing throughout product app.",
+      "estimatedTime": "30 min",
+      "impact": "Foundation for SMB Automation module in product app",
+      "owner": "Dex"
+    },
+    {
+      "id": "agent-os-smb-module-app",
+      "title": "Build SMB Automation module in product app (Signature Branding System)",
+      "category": "build",
+      "priority": "high",
+      "status": "pending",
+      "description": "Per Dex briefing (~/Desktop/Signature-Agent-OS-Dex-Briefing.md): 7-phase build over 4 weeks. Phase 1 schema (above), Phase 2 enrollment form fields, Phase 3 conditional brand kit fields (hide personal-brand fields when client_segment=smb_automation; show Company Operations, Team Structure, Sales Process, Tech Stack, Compliance instead), Phase 4 dashboard differentiation (Business Operations Health vs Personal Brand Authority Score), Phase 5 edge function branching (gp-* functions check segment + use SMB prompt templates), Phase 6 tier feature gating, Phase 7 cosmetic re-branding (\"Signature Agent OS\" header when SMB segment).",
+      "estimatedTime": "18-24 hours over 4 weeks",
+      "impact": "Enables Agent OS clients to use existing platform configured for SMB instead of personal brand",
+      "owner": "Dex"
+    },
+    {
+      "id": "agent-os-vsl-production",
+      "title": "Produce AI Activation VSL (ElevenLabs voice + visuals)",
+      "category": "build",
+      "priority": "high",
+      "status": "pending",
+      "description": "Script READY (3:45 master + 90sec ad cut + 60sec Shorts/Reels + 30sec email embed). Steps: (1) record 3-5 min reference audio for ElevenLabs voice clone of Ken, (2) generate VSL audio via ElevenLabs (settings: stability 45-50%, similarity 80%, style 30-35%), (3) post-process (normalize -16 LUFS, light reverb, music bed at 12-15%), (4) build visuals (recommend hybrid: 30sec talking-head bookends + voiceover middle with B-roll of brand kit screenshots, Annie case study, FL+GA map), (5) burn captions, (6) cut shorter versions for FB/IG/Shorts/email.",
+      "estimatedTime": "4-8 hours total",
+      "impact": "VSL converts cold FB/IG ad traffic to $1,497 Activation buyers. Target: 1.5-3% view-to-buyer conversion."
+    },
+    {
+      "id": "annie-reactivation-send",
+      "title": "Send Annie McCrimmon reactivation email + Loom walkthrough",
+      "category": "ops",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Email template + 3-min Loom script READY (from 2026-05-28 session). Annie's brand kit is 86% complete and synced with Growth Partner program. She signed up Apr 4 2026, logged in Apr 5, hasn't returned. Reactivation flow: send personalized email telling her what's built, offer 20-min walkthrough call OR async Loom. Goal: get her back in the app and progress to Agent OS Phase 2 activation (AI automation layer).",
+      "estimatedTime": "60 min (record Loom + send email)",
+      "impact": "Activates first real insurance case study client. Real data for marketing + future case study video.",
+      "owner": "Ken"
+    },
+    {
+      "id": "agent-os-apollo-instantly-launch",
+      "title": "Launch Apollo + Instantly cold outreach to 500 FL+GA insurance agents",
+      "category": "ops",
+      "priority": "high",
+      "status": "pending",
+      "description": "Apollo strategy READY (3 lists: 200 FE, 200 Medicare, 100 IUL all FL+GA). 5-touch email sequence + LinkedIn parallel sequence + reply playbook all READY. Steps: (1) Pull 500 prospects from Apollo with FL+GA geo filters, (2) NeverBounce verify (~$2.50), (3) quality-score with 5-point check, prioritize 3+/5, (4) purchase sister domain for sending, (5) Instantly warmup 14 days, (6) load sequences with personalization variables, (7) send 50/day ramping to 100/day.",
+      "estimatedTime": "Week 1 setup (6 hrs) + ongoing daily monitoring",
+      "impact": "Target: 7-8 booked calls per 500-prospect sequence batch \u2192 2-3 Activation clients ($3K-4.5K revenue + $600-900 MRR per sequence)"
+    },
+    {
+      "id": "agent-os-podcast-pitches-tier1",
+      "title": "Send Tier 1 podcast pitches (10 insurance industry shows)",
+      "category": "ops",
+      "priority": "high",
+      "status": "pending",
+      "description": "Master pitch email READY + 5 angle variations + follow-up sequence. Tier 1 targets: Insurance Dudes, David Duford Show, Truth About Final Expense, Cody Askins Show, Insurance Coffee Hour, Life Insurance Academy, Insurance Guys Podcast, Agency Nation, Medicare Nation, Insurance Agency Owner. Build media kit PDF first (one-sheet bio + sample questions + story arc + past appearances placeholder).",
+      "estimatedTime": "Week 1: build kit (4 hr) + send 10 personalized pitches (4 hr)",
+      "impact": "Target: 3 booked podcast appearances in 30 days = 150-1,500 warm leads + repurposable content (10+ assets per episode)"
     }
   ],
   "costs": {
@@ -1323,6 +1511,62 @@
     ]
   },
   "projects": [
+    {
+      "id": "signature-agent-os",
+      "name": "Signature Agent OS (signatureagentos.com — pending build)",
+      "status": "active",
+      "health": "strategy-locked-execution-pending",
+      "weight": 3,
+      "description": "NEW vertical-focused offering launched 2026-05-28. AI Operations System for independent insurance agents in FL+GA. Parallel to Signature Branding System (which serves personal brands). Shared back-end app, separate marketing site at signatureagentos.com. 4-tier service ladder: Activation $1,497/$297mo → Launch $3,500/$597mo → Engine $11K/$1,997mo → Operating Partner $35K+/$7,500+mo. Annie McCrimmon (TMG Agency Atlanta) is prototype dual-offer client. Year 2-3 target: ~$966K ARR.",
+      "modules": [
+        {
+          "name": "Strategic Positioning",
+          "status": "complete",
+          "note": "Insurance vertical locked. FL+GA dual-anchor. Brand Consultant + Systems Engineer identity. 3-platform ecosystem narrative."
+        },
+        {
+          "name": "Service Packages (4 tiers)",
+          "status": "complete",
+          "note": "Insurance-native deliverables, pricing, sales angles, objection killers all written."
+        },
+        {
+          "name": "Marketing Site (signatureagentos.com)",
+          "status": "pending",
+          "note": "Master Lovable prompt ready. Need to buy domain + build."
+        },
+        {
+          "name": "VSL + Ad Creative",
+          "status": "scripts-complete-production-pending",
+          "note": "VSL script (4 lengths) + 5 FB ad creatives written. ElevenLabs voice clone + visuals pending."
+        },
+        {
+          "name": "Outbound System (Apollo+Instantly)",
+          "status": "strategy-complete-execution-pending",
+          "note": "500 prospect FL+GA strategy + 5-touch sequences + LinkedIn parallel + reply playbook all ready. Need Apollo pull + Instantly warmup."
+        },
+        {
+          "name": "Podcast Strategy",
+          "status": "kit-ready-pitches-pending",
+          "note": "Master pitch + 5 angles + 25 target shows ready. Need to build media kit PDF + send first 10 pitches."
+        },
+        {
+          "name": "Delivery Automation (Master Stack)",
+          "status": "blueprint-complete-build-pending",
+          "note": "130hr Master Automation Stack defined (Master GHL Snapshot 40hr, Prompt Library 20hr, Content Templates 30hr, Onboarding Pipeline 15hr, Brand Kit Extractor SMB mode 5hr Dex, Self-Service Intake 20hr)."
+        },
+        {
+          "name": "Product App SMB Module",
+          "status": "spec-complete-build-pending",
+          "note": "Dex briefing document at ~/Desktop/Signature-Agent-OS-Dex-Briefing.md. 7-phase build over 4 weeks (18-24 hr). Phase 1: schema migration."
+        },
+        {
+          "name": "Annie McCrimmon Prototype",
+          "status": "brand-kit-live-reactivation-pending",
+          "note": "Brand kit 86% complete + GP-synced. Reactivation email + Loom script ready. Phase 2 (AI automation layer) pending activation."
+        }
+      ],
+      "lastActivity": "2026-05-28"
+    },
     {
       "id": "signature-branding-app",
       "name": "Signature Branding App (signaturebranding.app)",
@@ -2049,6 +2293,108 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-05-28",
+      "project": "signature-agent-os",
+      "event": "Ken identity reframed from \"branding photographer\" to \"Brand Consultant + Systems Engineer\" — locked across all assets + memory",
+      "type": "decision"
+    },
+    {
+      "date": "2026-05-28",
+      "project": "signature-agent-os",
+      "event": "Three-platform ecosystem narrative locked: Signature Branding System + Signature Rewards + Signature Agent OS = integrated growth ecosystem",
+      "type": "decision"
+    },
+    {
+      "date": "2026-05-28",
+      "project": "signature-agent-os",
+      "event": "Architecture locked: separate Lovable project at signatureagentos.com for marketing site, product app stays at signaturebranding.app (industry-standard SaaS pattern)",
+      "type": "decision"
+    },
+    {
+      "date": "2026-05-28",
+      "project": "signature-agent-os",
+      "event": "AI Activation VSL script written (3:45 master + 90sec + 60sec + 30sec channel variants) — ready for ElevenLabs voice clone production",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-05-28",
+      "project": "signature-agent-os",
+      "event": "Master Lovable prompt built for signatureagentos.com marketing site — full design system specs + 10 sections + Stripe integration + lead capture",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-05-28",
+      "project": "signature-agent-os",
+      "event": "Apollo + Instantly outbound strategy locked: 500 FL+GA prospects across 3 sub-niches (FE/Medicare/IUL), 5-touch email sequence + LinkedIn parallel + reply playbook ready",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-05-28",
+      "project": "signature-agent-os",
+      "event": "5 FB cold ad creatives written (Time Reclaim, Annie Case Study, Direct Pain, Local Hook, Lead Magnet) for FL+GA insurance agent targeting",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-05-28",
+      "project": "signature-agent-os",
+      "event": "Annie McCrimmon case study template + 4 distribution variants (email, LinkedIn carousel, sales page, podcast) + capture calendar + request email locked",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-05-28",
+      "project": "signature-agent-os",
+      "event": "Podcast pitch strategy locked: master pitch + 5 angles + 25 target shows ranked by tier + follow-up sequence ready",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-05-28",
+      "project": "signature-agent-os",
+      "event": "Activation tier 7-day delivery SOP locked: day-by-day playbook, ~5-6hr per client human time, automation-first approach",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-05-28",
+      "project": "signature-agent-os",
+      "event": "FL+GA dual-anchor geography locked: 5-zone strategy (Winter Haven Core, FL I-4 Corridor, Atlanta Metro, FL Coasts, Extended SE) — combined TAM ~100K licensed agents",
+      "type": "decision"
+    },
+    {
+      "date": "2026-05-28",
+      "project": "signature-agent-os",
+      "event": "Insurance vertical commitment locked — explicit rejection of real estate, HVAC, generic SMB. Compounds vs horizontal expansion.",
+      "type": "decision"
+    },
+    {
+      "date": "2026-05-27",
+      "project": "signature-agent-os",
+      "event": "Dex briefing document created (~/Desktop/Signature-Agent-OS-Dex-Briefing.md) — 7-phase app integration plan over 4 weeks, 18-24 dev hours total",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-05-27",
+      "project": "signature-agent-os",
+      "event": "Annie McCrimmon brand kit loaded into Signature Branding System — 86% complete, GP-synced, ready for Phase 2 automation activation",
+      "type": "launch"
+    },
+    {
+      "date": "2026-05-27",
+      "project": "signature-agent-os",
+      "event": "4 service tiers built with insurance-native deliverables: Activation $1,497, Launch $3,500, Engine $11K, Operating Partner $35K+",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-05-27",
+      "project": "signature-agent-os",
+      "event": "Master Automation Stack defined: 5 build-once assets totaling 130hr — Master GHL Snapshot, Insurance Prompt Library, Brand Kit Extractor SMB mode, Content Engine Templates, Onboarding Pipeline + Self-Service Intake",
+      "type": "milestone"
+    },
+    {
+      "date": "2026-05-27",
+      "project": "signature-agent-os",
+      "event": "Signature Agent OS project officially launched — SMB/Insurance offering parallel to Brand Systems",
+      "type": "launch"
+    },
     {
       "date": "2026-04-25",
       "project": "marketplace",
