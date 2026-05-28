@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-28T21:33:22.538246Z",
+  "lastUpdated": "2026-05-28T21:50:20.159745Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -100,10 +100,12 @@
       "title": "Provide Meta Ads access token",
       "category": "api-keys",
       "priority": "high",
-      "status": "pending",
+      "status": "done",
       "description": "For automated ad spend tracking. business.facebook.com > Business Settings > System Users > Generate Token with ads_read permission. Also need Ad Account ID (act_...)",
       "estimatedTime": "10 min",
-      "impact": "Enables live ad spend tracking in dashboard"
+      "impact": "Enables live ad spend tracking in dashboard",
+      "completed": "2026-05-26",
+      "notes": "Meta Ads access token provided. Confirmed live via FB campaigns built 2026-05-25 (Winter Haven 3-Day, Tampa 3-Day, Retargeting under ad account 1662133877574676). Confirmed by Ken 2026-05-28."
     },
     {
       "id": "env-unsplash",
@@ -828,11 +830,13 @@
     {
       "id": "gp-phase5-smoke-test",
       "title": "Phase 5 end-to-end smoke test: approve → publish → confirm webhook → metrics",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "Ken",
       "note": "Once crons + GHL webhook configured, run: pick a test enrollment, generate draft, approve via /growth-partner/content, watch for status=scheduled then status=published, verify external_post_refs populated, verify gp-sync-engagement pulls metrics within 24h. End-to-end proof of Phase 5 working before any real client uses it.",
-      "updatedAt": "2026-04-27T20:04:35.479729Z"
+      "updatedAt": "2026-04-27T20:04:35.479729Z",
+      "completed": "2026-05-15",
+      "notes": "End-to-end smoke test complete: approve → publish → confirm webhook → metrics flow validated. Confirmed by Ken 2026-05-28."
     },
     {
       "id": "gp-publish-status-poller",
@@ -2327,6 +2331,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-05-28",
+      "project": "project-tracker",
+      "event": "Tracker triage complete (round 3) — 2 more done (api-meta + gp-phase5-smoke-test) · remaining 47 pending items confirmed as active work · 13 stale items closed total across 3 rounds",
+      "type": "milestone"
+    },
     {
       "date": "2026-05-28",
       "project": "project-tracker",
