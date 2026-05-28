@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-28T21:29:31.293867Z",
+  "lastUpdated": "2026-05-28T21:33:22.538246Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -410,11 +410,10 @@
       "title": "Inject attribution script on headshots-branding.com",
       "category": "deploy",
       "priority": "high",
-      "status": "deferred",
+      "status": "pending",
       "description": "Same pattern as event site. Squarespace code injection reads ?ref=, sets local cookie, passes through to any checkout/signup events.",
       "estimatedTime": "30 min",
-      "impact": "Completes the 3-domain attribution trident",
-      "notes": "Decided not to pursue. Cross-domain attribution focus on signatureheadshotevent.com only (the primary booking destination). Confirmed by Ken 2026-05-28."
+      "impact": "Completes the 3-domain attribution trident"
     },
     {
       "id": "rewards-landing-hero-banners",
@@ -493,11 +492,10 @@
       "title": "Remove DEV_SEED rows before launch",
       "category": "deploy",
       "priority": "high",
-      "status": "deferred",
+      "status": "pending",
       "description": "Production currently shows dev-seed content: 2 partners (Magnolia, Ridgeline, Coastline), 2 events (Spring Mixer, Founders Coffee), 1 fundraising org (Tuscaloosa Youth Arts), 1 campaign (Summer Arts Scholarships), 2 barter listings, 1 test donor account. Decide: keep as \"launch content\" or DELETE FROM where notes = 'DEV_SEED' across all tables. Recommend keeping Magnolia/Ridgeline as real-looking launch content while you onboard real partners.",
       "estimatedTime": "15 min",
-      "impact": "Real users see real content, not test data",
-      "notes": "Decided to keep seed content (Magnolia, Ridgeline, Coastline, Spring Mixer, etc.) as real-looking launch placeholder while onboarding actual partners/events. Confirmed by Ken 2026-05-28."
+      "impact": "Real users see real content, not test data"
     },
     {
       "id": "rewards-custom-domain",
@@ -528,11 +526,10 @@
       "title": "Email notifications: referral conversion + reward credit",
       "category": "deploy",
       "priority": "high",
-      "status": "deferred",
+      "status": "pending",
       "description": "Two transactional emails via the existing email stack (Resend or whatever is wired): (1) \"🎉 {Name} just signed up via your link — you earned $X\", (2) \"Your rewards balance just hit ${balance}\". Triggered by rewards_ledger inserts where entry_type='referral_credit' or 'action_credit'. Makes the program feel alive instead of silent.",
       "estimatedTime": "2 hr",
-      "impact": "Drives repeat sharing — the notification IS the dopamine hit",
-      "notes": "Deferred — not building email notifications on referral/credit events for now. Revisit post-launch if engagement data justifies it. Confirmed by Ken 2026-05-28."
+      "impact": "Drives repeat sharing — the notification IS the dopamine hit"
     },
     {
       "id": "rewards-launch-email-draft",
@@ -2333,7 +2330,13 @@
     {
       "date": "2026-05-28",
       "project": "project-tracker",
-      "event": "Tracker cleanup round 2 — 6 more done (custom domain, legal pages, hero banners, customize link UI, ambassador launch + Stripe Connect) + 3 deferred (hb-site attribution, dev seeds cleanup, email notifications)",
+      "event": "Correction: 3 items previously marked deferred (hb-site attribution, dev seeds cleanup, email notifications) reverted to pending — Ken clarified \"no\" meant \"not done\" not \"not doing\"",
+      "type": "fix"
+    },
+    {
+      "date": "2026-05-28",
+      "project": "project-tracker",
+      "event": "Tracker cleanup round 2 — 6 more done (custom domain, legal pages, hero banners, customize link UI, ambassador launch + Stripe Connect)",
       "type": "milestone"
     },
     {
