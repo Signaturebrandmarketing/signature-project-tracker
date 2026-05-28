@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-28T21:19:37.931511Z",
+  "lastUpdated": "2026-05-28T21:29:31.293867Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -30,10 +30,12 @@
       "title": "Decide ambassador launch criteria + initial invite list",
       "category": "optimization",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "description": "Who gets Platinum vs Gold vs Silver on launch? Top referrers from existing clients? Network personal connections? This drives the first 10-30 ambassadors and sets the tone.",
       "estimatedTime": "30 min planning",
-      "impact": "Seeds the referral flywheel"
+      "impact": "Seeds the referral flywheel",
+      "completed": "2026-05-08",
+      "notes": "Launch criteria + initial invite list decided and executed. Confirmed by Ken 2026-05-28."
     },
     {
       "id": "api-ghl",
@@ -374,10 +376,12 @@
       "title": "Add \"Customize link\" UI on /app/referrals",
       "category": "deploy",
       "priority": "high",
-      "status": "pending",
+      "status": "done",
       "description": "Expandable section with radio buttons (Headshot default / AI / GP / Authority / Event), city dropdown populated from networking_events, per-option Copy Link buttons. Base default link stays prominent at top.",
       "estimatedTime": "45 min (Lovable)",
-      "impact": "Ambassadors can funnel to specific products"
+      "impact": "Ambassadors can funnel to specific products",
+      "completed": "2026-05-12",
+      "notes": "Customize link UI live on /app/referrals with product/event picker. Confirmed by Ken 2026-05-28."
     },
     {
       "id": "rewards-square-attribution",
@@ -406,20 +410,23 @@
       "title": "Inject attribution script on headshots-branding.com",
       "category": "deploy",
       "priority": "high",
-      "status": "pending",
+      "status": "deferred",
       "description": "Same pattern as event site. Squarespace code injection reads ?ref=, sets local cookie, passes through to any checkout/signup events.",
       "estimatedTime": "30 min",
-      "impact": "Completes the 3-domain attribution trident"
+      "impact": "Completes the 3-domain attribution trident",
+      "notes": "Decided not to pursue. Cross-domain attribution focus on signatureheadshotevent.com only (the primary booking destination). Confirmed by Ken 2026-05-28."
     },
     {
       "id": "rewards-landing-hero-banners",
       "title": "\"Sarah sent you\" hero banners on all product landing pages",
       "category": "deploy",
       "priority": "high",
-      "status": "pending",
+      "status": "done",
       "description": "On /ai, /growth-partner, /authority-sprint, /app entry pages: detect ?ref= URL param or ref_code cookie → lookup referrer via referral_links. code → display hero banner with their first name + avatar. Launch-day banner copy: \"Welcome from {Name}\" — NOT promising a $10 discount until Square promo-code plumbing is wired.",
       "estimatedTime": "1 hr (Lovable)",
-      "impact": "Social proof at point of conversion"
+      "impact": "Social proof at point of conversion",
+      "completed": "2026-05-12",
+      "notes": "\"Sarah sent you\" hero banners deployed on /ai, /growth-partner, /authority-sprint, /app landing pages. Confirmed by Ken 2026-05-28."
     },
     {
       "id": "rewards-stripe-tickets",
@@ -462,10 +469,12 @@
       "title": "Ambassador payouts via Stripe Connect",
       "category": "deploy",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "description": "ambassador-request-payout currently records a pending row for manual admin processing. Upgrade to Stripe Connect Express accounts: ambassador onboards once with bank info, payouts queue automatically and hit their account 2 business days later. Reduces admin workload to zero.",
       "estimatedTime": "1 day",
-      "impact": "Ambassadors get paid without Ken lifting a finger"
+      "impact": "Ambassadors get paid without Ken lifting a finger",
+      "completed": "2026-05-15",
+      "notes": "Stripe Connect Express accounts wired for ambassador payouts. Automated payout flow live. Confirmed by Ken 2026-05-28."
     },
     {
       "id": "rewards-health-check-run",
@@ -484,40 +493,46 @@
       "title": "Remove DEV_SEED rows before launch",
       "category": "deploy",
       "priority": "high",
-      "status": "pending",
+      "status": "deferred",
       "description": "Production currently shows dev-seed content: 2 partners (Magnolia, Ridgeline, Coastline), 2 events (Spring Mixer, Founders Coffee), 1 fundraising org (Tuscaloosa Youth Arts), 1 campaign (Summer Arts Scholarships), 2 barter listings, 1 test donor account. Decide: keep as \"launch content\" or DELETE FROM where notes = 'DEV_SEED' across all tables. Recommend keeping Magnolia/Ridgeline as real-looking launch content while you onboard real partners.",
       "estimatedTime": "15 min",
-      "impact": "Real users see real content, not test data"
+      "impact": "Real users see real content, not test data",
+      "notes": "Decided to keep seed content (Magnolia, Ridgeline, Coastline, Spring Mixer, etc.) as real-looking launch placeholder while onboarding actual partners/events. Confirmed by Ken 2026-05-28."
     },
     {
       "id": "rewards-custom-domain",
       "title": "Decide rewards-app domain (signaturebranding.app vs. subdomain)",
       "category": "deploy",
       "priority": "high",
-      "status": "pending",
+      "status": "done",
       "description": "Signature Perks Plus is currently hosted at a Lovable preview URL. Pick one: (A) make signaturebranding.app the rewards platform directly, (B) point rewards.signaturebranding.app at it, (C) keep perks.signaturebranding.app as a separate destination. Recommendation: A — make the rewards app the main app, since auth is already shared and it's the strongest funnel.",
       "estimatedTime": "30 min + DNS",
-      "impact": "Launchable URL customers can actually remember"
+      "impact": "Launchable URL customers can actually remember",
+      "completed": "2026-05-10",
+      "notes": "signaturerewards.app domain live and pointed to rewards Lovable project. Confirmed by Ken 2026-05-28."
     },
     {
       "id": "rewards-legal-pages",
       "title": "Privacy, Terms, Rewards Program Terms pages",
       "category": "deploy",
       "priority": "high",
-      "status": "pending",
+      "status": "done",
       "description": "Three legal docs needed before launch: (1) privacy policy (GDPR-safe template + Signature-specific data handling), (2) terms of service, (3) rewards program terms (how credits are earned, what voids them, cash-out thresholds, no-purchase-necessary disclosure, tax 1099 thresholds for ambassadors earning >$600/yr). Use Termly or iubenda generator, then have a lawyer eyeball the rewards-specific terms.",
       "estimatedTime": "2 hr + legal review",
-      "impact": "Liability protection + app store / Stripe compliance"
+      "impact": "Liability protection + app store / Stripe compliance",
+      "completed": "2026-04-28",
+      "notes": "Privacy, T&C, and Rewards Program Terms all attorney-approved and live. Versions: TERMS_VERSION = \"2026-04-28\", PRIVACY_VERSION = \"2026-04-28\". Confirmed by Ken 2026-05-28."
     },
     {
       "id": "rewards-notifications-email",
       "title": "Email notifications: referral conversion + reward credit",
       "category": "deploy",
       "priority": "high",
-      "status": "pending",
+      "status": "deferred",
       "description": "Two transactional emails via the existing email stack (Resend or whatever is wired): (1) \"🎉 {Name} just signed up via your link — you earned $X\", (2) \"Your rewards balance just hit ${balance}\". Triggered by rewards_ledger inserts where entry_type='referral_credit' or 'action_credit'. Makes the program feel alive instead of silent.",
       "estimatedTime": "2 hr",
-      "impact": "Drives repeat sharing — the notification IS the dopamine hit"
+      "impact": "Drives repeat sharing — the notification IS the dopamine hit",
+      "notes": "Deferred — not building email notifications on referral/credit events for now. Revisit post-launch if engagement data justifies it. Confirmed by Ken 2026-05-28."
     },
     {
       "id": "rewards-launch-email-draft",
@@ -2315,6 +2330,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-05-28",
+      "project": "project-tracker",
+      "event": "Tracker cleanup round 2 — 6 more done (custom domain, legal pages, hero banners, customize link UI, ambassador launch + Stripe Connect) + 3 deferred (hb-site attribution, dev seeds cleanup, email notifications)",
+      "type": "milestone"
+    },
     {
       "date": "2026-05-28",
       "project": "project-tracker",
