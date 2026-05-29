@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-28T21:50:20.159745Z",
+  "lastUpdated": "2026-05-29T17:36:41.742261Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -1409,6 +1409,156 @@
       "description": "Master pitch email READY + 5 angle variations + follow-up sequence. Tier 1 targets: Insurance Dudes, David Duford Show, Truth About Final Expense, Cody Askins Show, Insurance Coffee Hour, Life Insurance Academy, Insurance Guys Podcast, Agency Nation, Medicare Nation, Insurance Agency Owner. Build media kit PDF first (one-sheet bio + sample questions + story arc + past appearances placeholder).",
       "estimatedTime": "Week 1: build kit (4 hr) + send 10 personalized pitches (4 hr)",
       "impact": "Target: 3 booked podcast appearances in 30 days = 150-1,500 warm leads + repurposable content (10+ assets per episode)"
+    },
+    {
+      "id": "inbox-phase2-ghl-email-integration",
+      "title": "Phase 2 · Configure GHL Conversational AI for email triage on signatureheadshotevent.com",
+      "status": "pending",
+      "priority": "high",
+      "category": "ops",
+      "estimatedTime": "2-3 hours",
+      "owner": "ken",
+      "notes": "Phase 2 of the 4-phase Inbox Triage Agent rollout (Phase 1 = Claude Desktop + Gmail, implementing today). Use existing GHL subscription (no new cost). Configure for the signatureheadshotevent.com Gmail alias FIRST because it's the most templatable email type (booking inquiries follow patterns). Path: GHL → Conversational AI Settings → Email Channel → connect via OAuth to the bookings@signatureheadshotevent.com alias. Configure: (1) classification logic for booking inquiry / general question / spam, (2) auto-reply templates for common FAQ, (3) routing to calendar booking flow. Test with 3-5 manual emails before going live. Reference: project_ghl_conversational_ai.md memory. After this works for headshot bookings, expand to info@signaturerewards.app next."
+    },
+    {
+      "id": "inbox-phase2-classification-rules",
+      "title": "Phase 2 · Build email classification rules + auto-reply templates in GHL",
+      "status": "pending",
+      "priority": "high",
+      "category": "ops",
+      "estimatedTime": "1-2 hours",
+      "owner": "ken",
+      "notes": "Inside GHL Conversational AI, build classification logic that tags incoming emails as: BOOKING_INQUIRY / FAQ_GENERAL / PROSPECT_QUESTION / SUPPORT_ISSUE / SPAM / OTHER. Each tag gets a routing rule: BOOKING → calendar flow + auto-reply with booking link, FAQ → auto-reply from template library, PROSPECT_QUESTION → flag for Ken's review (no auto-reply), SUPPORT → ticket creation, SPAM → archive. Write 5-8 FAQ auto-reply templates for headshot inquiries first (pricing, locations, what to wear, dates available, etc.). Keep all auto-replies clearly marked '— Sent from automated assistant' until trust is built."
+    },
+    {
+      "id": "inbox-phase2-week-test-doc",
+      "title": "Phase 2 · Run 1-week test on GHL email triage, document accuracy + findings",
+      "status": "pending",
+      "priority": "high",
+      "category": "ops",
+      "estimatedTime": "1 hour (over the week)",
+      "owner": "ken",
+      "notes": "After Phase 2 is live for signatureheadshotevent.com, monitor for one full week (~7 days). Track: (1) Classification accuracy — how often does GHL get the category right? (2) Auto-reply quality — how many auto-replies needed manual edit? (3) Customer response — did clients notice/complain about automated replies? (4) Time saved — estimated hours saved vs manual reply. Document findings in ~/Desktop/signature-ops/inbox-triage-phase2-findings.md. These findings inform Phase 3 architecture decisions (what GHL did well vs where custom build is needed)."
+    },
+    {
+      "id": "inbox-phase3-architecture-spec",
+      "title": "Phase 3 · Spec Inbox Triage Agent architecture for Signature Branding System app",
+      "status": "pending",
+      "priority": "medium",
+      "category": "build",
+      "estimatedTime": "3-4 hours",
+      "owner": "ken-with-dex",
+      "notes": "Phase 3 = build custom Inbox Triage Agent INTO Signature Branding System (signaturebranding.app) as a flagship feature. Owns own dogfood: Ken uses it on his master inbox FIRST, then it ships to Agent OS Activation clients (one of the 6 menu options). Architecture: (1) Gmail OAuth integration — securely connect user's Gmail to the app, (2) Polling edge function — checks inbox every 2-5 min for new messages, (3) Classifier edge function — sends email content to Claude API, returns category + intent + urgency, (4) Drafter edge function — generates personalized reply in user's voice, (5) Review UI — displays drafts in Signature Branding System app with approve/edit/reject buttons, (6) Send action — pushes approved reply back via Gmail API. Document in ~/Desktop/signature-ops/inbox-triage-phase3-spec.md before Dex starts building."
+    },
+    {
+      "id": "inbox-phase3-schema-additions",
+      "title": "Phase 3 · Add inbox triage tables to Supabase schema (Signature Branding System)",
+      "status": "pending",
+      "priority": "medium",
+      "category": "build",
+      "estimatedTime": "2-3 hours",
+      "owner": "dex",
+      "notes": "New tables needed in Supabase (stsowpflccehekknumkb): (1) gp_inbox_connections — stores Gmail OAuth tokens per user (encrypted), (2) gp_inbox_messages — synced email content for classification, (3) gp_inbox_classifications — Claude's category + intent + confidence per message, (4) gp_inbox_drafts — generated reply drafts pending review, (5) gp_inbox_send_log — audit trail of every send + outcome, (6) gp_inbox_preferences — per-user settings (which categories auto-send, draft-only, etc.). All tables RLS-protected by user_id. Schema migration goes through standard Lovable AI prompt flow. Reference Annie's brand_kits structure for the field_metadata pattern (consistent with existing app)."
+    },
+    {
+      "id": "inbox-phase3-gmail-oauth-connector",
+      "title": "Phase 3 · Build Gmail OAuth connector edge function",
+      "status": "pending",
+      "priority": "medium",
+      "category": "build",
+      "estimatedTime": "4-6 hours",
+      "owner": "dex",
+      "notes": "Edge function: gmail-oauth-connect. Handles: (1) Initiates OAuth flow with Google (requires GCP project + OAuth consent screen approval, takes 1-2 weeks for verification if going beyond test users), (2) Stores refresh tokens encrypted in gp_inbox_connections table, (3) Refreshes access tokens as needed, (4) Provides authenticated Gmail API client for other edge functions. CRITICAL: Use 'gmail.readonly' + 'gmail.send' + 'gmail.modify' scopes only — minimum required. Document scope requirements in user-facing privacy policy. Reference Google's OAuth 2.0 docs for native apps. Test with Ken's signaturebrandmarketing.com Workspace account first (verified domain = faster approval)."
+    },
+    {
+      "id": "inbox-phase3-classifier-fn",
+      "title": "Phase 3 · Build email classifier edge function (Claude API)",
+      "status": "pending",
+      "priority": "medium",
+      "category": "build",
+      "estimatedTime": "4-6 hours",
+      "owner": "dex",
+      "notes": "Edge function: inbox-classify-message. Triggered by polling worker on each new email. Input: email subject + body + sender + to-alias. Calls Claude API (claude-3-5-sonnet or claude-haiku for speed/cost balance) with a structured prompt that returns JSON: {category: BOOKING|SALES_INQUIRY|FAQ|SUPPORT|NEWSLETTER|SPAM|OTHER, intent: 1-line summary, urgency: HIGH|MEDIUM|LOW, suggested_action: AUTO_REPLY|DRAFT_ONLY|ESCALATE|ARCHIVE, brand_context: which Signature brand based on to-alias}. Saves classification to gp_inbox_classifications. Cost optimization: use Claude Haiku for classification (~$0.25/1M tokens) since this runs on every email. Reserve Sonnet for the drafter step where quality matters more."
+    },
+    {
+      "id": "inbox-phase3-drafter-fn",
+      "title": "Phase 3 · Build reply drafter edge function (Claude API)",
+      "status": "pending",
+      "priority": "medium",
+      "category": "build",
+      "estimatedTime": "5-8 hours",
+      "owner": "dex",
+      "notes": "Edge function: inbox-draft-reply. Triggered after classifier completes. Input: classified email + user's brand_kit (voice, tone, banned_words) + relevant context (calendar availability, current campaigns, FAQ library). Calls Claude API (use Sonnet here — quality matters for drafts) with system prompt: 'You are drafting a reply for [user] in their exact voice. Brand DNA: [from brand_kit]. Reply should sound like them, not a generic AI. Always end with their signature. Mark all currency/dates/promises clearly so user can verify before sending.' Returns: draft_text + confidence_score + suggested_edits. Saves to gp_inbox_drafts. Optional: train on user's previously-sent emails to better match voice over time."
+    },
+    {
+      "id": "inbox-phase3-review-ui",
+      "title": "Phase 3 · Build review/approve drafts UI in Signature Branding System app",
+      "status": "pending",
+      "priority": "medium",
+      "category": "build",
+      "estimatedTime": "8-12 hours",
+      "owner": "dex",
+      "notes": "New section in Signature Branding System app: /inbox or /agent-inbox. Lists pending drafts grouped by urgency + brand. Each draft card shows: (1) Original email preview, (2) Claude's classification + reasoning, (3) Draft reply (editable), (4) Buttons: APPROVE+SEND / EDIT / REJECT / ESCALATE. Bulk actions: approve-all-low-stakes. Stats dashboard: drafts pending, sent this week, accuracy rate (% sent without edits), time saved estimate. Mobile-responsive (Ken uses on phone). Match existing Signature Branding System dark luxury aesthetic (#0a0a0a + #C9A961 gold). Use existing component library (shadcn). This UI is also what Agent OS clients will see — design it client-ready, not Ken-only."
+    },
+    {
+      "id": "inbox-phase3-self-test-30day",
+      "title": "Phase 3 · Run 30-day self-test on Ken's master inbox (proof-of-concept)",
+      "status": "pending",
+      "priority": "medium",
+      "category": "ops",
+      "estimatedTime": "30 days · ~15 min/day review",
+      "owner": "ken",
+      "notes": "Phase 3 culminates in Ken running the Inbox Triage Agent on his own master inbox (Ken@signaturebrandmarketing.com + all aliases) for 30 full days BEFORE selling it to Agent OS clients. Daily ritual: open the review UI in app, scan drafts, approve/edit/send. Track metrics: total emails processed, % auto-classified correctly, % drafts approved without edit, time saved per day, money value of time saved. By Day 30, Ken has a real case study with real numbers to put in Agent OS sales materials. NO Activation client gets sold the Inbox Triage Agent until this self-test produces shareable results. This is the 'eat your own dogfood, sell from experience' move that makes the whole Agent OS pitch undeniable."
+    },
+    {
+      "id": "inbox-phase4-update-sales-materials",
+      "title": "Phase 4 · Update Agent OS sales materials to feature Inbox Triage Agent",
+      "status": "pending",
+      "priority": "medium",
+      "category": "ops",
+      "estimatedTime": "3-4 hours",
+      "owner": "ken",
+      "notes": "Once Phase 3 self-test produces real data, update all Agent OS sales assets: (1) Update one-sheet PDF to feature Inbox Triage Agent as one of the 6 menu options in Activation tier — replace whichever of the current 6 has lowest demand, (2) Update sales page on signatureagentos.com, (3) Update cold email sequences (Touch 2 Annie case study can now reference Ken's own results), (4) Update LinkedIn positioning to mention real-life inbox results, (5) Update Agent OS one-sheet PDF + landing page copy. Sales angle: 'I built this for myself first. I ran it on my own inbox for 30 days. Here are my actual numbers: [X emails processed, Y hours saved, Z% accuracy]. Want the same in your business?' This is the closer."
+    },
+    {
+      "id": "inbox-phase4-loom-demo",
+      "title": "Phase 4 · Record Loom demo of Ken's Inbox Triage Agent in action",
+      "status": "pending",
+      "priority": "medium",
+      "category": "ops",
+      "estimatedTime": "2-3 hours",
+      "owner": "ken",
+      "notes": "Record a 5-7 min Loom showing Ken's own inbox triage workflow: (1) Walk through a morning of incoming emails across all Signature brands, (2) Show the review UI in app, (3) Approve drafts live with brief commentary, (4) Show stats dashboard with 30-day results, (5) Frame: 'This is running on my own business. Here's what it does. Here's the time I save. Now imagine yours.' This Loom becomes: embedded on /activation landing page, attached to Cold Email Touch 2, sent to every discovery call attendee 24 hours before the call, featured in podcast appearances. Single most important Phase 4 asset — invest 1 hour in setup + script before recording."
+    },
+    {
+      "id": "inbox-phase4-case-study-writeup",
+      "title": "Phase 4 · Write Inbox Triage Agent case study (Ken's 30-day results)",
+      "status": "pending",
+      "priority": "medium",
+      "category": "ops",
+      "estimatedTime": "2 hours",
+      "owner": "ken",
+      "notes": "Long-form case study from the 30-day self-test (Phase 3.5). Format: real numbers, real screenshots, honest about what worked + what needed iteration. Sections: (1) Before state — how Ken handled email before, time spent, # of missed/late replies, (2) The build — what was deployed (Gmail integration, Claude classifier, Claude drafter), (3) Day 1-7 — calibration, accuracy %, edits required, (4) Day 8-30 — drift toward auto-send for trusted categories, time savings curve, (5) The numbers — exact emails processed, exact hours saved, exact $$ value of time saved, (6) What surprised me — honest reflections, (7) What I'd do differently — credibility builder. Publish at /case-studies/inbox-triage-30-days on signatureagentos.com. Becomes the most powerful sales asset in the Agent OS arsenal."
+    },
+    {
+      "id": "inbox-phase4-client-deployment-template",
+      "title": "Phase 4 · Build per-client Inbox Triage Agent deployment template",
+      "status": "pending",
+      "priority": "medium",
+      "category": "build",
+      "estimatedTime": "4-6 hours",
+      "owner": "dex-with-ken",
+      "notes": "Once Inbox Triage Agent is proven in Ken's own use, package it as deployable-per-client. Each Agent OS Activation client who picks it from the menu gets: (1) Their own Gmail OAuth connection (their inbox, isolated from others), (2) Claude classifier trained on THEIR carriers + product mix (insurance-specific categories like APPLICATION_FOLLOWUP, AGED_LEAD_REACTIVATION, CARRIER_EMAIL, AEP_INQUIRY), (3) Claude drafter loaded with THEIR brand_kit voice, (4) Their own review UI tied to their account, (5) Compliance-safe defaults (insurance-friendly: no rate quotes in auto-replies, all licensing/state-specific language passes through human review). Builds on the multi-tenant infrastructure already in Signature Branding System (RLS by user_id). Deployment time per client: ~30 min once template is built. Becomes a 1-click 'add Inbox Triage Agent' option in the client admin panel."
+    },
+    {
+      "id": "inbox-phase4-train-team-on-deployment",
+      "title": "Phase 4 · Train Dex + Mae on Inbox Triage Agent client deployment process",
+      "status": "pending",
+      "priority": "medium",
+      "category": "ops",
+      "estimatedTime": "2 hours",
+      "owner": "ken",
+      "notes": "Once Phase 4 client deployment template is built, train Dex (technical implementation) and Mae (client-facing rollout) on the deployment process. SOP document covering: (1) Pre-flight checks before deployment (client has Gmail/Workspace, has completed brand_kit, has selected Inbox Triage as one of 2 AI agents in their Activation menu), (2) OAuth handshake walk-through with client, (3) Custom prompt training based on client's carriers + voice samples, (4) Initial 7-day calibration period (drafts only, no auto-send), (5) Confidence-based auto-send rollout criteria, (6) Common issues + troubleshooting. Goal: any team member can deploy Inbox Triage Agent for a new Activation client in 30 min following the SOP. Recording: 60-90 min Loom for permanent reference. SOP file: ~/Desktop/signature-ops/sop-inbox-triage-deployment.md"
     }
   ],
   "costs": {
@@ -2331,6 +2481,12 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-05-29",
+      "project": "agent-os",
+      "event": "Inbox Triage Agent roadmap added — 15 action items across Phase 2 (GHL email integration, this week), Phase 3 (custom build in Signature Branding System, month 1-2), Phase 4 (productize + sell as Agent OS feature, month 2-3). Phase 1 implementing today via Claude Desktop + Gmail connection (no tracker needed).",
+      "type": "milestone"
+    },
     {
       "date": "2026-05-28",
       "project": "project-tracker",
