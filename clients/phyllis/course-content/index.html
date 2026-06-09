@@ -221,6 +221,71 @@
     text-align: center; font-style: italic;
   }
 
+  /* ============ NOTES (Phyllis-editable) ============ */
+  .notes-block {
+    margin-top: 1.2rem; padding-top: 1.2rem;
+    border-top: 1px dashed var(--cream-alt);
+  }
+  .notes-label {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  .notes-label-left {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sage-dark);
+  }
+  .notes-label-left::before {
+    content: "✎ "; color: var(--terracotta); margin-right: 0.2rem;
+  }
+  .notes-saved {
+    font-size: 0.68rem; color: var(--sage);
+    font-style: italic; opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .notes-saved.show { opacity: 1; }
+  .notes-textarea {
+    width: 100%; min-height: 90px;
+    padding: 0.9rem 1rem;
+    background: var(--cream);
+    border: 1px solid var(--border); border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem; color: var(--charcoal);
+    line-height: 1.55; resize: vertical;
+    transition: border-color 0.15s;
+  }
+  .notes-textarea::placeholder {
+    color: var(--muted); font-style: italic;
+  }
+  .notes-textarea:focus {
+    outline: none; border-color: var(--terracotta);
+    background: var(--paper);
+  }
+
+  /* Global notes banner at top */
+  .notes-banner {
+    margin: 1.5rem 0 2rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(135deg, var(--sage-soft) 0%, var(--terracotta-soft) 100%);
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: var(--walnut);
+    border: 1px solid var(--border);
+  }
+  .notes-banner strong { color: var(--terracotta-dark); }
+  .notes-banner-row {
+    display: flex; align-items: center; gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .clear-notes-btn {
+    background: transparent; border: 1px solid var(--walnut-soft);
+    color: var(--walnut); font-size: 0.7rem;
+    padding: 0.3rem 0.7rem; border-radius: 5px;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    margin-left: auto;
+  }
+  .clear-notes-btn:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
   @media (max-width: 680px) {
     .module-head { grid-template-columns: 60px 1fr auto; gap: 1rem; padding: 1rem 1.2rem; }
     .module-num { font-size: 1.8rem; }
@@ -240,6 +305,14 @@
     <div class="section-eyebrow">Course Materials Workspace</div>
     <h1>Purposefully <em>Eating</em> — course build.</h1>
     <div class="sub">Lesson scripts, workbook, and bonuses. Built progressively. This page is your build-status tracker.</div>
+  </div>
+
+  <!-- NOTES BANNER -->
+  <div class="notes-banner">
+    <div class="notes-banner-row">
+      <span>✎ <strong>Hi Phyllis</strong> — you can write notes directly under each module below. Your notes save automatically and stay with you when you come back.</span>
+      <button class="clear-notes-btn" onclick="if(confirm('Clear all of your notes? This cannot be undone.')){clearAllNotes()}">Clear all notes</button>
+    </div>
   </div>
 
   <!-- PROGRESS -->
@@ -477,14 +550,114 @@
 </div>
 
 <script>
+  // ============ MODULE EXPAND/COLLAPSE ============
   document.querySelectorAll('.module-head').forEach(h => {
     h.addEventListener('click', (e) => {
       if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' && !e.target.classList.contains('module-toggle')) return;
       h.parentElement.classList.toggle('open');
     });
   });
-  // set progress
+
+  // ============ PROGRESS ============
   document.getElementById('progressFill').style.width = Math.round((9/27)*100) + '%';
+
+  // ============ NOTES (localStorage, autosave) ============
+  const NOTES_PREFIX = 'phyllis-course-notes-';
+  const DEBOUNCE_MS = 450;
+  const debounceTimers = {};
+
+  function moduleLabel(num) {
+    const titles = {
+      '1': 'Module 1 — Foundation',
+      '2': 'Module 2 — Three Shifts',
+      '3': 'Module 3 — Body Wisdom',
+      '4': 'Module 4 — Family Table',
+      '5': 'Module 5 — Mindful Kitchen',
+      '6': 'Module 6 — Plate Plan'
+    };
+    return titles[num] || `Module ${num}`;
+  }
+
+  function saveNote(key, value) {
+    clearTimeout(debounceTimers[key]);
+    debounceTimers[key] = setTimeout(() => {
+      try {
+        if (value.trim()) localStorage.setItem(NOTES_PREFIX + key, value);
+        else localStorage.removeItem(NOTES_PREFIX + key);
+        const ind = document.querySelector(`[data-saved-for="${key}"]`);
+        if (ind) {
+          ind.classList.add('show');
+          setTimeout(() => ind.classList.remove('show'), 1600);
+        }
+      } catch (e) {
+        console.warn('Note save failed', e);
+      }
+    }, DEBOUNCE_MS);
+  }
+
+  function loadNote(key) {
+    try { return localStorage.getItem(NOTES_PREFIX + key) || ''; }
+    catch (e) { return ''; }
+  }
+
+  function buildNotesBlock(moduleNum) {
+    const key = `module-${moduleNum}`;
+    const wrap = document.createElement('div');
+    wrap.className = 'notes-block';
+    wrap.innerHTML = `
+      <div class="notes-label">
+        <span class="notes-label-left">Your Notes · ${moduleLabel(moduleNum)}</span>
+        <span class="notes-saved" data-saved-for="${key}">Saved ✓</span>
+      </div>
+      <textarea class="notes-textarea"
+        data-note-key="${key}"
+        placeholder="Type any thoughts, questions, or edits here — saves automatically as you write."></textarea>
+    `;
+    const ta = wrap.querySelector('textarea');
+    ta.value = loadNote(key);
+    ta.addEventListener('input', () => saveNote(key, ta.value));
+    return wrap;
+  }
+
+  // Inject a notes block into every module
+  document.querySelectorAll('.module[data-module]').forEach(mod => {
+    const num = mod.getAttribute('data-module');
+    const inner = mod.querySelector('.module-body-inner');
+    if (inner) inner.appendChild(buildNotesBlock(num));
+  });
+
+  // Also add a global "general notes" block at the bottom
+  const generalKey = 'general';
+  const footer = document.querySelector('.footer');
+  if (footer) {
+    const generalWrap = document.createElement('div');
+    generalWrap.className = 'notes-block';
+    generalWrap.style.marginTop = '2.5rem';
+    generalWrap.style.borderTop = 'none';
+    generalWrap.innerHTML = `
+      <div class="notes-label">
+        <span class="notes-label-left">General Notes for Ken</span>
+        <span class="notes-saved" data-saved-for="${generalKey}">Saved ✓</span>
+      </div>
+      <textarea class="notes-textarea"
+        style="min-height: 130px;"
+        data-note-key="${generalKey}"
+        placeholder="Anything you want Ken to see — feedback, ideas, questions about the whole course. Saves automatically."></textarea>
+    `;
+    const gta = generalWrap.querySelector('textarea');
+    gta.value = loadNote(generalKey);
+    gta.addEventListener('input', () => saveNote(generalKey, gta.value));
+    footer.parentNode.insertBefore(generalWrap, footer);
+  }
+
+  // Clear all notes function (called by banner button)
+  function clearAllNotes() {
+    Object.keys(localStorage).forEach(k => {
+      if (k.startsWith(NOTES_PREFIX)) localStorage.removeItem(k);
+    });
+    document.querySelectorAll('textarea[data-note-key]').forEach(ta => ta.value = '');
+  }
+  window.clearAllNotes = clearAllNotes;
 </script>
 </body>
 </html>
