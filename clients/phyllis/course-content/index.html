@@ -561,10 +561,61 @@
   // ============ PROGRESS ============
   document.getElementById('progressFill').style.width = Math.round((9/27)*100) + '%';
 
-  // ============ NOTES (localStorage, autosave) ============
+  // ============ NOTES (Supabase + localStorage fallback, autosave) ============
   const NOTES_PREFIX = 'phyllis-course-notes-';
-  const DEBOUNCE_MS = 450;
+  const DEBOUNCE_MS = 700;
+  const CLIENT_SLUG = 'phyllis';
+  const SUPABASE_URL = 'https://stsowpflccehekknumkb.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN0c293cGZsY2NlaGVra251bWtiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzMjE5OTUsImV4cCI6MjA4Njg5Nzk5NX0.zwoUs0YeooT7tVWxPZMJ9TlV_9WI4nkdvGckiAnKPx8';
   const debounceTimers = {};
+
+  // --- Supabase REST helpers (no SDK needed, keeps page light) ---
+  async function sbFetch(path, opts = {}) {
+    return fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+      ...opts,
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': opts.method === 'POST' || opts.method === 'PATCH'
+          ? 'resolution=merge-duplicates,return=minimal'
+          : '',
+        ...(opts.headers || {})
+      }
+    });
+  }
+
+  async function pushNoteToCloud(key, content) {
+    try {
+      // Upsert via Supabase REST (on_conflict on the unique pair)
+      const res = await sbFetch('client_notes?on_conflict=client_slug,note_key', {
+        method: 'POST',
+        body: JSON.stringify({
+          client_slug: CLIENT_SLUG,
+          note_key: key,
+          content: content
+        })
+      });
+      return res.ok;
+    } catch (e) {
+      console.warn('Cloud save failed (kept local copy):', e);
+      return false;
+    }
+  }
+
+  async function pullAllNotesFromCloud() {
+    try {
+      const res = await sbFetch(`client_notes?client_slug=eq.${CLIENT_SLUG}&select=note_key,content,updated_at`);
+      if (!res.ok) return {};
+      const rows = await res.json();
+      const out = {};
+      rows.forEach(r => { out[r.note_key] = r.content; });
+      return out;
+    } catch (e) {
+      console.warn('Cloud load failed (using local copy):', e);
+      return null;
+    }
+  }
 
   function moduleLabel(num) {
     const titles = {
@@ -578,24 +629,31 @@
     return titles[num] || `Module ${num}`;
   }
 
+  function setSavedIndicator(key, text) {
+    const ind = document.querySelector(`[data-saved-for="${key}"]`);
+    if (!ind) return;
+    ind.textContent = text;
+    ind.classList.add('show');
+    clearTimeout(ind._t);
+    ind._t = setTimeout(() => ind.classList.remove('show'), 1800);
+  }
+
   function saveNote(key, value) {
     clearTimeout(debounceTimers[key]);
-    debounceTimers[key] = setTimeout(() => {
-      try {
-        if (value.trim()) localStorage.setItem(NOTES_PREFIX + key, value);
-        else localStorage.removeItem(NOTES_PREFIX + key);
-        const ind = document.querySelector(`[data-saved-for="${key}"]`);
-        if (ind) {
-          ind.classList.add('show');
-          setTimeout(() => ind.classList.remove('show'), 1600);
-        }
-      } catch (e) {
-        console.warn('Note save failed', e);
-      }
+    // Always write local copy immediately (so refresh never loses work)
+    try {
+      if (value.trim()) localStorage.setItem(NOTES_PREFIX + key, value);
+      else localStorage.removeItem(NOTES_PREFIX + key);
+    } catch (e) {}
+    // Then debounce-push to cloud
+    debounceTimers[key] = setTimeout(async () => {
+      setSavedIndicator(key, 'Saving…');
+      const ok = await pushNoteToCloud(key, value);
+      setSavedIndicator(key, ok ? 'Saved ✓' : 'Saved locally ✓');
     }, DEBOUNCE_MS);
   }
 
-  function loadNote(key) {
+  function loadLocalNote(key) {
     try { return localStorage.getItem(NOTES_PREFIX + key) || ''; }
     catch (e) { return ''; }
   }
@@ -614,7 +672,7 @@
         placeholder="Type any thoughts, questions, or edits here — saves automatically as you write."></textarea>
     `;
     const ta = wrap.querySelector('textarea');
-    ta.value = loadNote(key);
+    ta.value = loadLocalNote(key);  // optimistic local; cloud overwrites below
     ta.addEventListener('input', () => saveNote(key, ta.value));
     return wrap;
   }
@@ -626,7 +684,7 @@
     if (inner) inner.appendChild(buildNotesBlock(num));
   });
 
-  // Also add a global "general notes" block at the bottom
+  // Add a global "general notes" block at the bottom
   const generalKey = 'general';
   const footer = document.querySelector('.footer');
   if (footer) {
@@ -645,17 +703,34 @@
         placeholder="Anything you want Ken to see — feedback, ideas, questions about the whole course. Saves automatically."></textarea>
     `;
     const gta = generalWrap.querySelector('textarea');
-    gta.value = loadNote(generalKey);
+    gta.value = loadLocalNote(generalKey);
     gta.addEventListener('input', () => saveNote(generalKey, gta.value));
     footer.parentNode.insertBefore(generalWrap, footer);
   }
 
+  // Pull latest notes from cloud on load and overwrite any stale local copies.
+  (async function syncFromCloud() {
+    const cloud = await pullAllNotesFromCloud();
+    if (!cloud) return;
+    document.querySelectorAll('textarea[data-note-key]').forEach(ta => {
+      const k = ta.getAttribute('data-note-key');
+      if (cloud[k] !== undefined && cloud[k] !== ta.value) {
+        ta.value = cloud[k];
+        try { localStorage.setItem(NOTES_PREFIX + k, cloud[k]); } catch (e) {}
+      }
+    });
+  })();
+
   // Clear all notes function (called by banner button)
-  function clearAllNotes() {
+  async function clearAllNotes() {
     Object.keys(localStorage).forEach(k => {
       if (k.startsWith(NOTES_PREFIX)) localStorage.removeItem(k);
     });
-    document.querySelectorAll('textarea[data-note-key]').forEach(ta => ta.value = '');
+    document.querySelectorAll('textarea[data-note-key]').forEach(async ta => {
+      ta.value = '';
+      const k = ta.getAttribute('data-note-key');
+      await pushNoteToCloud(k, '');
+    });
   }
   window.clearAllNotes = clearAllNotes;
 </script>

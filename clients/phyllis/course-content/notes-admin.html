@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phyllis's Notes — Ken Admin View</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F1E6; --cream-alt: #EDE3D2; --paper: #FDF9F0;
+    --sage: #8A9A5B; --sage-soft: #E3E8D3; --sage-dark: #6B7A42;
+    --terracotta: #C87F5A; --terracotta-soft: #F2DCCE; --terracotta-dark: #A85E3C;
+    --walnut: #6B4E32; --walnut-soft: #C3B097;
+    --charcoal: #2B2A28; --muted: #6F6B63;
+    --gold: #D4AF37; --border: #D9CEB8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream); color: var(--charcoal);
+    line-height: 1.6; padding: 2rem 1.5rem;
+  }
+  .container { max-width: 1000px; margin: 0 auto; }
+  .back-link {
+    font-size: 0.75rem; color: var(--muted); text-decoration: none;
+    padding: 0.35rem 0.8rem; border: 1px solid var(--border); border-radius: 6px;
+    display: inline-block; margin-bottom: 1.5rem;
+  }
+  .back-link:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+  .header { margin-bottom: 2rem; }
+  .section-eyebrow {
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 0.6rem;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 600;
+    letter-spacing: -0.01em; line-height: 1.1; margin-bottom: 0.4rem;
+  }
+  h1 em { color: var(--terracotta); font-style: italic; }
+  .sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1.15rem;
+    color: var(--walnut);
+  }
+
+  .status-row {
+    display: flex; gap: 1rem; align-items: center;
+    margin: 1.5rem 0 2rem;
+    padding: 0.9rem 1.2rem;
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 0.85rem;
+  }
+  .status-row .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--cream-alt);
+  }
+  .status-row.live .dot { background: var(--sage); box-shadow: 0 0 0 4px var(--sage-soft); }
+  .status-row.error .dot { background: var(--terracotta); }
+  .refresh-btn {
+    margin-left: auto;
+    background: var(--terracotta); color: var(--cream);
+    border: none; padding: 0.5rem 1rem; border-radius: 6px;
+    font-size: 0.78rem; font-weight: 600; cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  .refresh-btn:hover { background: var(--terracotta-dark); }
+
+  .note-card {
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.4rem 1.6rem;
+    margin-bottom: 1rem;
+  }
+  .note-card.empty { opacity: 0.5; }
+  .note-card.general { border-color: var(--terracotta); background: linear-gradient(180deg, var(--terracotta-soft) 0%, var(--paper) 30%); }
+
+  .note-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 0.8rem; gap: 1rem;
+  }
+  .note-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .note-title em { color: var(--terracotta); font-style: italic; font-weight: 500; }
+  .note-meta {
+    font-size: 0.72rem; color: var(--muted);
+    white-space: nowrap;
+  }
+  .note-body {
+    white-space: pre-wrap;
+    font-size: 0.95rem; color: var(--charcoal);
+    line-height: 1.6;
+    padding: 0.6rem 0;
+  }
+  .note-empty {
+    font-style: italic; color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .footer {
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem; color: var(--muted);
+    text-align: center; font-style: italic;
+  }
+
+  @media (max-width: 680px) {
+    h1 { font-size: 1.7rem; }
+    .note-card { padding: 1rem 1.1rem; }
+    .note-head { flex-direction: column; gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <a href="../" class="back-link">← Phyllis's Main Dashboard</a>
+
+  <div class="header">
+    <div class="section-eyebrow">Admin View · For Ken Only</div>
+    <h1>Phyllis's <em>Notes</em>.</h1>
+    <div class="sub">Live view of everything she has written in the course tracker.</div>
+  </div>
+
+  <div class="status-row" id="status">
+    <span class="dot"></span>
+    <span id="statusText">Loading…</span>
+    <button class="refresh-btn" onclick="loadNotes()">Refresh</button>
+  </div>
+
+  <div id="notesContainer"></div>
+
+  <div class="footer">
+    Auto-refreshes every 60 seconds while this page is open.<br>
+    Notes are synced from Phyllis's tracker via Supabase. Last fetched: <span id="lastFetch">—</span>
+  </div>
+</div>
+
+<script>
+  const SUPABASE_URL = 'https://stsowpflccehekknumkb.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN0c293cGZsY2NlaGVra251bWtiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzMjE5OTUsImV4cCI6MjA4Njg5Nzk5NX0.zwoUs0YeooT7tVWxPZMJ9TlV_9WI4nkdvGckiAnKPx8';
+  const CLIENT_SLUG = 'phyllis';
+
+  const MODULE_TITLES = {
+    'module-1': { name: 'Module 1 — The Peaceful Plate Foundation', order: 1 },
+    'module-2': { name: 'Module 2 — The Three Shifts', order: 2 },
+    'module-3': { name: "Module 3 — Your Body's Wisdom", order: 3 },
+    'module-4': { name: 'Module 4 — The Family Table', order: 4 },
+    'module-5': { name: 'Module 5 — The Mindful Kitchen in Real Life', order: 5 },
+    'module-6': { name: 'Module 6 — Your Purposeful Plate Plan', order: 6 },
+    'general': { name: 'General Notes for Ken', order: 0 }
+  };
+
+  function fmtDate(iso) {
+    try {
+      const d = new Date(iso);
+      return d.toLocaleString('en-US', {
+        month: 'short', day: 'numeric',
+        hour: 'numeric', minute: '2-digit'
+      });
+    } catch { return iso; }
+  }
+
+  function setStatus(text, state) {
+    const row = document.getElementById('status');
+    row.className = 'status-row ' + (state || '');
+    document.getElementById('statusText').textContent = text;
+  }
+
+  async function loadNotes() {
+    setStatus('Loading…', '');
+    try {
+      const res = await fetch(
+        `${SUPABASE_URL}/rest/v1/client_notes?client_slug=eq.${CLIENT_SLUG}&select=note_key,content,updated_at&order=updated_at.desc`,
+        {
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+          }
+        }
+      );
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const rows = await res.json();
+
+      // Sort: general first, then modules by number
+      rows.sort((a, b) => {
+        const oa = (MODULE_TITLES[a.note_key] || {}).order ?? 99;
+        const ob = (MODULE_TITLES[b.note_key] || {}).order ?? 99;
+        return oa - ob;
+      });
+
+      render(rows);
+      setStatus(`Live · ${rows.filter(r => r.content && r.content.trim()).length} notes`, 'live');
+      document.getElementById('lastFetch').textContent = fmtDate(new Date().toISOString());
+    } catch (e) {
+      console.error(e);
+      setStatus(`Error: ${e.message}`, 'error');
+    }
+  }
+
+  function render(rows) {
+    const container = document.getElementById('notesContainer');
+    container.innerHTML = '';
+
+    // Always show all 7 cards (general + 6 modules) — even if empty — so layout is consistent
+    const allKeys = ['general', 'module-1', 'module-2', 'module-3', 'module-4', 'module-5', 'module-6'];
+    allKeys.forEach(k => {
+      const row = rows.find(r => r.note_key === k);
+      const content = row ? row.content : '';
+      const updated = row ? row.updated_at : null;
+      const meta = MODULE_TITLES[k] || { name: k };
+      const isEmpty = !content || !content.trim();
+      const isGeneral = k === 'general';
+
+      const card = document.createElement('div');
+      card.className = 'note-card' + (isEmpty ? ' empty' : '') + (isGeneral ? ' general' : '');
+      card.innerHTML = `
+        <div class="note-head">
+          <div class="note-title">${meta.name}</div>
+          <div class="note-meta">${updated ? 'Updated ' + fmtDate(updated) : 'No notes yet'}</div>
+        </div>
+        ${isEmpty
+          ? '<div class="note-empty">Phyllis hasn\'t written anything here yet.</div>'
+          : `<div class="note-body">${escapeHtml(content)}</div>`
+        }
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, c => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;',
+      '"': '&quot;', "'": '&#39;'
+    })[c]);
+  }
+
+  // Initial load + 60s auto-refresh
+  loadNotes();
+  setInterval(loadNotes, 60000);
+</script>
+</body>
+</html>
