@@ -2,8 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Client Command — Signature</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0">
+<title>Command — Signature</title>
+<!-- PWA / Add-to-Home-Screen -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Command">
+<meta name="theme-color" content="#1c1810">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-512.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -80,10 +88,27 @@
   .reset:hover{border-color:var(--red);color:var(--red)}
 
   @media(max-width:600px){
-    .week{grid-template-columns:1fr 1fr}
-    .focus .one{font-size:1.4rem}
-    .hello{font-size:1.5rem}
+    body{padding:max(20px,env(safe-area-inset-top)) 14px calc(60px + env(safe-area-inset-bottom))}
+    .top{align-items:flex-start;flex-direction:column;gap:2px}
+    .hello{font-size:1.55rem}
+    .date{font-size:.75rem}
+    .focus{padding:22px 20px;border-radius:16px}
+    .focus .one{font-size:1.35rem}
+    .focus .eyebrow{font-size:.62rem;letter-spacing:.25em}
+    .section-title{font-size:1.05rem;margin:22px 0 10px}
+    /* bigger touch targets */
+    .task{padding:16px 16px;min-height:62px;border-radius:14px}
+    .check{width:28px;height:28px}
+    .task-name{font-size:1rem}
+    .clients{grid-template-columns:1fr;gap:11px}
+    .ccard{padding:17px 17px}
+    .week{grid-template-columns:1fr 1fr;gap:8px}
+    .day{padding:11px}
+    .reset{padding:9px 16px;font-size:.75rem}
   }
+  /* tap highlight + smooth scroll feel on mobile */
+  *{-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
 </style>
 </head>
 <body>
