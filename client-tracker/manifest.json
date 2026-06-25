@@ -1,7 +1,7 @@
 {
-  "name": "Command — Signature",
-  "short_name": "Command",
-  "description": "Ken's client + life command center",
+  "name": "The Ledger — Wisdom Is Currency",
+  "short_name": "The Ledger",
+  "description": "Steward what you spend. Faith · Health · Rest · Business — on one ledger.",
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait",

@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0">
-<title>Command — Signature</title>
+<title>The Ledger — Wisdom Is Currency</title>
 <!-- PWA / Add-to-Home-Screen -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Command">
+<meta name="apple-mobile-web-app-title" content="The Ledger">
 <meta name="theme-color" content="#1c1810">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-512.png">
@@ -28,6 +28,7 @@
   .top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-bottom:8px}
   .hello{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700}
   .hello span{color:var(--gold-deep);font-style:italic}
+  .wic{font-size:.7rem;color:var(--gold-deep);letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-top:3px}
   .date{font-size:.82rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
   .progress-wrap{margin:14px 0 26px}
   .progress-label{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:6px}
@@ -115,7 +116,10 @@
 <div class="wrap">
 
   <div class="top">
-    <div class="hello">Client <span>Command</span>.</div>
+    <div>
+      <div class="hello">The <span>Ledger</span>.</div>
+      <div class="wic">⚡ Wisdom Is Currency · steward what you spend</div>
+    </div>
     <div class="date" id="dateline">—</div>
   </div>
 
@@ -144,7 +148,8 @@
   <div class="week" id="weekStrip"></div>
 
   <div class="foot">
-    Built for focus. One thing at a time. Check it off, get the hit, move on.<br>
+    One thing at a time. Score the actions, not the outcome. Steward the day.<br>
+    <span style="color:var(--gold-deep);font-weight:600;letter-spacing:.1em">⚡ THE LEDGER · BY WISDOM IS CURRENCY</span><br>
     <button class="reset" onclick="resetDay()">Reset today's checkboxes</button>
   </div>
 
