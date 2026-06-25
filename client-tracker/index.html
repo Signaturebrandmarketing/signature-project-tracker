@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Command — Signature</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F4EE; --card:#FFFFFF; --ink:#222018; --muted:#7A746A;
+    --line:#E7E0D4; --gold:#C9A961; --gold-deep:#A8843C;
+    --green:#5B8C5A; --amber:#D69A2D; --red:#C2553D;
+    --sage-soft:#EDF0E6; --gold-soft:#F6EFDD;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;padding:28px 18px 80px}
+  .wrap{max-width:1080px;margin:0 auto}
+
+  /* ---------- HEADER ---------- */
+  .top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-bottom:8px}
+  .hello{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700}
+  .hello span{color:var(--gold-deep);font-style:italic}
+  .date{font-size:.82rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+  .progress-wrap{margin:14px 0 26px}
+  .progress-label{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;margin-bottom:6px}
+  .progress-track{height:9px;background:var(--line);border-radius:6px;overflow:hidden}
+  .progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--green));width:0%;border-radius:6px;transition:width .5s}
+
+  /* ---------- TODAY FOCUS ---------- */
+  .focus{background:linear-gradient(135deg,#2a2519,#1c1810);color:#fff;border-radius:18px;padding:26px 28px;margin-bottom:22px;position:relative;overflow:hidden}
+  .focus::after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(201,169,97,.25),transparent 70%)}
+  .focus .eyebrow{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+  .focus .one{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;line-height:1.15;position:relative;z-index:2}
+  .focus .why{font-size:.9rem;color:#cabfa7;margin-top:8px;position:relative;z-index:2}
+
+  /* ---------- TODAY 3 ---------- */
+  .section-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+  .section-title .pill{font-family:'Inter';font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:var(--gold-soft);color:var(--gold-deep);padding:3px 9px;border-radius:20px}
+  .today-list{display:flex;flex-direction:column;gap:10px}
+  .task{display:flex;align-items:flex-start;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px 17px;cursor:pointer;transition:.15s;user-select:none}
+  .task:hover{border-color:var(--gold)}
+  .task.done{opacity:.5}
+  .task.done .task-name{text-decoration:line-through}
+  .check{flex-shrink:0;width:24px;height:24px;border:2px solid var(--gold);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#fff;margin-top:1px;transition:.15s}
+  .task.done .check{background:var(--green);border-color:var(--green)}
+  .task-body{flex:1}
+  .task-name{font-weight:600;font-size:.97rem}
+  .task-meta{font-size:.78rem;color:var(--muted);margin-top:3px;display:flex;gap:12px;flex-wrap:wrap}
+  .task-meta .time{color:var(--gold-deep);font-weight:600}
+  .task-meta .who{font-weight:600}
+
+  /* ---------- CLIENT CARDS ---------- */
+  .clients{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+  .ccard{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:18px 19px;transition:.15s}
+  .ccard:hover{box-shadow:0 6px 22px rgba(0,0,0,.06)}
+  .ccard-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+  .cname{font-family:'Playfair Display',serif;font-size:1.12rem;font-weight:700}
+  .health{display:flex;align-items:center;gap:6px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+  .dot{width:10px;height:10px;border-radius:50%}
+  .h-green .dot{background:var(--green)} .h-green{color:var(--green)}
+  .h-amber .dot{background:var(--amber)} .h-amber{color:var(--amber)}
+  .h-red .dot{background:var(--red)} .h-red{color:var(--red)}
+  .cproject{font-size:.8rem;color:var(--muted);margin-bottom:13px}
+  .next-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:5px}
+  .next-action{font-size:.93rem;font-weight:600;line-height:1.35}
+  .cmeta{display:flex;gap:14px;margin-top:11px;padding-top:11px;border-top:1px dashed var(--line);font-size:.74rem;color:var(--muted)}
+  .cmeta b{color:var(--ink)}
+
+  /* ---------- WEEK STRIP ---------- */
+  .week{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px}
+  .day.today{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-soft)}
+  .dname{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-deep);margin-bottom:8px}
+  .ditem{font-size:.78rem;color:var(--ink);padding:4px 0;border-bottom:1px dotted var(--line);line-height:1.3}
+  .ditem:last-child{border:none}
+  .ditem .t{color:var(--muted);font-size:.68rem}
+
+  .foot{margin-top:34px;text-align:center;font-size:.72rem;color:var(--muted);font-style:italic}
+  .reset{margin-top:8px;font-size:.7rem;color:var(--muted);background:none;border:1px solid var(--line);padding:5px 12px;border-radius:7px;cursor:pointer}
+  .reset:hover{border-color:var(--red);color:var(--red)}
+
+  @media(max-width:600px){
+    .week{grid-template-columns:1fr 1fr}
+    .focus .one{font-size:1.4rem}
+    .hello{font-size:1.5rem}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <div class="hello">Client <span>Command</span>.</div>
+    <div class="date" id="dateline">—</div>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-label">Today's momentum</div>
+    <div class="progress-track"><div class="progress-fill" id="pfill"></div></div>
+  </div>
+
+  <!-- THE ONE THING -->
+  <div class="focus">
+    <div class="eyebrow">🎯 Today's #1 — do this before anything else</div>
+    <div class="one" id="focusOne">—</div>
+    <div class="why" id="focusWhy">—</div>
+  </div>
+
+  <!-- TODAY'S 3 -->
+  <div class="section-title">Today's 3 <span class="pill">max — keep it small</span></div>
+  <div class="today-list" id="todayList"></div>
+
+  <!-- CLIENTS -->
+  <div class="section-title">All Clients <span class="pill" id="clientCount">—</span></div>
+  <div class="clients" id="clientGrid"></div>
+
+  <!-- WEEK -->
+  <div class="section-title">This Week — bite-size</div>
+  <div class="week" id="weekStrip"></div>
+
+  <div class="foot">
+    Built for focus. One thing at a time. Check it off, get the hit, move on.<br>
+    <button class="reset" onclick="resetDay()">Reset today's checkboxes</button>
+  </div>
+
+</div>
+
+<script>
+/* ============================================================
+   EDIT THIS BLOCK to update the tracker. Everything renders from it.
+   ============================================================ */
+const DATA = {
+  focus: {
+    one: "Install LaToya's Agent OS workspace",
+    why: "Cleanest of the 3 installs — nail it first, it becomes your template for Annie + Deandrea. Build in her account on your computer."
+  },
+  today: [
+    {name:"LaToya — kickoff call + build her workspace", time:"45 min", who:"LaToya", note:"15-min kickoff (carriers, scripts, FINRA) → build the 6 steps"},
+    {name:"Annie — kickoff call + build her workspace", time:"45 min", who:"Annie", note:"Banned-words QA after build"},
+    {name:"Deandrea — kickoff + build (Tier 2)", time:"60 min", who:"Deandrea", note:"All 6 agents + wire GHL funnel"}
+  ],
+  clients: [
+    { name:"LaToya King", project:"Agent OS install (Tier 1)", health:"amber",
+      next:"Run kickoff → build workspace today", time:"45 min", due:"Today", touch:"Today" },
+    { name:"Annie · TMG", project:"Agent OS install (Tier 1) + GP", health:"amber",
+      next:"Kickoff → build → banned-words QA", time:"45 min", due:"Today", touch:"Today" },
+    { name:"Deandrea · A&A", project:"Agent OS install (Tier 2)", health:"amber",
+      next:"Kickoff → build all 6 agents → GHL funnel", time:"60 min", due:"Today", touch:"Today" },
+    { name:"Phyllis Inman", project:"Purposefully Eating — course + show", health:"green",
+      next:"Draft Module 3 lesson scripts", time:"40 min", due:"This week", touch:"Jun 13" },
+    { name:"We Care More", project:"Website + logo redesign (Teleke)", health:"amber",
+      next:"Confirm logo direction → next build milestone", time:"30 min", due:"This week", touch:"—" },
+    { name:"Dawn Bridgett", project:"Reels · HATZ hats · InteleTravel", health:"green",
+      next:"Define next reel batch / HATZ asset", time:"30 min", due:"Next week", touch:"—" },
+    { name:"Dr. Dora Sanders", project:"SELF leadership simulation (build + co-market)", health:"amber",
+      next:"Discovery meeting Thu Jun 25 — prep agenda", time:"20 min", due:"Thu Jun 25", touch:"—" }
+  ],
+  week: {
+    Mon:[{t:"AM",x:"LaToya install"},{t:"PM",x:"Annie install"}],
+    Tue:[{t:"AM",x:"Deandrea install"},{t:"PM",x:"Agent OS outbound calls"}],
+    Wed:[{t:"AM",x:"Phyllis Module 3"},{t:"PM",x:"Outbound calls"}],
+    Thu:[{t:"AM",x:"Dora discovery prep"},{t:"1pm",x:"Dora discovery call"}],
+    Fri:[{t:"AM",x:"We Care More milestone"},{t:"PM",x:"Week recap + log wins"}]
+  }
+};
+/* ============================================================ */
+
+const TODAY_KEY = "client-command-"+new Date().toISOString().slice(0,10);
+
+function dateline(){
+  const d=new Date();
+  document.getElementById('dateline').textContent=
+    d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+}
+function render(){
+  document.getElementById('focusOne').textContent=DATA.focus.one;
+  document.getElementById('focusWhy').textContent=DATA.focus.why;
+
+  // today's 3
+  const done=JSON.parse(localStorage.getItem(TODAY_KEY)||"{}");
+  const tl=document.getElementById('todayList'); tl.innerHTML="";
+  DATA.today.forEach((t,i)=>{
+    const el=document.createElement('div');
+    el.className="task"+(done[i]?" done":"");
+    el.innerHTML=`<div class="check">✓</div>
+      <div class="task-body"><div class="task-name">${t.name}</div>
+      <div class="task-meta"><span class="time">⏱ ${t.time}</span><span class="who">${t.who}</span><span>${t.note||""}</span></div></div>`;
+    el.onclick=()=>{done[i]=!done[i];localStorage.setItem(TODAY_KEY,JSON.stringify(done));render()};
+    tl.appendChild(el);
+  });
+  // progress
+  const total=DATA.today.length, c=Object.values(done).filter(Boolean).length;
+  document.getElementById('pfill').style.width=(total?Math.round(c/total*100):0)+"%";
+
+  // clients
+  const g=document.getElementById('clientGrid'); g.innerHTML="";
+  document.getElementById('clientCount').textContent=DATA.clients.length+" active";
+  DATA.clients.forEach(c=>{
+    const el=document.createElement('div'); el.className="ccard";
+    el.innerHTML=`<div class="ccard-top"><div class="cname">${c.name}</div>
+      <div class="health h-${c.health}"><span class="dot"></span>${c.health==='green'?'On track':c.health==='amber'?'Needs touch':'Blocked'}</div></div>
+      <div class="cproject">${c.project}</div>
+      <div class="next-label">Next action</div>
+      <div class="next-action">${c.next}</div>
+      <div class="cmeta"><span>⏱ <b>${c.time}</b></span><span>Due <b>${c.due}</b></span><span>Last touch <b>${c.touch}</b></span></div>`;
+    g.appendChild(el);
+  });
+
+  // week
+  const days=["Mon","Tue","Wed","Thu","Fri"];
+  const todayName=new Date().toLocaleDateString('en-US',{weekday:'short'});
+  const w=document.getElementById('weekStrip'); w.innerHTML="";
+  days.forEach(d=>{
+    const el=document.createElement('div'); el.className="day"+(d===todayName?" today":"");
+    el.innerHTML=`<div class="dname">${d}${d===todayName?' • today':''}</div>`+
+      (DATA.week[d]||[]).map(i=>`<div class="ditem"><span class="t">${i.t}</span> · ${i.x}</div>`).join("");
+    w.appendChild(el);
+  });
+}
+function resetDay(){localStorage.removeItem(TODAY_KEY);render()}
+dateline();render();
+</script>
+</body>
+</html>
