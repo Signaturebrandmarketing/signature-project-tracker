@@ -1,8 +1,18 @@
 {
-  "lastUpdated": "2026-07-07T16:30:00Z",
+  "lastUpdated": "2026-07-07T23:05:00Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
+    {
+      "id": "signature-clothing-buy-phonetic-domains",
+      "title": "Buy signuhture.com + sig-nuh-ture.com (both unregistered)",
+      "category": "deploy",
+      "priority": "high",
+      "status": "pending",
+      "description": "Both phonetic domains verified unregistered via whois 2026-07-07. Buy at any registrar (~$10-13/yr each) and redirect to the Signature clothing store once published. Matches the planned SIG-NUH-TURE trademark filing (see ~/Desktop/signature-clothing-line/legal/Trademark-Filing-Package.md) and blocks knockoffs from grabbing them. Also secure @signuhture social handles while at it.",
+      "estimatedTime": "10 min",
+      "impact": "Locks the ownable brand identity (SIG-NUH-TURE) before launch; cheap defensive insurance"
+    },
     {
       "id": "rewards-apply-migrations",
       "title": "Apply 7 rewards migrations to production Supabase",
