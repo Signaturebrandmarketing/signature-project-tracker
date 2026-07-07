@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-29T17:36:41.742261Z",
+  "lastUpdated": "2026-07-07T16:30:00Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -9,9 +9,9 @@
       "category": "deploy",
       "priority": "critical",
       "status": "done",
-      "description": "RESOLVED 2026-04-21. All 8 rewards migrations applied to production (phase 1-7). Verified via REST — all tables exist, RLS policies in place, reward_tiers seeded with 8 rows. Rewards backend schema is 100% live on stsowpflccehekknumkb.",
+      "description": "RESOLVED 2026-04-21. All 8 rewards migrations applied to production (phase 1-7). Verified via REST \u2014 all tables exist, RLS policies in place, reward_tiers seeded with 8 rows. Rewards backend schema is 100% live on stsowpflccehekknumkb.",
       "estimatedTime": "5 min (Lovable runs the migrations)",
-      "impact": "CRITICAL — unlocks entire rewards + affiliate program"
+      "impact": "CRITICAL \u2014 unlocks entire rewards + affiliate program"
     },
     {
       "id": "rewards-backfill-codes",
@@ -19,7 +19,7 @@
       "category": "deploy",
       "priority": "high",
       "status": "done",
-      "description": "62 profiles now in production. Some already have referral_code + referral_links from the handle_new_user trigger (fires on NEW signups only). Run /admin/health → \"Profiles missing referral_code or referral_links\" → Backfill. Confirms every existing client is referral-ready before launch email goes out.",
+      "description": "62 profiles now in production. Some already have referral_code + referral_links from the handle_new_user trigger (fires on NEW signups only). Run /admin/health \u2192 \"Profiles missing referral_code or referral_links\" \u2192 Backfill. Confirms every existing client is referral-ready before launch email goes out.",
       "estimatedTime": "2 min",
       "impact": "Every existing client becomes a potential referrer overnight",
       "completed": "2026-04-24",
@@ -79,7 +79,7 @@
       "priority": "low",
       "status": "done",
       "description": "Sync works, but Anthropic Admin API correctly returns $0 because Ken pays for Claude Code via Claude Max subscription ($200/mo flat), not developer API. Edge functions use Gemini. Sync infra kept dormant in case direct Anthropic API calls get added later.",
-      "estimatedTime": "—",
+      "estimatedTime": "\u2014",
       "impact": "Truth established: Claude Max is a fixed line item; real variable AI spend is on Gemini"
     },
     {
@@ -127,7 +127,7 @@
       "estimatedTime": "2 min",
       "impact": "Puts all recent code changes live on production",
       "completed": "2026-04-24",
-      "notes": "Lovable auto-pull pipeline is active — multiple 2026-04-23 commits pulled and deployed successfully. Confirmed by Ken."
+      "notes": "Lovable auto-pull pipeline is active \u2014 multiple 2026-04-23 commits pulled and deployed successfully. Confirmed by Ken."
     },
     {
       "id": "lovable-seo-headshot-event",
@@ -135,9 +135,9 @@
       "category": "deploy",
       "priority": "critical",
       "status": "done",
-      "description": "Prompt is READY at ~/Desktop/signature-ops/seo-kit/lovable-prompt-signatureheadshotevent.md — open that file, copy the entire prompt, paste into the Lovable chat for signatureheadshotevent.com project. Covers 8 location pages, Event schema, LocalBusiness per market, full SEO stack. THIS IS THE BOOKING SITE — biggest direct revenue impact.",
+      "description": "Prompt is READY at ~/Desktop/signature-ops/seo-kit/lovable-prompt-signatureheadshotevent.md \u2014 open that file, copy the entire prompt, paste into the Lovable chat for signatureheadshotevent.com project. Covers 8 location pages, Event schema, LocalBusiness per market, full SEO stack. THIS IS THE BOOKING SITE \u2014 biggest direct revenue impact.",
       "estimatedTime": "15 min to run + rebuild",
-      "impact": "Massive — this is where every ad dollar lands",
+      "impact": "Massive \u2014 this is where every ad dollar lands",
       "completed": "2026-05-10",
       "notes": "Lovable SEO prompt pasted into signatureheadshotevent.com project. SEO stack (8 location pages, Event schema, LocalBusiness per market) deployed. Confirmed by Ken 2026-05-28."
     },
@@ -169,7 +169,7 @@
       "category": "seo",
       "priority": "high",
       "status": "done",
-      "description": "COMPLETED 2026-05-06. Sitemap submitted at https://signaturebranding.app/sitemap.xml — Status: Success, Discovered URLs: 252 (50 existing + 200 location×industry combo pages). Domain property verified via DNS. Also manually requested indexing for top 10 priority URLs (24-48 hr indexing vs normal 2-4 week wait).",
+      "description": "COMPLETED 2026-05-06. Sitemap submitted at https://signaturebranding.app/sitemap.xml \u2014 Status: Success, Discovered URLs: 252 (50 existing + 200 location\u00d7industry combo pages). Domain property verified via DNS. Also manually requested indexing for top 10 priority URLs (24-48 hr indexing vs normal 2-4 week wait).",
       "estimatedTime": "10 min",
       "impact": "Gets new pages indexed within days instead of weeks",
       "completed": "2026-05-06",
@@ -181,7 +181,7 @@
       "category": "seo",
       "priority": "high",
       "status": "done",
-      "description": "COMPLETED 2026-05-06. Lake Wales is the studio HQ (241 E Park Ave). Full GBP optimization done: added 2 booking links (signatureheadshotevent.com as preferred, headshots-branding.com secondary), added 6 priced services pending review (Signature Headshot $75, AI Branding Starter $37, AI Branding Full $97, Mini Branding $699, Signature Branding $1500, Authority Sprint $297), expanded service area to 19+ markets covering Polk County + Tampa + Orlando, posted Week 1 Google Update with image + Book CTA. Already had 30+ photos, 5.0★ with 455 reviews.",
+      "description": "COMPLETED 2026-05-06. Lake Wales is the studio HQ (241 E Park Ave). Full GBP optimization done: added 2 booking links (signatureheadshotevent.com as preferred, headshots-branding.com secondary), added 6 priced services pending review (Signature Headshot $75, AI Branding Starter $37, AI Branding Full $97, Mini Branding $699, Signature Branding $1500, Authority Sprint $297), expanded service area to 19+ markets covering Polk County + Tampa + Orlando, posted Week 1 Google Update with image + Book CTA. Already had 30+ photos, 5.0\u2605 with 455 reviews.",
       "estimatedTime": "30 min",
       "impact": "Local pack rankings across Polk County + Tampa + Orlando metros",
       "completed": "2026-05-06",
@@ -193,7 +193,7 @@
       "category": "seo",
       "priority": "high",
       "status": "pending",
-      "description": "Use gmb-content-kit.md — Atlanta section. Your strongest revenue market — second priority after Winter Haven.",
+      "description": "Use gmb-content-kit.md \u2014 Atlanta section. Your strongest revenue market \u2014 second priority after Winter Haven.",
       "estimatedTime": "30 min",
       "impact": "Dominates local pack in strongest market"
     },
@@ -203,7 +203,7 @@
       "category": "seo",
       "priority": "high",
       "status": "pending",
-      "description": "Use gmb-content-kit.md — Orlando section. Biggest volume opportunity in Central FL.",
+      "description": "Use gmb-content-kit.md \u2014 Orlando section. Biggest volume opportunity in Central FL.",
       "estimatedTime": "30 min",
       "impact": "Local visibility across Orlando metro"
     },
@@ -223,7 +223,7 @@
       "category": "seo",
       "priority": "high",
       "status": "in-progress",
-      "description": "Bing Webmaster Tools — DONE 2026-05-06. Property added for signaturebranding.app, sitemap submitted (Processing → 252 URLs discovered), Lake Wales URL manually indexed. Apple Business Connect at businessconnect.apple.com still pending — that one is for Apple Maps presence on iPhone search.",
+      "description": "Bing Webmaster Tools \u2014 DONE 2026-05-06. Property added for signaturebranding.app, sitemap submitted (Processing \u2192 252 URLs discovered), Lake Wales URL manually indexed. Apple Business Connect at businessconnect.apple.com still pending \u2014 that one is for Apple Maps presence on iPhone search.",
       "estimatedTime": "15 min remaining (Apple only)",
       "impact": "~15% of desktop search traffic via Bing/DuckDuckGo + Apple Maps coverage",
       "notes": "Bing component complete. Apple Business Connect still TBD."
@@ -234,7 +234,7 @@
       "category": "seo",
       "priority": "medium",
       "status": "pending",
-      "description": "biz.yelp.com — claim/create for each market. Upload 10+ photos per listing.",
+      "description": "biz.yelp.com \u2014 claim/create for each market. Upload 10+ photos per listing.",
       "estimatedTime": "1 hour",
       "impact": "Yelp still drives significant local traffic"
     },
@@ -260,11 +260,11 @@
     },
     {
       "id": "seo-combo-pages-200",
-      "title": "Build 200 location × industry combo pages on signaturebranding.app",
+      "title": "Build 200 location \u00d7 industry combo pages on signaturebranding.app",
       "category": "seo",
       "priority": "high",
       "status": "done",
-      "description": "COMPLETED 2026-05-06. Created LocationIndustryPage component at /headshots/:city/:industry. 8 locations × 25 industries = 200 ultra-specific long-tail SEO pages. Each page includes combined Service + LocalBusiness schema, FAQPage schema, BreadcrumbList schema, visible breadcrumbs, dual hero badges, packages, use cases, FAQs, and bidirectional cross-links. Updated location pages to link to city-specific industry combos, updated industry pages to link to industry-in-each-city combos. 200 sitemap entries added. UTM tracking on all booking CTAs.",
+      "description": "COMPLETED 2026-05-06. Created LocationIndustryPage component at /headshots/:city/:industry. 8 locations \u00d7 25 industries = 200 ultra-specific long-tail SEO pages. Each page includes combined Service + LocalBusiness schema, FAQPage schema, BreadcrumbList schema, visible breadcrumbs, dual hero badges, packages, use cases, FAQs, and bidirectional cross-links. Updated location pages to link to city-specific industry combos, updated industry pages to link to industry-in-each-city combos. 200 sitemap entries added. UTM tracking on all booking CTAs.",
       "estimatedTime": "1.5 hours",
       "impact": "200 long-tail keyword targets like 'wedding planner Lake Wales', 'real estate headshots Atlanta', 'dentist headshots Tampa'. Doubled SEO surface area in one move.",
       "completed": "2026-05-06",
@@ -276,7 +276,7 @@
       "category": "seo",
       "priority": "high",
       "status": "done",
-      "description": "COMPLETED 2026-05-06. Created /og-default.jpg brand fallback (1920x1080 from hero-bg). SEOHead component now auto-resolves og:image with relative→absolute conversion, defaults to /og-default.jpg when no page-specific image provided. LocationIndustryPage uses first matched style preview (industry-specific). HeadshotLocationPage, HeadshotsIndex, IndustriesIndex use brand default. Twitter card now also gets the resolved image.",
+      "description": "COMPLETED 2026-05-06. Created /og-default.jpg brand fallback (1920x1080 from hero-bg). SEOHead component now auto-resolves og:image with relative\u2192absolute conversion, defaults to /og-default.jpg when no page-specific image provided. LocationIndustryPage uses first matched style preview (industry-specific). HeadshotLocationPage, HeadshotsIndex, IndustriesIndex use brand default. Twitter card now also gets the resolved image.",
       "estimatedTime": "30 min",
       "impact": "+3-5x social CTR when URLs forwarded on Facebook/LinkedIn/Twitter/iMessage/Slack. All 231 SEO pages now have proper social previews.",
       "completed": "2026-05-06",
@@ -300,9 +300,9 @@
       "category": "seo",
       "priority": "critical",
       "status": "done",
-      "description": "COMPLETED 2026-05-06. Squarespace flagged 'Your website payment is past-due. You must subscribe to enable your website.' Resolved during Squarespace SEO walkthrough — without this fix, none of the SEO work would have been live to public visitors.",
+      "description": "COMPLETED 2026-05-06. Squarespace flagged 'Your website payment is past-due. You must subscribe to enable your website.' Resolved during Squarespace SEO walkthrough \u2014 without this fix, none of the SEO work would have been live to public visitors.",
       "estimatedTime": "5 min",
-      "impact": "Site stays publicly accessible — without resolution, all Squarespace SEO work would be invisible",
+      "impact": "Site stays publicly accessible \u2014 without resolution, all Squarespace SEO work would be invisible",
       "completed": "2026-05-06",
       "notes": "Caught during live walkthrough. Critical fix-it issue."
     },
@@ -322,7 +322,7 @@
       "category": "ads",
       "priority": "high",
       "status": "pending",
-      "description": "Update ad sets: salon owners ads → /industries/beauty/salon-owners | hairstylists → /industries/beauty/hairstylists | estheticians → /industries/beauty/estheticians | nail techs → /industries/beauty/nail-techs. Expected Quality Score boost: +2 to +4.",
+      "description": "Update ad sets: salon owners ads \u2192 /industries/beauty/salon-owners | hairstylists \u2192 /industries/beauty/hairstylists | estheticians \u2192 /industries/beauty/estheticians | nail techs \u2192 /industries/beauty/nail-techs. Expected Quality Score boost: +2 to +4.",
       "estimatedTime": "30 min",
       "impact": "Lower CPC, higher conversion from existing ad spend"
     },
@@ -355,7 +355,7 @@
       "category": "deploy",
       "priority": "critical",
       "status": "done",
-      "description": "Live reward_tiers is missing platinum ($197) and authority_sprint ($297) referral entries. Today, a Platinum purchase via referral credits $0. SQL ready: Platinum $40/$60 (client/ambassador), Authority $50/$75. Paste into Signature Brand Studio → Cloud → SQL editor. 30 seconds.",
+      "description": "Live reward_tiers is missing platinum ($197) and authority_sprint ($297) referral entries. Today, a Platinum purchase via referral credits $0. SQL ready: Platinum $40/$60 (client/ambassador), Authority $50/$75. Paste into Signature Brand Studio \u2192 Cloud \u2192 SQL editor. 30 seconds.",
       "estimatedTime": "1 min",
       "impact": "Closes referral-fee gap on two highest-margin products",
       "completed": "2026-05-10",
@@ -367,7 +367,7 @@
       "category": "deploy",
       "priority": "critical",
       "status": "done",
-      "description": "Spec delivered to Lovable. Client-side React route that logs the click, sets ref_code cookie on .signaturebranding.app, then redirects based on ?to= param — AI / GP / Authority / Platinum / Event / default headshot event page. Cross-domain attribution via ?ref= URL param (cookies CANNOT cross apex domains).",
+      "description": "Spec delivered to Lovable. Client-side React route that logs the click, sets ref_code cookie on .signaturebranding.app, then redirects based on ?to= param \u2014 AI / GP / Authority / Platinum / Event / default headshot event page. Cross-domain attribution via ?ref= URL param (cookies CANNOT cross apex domains).",
       "estimatedTime": "30 min (Lovable)",
       "impact": "Core referral loop functions at all",
       "completed": "2026-04-24",
@@ -423,7 +423,7 @@
       "category": "deploy",
       "priority": "high",
       "status": "done",
-      "description": "On /ai, /growth-partner, /authority-sprint, /app entry pages: detect ?ref= URL param or ref_code cookie → lookup referrer via referral_links. code → display hero banner with their first name + avatar. Launch-day banner copy: \"Welcome from {Name}\" — NOT promising a $10 discount until Square promo-code plumbing is wired.",
+      "description": "On /ai, /growth-partner, /authority-sprint, /app entry pages: detect ?ref= URL param or ref_code cookie \u2192 lookup referrer via referral_links. code \u2192 display hero banner with their first name + avatar. Launch-day banner copy: \"Welcome from {Name}\" \u2014 NOT promising a $10 discount until Square promo-code plumbing is wired.",
       "estimatedTime": "1 hr (Lovable)",
       "impact": "Social proof at point of conversion",
       "completed": "2026-05-12",
@@ -483,11 +483,11 @@
       "category": "deploy",
       "priority": "critical",
       "status": "done",
-      "description": "Visit /admin/health (dev-gated). Run all 4 checks: (1) profiles missing referral_code + referral_links (backfill), (2) ambassadors without matching user_roles, (3) marketplace providers without role, (4) reward_balance ≠ ledger sum (recompute). Takes <2 min total. Do this once right before launch email.",
+      "description": "Visit /admin/health (dev-gated). Run all 4 checks: (1) profiles missing referral_code + referral_links (backfill), (2) ambassadors without matching user_roles, (3) marketplace providers without role, (4) reward_balance \u2260 ledger sum (recompute). Takes <2 min total. Do this once right before launch email.",
       "estimatedTime": "5 min",
       "impact": "Data consistency locked before real users arrive",
       "completed": "2026-04-24",
-      "notes": "Resolved earlier today — all 4 checks verified via direct SQL. No drift found."
+      "notes": "Resolved earlier today \u2014 all 4 checks verified via direct SQL. No drift found."
     },
     {
       "id": "rewards-clean-dev-seeds",
@@ -505,7 +505,7 @@
       "category": "deploy",
       "priority": "high",
       "status": "done",
-      "description": "Signature Perks Plus is currently hosted at a Lovable preview URL. Pick one: (A) make signaturebranding.app the rewards platform directly, (B) point rewards.signaturebranding.app at it, (C) keep perks.signaturebranding.app as a separate destination. Recommendation: A — make the rewards app the main app, since auth is already shared and it's the strongest funnel.",
+      "description": "Signature Perks Plus is currently hosted at a Lovable preview URL. Pick one: (A) make signaturebranding.app the rewards platform directly, (B) point rewards.signaturebranding.app at it, (C) keep perks.signaturebranding.app as a separate destination. Recommendation: A \u2014 make the rewards app the main app, since auth is already shared and it's the strongest funnel.",
       "estimatedTime": "30 min + DNS",
       "impact": "Launchable URL customers can actually remember",
       "completed": "2026-05-10",
@@ -529,9 +529,9 @@
       "category": "deploy",
       "priority": "high",
       "status": "pending",
-      "description": "Two transactional emails via the existing email stack (Resend or whatever is wired): (1) \"🎉 {Name} just signed up via your link — you earned $X\", (2) \"Your rewards balance just hit ${balance}\". Triggered by rewards_ledger inserts where entry_type='referral_credit' or 'action_credit'. Makes the program feel alive instead of silent.",
+      "description": "Two transactional emails via the existing email stack (Resend or whatever is wired): (1) \"\ud83c\udf89 {Name} just signed up via your link \u2014 you earned $X\", (2) \"Your rewards balance just hit ${balance}\". Triggered by rewards_ledger inserts where entry_type='referral_credit' or 'action_credit'. Makes the program feel alive instead of silent.",
       "estimatedTime": "2 hr",
-      "impact": "Drives repeat sharing — the notification IS the dopamine hit"
+      "impact": "Drives repeat sharing \u2014 the notification IS the dopamine hit"
     },
     {
       "id": "rewards-launch-email-draft",
@@ -539,7 +539,7 @@
       "category": "optimization",
       "priority": "high",
       "status": "done",
-      "description": "\"Introducing Signature Rewards — thank you for being part of this from the start. Your account already has a referral code waiting. Here's how it works.\" Include personal P.S. from Ken. Include Sarah's exact referral link (merge field). Soft-launch to 10 first, wide-send to 52 after 48hrs if nothing breaks.",
+      "description": "\"Introducing Signature Rewards \u2014 thank you for being part of this from the start. Your account already has a referral code waiting. Here's how it works.\" Include personal P.S. from Ken. Include Sarah's exact referral link (merge field). Soft-launch to 10 first, wide-send to 52 after 48hrs if nothing breaks.",
       "estimatedTime": "1 hr draft + review",
       "impact": "First-day conversions from warmest possible audience",
       "completed": "2026-05-08",
@@ -551,7 +551,7 @@
       "category": "optimization",
       "priority": "high",
       "status": "done",
-      "description": "Send launch email to 10 hand-picked active clients. Watch /admin activity feed + /admin/health for anything weird. Patch whatever real users surface — there WILL be something. Then wide-send to remaining 52.",
+      "description": "Send launch email to 10 hand-picked active clients. Watch /admin activity feed + /admin/health for anything weird. Patch whatever real users surface \u2014 there WILL be something. Then wide-send to remaining 52.",
       "estimatedTime": "48 hr elapsed",
       "impact": "Catches launch-day bugs before they embarrass you at scale",
       "completed": "2026-05-08",
@@ -593,7 +593,7 @@
       "category": "optimization",
       "priority": "low",
       "status": "deferred",
-      "description": "Current /admin/barter has a \"disputes\" tab that just lists rows — no resolution actions. Build: admin can view evidence (messages, reviews), refund rewards, suspend either party, mark dispute resolved. Needed once barter volume >10 matches/month.",
+      "description": "Current /admin/barter has a \"disputes\" tab that just lists rows \u2014 no resolution actions. Build: admin can view evidence (messages, reviews), refund rewards, suspend either party, mark dispute resolved. Needed once barter volume >10 matches/month.",
       "estimatedTime": "1 day",
       "impact": "Scales barter to real volume without support chaos"
     },
@@ -613,9 +613,9 @@
       "category": "optimization",
       "priority": "medium",
       "status": "deferred",
-      "description": "Day-1/7/30 post-headshot emails that move customers up the value ladder (headshot → AI Full → Platinum → Growth Partner). Each upgrade credits the original referrer, compounding the flywheel. Build in the existing email automation stack after launch proves the base loop works.",
+      "description": "Day-1/7/30 post-headshot emails that move customers up the value ladder (headshot \u2192 AI Full \u2192 Platinum \u2192 Growth Partner). Each upgrade credits the original referrer, compounding the flywheel. Build in the existing email automation stack after launch proves the base loop works.",
       "estimatedTime": "1 day",
-      "impact": "Doubles lifetime referrer earnings → doubles referral velocity"
+      "impact": "Doubles lifetime referrer earnings \u2192 doubles referral velocity"
     },
     {
       "id": "rewards-v1-ship",
@@ -655,7 +655,7 @@
       "note": "All three flows currently dev-stubbed to status=completed. Wire real Stripe Checkout + webhooks before first paid transaction through rewards app.",
       "updatedAt": "2026-04-24T02:01:49.343711Z",
       "completed": "2026-05-15",
-      "notes": "Umbrella item — all three Stripe flows (tickets, partner subs, donations) wired. Confirmed by Ken 2026-05-28."
+      "notes": "Umbrella item \u2014 all three Stripe flows (tickets, partner subs, donations) wired. Confirmed by Ken 2026-05-28."
     },
     {
       "id": "rewards-admin-health-page",
@@ -665,8 +665,8 @@
       "status": "done",
       "description": "Lovable prompt READY at ~/Desktop/signature-ops/lovable-admin-health-prompt.md. Paste into Signature Rewards Lovable project chat. Builds /admin/health with 4 one-click checks (referral backfill, ambassador roles, provider roles, balance recompute) + 4 edge functions + admin_health_log table.",
       "estimatedTime": "15 min",
-      "impact": "No more SQL-editor gymnastics before launches — one page confirms system is clean",
-      "notes": "Done. Backend: admin_health_log + 4 SECURITY DEFINER RPCs on stsowpflccehekknumkb. Frontend: useAdminHealth.ts calls supabase.rpc(). Edge functions abandoned — Ken has no deploy access to that project.",
+      "impact": "No more SQL-editor gymnastics before launches \u2014 one page confirms system is clean",
+      "notes": "Done. Backend: admin_health_log + 4 SECURITY DEFINER RPCs on stsowpflccehekknumkb. Frontend: useAdminHealth.ts calls supabase.rpc(). Edge functions abandoned \u2014 Ken has no deploy access to that project.",
       "completed": "2026-04-24"
     },
     {
@@ -677,7 +677,7 @@
       "status": "done",
       "completed": "2026-04-24",
       "description": "Hand-picked master ambassadors earn 5% override on gross revenue driven by their downline ambassadors. Monthly cap $1000, 1-year terms, sponsor link persists across resets. Single-level only (not MLM).",
-      "notes": "Shipped end-to-end: (1) schema + master_ambassador_terms table on stsowpflccehekknumkb; (2) 3 admin RPCs (grant/revoke/set-sponsor); (3) rewards_credit_master_override RPC; (4) Lovable UI — admin buttons on /admin/ambassadors, /ambassador/master dashboard with MTD earnings + downline table; (5) rewards-process-conversion edge function wired to call override RPC after ambassador credit (commit 117354e on signature-brand-forge)."
+      "notes": "Shipped end-to-end: (1) schema + master_ambassador_terms table on stsowpflccehekknumkb; (2) 3 admin RPCs (grant/revoke/set-sponsor); (3) rewards_credit_master_override RPC; (4) Lovable UI \u2014 admin buttons on /admin/ambassadors, /ambassador/master dashboard with MTD earnings + downline table; (5) rewards-process-conversion edge function wired to call override RPC after ambassador credit (commit 117354e on signature-brand-forge)."
     },
     {
       "id": "gp-auto-content-cron",
@@ -697,7 +697,7 @@
       "status": "done",
       "completed": "2026-04-24",
       "description": "Prevent future GP clients from getting stuck in onboarding with unassigned deliverables. Auto-activate on approval + auto-assign deliverables to the enrollment's agent.",
-      "notes": "Two Postgres triggers on stsowpflccehekknumkb: (1) gp_auto_activate_on_approval — BEFORE UPDATE on gp_client_enrollments, flips status to active when onboarding_status becomes approved; (2) gp_auto_assign_deliverable — BEFORE INSERT on gp_deliverables, inherits assigned_agent_id from enrollment's agent_user_id (fallback: strategist_user_id). Backfilled 3 stuck submitted clients (LaToya, Signature Test, We Care More) — all auto-activated via the trigger in one UPDATE."
+      "notes": "Two Postgres triggers on stsowpflccehekknumkb: (1) gp_auto_activate_on_approval \u2014 BEFORE UPDATE on gp_client_enrollments, flips status to active when onboarding_status becomes approved; (2) gp_auto_assign_deliverable \u2014 BEFORE INSERT on gp_deliverables, inherits assigned_agent_id from enrollment's agent_user_id (fallback: strategist_user_id). Backfilled 3 stuck submitted clients (LaToya, Signature Test, We Care More) \u2014 all auto-activated via the trigger in one UPDATE."
     },
     {
       "id": "marketplace-booking-system",
@@ -707,7 +707,7 @@
       "status": "done",
       "completed": "2026-04-25",
       "description": "Full provider marketplace with bookings, platform-fee monetization, featured tiers, ref_code attribution, and master ambassador override on fees.",
-      "notes": "Backend (stsowpflccehekknumkb): marketplace_categories with 6 categories + flat fees + reward amounts + booking_mode (instant/quote); marketplace_bookings full lifecycle with auto-fee stamping + auto-reward firing triggers; Stripe columns on marketplace_providers (customer_id, payment_method_id, featured_tier, etc.); content_engagement table for future stats integration. Edge functions: marketplace-charge-provider-fee, marketplace-create-setup-intent, marketplace-create-featured-checkout. stripe-webhook extended to handle featured-tier subscription create/update/delete events. Frontend (signature-rewards): provider directory with featured rail + tier badges, instant-vs-quote booking flow, ref_code capture, /provider/setup-payment Stripe Elements, /provider/featured two-tier subscription page, /provider dashboard with confirm→charge flow + retry rail, /admin/marketplace revenue breakdown, premium hero rotation on home. Pricing: portrait $35, beauty $40, family $50, event $150, corporate $200, wedding $300. Featured tiers: Verified Pro $49/mo, Premium Featured $149/mo. Client rewards on booking: $10–$50 by category. Master 5% override on platform fee."
+      "notes": "Backend (stsowpflccehekknumkb): marketplace_categories with 6 categories + flat fees + reward amounts + booking_mode (instant/quote); marketplace_bookings full lifecycle with auto-fee stamping + auto-reward firing triggers; Stripe columns on marketplace_providers (customer_id, payment_method_id, featured_tier, etc.); content_engagement table for future stats integration. Edge functions: marketplace-charge-provider-fee, marketplace-create-setup-intent, marketplace-create-featured-checkout. stripe-webhook extended to handle featured-tier subscription create/update/delete events. Frontend (signature-rewards): provider directory with featured rail + tier badges, instant-vs-quote booking flow, ref_code capture, /provider/setup-payment Stripe Elements, /provider/featured two-tier subscription page, /provider dashboard with confirm\u2192charge flow + retry rail, /admin/marketplace revenue breakdown, premium hero rotation on home. Pricing: portrait $35, beauty $40, family $50, event $150, corporate $200, wedding $300. Featured tiers: Verified Pro $49/mo, Premium Featured $149/mo. Client rewards on booking: $10\u2013$50 by category. Master 5% override on platform fee."
     },
     {
       "id": "marketplace-stripe-env-vars",
@@ -797,7 +797,7 @@
       "status": "done",
       "priority": "critical",
       "owner": "Lovable",
-      "note": "COMPLETED 2026-04-27. Pattern B verified in production code (lines 67-83 of supabase/functions/gp-client-content-action/index.ts). Two-step ownership check: row → enrollment → enrollment.user_id === JWT.sub. 403 returned before any mutation. All 5 action branches gated. Bonus safeguards: published-content lock at line 85, swap_image cross-tenant guard at lines 144-148. No IDOR vulnerability. Service-role client used intentionally (Pattern C not in play, Pattern B fully compensates).",
+      "note": "COMPLETED 2026-04-27. Pattern B verified in production code (lines 67-83 of supabase/functions/gp-client-content-action/index.ts). Two-step ownership check: row \u2192 enrollment \u2192 enrollment.user_id === JWT.sub. 403 returned before any mutation. All 5 action branches gated. Bonus safeguards: published-content lock at line 85, swap_image cross-tenant guard at lines 144-148. No IDOR vulnerability. Service-role client used intentionally (Pattern C not in play, Pattern B fully compensates).",
       "updatedAt": "2026-04-27T18:49:40.691946Z"
     },
     {
@@ -806,7 +806,7 @@
       "status": "planned",
       "priority": "low",
       "owner": "Lovable",
-      "note": "Post-launch optimization (NOT pre-meeting work). Current Pattern B does two queries (row → enrollment); Pattern A consolidates into one with a join. Saves ~20-50ms per call. Worth doing once Phase 5 is stable AND if bulk approval volume justifies it.",
+      "note": "Post-launch optimization (NOT pre-meeting work). Current Pattern B does two queries (row \u2192 enrollment); Pattern A consolidates into one with a join. Saves ~20-50ms per call. Worth doing once Phase 5 is stable AND if bulk approval volume justifies it.",
       "updatedAt": "2026-04-27T18:49:40.691946Z"
     },
     {
@@ -815,7 +815,7 @@
       "status": "done",
       "priority": "critical",
       "owner": "Ken",
-      "note": "COMPLETED 2026-04-27. Both crons live: gp-publish-retry-worker (every minute), gp-sync-engagement-daily (5am UTC). Verified via cron.job_run_details — retry worker firing every 60s with status=succeeded, processing 1 row per invocation from pgmq queue. Auth pattern (current_setting service_role_key) working — no 401s.",
+      "note": "COMPLETED 2026-04-27. Both crons live: gp-publish-retry-worker (every minute), gp-sync-engagement-daily (5am UTC). Verified via cron.job_run_details \u2014 retry worker firing every 60s with status=succeeded, processing 1 row per invocation from pgmq queue. Auth pattern (current_setting service_role_key) working \u2014 no 401s.",
       "updatedAt": "2026-04-27T20:16:30.049011Z"
     },
     {
@@ -824,19 +824,19 @@
       "status": "cancelled",
       "priority": "critical",
       "owner": "Ken",
-      "note": "CANCELLED 2026-04-27 — architecture pivot. Switched from webhook (push) to polling (pull) for publish confirmation, using per-enrollment PIT same as gp-sync-engagement. Webhook URL no longer needed in GHL config. HMAC secret retained in case webhook path is revived later.",
+      "note": "CANCELLED 2026-04-27 \u2014 architecture pivot. Switched from webhook (push) to polling (pull) for publish confirmation, using per-enrollment PIT same as gp-sync-engagement. Webhook URL no longer needed in GHL config. HMAC secret retained in case webhook path is revived later.",
       "updatedAt": "2026-04-27T20:22:47.752239Z"
     },
     {
       "id": "gp-phase5-smoke-test",
-      "title": "Phase 5 end-to-end smoke test: approve → publish → confirm webhook → metrics",
+      "title": "Phase 5 end-to-end smoke test: approve \u2192 publish \u2192 confirm webhook \u2192 metrics",
       "status": "done",
       "priority": "high",
       "owner": "Ken",
       "note": "Once crons + GHL webhook configured, run: pick a test enrollment, generate draft, approve via /growth-partner/content, watch for status=scheduled then status=published, verify external_post_refs populated, verify gp-sync-engagement pulls metrics within 24h. End-to-end proof of Phase 5 working before any real client uses it.",
       "updatedAt": "2026-04-27T20:04:35.479729Z",
       "completed": "2026-05-15",
-      "notes": "End-to-end smoke test complete: approve → publish → confirm webhook → metrics flow validated. Confirmed by Ken 2026-05-28."
+      "notes": "End-to-end smoke test complete: approve \u2192 publish \u2192 confirm webhook \u2192 metrics flow validated. Confirmed by Ken 2026-05-28."
     },
     {
       "id": "gp-publish-status-poller",
@@ -849,16 +849,16 @@
     },
     {
       "id": "gp-social-status-pit-capture",
-      "title": "Wire Social Status form → gp_set_location_pit RPC + ghl_location_id UPDATE",
+      "title": "Wire Social Status form \u2192 gp_set_location_pit RPC + ghl_location_id UPDATE",
       "status": "done",
       "priority": "high",
       "owner": "Lovable",
-      "note": "VERIFIED 2026-04-27 with Bless Me Now (enrollment a8127ccc-0800-494a-818d-46a1691a8e4d). ghl_location_id=\"T48jDH65Vj5kOKRoIDfO\" + ghl_location_pit_secret_id=\"ba8edcac-d2d3-41a7-be87-44a4cce25011\" populated correctly. Raw PIT not visible in any column. gp_get_location_pit RPC denies authed users (service-role-only — correct). Lovable also added bonus features beyond spec: real-time GHL token validation via post-save ping + amber \"Token rejected\" badge. Note: gp_activity_log row not yet written on save — separate follow-up filed.",
+      "note": "VERIFIED 2026-04-27 with Bless Me Now (enrollment a8127ccc-0800-494a-818d-46a1691a8e4d). ghl_location_id=\"T48jDH65Vj5kOKRoIDfO\" + ghl_location_pit_secret_id=\"ba8edcac-d2d3-41a7-be87-44a4cce25011\" populated correctly. Raw PIT not visible in any column. gp_get_location_pit RPC denies authed users (service-role-only \u2014 correct). Lovable also added bonus features beyond spec: real-time GHL token validation via post-save ping + amber \"Token rejected\" badge. Note: gp_activity_log row not yet written on save \u2014 separate follow-up filed.",
       "updatedAt": "2026-04-27T20:52:24.991522Z"
     },
     {
       "id": "ghl-mcp-availability",
-      "title": "Watch for GoHighLevel MCP server in registry — useful for direct Claude→GHL queries",
+      "title": "Watch for GoHighLevel MCP server in registry \u2014 useful for direct Claude\u2192GHL queries",
       "status": "planned",
       "priority": "low",
       "owner": "Ken",
@@ -876,11 +876,11 @@
     },
     {
       "id": "liveloop-product-launch",
-      "title": "Launch Signature LiveLoop™ as bundled subscription product",
+      "title": "Launch Signature LiveLoop\u2122 as bundled subscription product",
       "status": "planned",
       "priority": "high",
       "owner": "Ken",
-      "note": "FINAL TIERS LOCKED 2026-04-27 (final naming pass): PROFESSIONAL $397/mo + $497 setup (1 style from Signature Style Pack, 50 imgs, keep 10), ELITE $497/mo + $997 setup (3 styles from Signature Style Pack, 150 imgs, keep 20) ⭐ recommended, PLATINUM $697/mo + $1,497 setup (1 style from the 14-pack Platinum Style Pack, 100 elaborate images at 20 prompts × 5 variations, keep 20). Tier names: Professional / Elite / Platinum. Always reference as \"Signature LiveLoop Professional\" etc to avoid confusion with Growth Partner tier names. Funnel: $75 headshot → $97-197 AI Branding → $297 Authority Sprint → $397-697 LiveLoop → $1,200-2,800 Growth Partner.",
+      "note": "FINAL TIERS LOCKED 2026-04-27 (final naming pass): PROFESSIONAL $397/mo + $497 setup (1 style from Signature Style Pack, 50 imgs, keep 10), ELITE $497/mo + $997 setup (3 styles from Signature Style Pack, 150 imgs, keep 20) \u2b50 recommended, PLATINUM $697/mo + $1,497 setup (1 style from the 14-pack Platinum Style Pack, 100 elaborate images at 20 prompts \u00d7 5 variations, keep 20). Tier names: Professional / Elite / Platinum. Always reference as \"Signature LiveLoop Professional\" etc to avoid confusion with Growth Partner tier names. Funnel: $75 headshot \u2192 $97-197 AI Branding \u2192 $297 Authority Sprint \u2192 $397-697 LiveLoop \u2192 $1,200-2,800 Growth Partner.",
       "updatedAt": "2026-04-28T00:11:50.791874Z"
     },
     {
@@ -898,7 +898,7 @@
       "status": "planned",
       "priority": "critical",
       "owner": "Ken",
-      "note": "Current $500/mo + $500 setup is materially below cost when founder time is honestly accounted for. New tiers: Starter $1,200, Growth $1,800 (recommended), Scale $2,800 + setup $1,500–$2,500. Existing 9 GP clients grandfathered at $500/mo legacy rate or invited to upgrade to Growth tier at $1,200/mo founder discount. New clients all priced at new tier starting immediately.",
+      "note": "Current $500/mo + $500 setup is materially below cost when founder time is honestly accounted for. New tiers: Starter $1,200, Growth $1,800 (recommended), Scale $2,800 + setup $1,500\u2013$2,500. Existing 9 GP clients grandfathered at $500/mo legacy rate or invited to upgrade to Growth tier at $1,200/mo founder discount. New clients all priced at new tier starting immediately.",
       "updatedAt": "2026-04-27T22:50:03.828925Z"
     },
     {
@@ -916,7 +916,7 @@
       "status": "done",
       "priority": "critical",
       "owner": "Lovable",
-      "note": "Comprehensive product line restructure brief sent to Lovable 2026-04-27. Removes $59/$99 AI Branding tiers from public pricing. Adds three LiveLoop tiers ($397/$497/$697). Adds standalone Authority Sprint page. Restructures GP into 3 tiers ($1,200/$1,800/$2,800) with application-only access. Industry pages updated. Stripe/Square products created. Existing $59/$99 subscribers grandfathered (hidden from public pricing, billing continues). Phased rollout suggested. BILLING DECISION 2026-04-27: Single Stripe Checkout session with mode=subscription containing both setup (one_time price) and subscription (recurring price) line items. Customer charged together on day one; subscription continues monthly. Cleaner UX, lower abandonment, standard SaaS pattern. Receipt should itemize both charges for transparency. SPRINT CREDIT MECHANIC 2026-04-27: Server-side check at LiveLoop checkout. New table authority_sprint_purchases (customer_id, stripe_payment_intent_id, credit_used, credit_redeemed_at, credit_redemption_session_id). Edge function queries for eligible unredeemed Sprint purchase within 30-day window, attaches $297 auto-generated single-use Stripe coupon to Checkout. Webhook marks credit_used=true on subscription creation. Race-safe via SELECT FOR UPDATE SKIP LOCKED. Nightly cleanup reverts abandoned pending redemptions. Zero customer-facing codes or admin manual work. GP ACCESS DECISION 2026-04-27: Application-only, admin-approved. NO direct checkout anywhere on public site. /growth-partner shows tier prices for transparency, gates only the checkout. /growth-partner/apply form (6 fields). gp_applications table with status workflow (pending → approved/fit_call/declined). Admin approval generates one-time-use 7-day checkout token URL. Decline gracefully redirects to LiveLoop or Authority Sprint. No public /growth-partner/checkout route — token is the only access path. LEGACY PLAN UI 2026-04-27: Hide Essential ($59) and Pro ($99) from /pricing + all marketing surfaces. KEEP visible in customer account page with gold \"LEGACY\" pill badge + grandfather copy: \"This plan is no longer offered to new customers. You're grandfathered at this price for as long as your subscription stays continuous.\" Plus subtle \"View what's new — Signature LiveLoop\" link to /liveloop. Database layer unchanged — Stripe products keep billing, no migration runs automatically. RESTRUCTURE COMPLETE 2026-04-27. Phase 1 (pricing + Stripe + LEGACY badge) and Phase 2 (LiveLoop + Sprint pages + edge functions + webhook hardening) both shipped and verified. Three more action items follow: sales page copy refinement, migration emails to existing subscribers, public launch.",
+      "note": "Comprehensive product line restructure brief sent to Lovable 2026-04-27. Removes $59/$99 AI Branding tiers from public pricing. Adds three LiveLoop tiers ($397/$497/$697). Adds standalone Authority Sprint page. Restructures GP into 3 tiers ($1,200/$1,800/$2,800) with application-only access. Industry pages updated. Stripe/Square products created. Existing $59/$99 subscribers grandfathered (hidden from public pricing, billing continues). Phased rollout suggested. BILLING DECISION 2026-04-27: Single Stripe Checkout session with mode=subscription containing both setup (one_time price) and subscription (recurring price) line items. Customer charged together on day one; subscription continues monthly. Cleaner UX, lower abandonment, standard SaaS pattern. Receipt should itemize both charges for transparency. SPRINT CREDIT MECHANIC 2026-04-27: Server-side check at LiveLoop checkout. New table authority_sprint_purchases (customer_id, stripe_payment_intent_id, credit_used, credit_redeemed_at, credit_redemption_session_id). Edge function queries for eligible unredeemed Sprint purchase within 30-day window, attaches $297 auto-generated single-use Stripe coupon to Checkout. Webhook marks credit_used=true on subscription creation. Race-safe via SELECT FOR UPDATE SKIP LOCKED. Nightly cleanup reverts abandoned pending redemptions. Zero customer-facing codes or admin manual work. GP ACCESS DECISION 2026-04-27: Application-only, admin-approved. NO direct checkout anywhere on public site. /growth-partner shows tier prices for transparency, gates only the checkout. /growth-partner/apply form (6 fields). gp_applications table with status workflow (pending \u2192 approved/fit_call/declined). Admin approval generates one-time-use 7-day checkout token URL. Decline gracefully redirects to LiveLoop or Authority Sprint. No public /growth-partner/checkout route \u2014 token is the only access path. LEGACY PLAN UI 2026-04-27: Hide Essential ($59) and Pro ($99) from /pricing + all marketing surfaces. KEEP visible in customer account page with gold \"LEGACY\" pill badge + grandfather copy: \"This plan is no longer offered to new customers. You're grandfathered at this price for as long as your subscription stays continuous.\" Plus subtle \"View what's new \u2014 Signature LiveLoop\" link to /liveloop. Database layer unchanged \u2014 Stripe products keep billing, no migration runs automatically. RESTRUCTURE COMPLETE 2026-04-27. Phase 1 (pricing + Stripe + LEGACY badge) and Phase 2 (LiveLoop + Sprint pages + edge functions + webhook hardening) both shipped and verified. Three more action items follow: sales page copy refinement, migration emails to existing subscribers, public launch.",
       "updatedAt": "2026-04-28T02:03:10.200205Z"
     },
     {
@@ -952,12 +952,12 @@
       "status": "in-progress",
       "priority": "high",
       "owner": "Ken",
-      "note": "Phase 1 shipped 2026-04-27. 11 Stripe products created. Two new tables (authority_sprint_purchases, gp_applications) with RLS. /pricing rewrite with LiveLoop tiers + Authority Sprint + GP application section. LEGACY badge on PlanCard for 54 Essential + 16 Pro subscribers (70 total). NEEDS PATCH: gp_applications anon SELECT returning HTTP 200 — should be denied. Patch request sent to Lovable. After patch + Ken visual review, green-light Phase 2.",
+      "note": "Phase 1 shipped 2026-04-27. 11 Stripe products created. Two new tables (authority_sprint_purchases, gp_applications) with RLS. /pricing rewrite with LiveLoop tiers + Authority Sprint + GP application section. LEGACY badge on PlanCard for 54 Essential + 16 Pro subscribers (70 total). NEEDS PATCH: gp_applications anon SELECT returning HTTP 200 \u2014 should be denied. Patch request sent to Lovable. After patch + Ken visual review, green-light Phase 2.",
       "updatedAt": "2026-04-28T00:55:35.134530Z"
     },
     {
       "id": "gp-applications-rls-tighten",
-      "title": "Tighten gp_applications RLS — anon SELECT must be blocked",
+      "title": "Tighten gp_applications RLS \u2014 anon SELECT must be blocked",
       "status": "done",
       "priority": "high",
       "owner": "Lovable",
@@ -979,7 +979,7 @@
       "status": "done",
       "priority": "high",
       "owner": "Ken",
-      "note": "COMPLETED 2026-04-27 (Path A signoff). All Phase 2 components shipped, deployed, and verified at component level: /liveloop + /authority-sprint marketing pages, Sprint route restructure with 301, three edge functions (create-liveloop-checkout with identity binding, create-authority-sprint-checkout with JWT-bound user, stripe-webhook hardened with HMAC fail-closed), claim_authority_sprint_credit RPC race-safe via SELECT FOR UPDATE SKIP LOCKED. Three forge vectors rejected with HTTP 400. Real Stripe test card runs deferred — first real customer transaction (likely Ken self-test) will validate end-to-end flow. Risk accepted as low.",
+      "note": "COMPLETED 2026-04-27 (Path A signoff). All Phase 2 components shipped, deployed, and verified at component level: /liveloop + /authority-sprint marketing pages, Sprint route restructure with 301, three edge functions (create-liveloop-checkout with identity binding, create-authority-sprint-checkout with JWT-bound user, stripe-webhook hardened with HMAC fail-closed), claim_authority_sprint_credit RPC race-safe via SELECT FOR UPDATE SKIP LOCKED. Three forge vectors rejected with HTTP 400. Real Stripe test card runs deferred \u2014 first real customer transaction (likely Ken self-test) will validate end-to-end flow. Risk accepted as low.",
       "updatedAt": "2026-04-28T02:03:10.200205Z"
     },
     {
@@ -988,7 +988,7 @@
       "status": "partial",
       "priority": "high",
       "owner": "Lovable",
-      "note": "CLARIFIED 2026-04-27. Item 1 (Sprint checkout empty body): CORRECT — single-product flow, JWT-bound to user, no body needed. Item 3 (RPC signature): CORRECT — claim_authority_sprint_credit(_customer_id uuid, _redemption_session_id text) RETURNS uuid, service_role-only EXECUTE. Item 2 (webhook HMAC): REAL RISK FOUND — silent fallback to trusted JSON.parse if STRIPE_WEBHOOK_SECRET unset or signature header missing. Patch requested separately.",
+      "note": "CLARIFIED 2026-04-27. Item 1 (Sprint checkout empty body): CORRECT \u2014 single-product flow, JWT-bound to user, no body needed. Item 3 (RPC signature): CORRECT \u2014 claim_authority_sprint_credit(_customer_id uuid, _redemption_session_id text) RETURNS uuid, service_role-only EXECUTE. Item 2 (webhook HMAC): REAL RISK FOUND \u2014 silent fallback to trusted JSON.parse if STRIPE_WEBHOOK_SECRET unset or signature header missing. Patch requested separately.",
       "updatedAt": "2026-04-28T01:39:26.200895Z"
     },
     {
@@ -997,7 +997,7 @@
       "status": "done",
       "priority": "critical",
       "owner": "Lovable",
-      "note": "VERIFIED 2026-04-27. Three attack vectors tested via REST: (1) unsigned forged POST → HTTP 400, (2) bogus signature header → HTTP 400, (3) empty body → HTTP 400. All correctly rejected. STRIPE_WEBHOOK_SECRET confirmed set in production. Replay/forgery attempts logged with IP + UA for monitoring. Webhook is fail-closed.",
+      "note": "VERIFIED 2026-04-27. Three attack vectors tested via REST: (1) unsigned forged POST \u2192 HTTP 400, (2) bogus signature header \u2192 HTTP 400, (3) empty body \u2192 HTTP 400. All correctly rejected. STRIPE_WEBHOOK_SECRET confirmed set in production. Replay/forgery attempts logged with IP + UA for monitoring. Webhook is fail-closed.",
       "updatedAt": "2026-04-28T01:51:56.042175Z"
     },
     {
@@ -1020,7 +1020,7 @@
     },
     {
       "id": "public-launch-liveloop",
-      "title": "Public launch announcement of Signature LiveLoop™ to broader email list",
+      "title": "Public launch announcement of Signature LiveLoop\u2122 to broader email list",
       "status": "planned",
       "priority": "medium",
       "owner": "Ken",
@@ -1029,22 +1029,22 @@
     },
     {
       "id": "team-activation-meeting",
-      "title": "Team activation meeting with Dex, Mae, Eric — roles + comp + futures",
+      "title": "Team activation meeting with Dex, Mae, Eric \u2014 roles + comp + futures",
       "status": "done",
       "priority": "critical",
       "owner": "Ken",
       "note": "30-min team huddle to: (1) tell the team what shipped today and what is coming, (2) propose new role structures (Dex = Director of Technical Ops, Mae = Director of Client Ops, Eric = Production Specialist, Lead Producer path), (3) ASK each what they want career-wise, (4) outline compensation increase tied to LiveLoop MRR milestones, (5) open profit-share/equity conversation for long-term partners. Run it within 7 days.",
       "updatedAt": "2026-04-28T02:37:37.677935Z",
       "completed": "2026-05-20",
-      "notes": "Team activation meeting with Dex, Mae, Eric — roles, comp, futures discussed and aligned. Confirmed by Ken 2026-05-28."
+      "notes": "Team activation meeting with Dex, Mae, Eric \u2014 roles, comp, futures discussed and aligned. Confirmed by Ken 2026-05-28."
     },
     {
       "id": "comp-restructure-team",
-      "title": "Restructure compensation for Dex/Mae/Eric — title + raise + profit share",
+      "title": "Restructure compensation for Dex/Mae/Eric \u2014 title + raise + profit share",
       "status": "planned",
       "priority": "high",
       "owner": "Ken",
-      "note": "After team huddle: implement (1) title promotions immediately, (2) compensation raise of 25-40% triggered when LiveLoop MRR hits $10K (probably month 2-3 post-launch), (3) profit-share pool conversation for years 1-2 with path to equity for long-term partners. Cash impact scales with revenue — sustainable. Loyalty impact compounds.",
+      "note": "After team huddle: implement (1) title promotions immediately, (2) compensation raise of 25-40% triggered when LiveLoop MRR hits $10K (probably month 2-3 post-launch), (3) profit-share pool conversation for years 1-2 with path to equity for long-term partners. Cash impact scales with revenue \u2014 sustainable. Loyalty impact compounds.",
       "updatedAt": "2026-04-28T02:37:37.677935Z"
     },
     {
@@ -1085,7 +1085,7 @@
     },
     {
       "id": "liveloop-flyer-hybrid-composition",
-      "title": "Phase 4: hybrid composition — AI background + layout-engine typography",
+      "title": "Phase 4: hybrid composition \u2014 AI background + layout-engine typography",
       "status": "planned",
       "priority": "medium",
       "owner": "Lovable",
@@ -1107,7 +1107,7 @@
       "status": "planned",
       "priority": "medium",
       "owner": "Ken",
-      "note": "REFINED 2026-05-06: recommendation is to start with individual Pro plans, not jump to Teams immediately. Phase 1 test with Dex on Pro for 30 days. Phase 2 add Mae on Pro if Phase 1 succeeds. Reconsider Teams only after 60+ days of active 4-person usage, usage limits being hit regularly, OR clear shared-Projects workflow that justifies the ~$480/year premium. Memory distribution to each person is the SAME work regardless of subscription tier — both paths require copying role-specific memory files to each Mac.",
+      "note": "REFINED 2026-05-06: recommendation is to start with individual Pro plans, not jump to Teams immediately. Phase 1 test with Dex on Pro for 30 days. Phase 2 add Mae on Pro if Phase 1 succeeds. Reconsider Teams only after 60+ days of active 4-person usage, usage limits being hit regularly, OR clear shared-Projects workflow that justifies the ~$480/year premium. Memory distribution to each person is the SAME work regardless of subscription tier \u2014 both paths require copying role-specific memory files to each Mac.",
       "updatedAt": "2026-05-06T20:09:50.514981Z"
     },
     {
@@ -1125,7 +1125,7 @@
       "status": "planned",
       "priority": "low",
       "owner": "Ken",
-      "note": "DEFERRED to ~2026-06-05 per Ken decision 2026-05-06. Not evaluating Mae for Claude until Dex's 30-day Phase 1 surfaces real-world data on usage patterns, value, and any setup gotchas. Pattern proven with Dex first, then replicate. Memory subset for Mae already documented (signature_branding_system, liveloop, rewards_program, client_phyllis_inman, client_we_care_more) — will bundle when triggered.",
+      "note": "DEFERRED to ~2026-06-05 per Ken decision 2026-05-06. Not evaluating Mae for Claude until Dex's 30-day Phase 1 surfaces real-world data on usage patterns, value, and any setup gotchas. Pattern proven with Dex first, then replicate. Memory subset for Mae already documented (signature_branding_system, liveloop, rewards_program, client_phyllis_inman, client_we_care_more) \u2014 will bundle when triggered.",
       "updatedAt": "2026-05-06T20:28:47.396075Z"
     },
     {
@@ -1134,7 +1134,7 @@
       "status": "planned",
       "priority": "low",
       "owner": "Ken",
-      "note": "Triggers to upgrade Pro→Teams: (a) hit Pro usage limits 3+ times/month, (b) clear shared web Projects workflow that justifies $480/year premium, (c) bookkeeping for 4-6 individual subscriptions becomes annoying, (d) team scales past 5-6 seats. Until then, individual Pro plans are cheaper and offer the same Claude Code capability.",
+      "note": "Triggers to upgrade Pro\u2192Teams: (a) hit Pro usage limits 3+ times/month, (b) clear shared web Projects workflow that justifies $480/year premium, (c) bookkeeping for 4-6 individual subscriptions becomes annoying, (d) team scales past 5-6 seats. Until then, individual Pro plans are cheaper and offer the same Claude Code capability.",
       "updatedAt": "2026-05-06T20:09:50.514981Z"
     },
     {
@@ -1161,7 +1161,7 @@
       "status": "planned",
       "priority": "medium",
       "owner": "Ken",
-      "note": "Phase 1 of voice setup. Open Claude Desktop on Mac, sign in, click mic icon in conversation, speak. Anthropic shipped voice in/out across web and desktop in 2025-2026, now polished. Five voices to choose from (Buttery, Airy, Mellow, Glassy, Rounded). Zero additional cost. Use for general strategy/conversation work with Claude. Won't cover Claude Code specifically — that's Phase 2.",
+      "note": "Phase 1 of voice setup. Open Claude Desktop on Mac, sign in, click mic icon in conversation, speak. Anthropic shipped voice in/out across web and desktop in 2025-2026, now polished. Five voices to choose from (Buttery, Airy, Mellow, Glassy, Rounded). Zero additional cost. Use for general strategy/conversation work with Claude. Won't cover Claude Code specifically \u2014 that's Phase 2.",
       "updatedAt": "2026-05-07T13:41:07.153375Z"
     },
     {
@@ -1175,12 +1175,12 @@
     },
     {
       "id": "signature-studio-partner-program",
-      "title": "Signature Certified Photographer program — affiliate model",
+      "title": "Signature Certified Photographer program \u2014 affiliate model",
       "status": "in-progress",
       "priority": "high",
       "owner": "Ken",
       "note": [
-        "REFINED 2026-05-08 after deeper conversation with Ken: this is an AFFILIATE/REFERRAL model, NOT a marketplace model. Photographer (Jessie G is prototype #1) keeps 100% of her photography fee — Signature never touches her core business. She EARNS commission when her clients buy add-on services. Structure: 40% one-time on Platinum/AI/Authority Sprint, $80-140 first-month bonus + 10% lifetime recurring on LiveLoop tiers, $400 first-month + $180/mo lifetime on Growth Partner. Three-tier progression: Certified → Master Certified (auto-upgrade at 10 active LiveLoop subscribers, higher rates) → Authorized Studio (invitation-only co-branded regional presence, retainer + premium rates). Renamed to \"Signature Certified Photographer\" — better positioning than \"Studio Partner\"."
+        "REFINED 2026-05-08 after deeper conversation with Ken: this is an AFFILIATE/REFERRAL model, NOT a marketplace model. Photographer (Jessie G is prototype #1) keeps 100% of her photography fee \u2014 Signature never touches her core business. She EARNS commission when her clients buy add-on services. Structure: 40% one-time on Platinum/AI/Authority Sprint, $80-140 first-month bonus + 10% lifetime recurring on LiveLoop tiers, $400 first-month + $180/mo lifetime on Growth Partner. Three-tier progression: Certified \u2192 Master Certified (auto-upgrade at 10 active LiveLoop subscribers, higher rates) \u2192 Authorized Studio (invitation-only co-branded regional presence, retainer + premium rates). Renamed to \"Signature Certified Photographer\" \u2014 better positioning than \"Studio Partner\"."
       ],
       "updatedAt": "2026-05-08T15:27:12.605405Z"
     },
@@ -1190,7 +1190,7 @@
       "status": "done",
       "priority": "high",
       "owner": "Ken",
-      "note": "Concrete first test of the Studio Partner model. Jessie brings 1 attorney and/or 1 car dealership through the funnel. Document: how the handoff feels for her, how the customer experience flows, what gets sticky in the booking + delivery, what tier of LiveLoop they buy. Pay Jessie on the spot for what she earns — sets the trust precedent. Real-world data > program theory.",
+      "note": "Concrete first test of the Studio Partner model. Jessie brings 1 attorney and/or 1 car dealership through the funnel. Document: how the handoff feels for her, how the customer experience flows, what gets sticky in the booking + delivery, what tier of LiveLoop they buy. Pay Jessie on the spot for what she earns \u2014 sets the trust precedent. Real-world data > program theory.",
       "updatedAt": "2026-05-08T15:16:00.824620Z",
       "completed": "2026-05-22",
       "notes": "Jessie's first 1-2 referrals (attorney + car dealership) successfully run through funnel. Confirmed by Ken 2026-05-28."
@@ -1206,11 +1206,11 @@
     },
     {
       "id": "mobile-branding-tour-strategy",
-      "title": "Mobile branding tour — Jessie as traveling Signature ambassador",
+      "title": "Mobile branding tour \u2014 Jessie as traveling Signature ambassador",
       "status": "planned",
       "priority": "medium",
       "owner": "Ken",
-      "note": "Jessie mentioned plans to acquire high-roof vehicles for mobile branding and headshot services in different markets. This is significantly bigger than local affiliate work — she becomes Signature's national brand ambassador. Each city she visits = new recurring-revenue annuity. Pattern: mobile Signature Certified photographers activate geographic markets we'd never naturally enter. After Jessie validates 1-2 deals locally, investigate co-marketing the mobile tour: Signature provides marketing support, branded materials, lead-gen pre-tour. She delivers in-market service. Both build national presence without franchise complexity.",
+      "note": "Jessie mentioned plans to acquire high-roof vehicles for mobile branding and headshot services in different markets. This is significantly bigger than local affiliate work \u2014 she becomes Signature's national brand ambassador. Each city she visits = new recurring-revenue annuity. Pattern: mobile Signature Certified photographers activate geographic markets we'd never naturally enter. After Jessie validates 1-2 deals locally, investigate co-marketing the mobile tour: Signature provides marketing support, branded materials, lead-gen pre-tour. She delivers in-market service. Both build national presence without franchise complexity.",
       "updatedAt": "2026-05-08T15:27:12.605405Z"
     },
     {
@@ -1219,14 +1219,14 @@
       "status": "done",
       "priority": "medium",
       "owner": "Ken",
-      "note": "DECIDED 2026-05-08: program named \"Signature Certified Photographer\" rather than \"Studio Partner\". \"Certified\" implies earned standard, gives her a designation/asset she keeps for her own marketing, creates natural tier progression (Certified → Master Certified → Authorized Studio), and positions her as part of an honor-based network rather than a contractor.",
+      "note": "DECIDED 2026-05-08: program named \"Signature Certified Photographer\" rather than \"Studio Partner\". \"Certified\" implies earned standard, gives her a designation/asset she keeps for her own marketing, creates natural tier progression (Certified \u2192 Master Certified \u2192 Authorized Studio), and positions her as part of an honor-based network rather than a contractor.",
       "updatedAt": "2026-05-08T15:27:12.605405Z"
     },
     {
       "id": "certified-photographer-single-level",
       "title": "Lock Signature Certified Photographer as single-level affiliate (no MLM)",
       "status": "decision-locked",
-      "note": "Design principle: each photographer earns ONLY on their own end-customer referrals. No down-line overrides. Recruitment incentivized via flat $500 finder fee + status perks + public recognition — NOT % of others' production. Stays clearly inside FTC Koscot test."
+      "note": "Design principle: each photographer earns ONLY on their own end-customer referrals. No down-line overrides. Recruitment incentivized via flat $500 finder fee + status perks + public recognition \u2014 NOT % of others' production. Stays clearly inside FTC Koscot test."
     },
     {
       "id": "certified-photographer-attorney-review",
@@ -1250,7 +1250,7 @@
       "id": "personal-brand-site-future",
       "title": "Personal brand site for Ken (separate property, post-marketing-site)",
       "status": "queued",
-      "note": "Alex Hormozi pattern — kennethbridgett.com or similar. Cross-links from /about on signature site. Build after marketing site lands."
+      "note": "Alex Hormozi pattern \u2014 kennethbridgett.com or similar. Cross-links from /about on signature site. Build after marketing site lands."
     },
     {
       "id": "plausible-analytics-rollout",
@@ -1260,7 +1260,7 @@
     },
     {
       "id": "certified-dispatch-mechanic-locked",
-      "title": "Signature Certified — dispatch mechanic locked",
+      "title": "Signature Certified \u2014 dispatch mechanic locked",
       "status": "decision-locked",
       "note": "Signature-originated bookings: $40 standalone headshot / $100 bundle ($197) dispatch fee. +$50 LiveLoop conversion bonus (within 90 days). 5% recurring on LiveLoop, capped 12 months. 5% one-time capped first year on Authority Sprint / Platinum / AI standalone post-shoot. $200 Growth Partner conversion bonus. Routing: Master Certified first refusal within 25-mile radius, then rotates among Certified."
     },
@@ -1278,13 +1278,13 @@
     },
     {
       "id": "certified-program-projections-2026",
-      "title": "Signature Certified — Year 1-3 financial projections (baseline 2026-05-10)",
+      "title": "Signature Certified \u2014 Year 1-3 financial projections (baseline 2026-05-10)",
       "status": "baseline-locked",
-      "note": "BASELINE PROJECTIONS — locked at program launch. Measure actuals against these monthly.\n\nASSUMPTIONS (BASE CASE):\n- 30 active certified photographers by month 12 (avg 20 across Y1)\n- 10 annual referrals per active photographer (Path 1)\n- $4K/mo avg ad spend on dispatch funnel; $25 CAC\n- 60% bundle attach, 40% standalone\n- 30% LiveLoop conversion from bundle, 15% from standalone+upsell\n- 14-month avg LiveLoop sub lifetime; $497 blended ARPU\n\nYEAR 1 NET TO SIGNATURE:\n- Conservative: $253K\n- Base: $635K\n- Aggressive: $1.67M\n\nYEAR 2 NET:\n- Conservative: $740K\n- Base: $1.78M\n- Aggressive: $4.1M\n\nYEAR 3 NET:\n- Conservative: $1.3M\n- Base: $3.2M\n- Aggressive: $7.5M\n\nKEY VARIANCE LEVERS (monitor monthly):\n1. LiveLoop attach rate from bundle/headshot clients — single biggest driver\n2. Active photographer count growth\n3. LiveLoop sub lifetime (churn)\n\nKILL RISKS:\n1. Recruitment stalls below 15-20 photographers by month 12\n2. Bundle attach falls below 50%\n3. LiveLoop churn at 4-6 months instead of 12-18\n\nSTRATEGIC VALUE BEYOND P&L:\n- Geographic distribution without payroll (~$500K-1M capex avoided)\n- Brand defensibility — moat after 30+ active photographers\n- Distribution platform unit economics → meaningful valuation multiple lift if ever raising or selling"
+      "note": "BASELINE PROJECTIONS \u2014 locked at program launch. Measure actuals against these monthly.\n\nASSUMPTIONS (BASE CASE):\n- 30 active certified photographers by month 12 (avg 20 across Y1)\n- 10 annual referrals per active photographer (Path 1)\n- $4K/mo avg ad spend on dispatch funnel; $25 CAC\n- 60% bundle attach, 40% standalone\n- 30% LiveLoop conversion from bundle, 15% from standalone+upsell\n- 14-month avg LiveLoop sub lifetime; $497 blended ARPU\n\nYEAR 1 NET TO SIGNATURE:\n- Conservative: $253K\n- Base: $635K\n- Aggressive: $1.67M\n\nYEAR 2 NET:\n- Conservative: $740K\n- Base: $1.78M\n- Aggressive: $4.1M\n\nYEAR 3 NET:\n- Conservative: $1.3M\n- Base: $3.2M\n- Aggressive: $7.5M\n\nKEY VARIANCE LEVERS (monitor monthly):\n1. LiveLoop attach rate from bundle/headshot clients \u2014 single biggest driver\n2. Active photographer count growth\n3. LiveLoop sub lifetime (churn)\n\nKILL RISKS:\n1. Recruitment stalls below 15-20 photographers by month 12\n2. Bundle attach falls below 50%\n3. LiveLoop churn at 4-6 months instead of 12-18\n\nSTRATEGIC VALUE BEYOND P&L:\n- Geographic distribution without payroll (~$500K-1M capex avoided)\n- Brand defensibility \u2014 moat after 30+ active photographers\n- Distribution platform unit economics \u2192 meaningful valuation multiple lift if ever raising or selling"
     },
     {
       "id": "agent-os-strategy-locked",
-      "title": "Signature Agent OS — full strategic positioning locked",
+      "title": "Signature Agent OS \u2014 full strategic positioning locked",
       "category": "strategy",
       "priority": "critical",
       "status": "done",
@@ -1321,7 +1321,7 @@
       "category": "ops",
       "priority": "critical",
       "status": "pending",
-      "description": "Two products in Stripe: (1) AI Activation Monthly: $1,497 setup + $297/mo recurring; (2) AI Activation One-Time: $2,497 single payment. Connect to marketing site CTAs. Build Stripe webhook → product app onboarding pipeline at signaturebranding.app (creates auth user, gp_client_enrollment row with client_segment=smb_automation, fires welcome email + GHL sub-account clone).",
+      "description": "Two products in Stripe: (1) AI Activation Monthly: $1,497 setup + $297/mo recurring; (2) AI Activation One-Time: $2,497 single payment. Connect to marketing site CTAs. Build Stripe webhook \u2192 product app onboarding pipeline at signaturebranding.app (creates auth user, gp_client_enrollment row with client_segment=smb_automation, fires welcome email + GHL sub-account clone).",
       "estimatedTime": "2-3 hours",
       "impact": "Without this, marketing site cannot convert traffic to revenue"
     },
@@ -1331,7 +1331,7 @@
       "category": "build",
       "priority": "critical",
       "status": "pending",
-      "description": "HIGHEST-LEVERAGE build asset in Master Automation Stack. Complete insurance-flavored GHL sub-account: Universal Insurance Pipeline (Lead→Contacted→Qualified→Quoted→App Submitted→Underwriting→Issued→Cross-Sell), 4 pipeline variants (FE/Medicare/IUL/Recruiting), workflows (welcome 5-email + 2-SMS, application follow-up, aged lead reactivation, birthday + renewal, AEP campaign, cross-sell triggers), tags (products, carriers, IMOs, lead sources, compliance state), forms (lead intake with TCPA, application info, beneficiary, FE health questionnaire), calendars (discovery, application, AEP). Cloned per Launch+ client via GHL snapshot feature on payment trigger.",
+      "description": "HIGHEST-LEVERAGE build asset in Master Automation Stack. Complete insurance-flavored GHL sub-account: Universal Insurance Pipeline (Lead\u2192Contacted\u2192Qualified\u2192Quoted\u2192App Submitted\u2192Underwriting\u2192Issued\u2192Cross-Sell), 4 pipeline variants (FE/Medicare/IUL/Recruiting), workflows (welcome 5-email + 2-SMS, application follow-up, aged lead reactivation, birthday + renewal, AEP campaign, cross-sell triggers), tags (products, carriers, IMOs, lead sources, compliance state), forms (lead intake with TCPA, application info, beneficiary, FE health questionnaire), calendars (discovery, application, AEP). Cloned per Launch+ client via GHL snapshot feature on payment trigger.",
       "estimatedTime": "40 hours (Week 1-4)",
       "impact": "Reduces Launch tier delivery from 30+ hr to 4-6 hr per client. Pays for itself by client #4.",
       "owner": "Ken"
@@ -1398,7 +1398,7 @@
       "status": "pending",
       "description": "Apollo strategy READY (3 lists: 200 FE, 200 Medicare, 100 IUL all FL+GA). 5-touch email sequence + LinkedIn parallel sequence + reply playbook all READY. Steps: (1) Pull 500 prospects from Apollo with FL+GA geo filters, (2) NeverBounce verify (~$2.50), (3) quality-score with 5-point check, prioritize 3+/5, (4) purchase sister domain for sending, (5) Instantly warmup 14 days, (6) load sequences with personalization variables, (7) send 50/day ramping to 100/day.",
       "estimatedTime": "Week 1 setup (6 hrs) + ongoing daily monitoring",
-      "impact": "Target: 7-8 booked calls per 500-prospect sequence batch → 2-3 Activation clients ($3K-4.5K revenue + $600-900 MRR per sequence)"
+      "impact": "Target: 7-8 booked calls per 500-prospect sequence batch \u2192 2-3 Activation clients ($3K-4.5K revenue + $600-900 MRR per sequence)"
     },
     {
       "id": "agent-os-podcast-pitches-tier1",
@@ -1412,67 +1412,67 @@
     },
     {
       "id": "inbox-phase2-ghl-email-integration",
-      "title": "Phase 2 · Configure GHL Conversational AI for email triage on signatureheadshotevent.com",
+      "title": "Phase 2 \u00b7 Configure GHL Conversational AI for email triage on signatureheadshotevent.com",
       "status": "pending",
       "priority": "high",
       "category": "ops",
       "estimatedTime": "2-3 hours",
       "owner": "ken",
-      "notes": "Phase 2 of the 4-phase Inbox Triage Agent rollout (Phase 1 = Claude Desktop + Gmail, implementing today). Use existing GHL subscription (no new cost). Configure for the signatureheadshotevent.com Gmail alias FIRST because it's the most templatable email type (booking inquiries follow patterns). Path: GHL → Conversational AI Settings → Email Channel → connect via OAuth to the bookings@signatureheadshotevent.com alias. Configure: (1) classification logic for booking inquiry / general question / spam, (2) auto-reply templates for common FAQ, (3) routing to calendar booking flow. Test with 3-5 manual emails before going live. Reference: project_ghl_conversational_ai.md memory. After this works for headshot bookings, expand to info@signaturerewards.app next."
+      "notes": "Phase 2 of the 4-phase Inbox Triage Agent rollout (Phase 1 = Claude Desktop + Gmail, implementing today). Use existing GHL subscription (no new cost). Configure for the signatureheadshotevent.com Gmail alias FIRST because it's the most templatable email type (booking inquiries follow patterns). Path: GHL \u2192 Conversational AI Settings \u2192 Email Channel \u2192 connect via OAuth to the bookings@signatureheadshotevent.com alias. Configure: (1) classification logic for booking inquiry / general question / spam, (2) auto-reply templates for common FAQ, (3) routing to calendar booking flow. Test with 3-5 manual emails before going live. Reference: project_ghl_conversational_ai.md memory. After this works for headshot bookings, expand to info@signaturerewards.app next."
     },
     {
       "id": "inbox-phase2-classification-rules",
-      "title": "Phase 2 · Build email classification rules + auto-reply templates in GHL",
+      "title": "Phase 2 \u00b7 Build email classification rules + auto-reply templates in GHL",
       "status": "pending",
       "priority": "high",
       "category": "ops",
       "estimatedTime": "1-2 hours",
       "owner": "ken",
-      "notes": "Inside GHL Conversational AI, build classification logic that tags incoming emails as: BOOKING_INQUIRY / FAQ_GENERAL / PROSPECT_QUESTION / SUPPORT_ISSUE / SPAM / OTHER. Each tag gets a routing rule: BOOKING → calendar flow + auto-reply with booking link, FAQ → auto-reply from template library, PROSPECT_QUESTION → flag for Ken's review (no auto-reply), SUPPORT → ticket creation, SPAM → archive. Write 5-8 FAQ auto-reply templates for headshot inquiries first (pricing, locations, what to wear, dates available, etc.). Keep all auto-replies clearly marked '— Sent from automated assistant' until trust is built."
+      "notes": "Inside GHL Conversational AI, build classification logic that tags incoming emails as: BOOKING_INQUIRY / FAQ_GENERAL / PROSPECT_QUESTION / SUPPORT_ISSUE / SPAM / OTHER. Each tag gets a routing rule: BOOKING \u2192 calendar flow + auto-reply with booking link, FAQ \u2192 auto-reply from template library, PROSPECT_QUESTION \u2192 flag for Ken's review (no auto-reply), SUPPORT \u2192 ticket creation, SPAM \u2192 archive. Write 5-8 FAQ auto-reply templates for headshot inquiries first (pricing, locations, what to wear, dates available, etc.). Keep all auto-replies clearly marked '\u2014 Sent from automated assistant' until trust is built."
     },
     {
       "id": "inbox-phase2-week-test-doc",
-      "title": "Phase 2 · Run 1-week test on GHL email triage, document accuracy + findings",
+      "title": "Phase 2 \u00b7 Run 1-week test on GHL email triage, document accuracy + findings",
       "status": "pending",
       "priority": "high",
       "category": "ops",
       "estimatedTime": "1 hour (over the week)",
       "owner": "ken",
-      "notes": "After Phase 2 is live for signatureheadshotevent.com, monitor for one full week (~7 days). Track: (1) Classification accuracy — how often does GHL get the category right? (2) Auto-reply quality — how many auto-replies needed manual edit? (3) Customer response — did clients notice/complain about automated replies? (4) Time saved — estimated hours saved vs manual reply. Document findings in ~/Desktop/signature-ops/inbox-triage-phase2-findings.md. These findings inform Phase 3 architecture decisions (what GHL did well vs where custom build is needed)."
+      "notes": "After Phase 2 is live for signatureheadshotevent.com, monitor for one full week (~7 days). Track: (1) Classification accuracy \u2014 how often does GHL get the category right? (2) Auto-reply quality \u2014 how many auto-replies needed manual edit? (3) Customer response \u2014 did clients notice/complain about automated replies? (4) Time saved \u2014 estimated hours saved vs manual reply. Document findings in ~/Desktop/signature-ops/inbox-triage-phase2-findings.md. These findings inform Phase 3 architecture decisions (what GHL did well vs where custom build is needed)."
     },
     {
       "id": "inbox-phase3-architecture-spec",
-      "title": "Phase 3 · Spec Inbox Triage Agent architecture for Signature Branding System app",
+      "title": "Phase 3 \u00b7 Spec Inbox Triage Agent architecture for Signature Branding System app",
       "status": "pending",
       "priority": "medium",
       "category": "build",
       "estimatedTime": "3-4 hours",
       "owner": "ken-with-dex",
-      "notes": "Phase 3 = build custom Inbox Triage Agent INTO Signature Branding System (signaturebranding.app) as a flagship feature. Owns own dogfood: Ken uses it on his master inbox FIRST, then it ships to Agent OS Activation clients (one of the 6 menu options). Architecture: (1) Gmail OAuth integration — securely connect user's Gmail to the app, (2) Polling edge function — checks inbox every 2-5 min for new messages, (3) Classifier edge function — sends email content to Claude API, returns category + intent + urgency, (4) Drafter edge function — generates personalized reply in user's voice, (5) Review UI — displays drafts in Signature Branding System app with approve/edit/reject buttons, (6) Send action — pushes approved reply back via Gmail API. Document in ~/Desktop/signature-ops/inbox-triage-phase3-spec.md before Dex starts building."
+      "notes": "Phase 3 = build custom Inbox Triage Agent INTO Signature Branding System (signaturebranding.app) as a flagship feature. Owns own dogfood: Ken uses it on his master inbox FIRST, then it ships to Agent OS Activation clients (one of the 6 menu options). Architecture: (1) Gmail OAuth integration \u2014 securely connect user's Gmail to the app, (2) Polling edge function \u2014 checks inbox every 2-5 min for new messages, (3) Classifier edge function \u2014 sends email content to Claude API, returns category + intent + urgency, (4) Drafter edge function \u2014 generates personalized reply in user's voice, (5) Review UI \u2014 displays drafts in Signature Branding System app with approve/edit/reject buttons, (6) Send action \u2014 pushes approved reply back via Gmail API. Document in ~/Desktop/signature-ops/inbox-triage-phase3-spec.md before Dex starts building."
     },
     {
       "id": "inbox-phase3-schema-additions",
-      "title": "Phase 3 · Add inbox triage tables to Supabase schema (Signature Branding System)",
+      "title": "Phase 3 \u00b7 Add inbox triage tables to Supabase schema (Signature Branding System)",
       "status": "pending",
       "priority": "medium",
       "category": "build",
       "estimatedTime": "2-3 hours",
       "owner": "dex",
-      "notes": "New tables needed in Supabase (stsowpflccehekknumkb): (1) gp_inbox_connections — stores Gmail OAuth tokens per user (encrypted), (2) gp_inbox_messages — synced email content for classification, (3) gp_inbox_classifications — Claude's category + intent + confidence per message, (4) gp_inbox_drafts — generated reply drafts pending review, (5) gp_inbox_send_log — audit trail of every send + outcome, (6) gp_inbox_preferences — per-user settings (which categories auto-send, draft-only, etc.). All tables RLS-protected by user_id. Schema migration goes through standard Lovable AI prompt flow. Reference Annie's brand_kits structure for the field_metadata pattern (consistent with existing app)."
+      "notes": "New tables needed in Supabase (stsowpflccehekknumkb): (1) gp_inbox_connections \u2014 stores Gmail OAuth tokens per user (encrypted), (2) gp_inbox_messages \u2014 synced email content for classification, (3) gp_inbox_classifications \u2014 Claude's category + intent + confidence per message, (4) gp_inbox_drafts \u2014 generated reply drafts pending review, (5) gp_inbox_send_log \u2014 audit trail of every send + outcome, (6) gp_inbox_preferences \u2014 per-user settings (which categories auto-send, draft-only, etc.). All tables RLS-protected by user_id. Schema migration goes through standard Lovable AI prompt flow. Reference Annie's brand_kits structure for the field_metadata pattern (consistent with existing app)."
     },
     {
       "id": "inbox-phase3-gmail-oauth-connector",
-      "title": "Phase 3 · Build Gmail OAuth connector edge function",
+      "title": "Phase 3 \u00b7 Build Gmail OAuth connector edge function",
       "status": "pending",
       "priority": "medium",
       "category": "build",
       "estimatedTime": "4-6 hours",
       "owner": "dex",
-      "notes": "Edge function: gmail-oauth-connect. Handles: (1) Initiates OAuth flow with Google (requires GCP project + OAuth consent screen approval, takes 1-2 weeks for verification if going beyond test users), (2) Stores refresh tokens encrypted in gp_inbox_connections table, (3) Refreshes access tokens as needed, (4) Provides authenticated Gmail API client for other edge functions. CRITICAL: Use 'gmail.readonly' + 'gmail.send' + 'gmail.modify' scopes only — minimum required. Document scope requirements in user-facing privacy policy. Reference Google's OAuth 2.0 docs for native apps. Test with Ken's signaturebrandmarketing.com Workspace account first (verified domain = faster approval)."
+      "notes": "Edge function: gmail-oauth-connect. Handles: (1) Initiates OAuth flow with Google (requires GCP project + OAuth consent screen approval, takes 1-2 weeks for verification if going beyond test users), (2) Stores refresh tokens encrypted in gp_inbox_connections table, (3) Refreshes access tokens as needed, (4) Provides authenticated Gmail API client for other edge functions. CRITICAL: Use 'gmail.readonly' + 'gmail.send' + 'gmail.modify' scopes only \u2014 minimum required. Document scope requirements in user-facing privacy policy. Reference Google's OAuth 2.0 docs for native apps. Test with Ken's signaturebrandmarketing.com Workspace account first (verified domain = faster approval)."
     },
     {
       "id": "inbox-phase3-classifier-fn",
-      "title": "Phase 3 · Build email classifier edge function (Claude API)",
+      "title": "Phase 3 \u00b7 Build email classifier edge function (Claude API)",
       "status": "pending",
       "priority": "medium",
       "category": "build",
@@ -1482,67 +1482,67 @@
     },
     {
       "id": "inbox-phase3-drafter-fn",
-      "title": "Phase 3 · Build reply drafter edge function (Claude API)",
+      "title": "Phase 3 \u00b7 Build reply drafter edge function (Claude API)",
       "status": "pending",
       "priority": "medium",
       "category": "build",
       "estimatedTime": "5-8 hours",
       "owner": "dex",
-      "notes": "Edge function: inbox-draft-reply. Triggered after classifier completes. Input: classified email + user's brand_kit (voice, tone, banned_words) + relevant context (calendar availability, current campaigns, FAQ library). Calls Claude API (use Sonnet here — quality matters for drafts) with system prompt: 'You are drafting a reply for [user] in their exact voice. Brand DNA: [from brand_kit]. Reply should sound like them, not a generic AI. Always end with their signature. Mark all currency/dates/promises clearly so user can verify before sending.' Returns: draft_text + confidence_score + suggested_edits. Saves to gp_inbox_drafts. Optional: train on user's previously-sent emails to better match voice over time."
+      "notes": "Edge function: inbox-draft-reply. Triggered after classifier completes. Input: classified email + user's brand_kit (voice, tone, banned_words) + relevant context (calendar availability, current campaigns, FAQ library). Calls Claude API (use Sonnet here \u2014 quality matters for drafts) with system prompt: 'You are drafting a reply for [user] in their exact voice. Brand DNA: [from brand_kit]. Reply should sound like them, not a generic AI. Always end with their signature. Mark all currency/dates/promises clearly so user can verify before sending.' Returns: draft_text + confidence_score + suggested_edits. Saves to gp_inbox_drafts. Optional: train on user's previously-sent emails to better match voice over time."
     },
     {
       "id": "inbox-phase3-review-ui",
-      "title": "Phase 3 · Build review/approve drafts UI in Signature Branding System app",
+      "title": "Phase 3 \u00b7 Build review/approve drafts UI in Signature Branding System app",
       "status": "pending",
       "priority": "medium",
       "category": "build",
       "estimatedTime": "8-12 hours",
       "owner": "dex",
-      "notes": "New section in Signature Branding System app: /inbox or /agent-inbox. Lists pending drafts grouped by urgency + brand. Each draft card shows: (1) Original email preview, (2) Claude's classification + reasoning, (3) Draft reply (editable), (4) Buttons: APPROVE+SEND / EDIT / REJECT / ESCALATE. Bulk actions: approve-all-low-stakes. Stats dashboard: drafts pending, sent this week, accuracy rate (% sent without edits), time saved estimate. Mobile-responsive (Ken uses on phone). Match existing Signature Branding System dark luxury aesthetic (#0a0a0a + #C9A961 gold). Use existing component library (shadcn). This UI is also what Agent OS clients will see — design it client-ready, not Ken-only."
+      "notes": "New section in Signature Branding System app: /inbox or /agent-inbox. Lists pending drafts grouped by urgency + brand. Each draft card shows: (1) Original email preview, (2) Claude's classification + reasoning, (3) Draft reply (editable), (4) Buttons: APPROVE+SEND / EDIT / REJECT / ESCALATE. Bulk actions: approve-all-low-stakes. Stats dashboard: drafts pending, sent this week, accuracy rate (% sent without edits), time saved estimate. Mobile-responsive (Ken uses on phone). Match existing Signature Branding System dark luxury aesthetic (#0a0a0a + #C9A961 gold). Use existing component library (shadcn). This UI is also what Agent OS clients will see \u2014 design it client-ready, not Ken-only."
     },
     {
       "id": "inbox-phase3-self-test-30day",
-      "title": "Phase 3 · Run 30-day self-test on Ken's master inbox (proof-of-concept)",
+      "title": "Phase 3 \u00b7 Run 30-day self-test on Ken's master inbox (proof-of-concept)",
       "status": "pending",
       "priority": "medium",
       "category": "ops",
-      "estimatedTime": "30 days · ~15 min/day review",
+      "estimatedTime": "30 days \u00b7 ~15 min/day review",
       "owner": "ken",
       "notes": "Phase 3 culminates in Ken running the Inbox Triage Agent on his own master inbox (Ken@signaturebrandmarketing.com + all aliases) for 30 full days BEFORE selling it to Agent OS clients. Daily ritual: open the review UI in app, scan drafts, approve/edit/send. Track metrics: total emails processed, % auto-classified correctly, % drafts approved without edit, time saved per day, money value of time saved. By Day 30, Ken has a real case study with real numbers to put in Agent OS sales materials. NO Activation client gets sold the Inbox Triage Agent until this self-test produces shareable results. This is the 'eat your own dogfood, sell from experience' move that makes the whole Agent OS pitch undeniable."
     },
     {
       "id": "inbox-phase4-update-sales-materials",
-      "title": "Phase 4 · Update Agent OS sales materials to feature Inbox Triage Agent",
+      "title": "Phase 4 \u00b7 Update Agent OS sales materials to feature Inbox Triage Agent",
       "status": "pending",
       "priority": "medium",
       "category": "ops",
       "estimatedTime": "3-4 hours",
       "owner": "ken",
-      "notes": "Once Phase 3 self-test produces real data, update all Agent OS sales assets: (1) Update one-sheet PDF to feature Inbox Triage Agent as one of the 6 menu options in Activation tier — replace whichever of the current 6 has lowest demand, (2) Update sales page on signatureagentos.com, (3) Update cold email sequences (Touch 2 Annie case study can now reference Ken's own results), (4) Update LinkedIn positioning to mention real-life inbox results, (5) Update Agent OS one-sheet PDF + landing page copy. Sales angle: 'I built this for myself first. I ran it on my own inbox for 30 days. Here are my actual numbers: [X emails processed, Y hours saved, Z% accuracy]. Want the same in your business?' This is the closer."
+      "notes": "Once Phase 3 self-test produces real data, update all Agent OS sales assets: (1) Update one-sheet PDF to feature Inbox Triage Agent as one of the 6 menu options in Activation tier \u2014 replace whichever of the current 6 has lowest demand, (2) Update sales page on signatureagentos.com, (3) Update cold email sequences (Touch 2 Annie case study can now reference Ken's own results), (4) Update LinkedIn positioning to mention real-life inbox results, (5) Update Agent OS one-sheet PDF + landing page copy. Sales angle: 'I built this for myself first. I ran it on my own inbox for 30 days. Here are my actual numbers: [X emails processed, Y hours saved, Z% accuracy]. Want the same in your business?' This is the closer."
     },
     {
       "id": "inbox-phase4-loom-demo",
-      "title": "Phase 4 · Record Loom demo of Ken's Inbox Triage Agent in action",
+      "title": "Phase 4 \u00b7 Record Loom demo of Ken's Inbox Triage Agent in action",
       "status": "pending",
       "priority": "medium",
       "category": "ops",
       "estimatedTime": "2-3 hours",
       "owner": "ken",
-      "notes": "Record a 5-7 min Loom showing Ken's own inbox triage workflow: (1) Walk through a morning of incoming emails across all Signature brands, (2) Show the review UI in app, (3) Approve drafts live with brief commentary, (4) Show stats dashboard with 30-day results, (5) Frame: 'This is running on my own business. Here's what it does. Here's the time I save. Now imagine yours.' This Loom becomes: embedded on /activation landing page, attached to Cold Email Touch 2, sent to every discovery call attendee 24 hours before the call, featured in podcast appearances. Single most important Phase 4 asset — invest 1 hour in setup + script before recording."
+      "notes": "Record a 5-7 min Loom showing Ken's own inbox triage workflow: (1) Walk through a morning of incoming emails across all Signature brands, (2) Show the review UI in app, (3) Approve drafts live with brief commentary, (4) Show stats dashboard with 30-day results, (5) Frame: 'This is running on my own business. Here's what it does. Here's the time I save. Now imagine yours.' This Loom becomes: embedded on /activation landing page, attached to Cold Email Touch 2, sent to every discovery call attendee 24 hours before the call, featured in podcast appearances. Single most important Phase 4 asset \u2014 invest 1 hour in setup + script before recording."
     },
     {
       "id": "inbox-phase4-case-study-writeup",
-      "title": "Phase 4 · Write Inbox Triage Agent case study (Ken's 30-day results)",
+      "title": "Phase 4 \u00b7 Write Inbox Triage Agent case study (Ken's 30-day results)",
       "status": "pending",
       "priority": "medium",
       "category": "ops",
       "estimatedTime": "2 hours",
       "owner": "ken",
-      "notes": "Long-form case study from the 30-day self-test (Phase 3.5). Format: real numbers, real screenshots, honest about what worked + what needed iteration. Sections: (1) Before state — how Ken handled email before, time spent, # of missed/late replies, (2) The build — what was deployed (Gmail integration, Claude classifier, Claude drafter), (3) Day 1-7 — calibration, accuracy %, edits required, (4) Day 8-30 — drift toward auto-send for trusted categories, time savings curve, (5) The numbers — exact emails processed, exact hours saved, exact $$ value of time saved, (6) What surprised me — honest reflections, (7) What I'd do differently — credibility builder. Publish at /case-studies/inbox-triage-30-days on signatureagentos.com. Becomes the most powerful sales asset in the Agent OS arsenal."
+      "notes": "Long-form case study from the 30-day self-test (Phase 3.5). Format: real numbers, real screenshots, honest about what worked + what needed iteration. Sections: (1) Before state \u2014 how Ken handled email before, time spent, # of missed/late replies, (2) The build \u2014 what was deployed (Gmail integration, Claude classifier, Claude drafter), (3) Day 1-7 \u2014 calibration, accuracy %, edits required, (4) Day 8-30 \u2014 drift toward auto-send for trusted categories, time savings curve, (5) The numbers \u2014 exact emails processed, exact hours saved, exact $$ value of time saved, (6) What surprised me \u2014 honest reflections, (7) What I'd do differently \u2014 credibility builder. Publish at /case-studies/inbox-triage-30-days on signatureagentos.com. Becomes the most powerful sales asset in the Agent OS arsenal."
     },
     {
       "id": "inbox-phase4-client-deployment-template",
-      "title": "Phase 4 · Build per-client Inbox Triage Agent deployment template",
+      "title": "Phase 4 \u00b7 Build per-client Inbox Triage Agent deployment template",
       "status": "pending",
       "priority": "medium",
       "category": "build",
@@ -1552,7 +1552,7 @@
     },
     {
       "id": "inbox-phase4-train-team-on-deployment",
-      "title": "Phase 4 · Train Dex + Mae on Inbox Triage Agent client deployment process",
+      "title": "Phase 4 \u00b7 Train Dex + Mae on Inbox Triage Agent client deployment process",
       "status": "pending",
       "priority": "medium",
       "category": "ops",
@@ -1574,7 +1574,7 @@
         "lastMonth": 200.0,
         "dailyAvg": 6.67,
         "trend": "stable",
-        "note": "Flat $200/mo subscription for Claude Code (agent sessions). NOT developer API usage — that stays $0 because edge functions use Gemini. Manually tracked, not auto-synced.",
+        "note": "Flat $200/mo subscription for Claude Code (agent sessions). NOT developer API usage \u2014 that stays $0 because edge functions use Gemini. Manually tracked, not auto-synced.",
         "category": "ai"
       },
       {
@@ -1585,7 +1585,7 @@
         "lastMonth": 95.0,
         "dailyAvg": 4.0,
         "trend": "up",
-        "note": "ESTIMATE — used by image generation, content pipeline, AI designer, etc. Real per-call tracking is pending (add _shared/gemini-client.ts wrapper that logs to ai_spend_daily).",
+        "note": "ESTIMATE \u2014 used by image generation, content pipeline, AI designer, etc. Real per-call tracking is pending (add _shared/gemini-client.ts wrapper that logs to ai_spend_daily).",
         "category": "ai"
       },
       {
@@ -1596,7 +1596,7 @@
         "lastMonth": 25.0,
         "dailyAvg": 0.83,
         "trend": "stable",
-        "note": "Pro plan — edge functions, pg_cron, storage, 19 users",
+        "note": "Pro plan \u2014 edge functions, pg_cron, storage, 19 users",
         "category": "infrastructure"
       },
       {
@@ -1607,7 +1607,7 @@
         "lastMonth": 31.5,
         "dailyAvg": 1.42,
         "trend": "down",
-        "note": "Nano Banana — headshot AI styles + branding images",
+        "note": "Nano Banana \u2014 headshot AI styles + branding images",
         "category": "ai"
       },
       {
@@ -1618,7 +1618,7 @@
         "lastMonth": 97.0,
         "dailyAvg": 3.23,
         "trend": "stable",
-        "note": "Monthly plan — inbox bot, sequences, pipeline",
+        "note": "Monthly plan \u2014 inbox bot, sequences, pipeline",
         "category": "platform"
       },
       {
@@ -1629,7 +1629,7 @@
         "lastMonth": 118.5,
         "dailyAvg": 4.28,
         "trend": "down",
-        "note": "2.6% + $0.10 per transaction — headshots + AI upgrades",
+        "note": "2.6% + $0.10 per transaction \u2014 headshots + AI upgrades",
         "category": "payments"
       },
       {
@@ -1640,7 +1640,7 @@
         "lastMonth": 20.0,
         "dailyAvg": 0.67,
         "trend": "stable",
-        "note": "Monthly plan — React/Vite/Tailwind builds + email API",
+        "note": "Monthly plan \u2014 React/Vite/Tailwind builds + email API",
         "category": "infrastructure"
       },
       {
@@ -1651,7 +1651,7 @@
         "lastMonth": 3800.0,
         "dailyAvg": 125.0,
         "trend": "down",
-        "note": "Headshot event campaigns — known optimization weakness",
+        "note": "Headshot event campaigns \u2014 known optimization weakness",
         "category": "advertising"
       }
     ],
@@ -1701,11 +1701,11 @@
   "projects": [
     {
       "id": "signature-agent-os",
-      "name": "Signature Agent OS (signatureagentos.com — pending build)",
+      "name": "Signature Agent OS (signatureagentos.com \u2014 pending build)",
       "status": "active",
       "health": "strategy-locked-execution-pending",
       "weight": 3,
-      "description": "NEW vertical-focused offering launched 2026-05-28. AI Operations System for independent insurance agents in FL+GA. Parallel to Signature Branding System (which serves personal brands). Shared back-end app, separate marketing site at signatureagentos.com. 4-tier service ladder: Activation $1,497/$297mo → Launch $3,500/$597mo → Engine $11K/$1,997mo → Operating Partner $35K+/$7,500+mo. Annie McCrimmon (TMG Agency Atlanta) is prototype dual-offer client. Year 2-3 target: ~$966K ARR.",
+      "description": "NEW vertical-focused offering launched 2026-05-28. AI Operations System for independent insurance agents in FL+GA. Parallel to Signature Branding System (which serves personal brands). Shared back-end app, separate marketing site at signatureagentos.com. 4-tier service ladder: Activation $1,497/$297mo \u2192 Launch $3,500/$597mo \u2192 Engine $11K/$1,997mo \u2192 Operating Partner $35K+/$7,500+mo. Annie McCrimmon (TMG Agency Atlanta) is prototype dual-offer client. Year 2-3 target: ~$966K ARR.",
       "modules": [
         {
           "name": "Strategic Positioning",
@@ -1761,17 +1761,17 @@
       "status": "active",
       "health": "healthy",
       "weight": 3,
-      "description": "AI-powered branding platform — main Lovable app. Recent: fulfillment silent-fail fix (150-image validation + awaited chain fetch + rate-limit retry), gender-specific wardrobe overrides (StyleRoot.wardrobeFemale / wardrobeMale), Square payment sync with GHL cross-sync on AI purchases + headshot completions.",
+      "description": "AI-powered branding platform \u2014 main Lovable app. Recent: fulfillment silent-fail fix (150-image validation + awaited chain fetch + rate-limit retry), gender-specific wardrobe overrides (StyleRoot.wardrobeFemale / wardrobeMale), Square payment sync with GHL cross-sync on AI purchases + headshot completions.",
       "modules": [
         {
           "name": "Creative Studio",
           "status": "complete",
-          "note": "Effects panel, gradients, 3 new shapes, text rotation, stock photos — Canva-level"
+          "note": "Effects panel, gradients, 3 new shapes, text rotation, stock photos \u2014 Canva-level"
         },
         {
           "name": "Templates System",
           "status": "complete",
-          "note": "70+ variants with visual previewer — expand to see all styles before selecting"
+          "note": "70+ variants with visual previewer \u2014 expand to see all styles before selecting"
         },
         {
           "name": "AI Image Generation",
@@ -1812,7 +1812,7 @@
       "status": "active",
       "health": "healthy",
       "weight": 3,
-      "description": "Three automation layers connecting the system. Recent: daily-ops-report agent (8 AM launchd), Anthropic cost sync daily 7 AM (returns $0 correctly — Claude Max is flat subscription), Gemini self-instrumented cost tracking queued for build.",
+      "description": "Three automation layers connecting the system. Recent: daily-ops-report agent (8 AM launchd), Anthropic cost sync daily 7 AM (returns $0 correctly \u2014 Claude Max is flat subscription), Gemini self-instrumented cost tracking queued for build.",
       "modules": [
         {
           "name": "Square Revenue Sync",
@@ -1838,7 +1838,7 @@
       "status": "active",
       "health": "healthy",
       "weight": 1,
-      "description": "Edge function + launchd job — daily business health report at 8 AM. Reports to ~/Desktop/signature-ops/. Anthropic cost sync runs 7 AM before it. Transactional email templates audited 2026-04-27 — 6 broken CTA links across 5 templates (content-calendar-ready, agent-assigned, cs-agent-reply, onboarding-completed, client-status-change, cs-escalation-alert) corrected; legacy redirect aliases added for in-flight emails.",
+      "description": "Edge function + launchd job \u2014 daily business health report at 8 AM. Reports to ~/Desktop/signature-ops/. Anthropic cost sync runs 7 AM before it. Transactional email templates audited 2026-04-27 \u2014 6 broken CTA links across 5 templates (content-calendar-ready, agent-assigned, cs-agent-reply, onboarding-completed, client-status-change, cs-escalation-alert) corrected; legacy redirect aliases added for in-flight emails.",
       "modules": [
         {
           "name": "Edge Function",
@@ -1865,7 +1865,7 @@
       "status": "complete",
       "health": "healthy",
       "weight": 3,
-      "description": "Client rewards + ambassador program — 7-function ecosystem hub. v1 SHIPPED 2026-04-22. Full frontend + backend verified end-to-end on production Supabase. Launch email scheduled. Remaining post-launch work (Stripe wiring, cross-domain attribution) tracked separately.",
+      "description": "Client rewards + ambassador program \u2014 7-function ecosystem hub. v1 SHIPPED 2026-04-22. Full frontend + backend verified end-to-end on production Supabase. Launch email scheduled. Remaining post-launch work (Stripe wiring, cross-domain attribution) tracked separately.",
       "modules": [
         {
           "name": "Database Schema (8 migrations)",
@@ -1895,7 +1895,7 @@
         {
           "name": "Ambassador Program",
           "status": "complete",
-          "note": "Apply → admin approve → dashboard → request payout flow verified. Stripe Connect payouts deferred to post-launch (manual admin for now)."
+          "note": "Apply \u2192 admin approve \u2192 dashboard \u2192 request payout flow verified. Stripe Connect payouts deferred to post-launch (manual admin for now)."
         },
         {
           "name": "Provider Marketplace",
@@ -1920,7 +1920,7 @@
         {
           "name": "Bartering",
           "status": "complete",
-          "note": "Listings browse, propose → accept → dual-confirm → $5 each via complete_barter_trade RPC. End-to-end verified 2026-04-21."
+          "note": "Listings browse, propose \u2192 accept \u2192 dual-confirm \u2192 $5 each via complete_barter_trade RPC. End-to-end verified 2026-04-21."
         },
         {
           "name": "Admin Command Center",
@@ -1935,7 +1935,7 @@
         {
           "name": "Health Console (/admin/health)",
           "status": "complete",
-          "note": "Dev-gated. 4 consistency checks with Run + Fix buttons: missing referral_codes, ambassador role mismatches, provider role mismatches, reward_balance ≠ ledger sum (with recompute action)."
+          "note": "Dev-gated. 4 consistency checks with Run + Fix buttons: missing referral_codes, ambassador role mismatches, provider role mismatches, reward_balance \u2260 ledger sum (with recompute action)."
         },
         {
           "name": "/ref/:code smart redirect (Option C)",
@@ -1945,7 +1945,7 @@
         {
           "name": "Cross-domain attribution",
           "status": "planned",
-          "note": "Squarespace code injection on signatureheadshotevent.com and headshots-branding.com — read ?ref, set local cookie, pass to Square checkout metadata. Each domain has own cookie (apex isolation)."
+          "note": "Squarespace code injection on signatureheadshotevent.com and headshots-branding.com \u2014 read ?ref, set local cookie, pass to Square checkout metadata. Each domain has own cookie (apex isolation)."
         },
         {
           "name": "Stripe Payment Wiring",
@@ -1955,7 +1955,7 @@
         {
           "name": "Launch Comms",
           "status": "in-progress",
-          "note": "Launch email scheduled. Soft launch to top 30 → wide send to remaining 32."
+          "note": "Launch email scheduled. Soft launch to top 30 \u2192 wide send to remaining 32."
         },
         {
           "name": "Legal + Domain",
@@ -1972,7 +1972,7 @@
       "status": "active",
       "health": "needs-attention",
       "weight": 3,
-      "description": "GoHighLevel inbox bot — auto-books headshot sessions from inbound leads",
+      "description": "GoHighLevel inbox bot \u2014 auto-books headshot sessions from inbound leads",
       "modules": [
         {
           "name": "Inbox Bot",
@@ -1994,7 +1994,7 @@
       "issues": [
         {
           "severity": "warning",
-          "text": "Booking rate below target — scripts need optimization"
+          "text": "Booking rate below target \u2014 scripts need optimization"
         }
       ]
     },
@@ -2032,7 +2032,7 @@
           "note": "NEW headshot-ghl-sync: tags by purchase tier, session completion, milestone. Cross-syncs qualifying buyers to GP prospect pipeline."
         },
         {
-          "name": "Square → H&B wiring",
+          "name": "Square \u2192 H&B wiring",
           "status": "complete",
           "note": "square-payment-sync now fires headshot-ghl-sync on AI purchases + headshot sessions"
         },
@@ -2061,7 +2061,7 @@
       "status": "in-progress",
       "health": "needs-attention",
       "weight": 3,
-      "description": "Optimize revenue + ad spend, connect Stripe revenue, improve ROI. NEW CONTEXT 2026-04-27: 3-person VA team (Dex/Mae/Eric) confirmed and loyal — capacity ceiling concerns retired. Path to $1.5M+ ARR in 12 months mathematically achievable with team deployment against new LiveLoop + restructured GP product lines.",
+      "description": "Optimize revenue + ad spend, connect Stripe revenue, improve ROI. NEW CONTEXT 2026-04-27: 3-person VA team (Dex/Mae/Eric) confirmed and loyal \u2014 capacity ceiling concerns retired. Path to $1.5M+ ARR in 12 months mathematically achievable with team deployment against new LiveLoop + restructured GP product lines.",
       "modules": [
         {
           "name": "Square Integration",
@@ -2071,7 +2071,7 @@
         {
           "name": "Stripe Revenue Flow",
           "status": "blocked",
-          "note": "$0 in Stripe — no customers yet"
+          "note": "$0 in Stripe \u2014 no customers yet"
         },
         {
           "name": "Ad Spend Optimization",
@@ -2092,7 +2092,7 @@
       "status": "in-progress",
       "health": "building",
       "weight": 2,
-      "description": "Expand AI image generation styles, templates, and library — safely scale output quality and variety",
+      "description": "Expand AI image generation styles, templates, and library \u2014 safely scale output quality and variety",
       "modules": [
         {
           "name": "Current Style Audit",
@@ -2128,12 +2128,12 @@
       "status": "active",
       "health": "healthy",
       "weight": 3,
-      "description": "Organic search strategy for signatureheadshotevent.com + signaturebranding.app — reduce dependency on paid ads",
+      "description": "Organic search strategy for signatureheadshotevent.com + signaturebranding.app \u2014 reduce dependency on paid ads",
       "modules": [
         {
           "name": "Keyword Research",
           "status": "complete",
-          "note": "Done for beauty — hairstylist/salon/esthetician/nail tech clusters"
+          "note": "Done for beauty \u2014 hairstylist/salon/esthetician/nail tech clusters"
         },
         {
           "name": "On-Page SEO",
@@ -2173,7 +2173,7 @@
         {
           "name": "Local SEO / GMB Kit",
           "status": "complete",
-          "note": "Full content kit for 8 markets in seo-kit/gmb-content-kit.md — ready to paste into GMB"
+          "note": "Full content kit for 8 markets in seo-kit/gmb-content-kit.md \u2014 ready to paste into GMB"
         },
         {
           "name": "Backlink Strategy Kit",
@@ -2181,19 +2181,19 @@
           "note": "Directory list + 4 outreach templates + PR pitches in seo-kit/backlink-strategy.md"
         },
         {
-          "name": "Location × Industry Combo Pages",
+          "name": "Location \u00d7 Industry Combo Pages",
           "status": "complete",
-          "note": "200 ultra-long-tail SEO pages live (8 cities × 25 industries) — /headshots/:city/:industry. Combined Service+LocalBusiness+FAQPage+BreadcrumbList schemas. Each targets queries like 'real estate headshots Atlanta', 'wedding planner Lake Wales'. Doubled SEO surface area to 231 indexable pages."
+          "note": "200 ultra-long-tail SEO pages live (8 cities \u00d7 25 industries) \u2014 /headshots/:city/:industry. Combined Service+LocalBusiness+FAQPage+BreadcrumbList schemas. Each targets queries like 'real estate headshots Atlanta', 'wedding planner Lake Wales'. Doubled SEO surface area to 231 indexable pages."
         },
         {
           "name": "Open Graph Images Sitewide",
           "status": "complete",
-          "note": "/og-default.jpg fallback + per-page custom OG. SEOHead component auto-resolves with relative→absolute URL conversion. All 231 pages now have proper social preview cards (FB/LinkedIn/Twitter/iMessage/Slack)."
+          "note": "/og-default.jpg fallback + per-page custom OG. SEOHead component auto-resolves with relative\u2192absolute URL conversion. All 231 pages now have proper social preview cards (FB/LinkedIn/Twitter/iMessage/Slack)."
         },
         {
           "name": "Sitemap Submission (GSC + Bing)",
           "status": "complete",
-          "note": "Submitted to Google Search Console (Domain property, DNS verified) — 252 URLs discovered. Submitted to Bing Webmaster Tools — Lake Wales URL manually indexed, sitemap processing. Top 10 priority URLs manually indexed in GSC for 24-48 hr indexing."
+          "note": "Submitted to Google Search Console (Domain property, DNS verified) \u2014 252 URLs discovered. Submitted to Bing Webmaster Tools \u2014 Lake Wales URL manually indexed, sitemap processing. Top 10 priority URLs manually indexed in GSC for 24-48 hr indexing."
         },
         {
           "name": "Squarespace SEO (headshots-branding.com)",
@@ -2203,7 +2203,7 @@
         {
           "name": "Lake Wales Google Business Profile",
           "status": "complete",
-          "note": "Full optimization 2026-05-06. Booking links (signatureheadshotevent.com preferred + headshots-branding.com), 6 priced services pending review ($75-$1,500 range + $297 sprint), service area expanded to 19+ markets covering Polk County + Tampa + Orlando, first Google Update posted with image + Book CTA. Profile already had 5.0★ with 455 reviews and 30+ photos."
+          "note": "Full optimization 2026-05-06. Booking links (signatureheadshotevent.com preferred + headshots-branding.com), 6 priced services pending review ($75-$1,500 range + $297 sprint), service area expanded to 19+ markets covering Polk County + Tampa + Orlando, first Google Update posted with image + Book CTA. Profile already had 5.0\u2605 with 455 reviews and 30+ photos."
         }
       ],
       "lastActivity": "2026-05-06"
@@ -2214,12 +2214,12 @@
       "status": "active",
       "health": "healthy",
       "weight": 3,
-      "description": "Full autonomous campaign engine — 3 engines (acquisition, ascension, retention), 8 product campaigns, 7 niche playbooks, automated email sequences",
+      "description": "Full autonomous campaign engine \u2014 3 engines (acquisition, ascension, retention), 8 product campaigns, 7 niche playbooks, automated email sequences",
       "modules": [
         {
           "name": "Campaign Engine (Edge Function)",
           "status": "complete",
-          "note": "Live — evaluates segments, auto-enrolls, sends sequences, detects conversions"
+          "note": "Live \u2014 evaluates segments, auto-enrolls, sends sequences, detects conversions"
         },
         {
           "name": "Database Tables (5)",
@@ -2239,7 +2239,7 @@
         {
           "name": "Ad Copy Library (50+ variants)",
           "status": "complete",
-          "note": "FB/IG, Google, LinkedIn — 7 niches, 4 files"
+          "note": "FB/IG, Google, LinkedIn \u2014 7 niches, 4 files"
         },
         {
           "name": "30-Day Social Calendar",
@@ -2254,17 +2254,17 @@
         {
           "name": "Daily Campaign Agent",
           "status": "complete",
-          "note": "Scheduled 9:03 AM daily — runs campaign engine"
+          "note": "Scheduled 9:03 AM daily \u2014 runs campaign engine"
         },
         {
           "name": "Weekly Content Agent",
           "status": "complete",
-          "note": "Scheduled Sunday 8 PM — generates social + ad copy"
+          "note": "Scheduled Sunday 8 PM \u2014 generates social + ad copy"
         },
         {
           "name": "Weekly Optimizer Agent",
           "status": "complete",
-          "note": "Scheduled Monday 7:07 AM — analyzes performance"
+          "note": "Scheduled Monday 7:07 AM \u2014 analyzes performance"
         },
         {
           "name": "First Enrollments",
@@ -2291,11 +2291,11 @@
     },
     {
       "id": "client-phyllis-inman",
-      "name": "Client · Phyllis Inman (Growth Partner) — Purposefully Eating",
+      "name": "Client \u00b7 Phyllis Inman (Growth Partner) \u2014 Purposefully Eating",
       "status": "active",
       "health": "healthy",
       "weight": 3,
-      "description": "Full brand + product ecosystem buildout for GP client Phyllis Inman. Wellness coaching brand — 'Purposefully Eating' (consumer-facing) under Inman Institute LLC. Positioning: mindset-first, non-restrictive, family-centered mindful eating for women 30–50. Brand palette revised from photography (cream/sage/terracotta/walnut, gold accent only). Live at signaturebrandmarketing.github.io/signature-project-tracker/clients/phyllis/",
+      "description": "Full brand + product ecosystem buildout for GP client Phyllis Inman. Wellness coaching brand \u2014 'Purposefully Eating' (consumer-facing) under Inman Institute LLC. Positioning: mindset-first, non-restrictive, family-centered mindful eating for women 30\u201350. Brand palette revised from photography (cream/sage/terracotta/walnut, gold accent only). Live at signaturebrandmarketing.github.io/signature-project-tracker/clients/phyllis/",
       "modules": [
         {
           "name": "Strategy & Product Ladder",
@@ -2313,24 +2313,24 @@
           "note": "Logomark (plate + sprig), primary wordmark, horizontal lockup, Inman Institute parent mark, P monogram. 7 SVG files w/ usage guide, clear-space rules, Do/Don'ts. Live at /identity.html"
         },
         {
-          "name": "Lead Magnet · The Peaceful Plate",
+          "name": "Lead Magnet \u00b7 The Peaceful Plate",
           "status": "complete",
           "note": "14-page designed ebook + PDF. Real photography integrated, 10 custom SVG illustrations. Print-ready w/ Download PDF + Print buttons. Live."
         },
         {
-          "name": "Ebook 01 · The Mindful Family Kitchen ($37)",
+          "name": "Ebook 01 \u00b7 The Mindful Family Kitchen ($37)",
           "status": "complete",
-          "note": "42-page paid ebook · 15 chapters across 5 parts (framework, system, scripts, 30 meals w/ 5 hero recipes, whole-food/organic swaps + Dirty Dozen guide). Gumroad listing + launch email ready."
+          "note": "42-page paid ebook \u00b7 15 chapters across 5 parts (framework, system, scripts, 30 meals w/ 5 hero recipes, whole-food/organic swaps + Dirty Dozen guide). Gumroad listing + launch email ready."
         },
         {
-          "name": "Ebook 02 · Eating Through Emotions ($37)",
+          "name": "Ebook 02 \u00b7 Eating Through Emotions ($37)",
           "status": "complete",
-          "note": "29-page paid ebook · 18 chapters · 5-tool kit, H.A.L.T.O.B.S. framework, 20 non-food alternatives, clinical escalation guide. Gumroad listing ready."
+          "note": "29-page paid ebook \u00b7 18 chapters \u00b7 5-tool kit, H.A.L.T.O.B.S. framework, 20 non-food alternatives, clinical escalation guide. Gumroad listing ready."
         },
         {
-          "name": "Ebook 03 · Raising Intuitive Eaters ($37)",
+          "name": "Ebook 03 \u00b7 Raising Intuitive Eaters ($37)",
           "status": "complete",
-          "note": "34-page paid ebook · 18 chapters · Ages 3–16 playbooks, 20+ scripts, 30-day non-coercive picky eating reset. Trilogy bundle spec ($79, saves $32)."
+          "note": "34-page paid ebook \u00b7 18 chapters \u00b7 Ages 3\u201316 playbooks, 20+ scripts, 30-day non-coercive picky eating reset. Trilogy bundle spec ($79, saves $32)."
         },
         {
           "name": "Flagship Sales Page",
@@ -2338,29 +2338,29 @@
           "note": "12-section conversion-optimized designed HTML for $297 course. Real photography, logomark integrated, 2-tier pricing ($197 Core / $397 Family), accordion FAQ, 30-day guarantee. Deploy-ready for Kajabi or Squarespace."
         },
         {
-          "name": "Course Content · Modules 1–2",
+          "name": "Course Content \u00b7 Modules 1\u20132",
           "status": "complete",
           "note": "9 of 27 lesson scripts written (Module 1: 5 lessons on foundation; Module 2: 4 lessons on the 3 shifts). Each script ready-to-film with recording guidance, workbook references, and pull quotes. Build tracker live at /course-content/"
         },
         {
-          "name": "Course Content · Modules 3–6",
+          "name": "Course Content \u00b7 Modules 3\u20136",
           "status": "planned",
           "note": "18 remaining lesson scripts: Module 3 Body's Wisdom (4), Module 4 Family Table (5), Module 5 Mindful Kitchen (5), Module 6 Purposeful Plate Plan (5). ~20k words total."
         },
         {
           "name": "The Peaceful Plate Workbook",
           "status": "planned",
-          "note": "80-page designed PDF · every exercise, reflection, assessment from the course. Next in queue after Module 3–6 scripts."
+          "note": "80-page designed PDF \u00b7 every exercise, reflection, assessment from the course. Next in queue after Module 3\u20136 scripts."
         },
         {
-          "name": "Bonus · Meditation Library",
+          "name": "Bonus \u00b7 Meditation Library",
           "status": "planned",
-          "note": "8 guided audio scripts (10–15 min each) for Phyllis to record. $47 value bonus inside course."
+          "note": "8 guided audio scripts (10\u201315 min each) for Phyllis to record. $47 value bonus inside course."
         },
         {
-          "name": "Bonus · Emergency Scripts PDF",
+          "name": "Bonus \u00b7 Emergency Scripts PDF",
           "status": "planned",
-          "note": "~15-page designed PDF · wallet-card-ready scripts for family/relative/coworker food moments. $17 value bonus."
+          "note": "~15-page designed PDF \u00b7 wallet-card-ready scripts for family/relative/coworker food moments. $17 value bonus."
         },
         {
           "name": "Content Topic Library",
@@ -2385,7 +2385,7 @@
         {
           "name": "Photography",
           "status": "pending",
-          "note": "2 brand portraits in use (banner + garden). Recommended quarterly photographer sessions for lifestyle + product shots. Budget $400–800 per 3-hour session."
+          "note": "2 brand portraits in use (banner + garden). Recommended quarterly photographer sessions for lifestyle + product shots. Budget $400\u2013800 per 3-hour session."
         },
         {
           "name": "30 Instagram Graphics",
@@ -2478,43 +2478,83 @@
       ],
       "lastActivity": "2026-04-27",
       "issues": []
+    },
+    {
+      "id": "signature-clothing-line",
+      "name": "Signature Clothing Line",
+      "status": "active",
+      "health": "healthy",
+      "weight": 3,
+      "description": "\"Make your own Signature\" mix & match apparel line. Lovable storefront with live-preview color Builder (2 design slots + garment color), curated collections (Black & Red flagship), Stripe checkout scaffold, auto print-file generation (3000px DTF-grade PNG) + printer email pipeline. Fulfillment: Winter Haven DTF printer. Launched build 2026-07-07; runs in scaffold mode pending Stripe/Resend/owner keys.",
+      "modules": [
+        {
+          "name": "Layer masters extracted from original art",
+          "status": "complete"
+        },
+        {
+          "name": "Phase 1: Landing + Signature Builder + collections + cart",
+          "status": "complete"
+        },
+        {
+          "name": "Phase 2: Orders DB, print-file compositor, emails, /admin",
+          "status": "complete"
+        },
+        {
+          "name": "Go-live keys (OWNER_EMAIL, Stripe, Resend) + printer email",
+          "status": "pending"
+        },
+        {
+          "name": "Publish + domain + cross-link with signaturebranding.app",
+          "status": "pending"
+        },
+        {
+          "name": "Launch drop marketing",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "timeline": [
     {
+      "date": "2026-07-07",
+      "project": "signature-clothing-line",
+      "event": "Signature clothing line store built end-to-end in one day \u2014 Lovable app with mix & match color Builder (live canvas preview of real brush-script art), 6 curated collections, cart, orders backend with RLS, server-side 3000px DTF print-file generation, printer + customer email pipeline, admin dashboard. Test order SIG-UXOGJJXZ verified through the real UI. Awaiting go-live keys.",
+      "type": "milestone"
+    },
+    {
       "date": "2026-05-29",
       "project": "agent-os",
-      "event": "Inbox Triage Agent roadmap added — 15 action items across Phase 2 (GHL email integration, this week), Phase 3 (custom build in Signature Branding System, month 1-2), Phase 4 (productize + sell as Agent OS feature, month 2-3). Phase 1 implementing today via Claude Desktop + Gmail connection (no tracker needed).",
+      "event": "Inbox Triage Agent roadmap added \u2014 15 action items across Phase 2 (GHL email integration, this week), Phase 3 (custom build in Signature Branding System, month 1-2), Phase 4 (productize + sell as Agent OS feature, month 2-3). Phase 1 implementing today via Claude Desktop + Gmail connection (no tracker needed).",
       "type": "milestone"
     },
     {
       "date": "2026-05-28",
       "project": "project-tracker",
-      "event": "Tracker triage complete (round 3) — 2 more done (api-meta + gp-phase5-smoke-test) · remaining 47 pending items confirmed as active work · 13 stale items closed total across 3 rounds",
+      "event": "Tracker triage complete (round 3) \u2014 2 more done (api-meta + gp-phase5-smoke-test) \u00b7 remaining 47 pending items confirmed as active work \u00b7 13 stale items closed total across 3 rounds",
       "type": "milestone"
     },
     {
       "date": "2026-05-28",
       "project": "project-tracker",
-      "event": "Correction: 3 items previously marked deferred (hb-site attribution, dev seeds cleanup, email notifications) reverted to pending — Ken clarified \"no\" meant \"not done\" not \"not doing\"",
+      "event": "Correction: 3 items previously marked deferred (hb-site attribution, dev seeds cleanup, email notifications) reverted to pending \u2014 Ken clarified \"no\" meant \"not done\" not \"not doing\"",
       "type": "fix"
     },
     {
       "date": "2026-05-28",
       "project": "project-tracker",
-      "event": "Tracker cleanup round 2 — 6 more done (custom domain, legal pages, hero banners, customize link UI, ambassador launch + Stripe Connect)",
+      "event": "Tracker cleanup round 2 \u2014 6 more done (custom domain, legal pages, hero banners, customize link UI, ambassador launch + Stripe Connect)",
       "type": "milestone"
     },
     {
       "date": "2026-05-28",
       "project": "project-tracker",
-      "event": "Tracker cleanup — 11 stale pending items confirmed done (Rewards v1 launch + Stripe wiring + Platinum tier seeded + SEO headshot event + team activation + Jessie funnel test)",
+      "event": "Tracker cleanup \u2014 11 stale pending items confirmed done (Rewards v1 launch + Stripe wiring + Platinum tier seeded + SEO headshot event + team activation + Jessie funnel test)",
       "type": "milestone"
     },
     {
       "date": "2026-05-28",
       "project": "signature-agent-os",
-      "event": "Ken identity reframed from \"branding photographer\" to \"Brand Consultant + Systems Engineer\" — locked across all assets + memory",
+      "event": "Ken identity reframed from \"branding photographer\" to \"Brand Consultant + Systems Engineer\" \u2014 locked across all assets + memory",
       "type": "decision"
     },
     {
@@ -2532,13 +2572,13 @@
     {
       "date": "2026-05-28",
       "project": "signature-agent-os",
-      "event": "AI Activation VSL script written (3:45 master + 90sec + 60sec + 30sec channel variants) — ready for ElevenLabs voice clone production",
+      "event": "AI Activation VSL script written (3:45 master + 90sec + 60sec + 30sec channel variants) \u2014 ready for ElevenLabs voice clone production",
       "type": "milestone"
     },
     {
       "date": "2026-05-28",
       "project": "signature-agent-os",
-      "event": "Master Lovable prompt built for signatureagentos.com marketing site — full design system specs + 10 sections + Stripe integration + lead capture",
+      "event": "Master Lovable prompt built for signatureagentos.com marketing site \u2014 full design system specs + 10 sections + Stripe integration + lead capture",
       "type": "milestone"
     },
     {
@@ -2574,25 +2614,25 @@
     {
       "date": "2026-05-28",
       "project": "signature-agent-os",
-      "event": "FL+GA dual-anchor geography locked: 5-zone strategy (Winter Haven Core, FL I-4 Corridor, Atlanta Metro, FL Coasts, Extended SE) — combined TAM ~100K licensed agents",
+      "event": "FL+GA dual-anchor geography locked: 5-zone strategy (Winter Haven Core, FL I-4 Corridor, Atlanta Metro, FL Coasts, Extended SE) \u2014 combined TAM ~100K licensed agents",
       "type": "decision"
     },
     {
       "date": "2026-05-28",
       "project": "signature-agent-os",
-      "event": "Insurance vertical commitment locked — explicit rejection of real estate, HVAC, generic SMB. Compounds vs horizontal expansion.",
+      "event": "Insurance vertical commitment locked \u2014 explicit rejection of real estate, HVAC, generic SMB. Compounds vs horizontal expansion.",
       "type": "decision"
     },
     {
       "date": "2026-05-27",
       "project": "signature-agent-os",
-      "event": "Dex briefing document created (~/Desktop/Signature-Agent-OS-Dex-Briefing.md) — 7-phase app integration plan over 4 weeks, 18-24 dev hours total",
+      "event": "Dex briefing document created (~/Desktop/Signature-Agent-OS-Dex-Briefing.md) \u2014 7-phase app integration plan over 4 weeks, 18-24 dev hours total",
       "type": "milestone"
     },
     {
       "date": "2026-05-27",
       "project": "signature-agent-os",
-      "event": "Annie McCrimmon brand kit loaded into Signature Branding System — 86% complete, GP-synced, ready for Phase 2 automation activation",
+      "event": "Annie McCrimmon brand kit loaded into Signature Branding System \u2014 86% complete, GP-synced, ready for Phase 2 automation activation",
       "type": "launch"
     },
     {
@@ -2604,139 +2644,139 @@
     {
       "date": "2026-05-27",
       "project": "signature-agent-os",
-      "event": "Master Automation Stack defined: 5 build-once assets totaling 130hr — Master GHL Snapshot, Insurance Prompt Library, Brand Kit Extractor SMB mode, Content Engine Templates, Onboarding Pipeline + Self-Service Intake",
+      "event": "Master Automation Stack defined: 5 build-once assets totaling 130hr \u2014 Master GHL Snapshot, Insurance Prompt Library, Brand Kit Extractor SMB mode, Content Engine Templates, Onboarding Pipeline + Self-Service Intake",
       "type": "milestone"
     },
     {
       "date": "2026-05-27",
       "project": "signature-agent-os",
-      "event": "Signature Agent OS project officially launched — SMB/Insurance offering parallel to Brand Systems",
+      "event": "Signature Agent OS project officially launched \u2014 SMB/Insurance offering parallel to Brand Systems",
       "type": "launch"
     },
     {
       "date": "2026-04-25",
       "project": "marketplace",
-      "event": "Marketplace booking system shipped end-to-end. Provider directory, instant + quote booking flows, fee-only monetization ($35–$300 per category), 2-tier Featured subscriptions ($49/$149), client rewards on booking ($10–$50), master ambassador 5% override on platform fees. 4 edge functions deployed (charge-fee, setup-intent, featured-checkout, stripe-webhook patched).",
+      "event": "Marketplace booking system shipped end-to-end. Provider directory, instant + quote booking flows, fee-only monetization ($35\u2013$300 per category), 2-tier Featured subscriptions ($49/$149), client rewards on booking ($10\u2013$50), master ambassador 5% override on platform fees. 4 edge functions deployed (charge-fee, setup-intent, featured-checkout, stripe-webhook patched).",
       "type": "milestone"
     },
     {
       "date": "2026-04-24",
       "project": "growth-partner",
-      "event": "GP pipeline guardrails shipped — 2 auto-triggers (activation on approval, deliverable assignment). 3 submitted clients backfilled to active in one SQL UPDATE. Future GP clients now self-activate when onboarding is approved; deliverables auto-route to their agent.",
+      "event": "GP pipeline guardrails shipped \u2014 2 auto-triggers (activation on approval, deliverable assignment). 3 submitted clients backfilled to active in one SQL UPDATE. Future GP clients now self-activate when onboarding is approved; deliverables auto-route to their agent.",
       "type": "milestone"
     },
     {
       "date": "2026-04-24",
       "project": "growth-partner",
-      "event": "Fixed stuck GP client didib6789 (A&A Health & Wealth Solutions): activated enrollment, added weekly cron for gp-auto-content. Content was stalled since 2026-04-05 — auto-regeneration now scheduled for every Monday 02:00 UTC.",
+      "event": "Fixed stuck GP client didib6789 (A&A Health & Wealth Solutions): activated enrollment, added weekly cron for gp-auto-content. Content was stalled since 2026-04-05 \u2014 auto-regeneration now scheduled for every Monday 02:00 UTC.",
       "type": "fix"
     },
     {
       "date": "2026-04-24",
       "project": "rewards",
-      "event": "Audit cleanup: /ref/:code smart-redirect + Lovable↔GitHub sync for signature-brand-forge confirmed already done.",
+      "event": "Audit cleanup: /ref/:code smart-redirect + Lovable\u2194GitHub sync for signature-brand-forge confirmed already done.",
       "type": "housekeeping"
     },
     {
       "date": "2026-04-24",
       "project": "rewards",
-      "event": "Master ambassador tier shipped — 5% override on downline gross, $1K/mo cap, 1-yr terms, hand-picked by admin. Schema + 4 RPCs + frontend + edge function all live.",
+      "event": "Master ambassador tier shipped \u2014 5% override on downline gross, $1K/mo cap, 1-yr terms, hand-picked by admin. Schema + 4 RPCs + frontend + edge function all live.",
       "type": "milestone"
     },
     {
       "date": "2026-04-23",
       "project": "rewards",
-      "event": "square-payment-sync referral attribution verified end-to-end by Ken — ref_code is being read on purchase and conversion events fire into rewards_ledger as expected.",
+      "event": "square-payment-sync referral attribution verified end-to-end by Ken \u2014 ref_code is being read on purchase and conversion events fire into rewards_ledger as expected.",
       "type": "milestone"
     },
     {
       "date": "2026-04-24",
       "project": "ghl-integration",
-      "event": "Confirmed headshot-ghl-sync + square-payment-sync are live in production (HTTP 200 on edge function endpoints). d9289d5 has been deployed since 2026-04-20. GHL integration outcomes 1, 3, 4 all active — AI purchases auto-tag contacts, headshot completions auto-flag, AI Full/Premium buyers auto-upsert as GP prospects.",
+      "event": "Confirmed headshot-ghl-sync + square-payment-sync are live in production (HTTP 200 on edge function endpoints). d9289d5 has been deployed since 2026-04-20. GHL integration outcomes 1, 3, 4 all active \u2014 AI purchases auto-tag contacts, headshot completions auto-flag, AI Full/Premium buyers auto-upsert as GP prospects.",
       "type": "milestone"
     },
     {
       "date": "2026-04-24",
       "project": "rewards",
-      "event": "/admin/health page fully live — frontend swapped to supabase.rpc() calls, edge functions & supabase/functions/ deleted from repo. Admin can now one-click backfill referrals, sync ambassador/provider roles, recompute balance drift.",
+      "event": "/admin/health page fully live \u2014 frontend swapped to supabase.rpc() calls, edge functions & supabase/functions/ deleted from repo. Admin can now one-click backfill referrals, sync ambassador/provider roles, recompute balance drift.",
       "type": "milestone"
     },
     {
       "date": "2026-04-24",
       "project": "rewards",
-      "event": "Admin health backend deployed as Postgres RPCs (SECURITY DEFINER) instead of edge functions — 4 functions + admin_health_log table live on stsowpflccehekknumkb. Frontend swap to supabase.rpc() in progress.",
+      "event": "Admin health backend deployed as Postgres RPCs (SECURITY DEFINER) instead of edge functions \u2014 4 functions + admin_health_log table live on stsowpflccehekknumkb. Frontend swap to supabase.rpc() in progress.",
       "type": "milestone"
     },
     {
       "date": "2026-04-24",
       "project": "rewards",
-      "event": "Lovable prompt for /admin/health page written and saved (~/Desktop/signature-ops/lovable-admin-health-prompt.md). Ready to paste — builds 4-check health dashboard + 4 backfill edge functions + admin_health_log table.",
+      "event": "Lovable prompt for /admin/health page written and saved (~/Desktop/signature-ops/lovable-admin-health-prompt.md). Ready to paste \u2014 builds 4-check health dashboard + 4 backfill edge functions + admin_health_log table.",
       "type": "milestone"
     },
     {
       "date": "2026-04-24",
       "project": "rewards",
-      "event": "Backfill task verified complete — all 69 profiles have referral_code + 'client' referral_links row. No action needed; handle_new_user trigger already seeds both.",
+      "event": "Backfill task verified complete \u2014 all 69 profiles have referral_code + 'client' referral_links row. No action needed; handle_new_user trigger already seeds both.",
       "type": "milestone"
     },
     {
       "date": "2026-04-22",
       "project": "client-phyllis-inman",
-      "event": "Course content batch 1 shipped — Modules 1 & 2 lesson scripts (9 of 27) + course build tracker live at /course-content/. Scripts ready-to-film w/ recording guidance + workbook refs + pull quotes.",
+      "event": "Course content batch 1 shipped \u2014 Modules 1 & 2 lesson scripts (9 of 27) + course build tracker live at /course-content/. Scripts ready-to-film w/ recording guidance + workbook refs + pull quotes.",
       "type": "milestone"
     },
     {
       "date": "2026-04-22",
       "project": "client-phyllis-inman",
-      "event": "Flagship sales page shipped — 12-section designed HTML at /sales-page.html, real photography, logomark, 2-tier pricing ($197 Core / $397 Family), accordion FAQ, 30-day guarantee seal. Deploy-ready for Kajabi.",
+      "event": "Flagship sales page shipped \u2014 12-section designed HTML at /sales-page.html, real photography, logomark, 2-tier pricing ($197 Core / $397 Family), accordion FAQ, 30-day guarantee seal. Deploy-ready for Kajabi.",
       "type": "launch"
     },
     {
       "date": "2026-04-22",
       "project": "client-phyllis-inman",
-      "event": "Brand identity system shipped — logomark (plate + sprig), 3 wordmark variations (primary, horizontal, Inman Institute), P monogram, 7 downloadable SVG files. Full usage guide + clear-space rules live at /identity.html",
+      "event": "Brand identity system shipped \u2014 logomark (plate + sprig), 3 wordmark variations (primary, horizontal, Inman Institute), P monogram, 7 downloadable SVG files. Full usage guide + clear-space rules live at /identity.html",
       "type": "launch"
     },
     {
       "date": "2026-04-22",
       "project": "client-phyllis-inman",
-      "event": "Ebook trilogy COMPLETE — Raising Intuitive Eaters shipped (34 pp, 18 chapters, ages 3-16 playbooks, 30-day picky eating reset). Trilogy bundle spec at $79 saves $32. All 3 x $37 ebooks now Gumroad-ready.",
+      "event": "Ebook trilogy COMPLETE \u2014 Raising Intuitive Eaters shipped (34 pp, 18 chapters, ages 3-16 playbooks, 30-day picky eating reset). Trilogy bundle spec at $79 saves $32. All 3 x $37 ebooks now Gumroad-ready.",
       "type": "milestone"
     },
     {
       "date": "2026-04-22",
       "project": "client-phyllis-inman",
-      "event": "Eating Through Emotions ebook shipped — 29 pages, 18 chapters, H.A.L.T.O.B.S. framework + 5-tool kit. Ebook 02 of 03 trilogy.",
+      "event": "Eating Through Emotions ebook shipped \u2014 29 pages, 18 chapters, H.A.L.T.O.B.S. framework + 5-tool kit. Ebook 02 of 03 trilogy.",
       "type": "launch"
     },
     {
       "date": "2026-04-22",
       "project": "client-phyllis-inman",
-      "event": "Mindful Family Kitchen ebook shipped (42 pp, $37) — includes Part V bonus chapter on whole-food & organic swaps with Dirty Dozen guide + 10 total hero recipes.",
+      "event": "Mindful Family Kitchen ebook shipped (42 pp, $37) \u2014 includes Part V bonus chapter on whole-food & organic swaps with Dirty Dozen guide + 10 total hero recipes.",
       "type": "launch"
     },
     {
       "date": "2026-04-22",
       "project": "client-phyllis-inman",
-      "event": "Lead magnet 'The Peaceful Plate' designed PDF shipped — 14 pages, real photography + 10 custom SVG illustrations, print-ready, downloadable from /peaceful-plate.html. Mobile-responsive.",
+      "event": "Lead magnet 'The Peaceful Plate' designed PDF shipped \u2014 14 pages, real photography + 10 custom SVG illustrations, print-ready, downloadable from /peaceful-plate.html. Mobile-responsive.",
       "type": "launch"
     },
     {
       "date": "2026-04-22",
       "project": "client-phyllis-inman",
-      "event": "Client dashboard + interactive progress tracker live at /clients/phyllis/ — revenue calculator, product stack, 25-item content checklist with recommendations + topic bullets + localStorage progress persistence. 900+ topic bullets across all content.",
+      "event": "Client dashboard + interactive progress tracker live at /clients/phyllis/ \u2014 revenue calculator, product stack, 25-item content checklist with recommendations + topic bullets + localStorage progress persistence. 900+ topic bullets across all content.",
       "type": "launch"
     },
     {
       "date": "2026-04-22",
       "project": "client-phyllis-inman",
-      "event": "Brand kit palette updated in Supabase — primary_color shifted from gold to cream (#E8DCC8) per photography. App plan bumped pro + creative addon. App features now reflect GP-tier access.",
+      "event": "Brand kit palette updated in Supabase \u2014 primary_color shifted from gold to cream (#E8DCC8) per photography. App plan bumped pro + creative addon. App features now reflect GP-tier access.",
       "type": "fix"
     },
     {
       "date": "2026-04-19",
       "project": "crm-integration",
-      "event": "GHL integration UNBLOCKED — API keys live, H&B outbound sync built, cross-sync GP↔H&B wired, AI Full/Premium buyers now auto-flagged as GP prospects",
+      "event": "GHL integration UNBLOCKED \u2014 API keys live, H&B outbound sync built, cross-sync GP\u2194H&B wired, AI Full/Premium buyers now auto-flagged as GP prospects",
       "type": "milestone"
     },
     {
@@ -2748,25 +2788,25 @@
     {
       "date": "2026-04-19",
       "project": "rewards-ecosystem",
-      "event": "ELEVATED TO #1 PRIORITY — Ken directed focus on Client Rewards + Affiliate Program. Audit revealed 7 phases of migrations + 6 edge functions already in git but NOT applied to production Supabase.",
+      "event": "ELEVATED TO #1 PRIORITY \u2014 Ken directed focus on Client Rewards + Affiliate Program. Audit revealed 7 phases of migrations + 6 edge functions already in git but NOT applied to production Supabase.",
       "type": "milestone"
     },
     {
       "date": "2026-04-19",
       "project": "signature-branding-app",
-      "event": "Fulfillment Monitor admin panel live — stuck/partial-failure jobs auto-detected, admin alert emails, one-click retry",
+      "event": "Fulfillment Monitor admin panel live \u2014 stuck/partial-failure jobs auto-detected, admin alert emails, one-click retry",
       "type": "launch"
     },
     {
       "date": "2026-04-19",
       "project": "signature-branding-app",
-      "event": "CRITICAL BUG FIX: fulfillment silently completing with 2/150 images — rate-limit handling rewritten, status validation added, auto-chain fixed, gender bias in 4 styles corrected. Celeste Houston order recovered.",
+      "event": "CRITICAL BUG FIX: fulfillment silently completing with 2/150 images \u2014 rate-limit handling rewritten, status validation added, auto-chain fixed, gender bias in 4 styles corrected. Celeste Houston order recovered.",
       "type": "fix"
     },
     {
       "date": "2026-04-16",
       "project": "signature-branding-app",
-      "event": "Creative Studio upgraded — effects panel (shadow/glow/outline), gradient editor, 3 new shapes (star/arrow/diamond), text rotation + letter spacing",
+      "event": "Creative Studio upgraded \u2014 effects panel (shadow/glow/outline), gradient editor, 3 new shapes (star/arrow/diamond), text rotation + letter spacing",
       "type": "milestone"
     },
     {
@@ -2778,61 +2818,61 @@
     {
       "date": "2026-04-17",
       "project": "seo-strategy",
-      "event": "/industries/estheticians dedicated page — added to sitemap (was MISSING — Google couldn't index), ImageGallery + 29 ImageObject schema added to IndustryLandingPage @graph, per-image keyword-rich alt text live on all 3 slideshow positions",
+      "event": "/industries/estheticians dedicated page \u2014 added to sitemap (was MISSING \u2014 Google couldn't index), ImageGallery + 29 ImageObject schema added to IndustryLandingPage @graph, per-image keyword-rich alt text live on all 3 slideshow positions",
       "type": "launch"
     },
     {
       "date": "2026-04-17",
       "project": "seo-strategy",
-      "event": "/industries/beauty/estheticians sub-variant SEO upgrade — 12 FAQs, dual aesthetician/esthetician spelling, ImageGallery schema, per-image alt text",
+      "event": "/industries/beauty/estheticians sub-variant SEO upgrade \u2014 12 FAQs, dual aesthetician/esthetician spelling, ImageGallery schema, per-image alt text",
       "type": "launch"
     },
     {
       "date": "2026-04-17",
       "project": "seo-strategy",
-      "event": "SEO strategy COMPLETE — GMB content kit (8 markets, 750-char descriptions, Google Posts, Q&A seeds, review templates) + Backlink strategy (50+ directories, 4 outreach templates, PR pitches) shipped to seo-kit/",
+      "event": "SEO strategy COMPLETE \u2014 GMB content kit (8 markets, 750-char descriptions, Google Posts, Q&A seeds, review templates) + Backlink strategy (50+ directories, 4 outreach templates, PR pitches) shipped to seo-kit/",
       "type": "milestone"
     },
     {
       "date": "2026-04-16",
       "project": "seo-strategy",
-      "event": "Blog launched — 8 cornerstone SEO articles published covering hairstylist, salon owner, real estate, local, and comparison content clusters (15,000+ words of content)",
+      "event": "Blog launched \u2014 8 cornerstone SEO articles published covering hairstylist, salon owner, real estate, local, and comparison content clusters (15,000+ words of content)",
       "type": "milestone"
     },
     {
       "date": "2026-04-16",
       "project": "seo-strategy",
-      "event": "SEO overhaul shipped — beauty page upgraded for paid ads: 12 FAQs, @graph schema, 4 PPC sub-variants (salon-owners/hairstylists/estheticians/nail-techs)",
+      "event": "SEO overhaul shipped \u2014 beauty page upgraded for paid ads: 12 FAQs, @graph schema, 4 PPC sub-variants (salon-owners/hairstylists/estheticians/nail-techs)",
       "type": "milestone"
     },
     {
       "date": "2026-04-16",
       "project": "seo-strategy",
-      "event": "Sitewide technical SEO — index.html preconnects, noscript fallback, Organization schema, sitemap rebuild with 21 industries + image/video extensions",
+      "event": "Sitewide technical SEO \u2014 index.html preconnects, noscript fallback, Organization schema, sitemap rebuild with 21 industries + image/video extensions",
       "type": "launch"
     },
     {
       "date": "2026-04-16",
       "project": "signature-branding-app",
-      "event": "Template library expanded to 51 — IG Feed, IG Story, Facebook, LinkedIn, YouTube variants across 7 industries",
+      "event": "Template library expanded to 51 \u2014 IG Feed, IG Story, Facebook, LinkedIn, YouTube variants across 7 industries",
       "type": "milestone"
     },
     {
       "date": "2026-04-16",
       "project": "signature-branding-app",
-      "event": "17 industry templates seeded — Real Estate, Coach, Restaurant, Fitness, Speaker, Beauty, Photographer (IG + LinkedIn)",
+      "event": "17 industry templates seeded \u2014 Real Estate, Coach, Restaurant, Fitness, Speaker, Beauty, Photographer (IG + LinkedIn)",
       "type": "launch"
     },
     {
       "date": "2026-04-16",
       "project": "signature-branding-app",
-      "event": "3 AI agents built — Brand Designer, Template Factory, Content Scheduler — all as Supabase edge functions",
+      "event": "3 AI agents built \u2014 Brand Designer, Template Factory, Content Scheduler \u2014 all as Supabase edge functions",
       "type": "milestone"
     },
     {
       "date": "2026-04-16",
       "project": "signature-branding-app",
-      "event": "AI Designer panel wired into Creative Studio — describe what you want, AI builds it",
+      "event": "AI Designer panel wired into Creative Studio \u2014 describe what you want, AI builds it",
       "type": "launch"
     },
     {
@@ -2844,7 +2884,7 @@
     {
       "date": "2026-04-16",
       "project": "signature-branding-app",
-      "event": "Template variant previewer built — expand any template to see all styles before selecting",
+      "event": "Template variant previewer built \u2014 expand any template to see all styles before selecting",
       "type": "launch"
     },
     {
@@ -2856,13 +2896,13 @@
     {
       "date": "2026-04-12",
       "project": "campaign-system",
-      "event": "Campaign engine first run — 48 clients auto-enrolled in reactivation-winback",
+      "event": "Campaign engine first run \u2014 48 clients auto-enrolled in reactivation-winback",
       "type": "milestone"
     },
     {
       "date": "2026-04-12",
       "project": "campaign-system",
-      "event": "Campaign engine edge function deployed and tested — segments, enrollments, email delivery, conversion detection",
+      "event": "Campaign engine edge function deployed and tested \u2014 segments, enrollments, email delivery, conversion detection",
       "type": "launch"
     },
     {
@@ -2874,19 +2914,19 @@
     {
       "date": "2026-04-12",
       "project": "campaign-system",
-      "event": "Campaign automation tables deployed — 5 tables with RLS, triggers, 5 seed segments",
+      "event": "Campaign automation tables deployed \u2014 5 tables with RLS, triggers, 5 seed segments",
       "type": "launch"
     },
     {
       "date": "2026-04-12",
       "project": "campaign-system",
-      "event": "Full autonomous campaign system built — strategy, 50+ ad variants, 30-day calendar, 7 niche playbooks, 3 scheduled agents",
+      "event": "Full autonomous campaign system built \u2014 strategy, 50+ ad variants, 30-day calendar, 7 niche playbooks, 3 scheduled agents",
       "type": "launch"
     },
     {
       "date": "2026-04-10",
       "project": "project-tracker",
-      "event": "API Cost Tracker panel added — tracks all service spend with budget alerts",
+      "event": "API Cost Tracker panel added \u2014 tracks all service spend with budget alerts",
       "type": "launch"
     },
     {
@@ -2898,7 +2938,7 @@
     {
       "date": "2026-04-10",
       "project": "seo-strategy",
-      "event": "SEO Strategy project added — targeting organic growth across all markets",
+      "event": "SEO Strategy project added \u2014 targeting organic growth across all markets",
       "type": "launch"
     },
     {
@@ -2910,7 +2950,7 @@
     {
       "date": "2026-04-08",
       "project": "rewards-ecosystem",
-      "event": "Rewards architecture finalized — 7-function ecosystem plan approved",
+      "event": "Rewards architecture finalized \u2014 7-function ecosystem plan approved",
       "type": "milestone"
     },
     {
@@ -2922,31 +2962,31 @@
     {
       "date": "2026-04-05",
       "project": "orchestration-layer",
-      "event": "All 3 automation layers operational — Square sync, GP pipeline, content pipeline",
+      "event": "All 3 automation layers operational \u2014 Square sync, GP pipeline, content pipeline",
       "type": "milestone"
     },
     {
       "date": "2026-04-05",
       "project": "signature-branding-app",
-      "event": "Creative Studio & Templates fixed — V2 default, brand kit auto-load",
+      "event": "Creative Studio & Templates fixed \u2014 V2 default, brand kit auto-load",
       "type": "fix"
     },
     {
       "date": "2026-04-05",
       "project": "orchestration-layer",
-      "event": "Content pipeline live — 140 items generated for 6 GP clients",
+      "event": "Content pipeline live \u2014 140 items generated for 6 GP clients",
       "type": "launch"
     },
     {
       "date": "2026-04-05",
       "project": "orchestration-layer",
-      "event": "GP Pipeline Engine deployed — 166 deliverables, health scores running",
+      "event": "GP Pipeline Engine deployed \u2014 166 deliverables, health scores running",
       "type": "launch"
     },
     {
       "date": "2026-04-04",
       "project": "orchestration-layer",
-      "event": "Square Revenue Sync deployed — 130 payments ($15,443) synced",
+      "event": "Square Revenue Sync deployed \u2014 130 payments ($15,443) synced",
       "type": "launch"
     },
     {
@@ -2958,13 +2998,13 @@
     {
       "date": "2026-04-03",
       "project": "daily-ops-agent",
-      "event": "Daily ops report fully operational — launchd job at 8 AM",
+      "event": "Daily ops report fully operational \u2014 launchd job at 8 AM",
       "type": "launch"
     },
     {
       "date": "2026-04-03",
       "project": "signature-branding-app",
-      "event": "Email/Nurture system fixed — direct signup funnel added",
+      "event": "Email/Nurture system fixed \u2014 direct signup funnel added",
       "type": "fix"
     }
   ]
