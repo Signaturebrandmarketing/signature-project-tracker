@@ -2525,11 +2525,11 @@
     },
     {
       "id": "signature-branding-academy",
-      "name": "Signature Branding Academy Launch",
+      "name": "Signature Branding Academy + Signature DNA",
       "status": "active",
       "health": "healthy",
       "weight": 4,
-      "description": "Organic launch of the Academy (DIY education rung) via Ken's face-led personal brand. Public /academy landing page LIVE on signaturebranding.app (2026-07-09): founder story, 6-module curriculum preview, Enroll Free -> free account (access-code paywall removed). Free Signature Brand Kit giveaway drafted (12 files, ~/Desktop/signature-brand-kit) \u2014 hand-to-Claude interview + 8 brand-context templates, CC BY-NC-SA. Strategy: Jared Rhodenizer model adapted; monetize via existing ladder ($37 app -> LiveLoop -> Agent OS), no new membership.",
+      "description": "Organic launch of the Academy (DIY education rung) via Ken's face-led personal brand. Public /academy landing page LIVE on signaturebranding.app (2026-07-09): founder story, 6-module curriculum preview, Enroll Free -> free account (access-code paywall removed). Method named Signature DNA(TM) ('Digital DNA' rejected \u2014 live trademark in branding services). Free Signature DNA Kit PUBLISHED: github.com/Signaturebrandmarketing/signature-dna (12 files \u2014 AI interview script + 8 brand-context templates, CC BY-NC-SA). Academy page links the kit. Strategy: Jared Rhodenizer model adapted; monetize via existing ladder ($37 app -> LiveLoop -> Agent OS), no new membership.",
       "modules": [
         {
           "name": "Strategy locked (gating, monetization, Skool parked)",
@@ -2544,8 +2544,16 @@
           "status": "complete"
         },
         {
-          "name": "Ken review + publish kit to public GitHub repo",
-          "status": "pending"
+          "name": "Method named: Signature DNA(TM) (trademark-checked vs 'Digital DNA')",
+          "status": "complete"
+        },
+        {
+          "name": "Academy landing updated + redeployed with kit link",
+          "status": "complete"
+        },
+        {
+          "name": "Signature DNA Kit published to public GitHub repo",
+          "status": "complete"
         },
         {
           "name": "Long-form anchor article/video (founder story -> kit)",
@@ -2567,6 +2575,11 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-07-09",
+      "project": "Signature Branding Academy + Signature DNA",
+      "event": "Method named Signature DNA(TM); free kit published at github.com/Signaturebrandmarketing/signature-dna; Academy landing updated with kit link and redeployed"
+    },
     {
       "date": "2026-07-09",
       "project": "Signature Branding Academy Launch",
