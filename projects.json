@@ -2568,13 +2568,22 @@
           "status": "pending"
         },
         {
-          "name": "Academy lesson content (kit = first unlocked lesson)",
+          "name": "Academy lesson content \u2014 Module 1 (Brand Foundation) drafted, review pending; Modules 2-6 pending",
           "status": "pending"
+        },
+        {
+          "name": "Anchor article + 5-post derivative pack drafted, review pending",
+          "status": "complete"
         }
       ]
     }
   ],
   "timeline": [
+    {
+      "date": "2026-07-09",
+      "project": "Signature Branding Academy + Signature DNA",
+      "event": "Anchor article + derivative pack drafted; Module 1 (4 text lessons) drafted; landing timing copy fixed + deployed; member Lesson Zero card live"
+    },
     {
       "date": "2026-07-09",
       "project": "Signature Branding Academy + Signature DNA",
