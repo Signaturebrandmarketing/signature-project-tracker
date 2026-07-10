@@ -2522,9 +2522,56 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "signature-branding-academy",
+      "name": "Signature Branding Academy Launch",
+      "status": "active",
+      "health": "healthy",
+      "weight": 4,
+      "description": "Organic launch of the Academy (DIY education rung) via Ken's face-led personal brand. Public /academy landing page LIVE on signaturebranding.app (2026-07-09): founder story, 6-module curriculum preview, Enroll Free -> free account (access-code paywall removed). Free Signature Brand Kit giveaway drafted (12 files, ~/Desktop/signature-brand-kit) \u2014 hand-to-Claude interview + 8 brand-context templates, CC BY-NC-SA. Strategy: Jared Rhodenizer model adapted; monetize via existing ladder ($37 app -> LiveLoop -> Agent OS), no new membership.",
+      "modules": [
+        {
+          "name": "Strategy locked (gating, monetization, Skool parked)",
+          "status": "complete"
+        },
+        {
+          "name": "Public /academy landing page + free-account access (deployed + verified)",
+          "status": "complete"
+        },
+        {
+          "name": "Free Signature Brand Kit drafted (12 files)",
+          "status": "complete"
+        },
+        {
+          "name": "Ken review + publish kit to public GitHub repo",
+          "status": "pending"
+        },
+        {
+          "name": "Long-form anchor article/video (founder story -> kit)",
+          "status": "pending"
+        },
+        {
+          "name": "First-person content shipping weekly via LiveLoop + IG strategist account",
+          "status": "pending"
+        },
+        {
+          "name": "GHL newsletter + DIY/DFY branching sequence",
+          "status": "pending"
+        },
+        {
+          "name": "Academy lesson content (kit = first unlocked lesson)",
+          "status": "pending"
+        }
+      ]
     }
   ],
   "timeline": [
+    {
+      "date": "2026-07-09",
+      "project": "Signature Branding Academy Launch",
+      "event": "Public Academy landing page deployed to signaturebranding.app; free Signature Brand Kit drafted (12 files)"
+    },
     {
       "date": "2026-07-07",
       "project": "signature-clothing-line",
