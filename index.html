@@ -779,6 +779,7 @@
     <div class="live-badge"><div class="live-dot"></div><span>Live</span></div>
   </div>
 
+  <div id="gemini-status"></div>
   <div id="hero-score"></div>
   <div id="action-items-panel"></div>
   <div id="cost-tracker"></div>
@@ -1511,6 +1512,35 @@ async function load(){
 renderFilters();
 load();
 setInterval(load,REFRESH_INTERVAL);
+
+// ── Gemini API credits / usage (live from Supabase edge function) ──
+const GEMINI_STATUS_URL='https://stsowpflccehekknumkb.supabase.co/functions/v1/gemini-usage-status?k=sig-ops-2026';
+async function loadGemini(){
+  const el=document.getElementById('gemini-status');
+  try{
+    const r=await fetch(GEMINI_STATUS_URL,{cache:'no-store'});
+    if(!r.ok)throw new Error('http '+r.status);
+    const d=await r.json();
+    const ok=d.credits_ok===true;
+    const unknown=d.credits_ok===null||d.credits_ok===undefined;
+    const dot=unknown?'#888':(ok?'#3fb950':'#f85149');
+    const label=unknown?'Gemini status unknown':(ok?'Gemini API healthy':'GEMINI CREDITS DEPLETED — generations stalled');
+    const usage=(typeof d.images_today==='number')
+      ? ` &nbsp;·&nbsp; ${d.images_today} images today (~$${(d.est_spend_today??0).toFixed(2)}) &nbsp;·&nbsp; ${d.images_month} this month (~$${(d.est_spend_month??0).toFixed(2)})`
+      : '';
+    const cta=(!ok&&!unknown)?' &nbsp;→&nbsp; <a href="https://aistudio.google.com" target="_blank" style="color:#f85149;font-weight:600;">top up credits</a>':'';
+    el.innerHTML=`<div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin:0 0 .75rem;padding:.55rem .9rem;border-radius:8px;font-size:.8rem;
+      background:${ok?'rgba(63,185,80,.08)':(unknown?'rgba(136,136,136,.08)':'rgba(248,81,73,.12)')};
+      border:1px solid ${ok?'rgba(63,185,80,.3)':(unknown?'rgba(136,136,136,.25)':'rgba(248,81,73,.5)')};">
+      <span style="width:8px;height:8px;border-radius:50%;background:${dot};box-shadow:0 0 6px ${dot};"></span>
+      <strong>${label}</strong><span style="opacity:.75">${usage}</span>${cta}
+    </div>`;
+  }catch(e){
+    el.innerHTML='<div style="margin:0 0 .75rem;padding:.55rem .9rem;border-radius:8px;font-size:.8rem;background:rgba(136,136,136,.08);border:1px solid rgba(136,136,136,.25);opacity:.7;">Gemini status unavailable (endpoint not reachable)</div>';
+  }
+}
+loadGemini();
+setInterval(loadGemini,5*60*1000);
 </script>
 </body>
 </html>
