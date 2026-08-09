@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-11T18:30:00Z",
+  "lastUpdated": "2026-08-09T18:00:00Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -2607,9 +2607,60 @@
       "weight": 2,
       "description": "Ken's own content engine (built one for every client, now himself). Agent def + ~18 prompt plays + one-liner bank. His authentic voice captured across 3 layers (color / methodical-teacher rhythm / pause-shape) from Faith transcripts + his rewrites. Chief-gift = SPEAKER. 32-piece quote-card content library + captions produced. Ties to 'Signature Voice DNA' product idea. Activate: paste into a claude.ai Project + upload PRODUCT_MEMORY.md.",
       "lastActivity": "2026-07-11"
+    },
+    {
+      "id": "good-hands-hauling",
+      "name": "Good Hands Hauling (new venture — Winter Haven)",
+      "status": "active",
+      "health": "brand-locked-launch-pending",
+      "weight": 2,
+      "description": "NEW company launched 2026-08-09: junk removal, debris hauling & construction cleanup in Winter Haven/Polk County (moving deliberately excluded). Customer service as the core differentiator. Service Shield logo chosen (3 options built). Full launch package at ~/Desktop/good-hands-hauling/: brand board + logo system (SVG/PNG), Commercial/Residential services menu + graphic, 30-day low-cost campaign (~$550-800), REO/bank contract playbook + capability statement PDF, landfill & pricing research w/ GHH price card ($99 single item → $549 full load; REO $40-50/cyd direct). goodhandshauling.com + winterhavenjunkremoval.com verified available.",
+      "modules": [
+        {
+          "name": "Brand identity (Service Shield)",
+          "status": "complete",
+          "note": "Logo chosen by Ken 8/9; navy/orange system; board v2.0 rendered"
+        },
+        {
+          "name": "Services menu (Commercial/Residential)",
+          "status": "complete",
+          "note": "services-menu.md + branded services board graphic"
+        },
+        {
+          "name": "Marketing campaign",
+          "status": "complete",
+          "note": "30-day plan, reviews-first strategy, copy bank, GHL automations spec"
+        },
+        {
+          "name": "B2B/REO contract playbook",
+          "status": "complete",
+          "note": "10 nationals + local direct lanes + construction debris; capability-statement.pdf"
+        },
+        {
+          "name": "Pricing & disposal research",
+          "status": "complete",
+          "note": "North Central Landfill $46/ton (+5%/yr Oct), industry pricing, GHH price card v1"
+        },
+        {
+          "name": "Company formation",
+          "status": "pending",
+          "note": "LLC/EIN/insurance/domain/phone — Ken's day-one checklist in README"
+        },
+        {
+          "name": "Website build",
+          "status": "pending",
+          "note": "services grid modeled on 352haulingcrew.com reference"
+        }
+      ],
+      "lastActivity": "2026-08-09"
     }
   ],
   "timeline": [
+    {
+      "date": "2026-08-09",
+      "project": "Good Hands Hauling",
+      "event": "Company launch package built in one session: Service Shield brand identity (3 logo options, Ken picked the shield), Commercial/Residential services menu + graphic, 30-day low-cost marketing campaign, bank/REO contract playbook + capability statement PDF, Polk landfill & pricing research with recommended price card. Domains goodhandshauling.com + winterhavenjunkremoval.com verified available."
+    },
     {
       "date": "2026-07-11",
       "project": "Signature Clothing Line",
