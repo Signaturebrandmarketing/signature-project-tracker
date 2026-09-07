@@ -2527,7 +2527,12 @@
           "note": "'Design with AI' conversational builder + rotating reveal + sticky preview + tee 3D. PUBLISHED at signature-build-your-own.lovable.app. Realistic garment-mockup POC proven (Voice/Visual upgrade). Backlog: clean cutout (image credits), mobile UX, landing clarity."
         }
       ],
-      "lastActivity": "2026-07-11"
+      "lastActivity": "2026-07-11",
+      "nextSteps": [
+        "Launch campaign prep (Oct-Nov pre-holiday drop)",
+        "Optional: one live $34.99 order + refund to prove paid-order webhook end-to-end",
+        "Phase 2: AI virtual try-on"
+      ]
     },
     {
       "id": "signature-branding-academy",
@@ -2656,6 +2661,11 @@
     }
   ],
   "timeline": [
+    {
+      "date": "2026-09-07",
+      "project": "Signature Clothing Line",
+      "entry": "LAUNCH-READY: Stripe live keys + webhook verified (live checkout session confirmed), Resend domain verified, store emails send from orders@sig-nuh-ture.com. All launch infrastructure complete."
+    },
     {
       "date": "2026-09-07",
       "project": "Signature Clothing Line",
