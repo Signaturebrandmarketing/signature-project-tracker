@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-14T11:00:12.926900Z",
+  "lastUpdated": "2026-09-15T11:00:10.702483Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -1572,30 +1572,119 @@
     }
   ],
   "costs": {
-    "monthlyBudget": 500,
+    "monthlyBudget": 700,
     "alertThreshold": 80,
-    "currentMonth": "2026-04",
+    "currentMonth": "2026-09",
     "services": [
       {
         "id": "claude-max",
         "name": "Claude Max (Anthropic Subscription)",
         "icon": "brain",
-        "monthToDate": 200.0,
-        "lastMonth": 200.0,
-        "dailyAvg": 6.67,
+        "monthToDate": 100.0,
+        "lastMonth": 100.0,
+        "dailyAvg": 3.33,
         "trend": "stable",
-        "note": "Flat $200/mo subscription for Claude Code (agent sessions). NOT developer API usage \u2014 that stays $0 because edge functions use Gemini. Manually tracked, not auto-synced.",
+        "note": "Flat $100/mo subscription for Claude Code. Corrected from $200 on 9/14/26 (Ken). \u00b7 synced 2026-09-14 14:53",
         "category": "ai"
       },
       {
-        "id": "gemini-api",
-        "name": "Gemini API (Google)",
-        "icon": "brain",
-        "monthToDate": 120.0,
-        "lastMonth": 95.0,
-        "dailyAvg": 4.0,
+        "id": "elevenlabs",
+        "name": "ElevenLabs",
+        "icon": "mic",
+        "monthToDate": 22,
+        "lastMonth": 22,
+        "dailyAvg": 0.73,
+        "trend": "stable",
+        "note": "Creator plan \u00b7 26,811/139,321 chars (19%) \u00b7 overage OFF \u00b7 synced 2026-09-14 14:53",
+        "category": "ai"
+      },
+      {
+        "id": "twilio",
+        "name": "Twilio (numbers + usage)",
+        "icon": "phone",
+        "monthToDate": 87.5,
+        "lastMonth": 5.75,
+        "dailyAvg": 2.92,
         "trend": "up",
-        "note": "ESTIMATE \u2014 used by image generation, content pipeline, AI designer, etc. Real per-call tracking is pending (add _shared/gemini-client.ts wrapper that logs to ai_spend_daily).",
+        "note": "5 numbers \u00b7 balance $6.75 \u00b7 last month $5.75 \u00b7 synced 2026-09-14 14:53",
+        "category": "infra",
+        "balance": 6.75
+      },
+      {
+        "id": "ghl-agency",
+        "name": "GoHighLevel Agency",
+        "icon": "layers",
+        "monthToDate": 48.5,
+        "lastMonth": 48.5,
+        "dailyAvg": 1.62,
+        "trend": "stable",
+        "note": "Agency plan $97 \u00b7 promo SP26_NC_Plan_50PctOff_3M \u2192 $48.50 until the Nov 28 cycle \u00b7 card \u20220978 has declined 4\u00d7 \u2014 watch \u00b7 synced 2026-09-14 14:53",
+        "category": "infra"
+      },
+      {
+        "id": "google-workspace",
+        "name": "Google Workspace (Business Standard)",
+        "icon": "mail",
+        "monthToDate": 14.4,
+        "lastMonth": 14.4,
+        "dailyAvg": 0.48,
+        "trend": "stable",
+        "note": "signaturebrandmarketing.com \u00b7 card \u20220978 declined Aug 9 + Sep 1 \u00b7 confirm paid \u00b7 synced 2026-09-14 14:53",
+        "category": "infra"
+      },
+      {
+        "id": "instantly-mailboxes",
+        "name": "Instantly \u2014 mailboxes + domain",
+        "icon": "send",
+        "monthToDate": 15.0,
+        "lastMonth": 15.0,
+        "dailyAvg": 0.5,
+        "trend": "stable",
+        "note": "3 sending accounts \u00d7 $5 (domain $15 one-time 9/8). The Instantly PLAN is billed elsewhere \u2014 unconfirmed. \u00b7 synced 2026-09-14 14:53",
+        "category": "outbound"
+      },
+      {
+        "id": "instantly-plan",
+        "name": "Instantly \u2014 Growth plan",
+        "icon": "send",
+        "monthToDate": 37.0,
+        "lastMonth": 37.0,
+        "dailyAvg": 1.23,
+        "trend": "stable",
+        "note": "$37/mo (Ken, 9/14) \u00b7 cold email sending + warmup \u00b7 likely card \u20220978 \u00b7 synced 2026-09-14 14:53",
+        "category": "outbound"
+      },
+      {
+        "id": "resend",
+        "name": "Resend (app email)",
+        "icon": "mail",
+        "monthToDate": 20.0,
+        "lastMonth": 20.0,
+        "dailyAvg": 0.67,
+        "trend": "stable",
+        "note": "$20/mo (Ken, 9/14) \u00b7 the app's transactional email since July \u00b7 synced 2026-09-14 14:53",
+        "category": "infra"
+      },
+      {
+        "id": "lovable",
+        "name": "Lovable (Platform Builder)",
+        "icon": "code",
+        "monthToDate": 50.0,
+        "lastMonth": 50.0,
+        "dailyAvg": 1.67,
+        "trend": "stable",
+        "note": "$50/mo (Ken, 9/14) \u00b7 max mode \u00b7 whatifproductions1@gmail \u00b7 Rewards program may be a 2nd account (unconfirmed) \u00b7 synced 2026-09-14 14:53",
+        "category": "infra"
+      },
+      {
+        "id": "higgsfield",
+        "name": "Higgsfield",
+        "icon": "image",
+        "monthToDate": 29.0,
+        "lastMonth": 29.0,
+        "dailyAvg": 0.97,
+        "trend": "stable",
+        "note": "Plus plan (price unconfirmed) \u00b7 image/video/voice generation \u00b7 synced 2026-09-14 14:53",
         "category": "ai"
       },
       {
@@ -1606,8 +1695,63 @@
         "lastMonth": 25.0,
         "dailyAvg": 0.83,
         "trend": "stable",
-        "note": "Pro plan \u2014 edge functions, pg_cron, storage, 19 users",
-        "category": "infrastructure"
+        "note": "Pro plan \u2014 edge functions, pg_cron, storage (from April tracker, unverified) \u00b7 synced 2026-09-14 14:53",
+        "category": "infra"
+      },
+      {
+        "id": "gemini-api",
+        "name": "Gemini API (Google)",
+        "icon": "sparkles",
+        "monthToDate": 100.0,
+        "lastMonth": 100.0,
+        "dailyAvg": 3.33,
+        "trend": "stable",
+        "note": "PREPAID, usage-driven (Ken, 9/14) \u2014 mostly app image generation. $100 is a placeholder for the top-up cadence; real number = Google Cloud billing console. \u00b7 synced 2026-09-14 14:53",
+        "category": "ai"
+      },
+      {
+        "id": "shootproof",
+        "name": "ShootProof",
+        "icon": "camera",
+        "monthToDate": 10.99,
+        "lastMonth": 10.99,
+        "dailyAvg": 0.37,
+        "trend": "stable",
+        "note": "$10.99/mo (Ken, 9/14) \u00b7 portrait client galleries \u00b7 synced 2026-09-14 14:53",
+        "category": "creative"
+      },
+      {
+        "id": "adobe",
+        "name": "Adobe Creative Cloud",
+        "icon": "pen-tool",
+        "monthToDate": 20.0,
+        "lastMonth": 20.0,
+        "dailyAvg": 0.67,
+        "trend": "stable",
+        "note": "$20/mo (Ken, 9/14) \u00b7 Photoshop \u00b7 synced 2026-09-14 14:53",
+        "category": "creative"
+      },
+      {
+        "id": "make",
+        "name": "Make.com",
+        "icon": "workflow",
+        "monthToDate": 10.59,
+        "lastMonth": 10.59,
+        "dailyAvg": 0.35,
+        "trend": "stable",
+        "note": "$10.59/mo (Ken, 9/14) \u00b7 automation scenarios \u00b7 synced 2026-09-14 14:53",
+        "category": "infra"
+      },
+      {
+        "id": "meta-ads",
+        "name": "Meta Ads (Facebook/Instagram)",
+        "icon": "megaphone",
+        "monthToDate": 0.0,
+        "lastMonth": 71.0,
+        "dailyAvg": 0.0,
+        "trend": "stable",
+        "note": "OFF since Aug ($71 total in Aug). Catching up on past balance. Was $1,250\u20133,800/mo in April. \u00b7 synced 2026-09-14 14:53",
+        "category": "ads"
       },
       {
         "id": "image-gen",
@@ -1621,17 +1765,6 @@
         "category": "ai"
       },
       {
-        "id": "ghl",
-        "name": "GoHighLevel CRM",
-        "icon": "message",
-        "monthToDate": 97.0,
-        "lastMonth": 97.0,
-        "dailyAvg": 3.23,
-        "trend": "stable",
-        "note": "Monthly plan \u2014 inbox bot, sequences, pipeline",
-        "category": "platform"
-      },
-      {
         "id": "square",
         "name": "Square (Processing Fees)",
         "icon": "dollar",
@@ -1641,28 +1774,6 @@
         "trend": "down",
         "note": "2.6% + $0.10 per transaction \u2014 headshots + AI upgrades",
         "category": "payments"
-      },
-      {
-        "id": "lovable",
-        "name": "Lovable (Platform Builder)",
-        "icon": "code",
-        "monthToDate": 20.0,
-        "lastMonth": 20.0,
-        "dailyAvg": 0.67,
-        "trend": "stable",
-        "note": "Monthly plan \u2014 React/Vite/Tailwind builds + email API",
-        "category": "infrastructure"
-      },
-      {
-        "id": "meta-ads",
-        "name": "Meta Ads (Facebook/Instagram)",
-        "icon": "megaphone",
-        "monthToDate": 1250.0,
-        "lastMonth": 3800.0,
-        "dailyAvg": 125.0,
-        "trend": "down",
-        "note": "Headshot event campaigns \u2014 known optimization weakness",
-        "category": "advertising"
       }
     ],
     "daily": [
@@ -1706,7 +1817,9 @@
         "date": "2026-04-10",
         "total": 41.8
       }
-    ]
+    ],
+    "stackTotalMonthToDate": 646.98,
+    "lastSynced": "2026-09-14 14:53"
   },
   "projects": [
     {
