@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-18T11:00:11.719821Z",
+  "lastUpdated": "2026-09-18T11:05:02.782923Z",
   "updatedBy": "Claude",
   "target": 95,
   "actionItems": [
@@ -1584,7 +1584,7 @@
         "lastMonth": 100.0,
         "dailyAvg": 3.33,
         "trend": "stable",
-        "note": "Flat $100/mo subscription for Claude Code. Corrected from $200 on 9/14/26 (Ken). \u00b7 synced 2026-09-17 07:05",
+        "note": "Flat $100/mo subscription for Claude Code. Corrected from $200 on 9/14/26 (Ken). \u00b7 synced 2026-09-18 07:05",
         "category": "ai"
       },
       {
@@ -1595,20 +1595,20 @@
         "lastMonth": 22,
         "dailyAvg": 0.73,
         "trend": "stable",
-        "note": "Creator plan \u00b7 38,559/139,321 chars (28%) \u00b7 overage OFF \u00b7 synced 2026-09-17 07:05",
+        "note": "Creator plan \u00b7 44,377/139,321 chars (32%) \u00b7 overage OFF \u00b7 synced 2026-09-18 07:05",
         "category": "ai"
       },
       {
         "id": "twilio",
         "name": "Twilio (numbers + usage)",
         "icon": "phone",
-        "monthToDate": 87.5,
+        "monthToDate": 87.53,
         "lastMonth": 5.75,
         "dailyAvg": 2.92,
         "trend": "up",
-        "note": "5 numbers \u00b7 balance $6.75 \u00b7 last month $5.75 \u00b7 synced 2026-09-17 07:05",
+        "note": "5 numbers \u00b7 balance $6.72 \u00b7 last month $5.75 \u00b7 synced 2026-09-18 07:05",
         "category": "infra",
-        "balance": 6.75
+        "balance": 6.72
       },
       {
         "id": "ghl-agency",
@@ -1618,7 +1618,7 @@
         "lastMonth": 48.5,
         "dailyAvg": 1.62,
         "trend": "stable",
-        "note": "Agency plan $97 \u00b7 promo SP26_NC_Plan_50PctOff_3M \u2192 $48.50 until the Nov 28 cycle \u00b7 card \u20220978 has declined 4\u00d7 \u2014 watch \u00b7 synced 2026-09-17 07:05",
+        "note": "Agency plan $97 \u00b7 promo SP26_NC_Plan_50PctOff_3M \u2192 $48.50 until the Nov 28 cycle \u00b7 card \u20220978 has declined 4\u00d7 \u2014 watch \u00b7 synced 2026-09-18 07:05",
         "category": "infra"
       },
       {
@@ -1629,7 +1629,7 @@
         "lastMonth": 14.4,
         "dailyAvg": 0.48,
         "trend": "stable",
-        "note": "signaturebrandmarketing.com \u00b7 card \u20220978 declined Aug 9 + Sep 1 \u00b7 confirm paid \u00b7 synced 2026-09-17 07:05",
+        "note": "signaturebrandmarketing.com \u00b7 card \u20220978 declined Aug 9 + Sep 1 \u00b7 confirm paid \u00b7 synced 2026-09-18 07:05",
         "category": "infra"
       },
       {
@@ -1640,7 +1640,7 @@
         "lastMonth": 15.0,
         "dailyAvg": 0.5,
         "trend": "stable",
-        "note": "3 sending accounts \u00d7 $5 (domain $15 one-time 9/8). The Instantly PLAN is billed elsewhere \u2014 unconfirmed. \u00b7 synced 2026-09-17 07:05",
+        "note": "3 sending accounts \u00d7 $5 (domain $15 one-time 9/8). The Instantly PLAN is billed elsewhere \u2014 unconfirmed. \u00b7 synced 2026-09-18 07:05",
         "category": "outbound"
       },
       {
@@ -1651,7 +1651,7 @@
         "lastMonth": 37.0,
         "dailyAvg": 1.23,
         "trend": "stable",
-        "note": "$37/mo (Ken, 9/14) \u00b7 cold email sending + warmup \u00b7 likely card \u20220978 \u00b7 synced 2026-09-17 07:05",
+        "note": "$37/mo (Ken, 9/14) \u00b7 cold email sending + warmup \u00b7 likely card \u20220978 \u00b7 synced 2026-09-18 07:05",
         "category": "outbound"
       },
       {
@@ -1662,7 +1662,7 @@
         "lastMonth": 20.0,
         "dailyAvg": 0.67,
         "trend": "stable",
-        "note": "$20/mo (Ken, 9/14) \u00b7 the app's transactional email since July \u00b7 synced 2026-09-17 07:05",
+        "note": "$20/mo (Ken, 9/14) \u00b7 the app's transactional email since July \u00b7 synced 2026-09-18 07:05",
         "category": "infra"
       },
       {
@@ -1673,7 +1673,7 @@
         "lastMonth": 50.0,
         "dailyAvg": 1.67,
         "trend": "stable",
-        "note": "$50/mo (Ken, 9/14) \u00b7 max mode \u00b7 whatifproductions1@gmail \u00b7 Rewards program may be a 2nd account (unconfirmed) \u00b7 synced 2026-09-17 07:05",
+        "note": "$50/mo (Ken, 9/14) \u00b7 max mode \u00b7 whatifproductions1@gmail \u00b7 Rewards program may be a 2nd account (unconfirmed) \u00b7 synced 2026-09-18 07:05",
         "category": "infra"
       },
       {
@@ -1684,7 +1684,7 @@
         "lastMonth": 29.0,
         "dailyAvg": 0.97,
         "trend": "stable",
-        "note": "Plus plan (price unconfirmed) \u00b7 image/video/voice generation \u00b7 synced 2026-09-17 07:05",
+        "note": "Plus plan (price unconfirmed) \u00b7 image/video/voice generation \u00b7 synced 2026-09-18 07:05",
         "category": "ai"
       },
       {
@@ -1695,7 +1695,7 @@
         "lastMonth": 25.0,
         "dailyAvg": 0.83,
         "trend": "stable",
-        "note": "Pro plan \u2014 edge functions, pg_cron, storage (from April tracker, unverified) \u00b7 synced 2026-09-17 07:05",
+        "note": "Pro plan \u2014 edge functions, pg_cron, storage (from April tracker, unverified) \u00b7 synced 2026-09-18 07:05",
         "category": "infra"
       },
       {
@@ -1706,7 +1706,7 @@
         "lastMonth": 100.0,
         "dailyAvg": 3.33,
         "trend": "stable",
-        "note": "PREPAID, usage-driven (Ken, 9/14) \u2014 mostly app image generation. $100 is a placeholder for the top-up cadence; real number = Google Cloud billing console. \u00b7 synced 2026-09-17 07:05",
+        "note": "PREPAID, usage-driven (Ken, 9/14) \u2014 mostly app image generation. $100 is a placeholder for the top-up cadence; real number = Google Cloud billing console. \u00b7 synced 2026-09-18 07:05",
         "category": "ai"
       },
       {
@@ -1717,7 +1717,7 @@
         "lastMonth": 10.99,
         "dailyAvg": 0.37,
         "trend": "stable",
-        "note": "$10.99/mo (Ken, 9/14) \u00b7 portrait client galleries \u00b7 synced 2026-09-17 07:05",
+        "note": "$10.99/mo (Ken, 9/14) \u00b7 portrait client galleries \u00b7 synced 2026-09-18 07:05",
         "category": "creative"
       },
       {
@@ -1728,7 +1728,7 @@
         "lastMonth": 20.0,
         "dailyAvg": 0.67,
         "trend": "stable",
-        "note": "$20/mo (Ken, 9/14) \u00b7 Photoshop \u00b7 synced 2026-09-17 07:05",
+        "note": "$20/mo (Ken, 9/14) \u00b7 Photoshop \u00b7 synced 2026-09-18 07:05",
         "category": "creative"
       },
       {
@@ -1739,7 +1739,7 @@
         "lastMonth": 10.59,
         "dailyAvg": 0.35,
         "trend": "stable",
-        "note": "$10.59/mo (Ken, 9/14) \u00b7 automation scenarios \u00b7 synced 2026-09-17 07:05",
+        "note": "$10.59/mo (Ken, 9/14) \u00b7 automation scenarios \u00b7 synced 2026-09-18 07:05",
         "category": "infra"
       },
       {
@@ -1750,7 +1750,7 @@
         "lastMonth": 71.0,
         "dailyAvg": 0.0,
         "trend": "stable",
-        "note": "OFF since Aug ($71 total in Aug). Catching up on past balance. Was $1,250\u20133,800/mo in April. \u00b7 synced 2026-09-17 07:05",
+        "note": "OFF since Aug ($71 total in Aug). Catching up on past balance. Was $1,250\u20133,800/mo in April. \u00b7 synced 2026-09-18 07:05",
         "category": "ads"
       },
       {
@@ -1818,8 +1818,8 @@
         "total": 41.8
       }
     ],
-    "stackTotalMonthToDate": 646.98,
-    "lastSynced": "2026-09-17 07:05"
+    "stackTotalMonthToDate": 647.01,
+    "lastSynced": "2026-09-18 07:05"
   },
   "projects": [
     {
